@@ -1,5 +1,5 @@
 {
-  "name": "cdr mrv",
+  "name": "cdr-mrv",
   "version": "1.0.0",
   "description": "tool to visualize CDR MRV pathways",
   "main": "index.js",
