@@ -1,26 +1,23 @@
 {
-  "name": "article-template",
+  "name": "cdr mrv",
   "version": "1.0.0",
-  "description": "template for developing a standalone carbonplan research article",
+  "description": "tool to visualize CDR MRV pathways",
   "main": "index.js",
   "scripts": {
     "dev": "next -p 5001",
     "build": "next build",
-    "start": "next start",
-    "format": "npm run format-js && npm run format-md",
-    "format-js": "prettier --write '*.js' '{components,pages,article,tool}/**/*.js'",
-    "format-md": "prettier --write README.md 'article/**/*.md' --parser mdx"
+    "start": "next start"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/carbonplan/article-template.git"
+    "url": "git+https://github.com/carbonplan/cdr-mrv.git"
   },
   "author": "carbonplan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/carbonplan/article-template/issues"
+    "url": "https://github.com/carbonplan/cdr-mrv/issues"
   },
-  "homepage": "https://github.com/carbonplan/article-template#readme",
+  "homepage": "https://github.com/carbonplan/cdr-mrv#readme",
   "dependencies": {
     "@carbonplan/components": "^11.0.6",
     "@carbonplan/layouts": "^2.1.0",
