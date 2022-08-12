@@ -11,6 +11,12 @@
 [![Build Status]][actions]
 ![MIT License][]
 
+[github]: https://github.com/carbonplan/cdr-mrv
+[github-badge]: https://badgen.net/badge/-/github?icon=github&label
+[build status]: https://github.com/carbonplan/cdr-mrv/actions/workflows/main.yml/badge.svg
+[actions]: https://github.com/carbonplan/cdr-mrv/actions/workflows/main.yaml
+[mit license]: https://badgen.net/badge/license/MIT/blue
+
 ## to build the site locally
 
 Assuming you already have `Node.js` installed, you can install the build dependencies as:
