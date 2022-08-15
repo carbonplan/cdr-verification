@@ -17,8 +17,8 @@ const Index = () => {
       metadata={false}
       nav={'research'}
     >
-      <Row sx={{ mt: [4] }}>
-        <Column start={1} width={[6, 7, 3, 3]}>
+      <Row>
+        <Column start={1} width={[6, 7, 3, 3]} mt={4}>
           <Box
             sx={{
               pb: [3],
@@ -43,33 +43,7 @@ const Index = () => {
             diagrams. Use the menus below to view the underlying [flow
             diagrams], uncertainty information, and chemical equations.
           </Box>
-        </Column>
-        <Column start={[1, 2, 4, 4]} width={[0, 0, 1, 1]}>
-          <Box
-            sx={{
-              width: '50%',
-              height: '100%',
-              borderWidth: 0,
-              borderRight: '1px',
-              borderColor: 'muted',
-              borderStyle: 'solid',
-            }}
-          />
-        </Column>
-        <Column start={[1, 2, 5, 5]} width={[6, 6, 8, 8]}>
-          <Filter values={values} setValues={setValues} />
-        </Column>
-      </Row>
-      <Row>
-        <Column start={1} width={[6, 7, 3, 3]}>
           <Divider sx={{ my: 5, mr: [0, 0, '-16px', '-24px'] }} />
-        </Column>
-        <Column start={[1, 2, 5, 5]} width={[6, 6, 8, 8]}>
-          <Divider sx={{ my: 5, ml: [0, 0, '-16px', '-24px'] }} />
-        </Column>
-      </Row>
-      <Row>
-        <Column start={1} width={[6, 7, 3, 3]}>
           List
         </Column>
         <Column start={[1, 2, 4, 4]} width={[0, 0, 1, 1]}>
@@ -83,8 +57,33 @@ const Index = () => {
               borderStyle: 'solid',
             }}
           />
+
+          <Box
+            sx={{
+              width: '50%',
+              height: '100%',
+              borderWidth: 0,
+              borderRight: '1px',
+              borderColor: 'muted',
+              borderStyle: 'solid',
+            }}
+          />
         </Column>
         <Column start={[1, 2, 5, 5]} width={[6, 6, 8, 8]}>
+          <Box
+            sx={{
+              position: 'sticky',
+              pt: 4,
+              top: 56,
+              background: 'background',
+              zIndex: 10,
+            }}
+          >
+            <Filter values={values} setValues={setValues} />
+
+            <Divider sx={{ my: 5, ml: [0, 0, '-16px', '-24px'] }} />
+          </Box>
+
           {values.oae && <OAE />}
           {values.seaweed && <Seaweed />}
           {values['enhanced weathering'] && <EnhancedWeathering />}
