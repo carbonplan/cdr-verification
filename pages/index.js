@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Box, Divider } from 'theme-ui'
 import { Layout, Row, Column, Filter } from '@carbonplan/components'
-import { Tool } from '@carbonplan/layouts'
 import { OAE, Seaweed, EnhancedWeathering } from '../components/flow-diagrams'
 
 const Index = () => {
