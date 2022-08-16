@@ -7,7 +7,7 @@ const Flow = () => {
     <Grid>
       <Rectangle
         id='5'
-        category='net_volume'
+        category='net volume'
         start={[5, 3]}
         height={1}
         borderStyle='none'
@@ -16,7 +16,7 @@ const Flow = () => {
       </Rectangle>
       <Rectangle
         id='6'
-        category='net_volume'
+        category='net volume'
         start={[8, 3]}
         height={1}
         borderStyle='none'
@@ -41,7 +41,7 @@ const Flow = () => {
 
       <Arrow start={[12, 9]} length={1} right />
 
-      <Rectangle start={[14, 8]} id='2' width={6} category='gross_volume'>
+      <Rectangle start={[14, 8]} id='2' width={6} category='gross volume'>
         Macroalgae growth on drifting buoy
       </Rectangle>
 
@@ -62,13 +62,13 @@ const Flow = () => {
 
       <Arrow start={[20, 16]} length={2} right />
 
-      <Rectangle id='3' category='gross_volume' start={[23, 15]}>
+      <Rectangle id='3' category='gross volume' start={[23, 15]}>
         Atmospheric carbon removal
       </Rectangle>
 
       <Rectangle
         id='4'
-        category='gross_volume'
+        category='gross volume'
         start={[14, 3]}
         height={1}
         borderStyle='none'
@@ -79,7 +79,7 @@ const Flow = () => {
 
       <Rectangle
         id='4'
-        category='gross_volume'
+        category='gross volume'
         start={[23, 3]}
         height={1}
         borderStyle='none'

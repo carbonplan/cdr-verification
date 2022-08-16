@@ -1,11 +1,6 @@
 import { Box, Flex } from 'theme-ui'
 
-const CATEGORY_MAPPING = {
-  operations: 'red',
-  gross_volume: 'orange',
-  net_volume: 'yellow',
-  permanence: 'purple',
-}
+import Circle from '../circle'
 
 const Rectangle = ({
   children,
@@ -56,25 +51,16 @@ const Rectangle = ({
             position: 'absolute',
             width: '100%',
             justifyContent: 'center',
-            color: CATEGORY_MAPPING[category],
           }}
         >
-          <Flex
+          <Circle
+            id={id}
+            category={category}
             sx={{
               backgroundColor: 'background',
-              border: (theme) =>
-                `1px solid ${theme.colors[CATEGORY_MAPPING[category]]}`,
-              alignContent: 'center',
-              justifyContent: 'center',
-              borderRadius: '24px',
-              width: '24px',
-              height: '24px',
               mt: borderStyle === 'none' ? '-24px' : '-14px',
-              textAlign: 'center',
             }}
-          >
-            <Box sx={{ mt: '1px' }}>{id}</Box>
-          </Flex>
+          />
         </Flex>
       ) : null}
       <Flex

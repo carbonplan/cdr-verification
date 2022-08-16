@@ -11,7 +11,7 @@ const Flow = () => {
 
       <Rectangle
         id='4'
-        category='net_volume'
+        category='net volume'
         start={[5, 3]}
         height={1}
         borderStyle='none'
@@ -20,7 +20,7 @@ const Flow = () => {
       </Rectangle>
       <Rectangle
         id='5'
-        category='net_volume'
+        category='net volume'
         start={[8, 3]}
         height={1}
         borderStyle='none'
@@ -60,7 +60,7 @@ const Flow = () => {
 
       <Arrow start={[13, 14]} length={2} right />
 
-      <Rectangle id='3' category='gross_volume' start={[16, 13]}>
+      <Rectangle id='3' category='gross volume' start={[16, 13]}>
         Long-term fate of acid
       </Rectangle>
 
@@ -70,16 +70,16 @@ const Flow = () => {
         height={9}
         label='Atmospheric carbon removal'
       />
-      <Rectangle id='2a' category='gross_volume' start={[26, 7]} height={3}>
+      <Rectangle id='2a' category='gross volume' start={[26, 7]} height={3}>
         Air sea gas exchange efficiency
       </Rectangle>
-      <Rectangle id='2b' category='gross_volume' start={[31, 7]} height={3}>
+      <Rectangle id='2b' category='gross volume' start={[31, 7]} height={3}>
         Calcification response
       </Rectangle>
-      <Rectangle id='2c' category='gross_volume' start={[26, 11]} height={3}>
+      <Rectangle id='2c' category='gross volume' start={[26, 11]} height={3}>
         Carbonate vs bicarbonate formation
       </Rectangle>
-      <Rectangle id='2d' category='gross_volume' start={[31, 11]} height={3}>
+      <Rectangle id='2d' category='gross volume' start={[31, 11]} height={3}>
         Particulate Organic Carbon response
       </Rectangle>
 
