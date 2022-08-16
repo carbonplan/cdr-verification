@@ -1,0 +1,68 @@
+{
+    "pathway_name": "Direct Air Capture",
+    "pathway_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A scelerisque purus semper eget duis at. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Proin nibh nisl condimentum id venenatis a. Libero enim sed faucibus turpis in eu mi. Lorem mollis aliquam ut porttitor leo a diam. Nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Ac auctor augue mauris augue neque. Tortor vitae purus faucibus ornare. Vitae turpis massa sed elementum tempus egestas sed sed risus. Nunc aliquet bibendum enim facilisis gravida neque convallis a. Ut enim blandit volutpat maecenas volutpat.",
+    "VCL": "4,5",
+    "equation": "1-2-3-4",
+    "elements": [
+        {
+            "diagram component": 1,
+            "category": "gross volume",
+            "name": "inj_co2",
+            "description": "desc",
+            "comments": "comments",
+            "uncertainty type": "execution ",
+            "uncertainty magnitude": "negligible",
+            "responsibility": "project",
+            "notes": "",
+            "revisions": ""
+        },
+        {
+            "diagram component": 2,
+            "category": "net volume",
+            "name": "store_leak",
+            "description": "desc",
+            "comments": "comments",
+            "uncertainty type": "execution ",
+            "uncertainty magnitude": "low to medium",
+            "responsibility": "project",
+            "notes": "",
+            "revisions": ""
+        },
+        {
+            "diagram component": 3,
+            "category": "net volume",
+            "name": "energy_co2",
+            "description": "desc",
+            "comments": "comments",
+            "uncertainty type": "execution ",
+            "uncertainty magnitude": "low",
+            "responsibility": "project",
+            "notes": "",
+            "revisions": ""
+        },
+        {
+            "diagram component": 4,
+            "category": "net volume",
+            "name": "mat_co2",
+            "description": "desc",
+            "comments": "comments",
+            "uncertainty type": "execution ",
+            "uncertainty magnitude": "low",
+            "responsibility": "project",
+            "notes": "",
+            "revisions": ""
+        },
+        {
+            "diagram component": 5,
+            "category": "permanence",
+            "name": "stor_maint",
+            "description": "desc",
+            "comments": "comments",
+            "uncertainty type": "execution ",
+            "uncertainty magnitude": "low to medium",
+            "responsibility": "project",
+            "notes": "",
+            "revisions": ""
+        }
+    ]
+}
