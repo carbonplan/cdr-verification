@@ -23,7 +23,7 @@ const Index = () => {
       nav={'research'}
     >
       <Row>
-        <Column start={1} width={[6, 7, 3, 3]} mt={4}>
+        <Column start={1} width={[6, 7, 4, 4]} mt={4}>
           <Box
             sx={{
               pb: [3],
@@ -62,7 +62,7 @@ const Index = () => {
             />
           ))}
         </Column>
-        <Column start={[1, 2, 4, 4]} width={[0, 0, 1, 1]}>
+        <Column start={[1, 2, 5, 5]} width={[0, 0, 1, 1]}>
           <Box
             sx={{
               width: '50%',
@@ -85,7 +85,7 @@ const Index = () => {
             }}
           />
         </Column>
-        <Column start={[1, 2, 5, 5]} width={[6, 6, 8, 8]}>
+        <Column start={[1, 2, 6, 6]} width={[6, 6, 7, 7]}>
           <Box
             sx={{
               position: 'sticky',

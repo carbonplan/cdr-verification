@@ -1,5 +1,5 @@
 import { Box, Divider, Flex } from 'theme-ui'
-import { Badge, Expander } from '@carbonplan/components'
+import { Badge, Expander, Row, Column } from '@carbonplan/components'
 import Circle from './circle'
 import { CATEGORY_MAPPING } from './constants'
 
@@ -19,8 +19,10 @@ const Element = ({
       color: CATEGORY_MAPPING[category],
       letterSpacing: 'smallcaps',
       textTransform: 'uppercase',
+      mb: 2,
     },
     badge: { textTransform: 'capitalize' },
+    column: { mb: 3 },
   }
 
   return (
@@ -45,13 +47,21 @@ const Element = ({
       {active ? (
         <Box>
           <Divider />
-          <Box sx={sx.heading}>Uncertainty type</Box>
-          <Badge sx={sx.badge}>{uncertainty_type}</Badge>
-          <Box sx={sx.heading}>Uncertainty responsibility</Box>
-          <Badge sx={sx.badge}>{responsibility}</Badge>
-          <Box sx={sx.heading}>Notes</Box>
+          <Row columns={[6, 7, 4, 4]}>
+            <Column sx={sx.column} start={1} width={[6, 7, 4, 2]}>
+              <Box sx={sx.heading}>Uncertainty type</Box>
+              <Badge sx={sx.badge}>{uncertainty_type}</Badge>
+            </Column>
+            <Column sx={sx.column} start={[1, 1, 1, 3]} width={[6, 7, 4, 2]}>
+              <Box sx={sx.heading}>Uncertainty responsibility</Box>
+              <Badge sx={sx.badge}>{responsibility}</Badge>
+            </Column>
+            <Column sx={sx.column} start={1} width={[6, 7, 4, 4]}>
+              <Box sx={sx.heading}>Notes</Box>
+              <Box sx={{ fontFamily: 'faux' }}>{comments}</Box>
+            </Column>
+          </Row>
 
-          <Box sx={{ fontFamily: 'faux' }}>{comments}</Box>
           <Divider />
         </Box>
       ) : null}
