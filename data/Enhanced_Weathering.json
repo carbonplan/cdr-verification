@@ -1,0 +1,128 @@
+{
+  "pathway_name": "Enhanced Weathering",
+  "pathway_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A scelerisque purus semper eget duis at. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Proin nibh nisl condimentum id venenatis a. Libero enim sed faucibus turpis in eu mi. Lorem mollis aliquam ut porttitor leo a diam. Nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Ac auctor augue mauris augue neque. Tortor vitae purus faucibus ornare. Vitae turpis massa sed elementum tempus egestas sed sed risus. Nunc aliquet bibendum enim facilisis gravida neque convallis a. Ut enim blandit volutpat maecenas volutpat.",
+  "VCL": ["3", "4"],
+  "equation": "1-2-3-4-5-6-7-8",
+  "elements": [
+    {
+      "diagram_component": "0",
+      "category": "operation",
+      "name": "ops",
+      "description": "project operation",
+      "comments": "Text to come... Any project is responsible for having auditable operations. This includes, for example, purchase and equipment operation records which can be used to validate process claims.  It should be clear... Also important to have clear records around ton-based claims. This could look like an internal registry.",
+      "uncertainty_type": "execution",
+      "uncertainty_magnitude": ["low"],
+      "responsibility": "project",
+      "notes": "",
+      "revisions": [""]
+    },
+    {
+      "diagram_component": "1",
+      "category": "gross volume",
+      "name": "rock_opt",
+      "description": "optimum atmospheric removal",
+      "comments": "Assuming full dissolution of the applied rock, it is possible to calculate the optimum atmospheric removal assuming full dissolution. Optimum drawdown depends on rock composition, particle size, kinetics, and applied volumes. It is possible to directly analyze rock composition, which is critical not only for carbon accounting, but also for tracking other ecosystem and agricultural impacts. Applied volume can be confirmed via an audit of operational records.",
+      "uncertainty_type": "execution",
+      "uncertainty_magnitude": ["low"],
+      "responsibility": "project",
+      "notes": "",
+      "revisions": [""]
+    },
+    {
+      "diagram_component": "2",
+      "category": "gross volume",
+      "name": "ndf",
+      "description": "non-dissolved fration",
+      "comments": "The rate of rock weathering depends on factors including particle size, soil type, ambient temperature, precipitation, and irrigation. While most feedstock dissolution potential will ultimately be realized, the effective drawdown from EW occurs when the CO2 is actually removed from the atmosphere. The measurement of weathering rates \u2014 and by extension the fraction of the mineral feedstock that remains after a given period of time \u2014 is an area of active innovation. Existing approaches include measuring temporally granular changes to pH and dissolved inorganic carbon (DIC), and tracking changes in the concentration of tracer elements which originate in the applied mineral and persist in the soil after rock weathering.",
+      "uncertainty_type": "scientific, execution",
+      "uncertainty_magnitude": ["low", "high"],
+      "responsibility": "project",
+      "notes": "",
+      "revisions": [""]
+    },
+    {
+      "diagram_component": "3",
+      "category": "gross volume",
+      "name": "acid_oth",
+      "description": "dissolution from non-CO2 sources of acid",
+      "comments": "Dissolution from non-CO2 sources of acid",
+      "uncertainty_type": "scientific",
+      "uncertainty_magnitude": ["low", "medium"],
+      "responsibility": "project",
+      "notes": "",
+      "revisions": [""]
+    },
+    {
+      "diagram_component": "4",
+      "category": "gross volume",
+      "name": "min_sec",
+      "description": "secondary mineral formation",
+      "comments": "Secondary mineral formation depends on the type of primary mineral dissolving as well as the local climate and biota present. CO2 sequestration potential of enhanced weathering in soils will need to be determined by in situ monitoring with special care to characterize the secondary minerals formed in order to accurately determine the total amount of carbon removed from that atmosphere.",
+      "uncertainty_type": "scientific",
+      "uncertainty_magnitude": ["low", "medium"],
+      "responsibility": "project",
+      "notes": "",
+      "revisions": [""]
+    },
+    {
+      "diagram_component": "5",
+      "category": "net volume",
+      "name": "evasion",
+      "description": "leakage from evasion",
+      "comments": "The additional flux of dissolved inorganic carbon (DIC) from the site of application into regional groundwater systems represents captured CO2. The longer-term fate of this DIC is hard to precisely estimate. Groundwater can spend from days to centuries in the ground before being discharged to streams. Once in surface waters, outgassing might occur, for example as a result of shifts in pH. The long time-scale of this process makes it difficult to study directly, but regional models may inform estimates.",
+      "uncertainty_type": "scientific",
+      "uncertainty_magnitude": ["medium"],
+      "responsibility": "system",
+      "notes": "",
+      "revisions": [""]
+    },
+    {
+      "diagram_component": "6",
+      "category": "net volume",
+      "name": "energy_co2",
+      "description": "energy use emissions",
+      "comments": "The emissions associated with energy use for the process. This component should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed on-site.",
+      "uncertainty_type": "execution",
+      "uncertainty_magnitude": ["low"],
+      "responsibility": "project",
+      "notes": "",
+      "revisions": [""]
+    },
+    {
+      "diagram_component": "7",
+      "category": "net volume",
+      "name": "mat_co2",
+      "description": "material embodied emissions",
+      "comments": "The embodied emissions (including transport) of any materials consumed during operation, like mineral feedstocks or solvents, can be estimated based on a lifecycle assessment of the consumed material. The embodied emissions of equipment and project infrastructure must also be considered. This would include manufacturing and transportation-related emissions for equipment and infrastructure, like a calciner or air contactor, that is not consumed as part of the project operation. Equipment emissions should be amortized over the expected carbon removal over the lifetime of the equipment.",
+      "uncertainty_type": "execution",
+      "uncertainty_magnitude": ["low"],
+      "responsibility": "project",
+      "notes": "",
+      "revisions": [""]
+    },
+    {
+      "diagram_component": "8",
+      "category": "net volume",
+      "name": "ag_counter",
+      "description": "tk tk tk",
+      "comments": "tk tk tk",
+      "uncertainty_type": "counterfactual",
+      "uncertainty_magnitude": ["low"],
+      "responsibility": "project",
+      "notes": "",
+      "revisions": [""]
+    },
+    {
+      "diagram_component": "9",
+      "category": "permanence",
+      "name": "tau_dic",
+      "description": "DIC residence time",
+      "comments": "The concept of ocean DIC lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000-100,000 years. [TK: permanence of surficial carbonates.]",
+      "uncertainty_type": "scientific",
+      "uncertainty_magnitude": ["low"],
+      "responsibility": "system",
+      "notes": "",
+      "revisions": [""]
+    }
+  ]
+}
