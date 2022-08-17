@@ -26,23 +26,36 @@ const Element = ({
   }
 
   return (
-    <Box sx={{ my: [2, 3, 3, 4] }}>
-      <Flex sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
-        <Flex
-          sx={{
-            alignItems: 'center',
-            gap: 2,
-          }}
-        >
-          <Circle
-            id={diagram_component}
-            category={category}
-            sx={{ flexShrink: 0 }}
-          />
-          <Box>{description}</Box>
-        </Flex>
-        <Expander value={active} onClick={onClick} sx={{ flexShrink: 0 }} />
-      </Flex>
+    <Box sx={{ my: [2, 3, 4, 4] }}>
+      <Row columns={[6, 7, 4, 4]}>
+        <Column start={1} width={[6, 7, 3, 3]}>
+          <Flex
+            sx={{
+              alignItems: 'center',
+              gap: 2,
+            }}
+          >
+            <Circle
+              id={diagram_component}
+              category={category}
+              sx={{ flexShrink: 0 }}
+            />
+            <Box>{description}</Box>
+          </Flex>
+        </Column>
+        <Column start={4} width={1}>
+          <Flex
+            sx={{
+              alignItems: 'center',
+              justifyContent: 'flex-end',
+              gap: 3,
+            }}
+          >
+            ????
+            <Expander value={active} onClick={onClick} sx={{ flexShrink: 0 }} />
+          </Flex>
+        </Column>
+      </Row>
 
       {active ? (
         <Box>
