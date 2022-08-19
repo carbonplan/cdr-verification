@@ -19,7 +19,7 @@ const Index = () => {
     seaweed: false,
     'enhanced weathering': false,
   })
-  const value = Object.keys(values).find(Boolean)
+  const value = Object.keys(values).find((k) => values[k])
   const [element, setElement] = useState(null)
 
   const { pathway_name, pathway_description, vcl, equation, elements } =
