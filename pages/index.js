@@ -8,6 +8,8 @@ import ew from '../data/Enhanced_Weathering.json'
 import Element from '../components/element'
 import { CATEGORY_COLORS } from '../components/constants'
 import { getElements } from '../components/utils'
+import TableHeader from '../components/table/header'
+
 const data = {
   oae,
   seaweed,
@@ -25,6 +27,7 @@ const Index = () => {
     emissions: true,
     other: true,
   })
+  const [sort, setSort] = useState('number')
   const value = Object.keys(values).find((k) => values[k])
   const [element, setElement] = useState(null)
 
@@ -73,7 +76,26 @@ const Index = () => {
           />
           <Divider sx={{ my: 5, mr: [0, 0, '-32px', '-48px'] }} />
 
-          {getElements(elements, filters).map((d) => (
+          <Row columns={[6, 7, 4, 4]}>
+            <Column>
+              <TableHeader
+                sort={sort}
+                setSort={setSort}
+                id='number'
+                label='#'
+              />
+            </Column>
+            <Column start={[5, 6, 3, 3]} width={2} sx={{ textAlign: 'right' }}>
+              <TableHeader
+                sort={sort}
+                setSort={setSort}
+                id='uncertainty'
+                label='Uncertainty'
+                sx={{ alignItems: 'flex-end' }}
+              />
+            </Column>
+          </Row>
+          {getElements(elements, filters, sort).map((d) => (
             <Element
               key={d.element}
               {...d}
