@@ -1,6 +1,13 @@
 import { useState } from 'react'
-import { Box, Divider } from 'theme-ui'
-import { Layout, Row, Column, Filter } from '@carbonplan/components'
+import { Box, Divider, Flex } from 'theme-ui'
+import {
+  Layout,
+  Row,
+  Column,
+  Filter,
+  Select,
+  Badge,
+} from '@carbonplan/components'
 import { OAE, Seaweed, EnhancedWeathering } from '../components/flow-diagrams'
 import oae from '../data/Ocean_Alkalinity_Enhancement.json'
 import seaweed from '../data/Ocean_Biomass_Sinking.json'
@@ -13,26 +20,20 @@ import TableHeader from '../components/table/header'
 const data = {
   oae,
   seaweed,
-  'enhanced weathering': ew,
+  ew,
 }
 
 const Index = () => {
-  const [values, setValues] = useState({
-    oae: true,
-    seaweed: false,
-    'enhanced weathering': false,
-  })
+  const [pathway, setPathway] = useState('oae')
   const [filters, setFilters] = useState({
     drawdown: true,
     emissions: true,
     other: true,
   })
   const [sort, setSort] = useState('number')
-  const value = Object.keys(values).find((k) => values[k])
   const [element, setElement] = useState(null)
 
-  const { pathway_name, pathway_description, vcl, equation, elements } =
-    data[value]
+  const { pathway_description, VCL, equation, elements } = data[pathway]
 
   return (
     <Layout
@@ -67,14 +68,29 @@ const Index = () => {
             diagrams. Use the menus below to view the underlying [flow
             diagrams], uncertainty information, and chemical equations.
           </Box>
-          <Divider sx={{ my: 5, mr: [0, 0, '-32px', '-48px'] }} />
-          <Filter
-            values={filters}
-            setValues={setFilters}
-            colors={CATEGORY_COLORS}
-            showAll
-          />
-          <Divider sx={{ my: 5, mr: [0, 0, '-32px', '-48px'] }} />
+
+          <Divider sx={{ mt: 5, mb: 0, mr: [0, 0, '-32px', '-48px'] }} />
+
+          <Box
+            sx={{
+              position: 'sticky',
+              top: 56,
+              background: 'background',
+              pt: 3,
+              mr: [0, 0, '-32px', '-48px'],
+              pr: [0, 0, '32px', '48px'],
+              zIndex: 10,
+            }}
+          >
+            <Filter
+              values={filters}
+              setValues={setFilters}
+              colors={CATEGORY_COLORS}
+              showAll
+            />
+
+            <Divider sx={{ mb: 5, mt: 3, mr: [0, 0, '-32px', '-48px'] }} />
+          </Box>
 
           <Row columns={[6, 7, 4, 4]}>
             <Column>
@@ -83,6 +99,7 @@ const Index = () => {
                 setSort={setSort}
                 id='number'
                 label='#'
+                sx={{ ml: 1 }}
               />
             </Column>
             <Column start={[5, 6, 3, 3]} width={2} sx={{ textAlign: 'right' }}>
@@ -133,20 +150,43 @@ const Index = () => {
           <Box
             sx={{
               position: 'sticky',
-              pt: 4,
+              pt: '44px',
               top: 56,
               background: 'background',
+              ml: [0, 0, '-32px', '-48px'],
+              pl: [0, 0, '32px', '48px'],
               zIndex: 10,
             }}
           >
-            <Filter values={values} setValues={setValues} />
+            <Flex sx={{ gap: 3, flexDirection: 'column' }}>
+              <Select
+                size='md'
+                value={pathway}
+                onChange={(e) => setPathway(e.target.value)}
+              >
+                <option value='oae'>{data.oae.pathway_name}</option>
+                <option value='seaweed'>{data.seaweed.pathway_name}</option>
+                <option value='ew'>{data.ew.pathway_name}</option>
+              </Select>
+
+              <Flex sx={{ gap: 3 }}>
+                <Badge>
+                  {VCL && VCL.find(Boolean) ? VCL.join(' - ') : 'X - X'}
+                </Badge>
+                <Box sx={{ color: 'secondary' }}>
+                  Verification Confidence Level (VCL)
+                </Box>
+              </Flex>
+
+              <Box>{pathway_description}</Box>
+            </Flex>
 
             <Divider sx={{ my: 5, ml: [0, 0, '-32px', '-48px'] }} />
           </Box>
 
-          {values.oae && <OAE />}
-          {values.seaweed && <Seaweed />}
-          {values['enhanced weathering'] && <EnhancedWeathering />}
+          {pathway === 'oae' && <OAE />}
+          {pathway === 'seaweed' && <Seaweed />}
+          {pathway === 'ew' && <EnhancedWeathering />}
         </Column>
       </Row>
     </Layout>
