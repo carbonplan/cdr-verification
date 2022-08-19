@@ -1,5 +1,5 @@
 {
-  "pathway_name": "Ocean Alkalinity Enhancement",
+  "pathway_name": "Ocean Alkalinity Enhancement Electrochemical",
   "pathway_description": "",
   "VCL": [""],
   "equation": "(1-2-3-4+5-6-7)-(8+9)",
@@ -22,11 +22,11 @@
       "category": "drawdown",
       "name": "alk_add",
       "description": "optimal atmospheric removal",
-      "comments": "Assuming full conversion of mineral alkalinity into dissolved inorganic carbon (DIC) from atmospheric CO2, this can be calculated based on the measured addition of a mineral in addition to an analysis of the mineral composition.",
+      "comments": "Assuming full conversion of alkalinity into dissolved inorganic carbon (DIC) from atmospheric CO2, this can be calculated based on the measured addition of NaOH or other alkalinity to the oceans.",
       "uncertainty_type": "execution",
       "responsibility": "project",
-      "uncertainty_magnitude_min": "low",
-      "uncertainty_magnitude_max": "medium",
+      "uncertainty_magnitude_min": "negligible",
+      "uncertainty_magnitude_max": "negligible",
       "notes": "",
       "revisions": []
     },
@@ -52,7 +52,7 @@
       "uncertainty_type": "execution",
       "responsibility": "project",
       "uncertainty_magnitude_min": "low",
-      "uncertainty_magnitude_max": "high",
+      "uncertainty_magnitude_max": "medium",
       "notes": "",
       "revisions": []
     },
@@ -97,6 +97,19 @@
     },
     {
       "element": "7",
+      "category": "drawdown",
+      "name": "acid_return",
+      "description": "long-term fate of acid",
+      "comments": "Any source of acid from the process that ultimately reaches the ocean or interacts with terrestrial carbonates prior to being neutralized will counteract claimed alkalinity enhancement. At the project level, it's possible to ascertain the likely end fate of produced acid using operational records. As this solution scales, acid disposal may become more of a challenge.",
+      "uncertainty_type": "execution",
+      "responsibility": "project",
+      "uncertainty_magnitude_min": "low",
+      "uncertainty_magnitude_max": "low",
+      "notes": "",
+      "revisions": []
+    },
+    {
+      "element": "8",
       "category": "emissions",
       "name": "energy_co2",
       "description": "energy use emissions",
@@ -109,7 +122,7 @@
       "revisions": []
     },
     {
-      "element": "8",
+      "element": "9",
       "category": "emissions",
       "name": "mat_co2",
       "description": "material embodied emissions",
@@ -122,7 +135,7 @@
       "revisions": []
     },
     {
-      "element": "9",
+      "element": "10",
       "category": "permanence",
       "name": "tau_dic",
       "description": "DIC residence time",
