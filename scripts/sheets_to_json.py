@@ -21,6 +21,12 @@ gc = gspread.authorize(credentials)
 gsheet_doc_name = 'CDR MRV Pathway Uncertainties'
 worksheet_name = 'DAC'
 
+def get_legend_sheet(gsheet_doc_name: str) -> pd.DataFrame:
+    sh = gc.open(gsheet_doc_name)
+    sheet = sh.worksheet('Legend')
+    data_list = sheet.get_all_values()
+    return pd.DataFrame(data_list[1::],columns=data_list[0])
+
 def get_all_sheets_in_doc(gsheet_doc_name: str) -> list:
     """returns list of all worksheets including ID and name"""
     sh = gc.open(gsheet_doc_name)
@@ -49,27 +55,37 @@ def sheet_data_to_metadata(sheet_data: list) -> dict:
 def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """Sanitizes dataframe for web formatting"""
 
-    #replace empty strings with nan
+    # removes any uneeded cols
+    df = df[['element','category','name','description','comments','uncertainty_type','responsibility','uncertainty_magnitude_min','uncertainty_magnitude_max','notes','revisions']]
+
+    # replace empty strings with nan
     df = df.replace(r'^\s*$', np.nan, regex=True)
 
-    #convert to snake_case
+    #removes additional empty rows
+    df.dropna(axis=0, how='all', inplace=True)
+
+    # convert to snake_case
     df.columns = df.columns.str.replace(' ','_')
 
-    # cast diagram component as string
-    df['diagram_component'] = df['diagram_component'].astype(str)
+    # cast element as string
+    df['element'] = df['element'].astype(str)
 
-    #regex magic for leading/trailing whitespace
+    # regex magic for leading/trailing whitespace
     df = df.replace(r"^ +| +$", r"", regex=True)
 
-    #set empty vals to empty lists for revisions col
-    idx = df['revisions'].isna()
-    df['revisions'][idx] = df['revisions'][idx].apply(lambda x: "")
-    df['revisions'] = df['revisions'].apply(lambda x: x.split(","))
+    # set empty vals to empty lists for revisions col
+    df['revisions'] = df['revisions'].apply(lambda d: d if isinstance(d, (str,list)) else [])
 
-    # removes to, splits into lists
-    df['uncertainty_magnitude'] = df['uncertainty_magnitude'].str.replace('to ','').str.split(' ')
+    # removes any uneeded cols
+    df = df[['element','category','name','description','comments','uncertainty_type','responsibility','uncertainty_magnitude_min','uncertainty_magnitude_max','notes','revisions']]
 
     return df
+
+def write_legend_to_json(df: pd.DataFrame):
+    """writes legend df to .json"""
+    with open(f'../data/legend.json', 'w') as fp:
+        json.dump(df.to_dict(orient='records'), fp, indent=4)
+
 
 def write_to_json(df: pd.DataFrame, pathway_name: str, pathway_description: str, VCL: str, equation: str,):
     """Writes cleaned dataframe and metadata to .json.
@@ -105,16 +121,20 @@ def process_sheet(gsheet_doc_name: str, worksheet_name: str):
     cdf = clean_dataframe(df)
     write_to_json(cdf, **metadata_dict)
 
+def process_legend(gsheet_doc_name: str):
+    ldf = get_legend_sheet(gsheet_doc_name)
+    write_legend_to_json(ldf)
+
+
 
 gsheet_doc_name = 'CDR MRV Pathway Uncertainties'
+avail_pathways = ['DAC', 'BiCRS','EW','TER_BIO','OCEAN_BIO_no_harvest','OCEAN_BIO_harvest','OAE_echem','OAE_mineral']
 
 
-worksheet_name = 'DAC'
-# worksheet_name = 'EW'
-# worksheet_name = 'OAE_electrochemical'
+for pathway in avail_pathways:
+    print(pathway)
+    process_sheet(gsheet_doc_name, pathway)
 
-process_sheet(gsheet_doc_name, worksheet_name)
-
-
+process_legend(gsheet_doc_name)
 
 
