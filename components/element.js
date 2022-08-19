@@ -1,6 +1,7 @@
 import { Box, Divider, Flex } from 'theme-ui'
 import { Badge, Expander, Row, Column } from '@carbonplan/components'
 import Circle from './circle'
+import Uncertainty from './uncertainty'
 import { CATEGORY_COLORS } from './constants'
 
 const Element = ({
@@ -9,7 +10,8 @@ const Element = ({
   element,
   description,
   uncertainty_type,
-  uncertainty_magnitude,
+  uncertainty_magnitude_min,
+  uncertainty_magnitude_max,
   responsibility,
   active,
   onClick,
@@ -28,7 +30,7 @@ const Element = ({
   return (
     <Box sx={{ my: [2, 3, 4, 4] }}>
       <Row columns={[6, 7, 4, 4]}>
-        <Column start={1} width={[6, 7, 3, 3]}>
+        <Column start={1} width={[4, 7, 3, 3]}>
           <Flex
             sx={{
               alignItems: 'center',
@@ -39,16 +41,25 @@ const Element = ({
             <Box>{description}</Box>
           </Flex>
         </Column>
-        <Column start={4} width={1}>
+        <Column start={[5, 4, 4, 4]} width={1}>
           <Flex
             sx={{
               alignItems: 'center',
               justifyContent: 'flex-end',
-              gap: 3,
+              gap: [4, 5, 5, 6],
+              mr: ['-48px', '-56px', '-56px', '-72px'],
             }}
           >
-            ????
-            <Expander value={active} onClick={onClick} sx={{ flexShrink: 0 }} />
+            <Uncertainty
+              min={uncertainty_magnitude_min}
+              max={uncertainty_magnitude_max}
+              sx={{ flexShrink: 0 }}
+            />
+            <Expander
+              value={active}
+              onClick={onClick}
+              sx={{ flexShrink: 0, zIndex: 1 }}
+            />
           </Flex>
         </Column>
       </Row>

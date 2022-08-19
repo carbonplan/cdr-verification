@@ -3,13 +3,13 @@ import { UNCERTAINTIES } from './constants'
 const sortByUncertainty = (a, b) => {
   if (a.uncertainty_magnitude_max !== b.uncertainty_magnitude_max) {
     return (
-      UNCERTAINTIES.indexOf(a.uncertainty_magnitude_max) -
-      UNCERTAINTIES.indexOf(b.uncertainty_magnitude_max)
+      UNCERTAINTIES.indexOf(b.uncertainty_magnitude_max) -
+      UNCERTAINTIES.indexOf(a.uncertainty_magnitude_max)
     )
   } else if (a.uncertainty_magnitude_min !== b.uncertainty_magnitude_min) {
     return (
-      UNCERTAINTIES.indexOf(a.uncertainty_magnitude_min) -
-      UNCERTAINTIES.indexOf(b.uncertainty_magnitude_min)
+      UNCERTAINTIES.indexOf(b.uncertainty_magnitude_min) -
+      UNCERTAINTIES.indexOf(a.uncertainty_magnitude_min)
     )
   } else {
     return a.element.localeCompare(b.element)
