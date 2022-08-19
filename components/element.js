@@ -6,7 +6,7 @@ import { CATEGORY_MAPPING } from './constants'
 const Element = ({
   category,
   comments,
-  diagram_component,
+  element,
   description,
   uncertainty_type,
   uncertainty_magnitude,
@@ -35,11 +35,7 @@ const Element = ({
               gap: 2,
             }}
           >
-            <Circle
-              id={diagram_component}
-              category={category}
-              sx={{ flexShrink: 0 }}
-            />
+            <Circle id={element} category={category} sx={{ flexShrink: 0 }} />
             <Box>{description}</Box>
           </Flex>
         </Column>

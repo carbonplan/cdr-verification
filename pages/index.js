@@ -2,8 +2,16 @@ import { useState } from 'react'
 import { Box, Divider } from 'theme-ui'
 import { Layout, Row, Column, Filter } from '@carbonplan/components'
 import { OAE, Seaweed, EnhancedWeathering } from '../components/flow-diagrams'
-import data from '../data.json'
+import oae from '../data/Ocean_Alkalinity_Enhancement.json'
+import seaweed from '../data/Ocean_Biomass_Sinking.json'
+import ew from '../data/Enhanced_Weathering.json'
 import Element from '../components/element'
+
+const data = {
+  oae,
+  seaweed,
+  'enhanced weathering': ew,
+}
 
 const Index = () => {
   const [values, setValues] = useState({
@@ -11,10 +19,12 @@ const Index = () => {
     seaweed: false,
     'enhanced weathering': false,
   })
+  const value = Object.keys(values).find(Boolean)
   const [element, setElement] = useState(null)
 
-  // temporarily hardcode data access
-  const { pathway_name, pathway_description, vcl, equation, elements } = data[0]
+  const { pathway_name, pathway_description, vcl, equation, elements } =
+    data[value]
+
   return (
     <Layout
       title='CDR MRV – CarbonPlan'
@@ -51,13 +61,11 @@ const Index = () => {
           <Divider sx={{ my: 5, mr: [0, 0, '-32px', '-48px'] }} />
           {elements.map((d) => (
             <Element
-              key={d.diagram_component}
+              key={d.element}
               {...d}
-              active={d.diagram_component === element}
+              active={d.element === element}
               onClick={() =>
-                setElement((prev) =>
-                  prev === d.diagram_component ? null : d.diagram_component
-                )
+                setElement((prev) => (prev === d.element ? null : d.element))
               }
             />
           ))}
