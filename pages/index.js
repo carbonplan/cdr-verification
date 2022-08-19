@@ -6,7 +6,8 @@ import oae from '../data/Ocean_Alkalinity_Enhancement.json'
 import seaweed from '../data/Ocean_Biomass_Sinking.json'
 import ew from '../data/Enhanced_Weathering.json'
 import Element from '../components/element'
-
+import { CATEGORY_COLORS } from '../components/constants'
+import { getElements } from '../components/utils'
 const data = {
   oae,
   seaweed,
@@ -18,6 +19,11 @@ const Index = () => {
     oae: true,
     seaweed: false,
     'enhanced weathering': false,
+  })
+  const [filters, setFilters] = useState({
+    drawdown: true,
+    emissions: true,
+    other: true,
   })
   const value = Object.keys(values).find((k) => values[k])
   const [element, setElement] = useState(null)
@@ -59,7 +65,15 @@ const Index = () => {
             diagrams], uncertainty information, and chemical equations.
           </Box>
           <Divider sx={{ my: 5, mr: [0, 0, '-32px', '-48px'] }} />
-          {elements.map((d) => (
+          <Filter
+            values={filters}
+            setValues={setFilters}
+            colors={CATEGORY_COLORS}
+            showAll
+          />
+          <Divider sx={{ my: 5, mr: [0, 0, '-32px', '-48px'] }} />
+
+          {getElements(elements, filters).map((d) => (
             <Element
               key={d.element}
               {...d}

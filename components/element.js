@@ -1,7 +1,7 @@
 import { Box, Divider, Flex } from 'theme-ui'
 import { Badge, Expander, Row, Column } from '@carbonplan/components'
 import Circle from './circle'
-import { CATEGORY_MAPPING } from './constants'
+import { CATEGORY_COLORS } from './constants'
 
 const Element = ({
   category,
@@ -16,7 +16,7 @@ const Element = ({
 }) => {
   const sx = {
     heading: {
-      color: CATEGORY_MAPPING[category],
+      color: CATEGORY_COLORS[category],
       letterSpacing: 'smallcaps',
       textTransform: 'uppercase',
       mb: 2,
