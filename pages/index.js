@@ -36,12 +36,7 @@ const Index = () => {
   const { pathway_description, VCL, equation, elements } = data[pathway]
 
   return (
-    <Layout
-      title='CDR MRV – CarbonPlan'
-      footer={false}
-      metadata={false}
-      nav={'research'}
-    >
+    <Layout title='CDR MRV – CarbonPlan' metadata={false} nav={'research'}>
       <Row>
         <Column start={1} width={[6, 7, 4, 4]} mt={4}>
           <Box
@@ -124,17 +119,6 @@ const Index = () => {
           ))}
         </Column>
         <Column start={[1, 2, 5, 5]} width={[0, 0, 1, 1]}>
-          <Box
-            sx={{
-              width: '50%',
-              height: '100%',
-              borderWidth: 0,
-              borderRight: '1px',
-              borderColor: 'muted',
-              borderStyle: 'solid',
-            }}
-          />
-
           <Box
             sx={{
               width: '50%',
