@@ -38,27 +38,23 @@ const Element = ({
             }}
           >
             <Circle id={element} category={category} sx={{ flexShrink: 0 }} />
-            <Box>{description}</Box>
+            <Box>
+              {description}
+              &nbsp;
+              <Expander
+                value={active}
+                onClick={onClick}
+                sx={{ verticalAlign: 'middle', zIndex: 1 }}
+              />
+            </Box>
           </Flex>
         </Column>
         <Column start={[5, 4, 4, 4]} width={1}>
-          <Flex
-            sx={{
-              alignItems: 'center',
-              gap: [2, 3, 3, 4],
-            }}
-          >
-            <Uncertainty
-              min={uncertainty_magnitude_min}
-              max={uncertainty_magnitude_max}
-              sx={{ flexShrink: 0.5 }}
-            />
-            <Expander
-              value={active}
-              onClick={onClick}
-              sx={{ flexShrink: 0.25, zIndex: 1 }}
-            />
-          </Flex>
+          <Uncertainty
+            min={uncertainty_magnitude_min}
+            max={uncertainty_magnitude_max}
+            sx={{ flexShrink: 0.5 }}
+          />
         </Column>
       </Row>
 
