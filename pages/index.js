@@ -97,13 +97,12 @@ const Index = () => {
                 sx={{ ml: 1 }}
               />
             </Column>
-            <Column start={[5, 6, 3, 3]} width={2} sx={{ textAlign: 'right' }}>
+            <Column start={[5, 6, 4, 4]} width={1}>
               <TableHeader
                 sort={sort}
                 setSort={setSort}
                 id='uncertainty'
                 label='Uncertainty'
-                sx={{ alignItems: 'flex-end' }}
               />
             </Column>
           </Row>

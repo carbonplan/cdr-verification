@@ -45,20 +45,18 @@ const Element = ({
           <Flex
             sx={{
               alignItems: 'center',
-              justifyContent: 'flex-end',
-              gap: [4, 5, 5, 6],
-              mr: ['-48px', '-56px', '-56px', '-72px'],
+              gap: [2, 3, 3, 4],
             }}
           >
             <Uncertainty
               min={uncertainty_magnitude_min}
               max={uncertainty_magnitude_max}
-              sx={{ flexShrink: 0 }}
+              sx={{ flexShrink: 0.5 }}
             />
             <Expander
               value={active}
               onClick={onClick}
-              sx={{ flexShrink: 0, zIndex: 1 }}
+              sx={{ flexShrink: 0.25, zIndex: 1 }}
             />
           </Flex>
         </Column>
