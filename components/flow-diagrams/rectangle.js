@@ -7,8 +7,8 @@ const Rectangle = ({
   id,
   category,
   start: [gridColumnStart, gridRowStart],
-  width = 4,
-  height = 2,
+  width = 6,
+  height = 4,
   invert = false,
   borderColor = 'primary',
   borderStyle = 'solid',
@@ -28,7 +28,6 @@ const Rectangle = ({
         borderWidth: '1px',
         borderStyle,
         color: invert ? 'background' : 'primary',
-        fontSize: 1,
       }}
     >
       {label && (
@@ -70,7 +69,7 @@ const Rectangle = ({
           alignItems: 'center',
           textAlign: 'center',
           justifyContent: 'center',
-          fontSize: [0, 0, 1, 1],
+          fontSize: [0, 0, 0, 1],
         }}
       >
         {children}
