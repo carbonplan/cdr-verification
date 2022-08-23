@@ -9,7 +9,7 @@ import {
   Badge,
 } from '@carbonplan/components'
 import { OAE, Seaweed, EnhancedWeathering } from '../components/flow-diagrams'
-import oae from '../data/Ocean_Alkalinity_Enhancement.json'
+import oae from '../data/Ocean_Alkalinity_Enhancement_Electrochemical.json'
 import seaweed from '../data/Ocean_Biomass_Sinking.json'
 import ew from '../data/Enhanced_Weathering.json'
 import Element from '../components/element'
