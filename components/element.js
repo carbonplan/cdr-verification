@@ -4,6 +4,7 @@ import Circle from './circle'
 import Uncertainty from './uncertainty'
 import { CATEGORY_COLORS } from './constants'
 import { useElement } from './context/element'
+import { useRef } from 'react'
 
 const Element = ({
   category,
@@ -15,7 +16,14 @@ const Element = ({
   uncertainty_magnitude_max,
   responsibility,
 }) => {
-  const { active, hovered, setActive } = useElement(element)
+  const { active, hovered, setActive, setHovered } = useElement(element)
+  const container = useRef(null)
+
+  // useEffect(() => {
+  //   if (active && container.current) {
+  //     container.current.scrollIntoView()
+  //   }
+  // }, [active])
 
   const sx = {
     heading: {
@@ -29,7 +37,12 @@ const Element = ({
   }
 
   return (
-    <Box sx={{ my: [2, 3, 4, 4] }}>
+    <Box
+      sx={{ my: [2, 3, 4, 4], cursor: 'pointer' }}
+      onClick={setActive}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
       <Row columns={[6, 7, 4, 4]}>
         <Column start={1} width={[4, 7, 3, 3]}>
           <Flex
@@ -64,7 +77,7 @@ const Element = ({
       </Row>
 
       {active ? (
-        <Box>
+        <Box ref={container}>
           <Divider />
           <Row columns={[6, 7, 4, 4]}>
             <Column sx={sx.column} start={1} width={[6, 7, 4, 2]}>
