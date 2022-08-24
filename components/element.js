@@ -1,10 +1,10 @@
 import { Box, Divider, Flex } from 'theme-ui'
+import { useEffect, useRef } from 'react'
 import { Badge, Expander, Row, Column } from '@carbonplan/components'
 import Circle from './circle'
 import Uncertainty from './uncertainty'
 import { CATEGORY_COLORS } from './constants'
 import { useElement } from './context/element'
-import { useRef } from 'react'
 
 const Element = ({
   category,
@@ -17,13 +17,13 @@ const Element = ({
   responsibility,
 }) => {
   const { active, hovered, setActive, setHovered } = useElement(element)
-  const container = useRef(null)
+  const el = useRef(null)
 
-  // useEffect(() => {
-  //   if (active && container.current) {
-  //     container.current.scrollIntoView()
-  //   }
-  // }, [active])
+  useEffect(() => {
+    if (active && el.current) {
+      el.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+  }, [active])
 
   const sx = {
     heading: {
@@ -38,6 +38,7 @@ const Element = ({
 
   return (
     <Box
+      ref={el}
       sx={{ my: [2, 3, 4, 4], cursor: 'pointer' }}
       onClick={setActive}
       onMouseEnter={() => setHovered(true)}
@@ -77,7 +78,7 @@ const Element = ({
       </Row>
 
       {active ? (
-        <Box ref={container}>
+        <Box>
           <Divider />
           <Row columns={[6, 7, 4, 4]}>
             <Column sx={sx.column} start={1} width={[6, 7, 4, 2]}>
