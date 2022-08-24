@@ -3,6 +3,7 @@ import { Badge, Expander, Row, Column } from '@carbonplan/components'
 import Circle from './circle'
 import Uncertainty from './uncertainty'
 import { CATEGORY_COLORS } from './constants'
+import { useElement } from './context/element'
 
 const Element = ({
   category,
@@ -13,9 +14,9 @@ const Element = ({
   uncertainty_magnitude_min,
   uncertainty_magnitude_max,
   responsibility,
-  active,
-  onClick,
 }) => {
+  const { active, setActive } = useElement(element)
+
   const sx = {
     heading: {
       color: CATEGORY_COLORS[category],
@@ -43,7 +44,7 @@ const Element = ({
               &nbsp;
               <Expander
                 value={active}
-                onClick={onClick}
+                onClick={setActive}
                 sx={{ verticalAlign: 'middle', zIndex: 1 }}
               />
             </Box>

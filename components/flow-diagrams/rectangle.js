@@ -1,6 +1,8 @@
 import { Box, Flex } from 'theme-ui'
+import { alpha } from '@theme-ui/color'
 
 import Circle from '../circle'
+import { useElement } from '../context/element'
 
 const Rectangle = ({
   children,
@@ -14,20 +16,33 @@ const Rectangle = ({
   borderStyle = 'solid',
   label,
 }) => {
+  const { active, setActive, setHovered } = useElement(id)
+
   return (
     <Box
       id={id}
+      tabIndex={id ? 0 : null}
+      onClick={id ? setActive : null}
       sx={{
+        cursor: id ? 'pointer' : 'default',
         position: 'relative',
         gridColumnStart,
         gridColumnEnd: gridColumnStart + width,
         gridRowStart,
         gridRowEnd: gridRowStart + height,
-        backgroundColor: invert ? 'primary' : 'none',
-        borderColor: invert ? 'none' : borderColor,
+        backgroundColor: invert ? 'primary' : null,
+        borderColor: invert ? null : borderColor,
         borderWidth: '1px',
         borderStyle,
         color: invert ? 'background' : 'primary',
+        transition: 'background-color, color, border-color 0.15s',
+        '&:hover': id
+          ? {
+              backgroundColor: invert ? alpha('primary', 0.5) : null,
+              borderColor: invert ? null : alpha(borderColor, 0.5),
+              color: invert ? 'background' : alpha('primary', 0.5),
+            }
+          : {},
       }}
     >
       {label && (
