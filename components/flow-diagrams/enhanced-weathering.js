@@ -45,7 +45,6 @@ const Flow = () => {
         start={[5, 6]}
         width={16}
         height={8}
-        borderColor='secondary'
         borderStyle='dashed'
         id='0'
         category='operations'

@@ -12,17 +12,31 @@ const Rectangle = ({
   width = 6,
   height = 4,
   invert = false,
-  borderColor = 'primary',
   borderStyle = 'solid',
   label,
 }) => {
-  const { active, setActive, setHovered } = useElement(id)
+  const { status, setActive, setHovered } = useElement(id)
+
+  let opacity
+  switch (status) {
+    case 'hovered':
+      opacity = 0.75
+      break
+    case 'inactive':
+      opacity = 0.4
+      break
+    default:
+      opacity = 1
+      break
+  }
 
   return (
     <Box
       id={id}
       tabIndex={id ? 0 : null}
       onClick={id ? setActive : null}
+      onMouseEnter={id ? () => setHovered(true) : null}
+      onMouseLeave={id ? () => setHovered(false) : null}
       sx={{
         cursor: id ? 'pointer' : 'default',
         position: 'relative',
@@ -30,25 +44,18 @@ const Rectangle = ({
         gridColumnEnd: gridColumnStart + width,
         gridRowStart,
         gridRowEnd: gridRowStart + height,
-        backgroundColor: invert ? 'primary' : null,
-        borderColor: invert ? null : borderColor,
+        backgroundColor: invert ? alpha('primary', opacity) : null,
+        borderColor: invert ? null : alpha('primary', opacity),
         borderWidth: '1px',
         borderStyle,
-        color: invert ? 'background' : 'primary',
+        color: invert ? 'background' : alpha('primary', opacity),
         transition: 'background-color, color, border-color 0.15s',
-        '&:hover': id
-          ? {
-              backgroundColor: invert ? alpha('primary', 0.5) : null,
-              borderColor: invert ? null : alpha(borderColor, 0.5),
-              color: invert ? 'background' : alpha('primary', 0.5),
-            }
-          : {},
       }}
     >
       {label && (
         <Box
           sx={{
-            color: borderColor,
+            color: 'primary',
             fontFamily: 'mono',
             letterSpacing: 'mono',
             textTransform: 'uppercase',
@@ -69,6 +76,7 @@ const Rectangle = ({
         >
           <Circle
             id={id}
+            opacity={opacity}
             category={category}
             sx={{
               backgroundColor: 'background',

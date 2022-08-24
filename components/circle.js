@@ -1,4 +1,5 @@
 import { Box, Flex } from 'theme-ui'
+import { alpha } from '@theme-ui/color'
 
 import { CATEGORY_COLORS } from './constants'
 
@@ -53,7 +54,7 @@ const ICONS = {
   permanence: <Clock />,
 }
 
-const Circle = ({ id, category, sx }) => {
+const Circle = ({ id, category, opacity = 1, sx }) => {
   let content
   if (id.includes('*')) {
     // For now, use annotation in ID to indicate whether an element is one we don't suggest considering.
@@ -68,15 +69,16 @@ const Circle = ({ id, category, sx }) => {
     <Flex
       sx={{
         backgroundColor: 'background',
-        border: (theme) =>
-          `1px solid ${theme.colors[CATEGORY_COLORS[category]]}`,
+        borderWidth: '1px',
+        borderStyle: 'solid',
+        borderColor: alpha(CATEGORY_COLORS[category], opacity),
         alignContent: 'center',
         justifyContent: 'center',
         borderRadius: '24px',
         width: '24px',
         height: '24px',
         textAlign: 'center',
-        color: CATEGORY_COLORS[category],
+        color: alpha(CATEGORY_COLORS[category], opacity),
         fontSize: 1,
         ...sx,
       }}

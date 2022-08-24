@@ -15,7 +15,7 @@ const Element = ({
   uncertainty_magnitude_max,
   responsibility,
 }) => {
-  const { active, setActive } = useElement(element)
+  const { active, hovered, setActive } = useElement(element)
 
   const sx = {
     heading: {
@@ -45,7 +45,11 @@ const Element = ({
               <Expander
                 value={active}
                 onClick={setActive}
-                sx={{ verticalAlign: 'middle', zIndex: 1 }}
+                sx={{
+                  verticalAlign: 'middle',
+                  zIndex: 1,
+                  stroke: hovered ? 'primary' : 'secondary',
+                }}
               />
             </Box>
           </Flex>

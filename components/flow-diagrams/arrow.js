@@ -1,4 +1,6 @@
+import { alpha } from '@theme-ui/color'
 import { Box } from 'theme-ui'
+import { useElementContext } from '../context/element'
 
 const ArrowEnd = ({ sx }) => (
   <Box
@@ -59,8 +61,10 @@ const Arrow = ({
   length,
   hideArrow = false,
 }) => {
+  const { active } = useElementContext()
   const horizontal = right || left
   const vertical = up || down
+  const opacity = active ? 0.4 : 1
   return (
     <Box
       sx={{
@@ -70,6 +74,7 @@ const Arrow = ({
         gridRowStart,
         gridRowEnd: vertical ? gridRowStart + length : gridRowStart,
         [horizontal ? 'height' : 'width']: 0,
+        color: alpha('primary', opacity),
       }}
     >
       <Box
@@ -88,8 +93,10 @@ const Arrow = ({
           position: 'absolute',
           width: '100%',
           height: '100%',
-          [horizontal ? 'borderTop' : 'borderLeft']: (theme) =>
-            `1px solid ${theme.colors.primary}`,
+          borderWidth: 0,
+          borderStyle: 'solid',
+          [horizontal ? 'borderTopWidth' : 'borderLeftWidth']: '1px',
+          borderColor: alpha('primary', opacity),
         }}
       />
 

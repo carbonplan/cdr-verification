@@ -37,7 +37,6 @@ const Flow = () => {
         start={[5, 6]}
         width={20}
         height={14}
-        borderColor='secondary'
         borderStyle='dashed'
         id='0'
         category='operations'
@@ -111,7 +110,7 @@ const Flow = () => {
 
       <Arrow start={[25, 26]} length={1} left />
 
-      <Rectangle id='9' category='permanence' start={[18, 24]}>
+      <Rectangle id='10' category='permanence' start={[18, 24]}>
         DIC residence time
       </Rectangle>
     </Grid>
