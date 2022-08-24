@@ -72,7 +72,7 @@ const Rectangle = ({
           fontSize: [0, 0, 0, 1],
         }}
       >
-        {children}
+        <Box sx={{ padding: 1 }}>{children}</Box>
       </Flex>
     </Box>
   )
