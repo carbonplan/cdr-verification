@@ -34,7 +34,8 @@ const Flow = () => {
         height={8}
         borderColor='secondary'
         borderStyle='dashed'
-        label='Seller'
+        id='0'
+        category='operations'
       />
 
       <Rectangle start={[7, 8]} width={4} invert>
