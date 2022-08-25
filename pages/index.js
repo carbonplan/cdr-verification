@@ -1,29 +1,19 @@
 import { useState } from 'react'
-import { Box, Container, Divider, Flex } from 'theme-ui'
+import { Box, Container, Divider } from 'theme-ui'
 import {
   Layout,
   Row,
   Column,
   Filter,
-  Select,
-  Badge,
   useScrollbarClass,
 } from '@carbonplan/components'
 import { OAE, Seaweed, EnhancedWeathering } from '../components/flow-diagrams'
-import oae from '../data/Ocean_Alkalinity_Enhancement_-_Electrochemical.json'
-import seaweed from '../data/Ocean_Biomass_Sinking_No_-_Harvest.json'
-import ew from '../data/Enhanced_Weathering.json'
 import Element from '../components/element'
-import { CATEGORY_COLORS } from '../components/constants'
+import { DATA, CATEGORY_COLORS } from '../components/constants'
 import { getElements } from '../components/utils'
 import TableHeader from '../components/table/header'
 import { ElementProvider } from '../components/context/element'
-
-const data = {
-  oae,
-  seaweed,
-  ew,
-}
+import PathwayInfo from '../components/pathway-info'
 
 const Index = () => {
   const [pathway, setPathway] = useState('oae')
@@ -35,7 +25,7 @@ const Index = () => {
   const [sort, setSort] = useState('number')
   const scrollClass = useScrollbarClass()
 
-  const { pathway_description, VCL, equation, elements } = data[pathway]
+  const { elements } = DATA[pathway]
 
   return (
     <Layout
@@ -189,34 +179,7 @@ const Index = () => {
                     zIndex: 10,
                   }}
                 >
-                  <Flex sx={{ gap: 3, flexDirection: 'column' }}>
-                    <Select
-                      size='md'
-                      value={pathway}
-                      onChange={(e) => {
-                        setPathway(e.target.value)
-                        // setElement(null)
-                      }}
-                    >
-                      <option value='oae'>{data.oae.pathway_name}</option>
-                      <option value='seaweed'>
-                        {data.seaweed.pathway_name}
-                      </option>
-                      <option value='ew'>{data.ew.pathway_name}</option>
-                    </Select>
-
-                    <Flex sx={{ gap: 3 }}>
-                      <Badge>
-                        {VCL && VCL.find(Boolean) ? VCL.join(' - ') : 'X - X'}
-                      </Badge>
-                      <Box sx={{ color: 'secondary' }}>
-                        Verification Confidence Level (VCL)
-                      </Box>
-                    </Flex>
-
-                    <Box>{pathway_description}</Box>
-                  </Flex>
-
+                  <PathwayInfo pathway={pathway} setPathway={setPathway} />
                   <Divider sx={{ my: 5, ml: [0, 0, '-32px', '-48px'] }} />
                 </Box>
 
