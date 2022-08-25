@@ -17,7 +17,7 @@ const Flow = () => {
       </Rectangle>
 
       <Rectangle
-        id='7'
+        id='6'
         category='emissions'
         start={[5, 3]}
         height={1}
@@ -27,7 +27,7 @@ const Flow = () => {
         Energy
       </Rectangle>
       <Rectangle
-        id='8'
+        id='7'
         category='emissions'
         start={[8, 3]}
         height={1}
@@ -46,7 +46,7 @@ const Flow = () => {
         width={16}
         height={8}
         borderStyle='dashed'
-        id='0'
+        id='10'
         category='operations'
       />
 
@@ -74,7 +74,7 @@ const Flow = () => {
 
       <Arrow start={[29, 12]} length={2} right />
 
-      <Rectangle id='11' category='permanence' start={[32, 10]}>
+      <Rectangle id='8' category='permanence' start={[32, 10]}>
         Superficial carbonate durability
       </Rectangle>
 
@@ -82,7 +82,7 @@ const Flow = () => {
       <Arrow start={[30, 17]} length={3} down hideArrow />
       <Arrow start={[30, 20]} length={2} right />
 
-      <Rectangle id='12' category='permanence' start={[32, 15]}>
+      <Rectangle id='9' category='permanence' start={[32, 15]}>
         DIC residence time
       </Rectangle>
 
@@ -102,7 +102,7 @@ const Flow = () => {
         start={[6, 16]}
         width={6}
         height={3}
-        id='6'
+        id='5*'
         category='drawdown'
       >
         Soil carbon impacts
@@ -111,7 +111,7 @@ const Flow = () => {
         start={[6, 20]}
         width={6}
         height={3}
-        id='9'
+        id='7*'
         category='drawdown'
       >
         Agricultural lime use change
@@ -120,7 +120,7 @@ const Flow = () => {
         start={[6, 24]}
         width={6}
         height={3}
-        id='10'
+        id='7**'
         category='drawdown'
       >
         Fertilizer use change

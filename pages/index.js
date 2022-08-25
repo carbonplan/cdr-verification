@@ -10,8 +10,8 @@ import {
   useScrollbarClass,
 } from '@carbonplan/components'
 import { OAE, Seaweed, EnhancedWeathering } from '../components/flow-diagrams'
-import oae from '../data/Ocean_Alkalinity_Enhancement_Electrochemical.json'
-import seaweed from '../data/Ocean_Biomass_Sinking.json'
+import oae from '../data/Ocean_Alkalinity_Enhancement_-_Electrochemical.json'
+import seaweed from '../data/Ocean_Biomass_Sinking_No_-_Harvest.json'
 import ew from '../data/Enhanced_Weathering.json'
 import Element from '../components/element'
 import { CATEGORY_COLORS } from '../components/constants'

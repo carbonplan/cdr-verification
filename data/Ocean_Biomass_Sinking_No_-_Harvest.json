@@ -1,22 +1,9 @@
 {
-  "pathway_name": "Ocean Biomass Sinking No Harvest",
+  "pathway_name": "Ocean Biomass Sinking No - Harvest",
   "pathway_description": "",
-  "VCL": [""],
+  "VCL": ["1", " 2"],
   "equation": "(1-2-3-4)-(5+6)",
   "elements": [
-    {
-      "element": "0",
-      "category": "operations",
-      "name": "ops",
-      "description": "project operations",
-      "comments": "The basis of any rigorous evaluation of what a carbon removal project has achieved is clarity around a project's operations. This includes (1) transparent operations and the ability for external parties to see the process unfolding, (2) auditable operation records that can be cross-checked against carbon removal claims, (3) transparent protocols around how carbon management outcomes are quantified if such claims are being made by the project, and (4) an auditable \u2014 and preferably public \u2014registry that ensures against double-counting of carbon removal benefits.",
-      "uncertainty_type": "execution",
-      "responsibility": "project",
-      "uncertainty_magnitude_min": "low",
-      "uncertainty_magnitude_max": "low",
-      "notes": "",
-      "revisions": []
-    },
     {
       "element": "1",
       "category": "drawdown",
@@ -106,6 +93,19 @@
       "uncertainty_magnitude_min": "low",
       "uncertainty_magnitude_max": "medium",
       "notes": "The uncertainty associated with time to recirculation is dependent on how well sinking location is known and specified.",
+      "revisions": []
+    },
+    {
+      "element": "8",
+      "category": "operations",
+      "name": "ops",
+      "description": "project operations",
+      "comments": "The basis of any rigorous evaluation of what a carbon removal project has achieved is clarity around a project's operations. This includes (1) transparent operations and the ability for external parties to see the process unfolding, (2) auditable operation records that can be cross-checked against carbon removal claims, (3) transparent protocols around how carbon management outcomes are quantified if such claims are being made by the project, and (4) an auditable \u2014 and preferably public \u2014registry that ensures against double-counting of carbon removal benefits.",
+      "uncertainty_type": "execution",
+      "responsibility": "project",
+      "uncertainty_magnitude_min": "low",
+      "uncertainty_magnitude_max": "low",
+      "notes": "",
       "revisions": []
     }
   ]

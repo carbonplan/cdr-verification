@@ -1,22 +1,9 @@
 {
   "pathway_name": "Direct Air Capture",
   "pathway_description": "",
-  "VCL": ["5", " 4"],
+  "VCL": ["4", " 5"],
   "equation": "(1-2)-(3+4)",
   "elements": [
-    {
-      "element": "0",
-      "category": "operations",
-      "name": "ops",
-      "description": "project operations",
-      "comments": "The basis of any rigorous evaluation of what a carbon removal project has achieved is clarity around a project's operations. This includes (1) transparent operations and the ability for external parties to see the process unfolding, (2) auditable operation records that can be cross-checked against carbon removal claims, (3) transparent protocols around how carbon management outcomes are quantified if such claims are being made by the project, and (4) an auditable \u2014 and preferably public \u2014registry that ensures against double-counting of carbon removal benefits.",
-      "uncertainty_type": "execution",
-      "responsibility": "project",
-      "uncertainty_magnitude_min": "low",
-      "uncertainty_magnitude_max": "low",
-      "notes": "",
-      "revisions": "2000-01-01"
-    },
     {
       "element": "1",
       "category": "drawdown",
@@ -81,6 +68,19 @@
       "uncertainty_magnitude_max": "medium",
       "notes": "",
       "revisions": []
+    },
+    {
+      "element": "6",
+      "category": "operations",
+      "name": "ops",
+      "description": "project operations",
+      "comments": "The basis of any rigorous evaluation of what a carbon removal project has achieved is clarity around a project's operations. This includes (1) transparent operations and the ability for external parties to see the process unfolding, (2) auditable operation records that can be cross-checked against carbon removal claims, (3) transparent protocols around how carbon management outcomes are quantified if such claims are being made by the project, and (4) an auditable \u2014 and preferably public \u2014registry that ensures against double-counting of carbon removal benefits.",
+      "uncertainty_type": "execution",
+      "responsibility": "project",
+      "uncertainty_magnitude_min": "low",
+      "uncertainty_magnitude_max": "low",
+      "notes": "",
+      "revisions": "2000-01-01"
     }
   ]
 }

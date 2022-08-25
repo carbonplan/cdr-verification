@@ -1,22 +1,9 @@
 {
   "pathway_name": "Enhanced Weathering",
   "pathway_description": "",
-  "VCL": [""],
+  "VCL": ["3", " 4"],
   "equation": "(1-2-3-4-5-6)-(7+8-9-10)",
   "elements": [
-    {
-      "element": "0",
-      "category": "operations",
-      "name": "ops",
-      "description": "project operations",
-      "comments": "The basis of any rigorous evaluation of what a carbon removal project has achieved is clarity around a project's operations. This includes (1) transparent operations and the ability for external parties to see the process unfolding, (2) auditable operation records that can be cross-checked against carbon removal claims, (3) transparent protocols around how carbon management outcomes are quantified if such claims are being made by the project, and (4) an auditable \u2014 and preferably public \u2014registry that ensures against double-counting of carbon removal benefits.",
-      "uncertainty_type": "execution",
-      "responsibility": "project",
-      "uncertainty_magnitude_min": "low",
-      "uncertainty_magnitude_max": "low",
-      "notes": "",
-      "revisions": []
-    },
     {
       "element": "1",
       "category": "drawdown",
@@ -38,7 +25,7 @@
       "comments": "The rate of rock weathering depends on factors including particle size, soil type, ambient temperature, precipitation, and irrigation. While most feedstock dissolution potential will ultimately be realized, the effective drawdown from EW occurs when the CO2 is actually removed from the atmosphere. The measurement of weathering rates \u2014 and by extension the fraction of the mineral feedstock that remains after a given period of time \u2014 is an area of active innovation. Existing approaches include measuring temporally granular changes to pH and dissolved inorganic carbon (DIC), and tracking changes in the concentration of tracer elements which originate in the applied mineral and persist in the soil after rock weathering.",
       "uncertainty_type": "scientific, execution",
       "responsibility": "project",
-      "uncertainty_magnitude_min": "low",
+      "uncertainty_magnitude_min": "medium",
       "uncertainty_magnitude_max": "high",
       "notes": "",
       "revisions": []
@@ -77,13 +64,13 @@
       "comments": "The additional flux of dissolved inorganic carbon (DIC) from the site of application into regional groundwater systems represents captured CO2. The longer-term fate of this DIC is hard to precisely estimate. Groundwater can spend days to centuries in the ground before being discharged to streams. Once in surface waters, outgassing (evasion) might occur, for example as a result of shifts in pH.  The long time-scale of this process makes it difficult to study directly, but regional models may inform evasion estimates.",
       "uncertainty_type": "scientific",
       "responsibility": "system",
-      "uncertainty_magnitude_min": "medium",
+      "uncertainty_magnitude_min": "low",
       "uncertainty_magnitude_max": "medium",
       "notes": "",
       "revisions": []
     },
     {
-      "element": "6",
+      "element": "5*",
       "category": "drawdown",
       "name": "soil_c",
       "description": "soil carbon impacts",
@@ -96,7 +83,7 @@
       "revisions": []
     },
     {
-      "element": "7",
+      "element": "6",
       "category": "emissions",
       "name": "energy_co2",
       "description": "energy use emissions",
@@ -109,7 +96,7 @@
       "revisions": []
     },
     {
-      "element": "8",
+      "element": "7",
       "category": "emissions",
       "name": "mat_co2",
       "description": "material embodied emissions",
@@ -122,7 +109,7 @@
       "revisions": []
     },
     {
-      "element": "9",
+      "element": "7*",
       "category": "emissions",
       "name": "lime_replace",
       "description": "replacing agricultural lime",
@@ -135,7 +122,7 @@
       "revisions": []
     },
     {
-      "element": "10",
+      "element": "7**",
       "category": "emissions",
       "name": "fert_reduce",
       "description": "reducing fertilizer use",
@@ -148,7 +135,7 @@
       "revisions": []
     },
     {
-      "element": "11",
+      "element": "8",
       "category": "permanence",
       "name": "carb_surf",
       "description": "surficial carbonate durability",
@@ -161,13 +148,26 @@
       "revisions": []
     },
     {
-      "element": "12",
+      "element": "9",
       "category": "permanence",
       "name": "tau_dic",
       "description": "DIC residence time",
       "comments": "The concept of ocean DIC lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000-100,000 years. [TK: permanence of surficial carbonates.]",
       "uncertainty_type": "scientific",
       "responsibility": "system",
+      "uncertainty_magnitude_min": "low",
+      "uncertainty_magnitude_max": "low",
+      "notes": "",
+      "revisions": []
+    },
+    {
+      "element": "10",
+      "category": "operations",
+      "name": "ops",
+      "description": "project operations",
+      "comments": "The basis of any rigorous evaluation of what a carbon removal project has achieved is clarity around a project's operations. This includes (1) transparent operations and the ability for external parties to see the process unfolding, (2) auditable operation records that can be cross-checked against carbon removal claims, (3) transparent protocols around how carbon management outcomes are quantified if such claims are being made by the project, and (4) an auditable \u2014 and preferably public \u2014registry that ensures against double-counting of carbon removal benefits.",
+      "uncertainty_type": "execution",
+      "responsibility": "project",
       "uncertainty_magnitude_min": "low",
       "uncertainty_magnitude_max": "low",
       "notes": "",
