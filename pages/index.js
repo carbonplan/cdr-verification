@@ -7,6 +7,7 @@ import {
   Filter,
   Select,
   Badge,
+  useScrollbarClass,
 } from '@carbonplan/components'
 import { OAE, Seaweed, EnhancedWeathering } from '../components/flow-diagrams'
 import oae from '../data/Ocean_Alkalinity_Enhancement_Electrochemical.json'
@@ -32,6 +33,7 @@ const Index = () => {
     other: true,
   })
   const [sort, setSort] = useState('number')
+  const scrollClass = useScrollbarClass()
 
   const { pathway_description, VCL, equation, elements } = data[pathway]
 
@@ -54,6 +56,7 @@ const Index = () => {
               <Column
                 start={1}
                 width={[6, 7, 4, 4]}
+                className={scrollClass}
                 sx={{
                   position: 'sticky',
                   top: 56,
@@ -165,6 +168,7 @@ const Index = () => {
               <Column
                 start={[1, 2, 6, 6]}
                 width={[6, 6, 7, 7]}
+                className={scrollClass}
                 sx={{
                   position: 'sticky',
                   top: 56,
