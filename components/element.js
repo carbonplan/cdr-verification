@@ -58,7 +58,6 @@ const Element = ({
               &nbsp;
               <Expander
                 value={active}
-                onClick={setActive}
                 sx={{
                   verticalAlign: 'middle',
                   zIndex: 1,
