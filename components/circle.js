@@ -54,7 +54,7 @@ const ICONS = {
   permanence: <Clock />,
 }
 
-const Circle = ({ id, category, opacity = 1, sx }) => {
+const Circle = ({ id, category, opacity = 1, sx, ...props }) => {
   let content
   if (id.includes('*')) {
     // For now, use annotation in ID to indicate whether an element is one we don't suggest considering.
@@ -82,6 +82,7 @@ const Circle = ({ id, category, opacity = 1, sx }) => {
         fontSize: 1,
         ...sx,
       }}
+      {...props}
     >
       {content}
     </Flex>
