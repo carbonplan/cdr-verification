@@ -112,7 +112,7 @@ const Flow = () => {
         width={6}
         height={3}
         id='7*'
-        category='drawdown'
+        category='emissions'
       >
         Agricultural lime use change
       </Rectangle>
@@ -121,7 +121,7 @@ const Flow = () => {
         width={6}
         height={3}
         id='7**'
-        category='drawdown'
+        category='emissions'
       >
         Fertilizer use change
       </Rectangle>
