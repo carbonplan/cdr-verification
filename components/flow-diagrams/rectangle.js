@@ -5,17 +5,15 @@ import Circle from '../circle'
 import { useElement } from '../context/element'
 
 const Rectangle = ({
-  children,
   id,
-  category,
+  label,
   start: [gridColumnStart, gridRowStart],
   borderStyle: borderStyleProp,
   width = 6,
   height = 4,
   invert = false,
-  label,
 }) => {
-  const { status, setActive, setHovered } = useElement(id)
+  const { status, data, setActive, setHovered } = useElement(id)
   const deemphasized = id?.includes('*')
   const borderColor = deemphasized ? 'secondary' : 'primary'
   const borderStyle = borderStyleProp ?? (deemphasized ? 'dashed' : 'solid')
@@ -55,21 +53,7 @@ const Rectangle = ({
         transition: 'background-color, color, border-color 0.15s',
       }}
     >
-      {label && (
-        <Box
-          sx={{
-            color: 'primary',
-            fontFamily: 'mono',
-            letterSpacing: 'mono',
-            textTransform: 'uppercase',
-            position: 'absolute',
-            mt: '-20px',
-          }}
-        >
-          {label}
-        </Box>
-      )}
-      {category && id ? (
+      {data?.category && id ? (
         <Flex
           sx={{
             position: 'absolute',
@@ -80,7 +64,7 @@ const Rectangle = ({
           <Circle
             id={id}
             opacity={opacity}
-            category={category}
+            category={data.category}
             sx={{
               backgroundColor: 'background',
               mt: borderStyle === 'none' ? '-24px' : '-14px',
@@ -98,7 +82,7 @@ const Rectangle = ({
           fontSize: [0, 0, 0, 1],
         }}
       >
-        <Box sx={{ padding: 1 }}>{children}</Box>
+        <Box sx={{ padding: 1 }}>{label ?? data?.description}</Box>
       </Flex>
     </Box>
   )

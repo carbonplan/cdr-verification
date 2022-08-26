@@ -37,7 +37,7 @@ const Index = () => {
     >
       <Box>
         <Container>
-          <ElementProvider>
+          <ElementProvider pathway={pathway}>
             <Row
               sx={{
                 height: ['fit-content', 'fit-content', 'calc(100vh - 56px)'],

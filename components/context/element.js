@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { DATA } from '../constants'
 
 const ElementContext = createContext({
   active: null,
@@ -8,7 +9,12 @@ const ElementContext = createContext({
 })
 
 export const useElement = (id) => {
-  const { active, setActive, hovered, setHovered } = useContext(ElementContext)
+  const { active, setActive, hovered, setHovered, pathway } =
+    useContext(ElementContext)
+  const data = useMemo(
+    () => DATA[pathway].elements.find((d) => d.element === id),
+    [id, pathway]
+  )
 
   let status = 'default'
   if (id && hovered === id) {
@@ -21,6 +27,7 @@ export const useElement = (id) => {
 
   return {
     status,
+    data,
     active: active === id,
     hovered: hovered === id,
     setActive: () => setActive((prev) => (prev === id ? null : id)),
@@ -32,12 +39,19 @@ export const useElementContext = () => {
   return useContext(ElementContext)
 }
 
-export const ElementProvider = ({ children }) => {
+export const ElementProvider = ({ pathway, children }) => {
   const [active, setActive] = useState(null)
   const [hovered, setHovered] = useState(null)
 
+  useEffect(() => {
+    setActive(null)
+    setHovered(null)
+  }, [pathway])
+
   return (
-    <ElementContext.Provider value={{ active, setActive, hovered, setHovered }}>
+    <ElementContext.Provider
+      value={{ pathway, active, setActive, hovered, setHovered }}
+    >
       {children}
     </ElementContext.Provider>
   )

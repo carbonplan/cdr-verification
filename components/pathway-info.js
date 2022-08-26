@@ -1,24 +1,18 @@
 import { Box, Flex } from 'theme-ui'
-import { Select, Badge, Row, Column } from '@carbonplan/components'
+import { Select, Badge } from '@carbonplan/components'
 
 import { DATA } from './constants'
-import { useElementContext } from './context/element'
 import Equation from './equation'
 
 const PathwayInfo = ({ pathway, setPathway }) => {
   const { pathway_description, VCL, equation, elements } = DATA[pathway]
-  const { setActive, setHovered } = useElementContext()
 
   return (
     <Flex sx={{ gap: 3, flexDirection: 'column' }}>
       <Select
         size='md'
         value={pathway}
-        onChange={(e) => {
-          setPathway(e.target.value)
-          setActive(null)
-          setHovered(null)
-        }}
+        onChange={(e) => setPathway(e.target.value)}
       >
         <option value='oae'>{DATA.oae.pathway_name}</option>
         <option value='seaweed'>{DATA.seaweed.pathway_name}</option>
