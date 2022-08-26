@@ -9,13 +9,16 @@ const Rectangle = ({
   id,
   category,
   start: [gridColumnStart, gridRowStart],
+  borderStyle: borderStyleProp,
   width = 6,
   height = 4,
   invert = false,
-  borderStyle = 'solid',
   label,
 }) => {
   const { status, setActive, setHovered } = useElement(id)
+  const deemphasized = id?.includes('*')
+  const borderColor = deemphasized ? 'secondary' : 'primary'
+  const borderStyle = borderStyleProp ?? (deemphasized ? 'dashed' : 'solid')
 
   let opacity
   switch (status) {
@@ -45,7 +48,7 @@ const Rectangle = ({
         gridRowStart,
         gridRowEnd: gridRowStart + height,
         backgroundColor: invert ? alpha('primary', opacity) : null,
-        borderColor: invert ? null : alpha('primary', opacity),
+        borderColor: invert ? null : alpha(borderColor, opacity),
         borderWidth: '1px',
         borderStyle,
         color: invert ? 'background' : alpha('primary', opacity),
