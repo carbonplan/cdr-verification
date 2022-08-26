@@ -1,7 +1,7 @@
 {
   "pathway_name": "Enhanced Weathering",
   "pathway_description": "",
-  "VCL": ["3", " 4"],
+  "VCL": ["3", " 3"],
   "equation": "(1-2-3-4-5+5*)-(6+7-7*-7**)",
   "elements": [
     {
@@ -25,7 +25,7 @@
       "comments": "The rate of rock weathering depends on factors including particle size, soil type, ambient temperature, precipitation, and irrigation. While most feedstock dissolution potential will ultimately be realized, the effective drawdown from EW occurs when the CO2 is actually removed from the atmosphere. The measurement of weathering rates \u2014 and by extension the fraction of the mineral feedstock that remains after a given period of time \u2014 is an area of active innovation. Existing approaches include measuring temporally granular changes to pH and dissolved inorganic carbon (DIC), and tracking changes in the concentration of tracer elements which originate in the applied mineral and persist in the soil after rock weathering.",
       "uncertainty_type": "scientific, execution",
       "responsibility": "project",
-      "uncertainty_magnitude_min": "medium",
+      "uncertainty_magnitude_min": "high",
       "uncertainty_magnitude_max": "high",
       "notes": "",
       "revisions": []
@@ -33,12 +33,12 @@
     {
       "element": "3",
       "category": "drawdown",
-      "name": "acid_oth",
+      "name": "alk_loss",
       "description": "dissolution from non-CO2 sources of acid",
       "comments": "Mineral weathering results in atmospheric CO2 drawdown when acid reacts with the applied mineral, thereby increasing the alkalinity of soil pore water and increasing its capacity to store atmospheric CO2. Non-CO2 sources of acidity in the soil may react with the resulting alkalinity, reducing total CO2 drawdown. These sources of acid may include protons associated with mineral and organic surfaces, denitrification, or sulfide oxidation.",
       "uncertainty_type": "scientific",
       "responsibility": "project",
-      "uncertainty_magnitude_min": "low",
+      "uncertainty_magnitude_min": "medium",
       "uncertainty_magnitude_max": "medium",
       "notes": "",
       "revisions": []
@@ -70,7 +70,7 @@
       "revisions": []
     },
     {
-      "element": "5*",
+      "element": "6*",
       "category": "drawdown",
       "name": "soil_c",
       "description": "soil carbon impacts",
@@ -83,7 +83,7 @@
       "revisions": []
     },
     {
-      "element": "6",
+      "element": "7",
       "category": "emissions",
       "name": "energy_co2",
       "description": "energy use emissions",
@@ -96,7 +96,7 @@
       "revisions": []
     },
     {
-      "element": "7",
+      "element": "8",
       "category": "emissions",
       "name": "mat_co2",
       "description": "material embodied emissions",
@@ -109,7 +109,7 @@
       "revisions": []
     },
     {
-      "element": "7*",
+      "element": "9*",
       "category": "emissions",
       "name": "lime_replace",
       "description": "replacing agricultural lime",
@@ -122,7 +122,7 @@
       "revisions": []
     },
     {
-      "element": "7**",
+      "element": "10*",
       "category": "emissions",
       "name": "fert_reduce",
       "description": "reducing fertilizer use",
@@ -135,7 +135,7 @@
       "revisions": []
     },
     {
-      "element": "8",
+      "element": "11",
       "category": "permanence",
       "name": "carb_surf",
       "description": "surficial carbonate durability",
@@ -148,7 +148,7 @@
       "revisions": []
     },
     {
-      "element": "9",
+      "element": "12",
       "category": "permanence",
       "name": "tau_dic",
       "description": "DIC residence time",
@@ -161,7 +161,7 @@
       "revisions": []
     },
     {
-      "element": "10",
+      "element": "13",
       "category": "operations",
       "name": "ops",
       "description": "project operations",

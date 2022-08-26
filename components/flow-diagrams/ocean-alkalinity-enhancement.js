@@ -11,7 +11,7 @@ const Flow = () => {
       <Arrow start={[4, 10]} length={2} right />
 
       <Rectangle
-        id='7'
+        id='8'
         category='emissions'
         width={4}
         start={[5, 3]}
@@ -21,7 +21,7 @@ const Flow = () => {
         Energy
       </Rectangle>
       <Rectangle
-        id='8'
+        id='9'
         category='emissions'
         width={4}
         start={[8, 3]}
@@ -38,7 +38,7 @@ const Flow = () => {
         width={20}
         height={14}
         borderStyle='dashed'
-        id='10'
+        id='11'
         category='operations'
       />
 
@@ -61,7 +61,7 @@ const Flow = () => {
 
       <Arrow start={[10, 19]} length={2} down />
 
-      <Rectangle id='6' category='drawdown' start={[7, 22]}>
+      <Rectangle id='7' category='drawdown' start={[7, 22]}>
         Long-term fate of acid
       </Rectangle>
 
@@ -93,7 +93,7 @@ const Flow = () => {
         Calcification response
       </Rectangle>
       <Rectangle
-        id='4*'
+        id='5*'
         category='drawdown'
         start={[27, 18]}
         width={8}
@@ -104,13 +104,13 @@ const Flow = () => {
 
       <Arrow start={[31, 22]} length={1} down />
 
-      <Rectangle id='5' category='drawdown' start={[27, 24]} width={8}>
+      <Rectangle id='6' category='drawdown' start={[27, 24]} width={8}>
         Air sea gas exchange efficiency
       </Rectangle>
 
       <Arrow start={[25, 26]} length={1} left />
 
-      <Rectangle id='9' category='permanence' start={[18, 24]}>
+      <Rectangle id='10' category='permanence' start={[18, 24]}>
         DIC residence time
       </Rectangle>
     </Grid>

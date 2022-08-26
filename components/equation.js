@@ -58,7 +58,7 @@ const Equation = ({ equation, elements }) => {
   return (
     <Box sx={{ fontFamily: 'mono', letterSpacing: 'mono' }}>
       <Row columns={[6, 6, 7, 7]}>
-        <Column start={1} width={[3, 3, 2, 2]} sx={{ mr: -20 }}>
+        <Column start={1} width={[3, 3, 2, 2]} sx={{}}>
           Total Carbon Removal<Box sx={sx.subscript}>CO₂e</Box>
         </Column>
         <Column start={[1, 1, 3, 3]} width={[6, 6, 5, 5]}>

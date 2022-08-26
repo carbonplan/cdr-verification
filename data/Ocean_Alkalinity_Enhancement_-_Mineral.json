@@ -57,7 +57,7 @@
       "revisions": []
     },
     {
-      "element": "4*",
+      "element": "5*",
       "category": "drawdown",
       "name": "poc",
       "description": "particulate organic carbon response",
@@ -70,7 +70,7 @@
       "revisions": []
     },
     {
-      "element": "5",
+      "element": "6",
       "category": "drawdown",
       "name": "asg",
       "description": "air-sea gas exchange",
@@ -83,7 +83,7 @@
       "revisions": []
     },
     {
-      "element": "6",
+      "element": "7",
       "category": "emissions",
       "name": "energy_co2",
       "description": "energy use emissions",
@@ -96,7 +96,7 @@
       "revisions": []
     },
     {
-      "element": "7",
+      "element": "8",
       "category": "emissions",
       "name": "mat_co2",
       "description": "material embodied emissions",
@@ -109,7 +109,7 @@
       "revisions": []
     },
     {
-      "element": "8",
+      "element": "9",
       "category": "permanence",
       "name": "tau_dic",
       "description": "DIC residence time",
@@ -122,7 +122,7 @@
       "revisions": []
     },
     {
-      "element": "9",
+      "element": "10",
       "category": "operations",
       "name": "ops",
       "description": "project operations",
