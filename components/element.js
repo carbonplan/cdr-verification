@@ -39,7 +39,7 @@ const Element = ({
   return (
     <Box
       ref={el}
-      sx={{ my: [2, 3, 4, 4], cursor: 'pointer' }}
+      sx={{ my: [4, 3, 4, 4], cursor: 'pointer' }}
       onClick={setActive}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}

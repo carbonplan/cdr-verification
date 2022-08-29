@@ -5,6 +5,7 @@ import {
   Row,
   Column,
   Filter,
+  Tray,
   useScrollbarClass,
 } from '@carbonplan/components'
 import { OAE, Seaweed, EnhancedWeathering } from '../components/flow-diagrams'
@@ -23,6 +24,7 @@ const Index = () => {
     other: true,
   })
   const [sort, setSort] = useState('number')
+  const [settings, setSettings] = useState(false)
   const scrollClass = useScrollbarClass()
 
   const { elements } = DATA[pathway]
@@ -34,6 +36,10 @@ const Index = () => {
       footer={false}
       metadata={false}
       nav={'research'}
+      settings={{
+        value: settings,
+        onClick: () => setSettings((prev) => !prev),
+      }}
     >
       <Box>
         <Container>
@@ -108,6 +114,15 @@ const Index = () => {
                     zIndex: 10,
                   }}
                 >
+                  <PathwayInfo
+                    pathway={pathway}
+                    setPathway={setPathway}
+                    size='xs'
+                    showInfo={false}
+                  />
+
+                  <Divider sx={{ mb: 3, ml: [0, 0, '-32px', '-48px'] }} />
+
                   <Filter
                     values={filters}
                     setValues={setFilters}
@@ -160,6 +175,7 @@ const Index = () => {
                 width={[6, 6, 7, 7]}
                 className={scrollClass}
                 sx={{
+                  display: ['none', 'none', 'initial', 'initial'],
                   position: 'sticky',
                   top: 56,
                   height: ['fit-content', 'fit-content', 'calc(100vh - 56px)'],
@@ -188,6 +204,11 @@ const Index = () => {
                 {pathway === 'ew' && <EnhancedWeathering />}
               </Column>
             </Row>
+            <Tray expanded={settings}>
+              {pathway === 'oae' && <OAE />}
+              {pathway === 'seaweed' && <Seaweed />}
+              {pathway === 'ew' && <EnhancedWeathering />}
+            </Tray>
           </ElementProvider>
         </Container>
       </Box>
