@@ -18,7 +18,6 @@ const Flow = () => {
         height={1}
         width={4}
         borderStyle='none'
-        label='Energy'
       />
 
       <Rectangle
@@ -27,7 +26,6 @@ const Flow = () => {
         height={1}
         width={4}
         borderStyle='none'
-        label='Materials'
       />
       <Arrow start={[7, 4]} length={1} down />
       <Arrow start={[10, 4]} length={1} down />
@@ -69,13 +67,7 @@ const Flow = () => {
 
       <Rectangle id='12' start={[32, 15]} />
 
-      <Rectangle
-        id='5'
-        start={[31, 21]}
-        height={1}
-        borderStyle='none'
-        label='Leakage'
-      />
+      <Rectangle id='5' start={[31, 21]} height={1} borderStyle='none' />
 
       <Arrow start={[9, 13]} length={2} down />
 

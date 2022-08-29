@@ -14,7 +14,6 @@ const Flow = () => {
         start={[5, 3]}
         height={1}
         borderStyle='none'
-        label='Energy'
       />
       <Rectangle
         id='9'
@@ -22,7 +21,6 @@ const Flow = () => {
         start={[8, 3]}
         height={1}
         borderStyle='none'
-        label='Materials'
       />
       <Arrow start={[7, 4]} length={1} down />
       <Arrow start={[10, 4]} length={1} down />

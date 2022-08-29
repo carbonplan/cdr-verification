@@ -11,7 +11,6 @@ const Flow = () => {
         height={1}
         width={4}
         borderStyle='none'
-        label='Energy'
       />
       <Rectangle
         id='6'
@@ -19,7 +18,6 @@ const Flow = () => {
         height={1}
         width={4}
         borderStyle='none'
-        label='Materials'
       />
       <Arrow start={[7, 4]} length={1} down />
       <Arrow start={[10, 4]} length={1} down />
@@ -61,7 +59,6 @@ const Flow = () => {
         height={1}
         width={4}
         borderStyle='none'
-        label='Leakage'
       />
       <Arrow start={[16, 4]} length={1} up />
 
@@ -71,7 +68,6 @@ const Flow = () => {
         height={1}
         width={4}
         borderStyle='none'
-        label='Leakage'
       />
       <Arrow start={[25, 4]} length={1} up />
     </Grid>
