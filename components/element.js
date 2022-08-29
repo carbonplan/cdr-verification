@@ -72,6 +72,7 @@ const Element = ({
             min={uncertainty_magnitude_min}
             max={uncertainty_magnitude_max}
             sx={{ flexShrink: 0.5 }}
+            color={CATEGORY_COLORS[category]}
           />
         </Column>
       </Row>

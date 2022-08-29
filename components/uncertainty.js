@@ -1,32 +1,29 @@
 import { Box, Flex } from 'theme-ui'
-import { Question } from '@carbonplan/icons'
 import { UNCERTAINTIES } from './constants'
+import { mix } from '@theme-ui/color'
 
-const Uncertainty = ({ min, max, sx }) => {
+const Uncertainty = ({ color, max, sx }) => {
   const quantity = UNCERTAINTIES.indexOf(max)
-  const asterisk = min !== max
 
   return (
-    <Flex sx={{ position: 'relative', ...sx }}>
+    <Flex
+      sx={{
+        width: '100%',
+        height: 22,
+        flexDirection: 'row',
+        gap: [1, 2],
+        ...sx,
+      }}
+    >
       {new Array(quantity).fill(null).map((_, i) => (
-        <Question key={i} />
+        <Box
+          key={i}
+          sx={{ flex: 1, backgroundColor: mix(color, 'muted', 0.4) }}
+        />
       ))}
       {new Array(3 - quantity).fill(null).map((_, i) => (
-        <Question key={i} sx={{ color: 'secondary' }} />
+        <Box key={i} sx={{ flex: 1, backgroundColor: 'muted' }} />
       ))}
-      <Box
-        sx={{
-          fontFamily: 'mono',
-          letterSpacing: 'mono',
-          color: 'secondary',
-          position: 'absolute',
-          right: 0,
-          mt: -1,
-          mr: -2,
-        }}
-      >
-        {asterisk ? '*' : ''}
-      </Box>
     </Flex>
   )
 }
