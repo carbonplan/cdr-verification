@@ -21,7 +21,8 @@ const Index = () => {
   const [filters, setFilters] = useState({
     drawdown: true,
     emissions: true,
-    other: true,
+    operations: true,
+    permanence: true,
   })
   const [sort, setSort] = useState('number')
   const [settings, setSettings] = useState(false)

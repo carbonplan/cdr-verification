@@ -17,11 +17,7 @@ const sortByUncertainty = (a, b) => {
 }
 
 export const getElements = (elements, filters, sort = 'number') => {
-  const filtered = elements.filter((e) =>
-    ['permanence', 'operations'].includes(e.category)
-      ? filters.other
-      : filters[e.category]
-  )
+  const filtered = elements.filter((e) => filters[e.category])
 
   switch (sort) {
     case 'uncertainty':

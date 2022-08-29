@@ -5,11 +5,8 @@ import ew from '../data/Enhanced_Weathering.json'
 export const CATEGORY_COLORS = {
   drawdown: 'teal',
   emissions: 'yellow',
-  // TODO: should we combine `operations` and `permanence` in the data?
-  operations: 'orange',
-  permanence: 'orange',
-  // currently used in `Filter` label
-  other: 'orange',
+  operations: 'red',
+  permanence: 'pink',
 }
 
 export const UNCERTAINTIES = ['negligible', 'low', 'medium', 'high']
