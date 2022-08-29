@@ -53,26 +53,42 @@ const Element = ({
             }}
           >
             <Circle id={element} category={category} sx={{ flexShrink: 0 }} />
-            <Box>
-              {description}
-              &nbsp;
-              <Expander
-                value={active}
-                sx={{
-                  verticalAlign: 'middle',
-                  zIndex: 1,
-                  stroke: hovered ? 'primary' : 'secondary',
-                }}
-              />
-            </Box>
+            <Box>{description}</Box>
           </Flex>
         </Column>
-        <Column start={[5, 4, 4, 4]} width={1}>
-          <Uncertainty
-            min={uncertainty_magnitude_min}
-            max={uncertainty_magnitude_max}
-            sx={{ flexShrink: 0.5 }}
-            color={CATEGORY_COLORS[category]}
+        <Column
+          start={[5, 6, 4, 4]}
+          width={[2, 1]}
+          sx={{ position: 'relative' }}
+        >
+          <Flex sx={{ gap: [1, 2] }}>
+            <Uncertainty
+              min={uncertainty_magnitude_min}
+              max={uncertainty_magnitude_max}
+              flexShrink={0.5}
+              color={CATEGORY_COLORS[category]}
+            />
+            <Expander
+              value={active}
+              sx={{
+                display: ['initial', 'none'],
+                verticalAlign: 'middle',
+                zIndex: 1,
+                stroke: hovered ? 'primary' : 'secondary',
+              }}
+            />
+          </Flex>
+          <Expander
+            value={active}
+            sx={{
+              display: ['none', 'initial'],
+              verticalAlign: 'middle',
+              zIndex: 1,
+              stroke: hovered ? 'primary' : 'secondary',
+              position: 'absolute',
+              right: [-4, -5, -5, -6],
+              top: 0,
+            }}
           />
         </Column>
       </Row>
