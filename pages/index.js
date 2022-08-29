@@ -115,14 +115,16 @@ const Index = () => {
                     zIndex: 10,
                   }}
                 >
-                  <PathwayInfo
-                    pathway={pathway}
-                    setPathway={setPathway}
-                    size='xs'
-                    showInfo={false}
-                  />
+                  <Box sx={{ display: ['initial', 'initial', 'none', 'none'] }}>
+                    <PathwayInfo
+                      pathway={pathway}
+                      setPathway={setPathway}
+                      size='xs'
+                      showInfo={false}
+                    />
 
-                  <Divider sx={{ mb: 3, ml: [0, 0, '-32px', '-48px'] }} />
+                    <Divider sx={{ mb: 3, ml: [0, 0, '-32px', '-48px'] }} />
+                  </Box>
 
                   <Filter
                     values={filters}
