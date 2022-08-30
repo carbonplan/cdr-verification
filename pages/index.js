@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { Box, Container, Divider } from 'theme-ui'
 import {
   Layout,
@@ -8,9 +8,9 @@ import {
   Tray,
   useScrollbarClass,
 } from '@carbonplan/components'
-import { OAE, Seaweed, EnhancedWeathering } from '../components/flow-diagrams'
+import FLOW_DIAGRAMS from '../components/flow-diagrams'
 import Element from '../components/element'
-import { DATA, CATEGORY_COLORS } from '../components/constants'
+import { CATEGORY_COLORS } from '../components/constants'
 import { getElements } from '../components/utils'
 import TableHeader from '../components/table/header'
 import { ElementProvider } from '../components/context/element'
@@ -18,9 +18,12 @@ import PathwayInfo from '../components/pathway-info'
 import PathwaySelector from '../components/pathway-selector'
 import Tooltip from '../components/tooltip'
 import legend from '../data/legend.json'
+import pathways from '../data/pathways.json'
 
 const Index = () => {
-  const [pathway, setPathway] = useState('oae')
+  const [pathway, setPathway] = useState(
+    'Ocean_Alkalinity_Enhancement_-_Electrochemical'
+  )
   const [filters, setFilters] = useState({
     drawdown: true,
     emissions: true,
@@ -31,7 +34,10 @@ const Index = () => {
   const [settings, setSettings] = useState(false)
   const scrollClass = useScrollbarClass()
 
-  const { elements } = DATA[pathway]
+  const elements = useMemo(
+    () => pathways.find((p) => p.pathway_name === pathway).elements,
+    [pathway]
+  )
 
   return (
     <Layout
@@ -128,12 +134,7 @@ const Index = () => {
                     <Divider sx={{ mb: 3, ml: [0, 0, '-32px', '-48px'] }} />
                   </Box>
 
-                  <Tooltip
-                    tooltip={
-                      legend.find((d) => d.key === 'category')?.description
-                    }
-                    mt='10px'
-                  >
+                  <Tooltip tooltip={legend.category} mt='10px'>
                     <Filter
                       values={filters}
                       setValues={setFilters}
@@ -215,16 +216,10 @@ const Index = () => {
                   <Divider sx={{ my: 5, ml: [0, 0, '-32px', '-48px'] }} />
                 </Box>
 
-                {pathway === 'oae' && <OAE />}
-                {pathway === 'seaweed' && <Seaweed />}
-                {pathway === 'ew' && <EnhancedWeathering />}
+                {FLOW_DIAGRAMS[pathway]}
               </Column>
             </Row>
-            <Tray expanded={settings}>
-              {pathway === 'oae' && <OAE />}
-              {pathway === 'seaweed' && <Seaweed />}
-              {pathway === 'ew' && <EnhancedWeathering />}
-            </Tray>
+            <Tray expanded={settings}>{FLOW_DIAGRAMS[pathway]}</Tray>
           </ElementProvider>
         </Container>
       </Box>
