@@ -10,6 +10,8 @@ import { useElement } from './context/element'
 import legend from '../data/legend.json'
 
 const tooltips = {
+  uncertainty_magnitude: legend.find((d) => d.key === 'uncertainty_magnitude')
+    .description,
   uncertainty_type: legend.find((d) => d.key === 'uncertainty_type')
     .description,
   responsibility: legend.find((d) => d.key === 'responsibility').description,
@@ -108,6 +110,32 @@ const Element = ({
         <Box>
           <Divider />
           <Row columns={[6, 7, 4, 4]}>
+            <Column sx={sx.column} start={1} width={[6, 7, 4, 2]}>
+              <Tooltip tooltip={tooltips.uncertainty_type} sx={{ mb: 2 }}>
+                <Box sx={sx.heading}>Uncertainty magnitude</Box>
+              </Tooltip>
+
+              <Row columns={[6, 7, 4, 4]}>
+                <Column start={1} width={1}>
+                  <Uncertainty
+                    min={uncertainty_magnitude_min}
+                    max={uncertainty_magnitude_max}
+                    flexShrink={0.5}
+                    color={CATEGORY_COLORS[category]}
+                  />
+                </Column>
+                <Column start={2} width={[5, 6, 3, 3]}>
+                  <Badge sx={sx.badge}>{uncertainty_magnitude_min}</Badge>
+                  {uncertainty_magnitude_min !== uncertainty_magnitude_max ? (
+                    <>
+                      {' '}
+                      to{' '}
+                      <Badge sx={sx.badge}>{uncertainty_magnitude_max}</Badge>
+                    </>
+                  ) : null}
+                </Column>
+              </Row>
+            </Column>
             <Column sx={sx.column} start={1} width={[6, 7, 4, 2]}>
               <Tooltip tooltip={tooltips.uncertainty_type} sx={{ mb: 2 }}>
                 <Box sx={sx.heading}>Uncertainty type</Box>

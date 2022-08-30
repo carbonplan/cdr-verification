@@ -21,7 +21,7 @@ const Uncertainty = ({ color, max, sx }) => {
           sx={{ flex: 1, backgroundColor: mix(color, 'muted', 0.4) }}
         />
       ))}
-      {new Array(3 - quantity).fill(null).map((_, i) => (
+      {new Array(UNCERTAINTIES.length - 1 - quantity).fill(null).map((_, i) => (
         <Box key={i} sx={{ flex: 1, backgroundColor: 'muted' }} />
       ))}
     </Flex>

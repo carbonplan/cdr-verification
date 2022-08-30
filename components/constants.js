@@ -9,7 +9,13 @@ export const CATEGORY_COLORS = {
   permanence: 'pink',
 }
 
-export const UNCERTAINTIES = ['negligible', 'low', 'medium', 'high']
+export const UNCERTAINTIES = [
+  'negligible',
+  'low',
+  'medium',
+  'high',
+  'very high',
+]
 
 // TODO: remove when script generates array of pathways
 export const DATA = {
