@@ -95,7 +95,7 @@ def write_legend_to_json(df: pd.DataFrame):
 
 
 def df_to_dict(df: pd.DataFrame, pathway_name: str, pathway_description: str, VCL: str, equation: str) -> dict:
-    """_summary_
+    """Converts DataFrame and metadata into dictionary 
 
     Parameters
     ----------
