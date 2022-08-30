@@ -8,7 +8,9 @@ const PathwaySelector = ({ pathway, setPathway, size = 'sm' }) => {
       size={size}
       value={pathway}
       onChange={(e) => setPathway(e.target.value)}
-      sx={{ overflow: 'hidden' }}
+      sx={{
+        '& select': { width: '100%', overflow: 'hidden' },
+      }}
     >
       <option value='oae'>{DATA.oae.pathway_name}</option>
       <option value='seaweed'>{DATA.seaweed.pathway_name}</option>
