@@ -47,7 +47,7 @@ const Rectangle = ({
         gridRowEnd: gridRowStart + height,
         backgroundColor: invert ? alpha('primary', opacity) : null,
         borderColor: invert ? null : alpha(borderColor, opacity),
-        borderWidth: '1px',
+        borderWidth: invert ? 0 : '1px',
         borderStyle,
         color: invert ? 'background' : alpha('primary', opacity),
         transition: 'background-color, color, border-color 0.15s',
@@ -79,7 +79,7 @@ const Rectangle = ({
           alignItems: 'center',
           textAlign: 'center',
           justifyContent: 'center',
-          fontSize: [0, 0, 0, 1],
+          fontSize: ['2.5vw', '1.5vw', '1vw', '1vw'],
         }}
       >
         <Box sx={{ padding: 1 }}>{label ?? data?.description}</Box>

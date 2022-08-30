@@ -1,10 +1,10 @@
 import { Box } from 'theme-ui'
 
 const HEIGHTS = [
-  `calc(${1.5} * (${6} * (100vw - 7 * 24px) / 6 + ${5} * 24px))`,
+  `calc(${2} * (${6} * (100vw - 7 * 24px) / 6 + ${5} * 24px))`,
   `calc(${1} * (${6} * (100vw - 9 * 32px) / 8 + ${5} * 32px))`,
-  `calc(${0.65} * (${10} * (100vw - 13 * 32px) / 12 + ${9} * 32px))`,
-  `calc(${30 / 36} * (${10} * (100vw - 13 * 48px) / 12 + ${9} * 48px))`,
+  `calc(${1} * (${7} * (100vw - 13 * 32px) / 12 + ${7} * 32px))`,
+  `calc(${1} * (${7} * (100vw - 13 * 48px) / 12 + ${7} * 48px))`,
 ]
 
 const Grid = ({ children, debug = false }) => {
@@ -12,6 +12,7 @@ const Grid = ({ children, debug = false }) => {
     <Box
       sx={{
         display: 'grid',
+        ml: [0, 0, -32, -48],
         gridTemplateColumns: `repeat(36, ${100 / 36}%)`, // 36
         gridTemplateRows: `repeat(30, ${100 / 30}%)`, // 30
         gridAutoColumns: '1fr',
