@@ -50,30 +50,30 @@ const Index = () => {
           <ElementProvider pathway={pathway}>
             <Row
               sx={{
-                height: ['fit-content', 'fit-content', 'calc(100vh - 56px)'],
+                height: 'calc(100vh - 56px)',
               }}
             >
               <Column
                 start={1}
-                width={[6, 7, 4, 4]}
+                width={[6, 8, 4, 4]}
                 className={scrollClass}
                 sx={{
                   position: 'sticky',
                   top: 56,
-                  height: ['fit-content', 'fit-content', 'calc(100vh - 56px)'],
+                  height: 'calc(100vh - 56px)',
                   overflowY: 'scroll',
                   pl: [4, 5, 5, 6],
                   ml: [-4, -5, -5, -6],
-                  // nudge scrollbar over by 1 gutter width + 1/2 column width
+                  // nudge scrollbar over for mobile (1 gutter) and desktop (1 gutter + 1/2 column)
                   pr: [
-                    `calc(24px + (100vw - 7 * 24px) / 6 / 2)`,
-                    `calc(32px + (100vw - 9 * 32px) / 8 / 2)`,
+                    16,
+                    24,
                     `calc(32px + (100vw - 13 * 32px) / 12 / 2)`,
                     `calc(48px + (100vw - 13 * 48px) / 12 / 2)`,
                   ],
                   mr: [
-                    `calc(-1 * (24px + (100vw - 7 * 24px) / 6 / 2))`,
-                    `calc(-1 * (32px + (100vw - 9 * 32px) / 8 / 2))`,
+                    -16,
+                    -24,
                     `calc(-1 * (32px + (100vw - 13 * 32px) / 12 / 2))`,
                     `calc(-1 * (48px + (100vw - 13 * 48px) / 12 / 2))`,
                   ],
@@ -147,7 +147,7 @@ const Index = () => {
                   />
                 </Box>
 
-                <Row columns={[6, 7, 4, 4]}>
+                <Row columns={[6, 8, 4, 4]}>
                   <Column>
                     <TableHeader
                       sort={sort}
@@ -170,7 +170,11 @@ const Index = () => {
                   <Element key={d.element} {...d} />
                 ))}
               </Column>
-              <Column start={[1, 2, 5, 5]} width={[0, 0, 1, 1]}>
+              <Column
+                start={[1, 1, 5, 5]}
+                width={[1, 1, 1, 1]}
+                sx={{ display: ['none', 'none', 'initial'] }}
+              >
                 <Box
                   sx={{
                     width: '50%',
