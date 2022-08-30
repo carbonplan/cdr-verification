@@ -110,7 +110,7 @@ const Element = ({
         <Box>
           <Divider />
           <Row columns={[6, 7, 4, 4]}>
-            <Column sx={sx.column} start={1} width={[6, 7, 4, 2]}>
+            <Column sx={sx.column} start={1} width={[6, 7, 4, 4]}>
               <Tooltip tooltip={tooltips.uncertainty_type} sx={{ mb: 2 }}>
                 <Box sx={sx.heading}>Uncertainty magnitude</Box>
               </Tooltip>
