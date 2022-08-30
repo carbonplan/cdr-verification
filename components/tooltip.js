@@ -3,12 +3,18 @@ import { useState } from 'react'
 import AnimateHeight from 'react-animate-height'
 import { Info } from '@carbonplan/icons'
 
-const Tooltip = ({ children, tooltip, mt = '6px', sx }) => {
+const Tooltip = ({
+  children,
+  tooltip,
+  mt = '6px',
+  sx,
+  align = 'flex-start',
+}) => {
   const [expanded, setExpanded] = useState(false)
 
   return (
     <Box sx={sx}>
-      <Flex sx={{ gap: 2, alignItems: 'flex-start' }}>
+      <Flex sx={{ gap: 2, alignItems: align }}>
         {children}
         <IconButton
           onClick={() => setExpanded(!expanded)}
