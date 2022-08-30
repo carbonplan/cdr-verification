@@ -3,8 +3,17 @@ import { useEffect, useRef } from 'react'
 import { Badge, Expander, Row, Column } from '@carbonplan/components'
 import Circle from './circle'
 import Uncertainty from './uncertainty'
+import Tooltip from './tooltip'
 import { CATEGORY_COLORS } from './constants'
 import { useElement } from './context/element'
+
+import legend from '../data/legend.json'
+
+const tooltips = {
+  uncertainty_type: legend.find((d) => d.key === 'uncertainty_type')
+    .description,
+  responsibility: legend.find((d) => d.key === 'responsibility').description,
+}
 
 const Element = ({
   category,
@@ -30,7 +39,7 @@ const Element = ({
       color: CATEGORY_COLORS[category],
       letterSpacing: 'smallcaps',
       textTransform: 'uppercase',
-      mb: 2,
+      // mb: 2,
     },
     badge: { textTransform: 'capitalize' },
     column: { mb: 3 },
@@ -40,7 +49,7 @@ const Element = ({
     <Box
       ref={el}
       sx={{ my: [4, 3, 4, 4], cursor: 'pointer' }}
-      onClick={setActive}
+      onClick={() => !active && setActive()}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -70,6 +79,7 @@ const Element = ({
             />
             <Expander
               value={active}
+              onClick={() => active && setActive(null)}
               sx={{
                 display: ['initial', 'none'],
                 verticalAlign: 'middle',
@@ -80,6 +90,7 @@ const Element = ({
           </Flex>
           <Expander
             value={active}
+            onClick={() => active && setActive(null)}
             sx={{
               display: ['none', 'initial'],
               verticalAlign: 'middle',
@@ -98,11 +109,15 @@ const Element = ({
           <Divider />
           <Row columns={[6, 7, 4, 4]}>
             <Column sx={sx.column} start={1} width={[6, 7, 4, 2]}>
-              <Box sx={sx.heading}>Uncertainty type</Box>
+              <Tooltip tooltip={tooltips.uncertainty_type} sx={{ mb: 2 }}>
+                <Box sx={sx.heading}>Uncertainty type</Box>
+              </Tooltip>
               <Badge sx={sx.badge}>{uncertainty_type}</Badge>
             </Column>
             <Column sx={sx.column} start={[1, 1, 1, 3]} width={[6, 7, 4, 2]}>
-              <Box sx={sx.heading}>Uncertainty responsibility</Box>
+              <Tooltip tooltip={tooltips.responsibility}>
+                <Box sx={sx.heading}>Uncertainty responsibility</Box>
+              </Tooltip>
               <Badge sx={sx.badge}>{responsibility}</Badge>
             </Column>
             <Column sx={sx.column} start={1} width={[6, 7, 4, 4]}>

@@ -15,6 +15,8 @@ import { getElements } from '../components/utils'
 import TableHeader from '../components/table/header'
 import { ElementProvider } from '../components/context/element'
 import PathwayInfo from '../components/pathway-info'
+import Tooltip from '../components/tooltip'
+import legend from '../data/legend.json'
 
 const Index = () => {
   const [pathway, setPathway] = useState('oae')
@@ -126,12 +128,19 @@ const Index = () => {
                     <Divider sx={{ mb: 3, ml: [0, 0, '-32px', '-48px'] }} />
                   </Box>
 
-                  <Filter
-                    values={filters}
-                    setValues={setFilters}
-                    colors={CATEGORY_COLORS}
-                    showAll
-                  />
+                  <Tooltip
+                    tooltip={
+                      legend.find((d) => d.key === 'category')?.description
+                    }
+                    mt='10px'
+                  >
+                    <Filter
+                      values={filters}
+                      setValues={setFilters}
+                      colors={CATEGORY_COLORS}
+                      showAll
+                    />
+                  </Tooltip>
 
                   <Divider
                     sx={{ mb: 5, mt: 3, mr: [0, 0, '-32px', '-48px'] }}
