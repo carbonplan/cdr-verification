@@ -1,51 +1,59 @@
 import { Box, Flex } from 'theme-ui'
+import { alpha } from '@theme-ui/color'
 
 import Circle from '../circle'
+import { useElement } from '../context/element'
 
 const Rectangle = ({
-  children,
   id,
-  category,
-  start: [gridColumnStart, gridRowStart],
-  width = 4,
-  height = 2,
-  invert = false,
-  borderColor = 'primary',
-  borderStyle = 'solid',
   label,
+  start: [gridColumnStart, gridRowStart],
+  borderStyle: borderStyleProp,
+  width = 6,
+  height = 4,
+  invert = false,
 }) => {
+  const { status, data, setActive, setHovered } = useElement(id)
+  const deemphasized = id?.includes('*')
+  const borderColor = deemphasized ? 'secondary' : 'primary'
+  const borderStyle = borderStyleProp ?? (deemphasized ? 'dashed' : 'solid')
+
+  let opacity
+  switch (status) {
+    case 'hovered':
+      opacity = 0.75
+      break
+    case 'inactive':
+      opacity = 0.4
+      break
+    default:
+      opacity = 1
+      break
+  }
+
   return (
     <Box
       id={id}
+      tabIndex={id ? 0 : null}
+      onClick={id ? setActive : null}
+      onMouseEnter={id ? () => setHovered(true) : null}
+      onMouseLeave={id ? () => setHovered(false) : null}
       sx={{
+        cursor: id ? 'pointer' : 'default',
         position: 'relative',
         gridColumnStart,
         gridColumnEnd: gridColumnStart + width,
         gridRowStart,
         gridRowEnd: gridRowStart + height,
-        backgroundColor: invert ? 'primary' : 'none',
-        borderColor: invert ? 'none' : borderColor,
-        borderWidth: '1px',
+        backgroundColor: invert ? alpha('primary', opacity) : null,
+        borderColor: invert ? null : alpha(borderColor, opacity),
+        borderWidth: invert ? 0 : '1px',
         borderStyle,
-        color: invert ? 'background' : 'primary',
-        fontSize: 1,
+        color: invert ? 'background' : alpha('primary', opacity),
+        transition: 'background-color, color, border-color 0.15s',
       }}
     >
-      {label && (
-        <Box
-          sx={{
-            color: borderColor,
-            fontFamily: 'mono',
-            letterSpacing: 'mono',
-            textTransform: 'uppercase',
-            position: 'absolute',
-            mt: '-20px',
-          }}
-        >
-          {label}
-        </Box>
-      )}
-      {category && id ? (
+      {data?.category && id ? (
         <Flex
           sx={{
             position: 'absolute',
@@ -55,7 +63,8 @@ const Rectangle = ({
         >
           <Circle
             id={id}
-            category={category}
+            opacity={opacity}
+            category={data.category}
             sx={{
               backgroundColor: 'background',
               mt: borderStyle === 'none' ? '-24px' : '-14px',
@@ -70,10 +79,10 @@ const Rectangle = ({
           alignItems: 'center',
           textAlign: 'center',
           justifyContent: 'center',
-          fontSize: [0, 0, 1, 1],
+          fontSize: ['2.5vw', '1.5vw', '1vw', '1vw'],
         }}
       >
-        {children}
+        <Box sx={{ padding: 1 }}>{label ?? data?.description}</Box>
       </Flex>
     </Box>
   )

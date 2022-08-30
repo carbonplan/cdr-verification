@@ -5,89 +5,68 @@ import Arrow from './arrow'
 const Flow = () => {
   return (
     <Grid>
-      <Rectangle start={[1, 8]} width={3} borderStyle='none'>
-        Seawater
-      </Rectangle>
+      <Rectangle start={[1, 8]} width={2} borderStyle='none' label='Seawater' />
+      <Arrow start={[4, 10]} length={2} right />
 
       <Rectangle
-        id='4'
-        category='emissions'
+        id='8'
+        width={4}
         start={[5, 3]}
         height={1}
         borderStyle='none'
-      >
-        Energy
-      </Rectangle>
+      />
       <Rectangle
-        id='5'
-        category='emissions'
+        id='9'
+        width={4}
         start={[8, 3]}
         height={1}
         borderStyle='none'
-      >
-        Materials
-      </Rectangle>
+      />
       <Arrow start={[7, 4]} length={1} down />
       <Arrow start={[10, 4]} length={1} down />
 
-      <Arrow start={[4, 9]} length={2} right />
-
       <Rectangle
         start={[5, 6]}
-        width={18}
-        height={6}
-        borderColor='secondary'
+        width={20}
+        height={14}
         borderStyle='dashed'
-        label='Seller'
+        id='11'
+        label=''
       />
 
-      <Rectangle start={[7, 8]} width={6} invert>
-        Electrochemical separation
-      </Rectangle>
+      <Rectangle start={[7, 8]} invert label='Electrochemical separation' />
 
-      <Arrow start={[14, 9]} length={2} right />
-      <Arrow start={[10, 11]} length={2} down />
+      <Arrow start={[14, 10]} length={2} right />
+      <Arrow start={[10, 13]} length={1} down />
 
-      <Rectangle id='1' category='operations' invert start={[17, 8]}>
-        Base dispersal into ocean
-      </Rectangle>
+      <Rectangle id='1' invert start={[17, 8]} />
 
-      <Arrow start={[22, 9]} length={2} right />
-
-      <Rectangle start={[8, 13]} borderStyle='none'>
-        Acid bi-product disposal
-      </Rectangle>
-
-      <Arrow start={[13, 14]} length={2} right />
-
-      <Rectangle id='3' category='drawdown' start={[16, 13]}>
-        Long-term fate of acid
-      </Rectangle>
+      <Arrow start={[24, 10]} length={2} right />
 
       <Rectangle
-        start={[25, 6]}
-        width={11}
-        height={9}
-        label='Atmospheric carbon removal'
+        start={[7, 15]}
+        invert
+        height={3}
+        label='Acid bi-product disposal'
       />
-      <Rectangle id='2a' category='drawdown' start={[26, 7]} height={3}>
-        Air sea gas exchange efficiency
-      </Rectangle>
-      <Rectangle id='2b' category='drawdown' start={[31, 7]} height={3}>
-        Calcification response
-      </Rectangle>
-      <Rectangle id='2c' category='drawdown' start={[26, 11]} height={3}>
-        Carbonate vs bicarbonate formation
-      </Rectangle>
-      <Rectangle id='2d' category='drawdown' start={[31, 11]} height={3}>
-        Particulate Organic Carbon response
-      </Rectangle>
 
-      <Arrow start={[34, 16]} length={1} down />
+      <Arrow start={[10, 19]} length={2} down />
 
-      <Rectangle id='6' category='permanence' start={[32, 18]}>
-        DIC residence time
-      </Rectangle>
+      <Rectangle id='7' start={[7, 22]} />
+
+      <Rectangle id='2' start={[27, 6]} width={8} height={3} />
+
+      <Rectangle id='3' start={[27, 10]} width={8} height={3} />
+      <Rectangle id='4' start={[27, 14]} width={8} height={3} />
+      <Rectangle id='5*' start={[27, 18]} width={8} height={3} />
+
+      <Arrow start={[31, 22]} length={1} down />
+
+      <Rectangle id='6' start={[27, 24]} width={8} />
+
+      <Arrow start={[25, 26]} length={1} left />
+
+      <Rectangle id='10' start={[18, 24]} />
     </Grid>
   )
 }

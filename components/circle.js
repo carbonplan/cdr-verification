@@ -1,26 +1,29 @@
 import { Box, Flex } from 'theme-ui'
+import { alpha } from '@theme-ui/color'
 
 import { CATEGORY_COLORS } from './constants'
 
-const Circle = ({ id, category, sx }) => {
+const Circle = ({ id, category, opacity = 1, sx, ...props }) => {
   return (
     <Flex
       sx={{
         backgroundColor: 'background',
-        border: (theme) =>
-          `1px solid ${theme.colors[CATEGORY_COLORS[category]]}`,
+        borderWidth: '1px',
+        borderStyle: id.includes('*') ? 'dashed' : 'solid',
+        borderColor: alpha(CATEGORY_COLORS[category], opacity),
         alignContent: 'center',
         justifyContent: 'center',
         borderRadius: '24px',
         width: '24px',
         height: '24px',
         textAlign: 'center',
-        color: CATEGORY_COLORS[category],
+        color: alpha(CATEGORY_COLORS[category], opacity),
         fontSize: 1,
         ...sx,
       }}
+      {...props}
     >
-      <Box sx={{ mt: '1px' }}>{id}</Box>
+      <Box sx={{ mt: '1px' }}>{id.replace('*', '')}</Box>
     </Flex>
   )
 }

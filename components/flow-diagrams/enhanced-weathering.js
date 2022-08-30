@@ -8,31 +8,25 @@ const Flow = () => {
       <Rectangle
         start={[1, 8]}
         width={3}
-        id='7'
-        category='emissions'
+        height={2}
+        id='8'
         borderStyle='none'
-      >
-        Mineral feedstock
-      </Rectangle>
-
+      />
       <Rectangle
-        id='4'
-        category='emissions'
+        id='7'
         start={[5, 3]}
         height={1}
+        width={4}
         borderStyle='none'
-      >
-        Energy
-      </Rectangle>
+      />
+
       <Rectangle
-        id='5'
-        category='emissions'
+        id='8'
         start={[8, 3]}
         height={1}
+        width={4}
         borderStyle='none'
-      >
-        Materials
-      </Rectangle>
+      />
       <Arrow start={[7, 4]} length={1} down />
       <Arrow start={[10, 4]} length={1} down />
 
@@ -40,58 +34,52 @@ const Flow = () => {
 
       <Rectangle
         start={[5, 6]}
-        width={25}
-        height={6}
-        borderColor='secondary'
+        width={16}
+        height={8}
         borderStyle='dashed'
-        label='Seller'
+        id='13'
+        label=''
       />
 
-      <Rectangle start={[7, 8]} id='1' category='operations' invert>
-        Mineral applications
-      </Rectangle>
+      <Rectangle start={[7, 8]} id='1' width={4} invert />
 
-      <Arrow start={[12, 9]} length={2} right />
+      <Arrow start={[12, 10]} length={2} right />
 
-      <Rectangle id='2' category='drawdown' start={[15, 8]}>
-        Mineral weathering
-      </Rectangle>
+      <Rectangle id='2' width={4} start={[15, 8]} />
 
-      <Arrow start={[20, 9]} length={2} right />
+      <Arrow start={[20, 10]} length={2} right />
 
-      <Rectangle id='4' category='drawdown' start={[23, 8]} width={5}>
-        Secondary mineral weathering
-      </Rectangle>
-
-      <Arrow start={[29, 9]} length={3} right />
-      <Arrow start={[31, 9]} length={3} down hideArrow />
-      <Arrow start={[31, 12]} length={2} right />
-
-      <Rectangle id='9' category='permanence' start={[33, 8]}>
-        DIC residence time
-      </Rectangle>
-
+      <Rectangle id='4' start={[23, 5]} width={5} />
       <Rectangle
-        id='5'
-        category='drawdown'
-        start={[33, 12]}
-        height={1}
-        borderStyle='none'
-      >
-        Leakage
-      </Rectangle>
+        start={[23, 10]}
+        width={5}
+        label='Superficial carbonate formation'
+      />
+      <Rectangle start={[23, 15]} width={5} label='DIC run-off' />
 
-      <Arrow start={[9, 11]} length={2} down />
+      <Arrow start={[29, 12]} length={2} right />
 
-      <Rectangle start={[6, 14]} width={6} id='8' category='emissions'>
-        Agricultural system counterfactual
-      </Rectangle>
+      <Rectangle id='11' start={[32, 10]} />
 
-      <Arrow start={[17, 11]} length={2} up />
+      <Arrow start={[29, 17]} length={2} right />
+      <Arrow start={[30, 17]} length={3} down hideArrow />
+      <Arrow start={[30, 20]} length={2} right />
 
-      <Rectangle id='3' category='drawdown' start={[15, 14]}>
-        Non-CO₂ acid sources
-      </Rectangle>
+      <Rectangle id='12' start={[32, 15]} />
+
+      <Rectangle id='5' start={[31, 21]} height={1} borderStyle='none' />
+
+      <Arrow start={[9, 13]} length={2} down />
+
+      <Rectangle start={[6, 16]} width={6} height={3} id='6*' />
+
+      <Rectangle start={[6, 20]} width={6} height={3} id='9*' />
+
+      <Rectangle start={[6, 24]} width={6} height={3} id='10*' />
+
+      <Arrow start={[17, 13]} length={2} up />
+
+      <Rectangle id='3' width={4} height={3} start={[15, 16]} />
     </Grid>
   )
 }

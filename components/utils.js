@@ -17,16 +17,16 @@ const sortByUncertainty = (a, b) => {
 }
 
 export const getElements = (elements, filters, sort = 'number') => {
-  const filtered = elements.filter((e) =>
-    ['permanence', 'operations'].includes(e.category)
-      ? filters.other
-      : filters[e.category]
-  )
+  const filtered = elements.filter((e) => filters[e.category])
 
   switch (sort) {
     case 'uncertainty':
       return filtered.sort(sortByUncertainty)
     default:
-      return filtered.sort((a, b) => a.element.localeCompare(b.element))
+      return filtered.sort(
+        (a, b) =>
+          Number(a.element.replace(/\D/g, '')) -
+          Number(b.element.replace(/\D/g, ''))
+      )
   }
 }
