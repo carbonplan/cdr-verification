@@ -68,10 +68,12 @@ const Equation = ({ equation, elements }) => {
           <Box sx={sx.subscript}>CO₂e</Box>
         </Column>
         <Column start={[1, 1, 3, 3]} width={[6, 6, 5, 5]}>
-          <Flex sx={{ gap: 2 }}>
+          <Flex sx={{ gap: [1, 1, 1, 2], mt: [0, 0, 1, 3] }}>
             =
             {interleaved.map((d, i) => (
-              <Box key={i}>{d}</Box>
+              <Box key={i} sx={{ flexShrink: 0 }}>
+                {d}
+              </Box>
             ))}
           </Flex>
         </Column>

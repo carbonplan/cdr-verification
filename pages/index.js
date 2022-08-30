@@ -15,6 +15,7 @@ import { getElements } from '../components/utils'
 import TableHeader from '../components/table/header'
 import { ElementProvider } from '../components/context/element'
 import PathwayInfo from '../components/pathway-info'
+import PathwaySelector from '../components/pathway-selector'
 import Tooltip from '../components/tooltip'
 import legend from '../data/legend.json'
 
@@ -118,11 +119,10 @@ const Index = () => {
                   }}
                 >
                   <Box sx={{ display: ['initial', 'initial', 'none', 'none'] }}>
-                    <PathwayInfo
+                    <PathwaySelector
                       pathway={pathway}
                       setPathway={setPathway}
                       size='xs'
-                      showInfo={false}
                     />
 
                     <Divider sx={{ mb: 3, ml: [0, 0, '-32px', '-48px'] }} />
