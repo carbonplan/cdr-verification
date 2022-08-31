@@ -18,6 +18,7 @@ const Element = ({
   uncertainty_type,
   uncertainty_magnitude_min,
   uncertainty_magnitude_max,
+  quantification_target,
   responsibility,
   openTray,
 }) => {
@@ -149,6 +150,10 @@ const Element = ({
                 <Box sx={sx.heading}>Uncertainty responsibility</Box>
               </Tooltip>
               <Badge sx={sx.badge}>{responsibility}</Badge>
+            </Column>
+            <Column sx={sx.column} start={1} width={[6, 6, 4, 4]}>
+              <Box sx={sx.heading}>Quantification target</Box>
+              <Box sx={{ fontFamily: 'faux' }}>{quantification_target}</Box>
             </Column>
             <Column sx={sx.column} start={1} width={[6, 6, 4, 4]}>
               <Box sx={sx.heading}>Notes</Box>
