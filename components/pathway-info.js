@@ -18,7 +18,7 @@ const PathwayInfo = ({ pathway, setPathway, size = 'sm' }) => {
     <Row columns={[6, 6, 7, 7]}>
       <Column start={1} width={[5]}>
         <PathwaySelector size={size} value={pathway} setPathway={setPathway} />
-        <Box sx={{}}>{pathway_description}</Box>
+        <Box sx={{ my: [3, 3, 3, 4] }}>{pathway_description}</Box>
       </Column>
       <Column start={[6]} width={[2]}>
         <Tooltip tooltip={legend.VCL} align='center' mt='16px'>
