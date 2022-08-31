@@ -1,70 +1,19 @@
-[
-  {
-    "key": "pathway",
-    "description": "the CDR approach being described (e.g. direct air capture, enhanced rock weathering, etc.)"
-  },
-  {
-    "key": "pathway despcription",
-    "description": "a paragraph descibing the pathway at a high level (currently used at the top of the tool to set the stage for the diagrams / components)"
-  },
-  {
-    "key": "VCL",
-    "description": "verification confidence level; a rolled-up representation of combined uncertainty across the pathway's MRV components; defined on a scale of 1-5 and represented at the pathway level as a range (e.g. 3,5 --> 3 to 5)"
-  },
-  {
-    "key": "equation",
-    "description": "an equation representing how diagram components combine to quantify net CO2 sequestration "
-  },
-  {
-    "key": "diagram component",
-    "description": "component name that is shared between the diagram and the associated structured data"
-  },
-  {
-    "key": "category",
-    "description": "the outcome (operations, gross volume, net volume permanence) that a particular MRV component informs"
-  },
-  {
-    "key": "name",
-    "description": "short name describing the component (currently used in the volume equation, but might become obselete)"
-  },
-  {
-    "key": "description",
-    "description": "short description of the component (currently used in the tool legend)"
-  },
-  {
-    "key": "comments",
-    "description": "longer description of the component and how it is measured or modeled"
-  },
-  {
-    "key": "uncertainty_type",
-    "description": "the kind of uncertainty is associated with an MRV component given the best case MRV approach (execution, scientific, counterfactual)"
-  },
-  {
-    "key": "uncertainty_magnitude",
-    "description": "the magnitude of uncertainty associated with an MRV component given the best case MRV approach (negligible, low, medium, high, very high)"
-  },
-  {
-    "key": "responsibility",
-    "description": "who has primary responsibility for reducing the uncertainty associated with a particular element"
-  },
-  {
-    "key": "execution ",
-    "description": ""
-  },
-  {
-    "key": "scientific",
-    "description": ""
-  },
-  {
-    "key": "counterfactual ",
-    "description": ""
-  },
-  {
-    "key": "project ",
-    "description": ""
-  },
-  {
-    "key": "system",
-    "description": ""
-  }
-]
+{
+  "pathway": "the CDR approach being described (e.g. direct air capture, enhanced rock weathering, etc.)",
+  "pathway despcription": "a paragraph descibing the pathway at a high level (currently used at the top of the tool to set the stage for the diagrams / components)",
+  "VCL": "verification confidence level; a rolled-up representation of combined uncertainty across the pathway's MRV components; defined on a scale of 1-5 and represented at the pathway level as a range (e.g. 3,5 --> 3 to 5)",
+  "equation": "an equation representing how diagram components combine to quantify net CO2 sequestration ",
+  "diagram component": "component name that is shared between the diagram and the associated structured data",
+  "category": "the outcome (operations, gross volume, net volume permanence) that a particular MRV component informs",
+  "name": "short name describing the component (currently used in the volume equation, but might become obselete)",
+  "description": "short description of the component (currently used in the tool legend)",
+  "comments": "longer description of the component and how it is measured or modeled",
+  "uncertainty_type": "the kind of uncertainty is associated with an MRV component given the best case MRV approach (execution, scientific, counterfactual)",
+  "uncertainty_magnitude": "the magnitude of uncertainty associated with an MRV component given the best case MRV approach (negligible, low, medium, high, very high)",
+  "responsibility": "who has primary responsibility for reducing the uncertainty associated with a particular element",
+  "execution ": "",
+  "scientific": "",
+  "counterfactual ": "",
+  "project ": "",
+  "system": ""
+}

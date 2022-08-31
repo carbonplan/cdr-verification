@@ -7,19 +7,20 @@ import pathlib
 import gspread
 import pandas as pd
 from oauth2client.service_account import ServiceAccountCredentials
-
+import pdb 
 
 # ------------------ Auth -----------------------
 
 
 SECRET_FILE = str(pathlib.Path.home()) + '/keybase/google-sheets-key.json'
-
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 credentials = ServiceAccountCredentials.from_json_keyfile_name(SECRET_FILE, scope)
 gc = gspread.authorize(credentials)
 
+
 gsheet_doc_name = 'CDR MRV Pathway Uncertainties'
-worksheet_name = 'DAC'
+avail_pathways = ['DAC', 'BiCRS','EW','TER_BIO','OCEAN_BIO_no_harvest','OCEAN_BIO_harvest','OAE_echem','OAE_mineral']
+
 
 def get_legend_sheet(gsheet_doc_name: str) -> pd.DataFrame:
     sh = gc.open(gsheet_doc_name)
@@ -45,10 +46,10 @@ def sheet_data_to_dataframe(data_list: list) -> pd.DataFrame:
 
 def sheet_data_to_metadata(sheet_data: list) -> dict:
     """Assigns sheet metadata"""
-    pathway_name = sheet_data[0][1]
-    pathway_description = sheet_data[1][1]
-    VCL = list(tuple(sheet_data[2][1].split(',')))
-    equation = sheet_data[3][1]
+    pathway_name = sheet_data[0][1].strip()
+    pathway_description = sheet_data[1][1].strip()
+    VCL = list(tuple(sheet_data[2][1].replace(" ", "").split(',')))
+    equation = sheet_data[3][1].strip()
     return {'pathway_name':pathway_name,'pathway_description':pathway_description, 'VCL':VCL, 'equation':equation}
 
 
@@ -67,6 +68,10 @@ def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     # convert to snake_case
     df.columns = df.columns.str.replace(' ','_')
 
+    # splits any multiple comma sep entries into lists. 
+
+    df['uncertainty_type'] = df.uncertainty_type.str.replace(" ","").apply(lambda x: x.split(','))    
+
     # cast element as string
     df['element'] = df['element'].astype(str)
 
@@ -83,15 +88,19 @@ def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
 
 def write_legend_to_json(df: pd.DataFrame):
     """writes legend df to .json"""
+    ldict = dict(zip(df.key, df.description))
     with open(f'../data/legend.json', 'w') as fp:
-        json.dump(df.to_dict(orient='records'), fp, indent=4)
+        json.dump(ldict, fp, indent=4)
 
 
-def write_to_json(df: pd.DataFrame, pathway_name: str, pathway_description: str, VCL: str, equation: str,):
-    """Writes cleaned dataframe and metadata to .json.
+
+def df_to_dict(df: pd.DataFrame, pathway_name: str, pathway_description: str, VCL: str, equation: str) -> dict:
+    """Converts DataFrame and metadata into dictionary 
 
     Parameters
     ----------
+    df : pd.DataFrame
+        Cleaned Pandas DataFrame
     pathway_name : str
         Name of Pathway
     pathway_description : str
@@ -100,41 +109,57 @@ def write_to_json(df: pd.DataFrame, pathway_name: str, pathway_description: str,
         VCL
     equation : str
         Equation
-    df : pd.DataFrame
-        Pandas DataFrame of diagram components with additional associated data
+
+    Returns
+    -------
+    template_dict
+        Dictionary containing pathway data and metadata
     """
-    template_dict = {"pathway_name":pathway_name.strip(), 
+    template_dict = {"pathway_name":pathway_name.strip().replace(' ','_'), 
                     "pathway_description":pathway_description,
                     "VCL":VCL,
                     "equation":equation,
                     "elements": df.where(df.notnull(), "").to_dict(orient='records')
                     }
+    return template_dict
+    
 
-    fname = pathway_name.strip().replace(' ','_')
-    with open(f'../data/{fname}.json', 'w') as fp:
-        json.dump(template_dict, fp, indent=4)
+def write_to_json(template_dict_list: list):
+    """Writes cleaned list of pathway dictionaries and metadata to .json.
+
+    Parameters
+    ----------
+    template_dict_list : List
+    """
+
+    with open(f'../data/pathways.json', 'w') as fp:
+        json.dump(template_dict_list, fp, indent=4)
 
 def process_sheet(gsheet_doc_name: str, worksheet_name: str):
     data_list = gsheet_to_data_list(gsheet_doc_name, worksheet_name)
     df = sheet_data_to_dataframe(data_list)
     metadata_dict = sheet_data_to_metadata(data_list)
     cdf = clean_dataframe(df)
-    write_to_json(cdf, **metadata_dict)
+    return df_to_dict(cdf,  **metadata_dict)
+    # write_to_json(cdf, **metadata_dict)
 
 def process_legend(gsheet_doc_name: str):
+    print('Processing Legend sheet..')
+
     ldf = get_legend_sheet(gsheet_doc_name)
     write_legend_to_json(ldf)
 
+def write_pathways_to_json(avail_pathways: list):
+    template_dict_list = []
+    for pathway in avail_pathways:
 
+        print(f'Processing pathway: {pathway}')
+        template_dict =  process_sheet(gsheet_doc_name, pathway)
+        template_dict_list.append(template_dict)
 
-gsheet_doc_name = 'CDR MRV Pathway Uncertainties'
-avail_pathways = ['DAC', 'BiCRS','EW','TER_BIO','OCEAN_BIO_no_harvest','OCEAN_BIO_harvest','OAE_echem','OAE_mineral']
+    write_to_json(template_dict_list)
 
-
-for pathway in avail_pathways:
-    print(pathway)
-    process_sheet(gsheet_doc_name, pathway)
-
-process_legend(gsheet_doc_name)
+write_pathways_to_json(avail_pathways)
+# process_legend(gsheet_doc_name)
 
 

@@ -9,14 +9,6 @@ import { useElement } from './context/element'
 
 import legend from '../data/legend.json'
 
-const tooltips = {
-  uncertainty_magnitude: legend.find((d) => d.key === 'uncertainty_magnitude')
-    .description,
-  uncertainty_type: legend.find((d) => d.key === 'uncertainty_type')
-    .description,
-  responsibility: legend.find((d) => d.key === 'responsibility').description,
-}
-
 const Element = ({
   category,
   comments,
@@ -111,7 +103,7 @@ const Element = ({
           <Divider />
           <Row columns={[6, 8, 4, 4]}>
             <Column sx={sx.column} start={1} width={[6, 8, 4, 4]}>
-              <Tooltip tooltip={tooltips.uncertainty_type} sx={{ mb: 2 }}>
+              <Tooltip tooltip={legend.uncertainty_magnitude} sx={{ mb: 2 }}>
                 <Box sx={sx.heading}>Uncertainty magnitude</Box>
               </Tooltip>
 
@@ -137,13 +129,19 @@ const Element = ({
               </Row>
             </Column>
             <Column sx={sx.column} start={1} width={[6, 3, 4, 2]}>
-              <Tooltip tooltip={tooltips.uncertainty_type} sx={{ mb: 2 }}>
+              <Tooltip tooltip={legend.uncertainty_type} sx={{ mb: 2 }}>
                 <Box sx={sx.heading}>Uncertainty type</Box>
               </Tooltip>
-              <Badge sx={sx.badge}>{uncertainty_type}</Badge>
+              <Flex sx={{ gap: 2 }}>
+                {uncertainty_type.map((d) => (
+                  <Badge key={d} sx={sx.badge}>
+                    {d}
+                  </Badge>
+                ))}
+              </Flex>
             </Column>
             <Column sx={sx.column} start={[1, 4, 1, 3]} width={[6, 4, 4, 2]}>
-              <Tooltip tooltip={tooltips.responsibility}>
+              <Tooltip tooltip={legend.responsibility}>
                 <Box sx={sx.heading}>Uncertainty responsibility</Box>
               </Tooltip>
               <Badge sx={sx.badge}>{responsibility}</Badge>

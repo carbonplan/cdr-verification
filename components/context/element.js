@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
-import { DATA } from '../constants'
+import pathways from '../../data/pathways.json'
 
 const ElementContext = createContext({
   active: null,
@@ -12,7 +12,10 @@ export const useElement = (id) => {
   const { active, setActive, hovered, setHovered, pathway } =
     useContext(ElementContext)
   const data = useMemo(
-    () => DATA[pathway].elements.find((d) => d.element === id),
+    () =>
+      pathways
+        .find((p) => p.pathway_name === pathway)
+        .elements.find((d) => d.element === id),
     [id, pathway]
   )
 
