@@ -53,7 +53,7 @@ const Rectangle = ({
         transition: 'background-color, color, border-color 0.15s',
       }}
     >
-      {data?.category && id ? (
+      {id ? (
         <Flex
           sx={{
             position: 'absolute',
@@ -64,7 +64,7 @@ const Rectangle = ({
           <Circle
             id={id}
             opacity={opacity}
-            category={data.category}
+            category={data?.category}
             sx={{
               backgroundColor: 'background',
               mt: borderStyle === 'none' ? '-24px' : '-14px',
