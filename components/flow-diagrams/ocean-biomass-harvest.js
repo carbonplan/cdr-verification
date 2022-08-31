@@ -7,23 +7,23 @@ const Flow = () => {
     <Grid>
       <Rectangle
         id='5'
-        start={[5, 3]}
+        start={[5, 2]}
         height={1}
         width={4}
         borderStyle='none'
       />
       <Rectangle
         id='6'
-        start={[8, 3]}
+        start={[8, 2]}
         height={1}
         width={4}
         borderStyle='none'
       />
-      <Arrow start={[7, 4]} length={1} down />
-      <Arrow start={[10, 4]} length={1} down />
+      <Arrow start={[7, 3]} length={1} down />
+      <Arrow start={[10, 3]} length={1} down />
 
       <Rectangle
-        start={[5, 6]}
+        start={[5, 5]}
         width={24}
         height={8}
         borderStyle='dashed'
@@ -32,40 +32,40 @@ const Flow = () => {
       />
 
       <Rectangle
-        start={[7, 8]}
+        start={[7, 7]}
         width={4}
         invert
         label='Macroalgae cultivation'
       />
 
-      <Arrow start={[12, 10]} length={1} right />
+      <Arrow start={[12, 9]} length={1} right />
 
-      <Rectangle start={[14, 8]} id='1' width={6} invert />
+      <Rectangle start={[14, 7]} id='1' width={6} invert />
 
-      <Arrow start={[21, 10]} length={1} right />
+      <Arrow start={[21, 9]} length={1} right />
 
-      <Rectangle start={[23, 8]} width={4} label='Macroalgae sinking' invert />
+      <Rectangle start={[23, 7]} width={4} label='Macroalgae sinking' invert />
 
-      <Arrow start={[28, 10]} length={2} right />
+      <Arrow start={[28, 9]} length={2} right />
 
-      <Rectangle id='7' start={[31, 8]} />
+      <Rectangle id='7' start={[31, 7]} />
 
-      <Arrow start={[9, 13]} length={2} down />
+      <Arrow start={[9, 12]} length={2} down />
 
-      <Rectangle start={[6, 16]} id='3' />
+      <Rectangle start={[6, 15]} id='3' />
 
-      <Arrow start={[13, 18]} length={2} right />
+      <Arrow start={[13, 17]} length={2} right />
 
-      <Rectangle id='4' start={[16, 16]} />
+      <Rectangle id='4' start={[16, 15]} />
 
       <Rectangle
         id='2'
-        start={[23, 3]}
+        start={[23, 2]}
         height={1}
         width={4}
         borderStyle='none'
       />
-      <Arrow start={[25, 4]} length={1} up />
+      <Arrow start={[25, 3]} length={1} up />
     </Grid>
   )
 }
