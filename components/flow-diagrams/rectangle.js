@@ -79,7 +79,7 @@ const Rectangle = ({
           alignItems: 'center',
           textAlign: 'center',
           justifyContent: 'center',
-          fontSize: ['2.5vw', '1.5vw', '1vw', '1vw'],
+          fontSize: ['1.6vw', '1.5vw', '1vw', '0.75vw'],
         }}
       >
         <Box sx={{ padding: 1 }}>{label ?? data?.description}</Box>
