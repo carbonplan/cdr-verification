@@ -35,7 +35,7 @@ const Element = ({
       color: CATEGORY_COLORS[category],
       letterSpacing: 'smallcaps',
       textTransform: 'uppercase',
-      // mb: 2,
+      mb: 1,
     },
     badge: { textTransform: 'capitalize' },
     column: { mb: 3 },
@@ -81,6 +81,7 @@ const Element = ({
                 verticalAlign: 'middle',
                 zIndex: 1,
                 stroke: hovered ? 'primary' : 'secondary',
+                flexShrink: 0,
               }}
             />
           </Flex>
@@ -110,15 +111,16 @@ const Element = ({
               </Tooltip>
 
               <Row columns={[6, 8, 4, 4]}>
-                <Column start={1} width={1}>
+                <Column start={1} width={[2, 1]}>
                   <Uncertainty
                     min={uncertainty_magnitude_min}
                     max={uncertainty_magnitude_max}
                     flexShrink={0.5}
                     color={CATEGORY_COLORS[category]}
+                    sx={{ pr: [28, 0] }}
                   />
                 </Column>
-                <Column start={2} width={[5, 6, 3, 3]}>
+                <Column start={[3, 2]} width={[3, 6, 3, 3]}>
                   <Badge sx={sx.badge}>{uncertainty_magnitude_min}</Badge>
                   {uncertainty_magnitude_min !== uncertainty_magnitude_max ? (
                     <>
