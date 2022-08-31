@@ -27,7 +27,7 @@ const Flow = () => {
 
       <Arrow start={[12, 3]} length={2} right />
 
-      <Rectangle id='9' width={4} start={[15, 1]} />
+      <Rectangle id='9' height={3} start={[15, 2]} />
 
       <Rectangle
         start={[5, 6]}
