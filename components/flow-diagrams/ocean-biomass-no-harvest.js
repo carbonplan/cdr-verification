@@ -55,12 +55,12 @@ const Flow = () => {
 
       <Rectangle
         id='2'
-        start={[14, 3]}
+        start={[15, 3]}
         height={1}
         width={4}
         borderStyle='none'
       />
-      <Arrow start={[16, 4]} length={1} up />
+      <Arrow start={[17, 4]} length={1} up />
 
       <Rectangle
         id='2'

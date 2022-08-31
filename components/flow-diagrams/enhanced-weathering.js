@@ -6,14 +6,7 @@ const Flow = () => {
   return (
     <Grid>
       <Rectangle
-        start={[1, 8]}
-        width={3}
-        height={2}
         id='8'
-        borderStyle='none'
-      />
-      <Rectangle
-        id='7'
         start={[5, 3]}
         height={1}
         width={4}
@@ -21,7 +14,7 @@ const Flow = () => {
       />
 
       <Rectangle
-        id='8'
+        id='9'
         start={[8, 3]}
         height={1}
         width={4}
@@ -30,14 +23,12 @@ const Flow = () => {
       <Arrow start={[7, 4]} length={1} down />
       <Arrow start={[10, 4]} length={1} down />
 
-      <Arrow start={[4, 9]} length={2} right />
-
       <Rectangle
         start={[5, 6]}
         width={16}
         height={8}
         borderStyle='dashed'
-        id='13'
+        id='15'
         label=''
       />
 
@@ -49,37 +40,39 @@ const Flow = () => {
 
       <Arrow start={[20, 10]} length={2} right />
 
-      <Rectangle id='4' start={[23, 5]} width={5} />
+      <Rectangle id='2' label='Alkalinity run-off' start={[23, 8]} width={5} />
+
+      <Arrow start={[29, 10]} length={2} right />
+      <Arrow start={[30, 7]} length={3} up />
+
       <Rectangle
-        start={[23, 10]}
-        width={5}
-        label='Superficial carbonate formation'
+        id='6'
+        start={[28, 5]}
+        width={4}
+        height={1}
+        borderStyle='none'
       />
-      <Rectangle start={[23, 15]} width={5} label='DIC run-off' />
-
-      <Arrow start={[29, 12]} length={2} right />
-
-      <Rectangle id='11' start={[32, 10]} />
-
-      <Arrow start={[29, 17]} length={2} right />
-      <Arrow start={[30, 17]} length={3} down hideArrow />
-      <Arrow start={[30, 20]} length={2} right />
-
-      <Rectangle id='12' start={[32, 15]} />
-
-      <Rectangle id='5' start={[31, 21]} height={1} borderStyle='none' />
+      <Rectangle id='14' start={[32, 8]} />
 
       <Arrow start={[9, 13]} length={2} down />
 
-      <Rectangle start={[6, 16]} width={6} height={3} id='6*' />
+      <Rectangle start={[6, 16]} width={6} height={3} id='7*' />
 
-      <Rectangle start={[6, 20]} width={6} height={3} id='9*' />
+      <Rectangle start={[6, 20]} width={6} height={3} id='10*' />
 
-      <Rectangle start={[6, 24]} width={6} height={3} id='10*' />
+      <Rectangle start={[6, 24]} width={6} height={3} id='11*' />
 
-      <Arrow start={[17, 13]} length={2} up />
+      <Rectangle start={[6, 28]} width={6} height={3} id='12*' />
 
-      <Rectangle id='3' width={4} height={3} start={[15, 16]} />
+      <Arrow start={[17, 13]} length={2} down />
+
+      <Rectangle id='3' height={3} start={[14, 16]} />
+      <Rectangle id='4' height={3} start={[14, 20]} />
+      <Rectangle id='5' height={3} start={[14, 24]} />
+
+      <Arrow start={[21, 25]} length={2} right />
+
+      <Rectangle id='13' height={3} start={[24, 24]} />
     </Grid>
   )
 }
