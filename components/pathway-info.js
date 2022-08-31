@@ -17,7 +17,11 @@ const PathwayInfo = ({ pathway, setPathway, size = 'sm' }) => {
   return (
     <Row columns={[6, 6, 7, 7]}>
       <Column start={1} width={[5]}>
-        <PathwaySelector size={size} value={pathway} setPathway={setPathway} />
+        <PathwaySelector
+          size={size}
+          pathway={pathway}
+          setPathway={setPathway}
+        />
         <Box sx={{ my: [3, 3, 3, 4] }}>{pathway_description}</Box>
       </Column>
       <Column start={[6]} width={[2]}>

@@ -6,8 +6,7 @@ const PathwaySelector = ({ pathway, setPathway, size = 'sm', sx }) => {
   return (
     <Select
       size={size}
-      // TODO: remove hacky defaulting
-      value={pathway ?? 'Ocean_Alkalinity_Enhancement_-_Electrochemical'}
+      value={pathway}
       onChange={(e) =>
         console.log('in here', e.target.value) || setPathway(e.target.value)
       }
