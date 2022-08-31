@@ -240,7 +240,10 @@ const Index = () => {
                 {FLOW_DIAGRAMS[pathway]}
               </Column>
             </Row>
-            <Tray expanded={settings}>
+            <Tray
+              expanded={settings}
+              sx={{ maxHeight: 'calc(100vh - 56px)', overflowY: 'scroll' }}
+            >
               {FLOW_DIAGRAMS[pathway]}
               <Equation elements={elements} equation={equation} />
             </Tray>
