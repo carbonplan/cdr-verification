@@ -1,12 +1,13 @@
 import { Box, Divider, Flex } from 'theme-ui'
 import { useEffect, useRef } from 'react'
-import { Badge, Expander, Row, Column } from '@carbonplan/components'
+import { Badge, Button, Expander, Row, Column } from '@carbonplan/components'
+import { RotatingArrow } from '@carbonplan/icons'
+
 import Circle from './circle'
 import Uncertainty from './uncertainty'
 import Tooltip from './tooltip'
 import { CATEGORY_COLORS } from './constants'
 import { useElement } from './context/element'
-
 import legend from '../data/legend.json'
 
 const Element = ({
@@ -18,6 +19,7 @@ const Element = ({
   uncertainty_magnitude_min,
   uncertainty_magnitude_max,
   responsibility,
+  openTray,
 }) => {
   const { active, hovered, setActive, setHovered } = useElement(element)
   const el = useRef(null)
@@ -149,6 +151,23 @@ const Element = ({
             <Column sx={sx.column} start={1} width={[6, 6, 4, 4]}>
               <Box sx={sx.heading}>Notes</Box>
               <Box sx={{ fontFamily: 'faux' }}>{comments}</Box>
+            </Column>
+
+            <Column
+              start={1}
+              width={[6, 6, 4, 4]}
+              sx={{
+                ...sx.column,
+                display: ['initial', 'initial', 'none', 'none'],
+              }}
+            >
+              <Button
+                sx={{ color: CATEGORY_COLORS[category] }}
+                onClick={openTray}
+                suffix={<RotatingArrow />}
+              >
+                View in diagram
+              </Button>
             </Column>
           </Row>
 

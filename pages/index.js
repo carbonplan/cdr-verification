@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { Box, Container, Divider } from 'theme-ui'
 import {
   Layout,
@@ -33,6 +33,8 @@ const Index = () => {
   const [sort, setSort] = useState('number')
   const [settings, setSettings] = useState(false)
   const scrollClass = useScrollbarClass()
+
+  const openTray = useCallback(() => setSettings(true), [])
 
   const elements = useMemo(
     () => pathways.find((p) => p.pathway_name === pathway).elements,
@@ -168,7 +170,7 @@ const Index = () => {
                   </Column>
                 </Row>
                 {getElements(elements, filters, sort).map((d) => (
-                  <Element key={d.element} {...d} />
+                  <Element key={d.element} openTray={openTray} {...d} />
                 ))}
               </Column>
               <Column
