@@ -58,17 +58,21 @@ const Equation = ({ equation, elements }) => {
   return (
     <Box sx={{ fontFamily: 'mono', letterSpacing: 'mono' }}>
       <Row columns={[6, 6, 7, 7]}>
-        <Column start={1} width={[3, 3, 2, 2]} sx={{}}>
+        <Column start={1} width={[6, 3, 2, 2]} sx={{}}>
           Total Carbon Removal<Box sx={sx.subscript}>CO₂e</Box>
         </Column>
-        <Column start={[1, 1, 3, 3]} width={[6, 6, 5, 5]}>
+        <Column
+          start={[1, 1, 3, 3]}
+          width={[6, 6, 5, 5]}
+          sx={{ mt: [3, 3, 0, 0] }}
+        >
           = <Box sx={sx.drawdown}>Drawdown</Box>
           <Box sx={sx.subscript}>CO₂e</Box> -{' '}
           <Box sx={sx.emissions}>Emissions</Box>
           <Box sx={sx.subscript}>CO₂e</Box>
         </Column>
         <Column start={[1, 1, 3, 3]} width={[6, 6, 5, 5]}>
-          <Flex sx={{ gap: [1, 1, 1, 2], mt: [0, 0, 1, 3] }}>
+          <Flex sx={{ gap: [1, 1, 1, 2], mt: [3, 3, 1, 3], flexWrap: 'wrap' }}>
             =
             {interleaved.map((d, i) => (
               <Box key={i} sx={{ flexShrink: 0 }}>

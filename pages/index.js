@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useState } from 'react'
-import { Box, Container, Divider } from 'theme-ui'
+import { Box, Flex, Container, Divider } from 'theme-ui'
 import {
+  Badge,
   Layout,
   Row,
   Column,
@@ -17,6 +18,7 @@ import { ElementProvider } from '../components/context/element'
 import PathwayInfo from '../components/pathway-info'
 import PathwaySelector from '../components/pathway-selector'
 import Tooltip from '../components/tooltip'
+import Equation from '../components/equation'
 import legend from '../data/legend.json'
 import pathways from '../data/pathways.json'
 
@@ -36,8 +38,8 @@ const Index = () => {
 
   const openTray = useCallback(() => setSettings(true), [])
 
-  const elements = useMemo(
-    () => pathways.find((p) => p.pathway_name === pathway).elements,
+  const { elements, pathway_description, VCL, equation } = useMemo(
+    () => pathways.find((p) => p.pathway_name === pathway),
     [pathway]
   )
 
@@ -127,11 +129,28 @@ const Index = () => {
                   }}
                 >
                   <Box sx={{ display: ['initial', 'initial', 'none', 'none'] }}>
-                    <PathwaySelector
-                      pathway={pathway}
-                      setPathway={setPathway}
-                      size='xs'
-                    />
+                    <Tooltip tooltip={pathway_description}>
+                      <PathwaySelector
+                        pathway={pathway}
+                        setPathway={setPathway}
+                        size='xs'
+                        sx={{ mb: 2 }}
+                      />
+                    </Tooltip>
+
+                    <Tooltip
+                      tooltip={legend.VCL}
+                      align='center'
+                      justify={['flex-end', 'flex-start']}
+                      sx={{ my: 2 }}
+                    >
+                      <Flex sx={{ alignItems: 'center', gap: 2 }}>
+                        <Box sx={{ fontSize: 1, color: 'secondary' }}>
+                          Verification Confidence Level (VCL)
+                        </Box>
+                        <Badge>{VCL.join(' - ')}</Badge>
+                      </Flex>
+                    </Tooltip>
 
                     <Divider sx={{ mb: 3, ml: [0, 0, '-32px', '-48px'] }} />
                   </Box>
@@ -221,7 +240,10 @@ const Index = () => {
                 {FLOW_DIAGRAMS[pathway]}
               </Column>
             </Row>
-            <Tray expanded={settings}>{FLOW_DIAGRAMS[pathway]}</Tray>
+            <Tray expanded={settings}>
+              {FLOW_DIAGRAMS[pathway]}
+              <Equation elements={elements} equation={equation} />
+            </Tray>
           </ElementProvider>
         </Container>
       </Box>

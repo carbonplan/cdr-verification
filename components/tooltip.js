@@ -9,12 +9,13 @@ const Tooltip = ({
   mt = '6px',
   sx,
   align = 'flex-start',
+  justify,
 }) => {
   const [expanded, setExpanded] = useState(false)
 
   return (
     <Box sx={sx}>
-      <Flex sx={{ gap: 2, alignItems: align }}>
+      <Flex sx={{ gap: 2, alignItems: align, justifyContent: justify }}>
         {children}
         <IconButton
           onClick={() => setExpanded(!expanded)}
