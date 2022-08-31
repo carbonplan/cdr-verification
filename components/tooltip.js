@@ -34,7 +34,6 @@ const Tooltip = ({
             transform: 'translate(0px, -3.75px)',
             mt,
             flexShrink: 0,
-            zIndex: 10,
           }}
         >
           <Info
