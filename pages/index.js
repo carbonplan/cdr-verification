@@ -103,7 +103,7 @@ const Index = () => {
                   sx={{
                     pt: [0],
                     mb: [0, 3, 0, 0],
-                    fontSize: [2, 2, 2, 3],
+                    fontSize: 1,
                     fontFamily: 'body',
                     lineHeight: 'body',
                   }}
@@ -117,11 +117,11 @@ const Index = () => {
 
                 <Box sx={{ mt: 3 }}>
                   <Box sx={{ display: ['initial', 'initial', 'none', 'none'] }}>
-                    <Tooltip tooltip={pathway_description}>
+                    <Tooltip tooltip={pathway_description} align='center'>
                       <PathwaySelector
                         pathway={pathway}
                         setPathway={setPathway}
-                        size='xs'
+                        size='md'
                         sx={{ mb: 2 }}
                       />
                     </Tooltip>
@@ -136,7 +136,9 @@ const Index = () => {
                         <Box sx={{ fontSize: 1, color: 'secondary' }}>
                           Verification Confidence Level (VCL)
                         </Box>
-                        <Badge>{VCL.join(' - ')}</Badge>
+                        <Badge>
+                          {VCL[0] === VCL[1] ? VCL[0] : VCL.join(' - ')}
+                        </Badge>
                       </Flex>
                     </Tooltip>
 

@@ -2,14 +2,18 @@ import { Select } from '@carbonplan/components'
 
 import pathways from '../data/pathways.json'
 
-const PathwaySelector = ({ pathway, setPathway, size = 'sm', sx }) => {
+const PathwaySelector = ({ pathway, setPathway, size = 'md', sx }) => {
   return (
     <Select
       size={size}
       value={pathway}
       onChange={(e) => setPathway(e.target.value)}
       sx={{
-        '& select': { width: '100%', overflow: 'hidden' },
+        '& select': {
+          width: '100%',
+          overflow: 'hidden',
+          fontSize: [4, 4, 5, 5],
+        },
         ...sx,
       }}
     >

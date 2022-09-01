@@ -1,11 +1,9 @@
-import { Box } from 'theme-ui'
+import { Box, Flex } from 'theme-ui'
 import { Badge, Row, Column } from '@carbonplan/components'
 
 import PathwaySelector from './pathway-selector'
 import Equation from './equation'
-import Tooltip from './tooltip'
 import pathways from '../data/pathways.json'
-import legend from '../data/legend.json'
 import { useMemo } from 'react'
 
 const PathwayInfo = ({ pathway, setPathway, size = 'sm' }) => {
@@ -14,26 +12,37 @@ const PathwayInfo = ({ pathway, setPathway, size = 'sm' }) => {
     [pathway]
   )
 
+  const formattedVCL = VCL[0] === VCL[1] ? VCL[0] : VCL.join(' - ')
   return (
     <Row columns={[6, 6, 7, 7]}>
-      <Column start={1} width={[5]}>
-        <PathwaySelector
-          size={size}
-          pathway={pathway}
-          setPathway={setPathway}
-        />
-        <Box sx={{ my: [3, 3, 3, 4] }}>{pathway_description}</Box>
-      </Column>
-      <Column start={[6]} width={[2]}>
-        <Tooltip tooltip={legend.VCL} align='center' mt='16px'>
+      <Column start={1} width={[6, 6, 7, 7]}>
+        <Flex sx={{ gap: [3, 3, 3, 4] }}>
+          <PathwaySelector
+            size={size}
+            pathway={pathway}
+            setPathway={setPathway}
+          />
           <Badge
-            sx={{ mb: 2, fontSize: [3, 3, 3, 4], height: null, padding: 1 }}
+            sx={{
+              mt: '12px',
+              mr:
+                formattedVCL.length === 1
+                  ? ['41px', '41px', '41px', '55px']
+                  : 0,
+              fontSize: [3, 3, 3, 4],
+              height: null,
+              padding: 1,
+              flexShrink: 0,
+            }}
           >
-            {VCL && VCL.find(Boolean) ? VCL.join(' - ') : 'X - X'}
+            <Box as='span' sx={{ color: 'secondary' }}>
+              VCL
+            </Box>{' '}
+            {formattedVCL}
           </Badge>
-        </Tooltip>
-        <Box sx={{ fontSize: 1, color: 'secondary' }}>
-          Verification Confidence Level (VCL)
+        </Flex>
+        <Box sx={{ my: [3, 3, 3, 4], fontSize: [1] }}>
+          {pathway_description}
         </Box>
       </Column>
 
