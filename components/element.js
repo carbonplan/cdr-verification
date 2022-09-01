@@ -46,7 +46,7 @@ const Element = ({
     <Box
       ref={el}
       sx={{ my: [4, 3, 4, 4], cursor: 'pointer' }}
-      onClick={() => !active && setActive()}
+      onClick={setActive}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -76,7 +76,10 @@ const Element = ({
             />
             <Expander
               value={active}
-              onClick={() => active && setActive(null)}
+              onClick={(e) => {
+                e.stopPropagation()
+                setActive()
+              }}
               sx={{
                 display: ['initial', 'none'],
                 verticalAlign: 'middle',
@@ -88,7 +91,10 @@ const Element = ({
           </Flex>
           <Expander
             value={active}
-            onClick={() => active && setActive(null)}
+            onClick={(e) => {
+              e.stopPropagation()
+              setActive()
+            }}
             sx={{
               display: ['none', 'initial'],
               verticalAlign: 'middle',

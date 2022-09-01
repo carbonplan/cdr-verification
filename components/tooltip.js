@@ -18,7 +18,10 @@ const Tooltip = ({
       <Flex sx={{ gap: 2, alignItems: align, justifyContent: justify }}>
         {children}
         <IconButton
-          onClick={() => setExpanded(!expanded)}
+          onClick={(e) => {
+            e.stopPropagation()
+            setExpanded(!expanded)
+          }}
           role='checkbox'
           aria-checked={expanded}
           aria-label='Information'
