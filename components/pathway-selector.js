@@ -17,7 +17,7 @@ const PathwaySelector = ({ pathway, setPathway, size = 'sm', sx }) => {
     >
       {pathways.map((p) => (
         <option key={p.pathway_name} value={p.pathway_name}>
-          {p.pathway_name}
+          {p.pathway_name.replace(/_/g, ' ')}
         </option>
       ))}
     </Select>
