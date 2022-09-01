@@ -22,14 +22,7 @@ const Flow = () => {
       <Arrow start={[7, 3]} length={1} down />
       <Arrow start={[10, 3]} length={1} down />
 
-      <Rectangle
-        start={[5, 5]}
-        width={10}
-        height={8}
-        borderStyle='dashed'
-        id='10'
-        label=''
-      />
+      <Rectangle start={[5, 5]} width={10} height={8} id='10' label='' />
 
       <Rectangle start={[7, 7]} invert id='1' />
 

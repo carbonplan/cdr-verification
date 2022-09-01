@@ -26,14 +26,7 @@ const Flow = () => {
 
       <Arrow start={[7, 3]} length={1} down />
       <Arrow start={[10, 3]} length={1} down />
-      <Rectangle
-        start={[5, 5]}
-        width={30}
-        height={8}
-        borderStyle='dashed'
-        id='7'
-        label=''
-      />
+      <Rectangle start={[5, 5]} width={30} height={8} id='7' label='' />
       <Rectangle start={[7, 7]} invert label='CO₂ capture' />
       <Arrow start={[14, 9]} length={2} right />
       <Rectangle label='CO₂ transportation' invert start={[17, 7]} />

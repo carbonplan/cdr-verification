@@ -29,14 +29,7 @@ const Flow = () => {
 
       <Rectangle id='9' height={3} start={[15, 1]} />
 
-      <Rectangle
-        start={[5, 5]}
-        width={20}
-        height={14}
-        borderStyle='dashed'
-        id='11'
-        label=''
-      />
+      <Rectangle start={[5, 5]} width={20} height={14} id='11' label='' />
 
       <Rectangle start={[7, 7]} invert label='Electrochemical separation' />
 
