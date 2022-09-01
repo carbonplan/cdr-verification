@@ -1,5 +1,5 @@
 import { Box, Divider, Flex } from 'theme-ui'
-import { useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import { Badge, Button, Expander, Row, Column } from '@carbonplan/components'
 import { RotatingArrow } from '@carbonplan/icons'
 
@@ -24,10 +24,24 @@ const Element = ({
 }) => {
   const { active, hovered, setActive, setHovered } = useElement(element)
   const el = useRef(null)
+  const activated = useRef(false)
+
+  const handleActivate = useCallback(
+    (e) => {
+      e.stopPropagation()
+
+      if (!active) activated.current = true
+      setActive()
+    },
+    [active]
+  )
 
   useEffect(() => {
     if (active && el.current) {
-      el.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      if (!activated.current) {
+        el.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }
+      activated.current = false
     }
   }, [active])
 
@@ -46,7 +60,7 @@ const Element = ({
     <Box ref={el} sx={{ my: [4, 3, 4, 4] }}>
       <Row
         columns={[6, 8, 4, 4]}
-        onClick={setActive}
+        onClick={handleActivate}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         sx={{ cursor: 'pointer' }}
@@ -76,10 +90,7 @@ const Element = ({
             />
             <Expander
               value={active}
-              onClick={(e) => {
-                e.stopPropagation()
-                setActive()
-              }}
+              onClick={handleActivate}
               sx={{
                 display: ['initial', 'none'],
                 verticalAlign: 'middle',
@@ -91,10 +102,7 @@ const Element = ({
           </Flex>
           <Expander
             value={active}
-            onClick={(e) => {
-              e.stopPropagation()
-              setActive()
-            }}
+            onClick={handleActivate}
             sx={{
               display: ['none', 'initial'],
               verticalAlign: 'middle',
