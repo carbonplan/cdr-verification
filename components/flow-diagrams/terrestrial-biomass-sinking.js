@@ -38,7 +38,7 @@ const Flow = () => {
       <Arrow start={[18, 3]} length={1} up />
 
       <Rectangle
-        id='7'
+        id='6'
         start={[1, 9]}
         label='Biomass feedstock'
         height={2}

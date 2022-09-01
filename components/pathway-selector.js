@@ -7,9 +7,7 @@ const PathwaySelector = ({ pathway, setPathway, size = 'sm', sx }) => {
     <Select
       size={size}
       value={pathway}
-      onChange={(e) =>
-        console.log('in here', e.target.value) || setPathway(e.target.value)
-      }
+      onChange={(e) => setPathway(e.target.value)}
       sx={{
         '& select': { width: '100%', overflow: 'hidden' },
         ...sx,

@@ -37,7 +37,7 @@ const Flow = () => {
       <Rectangle id='1' invert start={[27, 7]} />
 
       <Rectangle
-        id='7'
+        id='6'
         start={[1, 9]}
         label='Biomass feedstock'
         height={2}
