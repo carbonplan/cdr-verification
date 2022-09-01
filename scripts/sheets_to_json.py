@@ -160,6 +160,6 @@ def write_pathways_to_json(avail_pathways: list):
     write_to_json(template_dict_list)
 
 write_pathways_to_json(avail_pathways)
-# process_legend(gsheet_doc_name)
+process_legend(gsheet_doc_name)
 
 
