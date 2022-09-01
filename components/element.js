@@ -2,6 +2,7 @@ import { Box, Divider, Flex } from 'theme-ui'
 import { useCallback, useEffect, useRef } from 'react'
 import { Badge, Button, Expander, Row, Column } from '@carbonplan/components'
 import { RotatingArrow } from '@carbonplan/icons'
+import AnimateHeight from 'react-animate-height'
 
 import Circle from './circle'
 import Uncertainty from './uncertainty'
@@ -48,11 +49,13 @@ const Element = ({
   const sx = {
     heading: {
       color: CATEGORY_COLORS[category],
-      letterSpacing: 'smallcaps',
+      fontSize: [1, 1, 1, 2],
+      fontFamily: 'mono',
+      letterSpacing: 'mono',
       textTransform: 'uppercase',
-      mb: 1,
+      my: 1,
     },
-    badge: { textTransform: 'capitalize' },
+    badge: { textTransform: 'capitalize', ml: -1 },
     column: { mb: 3 },
   }
 
@@ -116,24 +119,32 @@ const Element = ({
         </Column>
       </Row>
 
-      {active ? (
-        <Box>
-          <Divider />
-          <Row columns={[6, 8, 4, 4]}>
-            <Column sx={sx.column} start={1} width={[6, 8, 4, 4]}>
+      <Box sx={{ ml: -1 }}>
+        <AnimateHeight
+          duration={100}
+          height={active ? 'auto' : 0}
+          easing={'linear'}
+        >
+          <Box sx={{ mt: 2, pl: 1 }}>
+            <Row columns={[6, 8, 4, 4]}>
               <Column sx={sx.column} start={1} width={[6, 6, 4, 4]}>
-                <Tooltip tooltip={legend.quantification_target} sx={{ mb: 2 }}>
+                <Tooltip tooltip={legend.quantification_target} mt='10px'>
                   <Box sx={sx.heading}>Quantification target</Box>
                 </Tooltip>
                 <Box sx={{ fontFamily: 'faux' }}>{quantification_target}</Box>
               </Column>
 
-              <Tooltip tooltip={legend.uncertainty_magnitude} sx={{ mb: 2 }}>
-                <Box sx={sx.heading}>Uncertainty magnitude</Box>
-              </Tooltip>
+              <Column sx={{ mb: 2 }} start={1} width={[6, 6, 4, 4]}>
+                <Box sx={{ ...sx.heading, mb: 0 }}>Uncertainty</Box>
+              </Column>
 
-              <Row columns={[6, 8, 4, 4]}>
-                <Column start={[1]} width={[3, 6, 3, 3]}>
+              <Column sx={{ mb: 2 }} start={1} width={[6, 8, 2, 2]}>
+                <Tooltip tooltip={legend.uncertainty_magnitude} mt='10px'>
+                  <Box sx={{ ...sx.heading, color: 'secondary' }}>
+                    Magnitude
+                  </Box>
+                </Tooltip>
+                <Box>
                   <Badge sx={sx.badge}>{uncertainty_magnitude_min}</Badge>
                   {uncertainty_magnitude_min !== uncertainty_magnitude_max ? (
                     <>
@@ -142,61 +153,65 @@ const Element = ({
                       <Badge sx={sx.badge}>{uncertainty_magnitude_max}</Badge>
                     </>
                   ) : null}
-                </Column>
-              </Row>
-            </Column>
-            <Column sx={sx.column} start={1} width={[6, 3, 4, 2]}>
-              <Tooltip tooltip={legend.uncertainty_type} sx={{ mb: 2 }}>
-                <Box sx={sx.heading}>Uncertainty type</Box>
-              </Tooltip>
-              <Flex sx={{ gap: 2 }}>
-                {uncertainty_type.map((d) => (
-                  <Badge key={d} sx={sx.badge}>
-                    {d}
-                  </Badge>
-                ))}
-              </Flex>
-            </Column>
-            <Column sx={sx.column} start={[1, 4, 1, 3]} width={[6, 4, 4, 2]}>
-              <Tooltip tooltip={legend.responsibility}>
-                <Box sx={sx.heading}>Uncertainty responsibility</Box>
-              </Tooltip>
-              <Badge sx={sx.badge}>{responsibility}</Badge>
-            </Column>
+                </Box>
+              </Column>
 
-            <Column sx={sx.column} start={1} width={[6, 6, 4, 4]}>
-              <Box sx={sx.heading}>Included in accounting</Box>
-              <Badge sx={sx.badge}>
-                {element.includes('*') ? 'No' : 'Yes'}
-              </Badge>
-            </Column>
+              <Column sx={{ mb: 2 }} start={3} width={[6, 8, 2, 2]}>
+                <Tooltip tooltip={legend.uncertainty_type} mt='10px'>
+                  <Box sx={{ ...sx.heading, color: 'secondary' }}>Type</Box>
+                </Tooltip>
+                <Flex sx={{ gap: 2 }}>
+                  {uncertainty_type.map((d) => (
+                    <Badge key={d} sx={sx.badge}>
+                      {d}
+                    </Badge>
+                  ))}
+                </Flex>
+              </Column>
 
-            <Column sx={sx.column} start={1} width={[6, 6, 4, 4]}>
-              <Box sx={sx.heading}>Notes</Box>
-              <Box sx={{ fontFamily: 'faux' }}>{comments}</Box>
-            </Column>
+              <Column sx={sx.column} start={1} width={[6, 8, 2, 2]}>
+                <Tooltip tooltip={legend.responsibility} mt='10px'>
+                  <Box sx={{ ...sx.heading, color: 'secondary' }}>
+                    Responsibility
+                  </Box>
+                </Tooltip>
+                <Badge sx={sx.badge}>{responsibility}</Badge>
+              </Column>
 
-            <Column
-              start={1}
-              width={[6, 6, 4, 4]}
-              sx={{
-                ...sx.column,
-                display: ['initial', 'initial', 'none', 'none'],
-              }}
-            >
-              <Button
-                sx={{ color: CATEGORY_COLORS[category] }}
-                onClick={openTray}
-                suffix={<RotatingArrow />}
+              <Column sx={sx.column} start={1} width={[6, 6, 4, 4]}>
+                <Box sx={sx.heading}>Included in accounting</Box>
+                <Badge sx={sx.badge}>
+                  {element.includes('*') ? 'No' : 'Yes'}
+                </Badge>
+              </Column>
+
+              <Column sx={sx.column} start={1} width={[6, 6, 4, 4]}>
+                <Box sx={sx.heading}>Notes</Box>
+                <Box sx={{ fontFamily: 'faux' }}>{comments}</Box>
+              </Column>
+
+              <Column
+                start={1}
+                width={[6, 6, 4, 4]}
+                sx={{
+                  ...sx.column,
+                  display: ['initial', 'initial', 'none', 'none'],
+                }}
               >
-                View in diagram
-              </Button>
-            </Column>
-          </Row>
+                <Button
+                  sx={{ color: CATEGORY_COLORS[category] }}
+                  onClick={openTray}
+                  suffix={<RotatingArrow />}
+                >
+                  View in diagram
+                </Button>
+              </Column>
+            </Row>
 
-          <Divider />
-        </Box>
-      ) : null}
+            <Divider />
+          </Box>
+        </AnimateHeight>
+      </Box>
     </Box>
   )
 }
