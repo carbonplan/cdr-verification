@@ -81,7 +81,7 @@ const Equation = ({ equation, elements }) => {
 
         <Box>
           <Box>=</Box>
-          <Box sx={{ mt: [3, 3, 1, 3] }}>=</Box>
+          <Box sx={{ mt: 3 }}>=</Box>
         </Box>
 
         <Box>
@@ -91,10 +91,8 @@ const Equation = ({ equation, elements }) => {
             <Box sx={sx.emissions}>Emissions</Box>
             <Box sx={sx.subscript}>CO₂e</Box>
           </Box>
-          <Box>
-            <Flex
-              sx={{ gap: [1, 1, 1, 2], mt: [3, 3, 1, 3], flexWrap: 'wrap' }}
-            >
+          <Box sx={{ mt: 3 }}>
+            <Flex sx={{ gap: [1, 1, 1, 2], flexWrap: 'wrap' }}>
               {interleaved.map((d, i) => (
                 <Box key={i} sx={{ flexShrink: 0 }}>
                   {d}
