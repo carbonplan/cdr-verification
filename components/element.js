@@ -121,21 +121,19 @@ const Element = ({
           <Divider />
           <Row columns={[6, 8, 4, 4]}>
             <Column sx={sx.column} start={1} width={[6, 8, 4, 4]}>
+              <Column sx={sx.column} start={1} width={[6, 6, 4, 4]}>
+                <Tooltip tooltip={legend.quantification_target} sx={{ mb: 2 }}>
+                  <Box sx={sx.heading}>Quantification target</Box>
+                </Tooltip>
+                <Box sx={{ fontFamily: 'faux' }}>{quantification_target}</Box>
+              </Column>
+
               <Tooltip tooltip={legend.uncertainty_magnitude} sx={{ mb: 2 }}>
                 <Box sx={sx.heading}>Uncertainty magnitude</Box>
               </Tooltip>
 
               <Row columns={[6, 8, 4, 4]}>
-                <Column start={1} width={[2, 1]}>
-                  <Uncertainty
-                    min={uncertainty_magnitude_min}
-                    max={uncertainty_magnitude_max}
-                    flexShrink={0.5}
-                    color={CATEGORY_COLORS[category]}
-                    sx={{ pr: [28, 0] }}
-                  />
-                </Column>
-                <Column start={[3, 2]} width={[3, 6, 3, 3]}>
+                <Column start={[1]} width={[3, 6, 3, 3]}>
                   <Badge sx={sx.badge}>{uncertainty_magnitude_min}</Badge>
                   {uncertainty_magnitude_min !== uncertainty_magnitude_max ? (
                     <>
@@ -165,10 +163,14 @@ const Element = ({
               </Tooltip>
               <Badge sx={sx.badge}>{responsibility}</Badge>
             </Column>
+
             <Column sx={sx.column} start={1} width={[6, 6, 4, 4]}>
-              <Box sx={sx.heading}>Quantification target</Box>
-              <Box sx={{ fontFamily: 'faux' }}>{quantification_target}</Box>
+              <Box sx={sx.heading}>Included in accounting</Box>
+              <Badge sx={sx.badge}>
+                {element.includes('*') ? 'No' : 'Yes'}
+              </Badge>
             </Column>
+
             <Column sx={sx.column} start={1} width={[6, 6, 4, 4]}>
               <Box sx={sx.heading}>Notes</Box>
               <Box sx={{ fontFamily: 'faux' }}>{comments}</Box>
