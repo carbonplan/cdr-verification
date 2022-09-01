@@ -12,7 +12,7 @@ const PathwaySelector = ({ pathway, setPathway, size = 'md', sx }) => {
         '& select': {
           width: '100%',
           overflow: 'hidden',
-          fontSize: [4, 4, 5, 5],
+          fontSize: [3, 3, 4, 4],
         },
         ...sx,
       }}
