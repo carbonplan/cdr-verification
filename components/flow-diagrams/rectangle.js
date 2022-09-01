@@ -80,6 +80,16 @@ const Rectangle = ({
           fontSize: ['1.6vw', '1.5vw', '1vw', '0.75vw'],
         }}
       >
+        {borderStyle === 'none' && (
+          <Box
+            sx={{
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
+              mt: '-24px',
+            }}
+          />
+        )}
         <Box sx={{ padding: 1 }}>{label ?? data?.description}</Box>
       </Flex>
     </Box>
