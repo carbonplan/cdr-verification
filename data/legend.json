@@ -1,8 +1,7 @@
 {
-    "category": "The outcome a particular MRV component informs. Select one to filter for the corresponding components below.",
-    "quantification_target": "What needs to be quantified via an MRV process in order to estimate the net carbon removal or storage durability achieved.",
-    "uncertainty_magnitude": "The potential impact on the final estimate of net carbon removal or storage duration: negligible (<1%), low (1-5%), medium (5-20%), high (20-50%), or very high (>50%).",
-    "uncertainty_type": "The primary driver of uncertainty given the identified \u201cbest practice\u201d approaches to quantification: execution, scientific, or counterfactual.",
-    "responsibility": "Who should be primarily responsible for reducing the uncertainty associated with a quantification component: project or system. ",
-    "VCL": "Summarizes the combined quantification uncertainty for the pathway on a scale of 1 to 5. VCL 1 indicates that current MRV may not be able to establish net atmospheric carbon removal with confidence. VCL 5 indicates that only small sources of uncertainty remain. "
+  "category": "The outcome a particular MRV component informs. Select one to filter for the corresponding components below.",
+  "quantification_target": "What needs to be quantified via an MRV process in order to estimate the net carbon removal or storage durability achieved.",
+  "uncertainty_magnitude": "The potential impact on the final estimate of net carbon removal or storage duration: negligible (<1%), low (1-5%), medium (5-20%), high (20-50%), or very high (>50%).",
+  "uncertainty_type": "The primary driver of uncertainty given the identified \u201cbest practice\u201d approaches to quantification: execution, scientific, or counterfactual.",
+  "responsibility": "Who should be primarily responsible for reducing the uncertainty associated with a quantification component: project or system. "
 }

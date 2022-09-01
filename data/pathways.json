@@ -1,7 +1,7 @@
 [
   {
     "pathway_name": "Direct_Air_Capture",
-    "pathway_description": "Direct Air Capture (DAC) refers to a family of technologies that use a chemical approach to capture CO2 from ambient air and generate a concentrated stream of CO2 for storage. We assume here that captured CO2 is not used for enhanced oil recovery (EOR).",
+    "pathway_description": "Direct Air Capture (DAC) uses chemicals to capture CO2 from ambient air and generate a concentrated stream of CO2 for storage. We assume that captured CO2 is not used for enhanced oil recovery. This pathway is VCL 4-5, meaning that current MRV capacity can establish net carbon removal with relative confidence.",
     "VCL": ["4", "5"],
     "equation": "(1 - 2) - (3 + 4 + 5)",
     "elements": [
@@ -107,7 +107,7 @@
   },
   {
     "pathway_name": "Biomass_Carbon_Removal_and_Storage",
-    "pathway_description": "Biomass with carbon removal and storage (BiCRS) uses plants or algae to remove CO2 from the atmsophere via photsynthesis, and transforms the biomass itself (e.g. via pyrolysis) and its environment (e.g. via geologic injection) to achieve long-term storage.",
+    "pathway_description": "Biomass with carbon removal and storage (BiCRS) uses photosynthesis to remove CO2 from the atmsophere, and transforms the resulting biomass (e.g. via pyrolysis) and its environment (e.g. via geologic injection) to achieve long-term storage. This pathway is VCL 3-5, meaning that current MRV capacity can establish net carbon removal, but that for certain approaches, significant uncertainties remain.",
     "VCL": ["3", "5"],
     "equation": "(1 - 2 - 3 - 4 - 5) - (6 + 7)",
     "elements": [
@@ -241,9 +241,9 @@
   },
   {
     "pathway_name": "Enhanced_Weathering",
-    "pathway_description": "Enhanced weathering (EW) is a process that aims to accellerate the natural weathering of rocks by speeding up the chemical reactions between rocks, water, and air. Here, we specifically consider EW performed by spreading finely ground rock on agricultural soils, which as they weather, release alkanity and facilitate carbon storage. In addition to the carbon removal and permanence uncertainties mapped below, there are important uncertainties related the impacts of this approach on agricultural yields and human health.",
+    "pathway_description": "Enhanced weathering (EW) is a process that speeds up the chemical reactions between rocks, water, and air to remove CO2 from the atmosphere. Here, we specifically consider EW performed by spreading finely ground rock on agricultural soils. This pathway is VCL 3, meaning that current MRV capacity can establish net carbon removal occurred, but significant uncertainties remain.",
     "VCL": ["3", "3"],
-    "equation": "(1 - 2 - 3 - 4 - 5 - 6 + 7*) - (8 + 9 - 10* - 11* - 12*)",
+    "equation": "(1 - 2 - 3 - 4 - 5 - 6) - (8 + 9 - 10* - 11* - 12*)",
     "elements": [
       {
         "element": "1",
@@ -459,7 +459,7 @@
   },
   {
     "pathway_name": "Terrestrial_Biomass_Sinking",
-    "pathway_description": "Terrestrial Biomass Sinking uses plants or algae to remove CO2 from the atmsophere via photsynthesis, and sinks that biomass into the deep ocean to achieve long-term carbon storage. In addition to the carbon removal and permanence uncertainties mapped below, there are important uncertainties about the ecosystem impacts of this approach.",
+    "pathway_description": "Terrestrial Biomass Sinking uses plants or algae to remove CO2 from the atmsophere via photsynthesis, and sinks that biomass into the deep ocean to achieve long-term carbon storage. In addition to the carbon removal and permanence uncertainties mapped below, there are important uncertainties about the ecosystem impacts of this approach. This pathway is VCL 2-5, meaning that current MRV capacity can establish net carbon removal, but for certain approaches, very significant uncertainties remain.",
     "VCL": ["2", "5"],
     "equation": "(1 - 2 - 3 - 4 - 5) - (6 + 7)",
     "elements": [
@@ -593,7 +593,7 @@
   },
   {
     "pathway_name": "Ocean_Biomass_Sinking_-_No_Harvest",
-    "pathway_description": "Ocean Biomass Sinking uses macroalge to remove CO2 from surface ocean, which in turn enhances the ability of the surface ocean to drawdown atmospheric CO2. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that do not involve harvesting the ocean biomass before sinking it. In addition to the carbon removal and permanence uncertainties mapped below, there are important uncertainties about the ecosystem impacts of this approach.",
+    "pathway_description": "Ocean Biomass Sinking uses macroalge to remove CO2 from surface ocean, which in turn enhances the ability of the surface ocean to drawdown atmospheric CO2. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that do not harvest the biomass before sinking it. This pathway is VCL 1-2, meaning that current MRV capacity may be able to establish net carbon removal occured, but that very significant uncertainties remain.",
     "VCL": ["1", "2"],
     "equation": "(1 - 2 - 3 - 4) - (5 + 6)",
     "elements": [
@@ -713,7 +713,7 @@
   },
   {
     "pathway_name": "Ocean_Biomass_Sinking_-_Harvest",
-    "pathway_description": "Ocean Biomass Sinking uses macroalge to remove CO2 from surface ocean, which in turn enhances the ability of the surface ocean to drawdown atmospheric CO2. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that involve harvesting the ocean biomass before sinking it. In addition to the carbon removal and permanence uncertainties mapped below, there are important uncertainties about the ecosystem impacts of this approach.",
+    "pathway_description": "Ocean Biomass Sinking uses macroalge to remove CO2 from surface ocean, indirectly resulting in the removal of CO2 from the atmosphere. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that involve harvesting the biomass before sinking it. This pathway is VCL 3, meaning that current MRV capacity can establish net carbon removal occured, but significant uncertainties remain.",
     "VCL": ["3", "3"],
     "equation": "(1 - 2 - 3 - 4) - (5 + 6)",
     "elements": [
@@ -833,7 +833,7 @@
   },
   {
     "pathway_name": "Ocean_Alkalinity_Enhancement_-_Electrochemical",
-    "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance its ability to uptake and store atmospheric CO2. Here, we specifically consider OAE that is facilitated by electrochemical separation which removes acidity from seawater and returns a more basic solution to enhance ocean alkalinity.",
+    "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance the uptake and storage of atmospheric CO2. Here, we specifically consider OAE that is facilitated by electrochemical separation, which removes acidity from seawater and returns a more basic solution to enhance ocean alkalinity. This pathway is VCL 3, meaning that current MRV capacity can establish net carbon removal occured, but significant uncertainties remain.",
     "VCL": ["3", "3"],
     "equation": "(1 - 2 - 3 + 4* - 5 - 6) - (7 + 8 + 9)",
     "elements": [
@@ -995,7 +995,7 @@
   },
   {
     "pathway_name": "Ocean_Alkalinity_Enhancement_-_Mineral",
-    "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance its ability to uptake and store atmospheric CO2. Here, we specifically consider OAE that is facilitated by adding rocks to the ocean which dissolve to enhance alkalinity.",
+    "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance its ability to uptake and store atmospheric CO2. Here, we specifically consider OAE that is facilitated by adding rocks to the ocean which dissolve to enhance alkalinity. This pathway is VCL 2, meaning that current MRV capacity may be able establish net carbon removal occured, but very significant uncertainties remain.",
     "VCL": ["2", "2"],
     "equation": "(1 - 2 - 3 - 4 + 5* - 6) - (7 + 8)",
     "elements": [
