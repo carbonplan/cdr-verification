@@ -1,5 +1,5 @@
 import { Box, Flex } from 'theme-ui'
-import { alpha } from '@theme-ui/color'
+import { mix } from '@theme-ui/color'
 
 import Circle from '../circle'
 import { useElement } from '../context/element'
@@ -18,16 +18,16 @@ const Rectangle = ({
   const borderColor = deemphasized ? 'secondary' : 'primary'
   const borderStyle = borderStyleProp ?? (deemphasized ? 'dashed' : 'solid')
 
-  let opacity
+  let mixer
   switch (status) {
     case 'hovered':
-      opacity = 0.75
+      mixer = (color) => mix(color, 'primary', 0.5)
       break
     case 'inactive':
-      opacity = 0.4
+      mixer = (color) => mix(color, 'background', 0.5)
       break
     default:
-      opacity = 1
+      mixer = (color) => color
       break
   }
 
@@ -45,11 +45,11 @@ const Rectangle = ({
         gridColumnEnd: gridColumnStart + width,
         gridRowStart,
         gridRowEnd: gridRowStart + height,
-        backgroundColor: invert ? alpha('primary', opacity) : null,
-        borderColor: invert ? null : alpha(borderColor, opacity),
+        backgroundColor: invert ? mixer('primary') : null,
+        borderColor: invert ? null : mixer(borderColor),
         borderWidth: invert ? 0 : '1px',
         borderStyle,
-        color: invert ? 'background' : alpha('primary', opacity),
+        color: invert ? mixer('background') : mixer('primary'),
         transition: 'background-color, color, border-color 0.15s',
       }}
     >
@@ -63,8 +63,6 @@ const Rectangle = ({
         >
           <Circle
             id={id}
-            opacity={opacity}
-            category={data?.category}
             sx={{
               backgroundColor: 'background',
               mt: borderStyle === 'none' ? '-24px' : '-14px',

@@ -1,24 +1,40 @@
 import { Box, Flex } from 'theme-ui'
-import { alpha } from '@theme-ui/color'
+import { mix } from '@theme-ui/color'
 
 import { CATEGORY_COLORS } from './constants'
+import { useElement } from './context/element'
 
-const Circle = ({ id, category, opacity = 1, sx, ...props }) => {
-  const color = CATEGORY_COLORS[category] ?? 'secondary'
+const Circle = ({ id, sx, ...props }) => {
+  const { status, data } = useElement(id)
+
+  let mixer
+  switch (status) {
+    case 'hovered':
+      mixer = (color) => mix(color, 'primary', 0.5)
+      break
+    case 'inactive':
+      mixer = (color) => mix(color, 'background', 0.5)
+      break
+    default:
+      mixer = (color) => color
+      break
+  }
+
+  const color = CATEGORY_COLORS[data.category] ?? 'secondary'
   return (
     <Flex
       sx={{
         backgroundColor: 'background',
         borderWidth: '1px',
         borderStyle: id.includes('*') ? 'dashed' : 'solid',
-        borderColor: alpha(color, opacity),
+        borderColor: mixer ? mixer(color) : color,
         alignContent: 'center',
         justifyContent: 'center',
         borderRadius: '24px',
         width: '24px',
         height: '24px',
         textAlign: 'center',
-        color: alpha(color, opacity),
+        color: mixer ? mixer(color) : color,
         fontSize: 1,
         ...sx,
       }}

@@ -54,7 +54,6 @@ const Equation = ({ equation, elements }) => {
         <Circle
           key={element.element}
           id={element.element}
-          category={element.category}
           onClick={() =>
             setActive((prev) =>
               prev === element.element ? null : element.element

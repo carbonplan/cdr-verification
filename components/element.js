@@ -58,7 +58,7 @@ const Element = ({
               gap: 2,
             }}
           >
-            <Circle id={element} category={category} sx={{ flexShrink: 0 }} />
+            <Circle id={element} sx={{ flexShrink: 0 }} />
             <Box>{description}</Box>
           </Flex>
         </Column>
