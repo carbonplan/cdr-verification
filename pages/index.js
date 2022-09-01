@@ -173,7 +173,7 @@ const Index = () => {
                       sort={sort}
                       setSort={setSort}
                       id='number'
-                      label='#'
+                      label='Number'
                       sx={{ ml: 1 }}
                     />
                   </Column>
