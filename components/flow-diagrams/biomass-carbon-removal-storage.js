@@ -23,11 +23,11 @@ const Flow = () => {
       <Arrow start={[7, 3]} length={1} down />
       <Arrow start={[10, 3]} length={1} down />
       <Rectangle start={[5, 5]} width={30} height={8} id='9' label='' />
-      <Rectangle start={[7, 7]} invert label='Biomass transformation' />
+      <Rectangle start={[7, 7]} label='Biomass transformation' />
       <Arrow start={[14, 9]} length={2} right />
-      <Rectangle label='Transportation' invert start={[17, 7]} />
+      <Rectangle label='Transportation' start={[17, 7]} />
       <Arrow start={[24, 9]} length={2} right />
-      <Rectangle id='1' invert start={[27, 7]} />
+      <Rectangle id='1' start={[27, 7]} />
 
       <Rectangle
         id='6'

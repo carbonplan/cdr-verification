@@ -24,20 +24,15 @@ const Flow = () => {
 
       <Rectangle start={[5, 5]} width={24} height={8} id='8' label='' />
 
-      <Rectangle
-        start={[7, 7]}
-        width={4}
-        invert
-        label='Macroalgae cultivation'
-      />
+      <Rectangle start={[7, 7]} width={4} label='Macroalgae cultivation' />
 
       <Arrow start={[12, 9]} length={1} right />
 
-      <Rectangle start={[14, 7]} id='1' width={6} invert />
+      <Rectangle start={[14, 7]} id='1' width={6} />
 
       <Arrow start={[21, 9]} length={1} right />
 
-      <Rectangle start={[23, 7]} width={4} label='Macroalgae sinking' invert />
+      <Rectangle start={[23, 7]} width={4} label='Macroalgae sinking' />
 
       <Arrow start={[28, 9]} length={2} right />
 

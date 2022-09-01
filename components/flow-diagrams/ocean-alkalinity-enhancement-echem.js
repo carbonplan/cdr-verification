@@ -31,21 +31,16 @@ const Flow = () => {
 
       <Rectangle start={[5, 5]} width={20} height={14} id='11' label='' />
 
-      <Rectangle start={[7, 7]} invert label='Electrochemical separation' />
+      <Rectangle start={[7, 7]} label='Electrochemical separation' />
 
       <Arrow start={[14, 9]} length={2} right />
       <Arrow start={[10, 12]} length={1} down />
 
-      <Rectangle id='1' invert start={[17, 7]} />
+      <Rectangle id='1' start={[17, 7]} />
 
       <Arrow start={[24, 9]} length={2} right />
 
-      <Rectangle
-        start={[7, 14]}
-        invert
-        height={3}
-        label='Acid bi-product disposal'
-      />
+      <Rectangle start={[7, 14]} height={3} label='Acid bi-product disposal' />
 
       <Arrow start={[10, 18]} length={2} down />
 

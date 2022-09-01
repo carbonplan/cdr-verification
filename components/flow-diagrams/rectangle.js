@@ -11,7 +11,6 @@ const Rectangle = ({
   borderStyle: borderStyleProp,
   width = 6,
   height = 4,
-  invert = false,
 }) => {
   const { status, data, setActive, setHovered } = useElement(id)
   const deemphasized = id?.includes('*')
@@ -45,11 +44,11 @@ const Rectangle = ({
         gridColumnEnd: gridColumnStart + width,
         gridRowStart,
         gridRowEnd: gridRowStart + height,
-        backgroundColor: invert ? mixer('primary') : null,
-        borderColor: invert ? null : mixer(borderColor),
-        borderWidth: invert ? 0 : '1px',
+        backgroundColor: null,
+        borderColor: mixer(borderColor),
+        borderWidth: '1px',
         borderStyle,
-        color: invert ? mixer('background') : mixer('primary'),
+        color: mixer('primary'),
         transition: 'background-color, color, border-color 0.15s',
       }}
     >
