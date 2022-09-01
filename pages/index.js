@@ -8,6 +8,7 @@ import {
   Filter,
   Tray,
   useScrollbarClass,
+  Link,
 } from '@carbonplan/components'
 import FLOW_DIAGRAMS from '../components/flow-diagrams'
 import Element from '../components/element'
@@ -108,9 +109,17 @@ const Index = () => {
                     lineHeight: 'body',
                   }}
                 >
-                  This tool illustrates different CDR technologies using pathway
-                  diagrams. Use the menus below to view the underlying [flow
-                  diagrams], uncertainty information, and chemical equations.
+                  This is an interactive tool for exploring the key
+                  uncertainties around quantifying net carbon removal and
+                  permanence outcomes for different CDR pathways. Read our{' '}
+                  <Link href='https://docs.google.com/document/d/1xf6Uvrolq1dPtzV4KUrd21dDxdhWvsBgcvpnD2v65Vk/edit'>
+                    explainer article
+                  </Link>{' '}
+                  or{' '}
+                  <Link href='https://docs.google.com/document/d/1n-vM-AySdneugQ_niZuoBVEX_a7S37aq3vzRwV71euY/edit'>
+                    methods
+                  </Link>{' '}
+                  for more detail.
                 </Box>
 
                 <Divider sx={{ mt: 5, mb: 0, mr: [0, 0, '-32px', '-48px'] }} />
