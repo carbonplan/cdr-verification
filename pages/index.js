@@ -23,9 +23,7 @@ import legend from '../data/legend.json'
 import pathways from '../data/pathways.json'
 
 const Index = () => {
-  const [pathway, setPathway] = useState(
-    'Ocean_Alkalinity_Enhancement_-_Electrochemical'
-  )
+  const [pathway, setPathway] = useState(pathways[0].pathway_name)
   const [filters, setFilters] = useState({
     drawdown: true,
     emissions: true,
