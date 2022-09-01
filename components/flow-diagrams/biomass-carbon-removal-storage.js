@@ -49,7 +49,7 @@ const Flow = () => {
       <Rectangle id='8' start={[27, 15]} />
 
       <Rectangle id='2' start={[27, 2]} height={1} borderStyle='none' />
-      <Arrow start={[30, 3]} length={1} up />
+      <Arrow start={[30, 4]} length={2} up />
     </Grid>
   )
 }

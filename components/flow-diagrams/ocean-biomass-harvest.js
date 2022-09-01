@@ -53,7 +53,7 @@ const Flow = () => {
         width={4}
         borderStyle='none'
       />
-      <Arrow start={[25, 3]} length={1} up />
+      <Arrow start={[25, 4]} length={2} up />
     </Grid>
   )
 }

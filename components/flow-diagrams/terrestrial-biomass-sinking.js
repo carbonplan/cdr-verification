@@ -28,7 +28,8 @@ const Flow = () => {
       <Rectangle id='8' start={[23, 7]} />
 
       <Rectangle id='2' start={[15, 2]} height={1} borderStyle='none' />
-      <Arrow start={[18, 3]} length={1} up />
+      <Arrow start={[14, 2]} length={4} up hideArrow />
+      <Arrow start={[14, 2]} length={2} right />
 
       <Rectangle
         id='6'
