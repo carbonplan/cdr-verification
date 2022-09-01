@@ -43,18 +43,18 @@ const Element = ({
   }
 
   return (
-    <Box
-      ref={el}
-      sx={{ my: [4, 3, 4, 4], cursor: 'pointer' }}
-      onClick={setActive}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      <Row columns={[6, 8, 4, 4]}>
+    <Box ref={el} sx={{ my: [4, 3, 4, 4] }}>
+      <Row
+        columns={[6, 8, 4, 4]}
+        onClick={setActive}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        sx={{ cursor: 'pointer' }}
+      >
         <Column start={1} width={[4, 8, 3, 3]}>
           <Flex
             sx={{
-              alignItems: 'center',
+              alignItems: 'flex-start',
               gap: 2,
             }}
           >
