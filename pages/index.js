@@ -115,17 +115,7 @@ const Index = () => {
 
                 <Divider sx={{ mt: 5, mb: 0, mr: [0, 0, '-32px', '-48px'] }} />
 
-                <Box
-                  sx={{
-                    position: 'sticky',
-                    top: 0,
-                    background: 'background',
-                    pt: 3,
-                    mr: [0, 0, '-32px', '-48px'],
-                    pr: [0, 0, '32px', '48px'],
-                    zIndex: 10,
-                  }}
-                >
+                <Box sx={{ mt: 3 }}>
                   <Box sx={{ display: ['initial', 'initial', 'none', 'none'] }}>
                     <Tooltip tooltip={pathway_description}>
                       <PathwaySelector
@@ -212,25 +202,13 @@ const Index = () => {
                 className={scrollClass}
                 sx={{
                   display: ['none', 'none', 'initial', 'initial'],
-                  position: 'sticky',
-                  top: 56,
                   height: ['fit-content', 'fit-content', 'calc(100vh - 56px)'],
                   overflowY: 'scroll',
                   px: [4, 5, 5, 6],
                   mx: [-4, -5, -5, -6],
                 }}
               >
-                <Box
-                  sx={{
-                    position: 'sticky',
-                    pt: '44px',
-                    top: 0,
-                    background: 'background',
-                    ml: [0, 0, '-32px', '-48px'],
-                    pl: [0, 0, '32px', '48px'],
-                    zIndex: 10,
-                  }}
-                >
+                <Box sx={{ mt: '44px' }}>
                   <PathwayInfo pathway={pathway} setPathway={setPathway} />
                   <Divider sx={{ my: 5, ml: [0, 0, '-32px', '-48px'] }} />
                 </Box>
@@ -240,6 +218,7 @@ const Index = () => {
             </Row>
             <Tray
               expanded={settings}
+              className={scrollClass}
               sx={{ maxHeight: 'calc(100vh - 56px)', overflowY: 'scroll' }}
             >
               {FLOW_DIAGRAMS[pathway]}
