@@ -10,7 +10,7 @@ import { default as EnhancedWeathering } from './enhanced-weathering'
 export default {
   'Ocean_Alkalinity_Enhancement_-_Electrochemical': <OAEEchem />,
   'Ocean_Alkalinity_Enhancement_-_Mineral': <OAEMineral />,
-  'Ocean_Biomass_Sinking_No_-_Harvest': <SeaweedSinking />,
+  'Ocean_Biomass_Sinking_-_No_Harvest': <SeaweedSinking />,
   'Ocean_Biomass_Sinking_-_Harvest': <SeaweedSinkingHarvest />,
   Enhanced_Weathering: <EnhancedWeathering />,
   Direct_Air_Capture: <DAC />,
