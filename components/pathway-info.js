@@ -12,7 +12,7 @@ const PathwayInfo = ({ pathway, setPathway, size = 'sm' }) => {
     [pathway]
   )
 
-  const formattedVCL = VCL[0] === VCL[1] ? VCL[0] : VCL.join(' - ')
+  const formattedVCL = VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')
   return (
     <Row columns={[6, 6, 7, 7]}>
       <Column start={1} width={[6, 6, 7, 7]}>
@@ -24,10 +24,11 @@ const PathwayInfo = ({ pathway, setPathway, size = 'sm' }) => {
           />
           <Badge
             sx={{
-              mt: '12px',
+              mt: ['12px', '12px', '10px', '4px'],
+              mb: ['2px', '2px', '2px', 0],
               mr:
                 formattedVCL.length === 1
-                  ? ['41px', '41px', '41px', '55px']
+                  ? ['21px', '21px', '21px', '27px']
                   : 0,
               fontSize: [3, 3, 3, 4],
               height: null,

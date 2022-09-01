@@ -118,26 +118,19 @@ const Index = () => {
                 <Box sx={{ mt: 3 }}>
                   <Box sx={{ display: ['initial', 'initial', 'none', 'none'] }}>
                     <Tooltip tooltip={pathway_description} align='center'>
-                      <PathwaySelector
-                        pathway={pathway}
-                        setPathway={setPathway}
-                        size='md'
-                        sx={{ mb: 2 }}
-                      />
-                    </Tooltip>
+                      <Flex sx={{ gap: 2 }}>
+                        <PathwaySelector
+                          pathway={pathway}
+                          setPathway={setPathway}
+                          size='md'
+                          sx={{ mb: 2 }}
+                        />
 
-                    <Tooltip
-                      tooltip={legend.VCL}
-                      align='center'
-                      justify={['flex-end', 'flex-start']}
-                      sx={{ my: 2 }}
-                    >
-                      <Flex sx={{ alignItems: 'center', gap: 2 }}>
-                        <Box sx={{ fontSize: 1, color: 'secondary' }}>
-                          Verification Confidence Level (VCL)
-                        </Box>
-                        <Badge>
-                          {VCL[0] === VCL[1] ? VCL[0] : VCL.join(' - ')}
+                        <Badge sx={{ flexShrink: 0, mt: '5px' }}>
+                          <Box as='span' sx={{ color: 'secondary' }}>
+                            VCL
+                          </Box>{' '}
+                          {VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')}
                         </Badge>
                       </Flex>
                     </Tooltip>
