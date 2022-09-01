@@ -15,11 +15,13 @@ const sx = {
     fontSize: '65%',
   },
   drawdown: {
+    fontSize: [1, 1, 1, 2],
     display: 'inline-block',
     color: 'teal',
     textTransform: 'uppercase',
   },
   emissions: {
+    fontSize: [1, 1, 1, 2],
     display: 'inline-block',
     color: 'yellow',
     textTransform: 'uppercase',
