@@ -47,7 +47,7 @@ const Equation = ({ equation, elements }) => {
   }
 
   const interleaved = extras.reduce((accum, extra, i) => {
-    accum.push(...extra.split(''))
+    accum.push(...extra.split('').filter((d) => d.match(/\S/g)))
     const element = elements.find((el) => el.element === equationElements[i])
     if (element) {
       accum.push(
