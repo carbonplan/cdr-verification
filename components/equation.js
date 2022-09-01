@@ -31,6 +31,21 @@ const Equation = ({ equation, elements }) => {
   const equationElements = equation.match(/[\d|\*]+/g)
   const { setActive, setHovered } = useElementContext()
 
+  if (!equationElements) {
+    return (
+      <Box
+        sx={{
+          color: 'secondary',
+          fontFamily: 'mono',
+          letterSpacing: 'mono',
+          textTransform: 'uppercase',
+        }}
+      >
+        Missing equation
+      </Box>
+    )
+  }
+
   const interleaved = extras.reduce((accum, extra, i) => {
     accum.push(...extra.split(''))
     const element = elements.find((el) => el.element === equationElements[i])
