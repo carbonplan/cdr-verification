@@ -211,7 +211,7 @@ const Index = () => {
                   <Divider sx={{ my: 5, ml: [0, 0, '-32px', '-48px'] }} />
                 </Box>
 
-                {FLOW_DIAGRAMS[pathway]}
+                <Box sx={{ mb: 5 }}>{FLOW_DIAGRAMS[pathway]}</Box>
               </Column>
             </Row>
             <Tray
@@ -219,7 +219,7 @@ const Index = () => {
               className={scrollClass}
               sx={{ maxHeight: 'calc(100vh - 56px)', overflowY: 'scroll' }}
             >
-              {FLOW_DIAGRAMS[pathway]}
+              <Box sx={{ mb: 4 }}>{FLOW_DIAGRAMS[pathway]}</Box>
               <Equation elements={elements} equation={equation} />
             </Tray>
           </ElementProvider>
