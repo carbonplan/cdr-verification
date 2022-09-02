@@ -57,11 +57,7 @@ const Index = () => {
       <Box>
         <Container>
           <ElementProvider pathway={pathway}>
-            <Row
-              sx={{
-                height: 'calc(100vh - 56px)',
-              }}
-            >
+            <Row>
               <Column
                 start={1}
                 width={[6, 8, 4, 4]}
@@ -206,8 +202,6 @@ const Index = () => {
                 className={scrollClass}
                 sx={{
                   display: ['none', 'none', 'initial', 'initial'],
-                  height: ['fit-content', 'fit-content', 'calc(100vh - 56px)'],
-                  overflowY: 'scroll',
                   px: [4, 5, 5, 6],
                   mx: [-4, -5, -5, -6],
                 }}
