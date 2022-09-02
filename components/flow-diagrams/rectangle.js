@@ -20,7 +20,7 @@ const Rectangle = ({
   let mixer
   switch (status) {
     case 'hovered':
-      mixer = (color) => mix(color, 'primary', 0.5)
+      mixer = (color) => 'primary'
       break
     case 'inactive':
       mixer = (color) => mix(color, 'background', 0.5)
