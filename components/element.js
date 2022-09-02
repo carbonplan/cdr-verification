@@ -224,7 +224,10 @@ const Element = ({
               <Column sx={sx.column} start={1} width={[6, 6, 4, 4]}>
                 <Box sx={sx.heading}>Included in accounting</Box>
                 <Badge sx={sx.badge}>
-                  {element.includes('*') ? 'No' : 'Yes'}
+                  {element.includes('*') ||
+                  !['drawdown', 'emissions'].includes(category)
+                    ? 'No'
+                    : 'Yes'}
                 </Badge>
               </Column>
 
