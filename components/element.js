@@ -104,6 +104,8 @@ const Element = ({
                 zIndex: 1,
                 stroke: hovered ? 'primary' : 'secondary',
                 flexShrink: 0,
+                pl: ['12px', '10px', '10px', '8px'],
+                pr: 0,
               }}
             />
           </Flex>
@@ -126,6 +128,8 @@ const Element = ({
               zIndex: 1,
               stroke: hovered ? 'primary' : 'secondary',
               position: 'absolute',
+              pl: ['12px', '10px', '10px', '8px'],
+              pr: 0,
               right: [-4, -5, -5, -6],
               top: 0,
             }}
