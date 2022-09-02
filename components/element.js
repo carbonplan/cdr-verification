@@ -55,7 +55,11 @@ const Element = ({
       textTransform: 'uppercase',
       my: 1,
     },
-    badge: { textTransform: 'capitalize', ml: -1 },
+    badge: {
+      fontSize: 1,
+      textTransform: 'capitalize',
+      '&:first-child': { ml: -1 },
+    },
     column: { mb: 3 },
   }
 
@@ -126,7 +130,7 @@ const Element = ({
           easing={'linear'}
         >
           <Box sx={{ mt: 2, pl: 1 }}>
-            <Row columns={[6, 8, 4, 4]}>
+            <Row columns={[6, 8, 4, 4]} sx={{ fontSize: 1 }}>
               <Column sx={sx.column} start={1} width={[6, 6, 4, 4]}>
                 <Tooltip tooltip={legend.quantification_target} mt='10px'>
                   <Box sx={sx.heading}>Quantification target</Box>
