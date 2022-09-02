@@ -29,11 +29,11 @@ const Flow = () => {
 
       <Arrow start={[12, 9]} length={2} right />
 
-      <Rectangle id='2' width={4} start={[15, 7]} />
+      <Rectangle width={4} label='Mineral weathering' start={[15, 7]} />
 
       <Arrow start={[20, 9]} length={2} right />
 
-      <Rectangle id='2' label='Alkalinity run-off' start={[23, 7]} width={5} />
+      <Rectangle id='2' start={[23, 7]} width={5} />
 
       <Arrow start={[29, 9]} length={2} right />
       <Arrow start={[30, 6]} length={3} up />

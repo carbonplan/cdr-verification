@@ -243,7 +243,7 @@
     "pathway_name": "Enhanced_Weathering",
     "pathway_description": "Enhanced weathering (EW) is a process that speeds up the chemical reactions between rocks, water, and air to remove CO2 from the atmosphere. Here, we specifically consider EW performed by spreading finely ground rock on agricultural soils. This pathway is VCL 3, meaning that current MRV capacity can establish net carbon removal occurred, but significant uncertainties remain.",
     "VCL": ["3", "3"],
-    "equation": "(1 - 2 - 3 - 4 - 5 - 6) - (8 + 9 - 10* - 11* - 12*)",
+    "equation": "(1 - 2 - 3 - 4 - 5 - 6) - (8 + 9)",
     "elements": [
       {
         "element": "1",
@@ -264,7 +264,7 @@
         "category": "drawdown",
         "name": "nwp",
         "quantification_target": "non-weathered portion of rock",
-        "description": "Mineral weathering",
+        "description": "Alkalinity run-off",
         "comments": "The rate of mineral weathering depends on many factors, including rock particle size, soil type, ambient temperature, precipitation, and irrigation. While most of the applied minerals will ultimately weather, the effective CO2 drawdown should only be credited when the weathering actually occurs. At a given point in time, it is possible to measure how much rock has weathered via elemental analysis or by tracking changes in the concentration of tracer elements that originate in the applied rocks and persist in the soil after rock weathering. However, these measurements do not tell you what portion of the alkalinity released through weathering has resulted in stored CO2. Alternatively, the pH and alkalinity of the water leaving the weathering site can be continuously measured to provide an estimate of how much alkalinity originating from the weathered rock has resulted in stored CO2 that is exported from the system, thereby providing an upper bound on the non-weathered portion and potentially simplifying the quantification approach (see Alkalinity Loss, Secondary Mineral Formation, and Secondary Precipitation for more details). Both approaches \u2014 monitoring of the rock in the weathering site, and monitoring of the alkalinity leaving the weathering site \u2014 are areas of active innovation.",
         "uncertainty_type": ["scientific", "execution"],
         "responsibility": "project",
@@ -580,7 +580,7 @@
         "category": "operations",
         "name": "ops",
         "quantification_target": "project operations",
-        "description": "",
+        "description": "Operations",
         "comments": "Any rigorous evaluation of what a carbon removal project has achieved requires clarity around a project's operations. This includes (1) transparent operations which allow external parties to observe the CDR process, (2) auditable operational records that can be cross-checked against carbon removal claims, (3) transparent protocols around how outcomes are quantified (if such claims are being made by the project), and (4) an auditable \u2014 and preferably public \u2014 registry that ensures against double-counting of carbon removal benefits.",
         "uncertainty_type": ["execution"],
         "responsibility": "project",
