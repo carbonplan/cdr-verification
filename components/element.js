@@ -131,7 +131,14 @@ const Element = ({
                 <Tooltip tooltip={legend.quantification_target} mt='10px'>
                   <Box sx={sx.heading}>Quantification target</Box>
                 </Tooltip>
-                <Box sx={{ fontFamily: 'faux' }}>{quantification_target}</Box>
+                <Box
+                  sx={{
+                    fontFamily: 'faux',
+                    '&::first-letter': { textTransform: 'uppercase' },
+                  }}
+                >
+                  {quantification_target}
+                </Box>
               </Column>
 
               <Column sx={{ mb: 2 }} start={1} width={[6, 6, 4, 4]}>
