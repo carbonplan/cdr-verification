@@ -153,7 +153,7 @@ const Element = ({
                 <Box sx={{ ...sx.heading, mb: 0 }}>Uncertainty</Box>
               </Column>
 
-              <Column sx={{ mb: 2 }} start={1} width={[6, 8, 2, 2]}>
+              <Column sx={{ mb: 2 }} start={1} width={[3, 3, 2, 2]}>
                 <Tooltip tooltip={legend.uncertainty_magnitude} mt='10px'>
                   <Box sx={{ ...sx.heading, color: 'secondary' }}>
                     Magnitude
@@ -172,7 +172,7 @@ const Element = ({
                 </Box>
               </Column>
 
-              <Column sx={{ mb: 2 }} start={3} width={[6, 8, 2, 2]}>
+              <Column sx={{ mb: 2 }} start={[4, 4, 3, 3]} width={[3, 3, 2, 2]}>
                 <Tooltip tooltip={legend.uncertainty_type} mt='10px'>
                   <Box sx={{ ...sx.heading, color: 'secondary' }}>Type</Box>
                 </Tooltip>
