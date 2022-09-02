@@ -14,16 +14,9 @@ const sx = {
     top: 1,
     fontSize: '65%',
   },
-  drawdown: {
+  equationElement: {
     fontSize: [1, 1, 1, 2],
     display: 'inline-block',
-    color: 'teal',
-    textTransform: 'uppercase',
-  },
-  emissions: {
-    fontSize: [1, 1, 1, 2],
-    display: 'inline-block',
-    color: 'yellow',
     textTransform: 'uppercase',
   },
 }
@@ -74,24 +67,33 @@ const Equation = ({ equation, elements }) => {
   return (
     <Box sx={{ fontFamily: 'mono', letterSpacing: 'mono' }}>
       <Flex sx={{ gap: [3, 3] }}>
-        <Box as='span'>
+        <Box as='span' sx={sx.equationElement}>
           Total Carbon Removal
           <Box as='span' sx={sx.subscript}>
             CO₂e
           </Box>
         </Box>
 
-        <Box>
+        <Box sx={sx.equationElement}>
           <Box>=</Box>
           <Box sx={{ mt: 3 }}>=</Box>
         </Box>
 
         <Box>
-          <Box>
-            <Box sx={sx.drawdown}>Drawdown</Box>
-            <Box sx={sx.subscript}>CO₂e</Box> -{' '}
-            <Box sx={sx.emissions}>Emissions</Box>
-            <Box sx={sx.subscript}>CO₂e</Box>
+          <Box sx={sx.equationElement}>
+            <Box as='span' sx={{ color: 'teal' }}>
+              Drawdown
+            </Box>
+            <Box as='span' sx={sx.subscript}>
+              CO₂e
+            </Box>{' '}
+            -{' '}
+            <Box as='span' sx={{ color: 'yellow' }}>
+              Emissions
+            </Box>
+            <Box as='span' sx={sx.subscript}>
+              CO₂e
+            </Box>
           </Box>
           <Box sx={{ mt: 3 }}>
             <Flex sx={{ gap: [1, 1, 1, 2], flexWrap: 'wrap' }}>
