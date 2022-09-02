@@ -33,7 +33,14 @@ const Index = () => {
   })
   const [sort, setSort] = useState('number')
   const [settings, setSettings] = useState(false)
+  const [container, setContainer] = useState(null)
   const scrollClass = useScrollbarClass()
+
+  const containerRef = useCallback((node) => {
+    if (!container) {
+      setContainer(node)
+    }
+  }, [])
 
   const openTray = useCallback(() => setSettings(true), [])
 
@@ -58,127 +65,137 @@ const Index = () => {
         <Container>
           <ElementProvider pathway={pathway}>
             <Row>
-              <Column
-                start={1}
-                width={[6, 8, 4, 4]}
-                className={scrollClass}
-                sx={{
-                  position: 'sticky',
-                  top: 56,
-                  height: 'calc(100vh - 56px)',
-                  overflowY: 'scroll',
-                  pl: [4, 5, 5, 6],
-                  ml: [-4, -5, -5, -6],
-                  // nudge scrollbar over for mobile (1 gutter) and desktop (1 gutter + 1/2 column)
-                  pr: [
-                    16,
-                    24,
-                    `calc(32px + (100vw - 13 * 32px) / 12 / 2)`,
-                    `calc(48px + (100vw - 13 * 48px) / 12 / 2)`,
-                  ],
-                  mr: [
-                    -16,
-                    -24,
-                    `calc(-1 * (32px + (100vw - 13 * 32px) / 12 / 2))`,
-                    `calc(-1 * (48px + (100vw - 13 * 48px) / 12 / 2))`,
-                  ],
-                }}
-              >
+              <Column start={1} width={[6, 8, 4, 4]}>
                 <Box
+                  ref={containerRef}
+                  className={scrollClass}
                   sx={{
-                    pt: 4,
-                    pb: [3],
-                    fontSize: [6, 6, 6, 7],
-                    width: 'fit-content',
-                    fontFamily: 'heading',
-                    lineHeight: 'heading',
+                    position: 'sticky',
+                    top: 56,
+                    height: 'calc(100vh - 56px)',
+                    overflowY: 'scroll',
+                    pl: [4, 5, 5, 6],
+                    ml: [-4, -5, -5, -6],
+                    // nudge scrollbar over for mobile (1 gutter) and desktop (1 gutter + 1/2 column)
+                    pr: [
+                      16,
+                      24,
+                      `calc(32px + (100vw - 13 * 32px) / 12 / 2)`,
+                      `calc(48px + (100vw - 13 * 48px) / 12 / 2)`,
+                    ],
+                    mr: [
+                      -16,
+                      -24,
+                      `calc(-1 * (32px + (100vw - 13 * 32px) / 12 / 2))`,
+                      `calc(-1 * (48px + (100vw - 13 * 48px) / 12 / 2))`,
+                    ],
                   }}
                 >
-                  CDR MRV
-                </Box>
-                <Box
-                  sx={{
-                    pt: [0],
-                    mb: [0, 3, 0, 0],
-                    fontSize: 1,
-                    fontFamily: 'body',
-                    lineHeight: 'body',
-                  }}
-                >
-                  This is an interactive tool for exploring the key
-                  uncertainties around quantifying net carbon removal and
-                  permanence outcomes for different CDR pathways. Read our{' '}
-                  <Link href='https://docs.google.com/document/d/1xf6Uvrolq1dPtzV4KUrd21dDxdhWvsBgcvpnD2v65Vk/edit'>
-                    explainer article
-                  </Link>{' '}
-                  or{' '}
-                  <Link href='https://docs.google.com/document/d/1n-vM-AySdneugQ_niZuoBVEX_a7S37aq3vzRwV71euY/edit'>
-                    methods
-                  </Link>{' '}
-                  for more detail.
-                </Box>
-
-                <Divider sx={{ mt: 5, mb: 0, mr: [0, 0, '-32px', '-48px'] }} />
-
-                <Box sx={{ mt: 3 }}>
-                  <Box sx={{ display: ['initial', 'initial', 'none', 'none'] }}>
-                    <Tooltip tooltip={pathway_description} align='center'>
-                      <Flex sx={{ gap: 2 }}>
-                        <PathwaySelector
-                          pathway={pathway}
-                          setPathway={setPathway}
-                          size='md'
-                          sx={{ mb: 2 }}
-                        />
-
-                        <Badge sx={{ flexShrink: 0, mt: '5px' }}>
-                          <Box as='span' sx={{ color: 'secondary' }}>
-                            VCL
-                          </Box>{' '}
-                          {VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')}
-                        </Badge>
-                      </Flex>
-                    </Tooltip>
-
-                    <Divider sx={{ mb: 3, ml: [0, 0, '-32px', '-48px'] }} />
+                  <Box
+                    sx={{
+                      pt: 4,
+                      pb: [3],
+                      fontSize: [6, 6, 6, 7],
+                      width: 'fit-content',
+                      fontFamily: 'heading',
+                      lineHeight: 'heading',
+                    }}
+                  >
+                    CDR MRV
+                  </Box>
+                  <Box
+                    sx={{
+                      pt: [0],
+                      mb: [0, 3, 0, 0],
+                      fontSize: 1,
+                      fontFamily: 'body',
+                      lineHeight: 'body',
+                    }}
+                  >
+                    This is an interactive tool for exploring the key
+                    uncertainties around quantifying net carbon removal and
+                    permanence outcomes for different CDR pathways. Read our{' '}
+                    <Link href='https://docs.google.com/document/d/1xf6Uvrolq1dPtzV4KUrd21dDxdhWvsBgcvpnD2v65Vk/edit'>
+                      explainer article
+                    </Link>{' '}
+                    or{' '}
+                    <Link href='https://docs.google.com/document/d/1n-vM-AySdneugQ_niZuoBVEX_a7S37aq3vzRwV71euY/edit'>
+                      methods
+                    </Link>{' '}
+                    for more detail.
                   </Box>
 
-                  <Tooltip tooltip={legend.category} mt='10px'>
-                    <Filter
-                      values={filters}
-                      setValues={setFilters}
-                      colors={CATEGORY_COLORS}
-                      showAll
-                    />
-                  </Tooltip>
-
                   <Divider
-                    sx={{ mb: 5, mt: 3, mr: [0, 0, '-32px', '-48px'] }}
+                    sx={{ mt: 5, mb: 0, mr: [0, 0, '-32px', '-48px'] }}
                   />
-                </Box>
 
-                <Row columns={[6, 8, 4, 4]}>
-                  <Column>
-                    <TableHeader
-                      sort={sort}
-                      setSort={setSort}
-                      id='number'
-                      label='Number'
-                      sx={{ ml: 1 }}
+                  <Box sx={{ mt: 3 }}>
+                    <Box
+                      sx={{ display: ['initial', 'initial', 'none', 'none'] }}
+                    >
+                      <Tooltip tooltip={pathway_description} align='center'>
+                        <Flex sx={{ gap: 2 }}>
+                          <PathwaySelector
+                            pathway={pathway}
+                            setPathway={setPathway}
+                            size='md'
+                            sx={{ mb: 2 }}
+                          />
+
+                          <Badge sx={{ flexShrink: 0, mt: '5px' }}>
+                            <Box as='span' sx={{ color: 'secondary' }}>
+                              VCL
+                            </Box>{' '}
+                            {VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')}
+                          </Badge>
+                        </Flex>
+                      </Tooltip>
+
+                      <Divider sx={{ mb: 3, ml: [0, 0, '-32px', '-48px'] }} />
+                    </Box>
+
+                    <Tooltip tooltip={legend.category} mt='10px'>
+                      <Filter
+                        values={filters}
+                        setValues={setFilters}
+                        colors={CATEGORY_COLORS}
+                        showAll
+                      />
+                    </Tooltip>
+
+                    <Divider
+                      sx={{ mb: 5, mt: 3, mr: [0, 0, '-32px', '-48px'] }}
                     />
-                  </Column>
-                  <Column start={[5, 6, 4, 4]} width={1}>
-                    <TableHeader
-                      sort={sort}
-                      setSort={setSort}
-                      id='uncertainty'
-                      label='Uncertainty'
+                  </Box>
+
+                  <Row columns={[6, 8, 4, 4]}>
+                    <Column>
+                      <TableHeader
+                        sort={sort}
+                        setSort={setSort}
+                        id='number'
+                        label='Number'
+                        sx={{ ml: 1 }}
+                      />
+                    </Column>
+                    <Column start={[5, 6, 4, 4]} width={1}>
+                      <TableHeader
+                        sort={sort}
+                        setSort={setSort}
+                        id='uncertainty'
+                        label='Uncertainty'
+                      />
+                    </Column>
+                  </Row>
+                  {getElements(elements, filters, sort).map((d) => (
+                    <Element
+                      key={d.element}
+                      container={container}
+                      openTray={openTray}
+                      {...d}
                     />
-                  </Column>
-                </Row>
-                {getElements(elements, filters, sort).map((d) => (
-                  <Element key={d.element} openTray={openTray} {...d} />
-                ))}
+                  ))}
+                </Box>
               </Column>
               <Column
                 start={[1, 1, 5, 5]}
