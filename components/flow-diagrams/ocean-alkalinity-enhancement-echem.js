@@ -4,9 +4,9 @@ import Arrow from './arrow'
 
 const Flow = () => {
   return (
-    <Grid height={26}>
-      <Rectangle start={[1, 7]} width={2} borderStyle='none' label='Seawater' />
-      <Arrow start={[4, 9]} length={2} right />
+    <Grid height={27}>
+      <Rectangle start={[1, 8]} width={2} borderStyle='none' label='Seawater' />
+      <Arrow start={[4, 10]} length={2} right />
 
       <Rectangle
         id='7'
@@ -22,39 +22,39 @@ const Flow = () => {
         height={1}
         borderStyle='none'
       />
-      <Arrow start={[7, 3]} length={1} down />
-      <Arrow start={[10, 3]} length={1} down />
+      <Arrow start={[7, 3]} length={2} down />
+      <Arrow start={[10, 3]} length={2} down />
 
       <Arrow start={[12, 2]} length={2} right />
 
       <Rectangle id='9' height={3} start={[15, 1]} />
 
-      <Rectangle start={[5, 5]} width={20} height={14} id='11' label='' />
+      <Rectangle start={[5, 6]} width={20} height={14} id='11' label='' />
 
-      <Rectangle start={[7, 7]} label='Electrochemical separation' />
+      <Rectangle start={[7, 8]} label='Electrochemical separation' />
 
-      <Arrow start={[14, 9]} length={2} right />
-      <Arrow start={[10, 12]} length={1} down />
+      <Arrow start={[14, 10]} length={2} right />
+      <Arrow start={[10, 13]} length={1} down />
 
-      <Rectangle id='1' start={[17, 7]} />
+      <Rectangle id='1' start={[17, 8]} />
 
-      <Arrow start={[24, 9]} length={2} right />
+      <Arrow start={[24, 10]} length={2} right />
 
-      <Rectangle start={[7, 14]} height={3} label='Acid bi-product disposal' />
+      <Rectangle start={[7, 15]} height={3} label='Acid bi-product disposal' />
 
-      <Arrow start={[10, 18]} length={2} down />
+      <Arrow start={[10, 19]} length={2} down />
 
-      <Rectangle id='6' start={[7, 21]} />
+      <Rectangle id='6' start={[7, 22]} />
 
-      <Rectangle id='2' start={[27, 5]} width={8} height={3} />
+      <Rectangle id='2' start={[27, 6]} width={8} height={3} />
 
-      <Rectangle id='3' start={[27, 9]} width={8} height={3} />
-      <Rectangle id='4*' start={[27, 13]} width={8} height={3} />
-      <Rectangle id='5' start={[27, 17]} width={8} height={3} />
+      <Rectangle id='3' start={[27, 10]} width={8} height={3} />
+      <Rectangle id='4*' start={[27, 14]} width={8} height={3} />
+      <Rectangle id='5' start={[27, 18]} width={8} height={3} />
 
-      <Arrow start={[31, 21]} length={1} down />
+      <Arrow start={[31, 22]} length={1} down />
 
-      <Rectangle id='10' start={[27, 23]} width={8} />
+      <Rectangle id='10' start={[27, 24]} width={8} />
     </Grid>
   )
 }
