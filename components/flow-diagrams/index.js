@@ -8,10 +8,10 @@ import { default as TBS } from './terrestrial-biomass-sinking'
 import { default as EnhancedWeathering } from './enhanced-weathering'
 
 export default {
-  'Ocean_Alkalinity_Enhancement_-_Electrochemical': <OAEEchem />,
-  'Ocean_Alkalinity_Enhancement_-_Mineral': <OAEMineral />,
-  'Ocean_Biomass_Sinking_-_No_Harvest': <SeaweedSinking />,
-  'Ocean_Biomass_Sinking_-_Harvest': <SeaweedSinkingHarvest />,
+  'Ocean_Alkalinity_Enhancement_(Electrochemical)': <OAEEchem />,
+  'Ocean_Alkalinity_Enhancement_(Mineral)': <OAEMineral />,
+  'Ocean_Biomass_Sinking_(No_Harvest)': <SeaweedSinking />,
+  'Ocean_Biomass_Sinking_(Harvest)': <SeaweedSinkingHarvest />,
   Enhanced_Weathering: <EnhancedWeathering />,
   Direct_Air_Capture: <DAC />,
   Biomass_Carbon_Removal_and_Storage: <BiCRS />,
