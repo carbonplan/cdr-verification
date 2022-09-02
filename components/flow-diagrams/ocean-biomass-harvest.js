@@ -7,53 +7,53 @@ const Flow = () => {
     <Grid height={18}>
       <Rectangle
         id='5'
-        start={[5, 2]}
+        start={[3, 2]}
         height={1}
         width={4}
         borderStyle='none'
       />
       <Rectangle
         id='6'
-        start={[8, 2]}
+        start={[6, 2]}
         height={1}
         width={4}
         borderStyle='none'
       />
-      <Arrow start={[7, 3]} length={1} down />
-      <Arrow start={[10, 3]} length={1} down />
+      <Arrow start={[5, 3]} length={1} down />
+      <Arrow start={[8, 3]} length={1} down />
 
-      <Rectangle start={[5, 5]} width={24} height={8} id='8' label='' />
+      <Rectangle start={[3, 5]} width={24} height={8} id='8' label='' />
 
-      <Rectangle start={[7, 7]} width={4} label='Macroalgae cultivation' />
+      <Rectangle start={[5, 7]} width={4} label='Macroalgae cultivation' />
 
-      <Arrow start={[12, 9]} length={1} right />
+      <Arrow start={[10, 9]} length={1} right />
 
-      <Rectangle start={[14, 7]} id='1' width={6} />
+      <Rectangle start={[12, 7]} id='1' width={6} />
 
-      <Arrow start={[21, 9]} length={1} right />
+      <Arrow start={[19, 9]} length={1} right />
 
-      <Rectangle start={[23, 7]} width={4} label='Macroalgae sinking' />
+      <Rectangle start={[21, 7]} width={4} label='Macroalgae sinking' />
 
-      <Arrow start={[28, 9]} length={2} right />
+      <Arrow start={[26, 9]} length={2} right />
 
-      <Rectangle id='7' start={[31, 7]} />
+      <Rectangle id='7' start={[29, 7]} />
 
-      <Arrow start={[9, 12]} length={2} down />
+      <Arrow start={[7, 12]} length={2} down />
 
-      <Rectangle start={[6, 15]} id='3' />
+      <Rectangle start={[4, 15]} id='3' />
 
-      <Arrow start={[13, 17]} length={2} right />
+      <Arrow start={[11, 17]} length={2} right />
 
-      <Rectangle id='4' start={[16, 15]} />
+      <Rectangle id='4' start={[14, 15]} />
 
       <Rectangle
         id='2'
-        start={[23, 2]}
+        start={[21, 2]}
         height={1}
         width={4}
         borderStyle='none'
       />
-      <Arrow start={[25, 4]} length={2} up />
+      <Arrow start={[23, 4]} length={2} up />
     </Grid>
   )
 }
