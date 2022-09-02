@@ -152,14 +152,15 @@ const Element = ({
                   </Box>
                 </Tooltip>
                 <Box>
-                  <Badge sx={sx.badge}>{uncertainty_magnitude_min}</Badge>
                   {uncertainty_magnitude_min !== uncertainty_magnitude_max ? (
-                    <>
-                      {' '}
-                      to{' '}
+                    <Flex sx={{ gap: 2 }}>
+                      <Badge sx={sx.badge}>{uncertainty_magnitude_min}</Badge>
+                      to
                       <Badge sx={sx.badge}>{uncertainty_magnitude_max}</Badge>
-                    </>
-                  ) : null}
+                    </Flex>
+                  ) : (
+                    <Badge sx={sx.badge}>{uncertainty_magnitude_min}</Badge>
+                  )}
                 </Box>
               </Column>
 
