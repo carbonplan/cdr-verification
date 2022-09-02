@@ -107,6 +107,16 @@ const Element = ({
               }}
             />
           </Flex>
+          <Box
+            sx={{
+              display: ['none', 'initial'],
+              right: [-4, -5, -5, -6],
+              width: ['24px', '32px', '32px', '48px'],
+              top: 0,
+              position: 'absolute',
+              height: '100%',
+            }}
+          />
           <Expander
             value={active}
             onClick={handleActivate}
