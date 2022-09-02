@@ -122,7 +122,15 @@ const Index = () => {
 
                 <Box sx={{ mt: 3 }}>
                   <Box sx={{ display: ['initial', 'initial', 'none', 'none'] }}>
-                    <Tooltip tooltip={pathway_description} align='center'>
+                    <Tooltip
+                      tooltip={
+                        <Flex sx={{ flexDirection: 'column', gap: 2 }}>
+                          <Box>{pathway_description}</Box>
+                          <Box>{legend.vcl}</Box>
+                        </Flex>
+                      }
+                      align='center'
+                    >
                       <Flex sx={{ gap: 2 }}>
                         <PathwaySelector
                           pathway={pathway}

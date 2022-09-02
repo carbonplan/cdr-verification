@@ -3,6 +3,67 @@ import { useState } from 'react'
 import AnimateHeight from 'react-animate-height'
 import { Info } from '@carbonplan/icons'
 
+export const TooltipWrapper = ({
+  align,
+  mt,
+  justify,
+  children,
+  expanded,
+  setExpanded,
+}) => {
+  return (
+    <Flex sx={{ gap: 2, alignItems: align, justifyContent: justify }}>
+      {children}
+      <IconButton
+        onClick={(e) => {
+          e.stopPropagation()
+          setExpanded(!expanded)
+        }}
+        role='checkbox'
+        aria-checked={expanded}
+        aria-label='Information'
+        sx={{
+          cursor: 'pointer',
+          height: '16px',
+          width: '16px',
+          '@media (hover: hover) and (pointer: fine)': {
+            '&:hover > #info': {
+              stroke: 'primary',
+            },
+          },
+          p: [0],
+          transform: 'translate(0px, -3.75px)',
+          mt,
+          flexShrink: 0,
+        }}
+      >
+        <Info
+          id='info'
+          height='16px'
+          width='16px'
+          sx={{
+            stroke: expanded ? 'primary' : 'secondary',
+            transition: '0.1s',
+          }}
+        />
+      </IconButton>
+    </Flex>
+  )
+}
+
+export const TooltipContent = ({ expanded, children, sx }) => {
+  return (
+    <AnimateHeight
+      duration={100}
+      height={expanded ? 'auto' : 0}
+      easing={'linear'}
+    >
+      <Box sx={{ py: 1, fontSize: [1, 1, 1, 2], color: 'secondary', ...sx }}>
+        {children}
+      </Box>
+    </AnimateHeight>
+  )
+}
 const Tooltip = ({
   children,
   tooltip,
@@ -15,51 +76,16 @@ const Tooltip = ({
 
   return (
     <Box sx={sx}>
-      <Flex sx={{ gap: 2, alignItems: align, justifyContent: justify }}>
-        {children}
-        <IconButton
-          onClick={(e) => {
-            e.stopPropagation()
-            setExpanded(!expanded)
-          }}
-          role='checkbox'
-          aria-checked={expanded}
-          aria-label='Information'
-          sx={{
-            cursor: 'pointer',
-            height: '16px',
-            width: '16px',
-            '@media (hover: hover) and (pointer: fine)': {
-              '&:hover > #info': {
-                stroke: 'primary',
-              },
-            },
-            p: [0],
-            transform: 'translate(0px, -3.75px)',
-            mt,
-            flexShrink: 0,
-          }}
-        >
-          <Info
-            id='info'
-            height='16px'
-            width='16px'
-            sx={{
-              stroke: expanded ? 'primary' : 'secondary',
-              transition: '0.1s',
-            }}
-          />
-        </IconButton>
-      </Flex>
-      <AnimateHeight
-        duration={100}
-        height={expanded ? 'auto' : 0}
-        easing={'linear'}
+      <TooltipWrapper
+        expanded={expanded}
+        setExpanded={setExpanded}
+        align={align}
+        justify={justify}
+        mt={mt}
       >
-        <Box sx={{ py: 1, fontSize: [1, 1, 1, 2], color: 'secondary' }}>
-          {tooltip}
-        </Box>
-      </AnimateHeight>
+        {children}
+      </TooltipWrapper>
+      <TooltipContent expanded={expanded}>{tooltip}</TooltipContent>
     </Box>
   )
 }
