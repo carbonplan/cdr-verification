@@ -8,44 +8,44 @@ const Flow = () => {
       <Rectangle
         id='6'
         width={4}
-        start={[5, 2]}
+        start={[9, 2]}
         height={1}
         borderStyle='none'
       />
       <Rectangle
         id='7'
         width={4}
-        start={[8, 2]}
+        start={[12, 2]}
         height={1}
         borderStyle='none'
       />
 
-      <Arrow start={[7, 3]} length={1} down />
-      <Arrow start={[10, 3]} length={1} down />
-      <Rectangle start={[5, 5]} width={14} height={8} id='9' label='' />
-      <Rectangle id='1' start={[9, 7]} />
-      <Arrow start={[16, 9]} length={6} right />
-      <Rectangle id='8' start={[23, 7]} />
+      <Arrow start={[11, 3]} length={1} down />
+      <Arrow start={[14, 3]} length={1} down />
+      <Rectangle start={[9, 5]} width={14} height={8} id='9' label='' />
+      <Rectangle id='1' start={[13, 7]} />
+      <Arrow start={[20, 9]} length={6} right />
+      <Rectangle id='8' start={[27, 7]} />
 
-      <Rectangle id='2' start={[15, 2]} height={1} borderStyle='none' />
-      <Arrow start={[14, 2]} length={4} up hideArrow />
-      <Arrow start={[14, 2]} length={2} right />
+      <Rectangle id='2' start={[19, 2]} height={1} borderStyle='none' />
+      <Arrow start={[18, 2]} length={4} up hideArrow />
+      <Arrow start={[18, 2]} length={2} right />
 
       <Rectangle
         id='6'
-        start={[1, 9]}
+        start={[5, 9]}
         label='Biomass feedstock'
         height={2}
         width={4}
         borderStyle='none'
       />
-      <Arrow start={[4, 9]} length={4} right />
+      <Arrow start={[8, 9]} length={4} right />
 
-      <Arrow start={[3, 11]} length={8} down hideArrow />
-      <Arrow start={[3, 19]} length={3} right />
-      <Rectangle id='3' height={3} start={[7, 14]} />
-      <Rectangle id='4' height={3} start={[7, 18]} />
-      <Rectangle id='5' height={3} start={[7, 22]} />
+      <Arrow start={[7, 11]} length={8} down hideArrow />
+      <Arrow start={[7, 19]} length={3} right />
+      <Rectangle id='3' height={3} start={[11, 14]} />
+      <Rectangle id='4' height={3} start={[11, 18]} />
+      <Rectangle id='5' height={3} start={[11, 22]} />
     </Grid>
   )
 }
