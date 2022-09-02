@@ -9,6 +9,11 @@ const TableHeader = ({ id, sort, setSort, label, sx }) => {
         cursor: 'pointer',
         flexDirection: 'column',
         gap: 2,
+        '@media (hover: hover) and (pointer: fine)': {
+          [`&:hover #${id}-triangle`]: {
+            stroke: 'primary',
+          },
+        },
         ...sx,
       }}
     >
@@ -16,11 +21,6 @@ const TableHeader = ({ id, sort, setSort, label, sx }) => {
         sx={{
           width: '16px',
           height: '16px',
-          '@media (hover: hover) and (pointer: fine)': {
-            [`&:hover > #${id}-triangle`]: {
-              stroke: 'primary',
-            },
-          },
         }}
       >
         <Triangle
@@ -34,7 +34,7 @@ const TableHeader = ({ id, sort, setSort, label, sx }) => {
           }}
         />
       </Box>
-      <Box sx={{ fontFamily: 'heading' }}>{label}</Box>
+      <Box sx={{ fontFamily: 'heading', fontSize: 1 }}>{label}</Box>
     </Flex>
   )
 }
