@@ -5,7 +5,7 @@ import Arrow from './arrow'
 const Flow = () => {
   return (
     <Grid height={28}>
-      <Rectangle start={[2, 9]} width={2} borderStyle='none' label='Seawater' />
+      <Rectangle start={[1, 9]} width={4} borderStyle='none' label='Seawater' />
       <Arrow start={[5, 11]} length={2} right />
 
       <Rectangle
