@@ -1,5 +1,5 @@
-import { Box, Divider, Flex } from 'theme-ui'
-import { useCallback, useEffect, useRef } from 'react'
+import { Box, Flex } from 'theme-ui'
+import { useCallback } from 'react'
 import { Badge, Button, Expander, Row, Column } from '@carbonplan/components'
 import { RotatingArrow } from '@carbonplan/icons'
 import AnimateHeight from 'react-animate-height'
@@ -24,27 +24,15 @@ const Element = ({
   openTray,
 }) => {
   const { active, hovered, setActive, setHovered } = useElement(element)
-  const el = useRef(null)
-  const activated = useRef(false)
 
   const handleActivate = useCallback(
     (e) => {
       e.stopPropagation()
 
-      if (!active) activated.current = true
       setActive()
     },
     [active]
   )
-
-  useEffect(() => {
-    if (active && el.current) {
-      if (!activated.current) {
-        el.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
-      }
-      activated.current = false
-    }
-  }, [active])
 
   const sx = {
     heading: {
@@ -64,7 +52,7 @@ const Element = ({
   }
 
   return (
-    <Box ref={el} sx={{ my: [4, 3, 4, 4] }}>
+    <Box sx={{ my: [4, 3, 4, 4] }}>
       <Row
         columns={[6, 8, 4, 4]}
         onClick={handleActivate}
