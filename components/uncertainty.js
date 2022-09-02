@@ -11,11 +11,11 @@ const Uncertainty = ({ color, max, sx }) => {
         width: '100%',
         height: 22,
         flexDirection: 'row',
-        gap: [1, 2],
+        gap: [1, 2, '5px', '5px'],
         ...sx,
       }}
     >
-      {new Array(quantity).fill(null).map((_, i) => (
+      {new Array(quantity + 1).fill(null).map((_, i) => (
         <Box
           key={i}
           sx={{ flex: 1, backgroundColor: mix(color, 'muted', 0.4) }}
