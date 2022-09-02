@@ -168,7 +168,12 @@ const Element = ({
               </Column>
 
               <Column sx={{ mb: 2 }} start={1} width={[3, 3, 2, 2]}>
-                <Tooltip tooltip={legend.uncertainty_magnitude} mt='10px'>
+                <Tooltip
+                  tooltip={
+                    <Box sx={{ mb: 2 }}>{legend.uncertainty_magnitude}</Box>
+                  }
+                  mt='10px'
+                >
                   <Box sx={{ ...sx.heading, color: 'secondary' }}>
                     Magnitude
                   </Box>
@@ -189,7 +194,10 @@ const Element = ({
               </Column>
 
               <Column sx={{ mb: 2 }} start={[4, 4, 3, 3]} width={[3, 3, 2, 2]}>
-                <Tooltip tooltip={legend.uncertainty_type} mt='10px'>
+                <Tooltip
+                  tooltip={<Box sx={{ mb: 2 }}>{legend.uncertainty_type}</Box>}
+                  mt='10px'
+                >
                   <Box sx={{ ...sx.heading, color: 'secondary' }}>Type</Box>
                 </Tooltip>
                 <Flex sx={{ gap: 2 }}>
@@ -202,7 +210,10 @@ const Element = ({
               </Column>
 
               <Column sx={sx.column} start={1} width={[6, 8, 2, 2]}>
-                <Tooltip tooltip={legend.responsibility} mt='10px'>
+                <Tooltip
+                  tooltip={<Box sx={{ mb: 2 }}>{legend.responsibility}</Box>}
+                  mt='10px'
+                >
                   <Box sx={{ ...sx.heading, color: 'secondary' }}>
                     Responsibility
                   </Box>
