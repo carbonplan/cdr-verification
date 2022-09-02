@@ -72,7 +72,7 @@ const Element = ({
         onMouseLeave={() => setHovered(false)}
         sx={{ cursor: 'pointer' }}
       >
-        <Column start={1} width={[4, 8, 3, 3]}>
+        <Column start={1} width={[4, 4, 3, 3]}>
           <Flex
             sx={{
               alignItems: 'flex-start',
