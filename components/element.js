@@ -58,7 +58,7 @@ const Element = ({
     badge: {
       fontSize: 1,
       textTransform: 'capitalize',
-      '&:first-child': { ml: -1 },
+      ml: -1,
     },
     column: { mb: 3 },
   }
@@ -164,7 +164,9 @@ const Element = ({
                     <Flex sx={{ gap: 2 }}>
                       <Badge sx={sx.badge}>{uncertainty_magnitude_min}</Badge>
                       to
-                      <Badge sx={sx.badge}>{uncertainty_magnitude_max}</Badge>
+                      <Badge sx={{ ...sx.badge, ml: 0 }}>
+                        {uncertainty_magnitude_max}
+                      </Badge>
                     </Flex>
                   ) : (
                     <Badge sx={sx.badge}>{uncertainty_magnitude_min}</Badge>
