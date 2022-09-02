@@ -131,7 +131,11 @@ const Element = ({
         >
           <Box sx={{ mt: 2, pl: 1 }}>
             <Row columns={[6, 8, 4, 4]} sx={{ fontSize: 1 }}>
-              <Column sx={sx.column} start={1} width={[6, 6, 4, 4]}>
+              <Column
+                sx={{ ...sx.column, mt: 3 }}
+                start={1}
+                width={[6, 6, 4, 4]}
+              >
                 <Tooltip tooltip={legend.quantification_target} mt='10px'>
                   <Box sx={sx.heading}>Quantification target</Box>
                 </Tooltip>
@@ -219,8 +223,6 @@ const Element = ({
                 </Button>
               </Column>
             </Row>
-
-            <Divider />
           </Box>
         </AnimateHeight>
       </Box>
