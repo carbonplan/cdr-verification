@@ -107,7 +107,8 @@ const Index = () => {
                 >
                   This is an interactive tool for exploring the key
                   uncertainties around quantifying net carbon removal and
-                  permanence outcomes for different CDR pathways. Read our{' '}
+                  permanence outcomes for different CDR pathways. Developed in
+                  collaboration between CarbonPlan and Stripe Climate. Read our{' '}
                   <Link href='https://docs.google.com/document/d/1xf6Uvrolq1dPtzV4KUrd21dDxdhWvsBgcvpnD2v65Vk/edit'>
                     explainer article
                   </Link>{' '}
