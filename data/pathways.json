@@ -2,7 +2,7 @@
   {
     "pathway_name": "Direct_Air_Capture",
     "pathway_description": "Direct Air Capture (DAC) uses chemicals to capture CO\u2082 from ambient air and generate a concentrated stream of CO\u2082 for storage. We assume that captured CO\u2082 is not used for enhanced oil recovery. This pathway is VCL 4-5, meaning that current MRV capacity can establish net carbon removal with relative confidence.",
-    "VCL": ["3", "5"],
+    "VCL": ["4", "5"],
     "equation": "(1 - 2) - (3 + 4 + 5)",
     "elements": [
       {
