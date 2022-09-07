@@ -1,5 +1,5 @@
 export const CATEGORY_COLORS = {
-  drawdown: 'teal',
+  drawdown: 'orange',
   emissions: 'yellow',
   durability: 'pink',
 }

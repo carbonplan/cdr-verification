@@ -3,6 +3,7 @@ import { Row, Column } from '@carbonplan/components'
 
 import { useElementContext } from './context/element'
 import Circle from './circle'
+import { CATEGORY_COLORS } from './constants'
 
 const sx = {
   subscript: {
@@ -81,14 +82,14 @@ const Equation = ({ equation, elements }) => {
 
         <Box>
           <Box sx={sx.equationElement}>
-            <Box as='span' sx={{ color: 'teal' }}>
+            <Box as='span' sx={{ color: CATEGORY_COLORS.drawdown }}>
               Drawdown
             </Box>
             <Box as='span' sx={sx.subscript}>
               CO₂e
             </Box>{' '}
             -{' '}
-            <Box as='span' sx={{ color: 'yellow' }}>
+            <Box as='span' sx={{ color: CATEGORY_COLORS.emissions }}>
               Emissions
             </Box>
             <Box as='span' sx={sx.subscript}>
