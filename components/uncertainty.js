@@ -1,6 +1,6 @@
 import { Box, Flex } from 'theme-ui'
 import { UNCERTAINTIES } from './constants'
-import { mix } from '@theme-ui/color'
+import { alpha } from '@theme-ui/color'
 
 const Uncertainty = ({ color, min, max, sx }) => {
   const start = UNCERTAINTIES.indexOf(min)
@@ -21,7 +21,7 @@ const Uncertainty = ({ color, min, max, sx }) => {
         if (i <= start) {
           backgroundColor = color
         } else if (i <= end) {
-          backgroundColor = mix(color, 'muted', 0.2)
+          backgroundColor = alpha(color, 0.2)
         }
         return <Box key={i} sx={{ flex: 1, backgroundColor }} />
       })}
