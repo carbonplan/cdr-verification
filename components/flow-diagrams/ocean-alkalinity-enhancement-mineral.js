@@ -26,7 +26,7 @@ const Flow = () => {
         start={[4, 5]}
         width={10}
         height={8}
-        secondaryLabel='CDR activity'
+        label='CDR activity'
         secondary
       />
 

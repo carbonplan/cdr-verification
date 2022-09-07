@@ -8,7 +8,6 @@ const Rectangle = ({
   id,
   label,
   secondary,
-  secondaryLabel,
   start: [gridColumnStart, gridRowStart],
   borderStyle: borderStyleProp,
   width = 6,
@@ -74,16 +73,15 @@ const Rectangle = ({
       {secondary && (
         <Box
           sx={{
-            // color: mixer('secondary'),
             ml: 2,
             mt: 1,
             fontFamily: 'mono',
             letterSpacing: 'mono',
             textTransform: 'uppercase',
-            fontSize: 1,
+            fontSize: [0, 1, 1, 2],
           }}
         >
-          {secondaryLabel}
+          {label}
         </Box>
       )}
       <Flex
@@ -106,7 +104,9 @@ const Rectangle = ({
             }}
           />
         )}
-        <Box sx={{ padding: 1 }}>{label ?? data?.description}</Box>
+        {!secondary && (
+          <Box sx={{ padding: 1 }}>{label ?? data?.description}</Box>
+        )}
       </Flex>
     </Box>
   )

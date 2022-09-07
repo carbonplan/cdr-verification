@@ -30,7 +30,7 @@ const Flow = () => {
         start={[4, 7]}
         width={30}
         height={8}
-        secondaryLabel='CDR activity'
+        label='CDR activity'
         secondary
       />
       <Rectangle start={[6, 9]} label='CO₂ capture' />
