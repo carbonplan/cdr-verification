@@ -2,8 +2,9 @@ import { Box, Flex } from 'theme-ui'
 import { UNCERTAINTIES } from './constants'
 import { mix } from '@theme-ui/color'
 
-const Uncertainty = ({ color, max, sx }) => {
-  const quantity = UNCERTAINTIES.indexOf(max)
+const Uncertainty = ({ color, min, max, sx }) => {
+  const start = UNCERTAINTIES.indexOf(min)
+  const end = UNCERTAINTIES.indexOf(max)
 
   return (
     <Flex
@@ -15,15 +16,15 @@ const Uncertainty = ({ color, max, sx }) => {
         ...sx,
       }}
     >
-      {new Array(quantity + 1).fill(null).map((_, i) => (
-        <Box
-          key={i}
-          sx={{ flex: 1, backgroundColor: mix(color, 'muted', 0.4) }}
-        />
-      ))}
-      {new Array(UNCERTAINTIES.length - 1 - quantity).fill(null).map((_, i) => (
-        <Box key={i} sx={{ flex: 1, backgroundColor: 'muted' }} />
-      ))}
+      {new Array(UNCERTAINTIES.length).fill(null).map((_, i) => {
+        let backgroundColor = 'muted'
+        if (i <= start) {
+          backgroundColor = color
+        } else if (i <= end) {
+          backgroundColor = mix(color, 'muted', 0.2)
+        }
+        return <Box key={i} sx={{ flex: 1, backgroundColor }} />
+      })}
     </Flex>
   )
 }
