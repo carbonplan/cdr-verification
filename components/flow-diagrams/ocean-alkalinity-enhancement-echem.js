@@ -29,7 +29,13 @@ const Flow = () => {
 
       <Rectangle id='9' height={3} start={[16, 2]} />
 
-      <Rectangle start={[6, 7]} width={20} height={14} id='11' label='' />
+      <Rectangle
+        start={[6, 7]}
+        width={20}
+        height={14}
+        secondaryLabel='CDR activity'
+        secondary
+      />
 
       <Rectangle start={[8, 9]} label='Electrochemical separation' />
 

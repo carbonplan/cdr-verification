@@ -7,6 +7,8 @@ import { useElement } from '../context/element'
 const Rectangle = ({
   id,
   label,
+  secondary,
+  secondaryLabel,
   start: [gridColumnStart, gridRowStart],
   borderStyle: borderStyleProp,
   width = 6,
@@ -14,7 +16,7 @@ const Rectangle = ({
 }) => {
   const { status, data, setActive, setHovered } = useElement(id)
   const deemphasized = id?.includes('*')
-  const borderColor = deemphasized ? 'secondary' : 'primary'
+  const borderColor = secondary || deemphasized ? 'secondary' : 'primary'
   const borderStyle = borderStyleProp ?? (deemphasized ? 'dashed' : 'solid')
 
   let mixer
@@ -48,7 +50,7 @@ const Rectangle = ({
         borderColor: mixer(borderColor),
         borderWidth: '1px',
         borderStyle,
-        color: mixer('primary'),
+        color: mixer(secondary ? 'secondary' : 'primary'),
         transition: 'background-color, color, border-color 0.15s',
       }}
     >
@@ -69,6 +71,21 @@ const Rectangle = ({
           />
         </Flex>
       ) : null}
+      {secondary && (
+        <Box
+          sx={{
+            // color: mixer('secondary'),
+            ml: 2,
+            mt: 1,
+            fontFamily: 'mono',
+            letterSpacing: 'mono',
+            textTransform: 'uppercase',
+            fontSize: 1,
+          }}
+        >
+          {secondaryLabel}
+        </Box>
+      )}
       <Flex
         sx={{
           height: '100%',

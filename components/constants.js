@@ -1,8 +1,7 @@
 export const CATEGORY_COLORS = {
   drawdown: 'teal',
   emissions: 'yellow',
-  operations: 'red',
-  permanence: 'pink',
+  durability: 'pink',
 }
 
 export const UNCERTAINTIES = [

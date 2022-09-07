@@ -22,7 +22,13 @@ const Flow = () => {
 
       <Arrow start={[8, 3]} length={1} down />
       <Arrow start={[11, 3]} length={1} down />
-      <Rectangle start={[6, 5]} width={30} height={8} id='9' label='' />
+      <Rectangle
+        start={[6, 5]}
+        width={30}
+        height={8}
+        secondaryLabel='CDR activity'
+        secondary
+      />
       <Rectangle start={[8, 7]} label='Biomass transformation' />
       <Arrow start={[15, 9]} length={2} right />
       <Rectangle label='Transportation' start={[18, 7]} />

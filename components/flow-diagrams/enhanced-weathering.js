@@ -23,7 +23,13 @@ const Flow = () => {
       <Arrow start={[5, 3]} length={1} down />
       <Arrow start={[8, 3]} length={1} down />
 
-      <Rectangle start={[3, 5]} width={16} height={8} id='15' label='' />
+      <Rectangle
+        start={[3, 5]}
+        width={16}
+        height={8}
+        secondaryLabel='CDR activity'
+        secondary
+      />
 
       <Rectangle start={[5, 7]} id='1' width={4} />
 

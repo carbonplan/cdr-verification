@@ -2,7 +2,7 @@
   {
     "pathway_name": "Direct_Air_Capture",
     "pathway_description": "Direct Air Capture (DAC) uses chemicals to capture CO\u2082 from ambient air and generate a concentrated stream of CO\u2082 for storage. We assume that captured CO\u2082 is not used for enhanced oil recovery. This pathway is VCL 4-5, meaning that current MRV capacity can establish net carbon removal with relative confidence.",
-    "VCL": ["4", "5"],
+    "VCL": ["3", "5"],
     "equation": "(1 - 2) - (3 + 4 + 5)",
     "elements": [
       {
@@ -77,31 +77,17 @@
       },
       {
         "element": "6",
-        "category": "permanence",
+        "category": "durability",
         "name": "stor_maint",
         "quantification_target": "storage system monitoring and maintenance plan; years of expected CO\u2082 storage",
         "description": "Storage monitoring and maintenance",
-        "comments": "If storage results in a functionally stable form of CO\u2082 on a short timescale \u2014 for example, via subsurface mineralization or mineralization in concrete \u2014 demonstration that the stable form has been achieved is enough to establish permanence. If, however, the integrity of storage requires ongoing monitoring and maintenance \u2014 for example with the injection of supercritical CO\u2082 \u2014 an evaluation of permanence claims must consider the monitoring and maintenance plan, as well as any applicable regulatory structure that assigns ongoing liability for storage integrity. One important consideration is whether or not there is a track record of sufficient administrative capacity to guarantee execution of monitoring, maintenance, and liability arrangements.",
+        "comments": "If storage results in a functionally stable form of CO\u2082 on a short timescale \u2014 for example, via subsurface mineralization or mineralization in concrete \u2014 demonstration that the stable form has been achieved is enough to establish durability. If, however, the integrity of storage requires ongoing monitoring and maintenance \u2014 for example with the injection of supercritical CO\u2082 \u2014 an evaluation of durability claims must consider the monitoring and maintenance plan, as well as any applicable regulatory structure that assigns ongoing liability for storage integrity. One important consideration is whether or not there is a track record of sufficient administrative capacity to guarantee execution of monitoring, maintenance, and liability arrangements.",
         "uncertainty_type": ["execution"],
         "responsibility": "project",
         "uncertainty_magnitude_min": "low",
         "uncertainty_magnitude_max": "medium",
         "notes": "",
         "revisions": []
-      },
-      {
-        "element": "7",
-        "category": "operations",
-        "name": "ops",
-        "quantification_target": "project operations",
-        "description": "Operations",
-        "comments": "Any rigorous evaluation of what a carbon removal project has achieved requires clarity around a project's operations. This includes (1) transparent operations which allow external parties to observe the CDR process, (2) auditable operational records that can be cross-checked against carbon removal claims, (3) transparent protocols around how outcomes are quantified (if such claims are being made by the project), and (4) an auditable \u2014 and preferably public \u2014 registry that ensures against double-counting of carbon removal benefits.",
-        "uncertainty_type": ["execution"],
-        "responsibility": "project",
-        "uncertainty_magnitude_min": "low",
-        "uncertainty_magnitude_max": "low",
-        "notes": "",
-        "revisions": "2000-01-01"
       }
     ]
   },
@@ -211,31 +197,17 @@
       },
       {
         "element": "8",
-        "category": "permanence",
+        "category": "durability",
         "name": "stor_maint",
         "quantification_target": "storage system monitoring and maintenance plan; years of expected CO\u2082 storage",
         "description": "Storage monitoring and maintenance",
-        "comments": "If storage results in a functionally stable form of CO\u2082 on a short timescale \u2014 for example, via subsurface mineralization or mineralization in concrete \u2014 demonstration that the stable form has been achieved is enough to establish permanence. If, however, the integrity of storage requires ongoing monitoring and maintenance \u2014 for example with the injection of supercritical CO\u2082 \u2014 an evaluation of permanence claims must consider the monitoring and maintenance plan, as well as any applicable regulatory structure that assigns ongoing liability for storage integrity. One important consideration is whether or not there is a track record of sufficient administrative capacity to guarantee execution of monitoring, maintenance, and liability arrangements.",
+        "comments": "If storage results in a functionally stable form of CO\u2082 on a short timescale \u2014 for example, via subsurface mineralization or mineralization in concrete \u2014 demonstration that the stable form has been achieved is enough to establish durability. If, however, the integrity of storage requires ongoing monitoring and maintenance \u2014 for example with the injection of supercritical CO\u2082 \u2014 an evaluation of durability claims must consider the monitoring and maintenance plan, as well as any applicable regulatory structure that assigns ongoing liability for storage integrity. One important consideration is whether or not there is a track record of sufficient administrative capacity to guarantee execution of monitoring, maintenance, and liability arrangements.",
         "uncertainty_type": ["execution"],
         "responsibility": "project",
         "uncertainty_magnitude_min": "low",
         "uncertainty_magnitude_max": "medium",
         "notes": "",
         "revisions": []
-      },
-      {
-        "element": "9",
-        "category": "operations",
-        "name": "ops",
-        "quantification_target": "project operations",
-        "description": "Operations",
-        "comments": "Any rigorous evaluation of what a carbon removal project has achieved requires clarity around a project's operations. This includes (1) transparent operations which allow external parties to observe the CDR process, (2) auditable operational records that can be cross-checked against carbon removal claims, (3) transparent protocols around how outcomes are quantified (if such claims are being made by the project), and (4) an auditable \u2014 and preferably public \u2014 registry that ensures against double-counting of carbon removal benefits.",
-        "uncertainty_type": ["execution"],
-        "responsibility": "project",
-        "uncertainty_magnitude_min": "low",
-        "uncertainty_magnitude_max": "low",
-        "notes": "",
-        "revisions": "2000-01-01"
       }
     ]
   },
@@ -335,7 +307,7 @@
         "name": "soil_c",
         "quantification_target": "soil carbon stock change",
         "description": "Soil carbon impacts",
-        "comments": "Mineral addition to soils could have a diversity of impacts on soil carbon, including via changes to plant or microbial productivity. There has been relatively limited research on this topic to-date, and we recommend that these carbon cycle impacts should not be used to counterbalance project lifecycle emissions nor counted as additional sequestration due to the impermanence of soil carbon storage.",
+        "comments": "Mineral addition to soils could have a diversity of impacts on soil carbon, including via changes to plant or microbial productivity. There has been relatively limited research on this topic to-date, and we recommend that these carbon cycle impacts should not be used to counterbalance project lifecycle emissions nor counted as additional sequestration due to the imdurability of soil carbon storage.",
         "uncertainty_type": ["scientific"],
         "responsibility": "project",
         "uncertainty_magnitude_min": "low",
@@ -415,11 +387,11 @@
       },
       {
         "element": "13",
-        "category": "permanence",
+        "category": "durability",
         "name": "carb_surf",
         "quantification_target": "years of expected CO\u2082 storage",
         "description": "Surficial carbonate durability",
-        "comments": "The formation of surficial carbonates depends on the type of primary mineral dissolving, carbonate saturation state, and other local environmental conditions. Although surficial carbonates have complex seasonal dynamics of dissolution and reprecipitation, there is a high likelihood of long-term permanence. If CO\u2082 storage is conservatively estimated based primarily on the quantity of alkalinity leaving the weathering site, this component of storage duration may be ignored. See \u201cMineral weathering\u201d for more details.",
+        "comments": "The formation of surficial carbonates depends on the type of primary mineral dissolving, carbonate saturation state, and other local environmental conditions. Although surficial carbonates have complex seasonal dynamics of dissolution and reprecipitation, there is a high likelihood of long-term durability. If CO\u2082 storage is conservatively estimated based primarily on the quantity of alkalinity leaving the weathering site, this component of storage duration may be ignored. See \u201cMineral weathering\u201d for more details.",
         "uncertainty_type": ["scientific"],
         "responsibility": "system",
         "uncertainty_magnitude_min": "low",
@@ -429,7 +401,7 @@
       },
       {
         "element": "14",
-        "category": "permanence",
+        "category": "durability",
         "name": "tau_dic",
         "quantification_target": "years of expected CO\u2082 storage",
         "description": "DIC residence time",
@@ -440,27 +412,13 @@
         "uncertainty_magnitude_max": "low",
         "notes": "",
         "revisions": []
-      },
-      {
-        "element": "15",
-        "category": "operations",
-        "name": "ops",
-        "quantification_target": "project operations",
-        "description": "Operations",
-        "comments": "Any rigorous evaluation of what a carbon removal project has achieved requires clarity around a project's operations. This includes (1) transparent operations which allow external parties to observe the CDR process, (2) auditable operational records that can be cross-checked against carbon removal claims, (3) transparent protocols around how outcomes are quantified (if such claims are being made by the project), and (4) an auditable \u2014 and preferably public \u2014 registry that ensures against double-counting of carbon removal benefits.",
-        "uncertainty_type": ["execution"],
-        "responsibility": "project",
-        "uncertainty_magnitude_min": "low",
-        "uncertainty_magnitude_max": "low",
-        "notes": "",
-        "revisions": []
       }
     ]
   },
   {
     "pathway_name": "Terrestrial_Biomass_Sinking",
-    "pathway_description": "Terrestrial Biomass Sinking uses plants or algae to remove CO\u2082 from the atmsophere via photsynthesis, and sinks that biomass into the deep ocean to achieve long-term carbon storage. In addition to the carbon removal and permanence uncertainties mapped below, there are important uncertainties about the ecosystem impacts of this approach. This pathway is VCL 2-5, meaning that current MRV capacity can establish net carbon removal, but for certain approaches, very significant uncertainties remain.",
-    "VCL": ["2", "5"],
+    "pathway_description": "Terrestrial Biomass Sinking uses plants or algae to remove CO\u2082 from the atmsophere via photsynthesis, and sinks that biomass into the deep ocean to achieve long-term carbon storage. In addition to the carbon removal and durability uncertainties mapped below, there are important uncertainties about the ecosystem impacts of this approach. This pathway is VCL 2-5, meaning that current MRV capacity can establish net carbon removal, but for certain approaches, very significant uncertainties remain.",
+    "VCL": ["2", "4"],
     "equation": "(1 - 2 - 3 - 4 - 5) - (6 + 7)",
     "elements": [
       {
@@ -563,30 +521,16 @@
       },
       {
         "element": "8",
-        "category": "permanence",
+        "category": "durability",
         "name": "t_recirculation",
         "quantification_target": "years of expected CO\u2082 storage",
         "description": "Deepwater recirculation",
         "comments": "From a carbon management perspective, it is conservative to assume that all sunk biomass is remineralized, and that ocean circulation and currents will eventually return the CO\u2082 back to the surface ocean, where it will be brought into equilibrium with the atmosphere. The estimated timescale of this ventilation is dependent on the location of sinking and depth achieved, which must be characterized at the project level but can be informed by models.",
         "uncertainty_type": ["scientific"],
         "responsibility": "project",
-        "uncertainty_magnitude_min": "low",
+        "uncertainty_magnitude_min": "medium",
         "uncertainty_magnitude_max": "medium",
         "notes": "The uncertainty associated with time to recirculation is dependent on how well sinking location is known and specified.",
-        "revisions": []
-      },
-      {
-        "element": "9",
-        "category": "operations",
-        "name": "ops",
-        "quantification_target": "project operations",
-        "description": "Operations",
-        "comments": "Any rigorous evaluation of what a carbon removal project has achieved requires clarity around a project's operations. This includes (1) transparent operations which allow external parties to observe the CDR process, (2) auditable operational records that can be cross-checked against carbon removal claims, (3) transparent protocols around how outcomes are quantified (if such claims are being made by the project), and (4) an auditable \u2014 and preferably public \u2014 registry that ensures against double-counting of carbon removal benefits.",
-        "uncertainty_type": ["execution"],
-        "responsibility": "project",
-        "uncertainty_magnitude_min": "low",
-        "uncertainty_magnitude_max": "low",
-        "notes": "",
         "revisions": []
       }
     ]
@@ -602,7 +546,7 @@
         "category": "drawdown",
         "name": "kelp_grown",
         "quantification_target": "mass of biomass carbon",
-        "description": "Macroalgae cultivation on drifting substrate",
+        "description": "Macroalgae cultivation on drifting buoy",
         "comments": "For systems that do not harvest kelp before sinking, kelp growth may be estimated with yield models that estimate biomass carbon as a function of species and strain, macro- and micronutrient availability, episodic mortality events like disease & storms, and other environmental factors that affect kelp growth. These models must be calibrated based on observational data, which could be derived from direct sampling and weighing, or from indirect measures from conjoined observational buoys (e.g. with instruments pointed at growing kelp). The mass of kelp grown can be converted to carbon using a default carbon content factor.",
         "uncertainty_type": ["scientific"],
         "responsibility": "project",
@@ -683,30 +627,16 @@
       },
       {
         "element": "7",
-        "category": "permanence",
+        "category": "durability",
         "name": "t_recirculation",
         "quantification_target": "years of expected CO\u2082 storage",
         "description": "Deepwater recirculation",
         "comments": "From a carbon management perspective, it is conservative to assume that all sunk biomass is remineralized, and that ocean circulation and currents will eventually return the CO\u2082 back to the surface ocean, where it will be brought into equilibrium with the atmosphere. The estimated timescale of this ventilation is dependent on the location of sinking and depth achieved, which must be characterized at the project level. For non-stationary cultivation, this may be informed by models and their associated uncertainties.",
         "uncertainty_type": ["scientific"],
         "responsibility": "project",
-        "uncertainty_magnitude_min": "low",
+        "uncertainty_magnitude_min": "medium",
         "uncertainty_magnitude_max": "medium",
         "notes": "The uncertainty associated with time to recirculation is dependent on how well sinking location is known and specified.",
-        "revisions": []
-      },
-      {
-        "element": "8",
-        "category": "operations",
-        "name": "ops",
-        "quantification_target": "project operations",
-        "description": "Operations",
-        "comments": "Any rigorous evaluation of what a carbon removal project has achieved requires clarity around a project's operations. This includes (1) transparent operations which allow external parties to observe the CDR process, (2) auditable operational records that can be cross-checked against carbon removal claims, (3) transparent protocols around how outcomes are quantified (if such claims are being made by the project), and (4) an auditable \u2014 and preferably public \u2014 registry that ensures against double-counting of carbon removal benefits.",
-        "uncertainty_type": ["execution"],
-        "responsibility": "project",
-        "uncertainty_magnitude_min": "low",
-        "uncertainty_magnitude_max": "low",
-        "notes": "",
         "revisions": []
       }
     ]
@@ -803,30 +733,16 @@
       },
       {
         "element": "7",
-        "category": "permanence",
+        "category": "durability",
         "name": "t_recirculation",
         "quantification_target": "years of expected CO\u2082 storage",
         "description": "Deepwater recirculation",
         "comments": "From a carbon management perspective, it is conservative to assume that all sunk biomass is remineralized, and that ocean circulation and currents will eventually return the CO\u2082 back to the surface ocean, where it will be brought into equilibrium with the atmosphere. The estimated timescale of this ventilation is dependent on the location of sinking and depth achieved, which must be characterized at the project level.",
         "uncertainty_type": ["scientific"],
         "responsibility": "project",
-        "uncertainty_magnitude_min": "low",
+        "uncertainty_magnitude_min": "medium",
         "uncertainty_magnitude_max": "medium",
         "notes": "The uncertainty associated with time to recirculation is dependent on how well sinking location is known and specified.",
-        "revisions": []
-      },
-      {
-        "element": "8",
-        "category": "operations",
-        "name": "ops",
-        "quantification_target": "project operations",
-        "description": "Operations",
-        "comments": "Any rigorous evaluation of what a carbon removal project has achieved requires clarity around a project's operations. This includes (1) transparent operations which allow external parties to observe the CDR process, (2) auditable operational records that can be cross-checked against carbon removal claims, (3) transparent protocols around how outcomes are quantified (if such claims are being made by the project), and (4) an auditable \u2014 and preferably public \u2014 registry that ensures against double-counting of carbon removal benefits.",
-        "uncertainty_type": ["execution"],
-        "responsibility": "project",
-        "uncertainty_magnitude_min": "low",
-        "uncertainty_magnitude_max": "low",
-        "notes": "",
         "revisions": []
       }
     ]
@@ -965,27 +881,13 @@
       },
       {
         "element": "10",
-        "category": "permanence",
+        "category": "durability",
         "name": "tau_dic",
         "quantification_target": "years of expected CO\u2082 storage",
         "description": "DIC residence time",
         "comments": "The concept of ocean DIC lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000-100,000 years.",
         "uncertainty_type": ["scientific"],
         "responsibility": "system",
-        "uncertainty_magnitude_min": "low",
-        "uncertainty_magnitude_max": "low",
-        "notes": "",
-        "revisions": []
-      },
-      {
-        "element": "11",
-        "category": "operations",
-        "name": "ops",
-        "quantification_target": "project operations",
-        "description": "Operations",
-        "comments": "Any rigorous evaluation of what a carbon removal project has achieved requires clarity around a project's operations. This includes (1) transparent operations which allow external parties to observe the CDR process, (2) auditable operational records that can be cross-checked against carbon removal claims, (3) transparent protocols around how outcomes are quantified (if such claims are being made by the project), and (4) an auditable \u2014 and preferably public \u2014 registry that ensures against double-counting of carbon removal benefits.",
-        "uncertainty_type": ["execution"],
-        "responsibility": "project",
         "uncertainty_magnitude_min": "low",
         "uncertainty_magnitude_max": "low",
         "notes": "",
@@ -1113,27 +1015,13 @@
       },
       {
         "element": "9",
-        "category": "permanence",
+        "category": "durability",
         "name": "tau_dic",
         "quantification_target": "years of expected CO\u2082 storage",
         "description": "DIC residence time",
         "comments": "The concept of ocean DIC lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000-100,000 years.",
         "uncertainty_type": ["scientific"],
         "responsibility": "system",
-        "uncertainty_magnitude_min": "low",
-        "uncertainty_magnitude_max": "low",
-        "notes": "",
-        "revisions": []
-      },
-      {
-        "element": "10",
-        "category": "operations",
-        "name": "ops",
-        "quantification_target": "project operations",
-        "description": "Operations",
-        "comments": "Any rigorous evaluation of what a carbon removal project has achieved requires clarity around a project's operations. This includes (1) transparent operations which allow external parties to observe the CDR process, (2) auditable operational records that can be cross-checked against carbon removal claims, (3) transparent protocols around how outcomes are quantified (if such claims are being made by the project), and (4) an auditable \u2014 and preferably public \u2014 registry that ensures against double-counting of carbon removal benefits.",
-        "uncertainty_type": ["execution"],
-        "responsibility": "project",
         "uncertainty_magnitude_min": "low",
         "uncertainty_magnitude_max": "low",
         "notes": "",
