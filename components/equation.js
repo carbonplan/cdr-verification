@@ -30,15 +30,12 @@ const Equation = ({ equation, elements }) => {
   const ref = useCallback((node) => {
     if (node && !width) {
       const resetWidth = () => {
-        console.log('setting width')
         setWidth(node.getBoundingClientRect().width)
       }
       resetWidth()
       window.addEventListener('resize', resetWidth)
     }
   }, [])
-
-  console.log(width)
 
   if (!equationElements) {
     return (
