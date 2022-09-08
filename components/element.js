@@ -162,9 +162,7 @@ const Element = ({
                   }
                   mt='10px'
                 >
-                  <Box sx={{ ...sx.heading, color: 'secondary' }}>
-                    Magnitude
-                  </Box>
+                  <Box sx={{ ...sx.heading, color: 'secondary' }}>Impact</Box>
                 </Tooltip>
                 <Box>
                   {uncertainty_impact_min !== uncertainty_impact_max ? (
