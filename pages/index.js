@@ -112,8 +112,9 @@ const Index = () => {
                   This is an interactive tool for understanding CDR verification
                   by exploring key uncertainties around carbon removal and
                   permanence outcomes for different CDR pathways. Developed in
-                  collaboration between CarbonPlan and Frontier. Read our
-                  explainer article or methods for more detail. Read our{' '}
+                  collaboration between CarbonPlan and{' '}
+                  <Link href='https://frontierclimate.com/'>Frontier</Link>.
+                  Read our{' '}
                   <Link href='https://docs.google.com/document/d/1xf6Uvrolq1dPtzV4KUrd21dDxdhWvsBgcvpnD2v65Vk/edit'>
                     explainer article
                   </Link>{' '}
