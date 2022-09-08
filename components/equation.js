@@ -67,7 +67,13 @@ const Equation = ({ equation, elements }) => {
   return (
     <Box sx={{ fontFamily: 'mono', letterSpacing: 'mono' }}>
       <Flex sx={{ gap: [3, 3] }}>
-        <Box as='span' sx={sx.equationElement}>
+        <Box
+          sx={{
+            ...sx.equationElement,
+            whiteSpace: ['normal', 'nowrap'],
+            flexShrink: [1, 0],
+          }}
+        >
           Total Carbon Removal
           <Box as='span' sx={sx.subscript}>
             CO₂e
