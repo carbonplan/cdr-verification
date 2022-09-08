@@ -50,19 +50,19 @@ const Flow = () => {
 
       <Rectangle id='13' height={3} start={[30, 5]} />
 
-      <Arrow start={[27, 11]} length={2} right />
+      <Arrow start={[23, 14]} length={2} down />
       <Rectangle
         id='6'
-        start={[29, 11]}
+        start={[21, 18]}
         width={4}
         height={1}
         borderStyle='none'
       />
 
-      <Arrow start={[23, 14]} length={2} down />
-      <Rectangle height={3} start={[20, 17]} label='Ocean storage' />
-      <Arrow start={[23, 21]} length={2} up />
-      <Rectangle id='14' height={3} start={[20, 24]} />
+      <Arrow start={[27, 11]} length={2} right />
+      <Rectangle height={3} start={[30, 10]} label='Ocean storage' />
+      <Arrow start={[33, 14]} length={2} up />
+      <Rectangle id='14' height={3} start={[30, 17]} />
 
       <Arrow start={[5, 12]} length={2} down />
 
