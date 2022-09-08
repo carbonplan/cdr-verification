@@ -47,27 +47,28 @@ const Flow = () => {
       <Rectangle start={[8, 16]} height={3} label='Acid bi-product disposal' />
 
       <Arrow start={[11, 20]} length={2} down />
-
       <Rectangle id='6' start={[8, 23]} height={3} />
 
-      <Arrow start={[22, 3]} length={5} up hideArrow />
-      <Arrow start={[22, 3]} length={4} right />
+      <Arrow start={[20, 14]} length={8} down />
+      <Rectangle id='5*' start={[16, 23]} width={8} height={3} />
 
-      <Rectangle id='5*' start={[27, 2]} width={8} height={3} />
+      <Arrow start={[24, 11]} length={2} right hideArrow />
+      <Arrow start={[26, 3]} length={10} up hideArrow />
+      <Arrow start={[26, 3]} length={2} right />
+      <Arrow start={[26, 7]} length={2} right />
+      <Arrow start={[26, 13]} length={2} right />
 
-      <Arrow start={[24, 11]} length={2} right />
+      <Rectangle id='2' start={[29, 2]} width={8} height={3} />
+      <Rectangle id='3' start={[29, 6]} width={8} height={3} />
+      <Rectangle id='4' start={[29, 12]} width={8} height={3} />
 
-      <Rectangle id='2' start={[27, 7]} width={8} height={3} />
-      <Rectangle id='3' start={[27, 11]} width={8} height={3} />
-      <Rectangle id='4' start={[27, 15]} width={8} height={3} />
+      <Arrow start={[33, 16]} length={1} down />
 
-      <Arrow start={[31, 19]} length={1} down />
+      <Rectangle start={[29, 18]} width={8} height={3} label='Enhanced DIC' />
 
-      <Rectangle start={[27, 21]} width={8} height={3} label='Enhanced DIC' />
+      <Arrow start={[33, 22]} length={1} up />
 
-      <Arrow start={[31, 25]} length={1} up />
-
-      <Rectangle id='10' start={[27, 27]} width={8} height={3} />
+      <Rectangle id='10' start={[29, 24]} width={8} height={3} />
     </Grid>
   )
 }

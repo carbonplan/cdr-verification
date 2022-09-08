@@ -8,49 +8,53 @@ const Flow = () => {
       <Rectangle
         id='7'
         width={4}
-        start={[4, 2]}
+        start={[3, 2]}
         height={1}
         borderStyle='none'
       />
       <Rectangle
         id='8'
         width={4}
-        start={[7, 2]}
+        start={[6, 2]}
         height={1}
         borderStyle='none'
       />
-      <Arrow start={[6, 3]} length={1} down />
-      <Arrow start={[9, 3]} length={1} down />
+      <Arrow start={[5, 3]} length={1} down />
+      <Arrow start={[8, 3]} length={1} down />
 
       <Rectangle
-        start={[4, 5]}
+        start={[3, 5]}
         width={10}
         height={8}
         label='Project activity'
         secondary
       />
 
-      <Rectangle start={[6, 7]} id='1' />
+      <Rectangle start={[5, 7]} id='1' />
 
-      <Arrow start={[13, 9]} length={2} right />
+      <Arrow start={[12, 9]} length={2} right />
 
-      <Rectangle id='2' start={[16, 7]} />
+      <Rectangle id='2' start={[15, 7]} />
 
-      <Arrow start={[19, 12]} length={2} down />
+      <Arrow start={[18, 12]} length={2} down />
 
-      <Rectangle id='6*' start={[15, 16]} width={8} height={3} />
+      <Rectangle id='6*' start={[14, 16]} width={8} height={3} />
 
-      <Arrow start={[23, 9]} length={2} right />
+      <Arrow start={[22, 9]} length={2} right hideArrow />
+      <Arrow start={[24, 3]} length={10} up hideArrow />
+      <Arrow start={[24, 3]} length={2} right />
+      <Arrow start={[24, 7]} length={2} right />
+      <Arrow start={[24, 13]} length={2} right />
 
-      <Rectangle id='3' start={[26, 4]} width={8} height={3} />
-      <Rectangle id='4' start={[26, 8]} width={8} height={3} />
-      <Rectangle id='5' start={[26, 12]} width={8} height={3} />
+      <Rectangle id='3' start={[27, 2]} width={8} height={3} />
+      <Rectangle id='4' start={[27, 6]} width={8} height={3} />
+      <Rectangle id='5' start={[27, 12]} width={8} height={3} />
 
-      <Arrow start={[30, 16]} length={1} down />
-      <Rectangle start={[26, 18]} width={8} height={3} label='Enhanced DIC' />
-      <Arrow start={[30, 22]} length={1} up />
+      <Arrow start={[31, 16]} length={1} down />
+      <Rectangle start={[27, 18]} width={8} height={3} label='Enhanced DIC' />
+      <Arrow start={[31, 22]} length={1} up />
 
-      <Rectangle id='9' start={[26, 24]} width={8} height={3} />
+      <Rectangle id='9' start={[27, 24]} width={8} height={3} />
     </Grid>
   )
 }
