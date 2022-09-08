@@ -1,5 +1,4 @@
 import { Box, Flex } from 'theme-ui'
-import { Row, Column } from '@carbonplan/components'
 
 import { useElementContext } from './context/element'
 import Circle from './circle'
@@ -75,13 +74,11 @@ const Equation = ({ equation, elements }) => {
           </Box>
         </Box>
 
-        <Box sx={sx.equationElement}>
-          <Box>=</Box>
-          <Box sx={{ mt: 3 }}>=</Box>
-        </Box>
-
         <Box>
           <Box sx={sx.equationElement}>
+            <Box as='span' sx={{ mr: 3 }}>
+              =
+            </Box>
             <Box as='span' sx={{ color: CATEGORY_COLORS.drawdown }}>
               Drawdown
             </Box>
@@ -96,7 +93,8 @@ const Equation = ({ equation, elements }) => {
               CO₂e
             </Box>
           </Box>
-          <Box sx={{ mt: 3 }}>
+          <Flex sx={{ mt: 3, gap: 3 }}>
+            <Box>=</Box>
             <Flex sx={{ gap: [1, 1, 1, 2], flexWrap: 'wrap' }}>
               {interleaved.map((d, i) => (
                 <Box key={i} sx={{ flexShrink: 0 }}>
@@ -104,7 +102,7 @@ const Equation = ({ equation, elements }) => {
                 </Box>
               ))}
             </Flex>
-          </Box>
+          </Flex>
         </Box>
       </Flex>
     </Box>
