@@ -1,8 +1,9 @@
-import { Box, Flex } from 'theme-ui'
+import { Box, Flex, useThemeUI } from 'theme-ui'
+import { alpha, mix } from '@theme-ui/color'
 import { UNCERTAINTIES } from './constants'
-import { alpha } from '@theme-ui/color'
 
 const Uncertainty = ({ color, min, max, sx }) => {
+  const { colorMode } = useThemeUI()
   const start = UNCERTAINTIES.indexOf(min)
   const end = UNCERTAINTIES.indexOf(max)
 
@@ -18,12 +19,13 @@ const Uncertainty = ({ color, min, max, sx }) => {
     >
       {new Array(UNCERTAINTIES.length).fill(null).map((_, i) => {
         let backgroundColor = 'muted'
-        if (start === -1 || end === -1) {
-          backgroundColor = 'secondary'
-        } else if (i <= start) {
+        if (i <= start) {
           backgroundColor = color
-        } else if (i <= end) {
-          backgroundColor = alpha(color, 0.2)
+        } else if (i <= end || start === -1 || end === -1) {
+          backgroundColor =
+            colorMode === 'light'
+              ? mix(color, 'secondary', 0.35)
+              : alpha(color, 0.25)
         }
         return <Box key={i} sx={{ flex: 1, backgroundColor }} />
       })}
