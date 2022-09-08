@@ -18,7 +18,7 @@ import TableHeader from '../components/table/header'
 import { ElementProvider } from '../components/context/element'
 import PathwayInfo from '../components/pathway-info'
 import PathwaySelector from '../components/pathway-selector'
-import Tooltip from '../components/tooltip'
+import Tooltip, { TooltipContent, TooltipWrapper } from '../components/tooltip'
 import Equation from '../components/equation'
 import legend from '../data/legend.json'
 import pathways from '../data/pathways.json'
@@ -32,6 +32,8 @@ const Index = () => {
   })
   const [sort, setSort] = useState('number')
   const [settings, setSettings] = useState(false)
+  const [expanded, setExpanded] = useState(false)
+
   const scrollClass = useScrollbarClass()
 
   const openTray = useCallback(() => setSettings(true), [])
@@ -126,31 +128,41 @@ const Index = () => {
 
                 <Box sx={{ mt: 3 }}>
                   <Box sx={{ display: ['initial', 'initial', 'none', 'none'] }}>
-                    <Tooltip
-                      tooltip={
-                        <Flex sx={{ flexDirection: 'column', gap: 2 }}>
-                          <Box>{pathway_description}</Box>
-                          <Box>{legend.vcl}</Box>
-                        </Flex>
-                      }
-                      align='center'
-                    >
-                      <Flex sx={{ gap: 2 }}>
+                    <Row columns={[6, 8, 4, 4]}>
+                      <Column start={1} width={[4, 5, 5, 5]}>
                         <PathwaySelector
                           pathway={pathway}
                           setPathway={setPathway}
                           size='md'
                           sx={{ mb: 2 }}
                         />
+                      </Column>
 
-                        <Badge sx={{ flexShrink: 0, mt: '5px' }}>
-                          <Box as='span' sx={{ color: 'secondary' }}>
-                            VCL
-                          </Box>{' '}
-                          {VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')}
-                        </Badge>
-                      </Flex>
-                    </Tooltip>
+                      <Column start={[5, 6, 6, 6]} width={[2]}>
+                        <TooltipWrapper
+                          expanded={expanded}
+                          setExpanded={setExpanded}
+                          align='center'
+                          mt='12px'
+                        >
+                          <Badge sx={{ flexShrink: 0, mt: '5px' }}>
+                            <Box as='span' sx={{ color: 'secondary' }}>
+                              VCL
+                            </Box>{' '}
+                            {VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')}
+                          </Badge>
+                        </TooltipWrapper>
+                      </Column>
+
+                      <Column start={1} width={[6, 8, 8, 8]}>
+                        <TooltipContent expanded={expanded} sx={{ mt: 1 }}>
+                          <Flex sx={{ flexDirection: 'column', gap: 2 }}>
+                            <Box>{pathway_description}</Box>
+                            <Box>{legend.vcl}</Box>
+                          </Flex>
+                        </TooltipContent>
+                      </Column>
+                    </Row>
 
                     <Divider sx={{ mb: 3, ml: [0, 0, '-32px', '-48px'] }} />
                   </Box>
