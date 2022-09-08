@@ -17,8 +17,8 @@ const Element = ({
   element,
   description,
   uncertainty_type,
-  uncertainty_magnitude_min,
-  uncertainty_magnitude_max,
+  uncertainty_impact_min,
+  uncertainty_impact_max,
   quantification_target,
   responsibility,
   openTray,
@@ -78,8 +78,8 @@ const Element = ({
         >
           <Flex sx={{ gap: [1, 2] }}>
             <Uncertainty
-              min={uncertainty_magnitude_min}
-              max={uncertainty_magnitude_max}
+              min={uncertainty_impact_min}
+              max={uncertainty_impact_max}
               flexShrink={0.5}
               color={CATEGORY_COLORS[category]}
             />
@@ -158,7 +158,7 @@ const Element = ({
               <Column sx={{ mb: 2 }} start={1} width={[3, 3, 2, 2]}>
                 <Tooltip
                   tooltip={
-                    <Box sx={{ mb: 2 }}>{legend.uncertainty_magnitude}</Box>
+                    <Box sx={{ mb: 2 }}>{legend.uncertainty_impact}</Box>
                   }
                   mt='10px'
                 >
@@ -167,16 +167,16 @@ const Element = ({
                   </Box>
                 </Tooltip>
                 <Box>
-                  {uncertainty_magnitude_min !== uncertainty_magnitude_max ? (
+                  {uncertainty_impact_min !== uncertainty_impact_max ? (
                     <Flex sx={{ gap: 2 }}>
-                      <Badge sx={sx.badge}>{uncertainty_magnitude_min}</Badge>
+                      <Badge sx={sx.badge}>{uncertainty_impact_min}</Badge>
                       to
                       <Badge sx={{ ...sx.badge, ml: 0 }}>
-                        {uncertainty_magnitude_max}
+                        {uncertainty_impact_max}
                       </Badge>
                     </Flex>
                   ) : (
-                    <Badge sx={sx.badge}>{uncertainty_magnitude_min}</Badge>
+                    <Badge sx={sx.badge}>{uncertainty_impact_min}</Badge>
                   )}
                 </Box>
               </Column>

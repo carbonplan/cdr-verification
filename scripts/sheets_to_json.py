@@ -57,7 +57,7 @@ def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """Sanitizes dataframe for web formatting"""
 
     # removes any uneeded cols
-    df = df[['element','category','name','quantification_target','description','comments','uncertainty_type','responsibility','uncertainty_magnitude_min','uncertainty_magnitude_max','notes','revisions']]
+    df = df[['element','category','name','quantification_target','description','comments','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','notes','revisions']]
 
     # replace empty strings with nan
     df = df.replace(r'^\s*$', np.nan, regex=True)
@@ -82,7 +82,7 @@ def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     df['revisions'] = df['revisions'].apply(lambda d: d if isinstance(d, (str,list)) else [])
 
     # removes any uneeded cols
-    df = df[['element','category','name','quantification_target','description','comments','uncertainty_type','responsibility','uncertainty_magnitude_min','uncertainty_magnitude_max','notes','revisions']]
+    df = df[['element','category','name','quantification_target','description','comments','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','notes','revisions']]
 
     return df
 
@@ -154,7 +154,7 @@ def write_pathways_to_json(avail_pathways: list):
     for pathway in avail_pathways:
 
         print(f'Processing pathway: {pathway}')
-        template_dict =  process_sheet(gsheet_doc_name, pathway)
+        template_dict = process_sheet(gsheet_doc_name, pathway)
         template_dict_list.append(template_dict)
 
     write_to_json(template_dict_list)
