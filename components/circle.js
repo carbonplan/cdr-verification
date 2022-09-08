@@ -30,12 +30,15 @@ const Circle = ({ id, sx, ...props }) => {
         borderColor: mixer ? mixer(color) : color,
         alignContent: 'center',
         justifyContent: 'center',
+        textAlign: 'center',
         borderRadius: '24px',
         width: '24px',
         height: '24px',
-        textAlign: 'center',
         color: mixer ? mixer(color) : color,
         fontSize: 1,
+        transition: '0.15s',
+        fontFamily: 'body',
+        letterSpacing: 'body',
         ...sx,
       }}
       {...props}
