@@ -152,7 +152,8 @@ const Equation = ({ equation, elements }) => {
               flexWrap: 'wrap',
             }}
           >
-            f(
+            <Box>f</Box>
+            <Box>(</Box>
             {durabilityElements.map((el, i) => (
               <React.Fragment key={el.element}>
                 <Circle
