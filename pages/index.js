@@ -43,7 +43,10 @@ const Index = () => {
 
   return (
     <Layout
-      title='CDR MRV – CarbonPlan'
+      title='CDR Verification Framework – CarbonPlan'
+      description='An interactive tool for understanding CDR verification
+      by exploring key uncertainties around carbon removal and
+      permanence outcomes for different CDR pathways'
       container={false}
       footer={false}
       metadata={false}
@@ -87,13 +90,13 @@ const Index = () => {
                   sx={{
                     pt: 4,
                     pb: [3],
-                    fontSize: [6, 6, 6, 7],
+                    fontSize: [5, 6, 6, 7],
                     width: 'fit-content',
                     fontFamily: 'heading',
                     lineHeight: 'heading',
                   }}
                 >
-                  CDR MRV
+                  CDR Verification Framework
                 </Box>
                 <Box
                   sx={{
@@ -104,10 +107,11 @@ const Index = () => {
                     lineHeight: 'body',
                   }}
                 >
-                  This is an interactive tool for exploring the key
-                  uncertainties around quantifying net carbon removal and
+                  This is an interactive tool for understanding CDR verification
+                  by exploring key uncertainties around carbon removal and
                   permanence outcomes for different CDR pathways. Developed in
-                  collaboration between CarbonPlan and Stripe Climate. Read our{' '}
+                  collaboration between CarbonPlan and Frontier. Read our
+                  explainer article or methods for more detail. Read our{' '}
                   <Link href='https://docs.google.com/document/d/1xf6Uvrolq1dPtzV4KUrd21dDxdhWvsBgcvpnD2v65Vk/edit'>
                     explainer article
                   </Link>{' '}
