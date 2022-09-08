@@ -4,71 +4,75 @@ import Arrow from './arrow'
 
 const Flow = () => {
   return (
-    <Grid height={18}>
+    <Grid height={26}>
       <Rectangle
         id='5'
-        start={[3, 2]}
+        start={[1, 2]}
         height={1}
         width={4}
         borderStyle='none'
       />
       <Rectangle
         id='6'
-        start={[6, 2]}
+        start={[4, 2]}
         height={1}
         width={4}
         borderStyle='none'
       />
-      <Arrow start={[5, 3]} length={1} down />
-      <Arrow start={[8, 3]} length={1} down />
+      <Arrow start={[3, 3]} length={1} down />
+      <Arrow start={[6, 3]} length={1} down />
 
       <Rectangle
-        start={[3, 5]}
-        width={24}
+        start={[1, 5]}
+        width={10}
         height={8}
         label='Project activity'
         secondary
       />
 
-      <Rectangle start={[5, 7]} width={4} label='Buoy deployment' />
+      <Rectangle start={[3, 7]} width={6} label='Buoy seeding and deployment' />
 
-      <Arrow start={[10, 9]} length={1} right />
+      <Arrow start={[10, 9]} length={2} right />
 
-      <Rectangle start={[12, 7]} id='1' width={6} />
+      <Rectangle start={[13, 7]} id='1' width={6} />
 
-      <Arrow start={[19, 9]} length={1} right />
+      <Arrow start={[20, 9]} length={1} right />
 
-      <Rectangle start={[21, 7]} width={4} label='Buoy sinking' />
+      <Rectangle start={[22, 7]} width={6} label='Buoy sinking' />
 
-      <Arrow start={[26, 9]} length={2} right />
+      <Arrow start={[29, 9]} length={1} right />
 
-      <Rectangle id='7' start={[29, 7]} />
+      <Rectangle start={[31, 7]} label='Deepwater storage' />
 
-      <Arrow start={[15, 12]} length={2} down />
+      <Arrow start={[34, 12]} length={2} up />
 
-      <Rectangle start={[12, 15]} id='3' />
+      <Rectangle id='7' start={[31, 15]} />
 
-      <Arrow start={[19, 17]} length={2} right />
+      <Arrow start={[16, 12]} length={2} down />
 
-      <Rectangle id='4' start={[22, 15]} />
+      <Rectangle start={[13, 15]} id='3' />
+
+      <Arrow start={[16, 20]} length={2} down />
+
+      <Rectangle id='4' start={[13, 23]} />
 
       <Rectangle
         id='2'
-        start={[15, 2]}
+        start={[14, 2]}
         height={1}
         width={4}
         borderStyle='none'
       />
-      <Arrow start={[17, 4]} length={2} up />
+      <Arrow start={[16, 4]} length={2} up />
 
       <Rectangle
         id='2'
-        start={[21, 2]}
+        start={[23, 2]}
         height={1}
         width={4}
         borderStyle='none'
       />
-      <Arrow start={[23, 4]} length={2} up />
+      <Arrow start={[25, 4]} length={2} up />
     </Grid>
   )
 }

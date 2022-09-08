@@ -1,7 +1,7 @@
 [
   {
     "pathway_name": "Direct_Air_Capture",
-    "pathway_description": "Direct Air Capture (DAC) uses chemicals to capture CO\u2082 from ambient air and generate a concentrated stream of CO\u2082 for storage. We assume that captured CO\u2082 is not used for enhanced oil recovery. This pathway is VCL 4-5, meaning that current MRV capacity can establish net carbon removal with relative confidence.",
+    "pathway_description": "Direct Air Capture (DAC) uses chemicals to capture CO\u2082 from ambient air and generate a concentrated stream of CO\u2082 for storage. We assume that captured CO\u2082 is not used for enhanced oil recovery. This pathway is VCL 4-5, meaning that current quantification capacity can establish permanent carbon removal with relative confidence.",
     "VCL": ["4", "5"],
     "equation": "(1 - 2) - (3 + 4 + 5)",
     "elements": [
@@ -93,7 +93,7 @@
   },
   {
     "pathway_name": "Biomass_Carbon_Removal_and_Storage",
-    "pathway_description": "Biomass with carbon removal and storage (BiCRS) uses photosynthesis to remove CO\u2082 from the atmsophere, and transforms the resulting biomass (e.g. via pyrolysis) and its environment (e.g. via geologic injection) to achieve long-term storage. This pathway is VCL 3-5, meaning that current MRV capacity can establish net carbon removal, but that for certain approaches, significant uncertainties remain.",
+    "pathway_description": "Biomass with carbon removal and storage (BiCRS) uses photosynthesis to remove CO\u2082 from the atmsophere, and transforms the resulting biomass (e.g. via pyrolysis) and its environment (e.g. via geologic injection) to achieve long-term storage. This pathway is VCL 3-5, meaning that current quantification capacity can establish permanent carbon removal, but that for certain approaches, significant uncertainties remain.",
     "VCL": ["3", "5"],
     "equation": "(1 - 2 - 3 - 4 - 5) - (6 + 7)",
     "elements": [
@@ -213,7 +213,7 @@
   },
   {
     "pathway_name": "Enhanced_Weathering",
-    "pathway_description": "Enhanced weathering (EW) is a process that speeds up the chemical reactions between rocks, water, and air to remove CO\u2082 from the atmosphere. Here, we specifically consider EW performed by spreading finely ground rock on agricultural soils. This pathway is VCL 3, meaning that current MRV capacity can establish net carbon removal occurred, but significant uncertainties remain.",
+    "pathway_description": "Enhanced weathering (EW) is a process that speeds up the chemical reactions between rocks, water, and air to remove CO\u2082 from the atmosphere. Here, we specifically consider EW performed by spreading finely ground rock on agricultural soils. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain.",
     "VCL": ["3", "3"],
     "equation": "(1 - 2 - 3 - 4 - 5 - 6) - (8 + 9)",
     "elements": [
@@ -417,7 +417,7 @@
   },
   {
     "pathway_name": "Terrestrial_Biomass_Sinking",
-    "pathway_description": "Terrestrial Biomass Sinking uses plants or algae to remove CO\u2082 from the atmsophere via photsynthesis, and sinks that biomass into the deep ocean to achieve long-term carbon storage. In addition to the carbon removal and durability uncertainties mapped below, there are important uncertainties about the ecosystem impacts of this approach. This pathway is VCL 2-4, meaning that current MRV capacity can establish net carbon removal, but for certain approaches, very significant uncertainties remain.",
+    "pathway_description": "Terrestrial Biomass Sinking uses plants or algae to remove CO\u2082 from the atmsophere via photsynthesis, and sinks that biomass into the deep ocean to achieve long-term carbon storage. In addition to the carbon removal and durability uncertainties mapped below, there are important uncertainties about the ecosystem impacts of this approach. This pathway is VCL 2-4, meaning that current quantification capacity can establish permanent carbon removal, but for certain approaches, very significant uncertainties remain.",
     "VCL": ["2", "4"],
     "equation": "(1 - 2 - 3 - 4 - 5) - (6 + 7)",
     "elements": [
@@ -537,7 +537,7 @@
   },
   {
     "pathway_name": "Ocean_Biomass_Sinking_(No_Harvest)",
-    "pathway_description": "Ocean Biomass Sinking uses macroalge to remove CO\u2082 from surface ocean, which in turn enhances the ability of the surface ocean to drawdown atmospheric CO\u2082. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that do not harvest the biomass before sinking it. This pathway is VCL 1-2, meaning that current MRV capacity may be able to establish net carbon removal occured, but that very significant uncertainties remain.",
+    "pathway_description": "Ocean Biomass Sinking uses macroalge to remove CO\u2082 from surface ocean, which in turn enhances the ability of the surface ocean to drawdown atmospheric CO\u2082. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that do not harvest the biomass before sinking it. This pathway is VCL 1-2, meaning that current quantification capacity may be able to establish net carbon removal occured, but that very significant uncertainties remain.",
     "VCL": ["1", "2"],
     "equation": "(1 - 2 - 3 - 4) - (5 + 6)",
     "elements": [
@@ -643,7 +643,7 @@
   },
   {
     "pathway_name": "Ocean_Biomass_Sinking_(Harvest)",
-    "pathway_description": "Ocean Biomass Sinking uses macroalge to remove CO\u2082 from surface ocean, indirectly resulting in the removal of CO\u2082 from the atmosphere. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that involve harvesting the biomass before sinking it. This pathway is VCL 3, meaning that current MRV capacity can establish net carbon removal occured, but significant uncertainties remain.",
+    "pathway_description": "Ocean Biomass Sinking uses macroalge to remove CO\u2082 from surface ocean, indirectly resulting in the removal of CO\u2082 from the atmosphere. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that involve harvesting the biomass before sinking it. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occured, but significant uncertainties remain.",
     "VCL": ["3", "3"],
     "equation": "(1 - 2 - 3 - 4) - (5 + 6)",
     "elements": [
@@ -749,9 +749,9 @@
   },
   {
     "pathway_name": "Ocean_Alkalinity_Enhancement_(Electrochemical)",
-    "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance the uptake and storage of atmospheric CO\u2082. Here, we specifically consider OAE that is facilitated by electrochemical separation, which removes acidity from seawater and returns a more basic solution to enhance ocean alkalinity. This pathway is VCL 3, meaning that current MRV capacity can establish net carbon removal occured, but significant uncertainties remain.",
+    "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance the uptake and storage of atmospheric CO\u2082. Here, we specifically consider OAE that is facilitated by electrochemical separation, which removes acidity from seawater and returns a more basic solution to enhance ocean alkalinity. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occured, but significant uncertainties remain.",
     "VCL": ["3", "3"],
-    "equation": "(1 - 2 - 3 - 5 - 6) - (7 + 8 + 9)",
+    "equation": "(1 - 2 - 3 - 4 - 5* - 6) - (7 + 8 + 9)",
     "elements": [
       {
         "element": "1",
@@ -796,21 +796,7 @@
         "revisions": []
       },
       {
-        "element": "4*",
-        "category": "drawdown",
-        "name": "poc",
-        "quantification_target": "particulate organic carbon response",
-        "description": "Particulate organic carbon response",
-        "comments": "Additional formation of dissolved inorganic carbon (DIC) as a result of alkalinity addition could lead to more particulate organic carbon (POC) formation in the surface ocean. This effect could be quite small if plankton communities are primarily limited by nutrient availability rather than DIC availability. However, it is possible for organisms to change their carbon-to-nutrient consumption ratios in response to changing environments which could result in a shift toward increased carbon drawdown in the surface ocean. Because only a small fraction of this increased drawdown would result in permanent carbon storage in the deep ocean, we conservatively recommend this not be counted as additional sequestration or used to counterbalance project lifecycle emissions.",
-        "uncertainty_type": ["scientific"],
-        "responsibility": "system",
-        "uncertainty_impact_min": "not characterized",
-        "uncertainty_impact_max": "not characterized",
-        "notes": "",
-        "revisions": []
-      },
-      {
-        "element": "5",
+        "element": "4",
         "category": "drawdown",
         "name": "asg",
         "quantification_target": "air-sea gas exchange efficiency",
@@ -820,6 +806,20 @@
         "responsibility": "system",
         "uncertainty_impact_min": "high",
         "uncertainty_impact_max": "high",
+        "notes": "",
+        "revisions": []
+      },
+      {
+        "element": "5*",
+        "category": "drawdown",
+        "name": "poc",
+        "quantification_target": "particulate organic carbon response",
+        "description": "Particulate organic carbon response",
+        "comments": "Additional formation of dissolved inorganic carbon (DIC) as a result of alkalinity addition could lead to more particulate organic carbon (POC) formation in the surface ocean. This effect could be quite small if plankton communities are primarily limited by nutrient availability rather than DIC availability. However, it is possible for organisms to change their carbon-to-nutrient consumption ratios in response to changing environments which could result in a shift toward increased carbon drawdown in the surface ocean. Because only a small fraction of this increased drawdown would result in permanent carbon storage in the deep ocean, we conservatively recommend this not be counted as additional sequestration or used to counterbalance project lifecycle emissions.",
+        "uncertainty_type": ["scientific"],
+        "responsibility": "system",
+        "uncertainty_impact_min": "not characterized",
+        "uncertainty_impact_max": "not characterized",
         "notes": "",
         "revisions": []
       },
@@ -897,9 +897,9 @@
   },
   {
     "pathway_name": "Ocean_Alkalinity_Enhancement_(Mineral)",
-    "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance its ability to uptake and store atmospheric CO\u2082. Here, we specifically consider OAE that is facilitated by adding rocks to the ocean which dissolve to enhance alkalinity. This pathway is VCL 2, meaning that current MRV capacity may be able establish net carbon removal occured, but very significant uncertainties remain.",
-    "VCL": ["2", "2"],
-    "equation": "(1 - 2 - 3 - 4 - 6) - (7 + 8)",
+    "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance its ability to uptake and store atmospheric CO\u2082. Here, we specifically consider OAE that is facilitated by adding rocks to the ocean which dissolve to enhance alkalinity. This pathway is VCL 2, meaning that current quantification capacity may be able establish net carbon removal occured, but very significant uncertainties remain.",
+    "VCL": ["1", "2"],
+    "equation": "(1 - 2 - 3 - 4 - 5) - (7 + 8)",
     "elements": [
       {
         "element": "1",
@@ -958,21 +958,7 @@
         "revisions": []
       },
       {
-        "element": "5*",
-        "category": "drawdown",
-        "name": "poc",
-        "quantification_target": "particulate organic carbon response",
-        "description": "Particulate organic carbon response",
-        "comments": "Additional formation of dissolved inorganic carbon (DIC) as a result of alkalinity addition could lead to more particulate organic carbon (POC) formation in the surface ocean. This effect could be quite small if plankton communities are primarily limited by nutrient availability rather than DIC availability. However, it is possible for organisms to change their carbon-to-nutrient consumption ratios in response to changing environments which could result in a shift toward increased carbon drawdown in the surface ocean. Because only a small fraction of this increased drawdown would result in permanent carbon storage in the deep ocean, we conservatively recommend this not be counted as additional sequestration or used to counterbalance project lifecycle emissions.",
-        "uncertainty_type": ["scientific"],
-        "responsibility": "system",
-        "uncertainty_impact_min": "not characterized",
-        "uncertainty_impact_max": "not characterized",
-        "notes": "",
-        "revisions": []
-      },
-      {
-        "element": "6",
+        "element": "5",
         "category": "drawdown",
         "name": "asg",
         "quantification_target": "air-sea gas exchange efficiency",
@@ -982,6 +968,20 @@
         "responsibility": "system",
         "uncertainty_impact_min": "high",
         "uncertainty_impact_max": "high",
+        "notes": "",
+        "revisions": []
+      },
+      {
+        "element": "6*",
+        "category": "drawdown",
+        "name": "poc",
+        "quantification_target": "particulate organic carbon response",
+        "description": "Particulate organic carbon response",
+        "comments": "Additional formation of dissolved inorganic carbon (DIC) as a result of alkalinity addition could lead to more particulate organic carbon (POC) formation in the surface ocean. This effect could be quite small if plankton communities are primarily limited by nutrient availability rather than DIC availability. However, it is possible for organisms to change their carbon-to-nutrient consumption ratios in response to changing environments which could result in a shift toward increased carbon drawdown in the surface ocean. Because only a small fraction of this increased drawdown would result in permanent carbon storage in the deep ocean, we conservatively recommend this not be counted as additional sequestration or used to counterbalance project lifecycle emissions.",
+        "uncertainty_type": ["scientific"],
+        "responsibility": "system",
+        "uncertainty_impact_min": "not characterized",
+        "uncertainty_impact_max": "not characterized",
         "notes": "",
         "revisions": []
       },

@@ -36,17 +36,21 @@ const Flow = () => {
 
       <Rectangle id='2' start={[16, 7]} />
 
+      <Arrow start={[19, 12]} length={2} down />
+
+      <Rectangle id='6*' start={[15, 16]} width={8} height={3} />
+
       <Arrow start={[23, 9]} length={2} right />
 
-      <Rectangle id='3' start={[26, 5]} width={8} height={3} />
+      <Rectangle id='3' start={[26, 4]} width={8} height={3} />
+      <Rectangle id='4' start={[26, 8]} width={8} height={3} />
+      <Rectangle id='5' start={[26, 12]} width={8} height={3} />
 
-      <Rectangle id='4' start={[26, 9]} width={8} height={3} />
-      <Rectangle id='5*' start={[26, 13]} width={8} height={3} />
-      <Rectangle id='6' start={[26, 17]} width={8} height={3} />
+      <Arrow start={[30, 16]} length={1} down />
+      <Rectangle start={[26, 18]} width={8} height={3} label='Enhanced DIC' />
+      <Arrow start={[30, 22]} length={1} up />
 
-      <Arrow start={[30, 21]} length={1} down />
-
-      <Rectangle id='9' start={[26, 23]} width={8} height={3} />
+      <Rectangle id='9' start={[26, 24]} width={8} height={3} />
     </Grid>
   )
 }

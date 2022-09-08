@@ -30,8 +30,12 @@ const Flow = () => {
         secondary
       />
       <Rectangle id='1' start={[13, 7]} />
+
       <Arrow start={[20, 9]} length={6} right />
-      <Rectangle id='8' start={[27, 7]} />
+      <Rectangle start={[27, 7]} label='Deepwater storage' />
+      <Arrow start={[30, 12]} length={2} up />
+
+      <Rectangle id='8' start={[27, 15]} />
 
       <Rectangle id='2' start={[19, 2]} height={1} borderStyle='none' />
       <Arrow start={[18, 2]} length={4} up hideArrow />
