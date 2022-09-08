@@ -1,3 +1,4 @@
+import React, { useCallback, useState } from 'react'
 import { Box, Flex } from 'theme-ui'
 
 import { useElementContext } from './context/element'
@@ -22,9 +23,22 @@ const sx = {
 }
 
 const Equation = ({ equation, elements }) => {
+  const [width, setWidth] = useState(null)
   const extras = equation.split(/[\d|\*]+/).map((s) => s.trim())
   const equationElements = equation.match(/[\d|\*]+/g)
   const { setActive, setHovered } = useElementContext()
+  const ref = useCallback((node) => {
+    if (node && !width) {
+      const resetWidth = () => {
+        console.log('setting width')
+        setWidth(node.getBoundingClientRect().width)
+      }
+      resetWidth()
+      window.addEventListener('resize', resetWidth)
+    }
+  }, [])
+
+  console.log(width)
 
   if (!equationElements) {
     return (
@@ -64,10 +78,21 @@ const Equation = ({ equation, elements }) => {
     return accum
   }, [])
 
+  const durabilityElements = elements.filter(
+    (el) => el.category === 'durability'
+  )
+
   return (
     <Box sx={{ fontFamily: 'mono', letterSpacing: 'mono' }}>
       <Flex sx={{ gap: [3, 3] }}>
-        <Box as='span' sx={sx.equationElement}>
+        <Box
+          ref={ref}
+          sx={{
+            ...sx.equationElement,
+            whiteSpace: ['normal', 'nowrap'],
+            flexShrink: [1, 0],
+          }}
+        >
           Total Carbon Removal
           <Box as='span' sx={sx.subscript}>
             CO₂e
@@ -104,6 +129,52 @@ const Equation = ({ equation, elements }) => {
             </Flex>
           </Flex>
         </Box>
+      </Flex>
+
+      <Flex sx={{ gap: [3, 3], mt: 5 }}>
+        <Box
+          sx={{
+            ...sx.equationElement,
+            flexShrink: [0, 1],
+            width,
+          }}
+        >
+          Durability
+          <Box as='span' sx={sx.subscript}>
+            years
+          </Box>
+        </Box>
+
+        <Flex sx={{ gap: 3 }}>
+          <Box sx={sx.equationElement}>=</Box>
+          <Flex
+            sx={{
+              ...sx.equationElement,
+              textTransform: 'none',
+              gap: [1, 1, 1, 2],
+              flexWrap: 'wrap',
+            }}
+          >
+            f(
+            {durabilityElements.map((el, i) => (
+              <React.Fragment key={el.element}>
+                <Circle
+                  id={el.element}
+                  onClick={() =>
+                    setActive((prev) =>
+                      prev === el.element ? null : el.element
+                    )
+                  }
+                  onMouseEnter={() => setHovered(el.element)}
+                  onMouseLeave={() => setHovered(null)}
+                  sx={{ cursor: 'pointer' }}
+                />
+                {i < durabilityElements.length - 1 ? ',' : null}
+              </React.Fragment>
+            ))}
+            )
+          </Flex>
+        </Flex>
       </Flex>
     </Box>
   )
