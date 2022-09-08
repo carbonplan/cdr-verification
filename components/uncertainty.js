@@ -18,7 +18,9 @@ const Uncertainty = ({ color, min, max, sx }) => {
     >
       {new Array(UNCERTAINTIES.length).fill(null).map((_, i) => {
         let backgroundColor = 'muted'
-        if (i <= start) {
+        if (start === -1 || end === -1) {
+          backgroundColor = 'secondary'
+        } else if (i <= start) {
           backgroundColor = color
         } else if (i <= end) {
           backgroundColor = alpha(color, 0.2)
