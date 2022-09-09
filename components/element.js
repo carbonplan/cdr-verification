@@ -208,7 +208,9 @@ const Element = ({
               </Column>
 
               <Column sx={sx.column} start={1} width={[6, 6, 4, 4]}>
-                <Box sx={sx.heading}>Included in accounting</Box>
+                <Tooltip tooltip={legend.included_in_accounting} mt='10px'>
+                  <Box sx={sx.heading}>Included in accounting</Box>
+                </Tooltip>
                 <Badge sx={sx.badge}>
                   {element.includes('*') ||
                   !['drawdown', 'emissions'].includes(category)
