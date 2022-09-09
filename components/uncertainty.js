@@ -18,13 +18,14 @@ const Uncertainty = ({ color, min, max, sx }) => {
       }}
     >
       {new Array(UNCERTAINTIES.length).fill(null).map((_, i) => {
-        let backgroundColor = 'muted'
+        let backgroundColor =
+          colorMode === 'light' ? alpha('muted', 0.3) : 'muted'
         if (i <= start) {
           backgroundColor = color
         } else if (i <= end || start === -1 || end === -1) {
           backgroundColor =
             colorMode === 'light'
-              ? mix(color, 'secondary', 0.35)
+              ? mix(color, 'muted', 0.3)
               : alpha(color, 0.25)
         }
         return <Box key={i} sx={{ flex: 1, backgroundColor }} />
