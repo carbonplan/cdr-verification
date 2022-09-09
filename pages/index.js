@@ -189,7 +189,6 @@ const Index = () => {
                       setSort={setSort}
                       id='component'
                       label='Component'
-                      sx={{ ml: 1 }}
                     />
                   </Column>
                   <Column start={[5, 6, 4, 4]} width={1}>
