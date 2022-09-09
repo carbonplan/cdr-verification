@@ -16,7 +16,7 @@ const sortByUncertainty = (a, b) => {
   }
 }
 
-export const getElements = (elements, filters, sort = 'number') => {
+export const getElements = (elements, filters, sort = 'component') => {
   const filtered = elements.filter((e) => filters[e.category])
 
   switch (sort) {

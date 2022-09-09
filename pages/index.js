@@ -30,7 +30,7 @@ const Index = () => {
     emissions: true,
     durability: true,
   })
-  const [sort, setSort] = useState('number')
+  const [sort, setSort] = useState('component')
   const [settings, setSettings] = useState(false)
   const [expanded, setExpanded] = useState(false)
 
@@ -187,8 +187,8 @@ const Index = () => {
                     <TableHeader
                       sort={sort}
                       setSort={setSort}
-                      id='number'
-                      label='Number'
+                      id='component'
+                      label='Component'
                       sx={{ ml: 1 }}
                     />
                   </Column>
