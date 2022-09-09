@@ -46,6 +46,7 @@ const Element = ({
     badge: {
       fontSize: 1,
       textTransform: 'capitalize',
+      pt: ['1px', '1px', '2px', '4px'],
       ml: -1,
     },
     column: { mb: 3 },
