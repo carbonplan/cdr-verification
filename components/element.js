@@ -234,7 +234,7 @@ const Element = ({
                 }}
               >
                 <Button
-                  sx={{ color: CATEGORY_COLORS[category] }}
+                  sx={{ color: CATEGORY_COLORS[category], pb: 1 }}
                   onClick={openTray}
                   suffix={<RotatingArrow />}
                 >
