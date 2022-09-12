@@ -17,7 +17,12 @@
         "uncertainty_impact_min": "negligible",
         "uncertainty_impact_max": "negligible",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "2",
@@ -31,7 +36,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "3",
@@ -45,7 +55,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "4",
@@ -59,7 +74,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "5",
@@ -73,7 +93,12 @@
         "uncertainty_impact_min": "negligible",
         "uncertainty_impact_max": "medium",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "6",
@@ -87,7 +112,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "medium",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       }
     ]
   },
@@ -109,7 +139,12 @@
         "uncertainty_impact_min": "negligible",
         "uncertainty_impact_max": "negligible",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "2",
@@ -123,7 +158,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "3",
@@ -131,13 +171,18 @@
         "name": "feed_stor",
         "quantification_target": "mass of counterfactual stored biomass carbon",
         "description": "Feedstock storage counterfactual",
-        "comments": "While nearly all biomass carbon eventually makes its way back to the atmosphere, the effective drawdown from BiCRS occurs when the CO\u2082 would otherwise have ended up in the atmosphere. If the counterfactual fate of the biomass feedstock would have resulted in medium-to-long term carbon storage \u2014 for example in landfills, slow degrading environments, or soils \u2014 the mass of stored carbon in the counterfactual does not count as additional carbon removal until counterfactual emissions would have occurred.",
+        "comments": "While nearly all biomass carbon eventually makes its way back to the atmosphere, the effective drawdown from BiCRS occurs when the CO\u2082 would otherwise have ended up in the atmosphere. If the counterfactual fate of the biomass feedstock would have resulted in medium-to-long term carbon storage \u2014 for example in slow degrading environments or soils \u2014 the mass of stored carbon in the counterfactual should not count as additional carbon removal until counterfactual emissions would have occurred.",
         "uncertainty_type": ["counterfactual"],
         "responsibility": "system",
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "4",
@@ -151,7 +196,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "medium",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "5",
@@ -165,7 +215,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "high",
         "notes": "Uncertainty is low for agricultural or woody biomass waste, Medium to High for dedicated energy crops or plantations",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "6",
@@ -179,7 +234,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "7",
@@ -193,7 +253,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "8",
@@ -207,7 +272,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "medium",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       }
     ]
   },
@@ -229,7 +299,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "2",
@@ -243,7 +318,12 @@
         "uncertainty_impact_min": "high",
         "uncertainty_impact_max": "high",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "3",
@@ -257,7 +337,12 @@
         "uncertainty_impact_min": "medium",
         "uncertainty_impact_max": "medium",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "4",
@@ -271,7 +356,12 @@
         "uncertainty_impact_min": "negligible",
         "uncertainty_impact_max": "medium",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "5",
@@ -285,7 +375,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "6",
@@ -299,7 +394,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "medium",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "7*",
@@ -313,7 +413,12 @@
         "uncertainty_impact_min": "not characterized",
         "uncertainty_impact_max": "not characterized",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "8",
@@ -327,7 +432,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "9",
@@ -341,7 +451,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "10*",
@@ -355,7 +470,12 @@
         "uncertainty_impact_min": "not characterized",
         "uncertainty_impact_max": "not characterized",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "11*",
@@ -369,7 +489,12 @@
         "uncertainty_impact_min": "not characterized",
         "uncertainty_impact_max": "not characterized",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "12*",
@@ -383,7 +508,12 @@
         "uncertainty_impact_min": "not characterized",
         "uncertainty_impact_max": "not characterized",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "13",
@@ -397,7 +527,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "14",
@@ -411,7 +546,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       }
     ]
   },
@@ -433,7 +573,12 @@
         "uncertainty_impact_min": "negligible",
         "uncertainty_impact_max": "negligible",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "2",
@@ -447,7 +592,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "high",
         "notes": "The potential impact of the non-sunk fraction on total carbon sequestration is low for projects doing direct biomass sinking, but medium to high for projects with undirected sinking (e.g. projects using terrestrial biomass to make floating buoy platforms for kelp).",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "3",
@@ -461,7 +611,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "4",
@@ -475,7 +630,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "medium",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "5",
@@ -489,7 +649,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "high",
         "notes": "The potential impact of indirect land use is low for agricultural or woody biomass waste, but medium to high for dedicated energy crops or plantations.",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "6",
@@ -503,7 +668,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "7",
@@ -517,7 +687,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "8",
@@ -531,7 +706,12 @@
         "uncertainty_impact_min": "medium",
         "uncertainty_impact_max": "medium",
         "notes": "The uncertainty associated with time to recirculation is dependent on how well sinking location is known and specified.",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       }
     ]
   },
@@ -553,7 +733,12 @@
         "uncertainty_impact_min": "medium",
         "uncertainty_impact_max": "high",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "2",
@@ -567,7 +752,12 @@
         "uncertainty_impact_min": "medium",
         "uncertainty_impact_max": "high",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "3",
@@ -581,7 +771,12 @@
         "uncertainty_impact_min": "high",
         "uncertainty_impact_max": "high",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "4",
@@ -595,7 +790,12 @@
         "uncertainty_impact_min": "high",
         "uncertainty_impact_max": "high",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "5",
@@ -609,7 +809,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "6",
@@ -623,7 +828,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "7",
@@ -637,7 +847,12 @@
         "uncertainty_impact_min": "medium",
         "uncertainty_impact_max": "medium",
         "notes": "The uncertainty associated with time to recirculation is dependent on how well sinking location is known and specified.",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       }
     ]
   },
@@ -659,7 +874,12 @@
         "uncertainty_impact_min": "negligible",
         "uncertainty_impact_max": "negligible",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "2",
@@ -673,7 +893,12 @@
         "uncertainty_impact_min": "negligible",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "3",
@@ -687,7 +912,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "medium",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "4",
@@ -701,7 +931,12 @@
         "uncertainty_impact_min": "high",
         "uncertainty_impact_max": "high",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "5",
@@ -715,7 +950,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "6",
@@ -729,7 +969,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "7",
@@ -743,7 +988,12 @@
         "uncertainty_impact_min": "medium",
         "uncertainty_impact_max": "medium",
         "notes": "The uncertainty associated with time to recirculation is dependent on how well sinking location is known and specified.",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       }
     ]
   },
@@ -765,7 +1015,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "medium",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "2",
@@ -779,7 +1034,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "medium",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "3",
@@ -793,7 +1053,12 @@
         "uncertainty_impact_min": "medium",
         "uncertainty_impact_max": "medium",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "4",
@@ -807,7 +1072,12 @@
         "uncertainty_impact_min": "high",
         "uncertainty_impact_max": "high",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "5*",
@@ -821,7 +1091,12 @@
         "uncertainty_impact_min": "not characterized",
         "uncertainty_impact_max": "not characterized",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "6",
@@ -835,7 +1110,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "7",
@@ -849,7 +1129,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "8",
@@ -863,7 +1148,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "9",
@@ -877,7 +1167,12 @@
         "uncertainty_impact_min": "negligible",
         "uncertainty_impact_max": "medium",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "10",
@@ -891,7 +1186,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       }
     ]
   },
@@ -913,7 +1213,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "medium",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "2",
@@ -927,7 +1232,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "medium",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "3",
@@ -941,7 +1251,12 @@
         "uncertainty_impact_min": "high",
         "uncertainty_impact_max": "very high",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "4",
@@ -955,7 +1270,12 @@
         "uncertainty_impact_min": "medium",
         "uncertainty_impact_max": "medium",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "5",
@@ -969,7 +1289,12 @@
         "uncertainty_impact_min": "high",
         "uncertainty_impact_max": "high",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "6*",
@@ -983,7 +1308,12 @@
         "uncertainty_impact_min": "not characterized",
         "uncertainty_impact_max": "not characterized",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "7",
@@ -997,7 +1327,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "8",
@@ -1011,7 +1346,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       },
       {
         "element": "9",
@@ -1025,7 +1365,12 @@
         "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "low",
         "notes": "",
-        "revisions": "[{\"date\": \"09-19-2022\", \"note\": \"First release.\"}]"
+        "revisions": [
+          {
+            "date": "09-19-2022",
+            "note": "First release."
+          }
+        ]
       }
     ]
   }

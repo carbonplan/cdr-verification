@@ -4,10 +4,10 @@
 import numpy as np
 import json
 import pathlib
-import gspread
-import pandas as pd
-from oauth2client.service_account import ServiceAccountCredentials
-import pdb 
+import gspread # type: ignore
+import pandas as pd # type: ignore
+from oauth2client.service_account import ServiceAccountCredentials # type: ignore
+from ast import literal_eval
 
 # ------------------ Auth -----------------------
 
@@ -56,7 +56,7 @@ def sheet_data_to_metadata(sheet_data: list) -> dict:
 def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """Sanitizes dataframe for web formatting"""
 
-    # removes any uneeded cols
+    # removes any unneeded cols
     df = df[['element','category','name','quantification_target','description','comments','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','notes','revisions']]
 
     # replace empty strings with nan
@@ -69,7 +69,6 @@ def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     df.columns = df.columns.str.replace(' ','_')
 
     # splits any multiple comma sep entries into lists. 
-
     df['uncertainty_type'] = df.uncertainty_type.str.replace(" ","").apply(lambda x: x.split(','))    
 
     # cast element as string
@@ -78,11 +77,8 @@ def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     # regex magic for leading/trailing whitespace
     df = df.replace(r"^ +| +$", r"", regex=True)
 
-    # set empty vals to empty lists for revisions col
-    df['revisions'] = df['revisions'].apply(lambda d: d if isinstance(d, (str,list)) else [])
-
-    # removes any uneeded cols
-    df = df[['element','category','name','quantification_target','description','comments','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','notes','revisions']]
+    # converts revision lists into lists from strings
+    df['revisions'] = df['revisions'].apply(lambda x: literal_eval(x))
 
     return df
 
