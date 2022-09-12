@@ -46,6 +46,7 @@ const Element = ({
     badge: {
       fontSize: 1,
       textTransform: 'capitalize',
+      pt: ['1px', '1px', '2px', '4px'],
       ml: -1,
     },
     column: { mb: 3 },
@@ -208,7 +209,9 @@ const Element = ({
               </Column>
 
               <Column sx={sx.column} start={1} width={[6, 6, 4, 4]}>
-                <Box sx={sx.heading}>Included in accounting</Box>
+                <Tooltip tooltip={legend.included_in_accounting} mt='10px'>
+                  <Box sx={sx.heading}>Included in accounting</Box>
+                </Tooltip>
                 <Badge sx={sx.badge}>
                   {element.includes('*') ||
                   !['drawdown', 'emissions'].includes(category)
@@ -231,7 +234,7 @@ const Element = ({
                 }}
               >
                 <Button
-                  sx={{ color: CATEGORY_COLORS[category] }}
+                  sx={{ color: CATEGORY_COLORS[category], pb: 1 }}
                   onClick={openTray}
                   suffix={<RotatingArrow />}
                 >

@@ -18,7 +18,7 @@ import TableHeader from '../components/table/header'
 import { ElementProvider } from '../components/context/element'
 import PathwayInfo from '../components/pathway-info'
 import PathwaySelector from '../components/pathway-selector'
-import Tooltip from '../components/tooltip'
+import Tooltip, { TooltipContent, TooltipWrapper } from '../components/tooltip'
 import Equation from '../components/equation'
 import legend from '../data/legend.json'
 import pathways from '../data/pathways.json'
@@ -30,8 +30,10 @@ const Index = () => {
     emissions: true,
     durability: true,
   })
-  const [sort, setSort] = useState('number')
+  const [sort, setSort] = useState('component')
   const [settings, setSettings] = useState(false)
+  const [expanded, setExpanded] = useState(false)
+
   const scrollClass = useScrollbarClass()
 
   const openTray = useCallback(() => setSettings(true), [])
@@ -43,7 +45,10 @@ const Index = () => {
 
   return (
     <Layout
-      title='CDR MRV – CarbonPlan'
+      title='CDR Verification Framework – CarbonPlan'
+      description='An interactive tool for understanding CDR verification
+      by exploring key uncertainties around carbon removal and
+      permanence outcomes for different CDR pathways'
       container={false}
       footer={false}
       metadata={false}
@@ -87,13 +92,13 @@ const Index = () => {
                   sx={{
                     pt: 4,
                     pb: [3],
-                    fontSize: [6, 6, 6, 7],
+                    fontSize: [5, 6, 6, 7],
                     width: 'fit-content',
                     fontFamily: 'heading',
                     lineHeight: 'heading',
                   }}
                 >
-                  CDR MRV
+                  CDR Verification Framework
                 </Box>
                 <Box
                   sx={{
@@ -104,10 +109,12 @@ const Index = () => {
                     lineHeight: 'body',
                   }}
                 >
-                  This is an interactive tool for exploring the key
-                  uncertainties around quantifying net carbon removal and
+                  This is an interactive tool for understanding CDR verification
+                  by exploring key uncertainties around carbon removal and
                   permanence outcomes for different CDR pathways. Developed in
-                  collaboration between CarbonPlan and Stripe Climate. Read our{' '}
+                  collaboration between CarbonPlan and{' '}
+                  <Link href='https://frontierclimate.com/'>Frontier</Link>.
+                  Read our{' '}
                   <Link href='https://docs.google.com/document/d/1xf6Uvrolq1dPtzV4KUrd21dDxdhWvsBgcvpnD2v65Vk/edit'>
                     explainer article
                   </Link>{' '}
@@ -122,31 +129,41 @@ const Index = () => {
 
                 <Box sx={{ mt: 3 }}>
                   <Box sx={{ display: ['initial', 'initial', 'none', 'none'] }}>
-                    <Tooltip
-                      tooltip={
-                        <Flex sx={{ flexDirection: 'column', gap: 2 }}>
-                          <Box>{pathway_description}</Box>
-                          <Box>{legend.vcl}</Box>
-                        </Flex>
-                      }
-                      align='center'
-                    >
-                      <Flex sx={{ gap: 2 }}>
+                    <Row columns={[6, 8, 4, 4]}>
+                      <Column start={1} width={[4, 5, 5, 5]}>
                         <PathwaySelector
                           pathway={pathway}
                           setPathway={setPathway}
                           size='md'
                           sx={{ mb: 2 }}
                         />
+                      </Column>
 
-                        <Badge sx={{ flexShrink: 0, mt: '5px' }}>
-                          <Box as='span' sx={{ color: 'secondary' }}>
-                            VCL
-                          </Box>{' '}
-                          {VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')}
-                        </Badge>
-                      </Flex>
-                    </Tooltip>
+                      <Column start={[5, 6, 6, 6]} width={[2]}>
+                        <TooltipWrapper
+                          expanded={expanded}
+                          setExpanded={setExpanded}
+                          align='center'
+                          mt='12px'
+                        >
+                          <Badge sx={{ flexShrink: 0, mt: '5px' }}>
+                            <Box as='span' sx={{ color: 'secondary' }}>
+                              VCL
+                            </Box>{' '}
+                            {VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')}
+                          </Badge>
+                        </TooltipWrapper>
+                      </Column>
+
+                      <Column start={1} width={[6, 8, 8, 8]}>
+                        <TooltipContent expanded={expanded} sx={{ mt: 1 }}>
+                          <Flex sx={{ flexDirection: 'column', gap: 2 }}>
+                            <Box>{pathway_description}</Box>
+                            <Box>{legend.vcl}</Box>
+                          </Flex>
+                        </TooltipContent>
+                      </Column>
+                    </Row>
 
                     <Divider sx={{ mb: 3, ml: [0, 0, '-32px', '-48px'] }} />
                   </Box>
@@ -170,9 +187,8 @@ const Index = () => {
                     <TableHeader
                       sort={sort}
                       setSort={setSort}
-                      id='number'
-                      label='Number'
-                      sx={{ ml: 1 }}
+                      id='component'
+                      label='Component'
                     />
                   </Column>
                   <Column start={[5, 6, 4, 4]} width={1}>
