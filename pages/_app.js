@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'theme-ui'
-import { MDXProvider } from '@mdx-js/react'
+import { AuthProvider } from '@carbonplan/auth'
 import '@carbonplan/components/fonts.css'
 import '@carbonplan/components/globals.css'
 import theme from '@carbonplan/theme'
@@ -7,9 +7,9 @@ import theme from '@carbonplan/theme'
 const App = ({ Component, pageProps }) => {
   return (
     <ThemeProvider theme={theme}>
-      <MDXProvider>
+      <AuthProvider>
         <Component {...pageProps} />
-      </MDXProvider>
+      </AuthProvider>
     </ThemeProvider>
   )
 }

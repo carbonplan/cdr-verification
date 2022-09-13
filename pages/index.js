@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from 'react'
 import { Box, Flex, Container, Divider } from 'theme-ui'
+import { withAuth } from '@carbonplan/auth'
 import {
   Badge,
   Layout,
@@ -253,4 +254,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default withAuth(Index, ['admin', 'guest'])
