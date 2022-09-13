@@ -236,7 +236,11 @@ const Index = () => {
                   <Divider sx={{ my: 5, ml: [0, 0, '-32px', '-48px'] }} />
                 </Box>
 
-                <Box sx={{ mb: 5 }}>{FLOW_DIAGRAMS[pathway]}</Box>
+                <Row columns={[6, 6, 7, 7]}>
+                  <Column start={[1, 1, 1, 1]} width={[6, 6, 7, 5]}>
+                    <Box sx={{ mb: 5 }}>{FLOW_DIAGRAMS[pathway]}</Box>
+                  </Column>
+                </Row>
               </Column>
             </Row>
             <Tray

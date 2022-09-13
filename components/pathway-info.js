@@ -18,14 +18,18 @@ const PathwayInfo = ({ pathway, setPathway, size = 'sm' }) => {
   const formattedVCL = VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')
   return (
     <Row columns={[6, 6, 7, 7]}>
-      <Column start={1} width={[4, 4, 5, 5]} sx={{ mt: [0, 0, 0, '15px'] }}>
+      <Column start={1} width={[4, 4, 5, 4]} sx={{ mt: [0, 0, 0, '15px'] }}>
         <PathwaySelector
           size={size}
           pathway={pathway}
           setPathway={setPathway}
         />
       </Column>
-      <Column start={[5, 5, 6, 6]} width={2} sx={{ mt: [0, 0, 0, '15px'] }}>
+      <Column
+        start={[5, 5, 6, 5]}
+        width={[2, 2, 2, 2]}
+        sx={{ mt: [0, 0, 0, '15px'] }}
+      >
         <TooltipWrapper
           expanded={expanded}
           setExpanded={setExpanded}
@@ -49,12 +53,12 @@ const PathwayInfo = ({ pathway, setPathway, size = 'sm' }) => {
           </Badge>
         </TooltipWrapper>
       </Column>
-      <Column start={1} width={[6, 6, 6, 6]}>
+      <Column start={1} width={[6, 6, 6, 5]}>
         <TooltipContent expanded={expanded} sx={{ mt: 1 }}>
           {legend.vcl}
         </TooltipContent>
       </Column>
-      <Column start={1} width={[6, 6, 6, 6]}>
+      <Column start={1} width={[6, 6, 6, 5]}>
         <Box sx={{ my: [3, 3, 3, 4], fontSize: [1] }}>
           {pathway_description}
         </Box>

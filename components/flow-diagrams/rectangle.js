@@ -78,7 +78,7 @@ const Rectangle = ({
             fontFamily: 'mono',
             letterSpacing: 'mono',
             textTransform: 'uppercase',
-            fontSize: [0, 0, 1, 2],
+            fontSize: ['1.6vw', '1.5vw', '1vw', '0.65vw'],
           }}
         >
           {label}
@@ -91,7 +91,7 @@ const Rectangle = ({
           alignItems: 'center',
           textAlign: 'center',
           justifyContent: 'center',
-          fontSize: ['1.6vw', '1.5vw', '1vw', '0.75vw'],
+          fontSize: ['1.6vw', '1.5vw', '1vw', '0.65vw'],
         }}
       >
         {borderStyle === 'none' && (

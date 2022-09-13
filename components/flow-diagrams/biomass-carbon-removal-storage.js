@@ -4,7 +4,7 @@ import Arrow from './arrow'
 
 const Flow = () => {
   return (
-    <Grid height={24}>
+    <Grid height={27}>
       <Rectangle
         id='6'
         width={4}
@@ -45,11 +45,11 @@ const Flow = () => {
       />
       <Arrow start={[5, 9]} length={2} right />
 
-      <Arrow start={[4, 11]} length={8} down hideArrow />
-      <Arrow start={[4, 19]} length={3} right />
-      <Rectangle id='3' height={3} start={[8, 14]} />
-      <Rectangle id='4' height={3} start={[8, 18]} />
-      <Rectangle id='5' height={3} start={[8, 22]} />
+      <Arrow start={[4, 11]} length={10} down hideArrow />
+      <Arrow start={[4, 21]} length={3} right />
+      <Rectangle id='3' start={[8, 14]} />
+      <Rectangle id='4' start={[8, 19]} />
+      <Rectangle id='5' start={[8, 24]} />
 
       <Arrow start={[31, 12]} length={2} up />
       <Rectangle id='8' start={[28, 15]} />

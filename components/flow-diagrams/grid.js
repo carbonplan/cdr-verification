@@ -10,16 +10,19 @@ const Grid = ({ height = 30, children, debug = false }) => {
         gridTemplateRows: `repeat(${height}, ${100 / height}%)`,
         gridAutoColumns: '1fr',
         gridAutoRows: '1fr',
+        rowGap: '0',
         height: [
-          `calc(${height} / 30 * 2 * (6 * (100vw - 7 * 24px) / 6 + 5 * 24px))`,
-          `calc(${height} / 30 * (6 * (100vw - 9 * 32px) / 8 + 5 * 32px))`,
-          `calc(${height} / 30 * (7 * (100vw - 13 * 32px) / 12 + 7 * 32px))`,
-          `min(600px, calc(${height} / 30 * (7 * (100vw - 13 * 48px) / 12 + 7 * 48px)))`,
+          `calc(${height} / 36 * 2 * (6 * (100vw - 7 * 24px) / 6 + 5 * 24px))`,
+          `calc(${height} / 36 * (8 * (100vw - 9 * 32px) / 8 + 7 * 32px))`,
+          `calc(${height} / 36 * (7 * (100vw - 13 * 32px) / 12 + 7 * 32px))`,
+          `calc(${height} / 36 * (5 * (100vw - 13 * 48px) / 12 + 5 * 48px))`,
         ],
+        maxWidth: 1500,
+        maxHeight: (height / 36) * 1500,
       }}
     >
       {debug &&
-        Array(36 * 20)
+        Array(36 * height)
           .fill(null)
           .map((_, i) => (
             <Box

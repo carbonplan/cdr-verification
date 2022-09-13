@@ -38,31 +38,31 @@ const Flow = () => {
       <Rectangle width={4} label='Mineral weathering' start={[11, 7]} />
 
       <Arrow start={[16, 9]} length={1} right hideArrow />
-      <Arrow start={[17, 6]} length={5} up hideArrow />
+      <Arrow start={[17, 6]} length={6} up hideArrow />
       <Arrow start={[17, 6]} length={2} right />
-      <Arrow start={[17, 11]} length={2} right />
+      <Arrow start={[17, 12]} length={2} right />
 
-      <Rectangle id='5' start={[20, 5]} height={3} />
+      <Rectangle id='5' start={[20, 5]} />
 
-      <Rectangle id='2' start={[20, 10]} height={3} />
+      <Rectangle id='2' start={[20, 11]} height={3} />
 
       <Arrow start={[27, 6]} length={2} left />
 
-      <Rectangle id='13' height={3} start={[30, 5]} />
+      <Rectangle id='13' start={[30, 5]} />
 
-      <Arrow start={[23, 14]} length={2} down />
+      <Arrow start={[23, 15]} length={2} down />
       <Rectangle
         id='6'
-        start={[21, 18]}
+        start={[21, 19]}
         width={4}
         height={1}
         borderStyle='none'
       />
 
-      <Arrow start={[27, 11]} length={2} right />
-      <Rectangle height={3} start={[30, 10]} label='Ocean storage' />
-      <Arrow start={[33, 14]} length={2} up />
-      <Rectangle id='14' height={3} start={[30, 17]} />
+      <Arrow start={[27, 12]} length={2} right />
+      <Rectangle height={3} start={[30, 11]} label='Ocean storage' />
+      <Arrow start={[33, 15]} length={2} up />
+      <Rectangle id='14' height={3} start={[30, 18]} />
 
       <Arrow start={[5, 12]} length={2} down />
 
