@@ -11,19 +11,12 @@ import { CATEGORY_COLORS } from './constants'
 import { useElement } from './context/element'
 import legend from '../data/legend.json'
 
-const MIN_IMPACTS = {
-  negligible: '<1%',
-  low: '1%',
-  medium: '5%',
-  high: '20%',
-  'very high': null,
-}
-const MAX_IMPACTS = {
-  negligible: null,
-  low: '5%',
-  medium: '20%',
-  high: '50%',
-  'very high': '>50%',
+const IMPACTS = {
+  negligible: '(<1%)',
+  low: '(1-5%)',
+  medium: '(5-20%)',
+  high: '(20-50%)',
+  'very high': '(>50%)',
 }
 
 const Element = ({
@@ -66,11 +59,6 @@ const Element = ({
     },
     column: { mb: 3 },
   }
-
-  const impactRange = [
-    MIN_IMPACTS[uncertainty_impact_min],
-    MAX_IMPACTS[uncertainty_impact_max],
-  ].filter(Boolean)
 
   return (
     <Box sx={{ my: [4, 3, 4, 4] }}>
@@ -189,20 +177,21 @@ const Element = ({
                   {uncertainty_impact_min !== uncertainty_impact_max ? (
                     <Box sx={{ display: 'inline-block' }}>
                       <Flex sx={{ gap: 2 }}>
-                        <Badge sx={sx.badge}>{uncertainty_impact_min}</Badge>
+                        <Badge sx={sx.badge}>
+                          {uncertainty_impact_min}{' '}
+                          {IMPACTS[uncertainty_impact_min]}
+                        </Badge>
                         <Box sx={{ mt: sx.badge.pt }}>to</Box>
                         <Badge sx={{ ...sx.badge, ml: 0 }}>
-                          {uncertainty_impact_max}
+                          {uncertainty_impact_max}{' '}
+                          {IMPACTS[uncertainty_impact_max]}
                         </Badge>
                       </Flex>
                     </Box>
                   ) : (
-                    <Badge sx={sx.badge}>{uncertainty_impact_min}</Badge>
-                  )}
-                  {impactRange.length > 0 && (
-                    <Box as='span' sx={{ ml: 2 }}>
-                      ({impactRange.join('-')})
-                    </Box>
+                    <Badge sx={sx.badge}>
+                      {uncertainty_impact_min} {IMPACTS[uncertainty_impact_min]}
+                    </Badge>
                   )}
                 </Box>
               </Column>
