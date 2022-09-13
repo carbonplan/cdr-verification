@@ -171,7 +171,7 @@
         "name": "feed_stor",
         "quantification_target": "mass of counterfactual stored biomass carbon",
         "description": "Feedstock storage counterfactual",
-        "comments": "While nearly all biomass carbon eventually makes its way back to the atmosphere, the effective drawdown from BiCRS occurs when the CO\u2082 would otherwise have ended up in the atmosphere. If the counterfactual fate of the biomass feedstock would have resulted in medium-to-long term carbon storage \u2014 for example in slow degrading environments or soils \u2014 the mass of stored carbon in the counterfactual should not count as additional carbon removal until counterfactual emissions would have occurred.",
+        "comments": "While nearly all biomass carbon eventually makes its way back to the atmosphere, the effective drawdown from BiCRS occurs when the CO\u2082 would otherwise have ended up in the atmosphere. If the counterfactual fate of the biomass feedstock would have resulted in medium-to-long term carbon storage \u2014 for example in soils or slow degrading environments \u2014 the mass of stored carbon in the counterfactual should not count as additional carbon removal until counterfactual emissions would have occurred.",
         "uncertainty_type": ["counterfactual"],
         "responsibility": "system",
         "uncertainty_impact_min": "low",
