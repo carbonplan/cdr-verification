@@ -116,11 +116,11 @@ const Index = () => {
                   collaboration between CarbonPlan and{' '}
                   <Link href='https://frontierclimate.com/'>Frontier</Link>.
                   Read our{' '}
-                  <Link href='https://docs.google.com/document/d/1xf6Uvrolq1dPtzV4KUrd21dDxdhWvsBgcvpnD2v65Vk/edit'>
+                  <Link href='https://drafts.carbonplan.org/research/cdr-verification-explainer'>
                     explainer article
                   </Link>{' '}
                   or{' '}
-                  <Link href='https://docs.google.com/document/d/1n-vM-AySdneugQ_niZuoBVEX_a7S37aq3vzRwV71euY/edit'>
+                  <Link href='https://drafts.carbonplan.org/research/cdr-verification-explainer-methods'>
                     methods
                   </Link>{' '}
                   for more detail.
