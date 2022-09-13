@@ -11,6 +11,21 @@ import { CATEGORY_COLORS } from './constants'
 import { useElement } from './context/element'
 import legend from '../data/legend.json'
 
+const MIN_IMPACTS = {
+  negligible: '<1%',
+  low: '1%',
+  medium: '5%',
+  high: '20%',
+  'very high': null,
+}
+const MAX_IMPACTS = {
+  negligible: null,
+  low: '5%',
+  medium: '20%',
+  high: '50%',
+  'very high': '>50%',
+}
+
 const Element = ({
   category,
   comments,
@@ -156,7 +171,7 @@ const Element = ({
                 <Box sx={{ ...sx.heading, mb: 0 }}>Uncertainty</Box>
               </Column>
 
-              <Column sx={{ mb: 2 }} start={1} width={[3, 3, 2, 2]}>
+              <Column sx={{ mb: 2 }} start={1} width={[6, 6, 4, 4]}>
                 <Tooltip
                   tooltip={
                     <Box sx={{ mb: 2 }}>{legend.uncertainty_impact}</Box>
@@ -167,20 +182,32 @@ const Element = ({
                 </Tooltip>
                 <Box>
                   {uncertainty_impact_min !== uncertainty_impact_max ? (
-                    <Flex sx={{ gap: 2 }}>
-                      <Badge sx={sx.badge}>{uncertainty_impact_min}</Badge>
-                      to
-                      <Badge sx={{ ...sx.badge, ml: 0 }}>
-                        {uncertainty_impact_max}
-                      </Badge>
-                    </Flex>
+                    <Box sx={{ display: 'inline-block' }}>
+                      <Flex sx={{ gap: 2 }}>
+                        <Badge sx={sx.badge}>{uncertainty_impact_min}</Badge>
+                        <Box sx={{ mt: sx.badge.pt }}>to</Box>
+                        <Badge sx={{ ...sx.badge, ml: 0 }}>
+                          {uncertainty_impact_max}
+                        </Badge>
+                      </Flex>
+                    </Box>
                   ) : (
                     <Badge sx={sx.badge}>{uncertainty_impact_min}</Badge>
                   )}
+                  <Box as='span' sx={{ ml: 2 }}>
+                    (
+                    {[
+                      MIN_IMPACTS[uncertainty_impact_min],
+                      MAX_IMPACTS[uncertainty_impact_max],
+                    ]
+                      .filter(Boolean)
+                      .join('-')}
+                    )
+                  </Box>
                 </Box>
               </Column>
 
-              <Column sx={{ mb: 2 }} start={[4, 4, 3, 3]} width={[3, 3, 2, 2]}>
+              <Column sx={{ mb: 2 }} start={1} width={[3, 3, 2, 2]}>
                 <Tooltip
                   tooltip={<Box sx={{ mb: 2 }}>{legend.uncertainty_type}</Box>}
                   mt='10px'
@@ -196,7 +223,7 @@ const Element = ({
                 </Flex>
               </Column>
 
-              <Column sx={sx.column} start={1} width={[6, 8, 2, 2]}>
+              <Column sx={sx.column} start={[4, 4, 3, 3]} width={[6, 8, 2, 2]}>
                 <Tooltip
                   tooltip={<Box sx={{ mb: 2 }}>{legend.responsibility}</Box>}
                   mt='10px'
