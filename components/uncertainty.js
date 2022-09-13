@@ -25,8 +25,8 @@ const Uncertainty = ({ color, min, max, sx }) => {
         } else if (i <= end || start === -1 || end === -1) {
           backgroundColor =
             colorMode === 'light'
-              ? mix(color, 'muted', 0.3)
-              : alpha(color, 0.25)
+              ? mix(color, '#eaeaea', 0.5) // mix with muted at 0.3 opacity
+              : mix(color, 'muted', 0.5)
         }
         return <Box key={i} sx={{ flex: 1, backgroundColor }} />
       })}
