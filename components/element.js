@@ -67,6 +67,11 @@ const Element = ({
     column: { mb: 3 },
   }
 
+  const impactRange = [
+    MIN_IMPACTS[uncertainty_impact_min],
+    MAX_IMPACTS[uncertainty_impact_max],
+  ].filter(Boolean)
+
   return (
     <Box sx={{ my: [4, 3, 4, 4] }}>
       <Row
@@ -194,16 +199,11 @@ const Element = ({
                   ) : (
                     <Badge sx={sx.badge}>{uncertainty_impact_min}</Badge>
                   )}
-                  <Box as='span' sx={{ ml: 2 }}>
-                    (
-                    {[
-                      MIN_IMPACTS[uncertainty_impact_min],
-                      MAX_IMPACTS[uncertainty_impact_max],
-                    ]
-                      .filter(Boolean)
-                      .join('-')}
-                    )
-                  </Box>
+                  {impactRange.length > 0 && (
+                    <Box as='span' sx={{ ml: 2 }}>
+                      ({impactRange.join('-')})
+                    </Box>
+                  )}
                 </Box>
               </Column>
 
