@@ -20,9 +20,12 @@ const Uncertainty = ({ color, min, max, sx }) => {
       {new Array(UNCERTAINTIES.length).fill(null).map((_, i) => {
         let backgroundColor =
           colorMode === 'light' ? alpha('muted', 0.3) : 'muted'
-        if (i <= start) {
+        if (start === -1 || end === -1) {
+          backgroundColor =
+            colorMode === 'light' ? alpha('muted', 0.11) : alpha('muted', 0.3)
+        } else if (i <= start) {
           backgroundColor = color
-        } else if (i <= end || start === -1 || end === -1) {
+        } else if (i <= end) {
           backgroundColor =
             colorMode === 'light'
               ? mix(color, '#eaeaea', 0.5) // mix with muted at 0.3 opacity
