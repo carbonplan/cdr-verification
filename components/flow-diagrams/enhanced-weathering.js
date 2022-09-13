@@ -4,7 +4,7 @@ import Arrow from './arrow'
 
 const Flow = () => {
   return (
-    <Grid>
+    <Grid height={29}>
       <Rectangle
         id='8'
         start={[1, 2]}
