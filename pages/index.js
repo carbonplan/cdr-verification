@@ -49,7 +49,7 @@ const Index = () => {
       title='CDR Verification Framework – CarbonPlan'
       description='An interactive tool for understanding CDR verification
       by exploring key uncertainties around carbon removal and
-      permanence outcomes for different CDR pathways'
+      durability outcomes for different CDR pathways'
       container={false}
       footer={false}
       metadata={false}
@@ -112,7 +112,7 @@ const Index = () => {
                 >
                   This is an interactive tool for understanding CDR verification
                   by exploring key uncertainties around carbon removal and
-                  permanence outcomes for different CDR pathways. Developed in
+                  durability outcomes for different CDR pathways. Developed in
                   collaboration between CarbonPlan and{' '}
                   <Link href='https://frontierclimate.com/'>Frontier</Link>.
                   Read our{' '}
