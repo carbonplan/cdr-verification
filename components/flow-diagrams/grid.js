@@ -1,8 +1,13 @@
 import { Box } from 'theme-ui'
 
+import { useElementContext } from '../context/element'
+
 const Grid = ({ height = 30, children, debug = false }) => {
+  const { setActive } = useElementContext()
+
   return (
     <Box
+      onClick={() => setActive(null)}
       sx={{
         display: 'grid',
         ml: [0, 0, -32, -48],

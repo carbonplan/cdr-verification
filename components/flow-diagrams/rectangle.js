@@ -1,5 +1,6 @@
 import { Box, Flex } from 'theme-ui'
 import { mix } from '@theme-ui/color'
+import { useCallback } from 'react'
 
 import Circle from '../circle'
 import { useElement } from '../context/element'
@@ -31,11 +32,21 @@ const Rectangle = ({
       break
   }
 
+  const handleClick = useCallback(
+    (e) => {
+      if (id) {
+        e.stopPropagation()
+        setActive()
+      }
+    },
+    [id]
+  )
+
   return (
     <Box
       id={id}
       tabIndex={id ? 0 : null}
-      onClick={id ? setActive : null}
+      onClick={handleClick}
       onMouseEnter={id ? () => setHovered(true) : null}
       onMouseLeave={id ? () => setHovered(false) : null}
       sx={{
