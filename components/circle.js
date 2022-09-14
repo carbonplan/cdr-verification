@@ -31,7 +31,7 @@ const Circle = ({ id, sx, ...props }) => {
   }
 
   return (
-    <Box sx={sx}>
+    <Box sx={sx} {...props}>
       <Icon color={mixer(color)} background={theme.colors.background} />
     </Box>
   )
