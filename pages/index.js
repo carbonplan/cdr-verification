@@ -246,7 +246,11 @@ const Index = () => {
             <Tray
               expanded={settings}
               className={scrollClass}
-              sx={{ maxHeight: 'calc(100vh - 56px)', overflowY: 'scroll' }}
+              sx={{
+                maxHeight: 'calc(100vh - 56px)',
+                overflowY: 'scroll',
+                '-webkit-overflow-scrolling': 'touch',
+              }}
             >
               <Box sx={{ mb: 4 }}>{FLOW_DIAGRAMS[pathway]}</Box>
               <Equation elements={elements} equation={equation} />
