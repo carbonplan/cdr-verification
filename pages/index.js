@@ -145,9 +145,9 @@ const Index = () => {
                           expanded={expanded}
                           setExpanded={setExpanded}
                           align='center'
-                          mt='12px'
+                          mt='10px'
                         >
-                          <Badge sx={{ flexShrink: 0, mt: '5px' }}>
+                          <Badge sx={{ flexShrink: 0 }}>
                             <Box as='span' sx={{ color: 'secondary' }}>
                               VCL
                             </Box>{' '}
