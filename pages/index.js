@@ -120,7 +120,7 @@ const Index = () => {
                     explainer article
                   </Link>{' '}
                   or{' '}
-                  <Link href='https://drafts.carbonplan.org/research/cdr-verification-explainer-methods'>
+                  <Link href='https://drafts.carbonplan.org/research/cdr-verification-methods'>
                     methods
                   </Link>{' '}
                   for more detail.
