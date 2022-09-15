@@ -1,8 +1,10 @@
+import { useRef } from 'react'
 import { Box, Flex } from 'theme-ui'
 
 import pathways from '../data/pathways.json'
 
 const PathwaySelector = ({ pathway, setPathway, size, sx }) => {
+  const ref = useRef(null)
   return (
     <Flex sx={{ gap: [2, 2, 3, 3], ...sx }}>
       <Box
@@ -15,8 +17,12 @@ const PathwaySelector = ({ pathway, setPathway, size, sx }) => {
       >
         <Box
           as='select'
+          ref={ref}
           value={pathway}
-          onChange={(e) => setPathway(e.target.value)}
+          onChange={(e) => {
+            ref.current.blur()
+            setPathway(e.target.value)
+          }}
           sx={{
             cursor: 'pointer',
             WebkitAppearance: 'none',
