@@ -110,10 +110,10 @@ const Index = () => {
                     lineHeight: 'body',
                   }}
                 >
-                  This is an interactive tool for understanding CDR verification
-                  by exploring key uncertainties around carbon removal and
-                  durability outcomes for different CDR pathways. Developed in
-                  collaboration between CarbonPlan and{' '}
+                  This is an interactive tool for understanding Verification
+                  Confidence Levels (VCLs) for carbon dioxide removal (CDR) by
+                  mapping key uncertainties for different CDR pathways.
+                  Developed in collaboration between CarbonPlan and{' '}
                   <Link href='https://frontierclimate.com/'>Frontier</Link>.
                   Read our{' '}
                   <Link href='https://drafts.carbonplan.org/research/cdr-verification-explainer'>
