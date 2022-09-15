@@ -179,7 +179,7 @@ const Index = () => {
                   </Tooltip>
 
                   <Divider
-                    sx={{ mb: 5, mt: 3, mr: [0, 0, '-32px', '-48px'] }}
+                    sx={{ mb: 4, mt: 3, mr: [0, 0, '-32px', '-48px'] }}
                   />
                 </Box>
 
