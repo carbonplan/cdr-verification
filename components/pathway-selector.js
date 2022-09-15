@@ -3,15 +3,30 @@ import { Box, Flex } from 'theme-ui'
 
 import pathways from '../data/pathways.json'
 
-const PathwaySelector = ({ pathway, setPathway, size, sx }) => {
+const PathwaySelector = ({ pathway, setPathway, size = 'lg', sx }) => {
   const ref = useRef(null)
+  let fontSize
+  let width
+  switch (size) {
+    case 'lg':
+      width = 32
+      fontSize = 4
+      break
+    case 'sm':
+      width = 24
+      fontSize = 3
+      break
+    default:
+      throw new Error(`Unexpected size: ${size}`)
+      break
+  }
   return (
     <Flex sx={{ gap: [2, 2, 3, 3], ...sx }}>
       <Box
         sx={{
           position: 'relative',
-          height: `${size}px`,
-          width: `${size}px`,
+          height: `${width}px`,
+          width: `${width}px`,
           flexShrink: 0,
         }}
       >
@@ -50,16 +65,16 @@ const PathwaySelector = ({ pathway, setPathway, size, sx }) => {
         </Box>
         <Box
           as='svg'
-          width={`${0.7 * size}px`}
+          width={`${0.5 * width}px`}
           viewBox='0 0 20 14'
           fill='none'
           stroke='currentColor'
           xmlns='http://www.w3.org/2000/svg'
           sx={{
-            top: `${0.15 * size + 5}px`,
-            left: `${0.15 * size}px`,
+            top: `${0.25 * width + 4}px`,
+            left: `${0.25 * width}px`,
             position: 'absolute',
-            color: 'background',
+            color: 'muted',
             pointerEvents: 'none',
           }}
         >
@@ -67,7 +82,7 @@ const PathwaySelector = ({ pathway, setPathway, size, sx }) => {
         </Box>
       </Box>
 
-      <Box sx={{ fontSize: [3, 3, 4, 4] }}>{pathway.replace(/_/g, ' ')}</Box>
+      <Box sx={{ fontSize }}>{pathway.replace(/_/g, ' ')}</Box>
     </Flex>
   )
 }

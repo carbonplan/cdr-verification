@@ -22,31 +22,28 @@ const PathwayInfo = ({ pathway, setPathway }) => {
         <TooltipWrapper
           expanded={expanded}
           setExpanded={setExpanded}
-          align='center'
-          mt='10px'
+          align='flex-start'
+          mt='14px'
         >
-          <Flex sx={{ gap: 3 }}>
+          <Flex sx={{ gap: 3, alignItems: 'flex-start' }}>
             <PathwaySelector
-              size={33.3}
+              size='lg'
               pathway={pathway}
               setPathway={setPathway}
             />
-            <Badge
+            <Box
               sx={{
-                mt: ['0px', '0px', '0px', '1px'],
-                mb: ['2px', '2px', '2px', '1px'],
-                fontSize: 3,
-                height: null,
-                padding: 1,
                 flexShrink: 0,
-                height: 'fit-content',
+                fontFamily: 'mono',
+                letterSpacing: 'mono',
+                mt: '7px',
               }}
             >
               <Box as='span' sx={{ color: 'secondary' }}>
                 VCL
               </Box>{' '}
-              {formattedVCL}
-            </Badge>
+              <Badge>{formattedVCL}</Badge>
+            </Box>
           </Flex>
         </TooltipWrapper>
       </Column>

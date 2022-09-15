@@ -135,7 +135,7 @@ const Index = () => {
                         <PathwaySelector
                           pathway={pathway}
                           setPathway={setPathway}
-                          size={21.6}
+                          size='sm'
                           sx={{ mb: 2 }}
                         />
                       </Column>
@@ -147,12 +147,20 @@ const Index = () => {
                           align='center'
                           mt='10px'
                         >
-                          <Badge sx={{ flexShrink: 0 }}>
+                          <Box
+                            sx={{
+                              flexShrink: 0,
+                              fontFamily: 'mono',
+                              letterSpacing: 'mono',
+                            }}
+                          >
                             <Box as='span' sx={{ color: 'secondary' }}>
                               VCL
                             </Box>{' '}
-                            {VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')}
-                          </Badge>
+                            <Badge>
+                              {VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')}
+                            </Badge>
+                          </Box>
                         </TooltipWrapper>
                       </Column>
 
