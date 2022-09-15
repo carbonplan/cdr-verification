@@ -84,12 +84,12 @@ const Rectangle = ({
       {secondary && (
         <Box
           sx={{
-            ml: ['9px', '10px', '12px', '12px'],
+            ml: ['9px', '10px', '11px', '12px'],
             mt: [1, '7px', 2, 2],
             fontFamily: 'mono',
             letterSpacing: 'mono',
             textTransform: 'uppercase',
-            fontSize: ['1.6vw', '1.5vw', '1vw', '0.65vw'],
+            fontSize: ['1.6vw', '1.5vw', '0.9vw', '0.6vw'],
           }}
         >
           {label}

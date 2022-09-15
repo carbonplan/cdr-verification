@@ -3,6 +3,7 @@ repos:
     rev: 'v2.5.1'
     hooks:
       - id: prettier
+        language_version: system
         additional_dependencies:
           - 'prettier@2.5.1'
           - '@carbonplan/prettier@1.2.0'
@@ -20,6 +21,7 @@ repos:
     rev: 'v2.5.1'
     hooks:
       - id: prettier
+        language_version: system
         additional_dependencies:
           - 'prettier@2.5.1'
           - '@carbonplan/prettier@1.2.0'
