@@ -8,7 +8,7 @@ import pathways from '../data/pathways.json'
 import legend from '../data/legend.json'
 import { useMemo, useState } from 'react'
 
-const PathwayInfo = ({ pathway, setPathway, size = 'sm' }) => {
+const PathwayInfo = ({ pathway, setPathway }) => {
   const [expanded, setExpanded] = useState(false)
   const { pathway_description, VCL, equation, elements } = useMemo(
     () => pathways.find((p) => p.pathway_name === pathway),
@@ -20,7 +20,7 @@ const PathwayInfo = ({ pathway, setPathway, size = 'sm' }) => {
     <Row columns={[6, 6, 7, 7]}>
       <Column start={1} width={[4, 4, 5, 4]} sx={{ mt: [0, 0, 0, '15px'] }}>
         <PathwaySelector
-          size={size}
+          size={33.3}
           pathway={pathway}
           setPathway={setPathway}
         />

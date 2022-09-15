@@ -135,7 +135,7 @@ const Index = () => {
                         <PathwaySelector
                           pathway={pathway}
                           setPathway={setPathway}
-                          size='md'
+                          size={21.6}
                           sx={{ mb: 2 }}
                         />
                       </Column>
