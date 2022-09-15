@@ -56,7 +56,7 @@ const Equation = ({ equation, elements }) => {
           }
           onMouseEnter={() => setHovered(element.element)}
           onMouseLeave={() => setHovered(null)}
-          sx={{ cursor: 'pointer' }}
+          sx={{ cursor: 'pointer', mr: '1px' }}
         />
       )
     }

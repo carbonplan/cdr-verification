@@ -61,7 +61,7 @@ const Element = ({
   }
 
   return (
-    <Box sx={{ my: [4, 3, 4, 4] }}>
+    <Box sx={{ my: [4, 3, '22px', 4] }}>
       <Row
         columns={[6, 8, 4, 4]}
         onClick={handleActivate}
@@ -76,8 +76,11 @@ const Element = ({
               gap: 2,
             }}
           >
-            <Circle id={element} sx={{ flexShrink: 0 }} />
-            <Box>{description}</Box>
+            <Circle
+              id={element}
+              sx={{ flexShrink: 0, mt: '-1px', ml: '-3px' }}
+            />
+            <Box sx={{ ml: '3px' }}>{description}</Box>
           </Flex>
         </Column>
         <Column
@@ -140,7 +143,7 @@ const Element = ({
           height={active ? 'auto' : 0}
           easing={'linear'}
         >
-          <Box sx={{ mt: 2, pl: 1 }}>
+          <Box sx={{ mt: -1, pl: 1 }}>
             <Row columns={[6, 8, 4, 4]} sx={{ fontSize: 1 }}>
               <Column
                 sx={{ ...sx.column, mt: 3 }}
