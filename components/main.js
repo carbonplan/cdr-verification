@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Box, Flex, Container, Divider } from 'theme-ui'
 import { withAuth } from '@carbonplan/auth'
 import {
@@ -43,14 +43,18 @@ const Main = ({ pathway }) => {
     router.replace(`/${name}`)
   })
 
-  const {
-    pathway_id,
-    elements,
-    pathway_description,
-    pathway_name,
-    VCL,
-    equation,
-  } = pathway
+  useEffect(() => {
+    const [body] = document.getElementsByTagName('body')
+    if (settings) {
+      // prevent scrolling on body when mobile settings is open
+      body.style.overflow = 'hidden'
+    } else if (body.style.overflow === 'hidden') {
+      // restore scrolling on body when mobile settings is closed
+      body.style.overflow = ''
+    }
+  }, [settings])
+
+  const { pathway_id, elements, pathway_description, VCL, equation } = pathway
 
   return (
     <Layout
@@ -76,10 +80,15 @@ const Main = ({ pathway }) => {
                 width={[6, 8, 4, 4]}
                 className={scrollClass}
                 sx={{
-                  position: 'sticky',
-                  top: 56,
-                  height: 'calc(100vh - 56px)',
-                  overflowY: 'scroll',
+                  position: ['relative', 'relative', 'sticky', 'sticky'],
+                  top: [0, 0, 56, 56],
+                  height: [
+                    'auto',
+                    'auto',
+                    'calc(100vh - 56px)',
+                    'calc(100vh - 56px)',
+                  ],
+                  overflowY: ['auto', 'auto', 'scroll', 'scroll'],
                   pl: [4, 5, 5, 6],
                   ml: [-4, -5, -5, -6],
                   // nudge scrollbar over for mobile (1 gutter) and desktop (1 gutter + 1/2 column)
@@ -224,7 +233,7 @@ const Main = ({ pathway }) => {
               <Column
                 start={[1, 1, 5, 5]}
                 width={[1, 1, 1, 1]}
-                sx={{ display: ['none', 'none', 'initial'] }}
+                sx={{ display: ['none', 'none', 'initial', 'initial'] }}
               >
                 <Box
                   sx={{
