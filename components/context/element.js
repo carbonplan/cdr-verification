@@ -1,4 +1,11 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import pathways from '../../data/pathways.json'
 
 const ElementContext = createContext({
@@ -42,7 +49,7 @@ export const useElementContext = () => {
   return useContext(ElementContext)
 }
 
-export const ElementProvider = ({ pathway, children }) => {
+export const ElementProvider = ({ pathway, onElementChange, children }) => {
   const [active, setActive] = useState(null)
   const [hovered, setHovered] = useState(null)
 
@@ -51,9 +58,23 @@ export const ElementProvider = ({ pathway, children }) => {
     setHovered(null)
   }, [pathway])
 
+  const handleActiveChange = useCallback(
+    (...args) => {
+      onElementChange()
+      setActive(...args)
+    },
+    [onElementChange]
+  )
+
   return (
     <ElementContext.Provider
-      value={{ pathway, active, setActive, hovered, setHovered }}
+      value={{
+        pathway,
+        active,
+        setActive: handleActiveChange,
+        hovered,
+        setHovered,
+      }}
     >
       {children}
     </ElementContext.Provider>

@@ -38,6 +38,7 @@ const Main = ({ pathway }) => {
   const scrollClass = useScrollbarClass()
 
   const openTray = useCallback(() => setSettings(true), [])
+  const closeTray = useCallback(() => setSettings(false), [])
 
   const setPathway = useCallback((name) => {
     router.replace(`/${name}`)
@@ -73,7 +74,7 @@ const Main = ({ pathway }) => {
     >
       <Box>
         <Container>
-          <ElementProvider pathway={pathway_id}>
+          <ElementProvider pathway={pathway_id} onElementChange={closeTray}>
             <Row>
               <Column
                 start={1}
