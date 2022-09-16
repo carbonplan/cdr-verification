@@ -41,16 +41,17 @@ def gsheet_to_data_list(gsheet_doc_name: str, worksheet_name: str) -> list:
 
 def sheet_data_to_dataframe(data_list: list) -> pd.DataFrame:
     """To match gsheets CDR-MRV schema, first four rows are dataset metadata"""
-    return pd.DataFrame(data_list[5::],columns=data_list[4])
+    return pd.DataFrame(data_list[6::],columns=data_list[5])
 
 
 def sheet_data_to_metadata(sheet_data: list) -> dict:
     """Assigns sheet metadata"""
-    pathway_name = sheet_data[0][1].strip()
-    pathway_description = sheet_data[1][1].strip()
-    VCL = list(tuple(sheet_data[2][1].replace(" ", "").split(',')))
-    equation = sheet_data[3][1].strip()
-    return {'pathway_name':pathway_name,'pathway_description':pathway_description, 'VCL':VCL, 'equation':equation}
+    pathway_id = sheet_data[0][1].strip()
+    pathway_name = sheet_data[1][1].strip()
+    pathway_description = sheet_data[2][1].strip()
+    VCL = list(tuple(sheet_data[3][1].replace(" ", "").split(',')))
+    equation = sheet_data[4][1].strip()
+    return {'pathway_id':pathway_id,'pathway_name':pathway_name,'pathway_description':pathway_description, 'VCL':VCL, 'equation':equation}
 
 
 def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
@@ -90,13 +91,15 @@ def write_legend_to_json(df: pd.DataFrame):
 
 
 
-def df_to_dict(df: pd.DataFrame, pathway_name: str, pathway_description: str, VCL: str, equation: str) -> dict:
+def df_to_dict(df: pd.DataFrame, pathway_id: str, pathway_name: str, pathway_description: str, VCL: str, equation: str) -> dict:
     """Converts DataFrame and metadata into dictionary 
 
     Parameters
     ----------
     df : pd.DataFrame
         Cleaned Pandas DataFrame
+    pathway_id : str
+        ID for Pathway
     pathway_name : str
         Name of Pathway
     pathway_description : str
@@ -111,7 +114,8 @@ def df_to_dict(df: pd.DataFrame, pathway_name: str, pathway_description: str, VC
     template_dict
         Dictionary containing pathway data and metadata
     """
-    template_dict = {"pathway_name":pathway_name.strip().replace(' ','_'), 
+    template_dict = {"pathway_id":pathway_id.strip(),
+                    "pathway_name":pathway_name.strip(),
                     "pathway_description":pathway_description,
                     "VCL":VCL,
                     "equation":equation,
