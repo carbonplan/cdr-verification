@@ -133,11 +133,15 @@ const Main = ({ pathway }) => {
                   mapping key uncertainties for different CDR pathways.
                   Developed in collaboration between CarbonPlan and{' '}
                   <Link href='https://frontierclimate.com/'>Frontier</Link>.
-                  Read our{' '}
+                  Read the{' '}
                   <Link href='https://drafts.carbonplan.org/research/cdr-verification-explainer'>
                     explainer article
-                  </Link>{' '}
-                  or{' '}
+                  </Link>
+                  , the{' '}
+                  <Link href='http://frontierclimate.com/writing/quantifying-delivered-cdr'>
+                    Frontier post
+                  </Link>
+                  , or{' '}
                   <Link href='https://drafts.carbonplan.org/research/cdr-verification-methods'>
                     methods
                   </Link>{' '}
