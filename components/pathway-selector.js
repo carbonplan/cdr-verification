@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useMemo, useRef } from 'react'
 import { Box, Flex } from 'theme-ui'
 
 import pathways from '../data/pathways.json'
@@ -22,6 +22,12 @@ const PathwaySelector = ({ pathway, setPathway, size = 'lg', sx }) => {
     default:
       throw new Error(`Unexpected size: ${size}`)
   }
+
+  const pathway_name = useMemo(
+    () => pathways.find((p) => p.pathway_id === pathway).pathway_name,
+    [pathway]
+  )
+
   return (
     <Flex sx={{ gap: [2, 2, 3, 3], ...sx }}>
       <Box
@@ -61,8 +67,8 @@ const PathwaySelector = ({ pathway, setPathway, size = 'lg', sx }) => {
           }}
         >
           {pathways.map((p) => (
-            <option key={p.pathway_name} value={p.pathway_name}>
-              {p.pathway_name.replace(/_/g, ' ')}
+            <option key={p.pathway_id} value={p.pathway_id}>
+              {p.pathway_name}
             </option>
           ))}
         </Box>
@@ -85,7 +91,7 @@ const PathwaySelector = ({ pathway, setPathway, size = 'lg', sx }) => {
         </Box>
       </Box>
 
-      <Box sx={{ fontSize }}>{pathway.replace(/_/g, ' ')}</Box>
+      <Box sx={{ fontSize }}>{pathway_name}</Box>
     </Flex>
   )
 }

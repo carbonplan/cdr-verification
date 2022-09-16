@@ -14,7 +14,7 @@ export const useElement = (id) => {
   const data = useMemo(
     () =>
       pathways
-        .find((p) => p.pathway_name === pathway)
+        .find((p) => p.pathway_id === pathway)
         .elements.find((d) => d.element === id),
     [id, pathway]
   )
