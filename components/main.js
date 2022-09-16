@@ -273,8 +273,12 @@ const Main = ({ pathway }) => {
               className={scrollClass}
               sx={{ maxHeight: 'calc(100vh - 56px)', overflowY: 'scroll' }}
             >
-              <Box sx={{ mb: 4 }}>{FLOW_DIAGRAMS[pathway_id]}</Box>
-              <Equation elements={elements} equation={equation} />
+              {settings && (
+                <>
+                  <Box sx={{ mb: 4 }}>{FLOW_DIAGRAMS[pathway_id]}</Box>
+                  <Equation elements={elements} equation={equation} />
+                </>
+              )}
             </Tray>
           </ElementProvider>
         </Container>
