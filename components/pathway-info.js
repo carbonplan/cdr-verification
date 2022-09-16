@@ -10,10 +10,7 @@ import { useMemo, useState } from 'react'
 
 const PathwayInfo = ({ pathway, setPathway }) => {
   const [expanded, setExpanded] = useState(false)
-  const { pathway_description, VCL, equation, elements } = useMemo(
-    () => pathways.find((p) => p.pathway_name === pathway),
-    [pathway]
-  )
+  const { pathway_description, pathway_name, VCL, equation, elements } = pathway
 
   const formattedVCL = VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')
   return (
@@ -28,7 +25,7 @@ const PathwayInfo = ({ pathway, setPathway }) => {
           <Flex sx={{ gap: 5, alignItems: 'flex-start' }}>
             <PathwaySelector
               size='lg'
-              pathway={pathway}
+              pathway={pathway_name}
               setPathway={setPathway}
             />
             <Box
