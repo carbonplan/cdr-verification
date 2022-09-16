@@ -43,7 +43,14 @@ const Main = ({ pathway }) => {
     router.replace(`/${name}`)
   })
 
-  const { elements, pathway_description, pathway_name, VCL, equation } = pathway
+  const {
+    pathway_id,
+    elements,
+    pathway_description,
+    pathway_name,
+    VCL,
+    equation,
+  } = pathway
 
   return (
     <Layout
@@ -62,7 +69,7 @@ const Main = ({ pathway }) => {
     >
       <Box>
         <Container>
-          <ElementProvider pathway={pathway_name}>
+          <ElementProvider pathway={pathway_id}>
             <Row>
               <Column
                 start={1}
@@ -134,7 +141,7 @@ const Main = ({ pathway }) => {
                     <Row columns={[6, 8, 4, 4]}>
                       <Column start={1} width={[4, 5, 5, 5]}>
                         <PathwaySelector
-                          pathway={pathway_name}
+                          pathway={pathway_id}
                           setPathway={setPathway}
                           size='sm'
                           sx={{ mb: 2 }}
@@ -247,7 +254,7 @@ const Main = ({ pathway }) => {
 
                 <Row columns={[6, 6, 7, 7]}>
                   <Column start={[1, 1, 1, 1]} width={[6, 6, 7, 5]}>
-                    <Box sx={{ mb: 5 }}>{FLOW_DIAGRAMS[pathway_name]}</Box>
+                    <Box sx={{ mb: 5 }}>{FLOW_DIAGRAMS[pathway_id]}</Box>
                   </Column>
                 </Row>
               </Column>
@@ -257,7 +264,7 @@ const Main = ({ pathway }) => {
               className={scrollClass}
               sx={{ maxHeight: 'calc(100vh - 56px)', overflowY: 'scroll' }}
             >
-              <Box sx={{ mb: 4 }}>{FLOW_DIAGRAMS[pathway_name]}</Box>
+              <Box sx={{ mb: 4 }}>{FLOW_DIAGRAMS[pathway_id]}</Box>
               <Equation elements={elements} equation={equation} />
             </Tray>
           </ElementProvider>
