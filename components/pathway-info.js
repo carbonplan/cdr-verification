@@ -1,4 +1,4 @@
-import { Box } from 'theme-ui'
+import { Box, Flex } from 'theme-ui'
 import { Badge, Row, Column } from '@carbonplan/components'
 
 import PathwaySelector from './pathway-selector'
@@ -8,7 +8,7 @@ import pathways from '../data/pathways.json'
 import legend from '../data/legend.json'
 import { useMemo, useState } from 'react'
 
-const PathwayInfo = ({ pathway, setPathway, size = 'sm' }) => {
+const PathwayInfo = ({ pathway, setPathway }) => {
   const [expanded, setExpanded] = useState(false)
   const { pathway_description, VCL, equation, elements } = useMemo(
     () => pathways.find((p) => p.pathway_name === pathway),
@@ -18,39 +18,35 @@ const PathwayInfo = ({ pathway, setPathway, size = 'sm' }) => {
   const formattedVCL = VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')
   return (
     <Row columns={[6, 6, 7, 7]}>
-      <Column start={1} width={[4, 4, 5, 4]} sx={{ mt: [0, 0, 0, '15px'] }}>
-        <PathwaySelector
-          size={size}
-          pathway={pathway}
-          setPathway={setPathway}
-        />
-      </Column>
-      <Column
-        start={[5, 5, 6, 5]}
-        width={[2, 2, 2, 2]}
-        sx={{ mt: [0, 0, 0, '15px'] }}
-      >
+      <Column start={1} width={[4, 4, 6, 5]} sx={{ mt: [0, 0, 0, '15px'] }}>
         <TooltipWrapper
           expanded={expanded}
           setExpanded={setExpanded}
-          align='center'
-          mt='10px'
+          align='flex-start'
+          mt='16px'
         >
-          <Badge
-            sx={{
-              mt: ['0px', '0px', '0px', '1px'],
-              mb: ['2px', '2px', '2px', '1px'],
-              fontSize: 3,
-              height: null,
-              padding: 1,
-              flexShrink: 0,
-            }}
-          >
-            <Box as='span' sx={{ color: 'secondary' }}>
-              VCL
-            </Box>{' '}
-            {formattedVCL}
-          </Badge>
+          <Flex sx={{ gap: 5, alignItems: 'flex-start' }}>
+            <PathwaySelector
+              size='lg'
+              pathway={pathway}
+              setPathway={setPathway}
+            />
+            <Box
+              sx={{
+                flexShrink: 0,
+                fontFamily: 'mono',
+                letterSpacing: 'mono',
+                mt: '6.5px',
+                mr: 1,
+                fontSize: [2, 2, 3, 3],
+              }}
+            >
+              <Box as='span' sx={{ color: 'secondary' }}>
+                VCL
+              </Box>{' '}
+              <Badge>{formattedVCL}</Badge>
+            </Box>
+          </Flex>
         </TooltipWrapper>
       </Column>
       <Column start={1} width={[6, 6, 6, 5]}>
