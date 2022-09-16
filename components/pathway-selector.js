@@ -21,7 +21,6 @@ const PathwaySelector = ({ pathway, setPathway, size = 'lg', sx }) => {
       break
     default:
       throw new Error(`Unexpected size: ${size}`)
-      break
   }
   return (
     <Flex sx={{ gap: [2, 2, 3, 3], ...sx }}>
@@ -82,7 +81,7 @@ const PathwaySelector = ({ pathway, setPathway, size = 'lg', sx }) => {
             pointerEvents: 'none',
           }}
         >
-          <path d='M2 2L10.2051 11L18 2' stroke-width='3' />
+          <path d='M2 2L10.2051 11L18 2' strokeWidth='3' />
         </Box>
       </Box>
 
