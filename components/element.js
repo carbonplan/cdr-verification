@@ -54,7 +54,7 @@ const Element = ({
     badge: {
       fontSize: 1,
       textTransform: 'capitalize',
-      pt: ['1px', '1px', '2px', '4px'],
+      pt: ['2px', '1px', '2px', '4px'],
       ml: -1,
     },
     column: { mb: 3 },
@@ -199,7 +199,7 @@ const Element = ({
                 </Box>
               </Column>
 
-              <Column sx={{ mb: 2 }} start={1} width={[3, 3, 2, 2]}>
+              <Column sx={{ mb: 2 }} start={1} width={[6, 8, 2, 2]}>
                 <Tooltip
                   tooltip={<Box sx={{ mb: 2 }}>{legend.uncertainty_type}</Box>}
                   mt='10px'
@@ -215,7 +215,7 @@ const Element = ({
                 </Flex>
               </Column>
 
-              <Column sx={sx.column} start={[4, 4, 3, 3]} width={[6, 8, 2, 2]}>
+              <Column sx={sx.column} start={[1, 1, 3, 3]} width={[6, 8, 2, 2]}>
                 <Tooltip
                   tooltip={<Box sx={{ mb: 2 }}>{legend.responsibility}</Box>}
                   mt='10px'
