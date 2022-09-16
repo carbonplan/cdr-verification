@@ -18,7 +18,7 @@ const PathwayInfo = ({ pathway, setPathway }) => {
   const formattedVCL = VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')
   return (
     <Row columns={[6, 6, 7, 7]}>
-      <Column start={1} width={[4, 4, 5, 4]} sx={{ mt: [0, 0, 0, '15px'] }}>
+      <Column start={1} width={[4, 4, 6, 5]} sx={{ mt: [0, 0, 0, '15px'] }}>
         <TooltipWrapper
           expanded={expanded}
           setExpanded={setExpanded}
