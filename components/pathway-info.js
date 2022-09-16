@@ -23,7 +23,7 @@ const PathwayInfo = ({ pathway, setPathway }) => {
           expanded={expanded}
           setExpanded={setExpanded}
           align='flex-start'
-          mt='14px'
+          mt='16px'
         >
           <Flex sx={{ gap: 5, alignItems: 'flex-start' }}>
             <PathwaySelector
@@ -36,7 +36,9 @@ const PathwayInfo = ({ pathway, setPathway }) => {
                 flexShrink: 0,
                 fontFamily: 'mono',
                 letterSpacing: 'mono',
-                mt: '7px',
+                mt: '6.5px',
+                mr: 1,
+                fontSize: [2, 2, 3, 3],
               }}
             >
               <Box as='span' sx={{ color: 'secondary' }}>

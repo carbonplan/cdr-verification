@@ -7,14 +7,17 @@ const PathwaySelector = ({ pathway, setPathway, size = 'lg', sx }) => {
   const ref = useRef(null)
   let fontSize
   let width
+  let offset
   switch (size) {
     case 'lg':
-      width = 32
+      width = 28
       fontSize = 4
+      offset = '3px'
       break
     case 'sm':
       width = 24
       fontSize = 3
+      offset = 0
       break
     default:
       throw new Error(`Unexpected size: ${size}`)
@@ -28,6 +31,7 @@ const PathwaySelector = ({ pathway, setPathway, size = 'lg', sx }) => {
           height: `${width}px`,
           width: `${width}px`,
           flexShrink: 0,
+          top: offset,
         }}
       >
         <Box
@@ -49,7 +53,7 @@ const PathwaySelector = ({ pathway, setPathway, size = 'lg', sx }) => {
             width: '100%',
             height: '100%',
             overflow: 'hidden',
-            transition: '0.1s',
+            transition: '0.15s',
             '@media (hover: hover)': {
               '&:hover': {
                 backgroundColor: 'secondary',
@@ -71,7 +75,7 @@ const PathwaySelector = ({ pathway, setPathway, size = 'lg', sx }) => {
           stroke='currentColor'
           xmlns='http://www.w3.org/2000/svg'
           sx={{
-            top: `${0.25 * width + 4}px`,
+            top: `${0.25 * width + 3}px`,
             left: `${0.25 * width}px`,
             position: 'absolute',
             color: 'muted',
