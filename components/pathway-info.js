@@ -25,7 +25,7 @@ const PathwayInfo = ({ pathway, setPathway }) => {
           align='flex-start'
           mt='14px'
         >
-          <Flex sx={{ gap: 3, alignItems: 'flex-start' }}>
+          <Flex sx={{ gap: 5, alignItems: 'flex-start' }}>
             <PathwaySelector
               size='lg'
               pathway={pathway}
