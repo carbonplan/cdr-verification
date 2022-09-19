@@ -59,6 +59,9 @@ const PathwaySelector = ({ pathway, setPathway, size = 'lg', sx }) => {
             height: '100%',
             overflow: 'hidden',
             transition: '0.15s',
+            '& option': {
+              color: 'background',
+            },
             '@media (hover: hover)': {
               '&:hover': {
                 backgroundColor: 'secondary',
