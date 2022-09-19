@@ -62,6 +62,7 @@ const Main = ({ pathway }) => {
       description='An interactive tool for understanding CDR verification
       by exploring key uncertainties around carbon removal and
       durability outcomes for different CDR pathways'
+      card='https://images.carbonplan.org/social/cdr-verification.png'
       container={false}
       footer={false}
       metadata={false}
