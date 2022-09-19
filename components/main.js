@@ -133,7 +133,7 @@ const Main = ({ pathway }) => {
                   Developed in collaboration between CarbonPlan and{' '}
                   <Link href='https://frontierclimate.com/'>Frontier</Link>.
                   Read the{' '}
-                  <Link href='https://drafts.carbonplan.org/research/cdr-verification-explainer'>
+                  <Link href='https://carbonplan.org/research/cdr-verification-explainer'>
                     explainer article
                   </Link>
                   , the{' '}
@@ -141,7 +141,7 @@ const Main = ({ pathway }) => {
                     Frontier post
                   </Link>
                   , or{' '}
-                  <Link href='https://drafts.carbonplan.org/research/cdr-verification-methods'>
+                  <Link href='https://carbonplan.org/research/cdr-verification-methods'>
                     methods
                   </Link>{' '}
                   for more detail.
