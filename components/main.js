@@ -41,6 +41,14 @@ const Main = ({ settings, setSettings }) => {
   )
   const { pathway_id, elements, pathway_description, VCL, equation } = pathway
 
+  useEffect(() => {
+    // If the pathway ID in the route does not match pathway ID, we've fallen back
+    // to the default and should update the route.
+    if (router.query.id && router.query.id !== pathway.pathway_id) {
+      router.replace('/research/cdr-verification')
+    }
+  }, [pathway, router.query.id])
+
   const openTray = useCallback(() => setSettings(true), [])
   const closeTray = useCallback(() => setSettings(false), [])
 
