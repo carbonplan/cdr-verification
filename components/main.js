@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Box, Flex, Container, Divider } from 'theme-ui'
 import {
   Badge,
@@ -22,8 +22,9 @@ import PathwaySelector from '../components/pathway-selector'
 import Tooltip, { TooltipContent, TooltipWrapper } from '../components/tooltip'
 import Equation from '../components/equation'
 import legend from '../data/legend.json'
+import pathways from '../data/pathways.json'
 
-const Main = ({ settings, setSettings, pathway }) => {
+const Main = ({ settings, setSettings }) => {
   const router = useRouter()
   const [filters, setFilters] = useState({
     drawdown: true,
@@ -33,6 +34,12 @@ const Main = ({ settings, setSettings, pathway }) => {
   const [sort, setSort] = useState('component')
   const [expanded, setExpanded] = useState(false)
   const scrollClass = useScrollbarClass()
+
+  const pathway = useMemo(
+    () => pathways.find((p) => p.pathway_id === router.query.id) ?? pathways[0],
+    [router.query.id]
+  )
+  const { pathway_id, elements, pathway_description, VCL, equation } = pathway
 
   const openTray = useCallback(() => setSettings(true), [])
   const closeTray = useCallback(() => setSettings(false), [])
@@ -51,8 +58,6 @@ const Main = ({ settings, setSettings, pathway }) => {
       body.style.overflow = ''
     }
   }, [settings])
-
-  const { pathway_id, elements, pathway_description, VCL, equation } = pathway
 
   return (
     <Box>
