@@ -3,9 +3,9 @@
   height='48'
 />
 
-# carbonplan / CDR MRV
+# carbonplan / CDR verification
 
-**simple tool for visualizing CDR MRV pathways**
+**interactive tool for mapping key uncertainties in different CDR pathways**
 
 [![GitHub][github-badge]][github]
 [![Build Status]][actions]
@@ -31,7 +31,19 @@ To start a development version of the site, simply run:
 npm run dev
 ```
 
-and then visit `http://localhost:5001` in your browser.
+and then visit `http://localhost:5001/research/cdr-verification` in your browser.
+
+## to build the pathway data
+
+You will need to unlock the Google Sheets key using [`git-crypt`](https://github.com/AGWA/git-crypt). Unlocking is simplest using a symmetric secret key securely shared by a team member.
+
+You may then run the command to pull all pathway and legend data.
+
+```shell
+cd scripts
+python sheets_to_json.py
+pre-commit run --all-files
+```
 
 ## license
 
