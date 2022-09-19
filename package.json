@@ -20,7 +20,6 @@
   "prettier": "@carbonplan/prettier",
   "homepage": "https://github.com/carbonplan/cdr-mrv#readme",
   "dependencies": {
-    "@carbonplan/auth": "^1.0.0-develop.14",
     "@carbonplan/components": "^11.8.0",
     "@carbonplan/icons": "^1.1.1",
     "@carbonplan/layouts": "^2.1.0",

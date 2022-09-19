@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Box, Flex, Container, Divider } from 'theme-ui'
-import { withAuth } from '@carbonplan/auth'
 import {
   Badge,
   Layout,
@@ -292,4 +291,4 @@ const Main = ({ pathway }) => {
   )
 }
 
-export default withAuth(Main, ['admin', 'guest'])
+export default Main
