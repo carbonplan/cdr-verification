@@ -1,6 +1,6 @@
-import Main from '../components/main'
+import Main from '../../../components/main'
 
-import pathways from '../data/pathways.json'
+import pathways from '../../../data/pathways.json'
 
 export default Main
 
