@@ -40,7 +40,7 @@ const Main = ({ pathway }) => {
   const closeTray = useCallback(() => setSettings(false), [])
 
   const setPathway = useCallback((name) => {
-    router.replace(`${name}`)
+    router.replace(`cdr-verification/${name}`)
   })
 
   useEffect(() => {
