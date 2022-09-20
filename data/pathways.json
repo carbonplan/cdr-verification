@@ -125,7 +125,7 @@
   {
     "pathway_id": "biomass-carbon-removal-and-storage",
     "pathway_name": "Biomass Carbon Removal and Storage",
-    "pathway_description": "Biomass with carbon removal and storage (BiCRS) uses photosynthesis to remove CO\u2082 from the atmsophere, and transforms the resulting biomass (e.g. via pyrolysis) and its environment (e.g. via geologic injection) to achieve long-term storage. This pathway is VCL 3-5, meaning that current quantification capacity can establish permanent carbon removal, but that for certain approaches, significant uncertainties remain.",
+    "pathway_description": "Biomass with carbon removal and storage (BiCRS) uses photosynthesis to remove CO\u2082 from the atmosphere, and transforms the resulting biomass (e.g. via pyrolysis) and its environment (e.g. via geologic injection) to achieve long-term storage. This pathway is VCL 3-5, meaning that current quantification capacity can establish permanent carbon removal, but that for certain approaches, significant uncertainties remain.",
     "VCL": ["3", "5"],
     "equation": "(1 - 2 - 3 - 4 - 5) - (6 + 7)",
     "elements": [
@@ -561,7 +561,7 @@
   {
     "pathway_id": "terrestrial-biomass-sinking",
     "pathway_name": "Terrestrial Biomass Sinking",
-    "pathway_description": "Terrestrial Biomass Sinking uses plants or algae to remove CO\u2082 from the atmsophere via photsynthesis, and sinks that biomass into the deep ocean to achieve long-term carbon storage. In addition to the carbon removal and durability uncertainties mapped below, there are important uncertainties about the ecosystem impacts of this approach. This pathway is VCL 2-4, meaning that current quantification capacity can establish permanent carbon removal, but for certain approaches, very significant uncertainties remain.",
+    "pathway_description": "Terrestrial Biomass Sinking uses plants or algae to remove CO\u2082 from the atmosphere via photosynthesis, and sinks that biomass into the deep ocean to achieve long-term carbon storage. In addition to the carbon removal and durability uncertainties mapped below, there are important uncertainties about the ecosystem impacts of this approach. This pathway is VCL 2-4, meaning that current quantification capacity can establish permanent carbon removal, but for certain approaches, very significant uncertainties remain.",
     "VCL": ["2", "4"],
     "equation": "(1 - 2 - 3 - 4 - 5) - (6 + 7)",
     "elements": [
@@ -722,7 +722,7 @@
   {
     "pathway_id": "ocean-biomass-sinking-no-harvest",
     "pathway_name": "Ocean Biomass Sinking (No Harvest)",
-    "pathway_description": "Ocean Biomass Sinking uses macroalge to remove CO\u2082 from surface ocean, which in turn enhances the ability of the surface ocean to drawdown atmospheric CO\u2082. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that do not harvest the biomass before sinking it. This pathway is VCL 1-2, meaning that current quantification capacity may be able to establish net carbon removal occured, but that very significant uncertainties remain.",
+    "pathway_description": "Ocean Biomass Sinking uses macroalgae to remove CO\u2082 from surface ocean, which in turn enhances the ability of the surface ocean to drawdown atmospheric CO\u2082. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that do not harvest the biomass before sinking it. This pathway is VCL 1-2, meaning that current quantification capacity may be able to establish net carbon removal occurred, but that very significant uncertainties remain.",
     "VCL": ["1", "2"],
     "equation": "(1 - 2 - 3 - 4) - (5 + 6)",
     "elements": [
@@ -864,7 +864,7 @@
   {
     "pathway_id": "ocean-biomass-sinking-harvest",
     "pathway_name": "Ocean Biomass Sinking (Harvest)",
-    "pathway_description": "Ocean Biomass Sinking uses macroalge to remove CO\u2082 from surface ocean, indirectly resulting in the removal of CO\u2082 from the atmosphere. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that involve harvesting the biomass before sinking it. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occured, but significant uncertainties remain.",
+    "pathway_description": "Ocean Biomass Sinking uses macroalgae to remove CO\u2082 from surface ocean, indirectly resulting in the removal of CO\u2082 from the atmosphere. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that involve harvesting the biomass before sinking it. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain.",
     "VCL": ["3", "3"],
     "equation": "(1 - 2 - 3 - 4) - (5 + 6)",
     "elements": [
@@ -874,7 +874,7 @@
         "name": "kelp_grown",
         "quantification_target": "mass of biomass carbon",
         "description": "Macroalgae harvest",
-        "comments": "The mass of harested kelp grown can be measured directly before sinking, and converted to carbon using a default carbon content factor.",
+        "comments": "The mass of harvested kelp grown can be measured directly before sinking, and converted to carbon using a default carbon content factor.",
         "uncertainty_type": ["execution"],
         "responsibility": "project",
         "uncertainty_impact_min": "negligible",
@@ -884,6 +884,10 @@
           {
             "date": "09-19-2022",
             "note": "First release."
+          },
+          {
+            "date": "09-20-2022",
+            "note": "Fix typo."
           }
         ]
       },
@@ -1006,7 +1010,7 @@
   {
     "pathway_id": "ocean-alkalinity-enhancement-electrochemical",
     "pathway_name": "Ocean Alkalinity Enhancement (Electrochemical)",
-    "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance the uptake and storage of atmospheric CO\u2082. Here, we specifically consider OAE that is facilitated by electrochemical separation, which removes acidity from seawater and returns a more basic solution to enhance ocean alkalinity. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occured, but significant uncertainties remain.",
+    "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance the uptake and storage of atmospheric CO\u2082. Here, we specifically consider OAE that is facilitated by electrochemical separation, which removes acidity from seawater and returns a more basic solution to enhance ocean alkalinity. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain.",
     "VCL": ["3", "3"],
     "equation": "(1 - 2 - 3 - 4 - 6) - (7 + 8 + 9)",
     "elements": [
@@ -1205,7 +1209,7 @@
   {
     "pathway_id": "ocean-alkalinity-enhancement-mineral",
     "pathway_name": "Ocean Alkalinity Enhancement (Mineral)",
-    "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance its ability to uptake and store atmospheric CO\u2082. Here, we specifically consider OAE that is facilitated by adding rocks to the ocean which dissolve to enhance alkalinity. This pathway is VCL 2, meaning that current quantification capacity may be able establish net carbon removal occured, but very significant uncertainties remain.",
+    "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance its ability to uptake and store atmospheric CO\u2082. Here, we specifically consider OAE that is facilitated by adding rocks to the ocean which dissolve to enhance alkalinity. This pathway is VCL 2, meaning that current quantification capacity may be able establish net carbon removal occurred, but very significant uncertainties remain.",
     "VCL": ["1", "2"],
     "equation": "(1 - 2 - 3 - 4 - 5) - (7 + 8)",
     "elements": [
