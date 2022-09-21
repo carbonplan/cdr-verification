@@ -35,7 +35,7 @@ const Flow = () => {
 
       <Arrow start={[8, 9]} length={2} right />
 
-      <Rectangle width={4} label='Mineral weathering' start={[11, 7]} />
+      <Rectangle width={4} id='2' start={[11, 7]} />
 
       <Arrow start={[16, 9]} length={1} right hideArrow />
       <Arrow start={[17, 6]} length={6} up hideArrow />
@@ -44,7 +44,7 @@ const Flow = () => {
 
       <Rectangle id='5' start={[20, 5]} />
 
-      <Rectangle id='2' start={[20, 11]} height={3} />
+      <Rectangle label='Alkalinity run-off' start={[20, 11]} height={3} />
 
       <Arrow start={[27, 6]} length={2} left />
 
