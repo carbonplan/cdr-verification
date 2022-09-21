@@ -75,7 +75,6 @@ const Rectangle = ({
           <Circle
             id={id}
             sx={{
-              backgroundColor: 'background',
               mt: borderStyle === 'none' ? '-24px' : '-14px',
             }}
           />
