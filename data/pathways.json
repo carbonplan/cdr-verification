@@ -314,7 +314,7 @@
         "category": "drawdown",
         "name": "nwp",
         "quantification_target": "non-weathered portion of rock",
-        "description": "Alkalinity run-off",
+        "description": "Mineral weathering",
         "comments": "The rate of mineral weathering depends on many factors, including rock particle size, soil type, ambient temperature, precipitation, and irrigation. While most of the applied minerals will ultimately weather, the effective CO\u2082 drawdown should only be credited when the weathering actually occurs. At a given point in time, it is possible to measure how much rock has weathered via elemental analysis or by tracking changes in the concentration of tracer elements that originate in the applied rocks and persist in the soil after rock weathering. However, these measurements do not tell one what portion of the alkalinity released through weathering has resulted in stored CO\u2082 (see Alkalinity Loss, Secondary Mineral Formation, and Secondary Precipitation for more details). Alternatively, the pH and alkalinity of the water leaving the weathering site can be continuously measured to provide an estimate of how much alkalinity originating from the weathered rock has resulted in stored CO\u2082 that is exported from the system as dissolved inorganic carbon. This approach provides an upper bound on the non-weathered portion of rock and, if used as the primary estimate of drawdown, could simplify the overall quantification approach. Both approaches \u2014 monitoring of the rock in the weathering site, and monitoring of the alkalinity leaving the weathering site \u2014 are areas of active innovation.",
         "uncertainty_type": ["scientific"],
         "responsibility": "project",
@@ -325,6 +325,10 @@
           {
             "date": "09-19-2022",
             "note": "First release."
+          },
+          {
+            "date": "09-20-2022",
+            "note": "Moving component 2 to modify 'Mineral weathering' rather than 'Alkalinity run-off'. Component 2 reflects the fact that estimating the non-weathered potion of rock can be done either by trying to measure how much rock is left, or by tracking the alkalinity and pH of the run-off, and therefore could therefore be associated with either element of the pathway diagram. We are moving it based on initial feedback that having component 2 modify 'Mineral weathering' would be a more intuitive relationship."
           }
         ]
       },
