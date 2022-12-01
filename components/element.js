@@ -1,8 +1,19 @@
 import { Box, Flex } from 'theme-ui'
-import { useCallback } from 'react'
-import { Badge, Button, Expander, Row, Column } from '@carbonplan/components'
+import React, { useCallback } from 'react'
+import {
+  Badge,
+  Button,
+  Expander,
+  Row,
+  Column,
+  Link,
+} from '@carbonplan/components'
 import { RotatingArrow } from '@carbonplan/icons'
 import AnimateHeight from 'react-animate-height'
+import { unified } from 'unified'
+import markdown from 'remark-parse'
+import remark2rehype from 'remark-rehype'
+import rehype2react from 'rehype-react'
 
 import Circle from './circle'
 import Uncertainty from './uncertainty'
@@ -18,6 +29,17 @@ const IMPACTS = {
   high: '(20-50%)',
   'very high': '(>50%)',
 }
+
+const processor = unified()
+  .use(markdown)
+  .use(remark2rehype)
+  .use(rehype2react, {
+    createElement: React.createElement,
+    components: {
+      p: (props) => <div {...props} />,
+      a: Link,
+    },
+  })
 
 const Element = ({
   category,
@@ -241,7 +263,9 @@ const Element = ({
 
               <Column sx={sx.column} start={1} width={[6, 6, 4, 4]}>
                 <Box sx={sx.heading}>Notes</Box>
-                <Box sx={{ fontFamily: 'faux' }}>{comments}</Box>
+                <Box sx={{ fontFamily: 'faux' }}>
+                  {processor.processSync(comments).result}
+                </Box>
               </Column>
 
               <Column
