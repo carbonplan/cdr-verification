@@ -50,7 +50,7 @@ const Flow = () => {
 
       <Rectangle id='14' start={[30, 5]} />
 
-      <Arrow start={[27, 12]} length={2} right />
+      <Arrow start={[27, 12]} length={4} right />
       <Rectangle
         id='3'
         start={[31, 12]}
