@@ -52,7 +52,7 @@ const Flow = () => {
 
       <Arrow start={[27, 12]} length={4} right />
       <Rectangle
-        id='3'
+        id='6'
         start={[31, 12]}
         width={4}
         height={1}
@@ -64,7 +64,7 @@ const Flow = () => {
       <Arrow start={[23, 22]} length={2} up />
       <Rectangle id='15' height={3} start={[20, 25]} />
       <Arrow start={[27, 19]} length={2} right />
-      <Rectangle id='4' height={3} start={[30, 18]} />
+      <Rectangle id='7' height={3} start={[30, 18]} />
       <Arrow start={[33, 22]} length={2} up />
       <Rectangle id='16' height={3} start={[30, 25]} />
 
@@ -80,8 +80,8 @@ const Flow = () => {
 
       <Arrow start={[13, 12]} length={2} down />
 
-      <Rectangle id='6' height={3} start={[10, 15]} />
-      <Rectangle id='7' height={3} start={[10, 19]} />
+      <Rectangle id='3' height={3} start={[10, 15]} />
+      <Rectangle id='4' height={3} start={[10, 19]} />
     </Grid>
   )
 }

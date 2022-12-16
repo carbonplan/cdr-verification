@@ -316,7 +316,7 @@
       {
         "element": "2",
         "category": "drawdown",
-        "name": "nwp",
+        "name": "wp",
         "quantification_target": "quantity of released alkalinity",
         "description": "Mineral weathering",
         "comments": "The effects of enhanced weathering should be understood as an overall shift in CO2 fluxes as a result of introducing alkalinity to the system through rock weathering. While most applied minerals will ultimately weather, enhanced weathering approaches should only be credited when the impact on atmospheric CO2 actually occurs. The rate of rock weathering, and therefore alkalinity introduction, depends on many factors including rock type, particle size, soil type, ambient temperature, precipitation, and irrigation. At a given point in time, it may be possible to measure how much rock has weathered via elemental analysis or by tracking changes in the concentration of tracer components that originate in the applied rocks and persist in the soil after rock weathering. Rock weathering may be facilitated by different sources of acid (carbonic or non-carbonic) and result in different weathering products, which can each have unique impacts on system CO2 fluxes (see Terrestrial carbonate precipitation, Secondary mineral formation, and Neutralization of non-carbonic acid for more details.) If rock is weathered by carbonic acid, a potential product is dissolved inorganic carbon (DIC). To inform a lower bound on rock weathering and characterize how much additional DIC is leaving the site because of the weathering, effluent from the weathering site can be continuously monitored to detect changes in the carbonic acid system. These changes can be constrained by monitoring any two components of the carbonic acid system: pH, total alkalinity (TA), partial pressure of CO2 (pCO2), or dissolved inorganic carbon (DIC). Both approaches \u2014 monitoring of the rock in the weathering site and monitoring the effluent leaving the weathering site \u2014 are areas of active innovation.",
@@ -343,10 +343,10 @@
       {
         "element": "3",
         "category": "drawdown",
-        "name": "evasion",
-        "quantification_target": "leakage from evasion",
-        "description": "Leakage",
-        "comments": "Groundwater can spend days to centuries in the ground before being discharged to streams. Once in surface waters, outgassing (evasion) might occur as groundwater equilibrates with the atmosphere or experiences pH shifts. Outgassing may also occur as surface waters interact with the surface ocean. Ultimately, the effects of enhanced weathering should be understood as an overall shift in CO2 fluxes from the system as a result of the alkalinity introduced by rock weathering. Any changes in outgassing in the project scenario as compared to the counterfactual should be accounted for. The long timescale and large spatial scale of this process makes it difficult to study directly, but regional models could inform baseline- and project-scenario evasion estimates.",
+        "name": "alk_loss",
+        "quantification_target": "portion of released alkalinity that does not facilitate carbon storage",
+        "description": "Non-carbonic acid neutralization",
+        "comments": "If drawdown is being estimated on the basis of direct observation of mineral weathering rather than via estimation of alkalinity run-off (see Mineral Weathering for more details), it is important to characterize what fraction of the rock was weathered by non-carbonic acids. Non-carbonic sources of acidity in the soil may include protons associated with mineral and organic surfaces and other sources of acidity from organic acids, nitrogen transformations, or sulfide mineral oxidation. If applied rock is weathered by non-carbonic acid that would have otherwise caused outgassing downstream, it may be appropriate to countaccount for this avoided outgassing toward the net carbon drawdown of the Enhanced Weathering intervention depending on how confidently the counterfactual can be characterized and how quickly the outgassing would have otherwise occurred.",
         "uncertainty_type": ["scientific"],
         "responsibility": "system",
         "uncertainty_impact_min": "low",
@@ -359,26 +359,30 @@
           },
           {
             "date": "12-19-2022",
-            "note": "Second release. Changed the component number from (6) to (3). Slightly changed the comment to reflect the possibility of ocean outgassing."
+            "note": "Second release. Changed name, description, and comment to reflect the possibility that some non-carbonic acid reactions may result in avoided outgassing downstream."
           }
         ]
       },
       {
         "element": "4",
         "category": "drawdown",
-        "name": "carb_marine",
-        "quantification_target": "reduction in carbon storage as a result of marine carbonate precipitation",
-        "description": "Marine carbonate precipitation",
-        "comments": "Eventually, the formation and burial of carbonate minerals will release CO2 stored by mineral weathering. This process counteracts most or all of the carbon storage associated with weathering carbonate rock, and around half of the storage associated with silicate rock weathering. The carbonate precipitation process occurs slowly and is unlikely to have a significant impact on estimates of carbon storage on decadal to millennial timescales. However on geologic timescales, it is an important process to characterize.",
+        "name": "min_sec",
+        "quantification_target": "portion of alkalinity bound through secondary mineral formation",
+        "description": "Secondary mineral formation",
+        "comments": "Secondary mineral formation \u2014 such as the formation of clays \u2014 can counteract the alkalinity addition associated with rock weathering. It therefore must be considered if drawdown is being estimated on the basis of direct observation of mineral weathering rather than via estimation of alkalinity run-off (see Mineral weathering for more details). Secondary mineral formation depends on many factors, including on the type of primary mineral dissolving as well as the local climate and biota present. It can be characterized via soil mineralogy techniques like x-ray diffraction.",
         "uncertainty_type": ["scientific"],
-        "responsibility": "system",
-        "uncertainty_impact_min": "low",
-        "uncertainty_impact_max": "low",
+        "responsibility": "project",
+        "uncertainty_impact_min": "negligible",
+        "uncertainty_impact_max": "medium",
         "notes": "",
         "revisions": [
           {
+            "date": "09-19-2022",
+            "note": "First release."
+          },
+          {
             "date": "12-19-2022",
-            "note": "Second release. Added component to explicitly reflect Marine carbonate precipitation rather than simply implying it in DIC residence time."
+            "note": "Second release. Slightly changed description and comments for clarity."
           }
         ]
       },
@@ -408,33 +412,10 @@
       {
         "element": "6",
         "category": "drawdown",
-        "name": "min_sec",
-        "quantification_target": "portion of alkalinity bound through secondary mineral formation",
-        "description": "Secondary mineral formation",
-        "comments": "Secondary mineral formation \u2014 such as the formation of clays \u2014 can counteract the alkalinity addition associated with rock weathering. It therefore must be considered if drawdown is being estimated on the basis of direct observation of mineral weathering rather than via estimation of alkalinity run-off (see Mineral weathering for more details). Secondary mineral formation depends on many factors, including on the type of primary mineral dissolving as well as the local climate and biota present. It can be characterized via soil mineralogy techniques like x-ray diffraction.",
-        "uncertainty_type": ["scientific"],
-        "responsibility": "project",
-        "uncertainty_impact_min": "negligible",
-        "uncertainty_impact_max": "medium",
-        "notes": "",
-        "revisions": [
-          {
-            "date": "09-19-2022",
-            "note": "First release."
-          },
-          {
-            "date": "12-19-2022",
-            "note": "Second release. Changed the component number from (5) to (6). Slightly changed description and comments for clarity."
-          }
-        ]
-      },
-      {
-        "element": "7",
-        "category": "drawdown",
-        "name": "alk_loss",
-        "quantification_target": "portion of released alkalinity that does not facilitate carbon storage",
-        "description": "Non-carbonic acid neutralization",
-        "comments": "If drawdown is being estimated on the basis of direct observation of mineral weathering rather than via estimation of alkalinity run-off (see Mineral Weathering for more details), it is important to characterize what fraction of the rock was weathered by non-carbonic acids. Non-carbonic sources of acidity in the soil may include protons associated with mineral and organic surfaces and other sources of acidity from organic acids, nitrogen transformations, or sulfide mineral oxidation. If applied rock is weathered by non-carbonic acid that would have otherwise caused outgassing downstream, it may be appropriate to countaccount for this avoided outgassing toward the net carbon drawdown of the Enhanced Weathering intervention depending on how confidently the counterfactual can be characterized and how quickly the outgassing would have otherwise occurred.",
+        "name": "evasion",
+        "quantification_target": "leakage from evasion",
+        "description": "Leakage",
+        "comments": "Groundwater can spend days to centuries in the ground before being discharged to streams. Once in surface waters, outgassing (evasion) might occur as groundwater equilibrates with the atmosphere or experiences pH shifts. Outgassing may also occur as surface waters interact with the surface ocean. Ultimately, the effects of enhanced weathering should be understood as an overall shift in CO2 fluxes from the system as a result of the alkalinity introduced by rock weathering. Any changes in outgassing in the project scenario as compared to the counterfactual should be accounted for. The long timescale and large spatial scale of this process makes it difficult to study directly, but regional models could inform baseline- and project-scenario evasion estimates.",
         "uncertainty_type": ["scientific"],
         "responsibility": "system",
         "uncertainty_impact_min": "low",
@@ -447,7 +428,26 @@
           },
           {
             "date": "12-19-2022",
-            "note": "Second release. Changed the component number from (3) to (7).  Changed name, description, and comment to reflect the possibility that some non-carbonic acid reactions may result in avoided outgassing downstream."
+            "note": "Second release. Slightly changed the comment to reflect the possibility of ocean outgassing."
+          }
+        ]
+      },
+      {
+        "element": "7",
+        "category": "drawdown",
+        "name": "carb_marine",
+        "quantification_target": "reduction in carbon storage as a result of marine carbonate precipitation",
+        "description": "Marine carbonate precipitation",
+        "comments": "Eventually, the formation and burial of carbonate minerals will release CO2 stored by mineral weathering. This process counteracts most or all of the carbon storage associated with weathering carbonate rock, and around half of the storage associated with silicate rock weathering. The carbonate precipitation process occurs slowly and is unlikely to have a significant impact on estimates of carbon storage on decadal to millennial timescales. However on geologic timescales, it is an important process to characterize.",
+        "uncertainty_type": ["scientific"],
+        "responsibility": "system",
+        "uncertainty_impact_min": "low",
+        "uncertainty_impact_max": "low",
+        "notes": "",
+        "revisions": [
+          {
+            "date": "12-19-2022",
+            "note": "Second release. Added component to explicitly reflect Marine carbonate precipitation rather than simply implying it in DIC residence time."
           }
         ]
       },
@@ -640,8 +640,8 @@
         "comments": "The precipitation and dissolution of carbonate minerals modifies ocean alkalinity (see Alkalinity residence time). Carbonates preserved on the seafloor are likely to store carbon on geologic timescales.",
         "uncertainty_type": ["scientific"],
         "responsibility": "system",
-        "uncertainty_impact_min": "low",
-        "uncertainty_impact_max": "low",
+        "uncertainty_impact_min": "negligible",
+        "uncertainty_impact_max": "negligible",
         "notes": "",
         "revisions": [
           {
