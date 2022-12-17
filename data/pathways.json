@@ -5,11 +5,12 @@
     "pathway_description": "Direct Air Capture (DAC) uses chemicals to capture CO\u2082 from ambient air and generate a concentrated stream of CO\u2082 for storage. We assume that captured CO\u2082 is not used for enhanced oil recovery. This pathway is VCL 4-5, meaning that current quantification capacity can establish permanent carbon removal with relative confidence.",
     "VCL": ["4", "5"],
     "equation": "(1 - 2) - (3 + 4 + 5)",
+    "version": "1.0",
     "elements": [
       {
         "element": "1",
         "category": "drawdown",
-        "name": "inj_co2",
+        "name": "inj_CO\u2082",
         "quantification_target": "mass of captured and stored CO\u2082",
         "description": "Storage",
         "comments": "The mass of CO\u2082 injected for geologic storage, or used as an input for another storage process (e.g. mineralization in concrete), can be measured directly as a metered output from the DAC system and a metered input to the storage system. It can also be checked for consistency against operational data from the CO\u2082 capture system. We assume here that injected CO\u2082 is not used for enhanced oil recovery (EOR). In the case of EOR, any GHG emissions associated with enhanced oil recovery and fuel use would have to be accounted for, as well as additionality questions about the appropriate baseline against which to credit the project.",
@@ -47,7 +48,7 @@
       {
         "element": "3",
         "category": "emissions",
-        "name": "mat_co2",
+        "name": "mat_CO\u2082",
         "quantification_target": "material embodied emissions",
         "description": "Materials",
         "comments": "The embodied emissions of any materials consumed during operation, like mineral feedstocks or chemical solvents, can be estimated based on a cradle-to-grave lifecycle assessment (LCA) of the material input. The embodied emissions of non-consumed project equipment and infrastructure must also be considered, amortized over the expected lifetime of operation. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
@@ -66,7 +67,7 @@
       {
         "element": "4",
         "category": "emissions",
-        "name": "energy_co2",
+        "name": "energy_CO\u2082",
         "quantification_target": "energy use emissions",
         "description": "Energy",
         "comments": "The emissions associated with energy use for the process. This component should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project.",
@@ -128,6 +129,7 @@
     "pathway_description": "Biomass with carbon removal and storage (BiCRS) uses photosynthesis to remove CO\u2082 from the atmosphere, and transforms the resulting biomass (e.g. via pyrolysis) and its environment (e.g. via geologic injection) to achieve long-term storage. This pathway is VCL 3-5, meaning that current quantification capacity can establish permanent carbon removal, but that for certain approaches, significant uncertainties remain.",
     "VCL": ["3", "5"],
     "equation": "(1 - 2 - 3 - 4 - 5) - (6 + 7)",
+    "version": "1.0",
     "elements": [
       {
         "element": "1",
@@ -227,7 +229,7 @@
       {
         "element": "6",
         "category": "emissions",
-        "name": "mat_co2",
+        "name": "mat_CO\u2082",
         "quantification_target": "material embodied emissions",
         "description": "Materials",
         "comments": "The embodied emissions of any materials consumed during operation, like mineral feedstocks or chemical solvents, can be estimated based on a cradle-to-grave lifecycle assessment (LCA) of the material input. The embodied emissions of non-consumed project equipment and infrastructure must also be considered, amortized over the expected lifetime of operation. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
@@ -246,7 +248,7 @@
       {
         "element": "7",
         "category": "emissions",
-        "name": "energy_co2",
+        "name": "energy_CO\u2082",
         "quantification_target": "energy use emissions",
         "description": "Energy",
         "comments": "The emissions associated with energy use for the process. This component should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project.",
@@ -286,12 +288,13 @@
   {
     "pathway_id": "enhanced-weathering",
     "pathway_name": "Enhanced Weathering",
-    "pathway_description": "Enhanced weathering (EW) is a process that speeds up the chemical reactions between rocks, water, and air to remove CO\u2082 from the atmosphere. Here, we specifically consider EW performed by spreading finely ground rock on agricultural soils. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain.",
+    "pathway_description": "Enhanced weathering (EW) is a process that speeds up the chemical reactions between rocks, water, and air to remove CO\u2082 from the atmosphere. Here, we specifically consider EW performed by spreading finely ground rock on agricultural soils. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain. You can learn about how this pathway has been updated since initial publication [here](https://carbonplan.org/blog/enhanced-weathering-update).",
     "VCL": ["3", "3"],
-    "equation": "(1 - 2 - 3 - 4 - 5 - 6) - (8 + 9)",
+    "equation": "(2 - 3 - 4 - 5 - 6 - 7) - (9 + 10)",
+    "version": "1.1",
     "elements": [
       {
-        "element": "1",
+        "element": "1*",
         "category": "drawdown",
         "name": "rock_pot",
         "quantification_target": "mass of potential atmospheric removal",
@@ -299,23 +302,27 @@
         "comments": "It is possible to calculate potential atmospheric removal by assuming full dissolution of the applied rocks. Realizable drawdown potential depends on mineral composition, particle size, kinetics, and applied volumes. It is also possible to directly analyze rock composition, which is critical not only for carbon accounting but also for tracking other ecosystem and agricultural impacts. Applied volume can be confirmed via an audit of operational records.",
         "uncertainty_type": ["execution"],
         "responsibility": "project",
-        "uncertainty_impact_min": "low",
-        "uncertainty_impact_max": "low",
+        "uncertainty_impact_min": "not characterized",
+        "uncertainty_impact_max": "not characterized",
         "notes": "",
         "revisions": [
           {
             "date": "09-19-2022",
             "note": "First release."
+          },
+          {
+            "date": "12-19-2022",
+            "note": "Second release. Tweaked the equation for total carbon removal to begin with Mineral weathering rather than Mineral application."
           }
         ]
       },
       {
         "element": "2",
         "category": "drawdown",
-        "name": "nwp",
-        "quantification_target": "non-weathered portion of rock",
+        "name": "wp",
+        "quantification_target": "quantity of released alkalinity",
         "description": "Mineral weathering",
-        "comments": "The rate of mineral weathering depends on many factors, including rock particle size, soil type, ambient temperature, precipitation, and irrigation. While most of the applied minerals will ultimately weather, the effective CO\u2082 drawdown should only be credited when the weathering actually occurs. At a given point in time, it is possible to measure how much rock has weathered via elemental analysis or by tracking changes in the concentration of tracer elements that originate in the applied rocks and persist in the soil after rock weathering. However, these measurements do not tell one what portion of the alkalinity released through weathering has resulted in stored CO\u2082 (see Alkalinity Loss, Secondary Mineral Formation, and Secondary Precipitation for more details). Alternatively, the pH and alkalinity of the water leaving the weathering site can be continuously measured to provide an estimate of how much alkalinity originating from the weathered rock has resulted in stored CO\u2082 that is exported from the system as dissolved inorganic carbon. This approach provides an upper bound on the non-weathered portion of rock and, if used as the primary estimate of drawdown, could simplify the overall quantification approach. Both approaches \u2014 monitoring of the rock in the weathering site, and monitoring of the alkalinity leaving the weathering site \u2014 are areas of active innovation.",
+        "comments": "The effects of enhanced weathering should be understood as an overall shift in CO\u2082 fluxes as a result of introducing alkalinity to the system through rock weathering. While most applied minerals will ultimately weather, enhanced weathering approaches should only be credited when the impact on atmospheric CO\u2082 actually occurs. The rate of rock weathering, and therefore alkalinity introduction, depends on many factors including rock type, particle size, soil type, ambient temperature, precipitation, and irrigation. At a given point in time, it may be possible to measure how much rock has weathered via elemental analysis or by tracking changes in the concentration of tracer components that originate in the applied rocks and persist in the soil after rock weathering. Rock weathering may be facilitated by different sources of acid (carbonic or non-carbonic) and result in different weathering products, which can each have unique impacts on system CO\u2082 fluxes (see Terrestrial carbonate precipitation, Secondary mineral formation, and Neutralization of non-carbonic acid for more details.) If rock is weathered by carbonic acid, a potential product is dissolved inorganic carbon (DIC). To inform a lower bound on rock weathering and characterize how much additional DIC is leaving the site because of the weathering, effluent from the weathering site can be continuously monitored to detect changes in the carbonic acid system. These changes can be constrained by monitoring any two components of the carbonic acid system: pH, total alkalinity (TA), partial pressure of CO\u2082 (pCO\u2082), or dissolved inorganic carbon (DIC). Both approaches \u2014 monitoring of the rock in the weathering site and monitoring the effluent leaving the weathering site \u2014 are areas of active innovation.",
         "uncertainty_type": ["scientific"],
         "responsibility": "project",
         "uncertainty_impact_min": "high",
@@ -329,6 +336,10 @@
           {
             "date": "09-20-2022",
             "note": "Moving component 2 to modify 'Mineral weathering' rather than 'Alkalinity run-off'. Component 2 reflects the fact that estimating the non-weathered potion of rock can be done either by trying to measure how much rock is left, or by tracking the alkalinity and pH of the run-off, and therefore could therefore be associated with either element of the pathway diagram. We are moving it based on initial feedback that having component 2 modify 'Mineral weathering' would be a more intuitive relationship."
+          },
+          {
+            "date": "12-19-2022",
+            "note": "Second release. Tweaked the equation for total carbon removal to begin with Mineral weathering rather than Mineral application. Changed the Mineral weathering element to represent the additive factor 'quantity of released alkalinity' rather than the subtractive factor 'non-weathered portion of rock'."
           }
         ]
       },
@@ -336,18 +347,22 @@
         "element": "3",
         "category": "drawdown",
         "name": "alk_loss",
-        "quantification_target": "portion of released alkalinity that is absorbed by vegetation or reacts with non-CO\u2082 sources of acid",
-        "description": "Alkalinity loss",
-        "comments": "Mineral weathering releases cations that increase the alkalinity of soil pore water to facilitate CO\u2082 storage. However, not all of the released cations will immediately react with carbonic acid and result in CO\u2082 storage. For example, the released cations may instead react with other sources of acidity in the soil (e.g. protons associated with mineral and organic surfaces, denitrification, or sulfide oxidation), thereby reducing total CO\u2082 drawdown. The released cations may also be absorbed by vegetation if plants react to a marginal increase in availability with a marginal increase in uptake. The quantity of lost alkalinity is also reflected in the difference between the quantity of rock that has weathered and the quantity of alkalinity that has left the weathering site. (See Alkalinity run-off for more details.)",
+        "quantification_target": "portion of released alkalinity that does not facilitate carbon storage",
+        "description": "Non-carbonic acid neutralization",
+        "comments": "If drawdown is being estimated on the basis of direct observation of mineral weathering rather than via estimation of alkalinity run-off (see Mineral Weathering for more details), it is important to characterize what fraction of the rock was weathered by non-carbonic acids. Non-carbonic sources of acidity in the soil may include protons associated with mineral and organic surfaces and other sources of acidity from organic acids, nitrogen transformations, or sulfide mineral oxidation. If applied rock is weathered by non-carbonic acid that would have otherwise caused outgassing downstream, it may be appropriate to countaccount for this avoided outgassing toward the net carbon drawdown of the Enhanced Weathering intervention depending on how confidently the counterfactual can be characterized and how quickly the outgassing would have otherwise occurred.",
         "uncertainty_type": ["scientific"],
         "responsibility": "system",
-        "uncertainty_impact_min": "medium",
+        "uncertainty_impact_min": "low",
         "uncertainty_impact_max": "medium",
         "notes": "",
         "revisions": [
           {
             "date": "09-19-2022",
             "note": "First release."
+          },
+          {
+            "date": "12-19-2022",
+            "note": "Second release. Changed name, description, and comment to reflect the possibility that some non-carbonic acid reactions may result in avoided outgassing downstream."
           }
         ]
       },
@@ -355,9 +370,9 @@
         "element": "4",
         "category": "drawdown",
         "name": "min_sec",
-        "quantification_target": "portion of released alkalinity bound through secondary mineral formation",
+        "quantification_target": "portion of alkalinity bound through secondary mineral formation",
         "description": "Secondary mineral formation",
-        "comments": "Secondary mineral formation \u2013 such as the formation of clays \u2014 can counteract the alkalinity increase associated with rock weathering.  Secondary mineral formation depends on many factors, including on the type of primary mineral dissolving as well as the local climate and biota present. It can be characterized via soil mineralogy techniques like x-ray diffraction. The loss of alkalinity due to secondary mineral formation, and therefore the reduction in stored CO\u2082, is also reflected in the difference between the quantity of rock that has weathered and the quantity of alkalinity leaving the weathering site. (See Alkalinity run-off for more details.)",
+        "comments": "Secondary mineral formation \u2014 such as the formation of clays \u2014 can counteract the alkalinity addition associated with rock weathering. It therefore must be considered if drawdown is being estimated on the basis of direct observation of mineral weathering rather than via estimation of alkalinity run-off (see Mineral weathering for more details). Secondary mineral formation depends on many factors, including on the type of primary mineral dissolving as well as the local climate and biota present. It can be characterized via soil mineralogy techniques like x-ray diffraction.",
         "uncertainty_type": ["scientific"],
         "responsibility": "project",
         "uncertainty_impact_min": "negligible",
@@ -367,6 +382,10 @@
           {
             "date": "09-19-2022",
             "note": "First release."
+          },
+          {
+            "date": "12-19-2022",
+            "note": "Second release. Slightly changed description and comments for clarity."
           }
         ]
       },
@@ -374,9 +393,9 @@
         "element": "5",
         "category": "drawdown",
         "name": "carb_surf",
-        "quantification_target": "portion of captured CO\u2082 precipitated as surficial carbonates",
-        "description": "Surficial carbonate precipitation",
-        "comments": "The formation of solid carbonates decreases CO\u2082 drawdown in comparison to the aqueous reactions that result in alkalinity run-off. It therefore must be considered if drawdown is being estimated on the basis of direct observation of mineral weathering rather than alkalinity run-off. (See Alkalinity run-off for more details.) Surficial carbonate precipitation depends on the type of primary mineral dissolving, carbonate saturation state, and other local environmental conditions.",
+        "quantification_target": "reduction in carbon storage as a result of terrestrial carbonate precipitation",
+        "description": "Terrestrial carbonate precipitation",
+        "comments": "The formation of solid carbonates decreases CO\u2082 drawdown relative to the aqueous reactions that result in alkalinity run-off. It therefore must be considered if drawdown is being estimated on the basis of direct observation of mineral weathering rather than via estimation of alkalinity run-off (see Mineral Weathering for more details). Terrestrial carbonate precipitation depends on the type of primary mineral dissolving, carbonate saturation state, and other local environmental conditions.",
         "uncertainty_type": ["scientific"],
         "responsibility": "project",
         "uncertainty_impact_min": "low",
@@ -386,6 +405,10 @@
           {
             "date": "09-19-2022",
             "note": "First release."
+          },
+          {
+            "date": "12-19-2022",
+            "note": "Second release. Changed name from 'Surficial carbonate precipitation' to 'Terrestrial carbonate precipitation' for clarity. Tweaked comment to reflect name change."
           }
         ]
       },
@@ -395,7 +418,7 @@
         "name": "evasion",
         "quantification_target": "leakage from evasion",
         "description": "Leakage",
-        "comments": "The additional flux of dissolved inorganic carbon (DIC) from the site of application into regional groundwater systems represents captured CO\u2082. The longer-term fate of this DIC is hard to precisely estimate. Groundwater can spend days to centuries in the ground before being discharged to streams. Once in surface waters, outgassing (evasion) might occur, for example as a result of shifts in pH.  The long timescale of this process makes it difficult to study directly, but regional models could inform evasion estimates.",
+        "comments": "Groundwater can spend days to centuries in the ground before being discharged to streams. Once in surface waters, outgassing (evasion) might occur as groundwater equilibrates with the atmosphere or experiences pH shifts. Outgassing may also occur as surface waters interact with the surface ocean. Ultimately, the effects of enhanced weathering should be understood as an overall shift in CO\u2082 fluxes from the system as a result of the alkalinity introduced by rock weathering. Any changes in outgassing in the project scenario as compared to the counterfactual should be accounted for. The long timescale and large spatial scale of this process makes it difficult to study directly, but regional models could inform baseline- and project-scenario evasion estimates.",
         "uncertainty_type": ["scientific"],
         "responsibility": "system",
         "uncertainty_impact_min": "low",
@@ -405,16 +428,39 @@
           {
             "date": "09-19-2022",
             "note": "First release."
+          },
+          {
+            "date": "12-19-2022",
+            "note": "Second release. Slightly changed the comment to reflect the possibility of ocean outgassing."
           }
         ]
       },
       {
-        "element": "7*",
+        "element": "7",
+        "category": "drawdown",
+        "name": "carb_marine",
+        "quantification_target": "reduction in carbon storage as a result of marine carbonate precipitation",
+        "description": "Marine carbonate precipitation",
+        "comments": "Eventually, the formation and burial of carbonate minerals will release CO\u2082 stored by mineral weathering. This process counteracts most or all of the carbon storage associated with weathering carbonate rock, and around half of the storage associated with silicate rock weathering. The carbonate precipitation process occurs slowly and is unlikely to have a significant impact on estimates of carbon storage on decadal to millennial timescales. However on geologic timescales, it is an important process to characterize.",
+        "uncertainty_type": ["scientific"],
+        "responsibility": "system",
+        "uncertainty_impact_min": "low",
+        "uncertainty_impact_max": "low",
+        "notes": "",
+        "revisions": [
+          {
+            "date": "12-19-2022",
+            "note": "Second release. Added component to explicitly reflect Marine carbonate precipitation rather than simply implying it in DIC residence time."
+          }
+        ]
+      },
+      {
+        "element": "8*",
         "category": "drawdown",
         "name": "soil_c",
         "quantification_target": "soil carbon stock change",
         "description": "Soil carbon impacts",
-        "comments": "Mineral addition to soils could have a diversity of impacts on soil carbon, including via changes to plant or microbial productivity. There has been relatively limited research on this topic to date. Due to the impermanence of soil carbon storage, we recommend that these carbon cycle impacts should not be used to counterbalance project emissions nor counted as additional drawdown.",
+        "comments": "Adding minerals to soils has the potential to induce changes to soil carbon, including by affecting plant or microbial activity. Theoretically, these impacts could increase or decrease soil organic carbon (SOC) storage. If rock weathering interactions increase SOC, we recommend that these changes not be used to counterbalance project emissions nor counted as additional durable carbon removal due to the impermanence of soil carbon storage. Conversely, if rock weathering were to decrease SOC relative to the counterfactual, this would be important to factor into our understanding of the effiency of rock weathering and should be included in the calculation of total carbon removal.  There is relatively little research on these potential interactions to date, and they merit further exploration.",
         "uncertainty_type": ["scientific"],
         "responsibility": "project",
         "uncertainty_impact_min": "not characterized",
@@ -424,13 +470,17 @@
           {
             "date": "09-19-2022",
             "note": "First release."
+          },
+          {
+            "date": "12-19-2022",
+            "note": "Second release. Changed the component number from (7) to (8).  Changed the comment to reflect the possibility mineral weathering may also drive outgassing from soils."
           }
         ]
       },
       {
-        "element": "8",
+        "element": "9",
         "category": "emissions",
-        "name": "mat_co2",
+        "name": "mat_CO\u2082",
         "quantification_target": "material embodied emissions",
         "description": "Materials",
         "comments": "The embodied emissions of any materials consumed during operation, like mineral feedstocks or chemical solvents, can be estimated based on a cradle-to-grave lifecycle assessment (LCA) of the material input. The embodied emissions of non-consumed project equipment and infrastructure must also be considered, amortized over the expected lifetime of operation. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
@@ -443,13 +493,17 @@
           {
             "date": "09-19-2022",
             "note": "First release."
+          },
+          {
+            "date": "12-19-2022",
+            "note": "Second release. Changed the component number from (8) to (9)."
           }
         ]
       },
       {
-        "element": "9",
+        "element": "10",
         "category": "emissions",
-        "name": "energy_co2",
+        "name": "energy_CO\u2082",
         "quantification_target": "energy use emissions",
         "description": "Energy",
         "comments": "The emissions associated with energy use for the process. This component should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project.",
@@ -462,11 +516,15 @@
           {
             "date": "09-19-2022",
             "note": "First release."
+          },
+          {
+            "date": "12-19-2022",
+            "note": "Second release. Changed the component number from (9) to (10)."
           }
         ]
       },
       {
-        "element": "10*",
+        "element": "11*",
         "category": "emissions",
         "name": "lime_reduce",
         "quantification_target": "emissions impact of reducing agricultural lime use",
@@ -481,11 +539,15 @@
           {
             "date": "09-19-2022",
             "note": "First release."
+          },
+          {
+            "date": "12-19-2022",
+            "note": "Second release. Changed the component number from (10) to (11)."
           }
         ]
       },
       {
-        "element": "11*",
+        "element": "12*",
         "category": "emissions",
         "name": "fert_reduce",
         "quantification_target": "emissions impact of reducing fertilizer use",
@@ -500,16 +562,20 @@
           {
             "date": "09-19-2022",
             "note": "First release."
+          },
+          {
+            "date": "12-19-2022",
+            "note": "Second release. Changed the component number from (11) to (12)."
           }
         ]
       },
       {
-        "element": "12*",
+        "element": "13*",
         "category": "emissions",
         "name": "n2o_reduce",
         "quantification_target": "emissions impact of reducing N\u2082O emissions",
         "description": "Reduction in N\u2082O emissions",
-        "comments": "There is some evidence that the effect of rock weathering on the pH and phosphorus levels of cultivated soils could reduce N\u2082O emissions. This is an area of active research, and we recommend this element not be included in the accounting of net carbon removal. If these emissions were to be included, we recommend that they be applied only to counteract project emissions with a transparent disclosure of GWP assumptions, but in no case that they be included in a way that increases the estimate of additional carbon removal.",
+        "comments": "emissions impact of reducing N\u2082O emissions",
         "uncertainty_type": ["scientific"],
         "responsibility": "system",
         "uncertainty_impact_min": "not characterized",
@@ -519,16 +585,20 @@
           {
             "date": "09-19-2022",
             "note": "First release."
+          },
+          {
+            "date": "12-19-2022",
+            "note": "Second release. Changed the component number from (12) to (13)."
           }
         ]
       },
       {
-        "element": "13",
+        "element": "14",
         "category": "durability",
         "name": "carb_surf",
         "quantification_target": "years of expected CO\u2082 storage",
-        "description": "Surficial carbonate durability",
-        "comments": "The formation of surficial carbonates depends on the type of primary mineral dissolving, carbonate saturation state, and other local environmental conditions. Although surficial carbonates have complex seasonal dynamics of dissolution and reprecipitation, there is a high likelihood of long-term durability. If CO\u2082 storage is conservatively estimated based primarily on the quantity of alkalinity leaving the weathering site, this component of storage duration may be ignored. See \u201cAlkalinity run-off\u201d for more details.",
+        "description": "Terrestrial carbonate durability",
+        "comments": "The formation of terrestrial carbonates depends on the type of primary mineral dissolving, carbonate saturation state, and other local environmental conditions. Although surficial carbonates can have complex dynamics of dissolution and reprecipitation, there is a high likelihood of long-term durability.",
         "uncertainty_type": ["scientific"],
         "responsibility": "system",
         "uncertainty_impact_min": "low",
@@ -538,15 +608,19 @@
           {
             "date": "09-19-2022",
             "note": "First release."
+          },
+          {
+            "date": "12-19-2022",
+            "note": "Second release. Changed the component number from (13) to (14). Changed name from 'Surficial carbonate durability' to 'Terrestrial carbonate durability' for clarity. "
           }
         ]
       },
       {
-        "element": "14",
+        "element": "15",
         "category": "durability",
-        "name": "tau_dic",
+        "name": "tau_alk",
         "quantification_target": "years of expected CO\u2082 storage",
-        "description": "DIC residence time",
+        "description": "Alkalinity residence time",
         "comments": "The concept of ocean DIC lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000 and 100,000 years.",
         "uncertainty_type": ["scientific"],
         "responsibility": "system",
@@ -559,6 +633,25 @@
             "note": "First release."
           }
         ]
+      },
+      {
+        "element": "16",
+        "category": "durability",
+        "name": "carb_marine",
+        "quantification_target": "years of expected CO\u2082 storage",
+        "description": "Marine carbonate durability",
+        "comments": "The precipitation and dissolution of carbonate minerals modifies ocean alkalinity (see Alkalinity residence time). Carbonates preserved on the seafloor are likely to store carbon on geologic timescales.",
+        "uncertainty_type": ["scientific"],
+        "responsibility": "system",
+        "uncertainty_impact_min": "negligible",
+        "uncertainty_impact_max": "negligible",
+        "notes": "",
+        "revisions": [
+          {
+            "date": "12-19-2022",
+            "note": "Second release. Added component to explicitly reflect Marine carbonate durability."
+          }
+        ]
       }
     ]
   },
@@ -568,6 +661,7 @@
     "pathway_description": "Terrestrial Biomass Sinking uses plants or algae to remove CO\u2082 from the atmosphere via photosynthesis, and sinks that biomass into the deep ocean to achieve long-term carbon storage. In addition to the carbon removal and durability uncertainties mapped below, there are important uncertainties about the ecosystem impacts of this approach. This pathway is VCL 2-4, meaning that current quantification capacity can establish permanent carbon removal, but for certain approaches, very significant uncertainties remain.",
     "VCL": ["2", "4"],
     "equation": "(1 - 2 - 3 - 4 - 5) - (6 + 7)",
+    "version": "1.0",
     "elements": [
       {
         "element": "1",
@@ -667,7 +761,7 @@
       {
         "element": "6",
         "category": "emissions",
-        "name": "mat_co2",
+        "name": "mat_CO\u2082",
         "quantification_target": "material embodied emissions",
         "description": "Materials",
         "comments": "The embodied emissions of any materials consumed during operation, like mineral feedstocks or chemical solvents, can be estimated based on a cradle-to-grave lifecycle assessment (LCA) of the material input. The embodied emissions of non-consumed project equipment and infrastructure must also be considered, amortized over the expected lifetime of operation. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
@@ -686,7 +780,7 @@
       {
         "element": "7",
         "category": "emissions",
-        "name": "energy_co2",
+        "name": "energy_CO\u2082",
         "quantification_target": "energy use emissions",
         "description": "Energy",
         "comments": "The emissions associated with energy use for the process. This component should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project.",
@@ -729,6 +823,7 @@
     "pathway_description": "Ocean Biomass Sinking uses macroalgae to remove CO\u2082 from surface ocean, which in turn enhances the ability of the surface ocean to drawdown atmospheric CO\u2082. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that do not harvest the biomass before sinking it. This pathway is VCL 1-2, meaning that current quantification capacity may be able to establish net carbon removal occurred, but that very significant uncertainties remain.",
     "VCL": ["1", "2"],
     "equation": "(1 - 2 - 3 - 4) - (5 + 6)",
+    "version": "1.0",
     "elements": [
       {
         "element": "1",
@@ -809,7 +904,7 @@
       {
         "element": "5",
         "category": "emissions",
-        "name": "mat_co2",
+        "name": "mat_CO\u2082",
         "quantification_target": "material embodied emissions",
         "description": "Materials",
         "comments": "The embodied emissions of any materials consumed during operation, like mineral feedstocks or chemical solvents, can be estimated based on a cradle-to-grave lifecycle assessment (LCA) of the material input. The embodied emissions of non-consumed project equipment and infrastructure must also be considered, amortized over the expected lifetime of operation. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
@@ -828,7 +923,7 @@
       {
         "element": "6",
         "category": "emissions",
-        "name": "energy_co2",
+        "name": "energy_CO\u2082",
         "quantification_target": "energy use emissions",
         "description": "Energy",
         "comments": "The emissions associated with energy use for the process. This component should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project.",
@@ -871,6 +966,7 @@
     "pathway_description": "Ocean Biomass Sinking uses macroalgae to remove CO\u2082 from surface ocean, indirectly resulting in the removal of CO\u2082 from the atmosphere. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that involve harvesting the biomass before sinking it. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain.",
     "VCL": ["3", "3"],
     "equation": "(1 - 2 - 3 - 4) - (5 + 6)",
+    "version": "1.0",
     "elements": [
       {
         "element": "1",
@@ -955,7 +1051,7 @@
       {
         "element": "5",
         "category": "emissions",
-        "name": "mat_co2",
+        "name": "mat_CO\u2082",
         "quantification_target": "material embodied emissions",
         "description": "Materials",
         "comments": "The embodied emissions of any materials consumed during operation, like mineral feedstocks or chemical solvents, can be estimated based on a cradle-to-grave lifecycle assessment (LCA) of the material input. The embodied emissions of non-consumed project equipment and infrastructure must also be considered, amortized over the expected lifetime of operation. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
@@ -974,7 +1070,7 @@
       {
         "element": "6",
         "category": "emissions",
-        "name": "energy_co2",
+        "name": "energy_CO\u2082",
         "quantification_target": "energy use emissions",
         "description": "Energy",
         "comments": "The emissions associated with energy use for the process. This component should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project.",
@@ -1017,6 +1113,7 @@
     "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance the uptake and storage of atmospheric CO\u2082. Here, we specifically consider OAE that is facilitated by electrochemical separation, which removes acidity from seawater and returns a more basic solution to enhance ocean alkalinity. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain.",
     "VCL": ["3", "3"],
     "equation": "(1 - 2 - 3 - 4 - 6) - (7 + 8 + 9)",
+    "version": "1.0",
     "elements": [
       {
         "element": "1",
@@ -1135,7 +1232,7 @@
       {
         "element": "7",
         "category": "emissions",
-        "name": "mat_co2",
+        "name": "mat_CO\u2082",
         "quantification_target": "material embodied emissions",
         "description": "Materials",
         "comments": "The embodied emissions of any materials consumed during operation, like mineral feedstocks or chemical solvents, can be estimated based on a cradle-to-grave lifecycle assessment (LCA) of the material input. The embodied emissions of non-consumed project equipment and infrastructure must also be considered, amortized over the expected lifetime of operation. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
@@ -1154,7 +1251,7 @@
       {
         "element": "8",
         "category": "emissions",
-        "name": "energy_co2",
+        "name": "energy_CO\u2082",
         "quantification_target": "energy use emissions",
         "description": "Energy",
         "comments": "The emissions associated with energy use for the process. This component should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project.",
@@ -1192,9 +1289,9 @@
       {
         "element": "10",
         "category": "durability",
-        "name": "tau_dic",
+        "name": "tau_alk",
         "quantification_target": "years of expected CO\u2082 storage",
-        "description": "DIC residence time",
+        "description": "Alkalinity residence time",
         "comments": "The concept of ocean DIC lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000 and 100,000 years.",
         "uncertainty_type": ["scientific"],
         "responsibility": "system",
@@ -1216,6 +1313,7 @@
     "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance its ability to uptake and store atmospheric CO\u2082. Here, we specifically consider OAE that is facilitated by adding rocks to the ocean which dissolve to enhance alkalinity. This pathway is VCL 2, meaning that current quantification capacity may be able establish net carbon removal occurred, but very significant uncertainties remain.",
     "VCL": ["1", "2"],
     "equation": "(1 - 2 - 3 - 4 - 5) - (7 + 8)",
+    "version": "1.0",
     "elements": [
       {
         "element": "1",
@@ -1334,7 +1432,7 @@
       {
         "element": "7",
         "category": "emissions",
-        "name": "mat_co2",
+        "name": "mat_CO\u2082",
         "quantification_target": "material embodied emissions",
         "description": "Materials",
         "comments": "The embodied emissions of any materials consumed during operation, like mineral feedstocks or chemical solvents, can be estimated based on a cradle-to-grave lifecycle assessment (LCA) of the material input. The embodied emissions of non-consumed project equipment and infrastructure must also be considered, amortized over the expected lifetime of operation. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
@@ -1353,7 +1451,7 @@
       {
         "element": "8",
         "category": "emissions",
-        "name": "energy_co2",
+        "name": "energy_CO\u2082",
         "quantification_target": "energy use emissions",
         "description": "Energy",
         "comments": "The emissions associated with energy use for the process. This component should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project.",
@@ -1372,9 +1470,9 @@
       {
         "element": "9",
         "category": "durability",
-        "name": "tau_dic",
+        "name": "tau_alk",
         "quantification_target": "years of expected CO\u2082 storage",
-        "description": "DIC residence time",
+        "description": "Alkalinity residence time",
         "comments": "The concept of ocean DIC lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000 and 100,000 years.",
         "uncertainty_type": ["scientific"],
         "responsibility": "system",
