@@ -41,7 +41,7 @@ def gsheet_to_data_list(gsheet_doc_name: str, worksheet_name: str) -> list:
 
 def sheet_data_to_dataframe(data_list: list) -> pd.DataFrame:
     """To match gsheets CDR-MRV schema, first four rows are dataset metadata"""
-    return pd.DataFrame(data_list[7::],columns=data_list[6])
+    return pd.DataFrame(data_list[6::],columns=data_list[5])
 
 
 def sheet_data_to_metadata(sheet_data: list) -> dict:
@@ -51,8 +51,7 @@ def sheet_data_to_metadata(sheet_data: list) -> dict:
     pathway_description = sheet_data[2][1].strip()
     VCL = list(tuple(sheet_data[3][1].replace(" ", "").split(',')))
     equation = sheet_data[4][1].strip()
-    version = sheet_data[5][1].strip()
-    return {'pathway_id':pathway_id,'pathway_name':pathway_name,'pathway_description':pathway_description, 'VCL':VCL, 'equation':equation, 'version':version}
+    return {'pathway_id':pathway_id,'pathway_name':pathway_name,'pathway_description':pathway_description, 'VCL':VCL, 'equation':equation}
 
 
 def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
@@ -92,7 +91,7 @@ def write_legend_to_json(df: pd.DataFrame):
 
 
 
-def df_to_dict(df: pd.DataFrame, pathway_id: str, pathway_name: str, pathway_description: str, VCL: str, equation: str, version: str) -> dict:
+def df_to_dict(df: pd.DataFrame, pathway_id: str, pathway_name: str, pathway_description: str, VCL: str, equation: str) -> dict:
     """Converts DataFrame and metadata into dictionary 
 
     Parameters
@@ -109,8 +108,6 @@ def df_to_dict(df: pd.DataFrame, pathway_id: str, pathway_name: str, pathway_des
         VCL
     equation : str
         Equation
-    version : str
-        Version
 
     Returns
     -------
@@ -122,7 +119,6 @@ def df_to_dict(df: pd.DataFrame, pathway_id: str, pathway_name: str, pathway_des
                     "pathway_description":pathway_description,
                     "VCL":VCL,
                     "equation":equation,
-                    "version":version,
                     "elements": df.where(df.notnull(), "").to_dict(orient='records')
                     }
     return template_dict
