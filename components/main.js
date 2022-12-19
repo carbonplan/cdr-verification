@@ -23,6 +23,7 @@ import Tooltip, { TooltipContent, TooltipWrapper } from '../components/tooltip'
 import Equation from '../components/equation'
 import legend from '../data/legend.json'
 import pathways from '../data/pathways.json'
+import PathwayDescription from './pathway-description'
 
 const Main = ({ settings, setSettings }) => {
   const router = useRouter()
@@ -185,7 +186,13 @@ const Main = ({ settings, setSettings }) => {
                     <Column start={1} width={[6, 8, 8, 8]}>
                       <TooltipContent expanded={expanded} sx={{ mt: 1 }}>
                         <Flex sx={{ flexDirection: 'column', gap: 2 }}>
-                          <Box>{pathway_description}</Box>
+                          <PathwayDescription
+                            value={pathway_description}
+                            sx={{
+                              '& a': { color: 'secondary' },
+                              '& a:hover': { color: 'primary' },
+                            }}
+                          />
                           <Box>{legend.vcl}</Box>
                         </Flex>
                       </TooltipContent>
