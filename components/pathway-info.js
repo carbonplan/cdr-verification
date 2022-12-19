@@ -6,10 +6,12 @@ import Equation from './equation'
 import { TooltipContent, TooltipWrapper } from './tooltip'
 import legend from '../data/legend.json'
 import { useState } from 'react'
+import PathwayDescription from './pathway-description'
 
 const PathwayInfo = ({ pathway, setPathway }) => {
   const [expanded, setExpanded] = useState(false)
-  const { pathway_description, pathway_id, VCL, equation, elements } = pathway
+  const { pathway_description, pathway_id, VCL, equation, elements, version } =
+    pathway
 
   const formattedVCL = VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')
   return (
@@ -25,6 +27,7 @@ const PathwayInfo = ({ pathway, setPathway }) => {
             <PathwaySelector
               size='lg'
               pathway={pathway_id}
+              version={version}
               setPathway={setPathway}
             />
             <Box
@@ -51,9 +54,10 @@ const PathwayInfo = ({ pathway, setPathway }) => {
         </TooltipContent>
       </Column>
       <Column start={1} width={[6, 6, 6, 5]}>
-        <Box sx={{ my: [3, 3, 3, 4], fontSize: [1] }}>
-          {pathway_description}
-        </Box>
+        <PathwayDescription
+          value={pathway_description}
+          sx={{ my: [3, 3, 3, 4], fontSize: [1] }}
+        />
       </Column>
 
       <Column start={1} width={[6, 6, 7, 7]}>

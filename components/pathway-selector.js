@@ -3,7 +3,7 @@ import { Box, Flex } from 'theme-ui'
 
 import pathways from '../data/pathways.json'
 
-const PathwaySelector = ({ pathway, setPathway, size = 'lg', sx }) => {
+const PathwaySelector = ({ pathway, setPathway, version, size = 'lg', sx }) => {
   const ref = useRef(null)
   let fontSize
   let width
@@ -93,8 +93,21 @@ const PathwaySelector = ({ pathway, setPathway, size = 'lg', sx }) => {
           <path d='M2 2L10.2051 11L18 2' strokeWidth='3' />
         </Box>
       </Box>
-
-      <Box sx={{ fontSize }}>{pathway_name}</Box>
+      <Box sx={{ fontSize }}>
+        {pathway_name}
+        <Box
+          as='span'
+          sx={{
+            color: 'secondary',
+            fontSize: 0,
+            fontFamily: 'mono',
+            letterSpacing: 'mono',
+            ml: 2,
+          }}
+        >
+          v{version}
+        </Box>
+      </Box>
     </Flex>
   )
 }

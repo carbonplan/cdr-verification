@@ -23,6 +23,7 @@ import Tooltip, { TooltipContent, TooltipWrapper } from '../components/tooltip'
 import Equation from '../components/equation'
 import legend from '../data/legend.json'
 import pathways from '../data/pathways.json'
+import PathwayDescription from './pathway-description'
 
 const Main = ({ settings, setSettings }) => {
   const router = useRouter()
@@ -39,7 +40,8 @@ const Main = ({ settings, setSettings }) => {
     () => pathways.find((p) => p.pathway_id === router.query.id) ?? pathways[0],
     [router.query.id]
   )
-  const { pathway_id, elements, pathway_description, VCL, equation } = pathway
+  const { pathway_id, elements, pathway_description, VCL, equation, version } =
+    pathway
 
   useEffect(() => {
     // If the pathway ID in the route does not match pathway ID, we've fallen back
@@ -153,6 +155,7 @@ const Main = ({ settings, setSettings }) => {
                       <PathwaySelector
                         pathway={pathway_id}
                         setPathway={setPathway}
+                        version={version}
                         size='sm'
                         sx={{ mb: 2 }}
                       />
@@ -185,7 +188,13 @@ const Main = ({ settings, setSettings }) => {
                     <Column start={1} width={[6, 8, 8, 8]}>
                       <TooltipContent expanded={expanded} sx={{ mt: 1 }}>
                         <Flex sx={{ flexDirection: 'column', gap: 2 }}>
-                          <Box>{pathway_description}</Box>
+                          <PathwayDescription
+                            value={pathway_description}
+                            sx={{
+                              '& a': { color: 'secondary' },
+                              '& a:hover': { color: 'primary' },
+                            }}
+                          />
                           <Box>{legend.vcl}</Box>
                         </Flex>
                       </TooltipContent>
