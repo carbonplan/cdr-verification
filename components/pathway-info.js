@@ -10,7 +10,8 @@ import PathwayDescription from './pathway-description'
 
 const PathwayInfo = ({ pathway, setPathway }) => {
   const [expanded, setExpanded] = useState(false)
-  const { pathway_description, pathway_id, VCL, equation, elements } = pathway
+  const { pathway_description, pathway_id, VCL, equation, elements, version } =
+    pathway
 
   const formattedVCL = VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')
   return (
@@ -26,6 +27,7 @@ const PathwayInfo = ({ pathway, setPathway }) => {
             <PathwaySelector
               size='lg'
               pathway={pathway_id}
+              version={version}
               setPathway={setPathway}
             />
             <Box

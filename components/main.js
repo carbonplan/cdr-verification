@@ -40,7 +40,8 @@ const Main = ({ settings, setSettings }) => {
     () => pathways.find((p) => p.pathway_id === router.query.id) ?? pathways[0],
     [router.query.id]
   )
-  const { pathway_id, elements, pathway_description, VCL, equation } = pathway
+  const { pathway_id, elements, pathway_description, VCL, equation, version } =
+    pathway
 
   useEffect(() => {
     // If the pathway ID in the route does not match pathway ID, we've fallen back
@@ -154,6 +155,7 @@ const Main = ({ settings, setSettings }) => {
                       <PathwaySelector
                         pathway={pathway_id}
                         setPathway={setPathway}
+                        version={version}
                         size='sm'
                         sx={{ mb: 2 }}
                       />
