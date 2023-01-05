@@ -575,7 +575,7 @@
         "name": "n2o_reduce",
         "quantification_target": "emissions impact of reducing N\u2082O emissions",
         "description": "Reduction in N\u2082O emissions",
-        "comments": "emissions impact of reducing N\u2082O emissions",
+        "comments": "There is some evidence that the effect of rock weathering on the pH and phosphorus levels of cultivated soils could reduce N\u2082O emissions. This is an area of active research, and we recommend this element not be included in the accounting of net carbon removal. If these emissions were to be included, we recommend that they be applied only to counteract project emissions with a transparent disclosure of GWP assumptions, but in no case that they be included in a way that increases the estimate of additional carbon removal.",
         "uncertainty_type": ["scientific"],
         "responsibility": "system",
         "uncertainty_impact_min": "not characterized",
