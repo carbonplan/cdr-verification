@@ -59,7 +59,7 @@ def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """Sanitizes dataframe for web formatting"""
 
     # removes any unneeded cols
-    df = df[['element','category','name','quantification_target','description','comments','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','notes','revisions']]
+    df = df[['element','category','component_id','quantification_target','component_name','description','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','notes','revisions']]
 
     # replace empty strings with nan
     df = df.replace(r'^\s*$', np.nan, regex=True)
