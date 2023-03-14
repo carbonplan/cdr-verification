@@ -152,7 +152,6 @@ def write_to_json(template_dict_list: list):
     ----------
     template_dict_list : List
     """
-    df.to_json('file.json', orient='records', lines=True)
     with open(f'../data/pathways.json', 'w') as fp:
         json.dump(template_dict_list, fp, indent=4)
 
@@ -162,7 +161,6 @@ def process_sheet(gsheet_doc_name: str, worksheet_name: str):
     metadata_dict = sheet_data_to_metadata(data_list)
     cdf = clean_dataframe(df)
     return df_to_dict(cdf,  **metadata_dict)
-    # write_to_json(cdf, **metadata_dict)
 
 def process_legend(gsheet_doc_name: str):
     print('Processing Legend sheet..')
@@ -186,11 +184,8 @@ def write_pathways_to_json(avail_pathways: list):
 
     write_to_json(template_dict_list)
 
-# worksheet_name = 'DAC'
-
-# df_dict = process_sheet(gsheet_doc_name, worksheet_name)
-# write_pathways_to_json(avail_pathways)
-# process_legend(gsheet_doc_name)
+write_pathways_to_json(avail_pathways)
+process_legend(gsheet_doc_name)
 process_components_sheet(gsheet_doc_name)
 
 
