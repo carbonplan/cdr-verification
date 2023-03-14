@@ -11,6 +11,7 @@ dependencies:
   - pandas
   - pandera
   - pip
+  - pre-commit
   - s3fs
   - ujson
   - xarray

@@ -18,7 +18,7 @@ credentials = ServiceAccountCredentials.from_json_keyfile_name(SECRET_FILE, scop
 gc = gspread.authorize(credentials)
 
 
-gsheet_doc_name = 'CDR MRV Pathway Uncertainties'
+gsheet_doc_name = 'NEW_CDR MRV Pathway Uncertainties'
 avail_pathways = ['DAC', 'BiCRS','EW','TER_BIO','OCEAN_BIO_no_harvest','OCEAN_BIO_harvest','OAE_echem','OAE_mineral']
 
 
@@ -27,6 +27,14 @@ def get_legend_sheet(gsheet_doc_name: str) -> pd.DataFrame:
     sheet = sh.worksheet('Legend')
     data_list = sheet.get_all_values()
     return pd.DataFrame(data_list[1::],columns=data_list[0])
+
+def get_component_sheet(gsheet_doc_name: str) -> pd.DataFrame:
+    sh = gc.open(gsheet_doc_name)
+    sheet = sh.worksheet('Components')
+    data_list = sheet.get_all_values()
+    cdf = pd.DataFrame(data_list[2::],columns=data_list[0])[['component_id','component_name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','description','revisions','notes']]
+    cdf['revisions'] = cdf['revisions'].apply(eval)
+    return cdf
 
 def get_all_sheets_in_doc(gsheet_doc_name: str) -> list:
     """returns list of all worksheets including ID and name"""
@@ -41,7 +49,7 @@ def gsheet_to_data_list(gsheet_doc_name: str, worksheet_name: str) -> list:
 
 def sheet_data_to_dataframe(data_list: list) -> pd.DataFrame:
     """To match gsheets CDR-MRV schema, first four rows are dataset metadata"""
-    return pd.DataFrame(data_list[7::],columns=data_list[6])
+    return pd.DataFrame(data_list[10::],columns=data_list[9])
 
 
 def sheet_data_to_metadata(sheet_data: list) -> dict:
@@ -52,14 +60,17 @@ def sheet_data_to_metadata(sheet_data: list) -> dict:
     VCL = list(tuple(sheet_data[3][1].replace(" ", "").split(',')))
     equation = sheet_data[4][1].strip()
     version = sheet_data[5][1].strip()
-    return {'pathway_id':pathway_id,'pathway_name':pathway_name,'pathway_description':pathway_description, 'VCL':VCL, 'equation':equation, 'version':version}
+
+    revisions = eval(sheet_data[6][1])
+    contributors = eval(sheet_data[7][1])
+    return {'pathway_id':pathway_id,'pathway_name':pathway_name,'pathway_description':pathway_description, 'VCL':VCL, 'equation':equation, 'version':version, 'revisions': revisions, 'contributors': contributors}
 
 
 def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """Sanitizes dataframe for web formatting"""
 
     # removes any unneeded cols
-    df = df[['element','category','component_id','quantification_target','component_name','description','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','notes','revisions']]
+    df = df[['number', 'category', 'component_id', 'name', 'quantification_target', 'uncertainty_type', 'responsibility', 'uncertainty_impact_min', 'uncertainty_impact_max', 'description', 'notes']]
 
     # replace empty strings with nan
     df = df.replace(r'^\s*$', np.nan, regex=True)
@@ -73,14 +84,8 @@ def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     # splits any multiple comma sep entries into lists. 
     df['uncertainty_type'] = df.uncertainty_type.str.replace(" ","").apply(lambda x: x.split(','))    
 
-    # cast element as string
-    df['element'] = df['element'].astype(str)
-
     # regex magic for leading/trailing whitespace
     df = df.replace(r"^ +| +$", r"", regex=True)
-
-    # converts revision lists into lists from strings
-    df['revisions'] = df['revisions'].apply(lambda x: literal_eval(x))
 
     return df
 
@@ -90,9 +95,14 @@ def write_legend_to_json(df: pd.DataFrame):
     with open(f'../data/legend.json', 'w') as fp:
         json.dump(ldict, fp, indent=4)
 
+def write_components_to_json(df: pd.DataFrame):
+    """writes components df to .json"""
+    
+    with open(f'../data/pathways.json', 'w') as fp:
+        json.dump(df, fp, indent=4)
 
 
-def df_to_dict(df: pd.DataFrame, pathway_id: str, pathway_name: str, pathway_description: str, VCL: str, equation: str, version: str) -> dict:
+def df_to_dict(df: pd.DataFrame, pathway_id: str, pathway_name: str, pathway_description: str, VCL: str, equation: str, version: str, revisions: list, contributors: list) -> dict:
     """Converts DataFrame and metadata into dictionary 
 
     Parameters
@@ -111,6 +121,10 @@ def df_to_dict(df: pd.DataFrame, pathway_id: str, pathway_name: str, pathway_des
         Equation
     version : str
         Version
+    revisions : list
+        List of revisions
+    contributors : list
+        List of contributors 
 
     Returns
     -------
@@ -123,7 +137,11 @@ def df_to_dict(df: pd.DataFrame, pathway_id: str, pathway_name: str, pathway_des
                     "VCL":VCL,
                     "equation":equation,
                     "version":version,
-                    "elements": df.where(df.notnull(), "").to_dict(orient='records')
+                    "elements": df.where(df.notnull(), "").to_dict(orient='records'),
+                    "revisions": revisions, 
+                    "contributors": contributors
+
+
                     }
     return template_dict
     
@@ -135,7 +153,7 @@ def write_to_json(template_dict_list: list):
     ----------
     template_dict_list : List
     """
-
+    df.to_json('file.json', orient='records', lines=True)
     with open(f'../data/pathways.json', 'w') as fp:
         json.dump(template_dict_list, fp, indent=4)
 
@@ -153,6 +171,12 @@ def process_legend(gsheet_doc_name: str):
     ldf = get_legend_sheet(gsheet_doc_name)
     write_legend_to_json(ldf)
 
+def process_components_sheet(gsheet_doc_name):
+    cdf = get_component_sheet(gsheet_doc_name)
+
+
+    write_components_to_json(cdf)
+
 def write_pathways_to_json(avail_pathways: list):
     template_dict_list = []
     for pathway in avail_pathways:
@@ -163,7 +187,11 @@ def write_pathways_to_json(avail_pathways: list):
 
     write_to_json(template_dict_list)
 
-write_pathways_to_json(avail_pathways)
-process_legend(gsheet_doc_name)
+# worksheet_name = 'DAC'
+
+# df_dict = process_sheet(gsheet_doc_name, worksheet_name)
+# write_pathways_to_json(avail_pathways)
+# process_legend(gsheet_doc_name)
+process_components_sheet(gsheet_doc_name)
 
 
