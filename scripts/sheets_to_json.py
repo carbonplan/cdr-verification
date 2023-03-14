@@ -98,8 +98,7 @@ def write_legend_to_json(df: pd.DataFrame):
 def write_components_to_json(df: pd.DataFrame):
     """writes components df to .json"""
     
-    with open(f'../data/pathways.json', 'w') as fp:
-        json.dump(df, fp, indent=4)
+    df.to_json('../data/components.json', orient='records', indent=4)
 
 
 def df_to_dict(df: pd.DataFrame, pathway_id: str, pathway_name: str, pathway_description: str, VCL: str, equation: str, version: str, revisions: list, contributors: list) -> dict:
