@@ -32,7 +32,7 @@ def get_component_sheet(gsheet_doc_name: str) -> pd.DataFrame:
     sh = gc.open(gsheet_doc_name)
     sheet = sh.worksheet('Components')
     data_list = sheet.get_all_values()
-    cdf = pd.DataFrame(data_list[2::],columns=data_list[0])[['component_id','component_name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','description','revisions','notes']]
+    cdf = pd.DataFrame(data_list[2::],columns=data_list[0])[['component_id','component_name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','description','revisions','notes','direct-air-capture','biomass-carbon-removal-and-storage','enhanced-weathering','terrestrial-biomass-sinking','ocean-alkalinity-enhancement-electrochemical','ocean-alkalinity-enhancement-mineral','ocean-biomass-sinking-harvest','ocean-biomass-sinking-no-harvest','direct-ocean-capture','biochar','alkaline-waste-mineralization']]
     cdf['revisions'] = cdf['revisions'].apply(eval)
     return cdf
 
@@ -97,6 +97,7 @@ def write_legend_to_json(df: pd.DataFrame):
 
 def write_components_to_json(df: pd.DataFrame):
     """writes components df to .json"""
+    
     
     df.to_json('../data/components.json', orient='records', indent=4)
 
@@ -184,8 +185,8 @@ def write_pathways_to_json(avail_pathways: list):
 
     write_to_json(template_dict_list)
 
-write_pathways_to_json(avail_pathways)
-process_legend(gsheet_doc_name)
+# write_pathways_to_json(avail_pathways)
+# process_legend(gsheet_doc_name)
 process_components_sheet(gsheet_doc_name)
 
 
