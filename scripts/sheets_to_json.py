@@ -2,6 +2,7 @@
 
 # ------------------ Imports -----------------------
 import numpy as np
+import pandera as pa
 import json
 import pathlib
 import gspread # type: ignore
@@ -21,6 +22,20 @@ gc = gspread.authorize(credentials)
 gsheet_doc_name = 'NEW_CDR MRV Pathway Uncertainties'
 avail_pathways = ['DAC', 'BiCRS','EW','TER_BIO','OCEAN_BIO_no_harvest','OCEAN_BIO_harvest','OAE_echem','OAE_mineral']
 
+
+
+# ----------------- Pandera Checks --------------------
+
+def _validate_component_id(df):
+    schema = pa.DataFrameSchema(
+        columns={
+            "component_id":  pa.Column(str),
+        },
+        checks=pa.Check(lambda df: ~df[["component_id"]].duplicated()),
+    )
+    return schema.validate(df)
+
+# ----------------- End Pandera Checks --------------------
 
 def get_legend_sheet(gsheet_doc_name: str) -> pd.DataFrame:
     sh = gc.open(gsheet_doc_name)
@@ -185,8 +200,37 @@ def write_pathways_to_json(avail_pathways: list):
 
     write_to_json(template_dict_list)
 
-# write_pathways_to_json(avail_pathways)
-# process_legend(gsheet_doc_name)
+
+"""Top priority validation tasks in my mind are: 
+
+- [ ]  [both] Data conforms to expected schema ([https://json-schema.org/](https://json-schema.org/))
+- [x]  [components] Uniqueness of component ids
+- [ ]  [pathway] Double checks VCL calculation based pathway
+- [ ]  [components + pathway] Platonic component uncertainty type tags are superset of pathway type tags
+- [ ]  [components + pathway] Platonic component uncertainty is a superset of pathway component uncertainty
+
+Second order validation tasks in my mind are: 
+
+- [ ]  Checks for revision note
+- [ ]  No components that are not used by pathways
+- [ ]  No starred components in pathway equations
+- [ ]  If VCL changes for a pathway, validates that new major version is properly created (and writes out to new json)
+- [ ]  If other things have changed, validates that new minor version is properly created
+- [ ]  For any change compared to previous version, prints out all “connected” text (e.g. prints out all air-sea-gas-exchange text)"""
+
+
+
+def validate_components():
+    cdf = get_component_sheet(gsheet_doc_name)
+
+    _validate_component_id(cdf)
+
+
+validate_components()
+
+
+write_pathways_to_json(avail_pathways)
+process_legend(gsheet_doc_name)
 process_components_sheet(gsheet_doc_name)
 
 
