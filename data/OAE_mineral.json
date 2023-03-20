@@ -1,0 +1,164 @@
+{
+    "pathway_id": "ocean-alkalinity-enhancement-mineral",
+    "pathway_name": "Ocean Alkalinity Enhancement (Mineral)",
+    "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance its ability to uptake and store atmospheric CO\u2082. Here, we specifically consider OAE that is facilitated by adding rocks to the ocean which dissolve to enhance alkalinity. This pathway is VCL 2, meaning that current quantification capacity may be able establish net carbon removal occurred, but very significant uncertainties remain.",
+    "VCL": [
+        "1",
+        "2"
+    ],
+    "equation": "(1 - 2 - 3 - 4 - 5) - (7 + 8)",
+    "version": "1.0",
+    "elements": [
+        {
+            "number": "1",
+            "category": "drawdown",
+            "component_id": "alk_total",
+            "name": "Mineral dispersal into ocean",
+            "quantification_target": "total alkalinity released",
+            "uncertainty_type": [
+                "execution",
+                "scientific"
+            ],
+            "responsibility": "project",
+            "uncertainty_impact_min": "low",
+            "uncertainty_impact_max": "medium",
+            "description": "If alkalinity is added the ocean directly in the form of mineral or a semi-solid form (e.g. Mg(OH)\u2082 or olivine), the total useful alkalinity released in the surface ocean is a function of particle size, dissolution rates, and sinking rates.",
+            "notes": ""
+        },
+        {
+            "number": "2",
+            "category": "drawdown",
+            "component_id": "alk_convert",
+            "name": "Mineral dissolution",
+            "quantification_target": "theoretical atmospheric removal",
+            "uncertainty_type": [
+                "execution"
+            ],
+            "responsibility": "system",
+            "uncertainty_impact_min": "low",
+            "uncertainty_impact_max": "medium",
+            "description": "Environmental conditions and alkalinity addition dynamics (e.g. rate of point source additions) result in different fractions of carbonate (CO\u2083\u207b\u00b2) versus bicarbonate (HCO\u2083\u207b). This is important to characterize as the uptake of atmospheric CO\u2082 is reduced with the presence of more carbonate in the water. Overall CO\u2082 uptake efficiency can be estimated using seawater chemistry modeling software and the equation presented in [Renforth & Henderson (2017)](https://doi.org/10.1002/2016RG000533). These estimates could also be validated by measurements of bicarbonate concentrations or total alkalinity in the water column. The conversion of alkalinity to CO\u2082 removal is estimated to be 70-95% on a mol to mol basis.",
+            "notes": ""
+        },
+        {
+            "number": "3",
+            "category": "drawdown",
+            "component_id": "sec_precip",
+            "name": "Secondary precipitation",
+            "quantification_target": "secondary precipitation of CaCO3",
+            "uncertainty_type": [
+                "execution",
+                "scientific"
+            ],
+            "responsibility": "project",
+            "uncertainty_impact_min": "high",
+            "uncertainty_impact_max": "very high",
+            "description": "Secondary precipitation of calcium carbonate (CaCO\u2083) may occur abiotically if the rate of alkalinity addition compared to diffusion and water movement is such that the saturation state is too high. This is important to characterize as this precipitation results in CO\u2082 outgassing. Abiotic precipitation can be minimized by ensuring rapid dispersal relative to the rate of alkalinity addition, which is hard to control when adding alkalinity through mineral dissolution. There is [some](https://www.frontiersin.org/articles/10.3389/fclim.2022.831587/full) [evidence](https://bg.copernicus.org/preprints/bg-2022-126/) that that localized effects of mineral dissolution may trigger significant secondary precipitation. Sampling total alkalinity near the dispersal point can help quantitatively determine the extent to which alkalinity is lost due to precipitation.",
+            "notes": ""
+        },
+        {
+            "number": "4",
+            "category": "drawdown",
+            "component_id": "calc",
+            "name": "Biotic calcification response",
+            "quantification_target": "biotic calcification response",
+            "uncertainty_type": [
+                "scientific"
+            ],
+            "responsibility": "system",
+            "uncertainty_impact_min": "medium",
+            "uncertainty_impact_max": "medium",
+            "description": "Since calcification releases CO\u2082 as a by-product, any changes to the rate of biotic calcification in response to alkalinity additions to the surface ocean must be considered. Shifts in biotic calcification rates could occur in both coastal and open ocean waters, and could be tracked by measuring changes in total alkalinity over time and by sampling the water column to study changes in calcifier populations. In practice, quantifying the biotic calcification response to alkalinity addition may pose significant spatial and temporal challenges.",
+            "notes": ""
+        },
+        {
+            "number": "5",
+            "category": "drawdown",
+            "component_id": "asg",
+            "name": "Air-sea gas exchange",
+            "quantification_target": "air-sea gas exchange efficiency",
+            "uncertainty_type": [
+                "scientific"
+            ],
+            "responsibility": "system",
+            "uncertainty_impact_min": "high",
+            "uncertainty_impact_max": "high",
+            "description": "Atmospheric uptake is reduced if modified ocean water (e.g. with enhanced alkalinity or depleted dissolved organic carbon) is transferred to the deep ocean before either increasing the uptake of atmospheric CO\u2082 or decreasing the outgassing of CO\u2082 to the atmosphere. The precise dispersal of modified ocean water and the associated efficiency of air-sea gas exchange is dependent on the location and timing of modification and is hard to directly observe. In-situ measurements can potentially track post-deployment changes in pCO\u2082, pH, and dissolved inorganic carbon (DIC) to help validate models of plume dispersal and atmospheric CO\u2082 drawdown, though the sensitivity and cost of sensors may be a challenge.",
+            "notes": ""
+        },
+        {
+            "number": "6*",
+            "category": "drawdown",
+            "component_id": "poc",
+            "name": "Particulate organic carbon response",
+            "quantification_target": "particulate organic carbon response",
+            "uncertainty_type": [
+                "scientific"
+            ],
+            "responsibility": "system",
+            "uncertainty_impact_min": "not characterized",
+            "uncertainty_impact_max": "not characterized",
+            "description": "Additional formation of dissolved inorganic carbon (DIC) as a result of alkalinity addition could lead to more particulate organic carbon (POC) formation in the surface ocean. This effect could be quite small if plankton communities are primarily limited by nutrient availability, rather than DIC availability. However, it is possible for organisms to change their carbon-to-nutrient consumption ratios in response to changing environments, which could result in a shift toward increased carbon drawdown in the surface ocean. Because only a small fraction of this increased drawdown would result in permanent carbon storage in the deep ocean, we conservatively recommend this not be counted as additional sequestration or used to counterbalance project lifecycle emissions.",
+            "notes": ""
+        },
+        {
+            "number": "7",
+            "category": "emissions",
+            "component_id": "mat_CO\u2082",
+            "name": "Materials",
+            "quantification_target": "material embodied emissions",
+            "uncertainty_type": [
+                "execution"
+            ],
+            "responsibility": "project",
+            "uncertainty_impact_min": "low",
+            "uncertainty_impact_max": "low",
+            "description": "The embodied emissions of any materials consumed during operation, like mineral feedstocks or chemical solvents, can be estimated based on a cradle-to-grave lifecycle assessment (LCA) of the material input. The embodied emissions of non-consumed project equipment and infrastructure must also be considered, amortized over the expected lifetime of operation. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
+            "notes": ""
+        },
+        {
+            "number": "8",
+            "category": "emissions",
+            "component_id": "energy_CO\u2082",
+            "name": "Energy",
+            "quantification_target": "energy use emissions",
+            "uncertainty_type": [
+                "execution"
+            ],
+            "responsibility": "project",
+            "uncertainty_impact_min": "low",
+            "uncertainty_impact_max": "low",
+            "description": "The emissions associated with energy use for the process. This component should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project.",
+            "notes": ""
+        },
+        {
+            "number": "9",
+            "category": "durability",
+            "component_id": "tau_alk",
+            "name": "Alkalinity residence time",
+            "quantification_target": "years of expected CO\u2082 storage",
+            "uncertainty_type": [
+                "scientific"
+            ],
+            "responsibility": "system",
+            "uncertainty_impact_min": "low",
+            "uncertainty_impact_max": "low",
+            "description": "The concept of ocean DIC lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000 and 100,000 years.",
+            "notes": ""
+        }
+    ],
+    "revisions": [
+        {
+            "version": "1.0",
+            "date": "09-19-2022",
+            "note": "First release."
+        }
+    ],
+    "contributors": [
+        {
+            "type": "",
+            "name": "",
+            "affiliation": ""
+        }
+    ]
+}
