@@ -242,10 +242,8 @@ def validate_components():
 
 
 validate_components()
-
-
 write_pathways_to_json(avail_pathways)
-# process_legend(gsheet_doc_name)
-# process_components_sheet(gsheet_doc_name)
+process_legend(gsheet_doc_name)
+process_components_sheet(gsheet_doc_name)
 
 
