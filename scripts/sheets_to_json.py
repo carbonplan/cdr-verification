@@ -161,14 +161,15 @@ def df_to_dict(df: pd.DataFrame, pathway_id: str, pathway_name: str, pathway_des
     return template_dict
     
 
-def write_to_json(template_dict_list: list):
+def write_to_json(template_dict_list: list, pathway: str):
     """Writes cleaned list of pathway dictionaries and metadata to .json.
 
     Parameters
     ----------
     template_dict_list : List
+    pathway : pathway name
     """
-    with open(f'../data/pathways.json', 'w') as fp:
+    with open(f'../data/{pathway}.json', 'w') as fp:
         json.dump(template_dict_list, fp, indent=4)
 
 def process_sheet(gsheet_doc_name: str, worksheet_name: str):
@@ -176,7 +177,7 @@ def process_sheet(gsheet_doc_name: str, worksheet_name: str):
     df = sheet_data_to_dataframe(data_list)
     metadata_dict = sheet_data_to_metadata(data_list)
     cdf = clean_dataframe(df)
-    return df_to_dict(cdf,  **metadata_dict)
+    return {'cdf':cdf, 'metadata_dict':metadata_dict}
 
 def process_legend(gsheet_doc_name: str):
     print('Processing Legend sheet..')
@@ -191,14 +192,12 @@ def process_components_sheet(gsheet_doc_name):
     write_components_to_json(cdf)
 
 def write_pathways_to_json(avail_pathways: list):
-    template_dict_list = []
     for pathway in avail_pathways:
 
         print(f'Processing pathway: {pathway}')
-        template_dict = process_sheet(gsheet_doc_name, pathway)
-        template_dict_list.append(template_dict)
-
-    write_to_json(template_dict_list)
+        process_sheet_dict = process_sheet(gsheet_doc_name, pathway)
+        template_dict = df_to_dict(process_sheet_dict['cdf'],  **process_sheet_dict['metadata_dict'])
+        write_to_json(template_dict, pathway)
 
 
 """Top priority validation tasks in my mind are: 
@@ -217,6 +216,8 @@ Second order validation tasks in my mind are:
 - [ ]  If VCL changes for a pathway, validates that new major version is properly created (and writes out to new json)
 - [ ]  If other things have changed, validates that new minor version is properly created
 - [ ]  For any change compared to previous version, prints out all “connected” text (e.g. prints out all air-sea-gas-exchange text)"""
+
+
 
 
 
