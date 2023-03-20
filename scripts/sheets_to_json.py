@@ -75,7 +75,6 @@ def sheet_data_to_metadata(sheet_data: list) -> dict:
     VCL = list(tuple(sheet_data[3][1].replace(" ", "").split(',')))
     equation = sheet_data[4][1].strip()
     version = sheet_data[5][1].strip()
-
     revisions = eval(sheet_data[6][1])
     contributors = eval(sheet_data[7][1])
     return {'pathway_id':pathway_id,'pathway_name':pathway_name,'pathway_description':pathway_description, 'VCL':VCL, 'equation':equation, 'version':version, 'revisions': revisions, 'contributors': contributors}
@@ -136,10 +135,6 @@ def df_to_dict(df: pd.DataFrame, pathway_id: str, pathway_name: str, pathway_des
         Equation
     version : str
         Version
-    revisions : list
-        List of revisions
-    contributors : list
-        List of contributors 
 
     Returns
     -------
@@ -152,16 +147,30 @@ def df_to_dict(df: pd.DataFrame, pathway_id: str, pathway_name: str, pathway_des
                     "VCL":VCL,
                     "equation":equation,
                     "version":version,
-                    "elements": df.where(df.notnull(), "").to_dict(orient='records'),
-                    "revisions": revisions, 
-                    "contributors": contributors
+                    "elements": df.where(df.notnull(), "").to_dict(orient='records')
 
 
                     }
     return template_dict
     
 
-def write_to_json(template_dict_list: list, pathway: str):
+def write_metadata_to_json(pathway: str, metadata_dict: dict):
+    """Write metadata revisions and contributors for each pathway
+
+    :param pathway: name of pathway
+    :type pathway: str
+    :param metadata_dict: metadata dict to be subset
+    :type metadata_dict: dict
+    """
+
+    sample_file = pathlib.Path("../data") / f"{pathway}/metadata.json"
+    sample_file.parent.mkdir(exist_ok=True)
+    metadata_subset = {k:metadata_dict[k] for k in ("contributors", "revisions") if k in metadata_dict}
+    with sample_file.open("w", encoding="utf-8") as fp:
+        json.dump(metadata_subset, fp, indent=4)
+
+
+def write_to_json(template_dict_list: list, pathway: str, pathway_version: str):
     """Writes cleaned list of pathway dictionaries and metadata to .json.
 
     Parameters
@@ -169,8 +178,13 @@ def write_to_json(template_dict_list: list, pathway: str):
     template_dict_list : List
     pathway : pathway name
     """
-    with open(f'../data/{pathway}.json', 'w') as fp:
-        json.dump(template_dict_list, fp, indent=4)
+
+    sample_file = pathlib.Path("../data") / f"{pathway}/{pathway_version}.json"
+    sample_file.parent.mkdir(exist_ok=True)
+    with sample_file.open("w", encoding="utf-8") as f:
+        json.dump(template_dict_list, f, indent=4)
+
+
 
 def process_sheet(gsheet_doc_name: str, worksheet_name: str):
     data_list = gsheet_to_data_list(gsheet_doc_name, worksheet_name)
@@ -186,9 +200,8 @@ def process_legend(gsheet_doc_name: str):
     write_legend_to_json(ldf)
 
 def process_components_sheet(gsheet_doc_name):
+    print('Processing Components sheet..')
     cdf = get_component_sheet(gsheet_doc_name)
-
-
     write_components_to_json(cdf)
 
 def write_pathways_to_json(avail_pathways: list):
@@ -197,7 +210,8 @@ def write_pathways_to_json(avail_pathways: list):
         print(f'Processing pathway: {pathway}')
         process_sheet_dict = process_sheet(gsheet_doc_name, pathway)
         template_dict = df_to_dict(process_sheet_dict['cdf'],  **process_sheet_dict['metadata_dict'])
-        write_to_json(template_dict, pathway)
+        write_to_json(template_dict, pathway, process_sheet_dict['metadata_dict']['version'])
+        write_metadata_to_json(pathway, process_sheet_dict['metadata_dict'])
 
 
 """Top priority validation tasks in my mind are: 
@@ -231,7 +245,7 @@ validate_components()
 
 
 write_pathways_to_json(avail_pathways)
-process_legend(gsheet_doc_name)
-process_components_sheet(gsheet_doc_name)
+# process_legend(gsheet_doc_name)
+# process_components_sheet(gsheet_doc_name)
 
 
