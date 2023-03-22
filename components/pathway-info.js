@@ -10,8 +10,14 @@ import PathwayDescription from './pathway-description'
 
 const PathwayInfo = ({ pathways, pathway, setPathway }) => {
   const [expanded, setExpanded] = useState(false)
-  const { pathway_description, pathway_id, VCL, equation, elements, version } =
-    pathway
+  const {
+    pathway_description,
+    pathway_id,
+    VCL,
+    equation,
+    components,
+    version,
+  } = pathway
 
   const formattedVCL = VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')
   return (
@@ -62,7 +68,7 @@ const PathwayInfo = ({ pathways, pathway, setPathway }) => {
       </Column>
 
       <Column start={1} width={[6, 6, 7, 7]}>
-        <Equation equation={equation} elements={elements} />
+        <Equation equation={equation} components={components} />
       </Column>
     </Row>
   )

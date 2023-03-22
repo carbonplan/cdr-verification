@@ -12,11 +12,11 @@ import {
 import { useRouter } from 'next/router'
 
 import FLOW_DIAGRAMS from '../components/flow-diagrams'
-import Element from '../components/element'
+import Component from './component'
 import { CATEGORY_COLORS } from '../components/constants'
-import { getElements } from '../components/utils'
+import { getComponents } from '../components/utils'
 import TableHeader from '../components/table/header'
-import { ElementProvider } from '../components/context/element'
+import { ComponentProvider } from '../components/context/component'
 import PathwayInfo from '../components/pathway-info'
 import PathwaySelector from '../components/pathway-selector'
 import Tooltip, { TooltipContent, TooltipWrapper } from '../components/tooltip'
@@ -39,8 +39,14 @@ const Main = ({ pathways, settings, setSettings }) => {
     () => pathways.find((p) => p.pathway_id === router.query.id) ?? pathways[0],
     [router.query.id]
   )
-  const { pathway_id, elements, pathway_description, VCL, equation, version } =
-    pathway
+  const {
+    pathway_id,
+    components,
+    pathway_description,
+    VCL,
+    equation,
+    version,
+  } = pathway
 
   useEffect(() => {
     // If the pathway ID in the route does not match pathway ID, we've fallen back
@@ -71,10 +77,10 @@ const Main = ({ pathways, settings, setSettings }) => {
   return (
     <Box>
       <Container>
-        <ElementProvider
+        <ComponentProvider
           pathways={pathways}
           pathway={pathway_id}
-          onElementChange={closeTray}
+          onComponentChange={closeTray}
         >
           <Row>
             <Column
@@ -238,8 +244,8 @@ const Main = ({ pathways, settings, setSettings }) => {
                   />
                 </Column>
               </Row>
-              {getElements(elements, filters, sort).map((d) => (
-                <Element key={d.number} openTray={openTray} {...d} />
+              {getComponents(components, filters, sort).map((d) => (
+                <Component key={d.number} openTray={openTray} {...d} />
               ))}
             </Column>
             <Column
@@ -292,11 +298,11 @@ const Main = ({ pathways, settings, setSettings }) => {
             {settings && (
               <>
                 <Box sx={{ mb: 4 }}>{FLOW_DIAGRAMS[pathway_id]}</Box>
-                <Equation elements={elements} equation={equation} />
+                <Equation components={components} equation={equation} />
               </>
             )}
           </Tray>
-        </ElementProvider>
+        </ComponentProvider>
       </Container>
     </Box>
   )

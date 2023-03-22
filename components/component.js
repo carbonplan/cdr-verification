@@ -19,7 +19,7 @@ import Circle from './circle'
 import Uncertainty from './uncertainty'
 import Tooltip from './tooltip'
 import { CATEGORY_COLORS } from './constants'
-import { useElement } from './context/element'
+import { useComponent } from './context/component'
 import legend from './legend.json'
 
 const IMPACTS = {
@@ -41,7 +41,7 @@ const processor = unified()
     },
   })
 
-const Element = ({
+const Component = ({
   category,
   number,
   name,
@@ -53,7 +53,7 @@ const Element = ({
   responsibility,
   openTray,
 }) => {
-  const { active, hovered, setActive, setHovered } = useElement(number)
+  const { active, hovered, setActive, setHovered } = useComponent(number)
 
   const handleActivate = useCallback(
     (e) => {
@@ -296,4 +296,4 @@ const Element = ({
   )
 }
 
-export default Element
+export default Component

@@ -7,21 +7,21 @@ import {
   useState,
 } from 'react'
 
-const ElementContext = createContext({
+const ComponentContext = createContext({
   active: null,
   hovered: null,
   setActive: () => {},
   setHovered: () => {},
 })
 
-export const useElement = (id) => {
+export const useComponent = (id) => {
   const { active, setActive, hovered, setHovered, pathway, pathways } =
-    useContext(ElementContext)
+    useContext(ComponentContext)
   const data = useMemo(
     () =>
       pathways
         .find((p) => p.pathway_id === pathway)
-        .elements.find((d) => d.number === id),
+        .components.find((d) => d.number === id),
     [id, pathway]
   )
 
@@ -44,14 +44,14 @@ export const useElement = (id) => {
   }
 }
 
-export const useElementContext = () => {
-  return useContext(ElementContext)
+export const useComponentContext = () => {
+  return useContext(ComponentContext)
 }
 
-export const ElementProvider = ({
+export const ComponentProvider = ({
   pathways,
   pathway,
-  onElementChange,
+  onComponentChange,
   children,
 }) => {
   const [active, setActive] = useState(null)
@@ -64,14 +64,14 @@ export const ElementProvider = ({
 
   const handleActiveChange = useCallback(
     (...args) => {
-      onElementChange()
+      onComponentChange()
       setActive(...args)
     },
-    [onElementChange]
+    [onComponentChange]
   )
 
   return (
-    <ElementContext.Provider
+    <ComponentContext.Provider
       value={{
         pathways,
         pathway,
@@ -82,6 +82,6 @@ export const ElementProvider = ({
       }}
     >
       {children}
-    </ElementContext.Provider>
+    </ComponentContext.Provider>
   )
 }

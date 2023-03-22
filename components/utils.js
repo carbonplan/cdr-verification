@@ -16,8 +16,8 @@ const sortByUncertainty = (a, b) => {
   }
 }
 
-export const getElements = (elements, filters, sort = 'component') => {
-  const filtered = elements.filter((e) => filters[e.category])
+export const getComponents = (components, filters, sort = 'component') => {
+  const filtered = components.filter((e) => filters[e.category])
 
   switch (sort) {
     case 'uncertainty':

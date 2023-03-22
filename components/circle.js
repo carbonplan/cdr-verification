@@ -2,12 +2,12 @@ import { Box, useThemeUI } from 'theme-ui'
 import { mix } from '@theme-ui/color'
 
 import { CATEGORY_COLORS } from './constants'
-import { useElement } from './context/element'
+import { useComponent } from './context/component'
 import CIRCLE_ICONS from './circle-icons'
 
 const Circle = ({ id, sx, ...props }) => {
   const { theme } = useThemeUI()
-  const { status, data } = useElement(id)
+  const { status, data } = useComponent(id)
 
   let mixer
   switch (status) {

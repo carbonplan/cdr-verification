@@ -1,6 +1,6 @@
 import { Box, Flex } from 'theme-ui'
 
-import { useElementContext } from './context/element'
+import { useComponentContext } from './context/component'
 import Circle from './circle'
 import { CATEGORY_COLORS } from './constants'
 
@@ -14,19 +14,19 @@ const sx = {
     top: 1,
     fontSize: '65%',
   },
-  equationElement: {
+  equationComponent: {
     fontSize: [1, 1, 1, 2],
     display: 'inline-block',
     textTransform: 'uppercase',
   },
 }
 
-const Equation = ({ equation, elements }) => {
+const Equation = ({ equation, components }) => {
   const extras = equation.split(/[\d|\*]+/).map((s) => s.trim())
-  const equationElements = equation.match(/[\d|\*]+/g)
-  const { setActive, setHovered } = useElementContext()
+  const equationComponents = equation.match(/[\d|\*]+/g)
+  const { setActive, setHovered } = useComponentContext()
 
-  if (!equationElements) {
+  if (!equationComponents) {
     return (
       <Box
         sx={{
@@ -43,18 +43,20 @@ const Equation = ({ equation, elements }) => {
 
   const interleaved = extras.reduce((accum, extra, i) => {
     accum.push(...extra.split('').filter((d) => d.match(/\S/g)))
-    const element = elements.find((el) => el.number === equationElements[i])
-    if (element) {
+    const component = components.find(
+      (el) => el.number === equationComponents[i]
+    )
+    if (component) {
       accum.push(
         <Circle
-          key={element.number}
-          id={element.number}
+          key={component.number}
+          id={component.number}
           onClick={() =>
             setActive((prev) =>
-              prev === element.number ? null : element.number
+              prev === component.number ? null : component.number
             )
           }
-          onMouseEnter={() => setHovered(element.number)}
+          onMouseEnter={() => setHovered(component.number)}
           onMouseLeave={() => setHovered(null)}
           sx={{ cursor: 'pointer', mr: '1px' }}
         />
@@ -69,7 +71,7 @@ const Equation = ({ equation, elements }) => {
       <Flex sx={{ gap: [3, 3] }}>
         <Box
           sx={{
-            ...sx.equationElement,
+            ...sx.equationComponent,
             whiteSpace: ['normal', 'nowrap'],
             flexShrink: [1, 0],
           }}
@@ -81,7 +83,7 @@ const Equation = ({ equation, elements }) => {
         </Box>
 
         <Box>
-          <Box sx={sx.equationElement}>
+          <Box sx={sx.equationComponent}>
             <Box as='span' sx={{ mr: 3 }}>
               =
             </Box>
