@@ -47,9 +47,14 @@ def get_component_sheet(gsheet_doc_name: str) -> pd.DataFrame:
     sh = gc.open(gsheet_doc_name)
     sheet = sh.worksheet('Components')
     data_list = sheet.get_all_values()
-    cdf = pd.DataFrame(data_list[2::],columns=data_list[0])[['component_id','component_name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','description','revisions','notes','direct-air-capture','biomass-carbon-removal-and-storage','enhanced-weathering','terrestrial-biomass-sinking','ocean-alkalinity-enhancement-electrochemical','ocean-alkalinity-enhancement-mineral','ocean-biomass-sinking-harvest','ocean-biomass-sinking-no-harvest','direct-ocean-capture','biochar','alkaline-waste-mineralization']]
+    pathway_col_list = ['direct-air-capture','biomass-carbon-removal-and-storage','enhanced-weathering','terrestrial-biomass-sinking','ocean-alkalinity-enhancement-electrochemical','ocean-alkalinity-enhancement-mineral','ocean-biomass-sinking-harvest','ocean-biomass-sinking-no-harvest','direct-ocean-capture','biochar','alkaline-waste-mineralization']
+    cdf = pd.DataFrame(data_list[2::],columns=data_list[0])[['component_id','component_name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','description','revisions','notes']+ pathway_col_list]
+    cdf['pathways'] = cdf[pathway_col_list].apply(lambda x: ', '.join(x[x!=""].index),axis=1).str.split(',')
+    cdf.drop(pathway_col_list,axis=1,inplace=True)
+
     cdf['revisions'] = cdf['revisions'].apply(eval)
     return cdf
+
 
 def get_all_sheets_in_doc(gsheet_doc_name: str) -> list:
     """returns list of all worksheets including ID and name"""
@@ -151,7 +156,7 @@ def df_to_dict(df: pd.DataFrame, pathway_id: str, pathway_name: str, pathway_des
                     "VCL":VCL,
                     "equation":equation,
                     "version":version,
-                    "elements": df.where(df.notnull(), "").to_dict(orient='records')
+                    "components": df.where(df.notnull(), "").to_dict(orient='records')
 
 
                     }
@@ -182,7 +187,6 @@ def write_to_json(template_dict: list, pathway: str, pathway_version: str):
     template_dict : dict
     pathway : pathway name
     """
-    print(template_dict)
     sample_file = pathlib.Path("data") / f"{pathway}/{pathway_version}.json"
     sample_file.parent.mkdir(exist_ok=True)
     with sample_file.open("w", encoding="utf-8") as f:

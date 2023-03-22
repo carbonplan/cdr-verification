@@ -1,15 +1,15 @@
 {
-  "contributors": [],
-  "revisions": [
-    {
-      "version": "1.0",
-      "date": "09-19-2022",
-      "note": "First release."
-    },
-    {
-      "version": "1.1",
-      "date": "12-19-2022",
-      "note": "Second release. Incorporated feedback as detailed in this [blog post](https://carbonplan.org/blog/enhanced-weathering-update)."
-    }
-  ]
+    "contributors": [],
+    "revisions": [
+        {
+            "version": "1.0",
+            "date": "09-19-2022",
+            "note": "First release."
+        },
+        {
+            "version": "1.1",
+            "date": "12-19-2022",
+            "note": "Second release. Incorporated feedback as detailed in this [blog post](https://carbonplan.org/blog/enhanced-weathering-update)."
+        }
+    ]
 }
