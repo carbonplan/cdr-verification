@@ -1,12 +1,12 @@
 import { Box, Flex } from 'theme-ui'
 import { Badge, Row, Column } from '@carbonplan/components'
+import { useState } from 'react'
 
 import PathwaySelector from './pathway-selector'
 import Equation from './equation'
 import { TooltipContent, TooltipWrapper } from './tooltip'
-import legend from './legend.json'
-import { useState } from 'react'
 import PathwayDescription from './pathway-description'
+import legend from '../data/legend.json'
 
 const PathwayInfo = ({ pathways, pathway, setPathway }) => {
   const [expanded, setExpanded] = useState(false)

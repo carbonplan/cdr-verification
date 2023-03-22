@@ -20,7 +20,7 @@ import Uncertainty from './uncertainty'
 import Tooltip from './tooltip'
 import { CATEGORY_COLORS } from './constants'
 import { useComponent } from './context/component'
-import legend from './legend.json'
+import legend from '../data/legend.json'
 
 const IMPACTS = {
   negligible: '(<1%)',
