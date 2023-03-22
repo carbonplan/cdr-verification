@@ -77,6 +77,11 @@ def sheet_data_to_metadata(sheet_data: list) -> dict:
     version = sheet_data[5][1].strip()
     revisions = eval(sheet_data[6][1])
     contributors = eval(sheet_data[7][1])
+    # If all entries for contributors are blank, replace with empty list
+    if all(value == "" for value in contributors[0].values()):
+        contributors = []
+
+
     return {'pathway_id':pathway_id,'pathway_name':pathway_name,'pathway_description':pathway_description, 'VCL':VCL, 'equation':equation, 'version':version, 'revisions': revisions, 'contributors': contributors}
 
 
@@ -106,14 +111,13 @@ def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
 def write_legend_to_json(df: pd.DataFrame):
     """writes legend df to .json"""
     ldict = dict(zip(df.key, df.description))
-    with open(f'../data/legend.json', 'w') as fp:
+    with open(f'data/legend.json', 'w') as fp:
         json.dump(ldict, fp, indent=4)
 
 def write_components_to_json(df: pd.DataFrame):
     """writes components df to .json"""
     
-    
-    df.to_json('../data/components.json', orient='records', indent=4)
+    df.to_json('data/components.json', orient='records', indent=4)
 
 
 def df_to_dict(df: pd.DataFrame, pathway_id: str, pathway_name: str, pathway_description: str, VCL: str, equation: str, version: str, revisions: list, contributors: list) -> dict:
@@ -163,26 +167,26 @@ def write_metadata_to_json(pathway: str, metadata_dict: dict):
     :type metadata_dict: dict
     """
 
-    sample_file = pathlib.Path("../data") / f"{pathway}/metadata.json"
+    sample_file = pathlib.Path("data") / f"{pathway}/metadata.json"
     sample_file.parent.mkdir(exist_ok=True)
     metadata_subset = {k:metadata_dict[k] for k in ("contributors", "revisions") if k in metadata_dict}
     with sample_file.open("w", encoding="utf-8") as fp:
         json.dump(metadata_subset, fp, indent=4)
 
 
-def write_to_json(template_dict_list: list, pathway: str, pathway_version: str):
+def write_to_json(template_dict: list, pathway: str, pathway_version: str):
     """Writes cleaned list of pathway dictionaries and metadata to .json.
 
     Parameters
     ----------
-    template_dict_list : List
+    template_dict : dict
     pathway : pathway name
     """
-
-    sample_file = pathlib.Path("../data") / f"{pathway}/{pathway_version}.json"
+    print(template_dict)
+    sample_file = pathlib.Path("data") / f"{pathway}/{pathway_version}.json"
     sample_file.parent.mkdir(exist_ok=True)
     with sample_file.open("w", encoding="utf-8") as f:
-        json.dump(template_dict_list, f, indent=4)
+        json.dump(template_dict, f, indent=4)
 
 
 
@@ -214,11 +218,14 @@ def write_pathways_to_json(avail_pathways: list):
         write_metadata_to_json(pathway, process_sheet_dict['metadata_dict'])
 
 
+
+
+
 """Top priority validation tasks in my mind are: 
 
 - [ ]  [both] Data conforms to expected schema ([https://json-schema.org/](https://json-schema.org/))
 - [x]  [components] Uniqueness of component ids
-- [ ]  [pathway] Double checks VCL calculation based pathway
+- [?]  [pathway] Double checks VCL calculation based pathway
 - [ ]  [components + pathway] Platonic component uncertainty type tags are superset of pathway type tags
 - [ ]  [components + pathway] Platonic component uncertainty is a superset of pathway component uncertainty
 
