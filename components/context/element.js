@@ -6,7 +6,6 @@ import {
   useMemo,
   useState,
 } from 'react'
-import pathways from '../../data/pathways.json'
 
 const ElementContext = createContext({
   active: null,
@@ -16,13 +15,13 @@ const ElementContext = createContext({
 })
 
 export const useElement = (id) => {
-  const { active, setActive, hovered, setHovered, pathway } =
+  const { active, setActive, hovered, setHovered, pathway, pathways } =
     useContext(ElementContext)
   const data = useMemo(
     () =>
       pathways
         .find((p) => p.pathway_id === pathway)
-        .elements.find((d) => d.element === id),
+        .elements.find((d) => d.number === id),
     [id, pathway]
   )
 
@@ -49,7 +48,12 @@ export const useElementContext = () => {
   return useContext(ElementContext)
 }
 
-export const ElementProvider = ({ pathway, onElementChange, children }) => {
+export const ElementProvider = ({
+  pathways,
+  pathway,
+  onElementChange,
+  children,
+}) => {
   const [active, setActive] = useState(null)
   const [hovered, setHovered] = useState(null)
 
@@ -69,6 +73,7 @@ export const ElementProvider = ({ pathway, onElementChange, children }) => {
   return (
     <ElementContext.Provider
       value={{
+        pathways,
         pathway,
         active,
         setActive: handleActiveChange,

@@ -43,8 +43,8 @@ const processor = unified()
 
 const Element = ({
   category,
-  comments,
-  element,
+  number,
+  name,
   description,
   uncertainty_type,
   uncertainty_impact_min,
@@ -53,7 +53,7 @@ const Element = ({
   responsibility,
   openTray,
 }) => {
-  const { active, hovered, setActive, setHovered } = useElement(element)
+  const { active, hovered, setActive, setHovered } = useElement(number)
 
   const handleActivate = useCallback(
     (e) => {
@@ -99,10 +99,10 @@ const Element = ({
             }}
           >
             <Circle
-              id={element}
+              id={number}
               sx={{ flexShrink: 0, mt: '-1px', ml: '-3px' }}
             />
-            <Box sx={{ ml: '3px' }}>{description}</Box>
+            <Box sx={{ ml: '3px' }}>{name}</Box>
           </Flex>
         </Column>
         <Column
@@ -254,7 +254,7 @@ const Element = ({
                   <Box sx={sx.heading}>Included in accounting</Box>
                 </Tooltip>
                 <Badge sx={sx.badge}>
-                  {element.includes('*') ||
+                  {number.includes('*') ||
                   !['drawdown', 'emissions'].includes(category)
                     ? 'No'
                     : 'Yes'}
@@ -264,7 +264,7 @@ const Element = ({
               <Column sx={sx.column} start={1} width={[6, 6, 4, 4]}>
                 <Box sx={sx.heading}>Notes</Box>
                 <Box sx={{ fontFamily: 'faux' }}>
-                  {processor.processSync(comments).result}
+                  {processor.processSync(description).result}
                 </Box>
               </Column>
 

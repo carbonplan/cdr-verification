@@ -22,10 +22,9 @@ import PathwaySelector from '../components/pathway-selector'
 import Tooltip, { TooltipContent, TooltipWrapper } from '../components/tooltip'
 import Equation from '../components/equation'
 import legend from './legend.json'
-import pathways from '../data/pathways.json'
 import PathwayDescription from './pathway-description'
 
-const Main = ({ settings, setSettings }) => {
+const Main = ({ pathways, settings, setSettings }) => {
   const router = useRouter()
   const [filters, setFilters] = useState({
     drawdown: true,
@@ -72,7 +71,11 @@ const Main = ({ settings, setSettings }) => {
   return (
     <Box>
       <Container>
-        <ElementProvider pathway={pathway_id} onElementChange={closeTray}>
+        <ElementProvider
+          pathways={pathways}
+          pathway={pathway_id}
+          onElementChange={closeTray}
+        >
           <Row>
             <Column
               start={1}
@@ -153,6 +156,7 @@ const Main = ({ settings, setSettings }) => {
                   <Row columns={[6, 8, 4, 4]}>
                     <Column start={1} width={[4, 5, 5, 5]}>
                       <PathwaySelector
+                        pathways={pathways}
                         pathway={pathway_id}
                         setPathway={setPathway}
                         version={version}
@@ -235,7 +239,7 @@ const Main = ({ settings, setSettings }) => {
                 </Column>
               </Row>
               {getElements(elements, filters, sort).map((d) => (
-                <Element key={d.element} openTray={openTray} {...d} />
+                <Element key={d.number} openTray={openTray} {...d} />
               ))}
             </Column>
             <Column
@@ -265,7 +269,11 @@ const Main = ({ settings, setSettings }) => {
               }}
             >
               <Box sx={{ mt: '44px' }}>
-                <PathwayInfo pathway={pathway} setPathway={setPathway} />
+                <PathwayInfo
+                  pathways={pathways}
+                  pathway={pathway}
+                  setPathway={setPathway}
+                />
                 <Divider sx={{ my: 5, ml: [0, 0, '-32px', '-48px'] }} />
               </Box>
 

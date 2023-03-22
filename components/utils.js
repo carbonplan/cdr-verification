@@ -12,7 +12,7 @@ const sortByUncertainty = (a, b) => {
       UNCERTAINTIES.indexOf(a.uncertainty_impact_min)
     )
   } else {
-    return a.element.localeCompare(b.element)
+    return a.number.localeCompare(b.number)
   }
 }
 
@@ -25,8 +25,8 @@ export const getElements = (elements, filters, sort = 'component') => {
     default:
       return filtered.sort(
         (a, b) =>
-          Number(a.element.replace(/\D/g, '')) -
-          Number(b.element.replace(/\D/g, ''))
+          Number(a.number.replace(/\D/g, '')) -
+          Number(b.number.replace(/\D/g, ''))
       )
   }
 }

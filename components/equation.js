@@ -43,18 +43,18 @@ const Equation = ({ equation, elements }) => {
 
   const interleaved = extras.reduce((accum, extra, i) => {
     accum.push(...extra.split('').filter((d) => d.match(/\S/g)))
-    const element = elements.find((el) => el.element === equationElements[i])
+    const element = elements.find((el) => el.number === equationElements[i])
     if (element) {
       accum.push(
         <Circle
-          key={element.element}
-          id={element.element}
+          key={element.number}
+          id={element.number}
           onClick={() =>
             setActive((prev) =>
-              prev === element.element ? null : element.element
+              prev === element.number ? null : element.number
             )
           }
-          onMouseEnter={() => setHovered(element.element)}
+          onMouseEnter={() => setHovered(element.number)}
           onMouseLeave={() => setHovered(null)}
           sx={{ cursor: 'pointer', mr: '1px' }}
         />

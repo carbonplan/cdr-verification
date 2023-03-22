@@ -8,7 +8,7 @@ import legend from './legend.json'
 import { useState } from 'react'
 import PathwayDescription from './pathway-description'
 
-const PathwayInfo = ({ pathway, setPathway }) => {
+const PathwayInfo = ({ pathways, pathway, setPathway }) => {
   const [expanded, setExpanded] = useState(false)
   const { pathway_description, pathway_id, VCL, equation, elements, version } =
     pathway
@@ -26,6 +26,7 @@ const PathwayInfo = ({ pathway, setPathway }) => {
           <Flex sx={{ gap: 5, alignItems: 'flex-start' }}>
             <PathwaySelector
               size='lg'
+              pathways={pathways}
               pathway={pathway_id}
               version={version}
               setPathway={setPathway}

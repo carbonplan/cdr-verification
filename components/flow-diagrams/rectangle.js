@@ -114,9 +114,7 @@ const Rectangle = ({
             }}
           />
         )}
-        {!secondary && (
-          <Box sx={{ padding: 1 }}>{label ?? data?.description}</Box>
-        )}
+        {!secondary && <Box sx={{ padding: 1 }}>{label ?? data?.name}</Box>}
       </Flex>
     </Box>
   )
