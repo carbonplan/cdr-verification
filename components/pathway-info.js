@@ -4,7 +4,7 @@ import { Badge, Row, Column } from '@carbonplan/components'
 import PathwaySelector from './pathway-selector'
 import Equation from './equation'
 import { TooltipContent, TooltipWrapper } from './tooltip'
-import legend from '../data/legend.json'
+import legend from './legend.json'
 import { useState } from 'react'
 import PathwayDescription from './pathway-description'
 

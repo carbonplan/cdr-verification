@@ -21,7 +21,7 @@ import PathwayInfo from '../components/pathway-info'
 import PathwaySelector from '../components/pathway-selector'
 import Tooltip, { TooltipContent, TooltipWrapper } from '../components/tooltip'
 import Equation from '../components/equation'
-import legend from '../data/legend.json'
+import legend from './legend.json'
 import pathways from '../data/pathways.json'
 import PathwayDescription from './pathway-description'
 
