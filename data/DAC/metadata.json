@@ -1,21 +1,10 @@
 {
-    "contributors": [
-        {
-            "type": "company",
-            "name": "Heirloom",
-            "affiliation": ""
-        },
-        {
-            "type": "ecosystem",
-            "name": "David Keith",
-            "affiliation": "Harvard Kennedy School / Carbon Engineering"
-        }
-    ],
-    "revisions": [
-        {
-            "version": "1.0",
-            "date": "09-19-2022",
-            "note": "First release."
-        }
-    ]
+  "contributors": [],
+  "revisions": [
+    {
+      "version": "1.0",
+      "date": "09-19-2022",
+      "note": "First release."
+    }
+  ]
 }

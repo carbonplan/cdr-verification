@@ -49,7 +49,9 @@ def get_component_sheet(gsheet_doc_name: str) -> pd.DataFrame:
     data_list = sheet.get_all_values()
     pathway_col_list = ['direct-air-capture','biomass-carbon-removal-and-storage','enhanced-weathering','terrestrial-biomass-sinking','ocean-alkalinity-enhancement-electrochemical','ocean-alkalinity-enhancement-mineral','ocean-biomass-sinking-harvest','ocean-biomass-sinking-no-harvest','direct-ocean-capture','biochar','alkaline-waste-mineralization']
     cdf = pd.DataFrame(data_list[2::],columns=data_list[0])[['component_id','component_name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','description','revisions','notes']+ pathway_col_list]
-    cdf['pathways'] = cdf[pathway_col_list].apply(lambda x: ', '.join(x[x!=""].index),axis=1).str.split(',')
+    cdf['uncertainty_type'] = cdf.uncertainty_type.str.replace(" ","").apply(lambda x: x.split(','))    
+
+    cdf['pathways'] = cdf[pathway_col_list].apply(lambda x: ','.join(x[x!=""].index),axis=1).str.split(',')
     cdf.drop(pathway_col_list,axis=1,inplace=True)
 
     cdf['revisions'] = cdf['revisions'].apply(eval)
