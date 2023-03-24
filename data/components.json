@@ -393,7 +393,7 @@
   },
   {
     "component_id": "kelp_grown",
-    "component_name": "Macroalgae cultivation",
+    "component_name": "Macroalgae cultivation on drifting buoy",
     "quantification_target": "mass of biomass carbon sunk",
     "uncertainty_type": ["scientific"],
     "responsibility": "project",
