@@ -34,7 +34,7 @@
     },
     {
       "number": "3",
-      "category": "drawdown",
+      "category": "emissions",
       "component_id": "mat_CO\u2082",
       "name": "Materials",
       "quantification_target": "material embodied emissions",
