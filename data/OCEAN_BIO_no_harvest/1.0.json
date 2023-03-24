@@ -16,7 +16,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "medium",
       "uncertainty_impact_max": "high",
-      "description": "",
+      "description": "For systems that do not harvest kelp before sinking, kelp growth may be estimated with yield models that estimate biomass carbon as a function of species and strain, macro- and micronutrient availability, episodic mortality events like disease & storms, and other environmental factors that affect kelp growth. These models must be calibrated based on observational data, which could be derived from direct sampling and weighing, or from indirect measures from conjoined observational buoys (e.g. with instruments pointed at growing kelp). The mass of kelp grown can be converted to carbon using a default carbon content factor.",
       "notes": ""
     },
     {
@@ -29,7 +29,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "medium",
       "uncertainty_impact_max": "high",
-      "description": "Some fraction of the deployed biomass may not successfully sink to the ocean floor or might not sink at suitable depth for long-term storage. This could be a result of biomass being shed during the sinking process, which could be modeled as a function of biomass type and sinking configuration based on field observations.",
+      "description": "Some fraction of the deployed biomass may not successfully sink to the ocean floor or might not sink at suitable depth for long-term storage. This could be a result of biomass being shed during the sinking process, which could be modeled as a function of biomass type and sinking configuration based on field observations. For biomass that sinks after some period of floating in the open ocean (e.g. biomass-based buoys), the possibility that biomass may end up being beached or sinking in areas that do not result in permanent storage (e.g. shallow waters or areas of upwelling) must also be considered. Existing surface ocean transport models could be validated based on GPS-based observational data.",
       "notes": ""
     },
     {
