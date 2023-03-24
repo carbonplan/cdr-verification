@@ -1,0 +1,17 @@
+name: cdr
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - fsspec
+  - gspread
+  - jupyter
+  - numpy
+  - oauth2client
+  - pandas
+  - pandera
+  - pip
+  - pre-commit
+  - s3fs
+  - ujson
+  - xarray

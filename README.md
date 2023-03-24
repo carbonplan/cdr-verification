@@ -40,8 +40,7 @@ You will need to unlock the Google Sheets key using [`git-crypt`](https://github
 You may then run the command to pull all pathway and legend data.
 
 ```shell
-cd scripts
-python sheets_to_json.py
+python scripts/sheets_to_json.py
 pre-commit run --all-files
 ```
 

@@ -1,9 +1,9 @@
 import { Box } from 'theme-ui'
 
-import { useElementContext } from '../context/element'
+import { useComponentContext } from '../context/component'
 
 const Grid = ({ height = 30, children, debug = false }) => {
-  const { setActive } = useElementContext()
+  const { setActive } = useComponentContext()
 
   return (
     <Box

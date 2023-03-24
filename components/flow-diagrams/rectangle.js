@@ -3,7 +3,7 @@ import { mix } from '@theme-ui/color'
 import { useCallback } from 'react'
 
 import Circle from '../circle'
-import { useElement } from '../context/element'
+import { useComponent } from '../context/component'
 
 const Rectangle = ({
   id,
@@ -14,7 +14,7 @@ const Rectangle = ({
   width = 6,
   height = 4,
 }) => {
-  const { status, data, setActive, setHovered } = useElement(id)
+  const { status, data, setActive, setHovered } = useComponent(id)
   const deemphasized = id?.includes('*')
   const borderColor = secondary || deemphasized ? 'secondary' : 'primary'
   const borderStyle = borderStyleProp ?? (deemphasized ? 'dashed' : 'solid')
@@ -114,9 +114,7 @@ const Rectangle = ({
             }}
           />
         )}
-        {!secondary && (
-          <Box sx={{ padding: 1 }}>{label ?? data?.description}</Box>
-        )}
+        {!secondary && <Box sx={{ padding: 1 }}>{label ?? data?.name}</Box>}
       </Flex>
     </Box>
   )
