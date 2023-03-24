@@ -6,23 +6,22 @@ import {
   useMemo,
   useState,
 } from 'react'
-import pathways from '../../data/pathways.json'
 
-const ElementContext = createContext({
+const ComponentContext = createContext({
   active: null,
   hovered: null,
   setActive: () => {},
   setHovered: () => {},
 })
 
-export const useElement = (id) => {
-  const { active, setActive, hovered, setHovered, pathway } =
-    useContext(ElementContext)
+export const useComponent = (id) => {
+  const { active, setActive, hovered, setHovered, pathway, pathways } =
+    useContext(ComponentContext)
   const data = useMemo(
     () =>
       pathways
         .find((p) => p.pathway_id === pathway)
-        .elements.find((d) => d.element === id),
+        .components.find((d) => d.number === id),
     [id, pathway]
   )
 
@@ -45,11 +44,16 @@ export const useElement = (id) => {
   }
 }
 
-export const useElementContext = () => {
-  return useContext(ElementContext)
+export const useComponentContext = () => {
+  return useContext(ComponentContext)
 }
 
-export const ElementProvider = ({ pathway, onElementChange, children }) => {
+export const ComponentProvider = ({
+  pathways,
+  pathway,
+  onComponentChange,
+  children,
+}) => {
   const [active, setActive] = useState(null)
   const [hovered, setHovered] = useState(null)
 
@@ -60,15 +64,16 @@ export const ElementProvider = ({ pathway, onElementChange, children }) => {
 
   const handleActiveChange = useCallback(
     (...args) => {
-      onElementChange()
+      onComponentChange()
       setActive(...args)
     },
-    [onElementChange]
+    [onComponentChange]
   )
 
   return (
-    <ElementContext.Provider
+    <ComponentContext.Provider
       value={{
+        pathways,
         pathway,
         active,
         setActive: handleActiveChange,
@@ -77,6 +82,6 @@ export const ElementProvider = ({ pathway, onElementChange, children }) => {
       }}
     >
       {children}
-    </ElementContext.Provider>
+    </ComponentContext.Provider>
   )
 }

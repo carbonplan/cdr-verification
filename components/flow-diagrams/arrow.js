@@ -1,6 +1,6 @@
 import { alpha } from '@theme-ui/color'
 import { Box } from 'theme-ui'
-import { useElementContext } from '../context/element'
+import { useComponentContext } from '../context/component'
 
 const ArrowEnd = ({ sx }) => (
   <Box
@@ -61,7 +61,7 @@ const Arrow = ({
   length,
   hideArrow = false,
 }) => {
-  const { active } = useElementContext()
+  const { active } = useComponentContext()
   const horizontal = right || left
   const vertical = up || down
   const opacity = active ? 0.4 : 1

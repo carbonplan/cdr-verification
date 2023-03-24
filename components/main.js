@@ -11,21 +11,20 @@ import {
 } from '@carbonplan/components'
 import { useRouter } from 'next/router'
 
-import FLOW_DIAGRAMS from '../components/flow-diagrams'
-import Element from '../components/element'
-import { CATEGORY_COLORS } from '../components/constants'
-import { getElements } from '../components/utils'
-import TableHeader from '../components/table/header'
-import { ElementProvider } from '../components/context/element'
-import PathwayInfo from '../components/pathway-info'
-import PathwaySelector from '../components/pathway-selector'
-import Tooltip, { TooltipContent, TooltipWrapper } from '../components/tooltip'
-import Equation from '../components/equation'
+import FLOW_DIAGRAMS from './flow-diagrams'
+import Component from './component'
+import { CATEGORY_COLORS } from './constants'
+import { getComponents } from './utils'
+import TableHeader from './table/header'
+import { ComponentProvider } from './context/component'
+import PathwayInfo from './pathway-info'
+import PathwaySelector from './pathway-selector'
+import Tooltip, { TooltipContent, TooltipWrapper } from './tooltip'
+import Equation from './equation'
 import legend from '../data/legend.json'
-import pathways from '../data/pathways.json'
 import PathwayDescription from './pathway-description'
 
-const Main = ({ settings, setSettings }) => {
+const Main = ({ pathways, settings, setSettings }) => {
   const router = useRouter()
   const [filters, setFilters] = useState({
     drawdown: true,
@@ -40,8 +39,14 @@ const Main = ({ settings, setSettings }) => {
     () => pathways.find((p) => p.pathway_id === router.query.id) ?? pathways[0],
     [router.query.id]
   )
-  const { pathway_id, elements, pathway_description, VCL, equation, version } =
-    pathway
+  const {
+    pathway_id,
+    components,
+    pathway_description,
+    VCL,
+    equation,
+    version,
+  } = pathway
 
   useEffect(() => {
     // If the pathway ID in the route does not match pathway ID, we've fallen back
@@ -72,7 +77,11 @@ const Main = ({ settings, setSettings }) => {
   return (
     <Box>
       <Container>
-        <ElementProvider pathway={pathway_id} onElementChange={closeTray}>
+        <ComponentProvider
+          pathways={pathways}
+          pathway={pathway_id}
+          onComponentChange={closeTray}
+        >
           <Row>
             <Column
               start={1}
@@ -153,6 +162,7 @@ const Main = ({ settings, setSettings }) => {
                   <Row columns={[6, 8, 4, 4]}>
                     <Column start={1} width={[4, 5, 5, 5]}>
                       <PathwaySelector
+                        pathways={pathways}
                         pathway={pathway_id}
                         setPathway={setPathway}
                         version={version}
@@ -234,8 +244,8 @@ const Main = ({ settings, setSettings }) => {
                   />
                 </Column>
               </Row>
-              {getElements(elements, filters, sort).map((d) => (
-                <Element key={d.element} openTray={openTray} {...d} />
+              {getComponents(components, filters, sort).map((d) => (
+                <Component key={d.number} openTray={openTray} {...d} />
               ))}
             </Column>
             <Column
@@ -265,7 +275,11 @@ const Main = ({ settings, setSettings }) => {
               }}
             >
               <Box sx={{ mt: '44px' }}>
-                <PathwayInfo pathway={pathway} setPathway={setPathway} />
+                <PathwayInfo
+                  pathways={pathways}
+                  pathway={pathway}
+                  setPathway={setPathway}
+                />
                 <Divider sx={{ my: 5, ml: [0, 0, '-32px', '-48px'] }} />
               </Box>
 
@@ -284,11 +298,11 @@ const Main = ({ settings, setSettings }) => {
             {settings && (
               <>
                 <Box sx={{ mb: 4 }}>{FLOW_DIAGRAMS[pathway_id]}</Box>
-                <Equation elements={elements} equation={equation} />
+                <Equation components={components} equation={equation} />
               </>
             )}
           </Tray>
-        </ElementProvider>
+        </ComponentProvider>
       </Container>
     </Box>
   )

@@ -1,17 +1,23 @@
 import { Box, Flex } from 'theme-ui'
 import { Badge, Row, Column } from '@carbonplan/components'
+import { useState } from 'react'
 
 import PathwaySelector from './pathway-selector'
 import Equation from './equation'
 import { TooltipContent, TooltipWrapper } from './tooltip'
-import legend from '../data/legend.json'
-import { useState } from 'react'
 import PathwayDescription from './pathway-description'
+import legend from '../data/legend.json'
 
-const PathwayInfo = ({ pathway, setPathway }) => {
+const PathwayInfo = ({ pathways, pathway, setPathway }) => {
   const [expanded, setExpanded] = useState(false)
-  const { pathway_description, pathway_id, VCL, equation, elements, version } =
-    pathway
+  const {
+    pathway_description,
+    pathway_id,
+    VCL,
+    equation,
+    components,
+    version,
+  } = pathway
 
   const formattedVCL = VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')
   return (
@@ -26,6 +32,7 @@ const PathwayInfo = ({ pathway, setPathway }) => {
           <Flex sx={{ gap: 5, alignItems: 'flex-start' }}>
             <PathwaySelector
               size='lg'
+              pathways={pathways}
               pathway={pathway_id}
               version={version}
               setPathway={setPathway}
@@ -61,7 +68,7 @@ const PathwayInfo = ({ pathway, setPathway }) => {
       </Column>
 
       <Column start={1} width={[6, 6, 7, 7]}>
-        <Equation equation={equation} elements={elements} />
+        <Equation equation={equation} components={components} />
       </Column>
     </Row>
   )

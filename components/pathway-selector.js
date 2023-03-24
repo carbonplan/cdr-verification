@@ -1,9 +1,14 @@
 import { useMemo, useRef } from 'react'
 import { Box, Flex } from 'theme-ui'
 
-import pathways from '../data/pathways.json'
-
-const PathwaySelector = ({ pathway, setPathway, version, size = 'lg', sx }) => {
+const PathwaySelector = ({
+  pathway,
+  pathways,
+  setPathway,
+  version,
+  size = 'lg',
+  sx,
+}) => {
   const ref = useRef(null)
   let fontSize
   let width
@@ -25,7 +30,7 @@ const PathwaySelector = ({ pathway, setPathway, version, size = 'lg', sx }) => {
 
   const pathway_name = useMemo(
     () => pathways.find((p) => p.pathway_id === pathway).pathway_name,
-    [pathway]
+    [pathways, pathway]
   )
 
   return (
