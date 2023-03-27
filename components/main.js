@@ -15,7 +15,7 @@ import PathwaySelector from './pathway-selector'
 import Tooltip, { TooltipContent, TooltipWrapper } from './tooltip'
 import Equation from './equation'
 import legend from '../data/legend.json'
-import PathwayDescription from './pathway-description'
+import Description from './description'
 
 const Main = ({ pathways, settings, setSettings }) => {
   const router = useRouter()
@@ -148,7 +148,7 @@ const Main = ({ pathways, settings, setSettings }) => {
                   <Column start={1} width={[6, 8, 8, 8]}>
                     <TooltipContent expanded={expanded} sx={{ mt: 1 }}>
                       <Flex sx={{ flexDirection: 'column', gap: 2 }}>
-                        <PathwayDescription
+                        <Description
                           value={pathway_description}
                           sx={{
                             '& a': { color: 'secondary' },

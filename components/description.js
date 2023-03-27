@@ -17,8 +17,8 @@ const processor = unified()
     },
   })
 
-const PathwayDescription = ({ value, sx }) => {
+const Description = ({ value, sx }) => {
   return <Box sx={sx}> {processor.processSync(value).result}</Box>
 }
 
-export default PathwayDescription
+export default Description

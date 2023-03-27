@@ -5,7 +5,7 @@ import { useState } from 'react'
 import PathwaySelector from './pathway-selector'
 import Equation from './equation'
 import { TooltipContent, TooltipWrapper } from './tooltip'
-import PathwayDescription from './pathway-description'
+import Description from './description'
 import legend from '../data/legend.json'
 
 const PathwayInfo = ({ pathways, pathway, setPathway }) => {
@@ -61,7 +61,7 @@ const PathwayInfo = ({ pathways, pathway, setPathway }) => {
         </TooltipContent>
       </Column>
       <Column start={1} width={[6, 6, 6, 5]}>
-        <PathwayDescription
+        <Description
           value={pathway_description}
           sx={{ my: [3, 3, 3, 4], fontSize: [1] }}
         />
