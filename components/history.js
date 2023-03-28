@@ -2,6 +2,8 @@ import { Box, Divider, Flex, useThemeUI } from 'theme-ui'
 import { Column, formatDate, Row } from '@carbonplan/components'
 import { useMemo } from 'react'
 
+import Description from './description'
+
 const History = ({ history, sx }) => {
   const sortedEntries = useMemo(
     () => history.sort((a, b) => new Date(b.date) - new Date(a.date)),
@@ -86,7 +88,7 @@ const History = ({ history, sx }) => {
               {formatDate(date)}
             </Box>
 
-            <Box sx={{ fontSize: 1 }}>{note}</Box>
+            <Description sx={{ fontSize: 1 }} value={note} />
           </Column>
         ))}
       </Row>

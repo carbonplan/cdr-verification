@@ -18,7 +18,7 @@ const processor = unified()
   })
 
 const Description = ({ value, sx }) => {
-  return <Box sx={sx}> {processor.processSync(value).result}</Box>
+  return <Box sx={sx}>{processor.processSync(value).result}</Box>
 }
 
 export default Description
