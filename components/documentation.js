@@ -1,6 +1,6 @@
 import { Button, Column, Row } from '@carbonplan/components'
 import { Left } from '@carbonplan/icons'
-import { Box } from 'theme-ui'
+import { Box, Flex } from 'theme-ui'
 import Page from './page'
 
 const Documentation = ({ back, label, children }) => {
@@ -10,7 +10,7 @@ const Documentation = ({ back, label, children }) => {
       sidebar={
         <>
           <Row columns={[6, 6, 4, 4]} sx={{ pt: 4 }}>
-            <Column start={1} width={[6, 6, 3, 3]}>
+            <Column start={1} width={[6, 6, 3, 3]} sx={{ order: 0 }}>
               <Box
                 sx={{
                   pb: [3],
@@ -23,33 +23,64 @@ const Documentation = ({ back, label, children }) => {
                 CDR Verification Framework Documentation
               </Box>
             </Column>
-            <Column start={[1, 1, 4, 4]} width={[6, 6, 1, 1]}>
-              <Box sx={{ writingMode: 'vertical-lr' }}>{label}</Box>
+            <Column
+              start={[4, 4, 4, 4]}
+              width={[3, 3, 1, 1]}
+              sx={{ order: [2, 2, 1, 1] }}
+            >
+              <Flex sx={{ justifyContent: 'flex-end' }}>
+                <Box
+                  sx={{
+                    ml: [0, 0, '100%', '100%'],
+                    mr: [0, 0, '5px', '5px'],
+                    writingMode: [
+                      'inherit',
+                      'inherit',
+                      'vertical-lr',
+                      'vertical-lr',
+                    ],
+                    fontFamily: 'mono',
+                    letterSpacing: 'mono',
+                    color: 'secondary',
+                    textTransform: 'uppercase',
+                    fontSize: 3,
+                  }}
+                >
+                  {label}
+                </Box>
+              </Flex>
+            </Column>
+            <Column start={1} width={[3, 3, 4, 4]} sx={{ order: [1, 1, 2, 2] }}>
+              <Button
+                inverted
+                size='xs'
+                onClick={() => {
+                  if (window.history.state?.idx) {
+                    window.history.back()
+                  } else {
+                    window.location.href = back
+                  }
+                }}
+                prefix={<Left />}
+                sx={{
+                  mt: [1, 1, 0, 0],
+                  ml: ['-2px', '-2px', '-2px', '-2px'],
+                  '@media print': {
+                    display: 'none',
+                  },
+                }}
+              >
+                Back to tool
+              </Button>
             </Column>
           </Row>
 
-          <Button
-            inverted
-            size='xs'
-            onClick={() => {
-              if (window.history.state?.idx) {
-                window.history.back()
-              } else {
-                window.location.href = back
-              }
-            }}
-            prefix={<Left />}
+          <Box
             sx={{
-              ml: ['-2px', '-2px', '-2px', '-2px'],
-              '@media print': {
-                display: 'none',
-              },
+              mt: [3, 3, 0, 0],
+              display: ['inherit', 'inherit', 'none', 'none'],
             }}
           >
-            Back to tool
-          </Button>
-
-          <Box sx={{ display: ['inherit', 'inherit', 'none', 'none'] }}>
             {children}
           </Box>
         </>

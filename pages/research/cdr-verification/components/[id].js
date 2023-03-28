@@ -49,7 +49,7 @@ const ComponentDocumentation = ({ pathways }) => {
   return (
     <Documentation label='Component' back='/research/cdr-verification'>
       <Row columns={[6, 8, 7, 7]}>
-        <Column start={1} width={[6, 6, 4, 4]}>
+        <Column start={1} width={[4, 4, 4, 4]}>
           <Select
             value={component.component_id}
             options={options}
@@ -57,48 +57,38 @@ const ComponentDocumentation = ({ pathways }) => {
           />
         </Column>
         <Column
-          start={[1, 1, 5, 5]}
-          width={[2]}
+          start={[5, 5, 6, 6]}
+          width={[2, 2, 1, 1]}
           sx={{ mt: 2, position: 'relative' }}
         >
-          <Flex
+          <Box
+            as='span'
             sx={{
-              justifyContent: 'flex-end',
-              gap: 3,
-              ml: [-4, -5, -5, -6],
+              display: ['none', 'none', 'inherit', 'inherit'],
+              fontFamily: 'mono',
+              letterSpacing: 'mono',
+              textTransform: 'uppercase',
+              color: 'secondary',
+              position: 'absolute',
+              right: '100%',
+              mr: 3,
             }}
           >
-            <Box
-              as='span'
-              sx={{
-                fontFamily: 'mono',
-                letterSpacing: 'mono',
-                textTransform: 'uppercase',
-                color: 'secondary',
-              }}
-            >
-              Uncertainty
-            </Box>
-            <Box
-              sx={{
-                width: [
-                  `calc((100vw - 7 * 24px) / 6)`,
-                  `calc((100vw - 9 * 32px) / 8)`,
-                  `calc((100vw - 13 * 32px) / 12)`,
-                  `calc((100vw - 13 * 48px) / 12)`,
-                ],
-              }}
-            >
-              <Uncertainty
-                min={component.uncertainty_impact_min}
-                max={component.uncertainty_impact_max}
-                color={CATEGORY_COLORS[component.category] ?? 'grey'}
-              />
-            </Box>
-          </Flex>
+            Uncertainty
+          </Box>
+          <Uncertainty
+            min={component.uncertainty_impact_min}
+            max={component.uncertainty_impact_max}
+            color={CATEGORY_COLORS[component.category] ?? 'grey'}
+          />
           <TooltipButton
             mt='6px'
-            sx={{ position: 'absolute', top: 0, right: -4 }}
+            sx={{
+              position: 'absolute',
+              top: 0,
+              left: [-4, -4, 'inherit', 'inherit'],
+              right: -4,
+            }}
             setExpanded={setExpanded}
             expanded={expanded}
           />
