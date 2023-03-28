@@ -1,7 +1,7 @@
 import { Badge, Button, Column, Row } from '@carbonplan/components'
 import { RotatingArrow } from '@carbonplan/icons'
 import { useRouter } from 'next/router'
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { Box, Flex } from 'theme-ui'
 
 import { CATEGORY_COLORS } from '../../../../components/constants'
@@ -14,39 +14,12 @@ import Uncertainty from '../../../../components/uncertainty'
 import components from '../../../../data/components.json'
 import { pathways } from '../../../../utils/data'
 
-const ComponentDocumentation = ({ pathways }) => {
+const ComponentDocumentation = ({ component, options, pathways }) => {
   const [expanded, setExpanded] = useState(false)
   const router = useRouter()
-  const component = useMemo(
-    () =>
-      components.find((c) => c.component_id === router.query.id) ??
-      components[0],
-    [router.query.id]
-  )
-  const options = useMemo(
-    () =>
-      components
-        .map((c) => ({
-          value: c.component_id,
-          label: c.component_name,
-        }))
-        .sort((a, b) => a.label.localeCompare(b.label)),
-    []
-  )
   const setComponent = useCallback((component_id) => {
     router.replace(`/research/cdr-verification/components/${component_id}`)
   })
-
-  const componentPathways = useMemo(
-    () =>
-      component.pathways.map((id) => {
-        const { pathway_id, pathway_name, VCL } = pathways.find(
-          (pathway) => pathway.pathway_id === id
-        )
-        return { pathway_id, pathway_name, VCL }
-      }),
-    [component, pathways]
-  )
 
   return (
     <Documentation label='Component' back='/research/cdr-verification'>
@@ -114,7 +87,7 @@ const ComponentDocumentation = ({ pathways }) => {
         <Column start={1} width={[6, 6, 4, 4]} sx={{ mt: 6 }}>
           <Box sx={{ fontSize: 4 }}>Applicable pathways</Box>
           <Flex sx={{ mt: 3, flexDirection: 'column', gap: 4 }}>
-            {componentPathways.map(({ pathway_id, pathway_name, VCL }) => (
+            {pathways.map(({ pathway_id, pathway_name, VCL }) => (
               <Row key={pathway_id} columns={[6, 6, 4, 4]}>
                 <Column start={1} width={[5, 5, 3, 3]}>
                   <Button
@@ -148,15 +121,31 @@ const ComponentDocumentation = ({ pathways }) => {
   )
 }
 
-export function getStaticProps() {
-  return { props: { pathways } }
+export function getStaticProps({ params: { id } }) {
+  const component = components.find((c) => c.component_id === id)
+
+  return {
+    props: {
+      component,
+      options: components
+        .map((c) => ({
+          value: c.component_id,
+          label: c.component_name,
+        }))
+        .sort((a, b) => a.label.localeCompare(b.label)),
+      pathways: component.pathways.map((id) => {
+        const { pathway_id, pathway_name, VCL } = pathways.find(
+          (pathway) => pathway.pathway_id === id
+        )
+        return { pathway_id, pathway_name, VCL }
+      }),
+    },
+  }
 }
 
 export function getStaticPaths() {
   return {
-    paths: components.map(
-      (c) => `/research/cdr-verification/components/${c.component_id}`
-    ),
+    paths: components.map((c) => ({ params: { id: c.component_id } })),
     fallback: false,
   }
 }
