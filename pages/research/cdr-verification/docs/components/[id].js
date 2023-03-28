@@ -32,6 +32,7 @@ const ComponentDocumentation = ({ component, options, pathways }) => {
             value={component.component_id}
             options={options}
             onChange={setComponent}
+            size={['sm', 'sm', 'lg', 'lg']}
           />
         </Column>
         <Column

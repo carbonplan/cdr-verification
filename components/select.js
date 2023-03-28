@@ -1,25 +1,35 @@
 import { useMemo, useRef } from 'react'
 import { Box, Flex } from 'theme-ui'
 
-const Select = ({ value, options, onChange, version, size = 'lg', sx }) => {
+const Select = ({
+  value,
+  options,
+  onChange,
+  version,
+  size: rawSize = 'lg',
+  sx,
+}) => {
   const ref = useRef(null)
-  let fontSize
-  let width
-  let offset
-  switch (size) {
-    case 'lg':
-      width = 28
-      fontSize = 4
-      offset = '3px'
-      break
-    case 'sm':
-      width = 24
-      fontSize = 3
-      offset = 0
-      break
-    default:
-      throw new Error(`Unexpected size: ${size}`)
-  }
+  const size = Array.isArray(rawSize) ? rawSize : [rawSize]
+  const { fontSize, width, offset } = size.reduce(
+    (accum, sizeEl) => {
+      switch (sizeEl) {
+        case 'lg':
+          accum.width.push(28)
+          accum.fontSize.push(4)
+          accum.offset.push('3px')
+          return accum
+        case 'sm':
+          accum.width.push(24)
+          accum.fontSize.push(3)
+          accum.offset.push(0)
+          return accum
+        default:
+          throw new Error(`Unexpected size: ${size}`)
+      }
+    },
+    { fontSize: [], width: [], offset: [] }
+  )
 
   const selectedLabel = useMemo(
     () => options.find((o) => o.value === value).label,
@@ -31,8 +41,8 @@ const Select = ({ value, options, onChange, version, size = 'lg', sx }) => {
       <Box
         sx={{
           position: 'relative',
-          height: `${width}px`,
-          width: `${width}px`,
+          height: width.map((w) => `${w}px`),
+          width: width.map((w) => `${w}px`),
           flexShrink: 0,
           top: offset,
         }}
@@ -75,14 +85,14 @@ const Select = ({ value, options, onChange, version, size = 'lg', sx }) => {
         </Box>
         <Box
           as='svg'
-          width={`${0.5 * width}px`}
           viewBox='0 0 20 14'
           fill='none'
           stroke='currentColor'
           xmlns='http://www.w3.org/2000/svg'
           sx={{
-            top: `${0.25 * width + 3}px`,
-            left: `${0.25 * width}px`,
+            width: width.map((w) => `${0.5 * w}px`),
+            top: width.map((w) => `${0.25 * w + 3}px`),
+            left: width.map((w) => `${0.25 * w}px`),
             position: 'absolute',
             color: 'muted',
             pointerEvents: 'none',

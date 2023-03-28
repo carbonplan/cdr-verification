@@ -30,7 +30,12 @@ const PathwayDocumentation = ({ options, pathway, metadata }) => {
     >
       <Row columns={[6, 8, 7, 7]}>
         <Column start={1} width={[4, 4, 4, 4]}>
-          <Select value={pathway_id} options={options} onChange={setPathway} />
+          <Select
+            value={pathway_id}
+            options={options}
+            onChange={setPathway}
+            size={['sm', 'sm', 'lg', 'lg']}
+          />
         </Column>
         <Column start={[5, 6, 6, 6]} width={[2]}>
           <TooltipWrapper
