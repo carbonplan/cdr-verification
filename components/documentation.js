@@ -13,7 +13,7 @@ const Documentation = ({ back, label, children }) => {
             <Column start={1} width={[6, 6, 3, 3]} sx={{ order: 0 }}>
               <Box
                 sx={{
-                  pb: [3],
+                  pb: [4, 4, 5, 5],
                   fontSize: [5, 6, 6, 7],
                   width: 'fit-content',
                   fontFamily: 'heading',
@@ -43,7 +43,7 @@ const Documentation = ({ back, label, children }) => {
                     letterSpacing: 'mono',
                     color: 'secondary',
                     textTransform: 'uppercase',
-                    fontSize: 3,
+                    fontSize: [2, 2, 3, 3],
                   }}
                 >
                   {label}
@@ -77,7 +77,7 @@ const Documentation = ({ back, label, children }) => {
 
           <Box
             sx={{
-              mt: [3, 3, 0, 0],
+              mt: [5, 3, 0, 0],
               display: ['inherit', 'inherit', 'none', 'none'],
             }}
           >
