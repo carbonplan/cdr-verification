@@ -1,5 +1,46 @@
 {
-  "contributors": [],
+  "contributors": [
+    {
+      "Type": "CDR Company",
+      "Name": "Ebb",
+      "Affiliation": "",
+      "initial": "1.0",
+      "notes": "",
+      "ocean-alkalinity-enhancement-electrochemical": "1.0"
+    },
+    {
+      "Type": "Scientific",
+      "Name": "David Ho",
+      "Affiliation": "University of Hawai\u02bbi at M\u0101noa",
+      "initial": "1.0",
+      "notes": "",
+      "ocean-alkalinity-enhancement-electrochemical": "1.0"
+    },
+    {
+      "Type": "Scientific",
+      "Name": "Matt Long",
+      "Affiliation": "NCAR",
+      "initial": "1.0",
+      "notes": "",
+      "ocean-alkalinity-enhancement-electrochemical": "1.0"
+    },
+    {
+      "Type": "Scientific",
+      "Name": "Sophie Gill",
+      "Affiliation": "University of Oxford",
+      "initial": "1.0",
+      "notes": "",
+      "ocean-alkalinity-enhancement-electrochemical": "1.0"
+    },
+    {
+      "Type": "Ecosystem",
+      "Name": "Jamie Collins",
+      "Affiliation": "Environmental Defense Fund",
+      "initial": "1.0",
+      "notes": "",
+      "ocean-alkalinity-enhancement-electrochemical": "1.0"
+    }
+  ],
   "revisions": [
     {
       "version": "1.0",
