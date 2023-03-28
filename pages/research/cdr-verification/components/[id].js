@@ -1,4 +1,4 @@
-import { Badge, Button, Column, Link, Row } from '@carbonplan/components'
+import { Badge, Button, Column, Row } from '@carbonplan/components'
 import { RotatingArrow } from '@carbonplan/icons'
 import { useRouter } from 'next/router'
 import { useCallback, useMemo, useState } from 'react'
@@ -25,10 +25,12 @@ const ComponentDocumentation = ({ pathways }) => {
   )
   const options = useMemo(
     () =>
-      components.map((c) => ({
-        value: c.component_id,
-        label: c.component_name,
-      })),
+      components
+        .map((c) => ({
+          value: c.component_id,
+          label: c.component_name,
+        }))
+        .sort((a, b) => a.label.localeCompare(b.label)),
     []
   )
   const setComponent = useCallback((component_id) => {
