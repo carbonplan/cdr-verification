@@ -16,7 +16,10 @@ const History = ({ history, sx }) => {
         ...sx,
       }}
     >
-      <Row columns={[6, 6, 4, 4]} sx={{ height: '100%', position: 'relative' }}>
+      <Row
+        columns={[6, 6, 4, 4]}
+        sx={{ height: '100%', position: 'relative', mb: 4 }}
+      >
         <Column
           start={1}
           width={1}
