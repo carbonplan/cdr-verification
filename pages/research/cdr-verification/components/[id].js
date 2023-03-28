@@ -92,8 +92,7 @@ const ComponentDocumentation = ({ pathways }) => {
               <Uncertainty
                 min={component.uncertainty_impact_min}
                 max={component.uncertainty_impact_max}
-                // color={CATEGORY_COLORS[category]}
-                color='grey'
+                color={CATEGORY_COLORS[component.category] ?? 'grey'}
               />
             </Box>
           </Flex>
