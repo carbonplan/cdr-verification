@@ -72,7 +72,8 @@ const History = ({ history, sx }) => {
             </Box>
 
             <Divider sx={{ my: 0 }} />
-            <Box
+            <Row
+              columns={[4, 4, 3, 3]}
               sx={{
                 color: 'secondary',
                 fontFamily: 'mono',
@@ -85,8 +86,15 @@ const History = ({ history, sx }) => {
                 mb: 3,
               }}
             >
-              {formatDate(date)}
-            </Box>
+              <Column start={1} width={2}>
+                {formatDate(date)}
+              </Column>
+              {version && (
+                <Column start={3} width={1} sx={{ textTransform: 'none' }}>
+                  v{version}
+                </Column>
+              )}
+            </Row>
 
             <Description sx={{ fontSize: 1 }} value={note} />
           </Column>
