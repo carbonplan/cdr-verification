@@ -1,7 +1,7 @@
 import { Badge, Button, Column, Link, Row } from '@carbonplan/components'
 import { RotatingArrow } from '@carbonplan/icons'
 import { useRouter } from 'next/router'
-import { useCallback, useMemo } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { Box, Flex } from 'theme-ui'
 
 import { CATEGORY_COLORS } from '../../../../components/constants'
@@ -9,11 +9,13 @@ import Description from '../../../../components/description'
 import Documentation from '../../../../components/documentation'
 import History from '../../../../components/history'
 import Select from '../../../../components/select'
+import { TooltipButton, TooltipContent } from '../../../../components/tooltip'
 import Uncertainty from '../../../../components/uncertainty'
 import components from '../../../../data/components.json'
 import { pathways } from '../../../../utils/data'
 
 const ComponentDocumentation = ({ pathways }) => {
+  const [expanded, setExpanded] = useState(false)
   const router = useRouter()
   const component = useMemo(
     () =>
@@ -54,14 +56,60 @@ const ComponentDocumentation = ({ pathways }) => {
             onChange={setComponent}
           />
         </Column>
-        <Column start={[1, 1, 6, 6]} width={[1]}>
-          <Uncertainty
-            min={component.uncertainty_impact_min}
-            max={component.uncertainty_impact_max}
-            flexShrink={0.5}
-            // color={CATEGORY_COLORS[category]}
-            color='grey'
+        <Column
+          start={[1, 1, 5, 5]}
+          width={[2]}
+          sx={{ mt: 2, position: 'relative' }}
+        >
+          <Flex
+            sx={{
+              justifyContent: 'flex-end',
+              gap: 3,
+              ml: [-4, -5, -5, -6],
+            }}
+          >
+            <Box
+              as='span'
+              sx={{
+                fontFamily: 'mono',
+                letterSpacing: 'mono',
+                textTransform: 'uppercase',
+                color: 'secondary',
+              }}
+            >
+              Uncertainty
+            </Box>
+            <Box
+              sx={{
+                width: [
+                  `calc((100vw - 7 * 24px) / 6)`,
+                  `calc((100vw - 9 * 32px) / 8)`,
+                  `calc((100vw - 13 * 32px) / 12)`,
+                  `calc((100vw - 13 * 48px) / 12)`,
+                ],
+              }}
+            >
+              <Uncertainty
+                min={component.uncertainty_impact_min}
+                max={component.uncertainty_impact_max}
+                // color={CATEGORY_COLORS[category]}
+                color='grey'
+              />
+            </Box>
+          </Flex>
+          <TooltipButton
+            mt='6px'
+            sx={{ position: 'absolute', top: 0, right: -4 }}
+            setExpanded={setExpanded}
+            expanded={expanded}
           />
+        </Column>
+        <Column start={1} width={[6, 8, 6, 6]}>
+          <TooltipContent expanded={expanded}>
+            The potential impact of the uncertainty on final estimates of net
+            carbon removal or storage duration: negligible, low, medium, high,
+            or very high.
+          </TooltipContent>
         </Column>
 
         <Column
