@@ -4,21 +4,24 @@ import { useRouter } from 'next/router'
 import { useCallback, useState } from 'react'
 import { Box, Flex } from 'theme-ui'
 
-import { CATEGORY_COLORS } from '../../../../components/constants'
-import Description from '../../../../components/description'
-import Documentation from '../../../../components/documentation'
-import History from '../../../../components/history'
-import Select from '../../../../components/select'
-import { TooltipButton, TooltipContent } from '../../../../components/tooltip'
-import Uncertainty from '../../../../components/uncertainty'
-import components from '../../../../data/components.json'
-import { pathways } from '../../../../utils/data'
+import { CATEGORY_COLORS } from '../../../../../components/constants'
+import Description from '../../../../../components/description'
+import Documentation from '../../../../../components/documentation'
+import History from '../../../../../components/history'
+import Select from '../../../../../components/select'
+import {
+  TooltipButton,
+  TooltipContent,
+} from '../../../../../components/tooltip'
+import Uncertainty from '../../../../../components/uncertainty'
+import components from '../../../../../data/components.json'
+import { pathways } from '../../../../../utils/data'
 
 const ComponentDocumentation = ({ component, options, pathways }) => {
   const [expanded, setExpanded] = useState(false)
   const router = useRouter()
   const setComponent = useCallback((component_id) => {
-    router.replace(`/research/cdr-verification/components/${component_id}`)
+    router.replace(`/research/cdr-verification/docs/components/${component_id}`)
   })
 
   return (

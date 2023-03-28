@@ -3,21 +3,24 @@ import { useRouter } from 'next/router'
 import { useCallback, useState } from 'react'
 import { Box } from 'theme-ui'
 
-import Description from '../../../../components/description'
-import Documentation from '../../../../components/documentation'
-import Select from '../../../../components/select'
-import History from '../../../../components/history'
-import { TooltipWrapper, TooltipContent } from '../../../../components/tooltip'
-import { pathways, pathwayContent } from '../../../../utils/data'
-import legend from '../../../../data/legend.json'
-import Contributors from '../../../../components/contributors'
+import Description from '../../../../../components/description'
+import Documentation from '../../../../../components/documentation'
+import Select from '../../../../../components/select'
+import History from '../../../../../components/history'
+import {
+  TooltipWrapper,
+  TooltipContent,
+} from '../../../../../components/tooltip'
+import { pathways, pathwayContent } from '../../../../../utils/data'
+import legend from '../../../../../data/legend.json'
+import Contributors from '../../../../../components/contributors'
 
 const PathwayDocumentation = ({ options, pathway, metadata }) => {
   const { pathway_id, pathway_description, VCL } = pathway
   const [expanded, setExpanded] = useState(false)
   const router = useRouter()
   const setPathway = useCallback((pathway_id) => {
-    router.replace(`/research/cdr-verification/pathways/${pathway_id}`)
+    router.replace(`/research/cdr-verification/docs/pathways/${pathway_id}`)
   })
 
   return (
