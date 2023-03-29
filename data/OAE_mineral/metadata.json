@@ -1,36 +1,32 @@
 {
   "contributors": [
     {
-      "Type": "ecosystem actor",
-      "Name": "jamie collins",
-      "Affiliation": "environmental defense fund",
-      "initial": "1.0",
+      "type": "Ecosystem Actor",
+      "name": "Jamie Collins",
+      "affiliation": "Environmental Defense Fund",
       "notes": "",
-      "ocean-alkalinity-enhancement-mineral": "1.0"
+      "version": ["1.0"]
     },
     {
-      "Type": "scientific expert",
-      "Name": "david ho",
-      "Affiliation": "university of hawai\u02bbi at m\u0101noa",
-      "initial": "1.0",
+      "type": "Scientific Expert",
+      "name": "David Ho",
+      "affiliation": "University of Hawai\u02bbi at M\u0101noa",
       "notes": "",
-      "ocean-alkalinity-enhancement-mineral": "1.0"
+      "version": ["1.0"]
     },
     {
-      "Type": "scientific expert",
-      "Name": "matt long",
-      "Affiliation": "ncar",
-      "initial": "1.0",
+      "type": "Scientific Expert",
+      "name": "Matt Long",
+      "affiliation": "NCAR",
       "notes": "",
-      "ocean-alkalinity-enhancement-mineral": "1.0"
+      "version": ["1.0"]
     },
     {
-      "Type": "scientific expert",
-      "Name": "sophie gill",
-      "Affiliation": "university of oxford",
-      "initial": "1.0",
+      "type": "Scientific Expert",
+      "name": "Sophie Gill",
+      "affiliation": "University of Oxford",
       "notes": "",
-      "ocean-alkalinity-enhancement-mineral": "1.0"
+      "version": ["1.0"]
     }
   ],
   "revisions": [

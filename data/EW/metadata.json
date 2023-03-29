@@ -1,68 +1,60 @@
 {
   "contributors": [
     {
-      "Type": "cdr company",
-      "Name": "eion",
-      "Affiliation": "",
-      "initial": "1.0",
+      "type": "CDR Company",
+      "name": "Eion",
+      "affiliation": "",
       "notes": "",
-      "enhanced-weathering": "1.0, 1.1"
+      "version": ["1.0", "1.1"]
     },
     {
-      "Type": "cdr company",
-      "Name": "undo (prev. future forest)",
-      "Affiliation": "",
-      "initial": "1.0",
+      "type": "CDR Company",
+      "name": "UNDO (prev. Future Forest)",
+      "affiliation": "",
       "notes": "",
-      "enhanced-weathering": "1.0"
+      "version": ["1.0"]
     },
     {
-      "Type": "cdr company",
-      "Name": "laura lammers",
-      "Affiliation": "travertine",
-      "initial": "",
+      "type": "CDR Company",
+      "name": "Laura Lammers",
+      "affiliation": "Travertine",
       "notes": "",
-      "enhanced-weathering": "1.1"
+      "version": ["1.1"]
     },
     {
-      "Type": "scientific expert",
-      "Name": "becca neumann",
-      "Affiliation": "university of washington",
-      "initial": "",
+      "type": "Scientific Expert",
+      "name": "Becca Neumann",
+      "affiliation": "University of Washington",
       "notes": "",
-      "enhanced-weathering": "1.1"
+      "version": ["1.1"]
     },
     {
-      "Type": "scientific expert",
-      "Name": "chris reinhard",
-      "Affiliation": "georgia tech / lithos",
-      "initial": "",
+      "type": "Scientific Expert",
+      "name": "Chris Reinhard",
+      "affiliation": "Georgia Tech / Lithos",
       "notes": "",
-      "enhanced-weathering": "1.1"
+      "version": ["1.1"]
     },
     {
-      "Type": "scientific expert",
-      "Name": "noah planavsky",
-      "Affiliation": "yale / lithos",
-      "initial": "",
+      "type": "Scientific Expert",
+      "name": "Noah Planavsky",
+      "affiliation": "Yale / Lithos",
       "notes": "",
-      "enhanced-weathering": "1.1"
+      "version": ["1.1"]
     },
     {
-      "Type": "scientific expert",
-      "Name": "jens hartmann",
-      "Affiliation": "institut f\u00fcr geologie",
-      "initial": "1.0",
+      "type": "Scientific Expert",
+      "name": "Jens Hartmann",
+      "affiliation": "Institut f\u00fcr Geologie",
       "notes": "",
-      "enhanced-weathering": "1.0"
+      "version": ["1.0"]
     },
     {
-      "Type": "scientific expert",
-      "Name": "kate maher",
-      "Affiliation": "stanford",
-      "initial": "1.0",
+      "type": "Scientific Expert",
+      "name": "Kate Maher",
+      "affiliation": "Stanford",
       "notes": "",
-      "enhanced-weathering": "1.0, 1.1"
+      "version": ["1.0", "1.1"]
     }
   ],
   "revisions": [

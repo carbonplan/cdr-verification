@@ -1,12 +1,11 @@
 {
   "contributors": [
     {
-      "Type": "scientific expert",
-      "Name": "fabiano ximenes",
-      "Affiliation": "nsw government",
-      "initial": "1.0",
+      "type": "Scientific Expert",
+      "name": "Fabiano Ximenes",
+      "affiliation": "NSW Government",
       "notes": "",
-      "terrestrial-biomass-sinking": "1.0"
+      "version": ["1.0"]
     }
   ],
   "revisions": [

@@ -189,16 +189,20 @@ def write_metadata_to_json(*, pathway: str, metadata_dict: dict, contributor_df:
     # switch empty strs to nans for sel 
     contributor_df.replace("",np.nan,inplace=True)
     # grab contibutors matching pathway
-    contributor_df_subset = contributor_df[~contributor_df[pathway_id].isnull()][['Type', 'Name', 'Affiliation', 'initial', 'notes', pathway_id]]
-        # switch back to empty strs for dict
+    contributor_df_subset = contributor_df[~contributor_df[pathway_id].isnull()][['type', 'name', 'affiliation', 'notes', pathway_id]]
+    
+    # switch back to empty strs for dict
     contributor_df_subset.replace(np.nan,"",inplace=True)
+
+    # update pathway_id column to 'version'
+    contributor_df_subset.rename({pathway_id:'version'},inplace=True,axis=1)
+
+    # convert version to list
+    contributor_df_subset['version'] = contributor_df_subset['version'].str.replace(" ","").apply(lambda x: x.split(','))    
 
     # If all values in contributors are empty, save as empty list
     if contributor_df_subset.empty:
         contributor_dict = []
-
-    # lowercaseify 
-    contributor_df_subset = contributor_df_subset.applymap(lambda s: s.lower() if type(s) == str else s)
 
     contributor_dict = contributor_df_subset.to_dict(orient='records')
 
@@ -255,28 +259,6 @@ def write_pathways_to_json(avail_pathways: list):
         template_dict = df_to_dict(process_sheet_dict['cdf'],  **process_sheet_dict['metadata_dict'])
         write_to_json(template_dict, pathway, process_sheet_dict['metadata_dict']['version'])
         write_metadata_to_json(pathway = pathway, metadata_dict = process_sheet_dict['metadata_dict'], contributor_df=contributor_df)
-
-
-
-
-
-"""Top priority validation tasks in my mind are: 
-
-- [ ]  [both] Data conforms to expected schema ([https://json-schema.org/](https://json-schema.org/))
-- [x]  [components] Uniqueness of component ids
-- [?]  [pathway] Double checks VCL calculation based pathway
-- [ ]  [components + pathway] Platonic component uncertainty type tags are superset of pathway type tags
-- [ ]  [components + pathway] Platonic component uncertainty is a superset of pathway component uncertainty
-
-Second order validation tasks in my mind are: 
-
-- [ ]  Checks for revision note
-- [ ]  No components that are not used by pathways
-- [ ]  No starred components in pathway equations
-- [ ]  If VCL changes for a pathway, validates that new major version is properly created (and writes out to new json)
-- [ ]  If other things have changed, validates that new minor version is properly created
-- [ ]  For any change compared to previous version, prints out all “connected” text (e.g. prints out all air-sea-gas-exchange text)"""
-
 
 
 
