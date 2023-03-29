@@ -12,7 +12,7 @@ const Contributors = ({ contributors, sx }) => {
         [3, 1, 1, 1],
         [6, 3, 3, 3],
       ]}
-      data={contributors.map(({ type, name, affiliation, versions }) => [
+      data={contributors.map(({ type, name, affiliation, version }) => [
         <Badge
           key='type'
           sx={{
@@ -34,7 +34,7 @@ const Contributors = ({ contributors, sx }) => {
             mt: '2px',
           }}
         >
-          {versions.map((v) => `v${v}`).join(', ')}
+          {version.map((v) => `v${v}`).join(', ')}
         </Box>,
         <Box key='name'>
           {name} {affiliation ? `(${affiliation})` : ''}
