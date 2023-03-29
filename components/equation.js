@@ -102,7 +102,7 @@ const Equation = ({ equation, components }) => {
             </Box>
           </Box>
           <Flex sx={{ mt: 3, gap: 3 }}>
-            <Box>=</Box>
+            <Box sx={sx.equationComponent}>=</Box>
             <Flex sx={{ gap: [1, 1, 1, 2], flexWrap: 'wrap' }}>
               {interleaved.map((d, i) => (
                 <Box key={i} sx={{ flexShrink: 0 }}>

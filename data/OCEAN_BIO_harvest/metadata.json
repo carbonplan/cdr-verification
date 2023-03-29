@@ -1,5 +1,41 @@
 {
-  "contributors": [],
+  "contributors": [
+    {
+      "type": "CDR Company",
+      "name": "Running Tide",
+      "affiliation": "",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Ecosystem Actor",
+      "name": "Jamie Collins",
+      "affiliation": "Environmental Defense Fund",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "David Ho",
+      "affiliation": "University of Hawai\u02bbi at M\u0101noa",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Matt Long",
+      "affiliation": "NCAR",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Sophie Gill",
+      "affiliation": "University of Oxford",
+      "notes": "",
+      "version": ["1.0"]
+    }
+  ],
   "revisions": [
     {
       "version": "1.0",

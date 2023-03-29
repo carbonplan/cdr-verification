@@ -1,5 +1,62 @@
 {
-  "contributors": [],
+  "contributors": [
+    {
+      "type": "CDR Company",
+      "name": "Eion",
+      "affiliation": "",
+      "notes": "",
+      "version": ["1.0", "1.1"]
+    },
+    {
+      "type": "CDR Company",
+      "name": "UNDO (prev. Future Forest)",
+      "affiliation": "",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "CDR Company",
+      "name": "Laura Lammers",
+      "affiliation": "Travertine",
+      "notes": "",
+      "version": ["1.1"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Becca Neumann",
+      "affiliation": "University of Washington",
+      "notes": "",
+      "version": ["1.1"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Chris Reinhard",
+      "affiliation": "Georgia Tech / Lithos",
+      "notes": "",
+      "version": ["1.1"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Noah Planavsky",
+      "affiliation": "Yale / Lithos",
+      "notes": "",
+      "version": ["1.1"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Jens Hartmann",
+      "affiliation": "Institut f\u00fcr Geologie",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Kate Maher",
+      "affiliation": "Stanford",
+      "notes": "",
+      "version": ["1.0", "1.1"]
+    }
+  ],
   "revisions": [
     {
       "version": "1.0",

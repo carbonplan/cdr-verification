@@ -1,5 +1,27 @@
 {
-  "contributors": [],
+  "contributors": [
+    {
+      "type": "CDR Company",
+      "name": "Heirloom ",
+      "affiliation": "",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Sarah Saltzer",
+      "affiliation": "Stanford",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Susana Garc\u00eda L\u00f3pez",
+      "affiliation": "Heriod-Watt University",
+      "notes": "",
+      "version": ["1.0"]
+    }
+  ],
   "revisions": [
     {
       "version": "1.0",
