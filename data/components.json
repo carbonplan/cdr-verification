@@ -123,8 +123,7 @@
       "ocean-alkalinity-enhancement-electrochemical",
       "ocean-alkalinity-enhancement-mineral",
       "ocean-biomass-sinking-harvest",
-      "ocean-biomass-sinking-no-harvest",
-      "direct-ocean-capture"
+      "ocean-biomass-sinking-no-harvest"
     ]
   },
   {
@@ -169,8 +168,7 @@
     "notes": "",
     "pathways": [
       "ocean-alkalinity-enhancement-electrochemical",
-      "ocean-alkalinity-enhancement-mineral",
-      "direct-ocean-capture"
+      "ocean-alkalinity-enhancement-mineral"
     ]
   },
   {
@@ -232,7 +230,7 @@
       }
     ],
     "notes": "",
-    "pathways": ["direct-ocean-capture"]
+    "pathways": []
   },
   {
     "component_id": "comp",
@@ -475,8 +473,7 @@
     "notes": "",
     "pathways": [
       "ocean-alkalinity-enhancement-electrochemical",
-      "ocean-alkalinity-enhancement-mineral",
-      "direct-ocean-capture"
+      "ocean-alkalinity-enhancement-mineral"
     ]
   },
   {
@@ -525,8 +522,7 @@
     "notes": "",
     "pathways": [
       "ocean-alkalinity-enhancement-electrochemical",
-      "ocean-alkalinity-enhancement-mineral",
-      "direct-ocean-capture"
+      "ocean-alkalinity-enhancement-mineral"
     ]
   },
   {
@@ -569,11 +565,7 @@
       }
     ],
     "notes": "",
-    "pathways": [
-      "direct-air-capture",
-      "biomass-carbon-removal-and-storage",
-      "direct-ocean-capture"
-    ]
+    "pathways": ["direct-air-capture", "biomass-carbon-removal-and-storage"]
   },
   {
     "component_id": "terr_added",
@@ -661,11 +653,7 @@
       }
     ],
     "notes": "",
-    "pathways": [
-      "direct-air-capture",
-      "biomass-carbon-removal-and-storage",
-      "direct-ocean-capture"
-    ]
+    "pathways": ["direct-air-capture", "biomass-carbon-removal-and-storage"]
   },
   {
     "component_id": "t_recirculation",
@@ -710,8 +698,7 @@
     "pathways": [
       "enhanced-weathering",
       "ocean-alkalinity-enhancement-electrochemical",
-      "ocean-alkalinity-enhancement-mineral",
-      "direct-ocean-capture"
+      "ocean-alkalinity-enhancement-mineral"
     ]
   },
   {
@@ -758,8 +745,7 @@
       "ocean-alkalinity-enhancement-electrochemical",
       "ocean-alkalinity-enhancement-mineral",
       "ocean-biomass-sinking-harvest",
-      "ocean-biomass-sinking-no-harvest",
-      "direct-ocean-capture"
+      "ocean-biomass-sinking-no-harvest"
     ]
   },
   {
@@ -782,8 +768,7 @@
     "pathways": [
       "direct-air-capture",
       "biomass-carbon-removal-and-storage",
-      "ocean-alkalinity-enhancement-electrochemical",
-      "direct-ocean-capture"
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -861,8 +846,7 @@
       "ocean-alkalinity-enhancement-electrochemical",
       "ocean-alkalinity-enhancement-mineral",
       "ocean-biomass-sinking-harvest",
-      "ocean-biomass-sinking-no-harvest",
-      "direct-ocean-capture"
+      "ocean-biomass-sinking-no-harvest"
     ]
   },
   {
