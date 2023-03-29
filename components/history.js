@@ -1,10 +1,11 @@
 import { Box, Divider, Flex, useThemeUI } from 'theme-ui'
-import { Column, formatDate, Row } from '@carbonplan/components'
+import { Button, Column, formatDate, Row } from '@carbonplan/components'
 import { useMemo } from 'react'
 
 import Description from './description'
+import { RotatingArrow } from '@carbonplan/icons'
 
-const History = ({ history, sx }) => {
+const History = ({ history, versionRoutes, sx }) => {
   const sortedEntries = useMemo(
     () => history.sort((a, b) => new Date(b.date) - new Date(a.date)),
     [history]
@@ -91,7 +92,26 @@ const History = ({ history, sx }) => {
               </Column>
               {version && (
                 <Column start={3} width={1} sx={{ textTransform: 'none' }}>
-                  v{version}
+                  {versionRoutes && versionRoutes[version] ? (
+                    <Button
+                      href={versionRoutes[version]}
+                      inverted
+                      suffix={
+                        <RotatingArrow
+                          sx={{ mt: ['-2px', '-2px', '-2px', '-3px'] }}
+                        />
+                      }
+                      sx={{
+                        fontFamily: 'mono',
+                        letterSpacing: '0.05em',
+                        fontSize: [1, 1, 1, 2],
+                      }}
+                    >
+                      v{version}
+                    </Button>
+                  ) : (
+                    `v${version}`
+                  )}
                 </Column>
               )}
             </Row>

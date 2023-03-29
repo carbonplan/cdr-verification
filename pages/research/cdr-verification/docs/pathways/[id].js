@@ -1,6 +1,6 @@
 import { Badge, Column, Row } from '@carbonplan/components'
 import { useRouter } from 'next/router'
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { Box } from 'theme-ui'
 
 import Description from '../../../../../components/description'
@@ -17,11 +17,20 @@ import Contributors from '../../../../../components/contributors'
 
 const PathwayDocumentation = ({ options, pathway, metadata }) => {
   const { pathway_id, pathway_description, VCL } = pathway
+  const { contributors, revisions } = metadata
   const [expanded, setExpanded] = useState(false)
   const router = useRouter()
   const setPathway = useCallback((pathway_id) => {
     router.replace(`/research/cdr-verification/docs/pathways/${pathway_id}`)
   })
+
+  // Only map the latest version to the active pathway route
+  const versionRoutes = useMemo(() => {
+    const sorted = revisions.sort(
+      (a, b) => Number(b.version) - Number(a.version)
+    )
+    return { [sorted[0].version]: `/research/cdr-verification/${pathway_id}` }
+  }, [pathway_id, revisions])
 
   return (
     <Documentation
@@ -76,14 +85,18 @@ const PathwayDocumentation = ({ options, pathway, metadata }) => {
         <Column start={1} width={[6, 6, 4, 4]} sx={{ mt: 6 }}>
           <Box sx={{ fontSize: 4 }}>Version history</Box>
 
-          <History history={metadata.revisions} sx={{ mt: 3 }} />
+          <History
+            history={revisions}
+            versionRoutes={versionRoutes}
+            sx={{ mt: 3 }}
+          />
         </Column>
 
-        {metadata.contributors.length > 0 && (
+        {contributors.length > 0 && (
           <Column start={1} width={[6, 6, 6, 6]} sx={{ mt: 6 }}>
             <Box sx={{ fontSize: 4 }}>Contributors</Box>
 
-            <Contributors contributors={metadata.contributors} sx={{ mt: 3 }} />
+            <Contributors contributors={contributors} sx={{ mt: 3 }} />
           </Column>
         )}
       </Row>
