@@ -1,41 +1,41 @@
 {
   "contributors": [
     {
-      "Type": "CDR Company",
-      "Name": "Running Tide",
+      "Type": "cdr company",
+      "Name": "running tide",
       "Affiliation": "",
       "initial": "1.0",
       "notes": "",
       "ocean-biomass-sinking-no-harvest": "1.0"
     },
     {
-      "Type": "Scientific",
-      "Name": "David Ho",
-      "Affiliation": "University of Hawai\u02bbi at M\u0101noa",
+      "Type": "ecosystem actor",
+      "Name": "jamie collins",
+      "Affiliation": "environmental defense fund",
       "initial": "1.0",
       "notes": "",
       "ocean-biomass-sinking-no-harvest": "1.0"
     },
     {
-      "Type": "Scientific",
-      "Name": "Matt Long",
-      "Affiliation": "NCAR",
+      "Type": "scientific expert",
+      "Name": "david ho",
+      "Affiliation": "university of hawai\u02bbi at m\u0101noa",
       "initial": "1.0",
       "notes": "",
       "ocean-biomass-sinking-no-harvest": "1.0"
     },
     {
-      "Type": "Scientific",
-      "Name": "Sophie Gill",
-      "Affiliation": "University of Oxford",
+      "Type": "scientific expert",
+      "Name": "matt long",
+      "Affiliation": "ncar",
       "initial": "1.0",
       "notes": "",
       "ocean-biomass-sinking-no-harvest": "1.0"
     },
     {
-      "Type": "Ecosystem",
-      "Name": "Jamie Collins",
-      "Affiliation": "Environmental Defense Fund",
+      "Type": "scientific expert",
+      "Name": "sophie gill",
+      "Affiliation": "university of oxford",
       "initial": "1.0",
       "notes": "",
       "ocean-biomass-sinking-no-harvest": "1.0"

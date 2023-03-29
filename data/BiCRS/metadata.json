@@ -1,17 +1,17 @@
 {
   "contributors": [
     {
-      "Type": "CDR Company",
-      "Name": "Charm",
+      "Type": "cdr company",
+      "Name": "charm",
       "Affiliation": "",
       "initial": "1.0",
       "notes": "",
       "biomass-carbon-removal-and-storage": "1.0"
     },
     {
-      "Type": "Scientific",
-      "Name": "Fabiano Ximenes",
-      "Affiliation": "NSW Government",
+      "Type": "scientific expert",
+      "Name": "fabiano ximenes",
+      "Affiliation": "nsw government",
       "initial": "1.0",
       "notes": "",
       "biomass-carbon-removal-and-storage": "1.0"

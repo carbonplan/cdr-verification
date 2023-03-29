@@ -88,10 +88,6 @@ def sheet_data_to_metadata(sheet_data: list) -> dict:
     equation = sheet_data[4][1].strip()
     version = sheet_data[5][1].strip()
     revisions = eval(sheet_data[6][1])
-    # contributors = eval(sheet_data[7][1])
-    # If all entries for contributors are blank, replace with empty list
-    # if all(value == "" for value in contributors[0].values()):
-    #     contributors = []
 
 
     return {'pathway_id':pathway_id,'pathway_name':pathway_name,'pathway_description':pathway_description, 'VCL':VCL, 'equation':equation, 'version':version, 'revisions': revisions}
@@ -200,6 +196,9 @@ def write_metadata_to_json(*, pathway: str, metadata_dict: dict, contributor_df:
     # If all values in contributors are empty, save as empty list
     if contributor_df_subset.empty:
         contributor_dict = []
+
+    # lowercaseify 
+    contributor_df_subset = contributor_df_subset.applymap(lambda s: s.lower() if type(s) == str else s)
 
     contributor_dict = contributor_df_subset.to_dict(orient='records')
 

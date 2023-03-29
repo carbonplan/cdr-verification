@@ -1,68 +1,68 @@
 {
   "contributors": [
     {
-      "Type": "CDR Company",
-      "Name": "Eion",
+      "Type": "cdr company",
+      "Name": "eion",
       "Affiliation": "",
       "initial": "1.0",
       "notes": "",
       "enhanced-weathering": "1.0, 1.1"
     },
     {
-      "Type": "CDR Company",
-      "Name": "UNDO (prev. Future Forest)",
+      "Type": "cdr company",
+      "Name": "undo (prev. future forest)",
       "Affiliation": "",
       "initial": "1.0",
       "notes": "",
       "enhanced-weathering": "1.0"
     },
     {
-      "Type": "Scientific",
-      "Name": "Jens Hartmann",
-      "Affiliation": "Institut f\u00fcr Geologie",
+      "Type": "cdr company",
+      "Name": "laura lammers",
+      "Affiliation": "travertine",
+      "initial": "",
+      "notes": "",
+      "enhanced-weathering": "1.1"
+    },
+    {
+      "Type": "scientific expert",
+      "Name": "becca neumann",
+      "Affiliation": "university of washington",
+      "initial": "",
+      "notes": "",
+      "enhanced-weathering": "1.1"
+    },
+    {
+      "Type": "scientific expert",
+      "Name": "chris reinhard",
+      "Affiliation": "georgia tech / lithos",
+      "initial": "",
+      "notes": "",
+      "enhanced-weathering": "1.1"
+    },
+    {
+      "Type": "scientific expert",
+      "Name": "noah planavsky",
+      "Affiliation": "yale / lithos",
+      "initial": "",
+      "notes": "",
+      "enhanced-weathering": "1.1"
+    },
+    {
+      "Type": "scientific expert",
+      "Name": "jens hartmann",
+      "Affiliation": "institut f\u00fcr geologie",
       "initial": "1.0",
       "notes": "",
       "enhanced-weathering": "1.0"
     },
     {
-      "Type": "Scientific",
-      "Name": "Kate Maher",
-      "Affiliation": "Stanford",
+      "Type": "scientific expert",
+      "Name": "kate maher",
+      "Affiliation": "stanford",
       "initial": "1.0",
       "notes": "",
       "enhanced-weathering": "1.0, 1.1"
-    },
-    {
-      "Type": "Scientific",
-      "Name": "Becca Neumann",
-      "Affiliation": "University of Washington",
-      "initial": "",
-      "notes": "",
-      "enhanced-weathering": "1.1"
-    },
-    {
-      "Type": "Scientific",
-      "Name": "Chris Reinhard",
-      "Affiliation": "Georgia Tech / Lithos",
-      "initial": "",
-      "notes": "",
-      "enhanced-weathering": "1.1"
-    },
-    {
-      "Type": "CDR Company",
-      "Name": "Laura Lammers",
-      "Affiliation": "Travertine",
-      "initial": "",
-      "notes": "",
-      "enhanced-weathering": "1.1"
-    },
-    {
-      "Type": "Scientific",
-      "Name": "Noah Planavsky",
-      "Affiliation": "Yale / Lithos",
-      "initial": "",
-      "notes": "",
-      "enhanced-weathering": "1.1"
     }
   ],
   "revisions": [

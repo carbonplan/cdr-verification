@@ -1,25 +1,25 @@
 {
   "contributors": [
     {
-      "Type": "CDR Company",
-      "Name": "Heirloom ",
+      "Type": "cdr company",
+      "Name": "heirloom ",
       "Affiliation": "",
       "initial": "1.0",
       "notes": "",
       "direct-air-capture": "1.0"
     },
     {
-      "Type": "Scientific",
-      "Name": "Sarah Saltzer",
-      "Affiliation": "Stanford",
+      "Type": "scientific expert",
+      "Name": "sarah saltzer",
+      "Affiliation": "stanford",
       "initial": "1.0",
       "notes": "",
       "direct-air-capture": "1.0"
     },
     {
-      "Type": "Scientific",
-      "Name": "Susana Garc\u00eda L\u00f3pez",
-      "Affiliation": "Heriod-Watt University",
+      "Type": "scientific expert",
+      "Name": "susana garc\u00eda l\u00f3pez",
+      "Affiliation": "heriod-watt university",
       "initial": "1.0",
       "notes": "",
       "direct-air-capture": "1.0"
