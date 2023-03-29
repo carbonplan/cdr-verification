@@ -1,4 +1,4 @@
-import { Box } from 'theme-ui'
+import { Box, Flex } from 'theme-ui'
 import { Badge, Table } from '@carbonplan/components'
 
 const Contributors = ({ contributors, sx }) => {
@@ -6,40 +6,50 @@ const Contributors = ({ contributors, sx }) => {
     <Table
       sx={sx}
       columns={[6]}
-      start={[[1], [4, 2, 2, 2], [1, 3, 3, 3]]}
+      start={[[1], [1, 4, 4, 4]]}
       width={[
-        [3, 1, 1, 1],
-        [3, 1, 1, 1],
+        [6, 3, 3, 3],
         [6, 3, 3, 3],
       ]}
-      data={contributors.map(({ type, name, affiliation, version }) => [
-        <Badge
-          key='type'
-          sx={{
-            fontSize: 1,
-            pt: '1px',
-            mb: [2, 2, 0, 0],
-            whiteSpace: 'nowrap',
-          }}
-        >
-          {type}
-        </Badge>,
-        <Box
-          key='versions'
-          sx={{
-            color: 'secondary',
-            fontFamily: 'mono',
-            textAlign: 'right',
-            fontSize: 1,
-            mt: '2px',
-          }}
-        >
-          {version.map((v) => `v${v}`).join(', ')}
-        </Box>,
-        <Box key='name'>
-          {name} {affiliation ? `(${affiliation})` : ''}
-        </Box>,
-      ])}
+      data={contributors
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .sort((a, b) => {
+          if (a.version.length !== b.version.length) {
+            return b.version.length - a.version.length
+          } else {
+            return a.version.join(', ').localeCompare(b.version.join(', '))
+          }
+        })
+        .map(({ type, name, affiliation, version }) => [
+          <Flex key='metadata' sx={{ justifyContent: 'space-between' }}>
+            <Badge
+              sx={{
+                fontSize: 1,
+                pt: '1px',
+                mb: [2, 2, 0, 0],
+                whiteSpace: 'nowrap',
+                textAlign: 'right',
+              }}
+            >
+              {type}
+            </Badge>
+
+            <Box
+              sx={{
+                color: 'secondary',
+                fontFamily: 'mono',
+                fontSize: 1,
+                mt: '2px',
+              }}
+            >
+              {version.map((v) => `v${v}`).join(', ')}
+            </Box>
+          </Flex>,
+
+          <Box key='name'>
+            {name} {affiliation ? `(${affiliation})` : ''}
+          </Box>,
+        ])}
       index={false}
       borderTop={false}
       borderBottom={false}
