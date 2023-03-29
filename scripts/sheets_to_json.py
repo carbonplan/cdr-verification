@@ -48,7 +48,7 @@ def get_component_sheet(gsheet_doc_name: str) -> pd.DataFrame:
     sheet = sh.worksheet('Components')
     data_list = sheet.get_all_values()
     pathway_col_list = ['direct-air-capture','biomass-carbon-removal-and-storage','enhanced-weathering','terrestrial-biomass-sinking','ocean-alkalinity-enhancement-electrochemical','ocean-alkalinity-enhancement-mineral','ocean-biomass-sinking-harvest','ocean-biomass-sinking-no-harvest','direct-ocean-capture','biochar','alkaline-waste-mineralization']
-    cdf = pd.DataFrame(data_list[2::],columns=data_list[0])[['component_id','component_name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','description','revisions','notes']+ pathway_col_list]
+    cdf = pd.DataFrame(data_list[2::],columns=data_list[0])[['component_id','component_name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','category', 'description','revisions','notes']+ pathway_col_list]
     cdf['component_id'] = cdf['component_id'].str.replace('\u2082','2')
     cdf['uncertainty_type'] = cdf.uncertainty_type.str.replace(" ","").apply(lambda x: x.split(','))    
 
@@ -74,6 +74,10 @@ def sheet_data_to_dataframe(data_list: list) -> pd.DataFrame:
     """To match gsheets CDR-MRV schema, first four rows are dataset metadata"""
     return pd.DataFrame(data_list[10::],columns=data_list[9])
 
+def contributors_df():
+    data_list = gsheet_to_data_list(gsheet_doc_name, 'Contributors')
+    return pd.DataFrame(data_list[1::],columns=data_list[0])
+
 
 def sheet_data_to_metadata(sheet_data: list) -> dict:
     """Assigns sheet metadata"""
@@ -84,13 +88,9 @@ def sheet_data_to_metadata(sheet_data: list) -> dict:
     equation = sheet_data[4][1].strip()
     version = sheet_data[5][1].strip()
     revisions = eval(sheet_data[6][1])
-    contributors = eval(sheet_data[7][1])
-    # If all entries for contributors are blank, replace with empty list
-    if all(value == "" for value in contributors[0].values()):
-        contributors = []
 
 
-    return {'pathway_id':pathway_id,'pathway_name':pathway_name,'pathway_description':pathway_description, 'VCL':VCL, 'equation':equation, 'version':version, 'revisions': revisions, 'contributors': contributors}
+    return {'pathway_id':pathway_id,'pathway_name':pathway_name,'pathway_description':pathway_description, 'VCL':VCL, 'equation':equation, 'version':version, 'revisions': revisions}
 
 
 def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
@@ -128,7 +128,7 @@ def write_components_to_json(df: pd.DataFrame):
     df.to_json('data/components.json', orient='records', indent=4)
 
 
-def df_to_dict(df: pd.DataFrame, pathway_id: str, pathway_name: str, pathway_description: str, VCL: str, equation: str, version: str, revisions: list, contributors: list) -> dict:
+def df_to_dict(df: pd.DataFrame, pathway_id: str, pathway_name: str, pathway_description: str, VCL: str, equation: str, version: str, revisions: list) -> dict:
     """Converts DataFrame and metadata into dictionary 
 
     Parameters
@@ -166,8 +166,8 @@ def df_to_dict(df: pd.DataFrame, pathway_id: str, pathway_name: str, pathway_des
     return template_dict
     
 
-def write_metadata_to_json(pathway: str, metadata_dict: dict):
-    """Write metadata revisions and contributors for each pathway
+def write_metadata_to_json(*, pathway: str, metadata_dict: dict, contributor_df: pd.DataFrame):
+    """Write metadata revisions for each pathway
 
     :param pathway: name of pathway
     :type pathway: str
@@ -175,11 +175,46 @@ def write_metadata_to_json(pathway: str, metadata_dict: dict):
     :type metadata_dict: dict
     """
 
+    # Create dictionary/df of contributor sheet. For each pathway in this function, 
+    # subset that dataframe to only the rows of relevent contributors, 
+    # select columns and transform to dict. 
+    # If empty, create array
+    # Combine with revisons dict and write to json
+
+
     sample_file = pathlib.Path("data") / f"{pathway}/metadata.json"
     sample_file.parent.mkdir(exist_ok=True)
-    metadata_subset = {k:metadata_dict[k] for k in ("contributors", "revisions") if k in metadata_dict}
+
+    pathway_id = metadata_dict['pathway_id']
+    # switch empty strs to nans for sel 
+    contributor_df.replace("",np.nan,inplace=True)
+    # grab contibutors matching pathway
+    contributor_df_subset = contributor_df[~contributor_df[pathway_id].isnull()][['type', 'name', 'affiliation', 'notes', pathway_id]]
+    
+    # switch back to empty strs for dict
+    contributor_df_subset.replace(np.nan,"",inplace=True)
+
+    # update pathway_id column to 'version'
+    contributor_df_subset.rename({pathway_id:'version'},inplace=True,axis=1)
+
+    # convert version to list
+    contributor_df_subset['version'] = contributor_df_subset['version'].str.replace(" ","").apply(lambda x: x.split(','))    
+
+    # If all values in contributors are empty, save as empty list
+    if contributor_df_subset.empty:
+        contributor_dict = []
+
+    contributor_dict = contributor_df_subset.to_dict(orient='records')
+
+    revisions_dict = metadata_dict['revisions']
+
+
+    combined_dict = {}
+    combined_dict['contributors'] = contributor_dict
+    combined_dict['revisions'] = revisions_dict
+
     with sample_file.open("w", encoding="utf-8") as fp:
-        json.dump(metadata_subset, fp, indent=4)
+        json.dump(combined_dict, fp, indent=4)
 
 
 def write_to_json(template_dict: list, pathway: str, pathway_version: str):
@@ -216,35 +251,14 @@ def process_components_sheet(gsheet_doc_name):
     write_components_to_json(cdf)
 
 def write_pathways_to_json(avail_pathways: list):
+    contributor_df = contributors_df()
     for pathway in avail_pathways:
 
         print(f'Processing pathway: {pathway}')
         process_sheet_dict = process_sheet(gsheet_doc_name, pathway)
         template_dict = df_to_dict(process_sheet_dict['cdf'],  **process_sheet_dict['metadata_dict'])
         write_to_json(template_dict, pathway, process_sheet_dict['metadata_dict']['version'])
-        write_metadata_to_json(pathway, process_sheet_dict['metadata_dict'])
-
-
-
-
-
-"""Top priority validation tasks in my mind are: 
-
-- [ ]  [both] Data conforms to expected schema ([https://json-schema.org/](https://json-schema.org/))
-- [x]  [components] Uniqueness of component ids
-- [?]  [pathway] Double checks VCL calculation based pathway
-- [ ]  [components + pathway] Platonic component uncertainty type tags are superset of pathway type tags
-- [ ]  [components + pathway] Platonic component uncertainty is a superset of pathway component uncertainty
-
-Second order validation tasks in my mind are: 
-
-- [ ]  Checks for revision note
-- [ ]  No components that are not used by pathways
-- [ ]  No starred components in pathway equations
-- [ ]  If VCL changes for a pathway, validates that new major version is properly created (and writes out to new json)
-- [ ]  If other things have changed, validates that new minor version is properly created
-- [ ]  For any change compared to previous version, prints out all “connected” text (e.g. prints out all air-sea-gas-exchange text)"""
-
+        write_metadata_to_json(pathway = pathway, metadata_dict = process_sheet_dict['metadata_dict'], contributor_df=contributor_df)
 
 
 

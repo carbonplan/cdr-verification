@@ -1,5 +1,20 @@
 {
-  "contributors": [],
+  "contributors": [
+    {
+      "type": "CDR Company",
+      "name": "Charm",
+      "affiliation": "",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Fabiano Ximenes",
+      "affiliation": "NSW Government",
+      "notes": "",
+      "version": ["1.0"]
+    }
+  ],
   "revisions": [
     {
       "version": "1.0",
