@@ -1,0 +1,23 @@
+{
+  "title": "CDR Verification",
+  "description": "Interactive tool for mapping key uncertainties in different CDR pathways",
+  "creators": [
+    {
+      "name": "Freya Chay",
+      "affiliation": "CarbonPlan",
+      "orcid": "0000-0002-5397-017X"
+    },
+    {
+      "name": "",
+      "affiliation": "CarbonPlan",
+      "orcid": ""
+    },
+    {
+      "name": "",
+      "affiliation": "CarbonPlan",
+      "orcid": ""
+    }
+  ],
+  "upload_type": "software",
+  "keywords": ["CDR", "Carbon Dioxide Removal Verification"]
+}
