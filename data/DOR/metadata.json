@@ -1,0 +1,46 @@
+{
+  "contributors": [
+    {
+      "type": "CDR Company",
+      "name": "Chengxiang Xiang",
+      "affiliation": "Caltech / Captura",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "CDR Company",
+      "name": "Rezvan Sharifian",
+      "affiliation": "SeaO2",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "MRV Company",
+      "name": "Sophie Gill ",
+      "affiliation": "Exponential ",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Alex Gagnon",
+      "affiliation": "University of Washington / Banyu Carbon",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Matt Long",
+      "affiliation": "NCAR",
+      "notes": "",
+      "version": ["1.0"]
+    }
+  ],
+  "revisions": [
+    {
+      "version": "1.0",
+      "date": "09-19-2022",
+      "note": "First release."
+    }
+  ]
+}
