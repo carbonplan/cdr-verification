@@ -20,8 +20,7 @@ gc = gspread.authorize(credentials)
 
 
 gsheet_doc_name = 'NEW_CDR MRV Pathway Uncertainties'
-# avail_pathways = ['DAC', 'BiCRS','EW','TER_BIO','OCEAN_BIO_no_harvest','OCEAN_BIO_harvest','OAE_echem','OAE_mineral', 'DOR','BIOCHAR','ALK_WASTE_MIN']
-avail_pathways = ['DOR']
+avail_pathways = ['DAC', 'BiCRS','EW','TER_BIO','OCEAN_BIO_no_harvest','OCEAN_BIO_harvest','OAE_echem','OAE_mineral', 'DOR','BIOCHAR','ALK_WASTE_MIN']
 
 
 
@@ -56,7 +55,7 @@ def get_component_sheet(gsheet_doc_name: str) -> pd.DataFrame:
     cdf['pathways'] = cdf[pathway_col_list].apply(lambda x: ','.join(x[x!=""].index),axis=1).str.split(',')
     cdf.drop(pathway_col_list,axis=1,inplace=True)
 
-    # cdf['revisions'] = cdf['revisions'].apply(eval)
+    cdf['revisions'] = cdf['revisions'].apply(eval)
     return cdf
 
 
