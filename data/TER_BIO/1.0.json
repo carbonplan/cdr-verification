@@ -42,7 +42,7 @@
       "responsibility": "system",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "low",
-      "description": "While nearly all biomass carbon eventually makes its way back to the atmosphere, the effective drawdown from biomass sinking occurs when the CO\u2082 would otherwise have ended up in the atmosphere. If the counterfactual fate of the biomass feedstock would have resulted in medium-to-long term carbon storage \u2014 for example in landfills, in slow degrading environments, or in soils \u2014 the mass of stored carbon in the counterfactual does not count as additional carbon removal until counterfactual emissions would have occurred.",
+      "description": "While nearly all biomass carbon eventually makes its way back to the atmosphere, the effective drawdown from biomass sinking occurs when the carbon content of the feedstock would otherwise have been released in the form of atmospheric CO2. If the counterfactual fate of the biomass feedstock would have resulted in little to no carbon storage \u2014 for example, burning or rapid decomposition \u2014 any durable storage achieved by biochar represents additional carbon removal. If, however, the counterfactual fate of the biomass feedstock would have resulted in medium-to-long term carbon storage \u2014 for example in soils or slow degrading environments \u2014 the mass of stored carbon in the counterfactual should not count as additional carbon removal until counterfactual emissions would have occurred.",
       "notes": ""
     },
     {
@@ -55,7 +55,7 @@
       "responsibility": "system",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "medium",
-      "description": "If a biomass feedstock currently serves a function that will need to be replaced if used for sinking, any emissions associated with the replacement must be considered.  For example, if agricultural waste is currently used as animal feed or left on the fields to contribute to nitrogen, phosphorus, and potassium in soils, using that agricultural waste for sinking would result in new demand for feed or fertilizer, respectively. Current feedstock uses can be evaluated on a project-by-project basis, and the carbon impact of replacements can be estimated via lifecycle assessments.",
+      "description": "If a biomass feedstock currently serves a function that will need to be replaced if the feedstock is used for sinking, any emissions associated with the replacement must be considered. For example, if agricultural waste is currently used as animal feed or left on the fields to contribute to nitrogen, phosphorus, and potassium, using that agricultural waste for sinking could result in new demand for feed or fertilizer, respectively. Current feedstock uses can be evaluated on a project-by-project basis, and the carbon impact of replacements can be estimated via lifecycle assessments. We recommend accounting for feedstock replacement emissions that involve existing feedstock uses rather than potential future uses. For example, agricultural feedstocks for biochar should be evaluated based on their current uses (e.g. for animal feed or soil nutrients) rather than potential future uses that are not practiced today (e.g. potential use for bioenergy). The counterfactual for existing utilization should be flexible, and re-evaluated in the future if prevailing practices change.",
       "notes": ""
     },
     {

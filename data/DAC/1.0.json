@@ -24,7 +24,7 @@
       "category": "drawdown",
       "component_id": "store_leak",
       "name": "Leakage",
-      "quantification_target": "mass of observed storage system leakage",
+      "quantification_target": "mass of storage system leakage",
       "uncertainty_type": ["execution"],
       "responsibility": "project",
       "uncertainty_impact_min": "low",
