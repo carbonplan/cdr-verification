@@ -25,7 +25,7 @@
     {
       "name": "Raphael Hagen",
       "affiliation": "CarbonPlan",
-      "orcid": ""
+      "orcid": "0000-0003-1994-1153"
     },
     {
       "name": "Jeremy Freeman",
@@ -39,5 +39,10 @@
     }
   ],
   "upload_type": "software",
-  "keywords": ["CDR", "MRV", "Carbon Dioxide Removal", "Measurement, reporting and verification,]
+  "keywords": [
+    "CDR",
+    "MRV",
+    "Carbon Dioxide Removal",
+    "Measurement, reporting and verification"
+  ]
 }
