@@ -2,15 +2,15 @@
   "contributors": [
     {
       "type": "Scientific Expert",
-      "name": "David Ho",
-      "affiliation": "University of Hawai\u02bbi at M\u0101noa",
+      "name": "Alex Gagnon",
+      "affiliation": "University of Washington / Banyu Carbon",
       "notes": "",
       "version": ["1.0"]
     },
     {
-      "type": "Ecosystem Actor",
-      "name": "Jamie Collins",
-      "affiliation": "Environmental Defense Fund",
+      "type": "CDR Company",
+      "name": "Chengxiang Xiang",
+      "affiliation": "Caltech / Captura",
       "notes": "",
       "version": ["1.0"]
     },
@@ -23,15 +23,15 @@
     },
     {
       "type": "CDR Company",
-      "name": "Running Tide",
-      "affiliation": "",
+      "name": "Rezvan Sharifian",
+      "affiliation": "SeaO2",
       "notes": "",
       "version": ["1.0"]
     },
     {
-      "type": "Scientific Expert",
-      "name": "Sophie Gill",
-      "affiliation": "University of Oxford",
+      "type": "MRV Company",
+      "name": "Sophie Gill ",
+      "affiliation": "Exponential ",
       "notes": "",
       "version": ["1.0"]
     }
