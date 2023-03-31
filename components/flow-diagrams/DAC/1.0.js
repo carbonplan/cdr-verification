@@ -1,6 +1,6 @@
-import Rectangle from './rectangle'
-import Grid from './grid'
-import Arrow from './arrow'
+import Rectangle from '../rectangle'
+import Grid from '../grid'
+import Arrow from '../arrow'
 
 const Flow = () => {
   return (

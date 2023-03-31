@@ -51,6 +51,8 @@ const Main = ({ pathway, pathways, settings, setSettings }) => {
     router.replace(`/research/cdr-verification/${name}`)
   })
 
+  const DiagramComponent = FLOW_DIAGRAMS[pathway_id][version]
+
   return (
     <ComponentProvider
       pathways={pathways}
@@ -199,7 +201,7 @@ const Main = ({ pathway, pathways, settings, setSettings }) => {
         trayContent={
           settings && (
             <>
-              <Box sx={{ mb: 4 }}>{FLOW_DIAGRAMS[pathway_id]}</Box>
+              <Box sx={{ mb: 4 }}>{<DiagramComponent />}</Box>
               <Equation components={components} equation={equation} />
             </>
           )
@@ -216,7 +218,7 @@ const Main = ({ pathway, pathways, settings, setSettings }) => {
 
         <Row columns={[6, 6, 7, 7]}>
           <Column start={[1, 1, 1, 1]} width={[6, 6, 7, 5]}>
-            <Box sx={{ mb: 5 }}>{FLOW_DIAGRAMS[pathway_id]}</Box>
+            <Box sx={{ mb: 5 }}>{<DiagramComponent />}</Box>
           </Column>
         </Row>
       </Page>
