@@ -1,0 +1,33 @@
+{
+  "pathway_id": "enhanced-weathering",
+  "pathway_name": "Enhanced Weathering",
+  "pathway_description": "Enhanced weathering (EW) is a process that speeds up the chemical reactions between rocks, water, and air to remove CO\u2082 from the atmosphere. Here, we specifically consider EW performed by spreading finely ground rock on agricultural soils. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain. You can learn about how this pathway has been updated since initial publication [here](https://carbonplan.org/blog/enhanced-weathering-update).",
+  "VCL": ["3", "3"],
+  "equation": "(2 - 3 - 4 - 5 - 6 - 7) - (9 + 10)",
+  "version": "1.1",
+  "elements": [
+    {
+      "element": "1*",
+      "category": "drawdown",
+      "name": "rock_pot",
+      "quantification_target": "mass of potential atmospheric removal",
+      "description": "Mineral application",
+      "comments": "It is possible to calculate potential atmospheric removal by assuming full dissolution of the applied rocks. Realizable drawdown potential depends on mineral composition, particle size, kinetics, and applied volumes. It is also possible to directly analyze rock composition, which is critical not only for carbon accounting but also for tracking other ecosystem and agricultural impacts. Applied volume can be confirmed via an audit of operational records.",
+      "uncertainty_type": ["execution"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "not characterized",
+      "uncertainty_impact_max": "not characterized",
+      "notes": "",
+      "revisions": [
+        {
+          "date": "09-19-2022",
+          "note": "First release."
+        },
+        {
+          "date": "12-19-2022",
+          "note": "Second release. Tweaked the equation for total carbon removal to begin with Mineral weathering rather than Mineral application."
+        }
+      ]
+    }
+  ]
+}
