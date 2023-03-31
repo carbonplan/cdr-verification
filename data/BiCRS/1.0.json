@@ -24,7 +24,7 @@
       "category": "drawdown",
       "component_id": "store_leak",
       "name": "Leakage",
-      "quantification_target": "mass of observed storage system leakage",
+      "quantification_target": "mass of storage system leakage",
       "uncertainty_type": ["execution"],
       "responsibility": "project",
       "uncertainty_impact_min": "low",
@@ -42,7 +42,7 @@
       "responsibility": "system",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "low",
-      "description": "While nearly all biomass carbon eventually makes its way back to the atmosphere, the effective drawdown from BiCRS occurs when the CO\u2082 would otherwise have ended up in the atmosphere. If the counterfactual fate of the biomass feedstock would have resulted in medium-to-long term carbon storage \u2014 for example in soils or slow degrading environments \u2014 the mass of stored carbon in the counterfactual should not count as additional carbon removal until counterfactual emissions would have occurred.",
+      "description": "While nearly all biomass carbon eventually makes its way back to the atmosphere, the effective drawdown from BiCRS occurs when the carbon content of the feedstock would otherwise have been released in the form of atmospheric CO\u2082. If the counterfactual fate of the biomass feedstock would have resulted in little to no carbon storage \u2014 for example, burning or rapid decomposition \u2014 any durable storage achieved by biochar represents additional carbon removal. If, however, the counterfactual fate of the biomass feedstock would have resulted in medium-to-long term carbon storage \u2014 for example in soils or slow degrading environments \u2014 the mass of stored carbon in the counterfactual should not count as additional carbon removal until counterfactual emissions would have occurred.",
       "notes": ""
     },
     {
@@ -74,7 +74,7 @@
     {
       "number": "6",
       "category": "emissions",
-      "component_id": "mat_CO\u2082",
+      "component_id": "mat_co2",
       "name": "Materials",
       "quantification_target": "material embodied emissions",
       "uncertainty_type": ["execution"],
@@ -87,7 +87,7 @@
     {
       "number": "7",
       "category": "emissions",
-      "component_id": "energy_CO\u2082",
+      "component_id": "energy_co2",
       "name": "Energy",
       "quantification_target": "energy use emissions",
       "uncertainty_type": ["execution"],

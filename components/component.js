@@ -45,6 +45,7 @@ const Component = ({
   category,
   number,
   name,
+  component_id,
   description,
   uncertainty_type,
   uncertainty_impact_min,
@@ -53,7 +54,7 @@ const Component = ({
   responsibility,
   openTray,
 }) => {
-  const { active, hovered, setActive, setHovered } = useComponent(number)
+  const { active, hovered, setActive, setHovered } = useComponent(component_id)
 
   const handleActivate = useCallback(
     (e) => {
@@ -99,7 +100,7 @@ const Component = ({
             }}
           >
             <Circle
-              id={number}
+              component_id={component_id}
               sx={{ flexShrink: 0, mt: '-1px', ml: '-3px' }}
             />
             <Box sx={{ ml: '3px' }}>{name}</Box>

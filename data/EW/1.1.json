@@ -113,7 +113,7 @@
     {
       "number": "9",
       "category": "emissions",
-      "component_id": "mat_CO\u2082",
+      "component_id": "mat_co2",
       "name": "Materials",
       "quantification_target": "material embodied emissions",
       "uncertainty_type": ["execution"],
@@ -126,7 +126,7 @@
     {
       "number": "10",
       "category": "emissions",
-      "component_id": "energy_CO\u2082",
+      "component_id": "energy_co2",
       "name": "Energy",
       "quantification_target": "energy use emissions",
       "uncertainty_type": ["execution"],
@@ -146,7 +146,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "not characterized",
       "uncertainty_impact_max": "not characterized",
-      "description": "In agricultural contexts, the application of a weathering mineral might reduce the application of lime, thereby displacing associated lifecycle emissions. Any emissions impact associated with the displaced agricultural lime use could thus potentially counterbalance life cycle emissions of applying the weathering mineral. Lime emissions could be estimated based on data about prior usage on the parcel of land in question, or through general best practices for the region and crop type. Due to the potentially difficult nature of the counterfactual here, we recommend this factor not be included in the accounting of net carbon removal. If these emissions were to be included, we recommend that they be applied only to counteract project emissions, but in no case that they be included in a way that increases the estimate of additional carbon removal.",
+      "description": "In agricultural contexts, the application of a weathering mineral might reduce the application of lime, thereby displacing associated lifecycle emissions. Any emissions impact associated with the displaced agricultural lime use could thus potentially counterbalance life cycle emissions of applying the weathering mineral. Lime emissions could be estimated based on data about prior usage on the parcel of land in question, or through general best practices for the region and crop type. Due to the potentially difficult nature of the counterfactual here, we recommend this factor not be included in the accounting of net carbon removal.",
       "notes": ""
     },
     {
@@ -159,7 +159,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "not characterized",
       "uncertainty_impact_max": "not characterized",
-      "description": "Applied minerals may contain trace amounts of phosphorus and potassium, which could potentially reduce fertilizer requirements compared to conventional liming approaches. Application of alkaline silicates could also improve plant nitrogen uptake. Due to the potentially difficult nature of the counterfactual scenarios involved, we recommend this component not be included in the accounting of net carbon removal. If these emissions were to be included, we recommend that be applied only to counteract project emissions, but in no case that they be included in a way that increases the estimate of additional carbon removal.",
+      "description": "Applied minerals may contain trace amounts of phosphorus and potassium, which could potentially reduce fertilizer requirements compared to conventional liming approaches. Application of alkaline silicates could also improve plant nitrogen uptake. Due to the potentially difficult nature of the counterfactual scenarios involved, we recommend this component not be included in the accounting of net carbon removal.",
       "notes": ""
     },
     {

@@ -14,21 +14,21 @@ const ComponentContext = createContext({
   setHovered: () => {},
 })
 
-export const useComponent = (id) => {
+export const useComponent = (component_id) => {
   const { active, setActive, hovered, setHovered, pathway, pathways } =
     useContext(ComponentContext)
   const data = useMemo(
     () =>
       pathways
         .find((p) => p.pathway_id === pathway)
-        .components.find((d) => d.number === id),
-    [id, pathway]
+        .components.find((d) => d.component_id === component_id),
+    [component_id, pathway]
   )
 
   let status = 'default'
-  if (id && hovered === id) {
+  if (component_id && hovered === component_id) {
     status = 'hovered'
-  } else if (id && active === id) {
+  } else if (component_id && active === component_id) {
     status = 'active'
   } else if (active) {
     status = 'inactive'
@@ -37,10 +37,11 @@ export const useComponent = (id) => {
   return {
     status,
     data,
-    active: active === id,
-    hovered: hovered === id,
-    setActive: () => setActive((prev) => (prev === id ? null : id)),
-    setHovered: (val) => setHovered(val ? id : null),
+    active: active === component_id,
+    hovered: hovered === component_id,
+    setActive: () =>
+      setActive((prev) => (prev === component_id ? null : component_id)),
+    setHovered: (val) => setHovered(val ? component_id : null),
   }
 }
 
