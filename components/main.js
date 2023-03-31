@@ -17,7 +17,7 @@ import Equation from './equation'
 import legend from '../data/legend.json'
 import Description from './description'
 
-const Main = ({ pathway, pathways, settings, setSettings }) => {
+const Main = ({ archival, pathway, pathways, settings, setSettings }) => {
   const router = useRouter()
   const [filters, setFilters] = useState({
     drawdown: true,
@@ -56,6 +56,23 @@ const Main = ({ pathway, pathways, settings, setSettings }) => {
   return (
     <ComponentProvider pathway={pathway} onComponentChange={closeTray}>
       <Page
+        notice={
+          archival ? (
+            <Box sx={{ fontSize: 2, color: 'secondary' }}>
+              This is an archival representation of{' '}
+              <Link
+                href={`/research/cdr-verification/docs/pathways/${pathway_id}`}
+              >
+                v{version}
+              </Link>{' '}
+              of this pathway. View the latest version{' '}
+              <Link href={`/research/cdr-verification/${pathway_id}`}>
+                here
+              </Link>
+              .
+            </Box>
+          ) : null
+        }
         sidebar={
           <>
             <Box
