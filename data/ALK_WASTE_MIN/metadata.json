@@ -1,47 +1,39 @@
 {
-    "contributors": [
-        {
-            "type": "CDR Company",
-            "name": "Greg Dipple",
-            "affiliation": "University of British Columia / Arca",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "CDR Company",
-            "name": "Laura Lammers",
-            "affiliation": "Travertine",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Liam Bullock",
-            "affiliation": "Geosciences Barcelona",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Vikram Rao",
-            "affiliation": "Research Triangle Energy Consotium",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        }
-    ],
-    "revisions": [
-        {
-            "version": "1.0",
-            "date": "09-19-2022",
-            "note": "First release."
-        }
-    ]
+  "contributors": [
+    {
+      "type": "CDR Company",
+      "name": "Greg Dipple",
+      "affiliation": "University of British Columia / Arca",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "CDR Company",
+      "name": "Laura Lammers",
+      "affiliation": "Travertine",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Liam Bullock",
+      "affiliation": "Geosciences Barcelona",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Vikram Rao",
+      "affiliation": "Research Triangle Energy Consotium",
+      "notes": "",
+      "version": ["1.0"]
+    }
+  ],
+  "revisions": [
+    {
+      "version": "1.0",
+      "date": "09-19-2022",
+      "note": "First release."
+    }
+  ]
 }

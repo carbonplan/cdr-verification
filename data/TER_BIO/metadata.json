@@ -1,20 +1,18 @@
 {
-    "contributors": [
-        {
-            "type": "Scientific Expert",
-            "name": "Fabiano Ximenes",
-            "affiliation": "NSW Government",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        }
-    ],
-    "revisions": [
-        {
-            "version": "1.0",
-            "date": "09-19-2022",
-            "note": "First release."
-        }
-    ]
+  "contributors": [
+    {
+      "type": "Scientific Expert",
+      "name": "Fabiano Ximenes",
+      "affiliation": "NSW Government",
+      "notes": "",
+      "version": ["1.0"]
+    }
+  ],
+  "revisions": [
+    {
+      "version": "1.0",
+      "date": "09-19-2022",
+      "note": "First release."
+    }
+  ]
 }

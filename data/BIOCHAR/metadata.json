@@ -1,56 +1,46 @@
 {
-    "contributors": [
-        {
-            "type": "CDR Company",
-            "name": "Andrew Jones",
-            "affiliation": "Carba",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Becca Neumann",
-            "affiliation": "University of Washington",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "CDR Company",
-            "name": "Jason Aramburu",
-            "affiliation": "Climate Robotics",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "CDR Company",
-            "name": "Kevin Kung",
-            "affiliation": "Takachar",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Santanu Bakshi",
-            "affiliation": "Iowa State University",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        }
-    ],
-    "revisions": [
-        {
-            "version": "1.0",
-            "date": "09-19-2022",
-            "note": "First release."
-        }
-    ]
+  "contributors": [
+    {
+      "type": "CDR Company",
+      "name": "Andrew Jones",
+      "affiliation": "Carba",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Becca Neumann",
+      "affiliation": "University of Washington",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "CDR Company",
+      "name": "Jason Aramburu",
+      "affiliation": "Climate Robotics",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "CDR Company",
+      "name": "Kevin Kung",
+      "affiliation": "Takachar",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Santanu Bakshi",
+      "affiliation": "Iowa State University",
+      "notes": "",
+      "version": ["1.0"]
+    }
+  ],
+  "revisions": [
+    {
+      "version": "1.0",
+      "date": "09-19-2022",
+      "note": "First release."
+    }
+  ]
 }
