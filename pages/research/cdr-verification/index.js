@@ -6,6 +6,6 @@ const Index = (props) => {
 }
 
 export function getStaticProps() {
-  return { props: { pathways } }
+  return { props: { pathway: pathways[0], pathways } }
 }
 export default Index
