@@ -33,6 +33,7 @@ const Documentation = ({ back, label, children }) => {
                   sx={{
                     ml: [0, 0, '100%', '100%'],
                     mr: [0, 0, '5px', '5px'],
+                    mt: [0, 0, '10px', '10px'],
                     writingMode: [
                       'inherit',
                       'inherit',
