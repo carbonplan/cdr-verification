@@ -24,12 +24,12 @@
       "category": "drawdown",
       "component_id": "sec_precip",
       "name": "Secondary precipitation",
-      "quantification_target": "secondary precipitation of CaCO3",
+      "quantification_target": "secondary precipitation of CaCO\u2083",
       "uncertainty_type": ["execution"],
       "responsibility": "project",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "medium",
-      "description": "Adding alkalinity to seawater shifts the pH and carbonate ion concentration, and could cause abiotic precipitation of calcium carbonate (CaCO\u2083) or brucite (Mg(OH)2). This is important to characterize as this precipitation results in CO\u2082 outgassing. It remains to be determined what specific combination of suitable nucleation conditions and supersaturation of CaCO3 is needed to cause significant precipitation. Abiotic precipitation can be minimized by controlling the dilution and dispersal of alkalinity-enhanced water. Sampling total alkalinity near the dispersal point may help quantitatively determine the extent to which alkalinity is lost due to precipitation.",
+      "description": "Adding alkalinity to seawater shifts the pH and carbonate ion concentration, and could cause abiotic precipitation of calcium carbonate (CaCO\u2083) or brucite (Mg(OH)\u2082). This is important to characterize as this precipitation results in CO\u2082 outgassing. It remains to be determined what specific combination of suitable nucleation conditions and supersaturation of CaCO\u2083 is needed to cause significant precipitation. Abiotic precipitation can be minimized by controlling the dilution and dispersal of alkalinity-enhanced water. Sampling total alkalinity near the dispersal point may help quantitatively determine the extent to which alkalinity is lost due to precipitation.",
       "notes": ""
     },
     {

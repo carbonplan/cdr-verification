@@ -37,12 +37,12 @@
       "category": "drawdown",
       "component_id": "sec_precip",
       "name": "Secondary precipitation",
-      "quantification_target": "secondary precipitation of CaCO3",
+      "quantification_target": "secondary precipitation of CaCO\u2083",
       "uncertainty_type": ["execution", "scientific"],
       "responsibility": "project",
       "uncertainty_impact_min": "high",
       "uncertainty_impact_max": "very high",
-      "description": "Adding alkalinity to seawater shifts the pH and carbonate ion concentration, and could cause abiotic precipitation of calcium carbonate (CaCO\u2083) or brucite (Mg(OH)2). This is important to characterize as this precipitation results in CO\u2082 outgassing. It remains to be determined what specific combination of suitable nucleation conditions and supersaturation of CaCO3 is needed to cause significant precipitation. Abiotic precipitation can be minimized by controlling the dilution and dispersal of alkalinity-enhanced water, which can be hard to control when adding alkalinity through mineral dissolution. There is [some](https://www.frontiersin.org/articles/10.3389/fclim.2022.831587/full) [evidence](https://bg.copernicus.org/preprints/bg-2022-126/) that that localized effects of mineral dissolution may trigger significant secondary precipitation. Sampling total alkalinity near the dispersal point may help quantitatively determine the extent to which alkalinity is lost due to precipitation.",
+      "description": "Adding alkalinity to seawater shifts the pH and carbonate ion concentration, and could cause abiotic precipitation of calcium carbonate (CaCO\u2083) or brucite (Mg(OH)\u2082). This is important to characterize as this precipitation results in CO\u2082 outgassing. It remains to be determined what specific combination of suitable nucleation conditions and supersaturation of CaCO\u2083 is needed to cause significant precipitation. Abiotic precipitation can be minimized by controlling the dilution and dispersal of alkalinity-enhanced water, which can be hard to control when adding alkalinity through mineral dissolution. There is [some](https://www.frontiersin.org/articles/10.3389/fclim.2022.831587/full) [evidence](https://bg.copernicus.org/preprints/bg-2022-126/) that that localized effects of mineral dissolution may trigger significant secondary precipitation. Sampling total alkalinity near the dispersal point may help quantitatively determine the extent to which alkalinity is lost due to precipitation.",
       "notes": ""
     },
     {

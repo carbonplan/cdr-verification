@@ -155,7 +155,7 @@
     "uncertainty_impact_min": "medium",
     "uncertainty_impact_max": "medium",
     "category": "drawdown",
-    "description": "Since calcification releases CO\u2082 as a by-product, any changes to the rate of biotic calcification in response to interventions to the surface ocean \u2014 like adding alkalinity or removing CO2 \u2014 must be considered. Changes in biotic calcification rates could occur in both coastal and open ocean waters, and at the level of individual calcifiers or calcifier populations. In practice, quantifying the biotic calcification response to alkalinity addition may pose significant spatial, temporal, and signal-to-noise challenges.",
+    "description": "Since calcification releases CO\u2082 as a by-product, any changes to the rate of biotic calcification in response to interventions to the surface ocean \u2014 like adding alkalinity or removing CO\u2082 \u2014 must be considered. Changes in biotic calcification rates could occur in both coastal and open ocean waters, and at the level of individual calcifiers or calcifier populations. In practice, quantifying the biotic calcification response to alkalinity addition may pose significant spatial, temporal, and signal-to-noise challenges.",
     "revisions": [
       {
         "date": "09-19-2022",
@@ -217,14 +217,14 @@
   },
   {
     "component_id": "co2_removed",
-    "component_name": "CO2 capture",
-    "quantification_target": "mass of CO2 removed from seawater",
+    "component_name": "CO\u2082 capture",
+    "quantification_target": "mass of CO\u2082 removed from seawater",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
     "uncertainty_impact_min": "negligible",
     "uncertainty_impact_max": "negligible",
     "category": "drawdown",
-    "description": "The mass of CO\u2082 removed from seawater through electrochemical separation \u2014 or other approaches \u2014 can be measured directly as a metered output from the DOC system. It can also be checked for consistency against operational data from the DOC system and characterization of the seawater effluent that is depleted of dissolved inorganic carbon (DIC). The quantity of CO\u2082 directly removed from seawater may not be equal to the quantity of CO\u2082 stored or the quantity of CO2 indirectly removed by atmospheric drawdown. Direct removal of CO\u2082 from seawater results in DIC-depleted seawater that results in  subsequent atmospheric carbon removal by inducing air-sea gas exchange. Thus, the quantity of CO2 removed directly from seawater must be clearly quantified and validated as a separate measurement from CO\u2082 storage or atmospheric CO2 drawdown. ",
+    "description": "The mass of CO\u2082 removed from seawater through electrochemical separation \u2014 or other approaches \u2014 can be measured directly as a metered output from the DOC system. It can also be checked for consistency against operational data from the DOC system and characterization of the seawater effluent that is depleted of dissolved inorganic carbon (DIC). The quantity of CO\u2082 directly removed from seawater may not be equal to the quantity of CO\u2082 stored or the quantity of CO\u2082 indirectly removed by atmospheric drawdown. Direct removal of CO\u2082 from seawater results in DIC-depleted seawater that results in  subsequent atmospheric carbon removal by inducing air-sea gas exchange. Thus, the quantity of CO\u2082 removed directly from seawater must be clearly quantified and validated as a separate measurement from CO\u2082 storage or atmospheric CO\u2082 drawdown. ",
     "revisions": [
       {
         "date": "04-TK-2023",
@@ -311,7 +311,7 @@
     "uncertainty_impact_min": "low",
     "uncertainty_impact_max": "low",
     "category": "drawdown",
-    "description": "While nearly all biomass carbon eventually makes its way back to the atmosphere, the effective drawdown from more durably storing a biomass feedstock occurs when the carbon content of the feedstock would otherwise have been released in the form of atmospheric CO2. If the counterfactual fate of the biomass feedstock would have resulted in little to no carbon storage \u2014 for example, burning or rapid decomposition \u2014 any durable storage achieved by biochar represents additional carbon removal. If, however, the counterfactual fate of the biomass feedstock would have resulted in medium-to-long term carbon storage \u2014 for example in soils or slow degrading environments \u2014 the mass of stored carbon in the counterfactual should not count as additional carbon removal until counterfactual emissions would have occurred.",
+    "description": "While nearly all biomass carbon eventually makes its way back to the atmosphere, the effective drawdown from more durably storing a biomass feedstock occurs when the carbon content of the feedstock would otherwise have been released in the form of atmospheric CO\u2082. If the counterfactual fate of the biomass feedstock would have resulted in little to no carbon storage \u2014 for example, burning or rapid decomposition \u2014 any durable storage achieved by biochar represents additional carbon removal. If, however, the counterfactual fate of the biomass feedstock would have resulted in medium-to-long term carbon storage \u2014 for example in soils or slow degrading environments \u2014 the mass of stored carbon in the counterfactual should not count as additional carbon removal until counterfactual emissions would have occurred.",
     "revisions": [
       {
         "date": "09-19-2022",
@@ -464,7 +464,7 @@
     "uncertainty_impact_min": "not characterized",
     "uncertainty_impact_max": "not characterized",
     "category": "drawdown",
-    "description": "Interventions in the surface ocean \u2014 like alkalinity enhancement or CO2 removal \u2014 could affect the formation and export of particulate organic carbon (POC). This effect could be quite small if plankton communities are primarily limited by nutrient availability, rather than DIC availability.  POC export mediated by calcifying communities could also change in response to changes in biogenic calcification. Data on potential biological responses to removing CO2 from the surface waters is still lacking.",
+    "description": "Interventions in the surface ocean \u2014 like alkalinity enhancement or CO\u2082 removal \u2014 could affect the formation and export of particulate organic carbon (POC). This effect could be quite small if plankton communities are primarily limited by nutrient availability, rather than DIC availability.  POC export mediated by calcifying communities could also change in response to changes in biogenic calcification. Data on potential biological responses to removing CO\u2082 from the surface waters is still lacking.",
     "revisions": [
       {
         "date": "09-19-2022",
@@ -508,13 +508,13 @@
   {
     "component_id": "sec_precip",
     "component_name": "Secondary precipitation",
-    "quantification_target": "secondary precipitation of CaCO3",
+    "quantification_target": "secondary precipitation of CaCO\u2083",
     "uncertainty_type": ["execution", "scientific"],
     "responsibility": "project",
     "uncertainty_impact_min": "low",
     "uncertainty_impact_max": "very high",
     "category": "drawdown",
-    "description": "Interventions like alkalinity or removing CO2 shift the pH and carbonate ion concentration of seawater, and could cause abiotic precipitation of calcium carbonate (CaCO\u2083) or brucite (Mg(OH)2). This is important to characterize as this precipitation results in CO\u2082 outgassing. It remains to be determined what specific combination of suitable nucleation conditions and supersaturation of CaCO3 is needed to cause significant precipitation. Abiotic precipitation can be minimized by controlling the dilution and dispersal on alkalinity-enhanced or DIC-depleted water.",
+    "description": "Interventions like alkalinity or removing CO\u2082 shift the pH and carbonate ion concentration of seawater, and could cause abiotic precipitation of calcium carbonate (CaCO\u2083) or brucite (Mg(OH)2). This is important to characterize as this precipitation results in CO\u2082 outgassing. It remains to be determined what specific combination of suitable nucleation conditions and supersaturation of CaCO\u2083 is needed to cause significant precipitation. Abiotic precipitation can be minimized by controlling the dilution and dispersal on alkalinity-enhanced or DIC-depleted water.",
     "revisions": [
       {
         "date": "09-19-2022",
@@ -905,7 +905,7 @@
     "uncertainty_impact_min": "low",
     "uncertainty_impact_max": "low",
     "category": "drawdown",
-    "description": "The mass of biomass feedstock can be directly measured and converted to CO2e using a default factor. The feedstock quantity will also determine the feedstock-related emissions per ton of biochar produced (see Feedstock storage counterfactual, Feedstock replacement emissions, and Indirect land use change).",
+    "description": "The mass of biomass feedstock can be directly measured and converted to CO\u2082e using a default factor. The feedstock quantity will also determine the feedstock-related emissions per ton of biochar produced (see Feedstock storage counterfactual, Feedstock replacement emissions, and Indirect land use change).",
     "revisions": [
       {
         "date": "04-TK-2022",
@@ -924,7 +924,7 @@
     "uncertainty_impact_min": "low",
     "uncertainty_impact_max": "low",
     "category": "drawdown",
-    "description": "Biochar carbon content can be sampled to estimate the total mass of carbon in produced biochar and converted to CO2e using a default factor. Mass of carbon in produced biochar can be compared to the mass of carbon in the biomass feedstock to estimate the CO2 emitted during the biomass transformation process. This quantity can also be checked for consistency against operational data and expected conversion efficiency of the pyrolyzer. In addition to characterizing carbon content, a sampling protocol for produced biochar should characterize the physical and chemical characteristics that inform the expected durability of biochar (e.g. elemental ratios, volatile and ash content, porosity; see Biochar degradation) and the impact of biochar application (e.g. water retention, surface area, surface charge, liming capacity, heavy metal content, or polyaromatic hydrocarbon and polychlorinated biphenyls; see Soil carbon impacts, Change in agricultural lime use, Change in fertilizer use, Change in agricultural yields). The conversion efficiency, structure, and chemistry of produced biochar are contingent on the specific feedstock and operating conditions of the pyrolyzer, and a sampling regime should be designed accordingly.",
+    "description": "Biochar carbon content can be sampled to estimate the total mass of carbon in produced biochar and converted to CO\u2082e using a default factor. Mass of carbon in produced biochar can be compared to the mass of carbon in the biomass feedstock to estimate the CO\u2082 emitted during the biomass transformation process. This quantity can also be checked for consistency against operational data and expected conversion efficiency of the pyrolyzer. In addition to characterizing carbon content, a sampling protocol for produced biochar should characterize the physical and chemical characteristics that inform the expected durability of biochar (e.g. elemental ratios, volatile and ash content, porosity; see Biochar degradation) and the impact of biochar application (e.g. water retention, surface area, surface charge, liming capacity, heavy metal content, or polyaromatic hydrocarbon and polychlorinated biphenyls; see Soil carbon impacts, Change in agricultural lime use, Change in fertilizer use, Change in agricultural yields). The conversion efficiency, structure, and chemistry of produced biochar are contingent on the specific feedstock and operating conditions of the pyrolyzer, and a sampling regime should be designed accordingly.",
     "revisions": [
       {
         "date": "04-TK-2022",
@@ -994,13 +994,13 @@
   {
     "component_id": "carb_min",
     "component_name": "Carbonates",
-    "quantification_target": "mass of captured CO2 stored in carbonates",
+    "quantification_target": "mass of captured CO\u2082 stored in carbonates",
     "uncertainty_type": ["excution"],
     "responsibility": "project",
     "uncertainty_impact_min": "low",
     "uncertainty_impact_max": "high",
     "category": "drawdown",
-    "description": "It is possible to calculate potential atmospheric removal by assuming full weathering of the alkaline feedstock to provide an absolute maximum ceiling value for potential CDR, against which any estimates of realized CDR should be compared. The mass of CO2 captured through alkaline feedstock weathering and carbonate mineralization can be quantified by measuring CO2 loss from air (e.g. using eddy covariance flux towers or dynamic closed chambers), measurement of carbonate chemistry parameters (e.g. pH, TA, or DIC), or measuring changes in mineral content. If measuring changes in mineral content, it is critical to carefully characterize the starting carbonate content and variability of the feedstock. It is likely that a combination of quantification approaches will be needed to bound outcomes. Calibrated reactive transport models may also play a role in estimating long-term trends of CO2 uptake. Measurement and modeling approaches must take into account the potential for short-term cycles of absorption and outgassing. ",
+    "description": "It is possible to calculate potential atmospheric removal by assuming full weathering of the alkaline feedstock to provide an absolute maximum ceiling value for potential CDR, against which any estimates of realized CDR should be compared. The mass of CO\u2082 captured through alkaline feedstock weathering and carbonate mineralization can be quantified by measuring CO\u2082 loss from air (e.g. using eddy covariance flux towers or dynamic closed chambers), measurement of carbonate chemistry parameters (e.g. pH, TA, or DIC), or measuring changes in mineral content. If measuring changes in mineral content, it is critical to carefully characterize the starting carbonate content and variability of the feedstock. It is likely that a combination of quantification approaches will be needed to bound outcomes. Calibrated reactive transport models may also play a role in estimating long-term trends of CO\u2082 uptake. Measurement and modeling approaches must take into account the potential for short-term cycles of absorption and outgassing. ",
     "revisions": [
       {
         "date": "04-TK-2022",
@@ -1013,7 +1013,7 @@
   {
     "component_id": "carb_baseline",
     "component_name": "Baseline weathering rate",
-    "quantification_target": "baseline mass of captured CO2 stored in carbonates",
+    "quantification_target": "baseline mass of captured CO\u2082 stored in carbonates",
     "uncertainty_type": ["counterfactual"],
     "responsibility": "project",
     "uncertainty_impact_min": "low",
@@ -1051,13 +1051,13 @@
   {
     "component_id": "carb_degrade",
     "component_name": "Leakage",
-    "quantification_target": "mass of CO2 released from carbonates",
+    "quantification_target": "mass of CO\u2082 released from carbonates",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
     "uncertainty_impact_min": "negligible",
     "uncertainty_impact_max": "low",
     "category": "drawdown",
-    "description": "Carbonates could release CO2 if exposed to heat or acid. The risk of leakage from produced carbonates is contingent on what type of carbonate is produced, the planned treatment of the carbonates, and their resulting exposure to environmental conditions that facilitate CO2 release. ",
+    "description": "Carbonates could release CO\u2082 if exposed to heat or acid. The risk of leakage from produced carbonates is contingent on what type of carbonate is produced, the planned treatment of the carbonates, and their resulting exposure to environmental conditions that facilitate CO\u2082 release. ",
     "revisions": [
       {
         "date": "04-TK-2022",
@@ -1076,7 +1076,7 @@
     "uncertainty_impact_min": "not characterized",
     "uncertainty_impact_max": "not characterized",
     "category": "drawdown",
-    "description": "Carbonates may remain exposed to the atmosphere or be buried over time depending on the location and approach. A portion of exposed and buried carbonates may undergo weathering over time. If and when carbonates weather, there is an additional shift in CO2 fluxes as a result of introducing alkalinity to the system and storing additional CO2 as bicarbonate. This process approximately doubles the associated CO2 storage. Although most carbonates will ultimately weather, this process should only be credited when the impact on atmospheric CO2 actually occurs and must take into account the full suite of uncertainties related to quantifying weathering outcomes (see the Enhanced Weathering pathway). In the absence of clear measurement of carbonate weathering, we recommend alkaline waste mineralization approaches only consider and credit the mineral phase of CO2 storage.",
+    "description": "Carbonates may remain exposed to the atmosphere or be buried over time depending on the location and approach. A portion of exposed and buried carbonates may undergo weathering over time. If and when carbonates weather, there is an additional shift in CO\u2082 fluxes as a result of introducing alkalinity to the system and storing additional CO\u2082 as bicarbonate. This process approximately doubles the associated CO\u2082 storage. Although most carbonates will ultimately weather, this process should only be credited when the impact on atmospheric CO\u2082 actually occurs and must take into account the full suite of uncertainties related to quantifying weathering outcomes (see the Enhanced Weathering pathway). In the absence of clear measurement of carbonate weathering, we recommend alkaline waste mineralization approaches only consider and credit the mineral phase of CO\u2082 storage.",
     "revisions": [
       {
         "date": "04-TK-2022",
@@ -1089,7 +1089,7 @@
   {
     "component_id": "carb_store",
     "component_name": "Storage",
-    "quantification_target": "years of expected CO2 storage",
+    "quantification_target": "years of expected CO\u2082 storage",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
     "uncertainty_impact_min": "not characterized",
@@ -1108,13 +1108,13 @@
   {
     "component_id": "carb_utilize",
     "component_name": "Utilization",
-    "quantification_target": "years of expected CO2 storage via utilization",
+    "quantification_target": "years of expected CO\u2082 storage via utilization",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
     "uncertainty_impact_min": "not characterized",
     "uncertainty_impact_max": "not characterized",
     "category": "durability",
-    "description": "Produced carbonates may be used, for example in industrial processes, as building materials, or as soil amendments. The source of utilization may lead to stable storage, carbonate degradation and release of CO2, or carbonate weathering and further storage of CO2.",
+    "description": "Produced carbonates may be used, for example in industrial processes, as building materials, or as soil amendments. The source of utilization may lead to stable storage, carbonate degradation and release of CO\u2082, or carbonate weathering and further storage of CO\u2082.",
     "revisions": [
       {
         "date": "04-TK-2022",
