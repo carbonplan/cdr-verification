@@ -8,6 +8,7 @@ import { default as TBS } from './terrestrial-biomass-sinking'
 import { default as EnhancedWeathering } from './enhanced-weathering'
 import { default as AlkalineWasteMineralization } from './alkaline-waste-mineralization'
 import { default as Biochar } from './biochar'
+import { default as DOR } from './direct-ocean-removal'
 
 export default {
   'ocean-alkalinity-enhancement-electrochemical': <OAEEchem />,
@@ -20,4 +21,5 @@ export default {
   'terrestrial-biomass-sinking': <TBS />,
   'alkaline-waste-mineralization': <AlkalineWasteMineralization />,
   biochar: <Biochar />,
+  'direct-ocean-removal': <DOR />,
 }
