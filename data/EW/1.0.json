@@ -1,33 +1,192 @@
 {
   "pathway_id": "enhanced-weathering",
   "pathway_name": "Enhanced Weathering",
-  "pathway_description": "Enhanced weathering (EW) is a process that speeds up the chemical reactions between rocks, water, and air to remove CO\u2082 from the atmosphere. Here, we specifically consider EW performed by spreading finely ground rock on agricultural soils. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain. You can learn about how this pathway has been updated since initial publication [here](https://carbonplan.org/blog/enhanced-weathering-update).",
+  "pathway_description": "Enhanced weathering (EW) is a process that speeds up the chemical reactions between rocks, water, and air to remove CO\u2082 from the atmosphere. Here, we specifically consider EW performed by spreading finely ground rock on agricultural soils. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain.",
   "VCL": ["3", "3"],
-  "equation": "(2 - 3 - 4 - 5 - 6 - 7) - (9 + 10)",
-  "version": "1.1",
-  "elements": [
+  "equation": "(1 - 2 - 3 - 4 - 5 - 6) - (8 + 9)",
+  "version": "1.0",
+  "components": [
     {
-      "element": "1*",
+      "number": "1",
       "category": "drawdown",
-      "name": "rock_pot",
+      "component_id": "rock_pot",
       "quantification_target": "mass of potential atmospheric removal",
-      "description": "Mineral application",
-      "comments": "It is possible to calculate potential atmospheric removal by assuming full dissolution of the applied rocks. Realizable drawdown potential depends on mineral composition, particle size, kinetics, and applied volumes. It is also possible to directly analyze rock composition, which is critical not only for carbon accounting but also for tracking other ecosystem and agricultural impacts. Applied volume can be confirmed via an audit of operational records.",
+      "name": "Mineral application",
+      "description": "It is possible to calculate potential atmospheric removal by assuming full dissolution of the applied rocks. Realizable drawdown potential depends on mineral composition, particle size, kinetics, and applied volumes. It is also possible to directly analyze rock composition, which is critical not only for carbon accounting but also for tracking other ecosystem and agricultural impacts. Applied volume can be confirmed via an audit of operational records.",
+      "uncertainty_type": ["execution"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "low",
+      "uncertainty_impact_max": "low",
+      "notes": ""
+    },
+    {
+      "number": "2",
+      "category": "drawdown",
+      "component_id": "nwp",
+      "quantification_target": "non-weathered portion of rock",
+      "name": "Mineral weathering",
+      "description": "The rate of mineral weathering depends on many factors, including rock particle size, soil type, ambient temperature, precipitation, and irrigation. While most of the applied minerals will ultimately weather, the effective CO\u2082 drawdown should only be credited when the weathering actually occurs. At a given point in time, it is possible to measure how much rock has weathered via elemental analysis or by tracking changes in the concentration of tracer elements that originate in the applied rocks and persist in the soil after rock weathering. However, these measurements do not tell one what portion of the alkalinity released through weathering has resulted in stored CO\u2082 (see Alkalinity Loss, Secondary Mineral Formation, and Secondary Precipitation for more details). Alternatively, the pH and alkalinity of the water leaving the weathering site can be continuously measured to provide an estimate of how much alkalinity originating from the weathered rock has resulted in stored CO\u2082 that is exported from the system as dissolved inorganic carbon. This approach provides an upper bound on the non-weathered portion of rock and, if used as the primary estimate of drawdown, could simplify the overall quantification approach. Both approaches \u2014 monitoring of the rock in the weathering site, and monitoring of the alkalinity leaving the weathering site \u2014 are areas of active innovation.",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "high",
+      "uncertainty_impact_max": "high",
+      "notes": ""
+    },
+    {
+      "number": "3",
+      "category": "drawdown",
+      "component_id": "alk_loss",
+      "quantification_target": "portion of released alkalinity that is absorbed by vegetation or reacts with non-CO\u2082 sources of acid",
+      "name": "Alkalinity loss",
+      "description": "Mineral weathering releases cations that increase the alkalinity of soil pore water to facilitate CO\u2082 storage. However, not all of the released cations will immediately react with carbonic acid and result in CO\u2082 storage. For example, the released cations may instead react with other sources of acidity in the soil (e.g. protons associated with mineral and organic surfaces, denitrification, or sulfide oxidation), thereby reducing total CO\u2082 drawdown. The released cations may also be absorbed by vegetation if plants react to a marginal increase in availability with a marginal increase in uptake. The quantity of lost alkalinity is also reflected in the difference between the quantity of rock that has weathered and the quantity of alkalinity that has left the weathering site. (See Alkalinity run-off for more details.)",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "system",
+      "uncertainty_impact_min": "medium",
+      "uncertainty_impact_max": "medium",
+      "notes": ""
+    },
+    {
+      "number": "4",
+      "category": "drawdown",
+      "component_id": "min_sec",
+      "quantification_target": "portion of released alkalinity bound through secondary mineral formation",
+      "name": "Secondary mineral formation",
+      "description": "Secondary mineral formation \u2013 such as the formation of clays \u2014 can counteract the alkalinity increase associated with rock weathering.  Secondary mineral formation depends on many factors, including on the type of primary mineral dissolving as well as the local climate and biota present. It can be characterized via soil mineralogy techniques like x-ray diffraction. The loss of alkalinity due to secondary mineral formation, and therefore the reduction in stored CO\u2082, is also reflected in the difference between the quantity of rock that has weathered and the quantity of alkalinity leaving the weathering site. (See Alkalinity run-off for more details.)",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "negligible",
+      "uncertainty_impact_max": "medium",
+      "notes": ""
+    },
+    {
+      "number": "5",
+      "category": "drawdown",
+      "component_id": "carb_surf",
+      "quantification_target": "portion of captured CO\u2082 precipitated as surficial carbonates",
+      "name": "Surficial carbonate precipitation",
+      "description": "The formation of solid carbonates decreases CO\u2082 drawdown in comparison to the aqueous reactions that result in alkalinity run-off. It therefore must be considered if drawdown is being estimated on the basis of direct observation of mineral weathering rather than alkalinity run-off. (See Alkalinity run-off for more details.) Surficial carbonate precipitation depends on the type of primary mineral dissolving, carbonate saturation state, and other local environmental conditions.",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "low",
+      "uncertainty_impact_max": "low",
+      "notes": ""
+    },
+    {
+      "number": "6",
+      "category": "drawdown",
+      "component_id": "evasion",
+      "quantification_target": "leakage from evasion",
+      "name": "Leakage",
+      "description": "The additional flux of dissolved inorganic carbon (DIC) from the site of application into regional groundwater systems represents captured CO\u2082. The longer-term fate of this DIC is hard to precisely estimate. Groundwater can spend days to centuries in the ground before being discharged to streams. Once in surface waters, outgassing (evasion) might occur, for example as a result of shifts in pH.  The long timescale of this process makes it difficult to study directly, but regional models could inform evasion estimates.",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "system",
+      "uncertainty_impact_min": "low",
+      "uncertainty_impact_max": "medium",
+      "notes": ""
+    },
+    {
+      "element": "7*",
+      "category": "drawdown",
+      "component_id": "soil_c",
+      "quantification_target": "soil carbon stock change",
+      "name": "Soil carbon impacts",
+      "description": "Mineral addition to soils could have a diversity of impacts on soil carbon, including via changes to plant or microbial productivity. There has been relatively limited research on this topic to date. Due to the impermanence of soil carbon storage, we recommend that these carbon cycle impacts should not be used to counterbalance project emissions nor counted as additional drawdown.",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "not characterized",
+      "uncertainty_impact_max": "not characterized",
+      "notes": ""
+    },
+    {
+      "number": "8",
+      "category": "emissions",
+      "component_id": "mat_c02",
+      "quantification_target": "material embodied emissions",
+      "name": "Materials",
+      "description": "The embodied emissions of any materials consumed during operation, like mineral feedstocks or chemical solvents, can be estimated based on a cradle-to-grave lifecycle assessment (LCA) of the material input. The embodied emissions of non-consumed project equipment and infrastructure must also be considered, amortized over the expected lifetime of operation. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
+      "uncertainty_type": ["execution"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "low",
+      "uncertainty_impact_max": "low",
+      "notes": ""
+    },
+    {
+      "number": "9",
+      "category": "emissions",
+      "component_id": "energy_co2",
+      "quantification_target": "energy use emissions",
+      "name": "Energy",
+      "description": "The emissions associated with energy use for the process. This component should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project.",
+      "uncertainty_type": ["execution"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "low",
+      "uncertainty_impact_max": "low",
+      "notes": ""
+    },
+    {
+      "number": "10*",
+      "category": "emissions",
+      "component_id": "lime_reduce",
+      "quantification_target": "emissions impact of reducing agricultural lime use",
+      "name": "Change in agricultural lime use",
+      "description": "In agricultural contexts, the application of a weathering mineral might reduce the application of lime, thereby displacing associated lifecycle emissions. Any emissions impact associated with the displaced agricultural lime use could thus potentially counterbalance life cycle emissions of applying the weathering mineral. Lime emissions could be estimated based on data about prior usage on the parcel of land in question, or through general best practices for the region and crop type. Due to the potentially difficult nature of the counterfactual here, we recommend this factor not be included in the accounting of net carbon removal. If these emissions were to be included, we recommend that they be applied only to counteract project emissions, but in no case that they be included in a way that increases the estimate of additional carbon removal.",
+      "uncertainty_type": ["counterfactual"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "not characterized",
+      "uncertainty_impact_max": "not characterized",
+      "notes": ""
+    },
+    {
+      "number": "11*",
+      "category": "emissions",
+      "component_id": "fert_reduce",
+      "quantification_target": "emissions impact of reducing fertilizer use",
+      "name": "Change in fertilizer use",
+      "description": "Applied minerals may contain trace amounts of phosphorus and potassium, which could potentially reduce fertilizer requirements compared to conventional liming approaches. Application of alkaline silicates could also improve plant nitrogen uptake. Due to the potentially difficult nature of the counterfactual scenarios involved, we recommend this element not be included in the accounting of net carbon removal. If these emissions were to be included, we recommend that be applied only to counteract project emissions, but in no case that they be included in a way that increases the estimate of additional carbon removal.",
       "uncertainty_type": ["execution"],
       "responsibility": "project",
       "uncertainty_impact_min": "not characterized",
       "uncertainty_impact_max": "not characterized",
-      "notes": "",
-      "revisions": [
-        {
-          "date": "09-19-2022",
-          "note": "First release."
-        },
-        {
-          "date": "12-19-2022",
-          "note": "Second release. Tweaked the equation for total carbon removal to begin with Mineral weathering rather than Mineral application."
-        }
-      ]
+      "notes": ""
+    },
+    {
+      "number": "12*",
+      "category": "emissions",
+      "component_id": "n2o_reduce",
+      "quantification_target": "emissions impact of reducing N\u2082O emissions",
+      "name": "Reduction in N\u2082O emissions",
+      "description": "There is some evidence that the effect of rock weathering on the pH and phosphorus levels of cultivated soils could reduce N\u2082O emissions. This is an area of active research, and we recommend this element not be included in the accounting of net carbon removal. If these emissions were to be included, we recommend that they be applied only to counteract project emissions with a transparent disclosure of GWP assumptions, but in no case that they be included in a way that increases the estimate of additional carbon removal.",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "system",
+      "uncertainty_impact_min": "not characterized",
+      "uncertainty_impact_max": "not characterized",
+      "notes": ""
+    },
+    {
+      "number": "13",
+      "category": "durability",
+      "component_id": "carb_surf",
+      "quantification_target": "years of expected CO\u2082 storage",
+      "name": "Surficial carbonate durability",
+      "description": "The formation of surficial carbonates depends on the type of primary mineral dissolving, carbonate saturation state, and other local environmental conditions. Although surficial carbonates have complex seasonal dynamics of dissolution and reprecipitation, there is a high likelihood of long-term durability. If CO\u2082 storage is conservatively estimated based primarily on the quantity of alkalinity leaving the weathering site, this component of storage duration may be ignored. See \u201cAlkalinity run-off\u201d for more details.",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "system",
+      "uncertainty_impact_min": "low",
+      "uncertainty_impact_max": "low",
+      "notes": ""
+    },
+    {
+      "number": "14",
+      "category": "durability",
+      "component_id": "tau_dic",
+      "quantification_target": "years of expected CO\u2082 storage",
+      "name": "DIC residence time",
+      "description": "The concept of ocean DIC lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000 and 100,000 years.",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "system",
+      "uncertainty_impact_min": "low",
+      "uncertainty_impact_max": "low",
+      "notes": ""
     }
   ]
 }
