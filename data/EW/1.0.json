@@ -85,7 +85,7 @@
       "notes": ""
     },
     {
-      "element": "7*",
+      "number": "7*",
       "category": "drawdown",
       "component_id": "soil_c",
       "quantification_target": "soil carbon stock change",
@@ -100,7 +100,7 @@
     {
       "number": "8",
       "category": "emissions",
-      "component_id": "mat_c02",
+      "component_id": "mat_co2",
       "quantification_target": "material embodied emissions",
       "name": "Materials",
       "description": "The embodied emissions of any materials consumed during operation, like mineral feedstocks or chemical solvents, can be estimated based on a cradle-to-grave lifecycle assessment (LCA) of the material input. The embodied emissions of non-consumed project equipment and infrastructure must also be considered, amortized over the expected lifetime of operation. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
@@ -165,7 +165,7 @@
     {
       "number": "13",
       "category": "durability",
-      "component_id": "carb_surf",
+      "component_id": "carb_surf_durability",
       "quantification_target": "years of expected CO\u2082 storage",
       "name": "Surficial carbonate durability",
       "description": "The formation of surficial carbonates depends on the type of primary mineral dissolving, carbonate saturation state, and other local environmental conditions. Although surficial carbonates have complex seasonal dynamics of dissolution and reprecipitation, there is a high likelihood of long-term durability. If CO\u2082 storage is conservatively estimated based primarily on the quantity of alkalinity leaving the weathering site, this component of storage duration may be ignored. See \u201cAlkalinity run-off\u201d for more details.",
