@@ -47,19 +47,6 @@
     },
     {
       "number": "4*",
-      "category": "emissions",
-      "component_id": "non-carb_products",
-      "name": "Non-carbonate weathering products",
-      "quantification_target": "portion of feedstock alkalinity that does not facilitate carbon storage",
-      "uncertainty_type": ["execution"],
-      "responsibility": "project",
-      "uncertainty_impact_min": "low",
-      "uncertainty_impact_max": "medium",
-      "description": "An enhanced weathering intervention may produce byproducts that do not facilitate carbon storage, for example if weathering is facilitated by non-carbonic acid. Valuable byproducts like hydrogen, metal extraction, or pollutant reduction may also be produced. We recommend that any avoided emissions associated with these valuable byproducts be excluded from the calculation of net carbon removal.",
-      "notes": ""
-    },
-    {
-      "number": "5*",
       "category": "drawdown",
       "component_id": "carb_weather",
       "name": "Carbonate weathering",
@@ -69,6 +56,19 @@
       "uncertainty_impact_min": "not characterized",
       "uncertainty_impact_max": "not characterized",
       "description": "Carbonates may remain exposed to the atmosphere or be buried over time depending on the location and approach. A portion of exposed and buried carbonates may undergo weathering over time. If and when carbonates weather, there is an additional shift in CO\u2082 fluxes as a result of introducing alkalinity to the system and storing additional CO\u2082 as bicarbonate. This process approximately doubles the associated CO\u2082 storage. Although most carbonates will ultimately weather, this process should only be credited when the impact on atmospheric CO\u2082 actually occurs and must take into account the full suite of uncertainties related to quantifying weathering outcomes (see the Enhanced Weathering pathway). In the absence of clear measurement of carbonate weathering, we recommend alkaline waste mineralization approaches only consider and credit the mineral phase of CO\u2082 storage.",
+      "notes": ""
+    },
+    {
+      "number": "5*",
+      "category": "emissions",
+      "component_id": "non-carb_products",
+      "name": "Non-carbonate weathering products",
+      "quantification_target": "portion of feedstock alkalinity that does not facilitate carbon storage",
+      "uncertainty_type": ["execution"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "low",
+      "uncertainty_impact_max": "medium",
+      "description": "An enhanced weathering intervention may produce byproducts that do not facilitate carbon storage, for example if weathering is facilitated by non-carbonic acid. Valuable byproducts like hydrogen, metal extraction, or pollutant reduction may also be produced. We recommend that any avoided emissions associated with these valuable byproducts be excluded from the calculation of net carbon removal.",
       "notes": ""
     },
     {
