@@ -115,7 +115,7 @@
       },
       {
         "date": "04-TK-2023",
-        "note": "Added acknowledgment of the role of models for quantifying air sea gas exchange. Edited for cross-pathway consistency in response to the [addition](TK:BLOG) of the Direct Ocean Capture pathway. TK:BLOG."
+        "note": "Added acknowledgment of the role of models for quantifying air sea gas exchange. Edited for cross-pathway consistency in response to the [addition](TK:BLOG) of the Direct Ocean Removal pathway. TK:BLOG."
       }
     ],
     "notes": "",
@@ -124,7 +124,7 @@
       "ocean-alkalinity-enhancement-mineral",
       "ocean-biomass-sinking-harvest",
       "ocean-biomass-sinking-no-harvest",
-      "direct-ocean-capture"
+      "direct-ocean-removal"
     ]
   },
   {
@@ -163,14 +163,14 @@
       },
       {
         "date": "04-TK-2023",
-        "note": "Edited for cross-pathway consistency in response to the [addition](TK:BLOG) of the Direct Ocean Capture pathway. TK:BLOG."
+        "note": "Edited for cross-pathway consistency in response to the [addition](TK:BLOG) of the Direct Ocean Removal pathway. TK:BLOG."
       }
     ],
     "notes": "",
     "pathways": [
       "ocean-alkalinity-enhancement-electrochemical",
       "ocean-alkalinity-enhancement-mineral",
-      "direct-ocean-capture"
+      "direct-ocean-removal"
     ]
   },
   {
@@ -232,7 +232,7 @@
       }
     ],
     "notes": "",
-    "pathways": ["direct-ocean-capture"]
+    "pathways": ["direct-ocean-removal"]
   },
   {
     "component_id": "comp",
@@ -472,14 +472,14 @@
       },
       {
         "date": "04-TK-2023",
-        "note": "Added text to reflect that the response of calcifying communities could also impact POC export. Edited for cross-pathway consistency in response to the [addition](TK:BLOG) the Direct Ocean Capture Pathway."
+        "note": "Added text to reflect that the response of calcifying communities could also impact POC export. Edited for cross-pathway consistency in response to the [addition](TK:BLOG) the Direct Ocean Removal Pathway."
       }
     ],
     "notes": "",
     "pathways": [
       "ocean-alkalinity-enhancement-electrochemical",
       "ocean-alkalinity-enhancement-mineral",
-      "direct-ocean-capture"
+      "direct-ocean-removal"
     ]
   },
   {
@@ -522,14 +522,14 @@
       },
       {
         "date": "04-TK-2023",
-        "note": "Added acknowledgement that abiotic precipitation of both calcite and brucite could impact CO2 outgassing. Edited for cross-pathway consistency in response to the [addition](TK:BLOG) the Direct Ocean Capture Pathway."
+        "note": "Added acknowledgement that abiotic precipitation of both calcite and brucite could impact CO2 outgassing. Edited for cross-pathway consistency in response to the [addition](TK:BLOG) the Direct Ocean Removal Pathway."
       }
     ],
     "notes": "",
     "pathways": [
       "ocean-alkalinity-enhancement-electrochemical",
       "ocean-alkalinity-enhancement-mineral",
-      "direct-ocean-capture"
+      "direct-ocean-removal"
     ]
   },
   {
@@ -575,7 +575,7 @@
     "pathways": [
       "direct-air-capture",
       "biomass-carbon-removal-and-storage",
-      "direct-ocean-capture"
+      "direct-ocean-removal"
     ]
   },
   {
@@ -667,7 +667,7 @@
     "pathways": [
       "direct-air-capture",
       "biomass-carbon-removal-and-storage",
-      "direct-ocean-capture"
+      "direct-ocean-removal"
     ]
   },
   {
@@ -714,7 +714,7 @@
       "enhanced-weathering",
       "ocean-alkalinity-enhancement-electrochemical",
       "ocean-alkalinity-enhancement-mineral",
-      "direct-ocean-capture"
+      "direct-ocean-removal"
     ]
   },
   {
@@ -762,7 +762,7 @@
       "ocean-alkalinity-enhancement-mineral",
       "ocean-biomass-sinking-harvest",
       "ocean-biomass-sinking-no-harvest",
-      "direct-ocean-capture",
+      "direct-ocean-removal",
       "biochar",
       "alkaline-waste-mineralization"
     ]
@@ -788,7 +788,7 @@
       "direct-air-capture",
       "biomass-carbon-removal-and-storage",
       "ocean-alkalinity-enhancement-electrochemical",
-      "direct-ocean-capture",
+      "direct-ocean-removal",
       "alkaline-waste-mineralization"
     ]
   },
@@ -868,7 +868,7 @@
       "ocean-alkalinity-enhancement-mineral",
       "ocean-biomass-sinking-harvest",
       "ocean-biomass-sinking-no-harvest",
-      "direct-ocean-capture",
+      "direct-ocean-removal",
       "biochar",
       "alkaline-waste-mineralization"
     ]

@@ -16,7 +16,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "negligible",
       "uncertainty_impact_max": "negligible",
-      "description": "The mass of CO\u2082 removed from seawater through electrochemical separation \u2014 or other approaches \u2014 can be measured directly as a metered output from the direct ocean capture (DOC) system. It can also be checked for consistency against operational data from the DOC system and characterization of the seawater effluent that is depleted of dissolved inorganic carbon (DIC). The quantity of CO\u2082 directly removed from seawater may not be equal to the quantity of CO\u2082 stored (see Leakage) or the quantity of CO\u2082 indirectly removed by atmospheric drawdown (see Air sea gas exchange). Direct removal of CO\u2082 from seawater produces DIC-depleted seawater and results in subsequent atmospheric carbon removal by inducing air-sea gas exchange. Thus, the quantity of CO\u2082 removed directly from seawater must be clearly quantified and validated as a separate measurement from CO\u2082 storage or atmospheric CO\u2082 drawdown.",
+      "description": "The mass of CO\u2082 removed from seawater through electrochemical separation \u2014 or other approaches \u2014 can be measured directly as a metered output from the direct ocean removal (DOC) system. It can also be checked for consistency against operational data from the DOC system and characterization of the seawater effluent that is depleted of dissolved inorganic carbon (DIC). The quantity of CO\u2082 directly removed from seawater may not be equal to the quantity of CO\u2082 stored (see Leakage) or the quantity of CO\u2082 indirectly removed by atmospheric drawdown (see Air sea gas exchange). Direct removal of CO\u2082 from seawater produces DIC-depleted seawater and results in subsequent atmospheric carbon removal by inducing air-sea gas exchange. Thus, the quantity of CO\u2082 removed directly from seawater must be clearly quantified and validated as a separate measurement from CO\u2082 storage or atmospheric CO\u2082 drawdown.",
       "notes": ""
     },
     {
@@ -55,7 +55,7 @@
       "responsibility": "system",
       "uncertainty_impact_min": "medium",
       "uncertainty_impact_max": "medium",
-      "description": "Since calcification releases CO\u2082, any changes to the rate of biotic calcification in response to shifts in pH and dissolved inorganic carbon (DIC) concentrations driven by the direct ocean capture process must be considered. Changes in biotic calcification rates could occur in both coastal and open ocean waters, and at the level of individual calcifiers or calcifier populations. In practice, quantifying the biotic calcification response to carbon-depleted water may pose significant spatial and temporal challenges.",
+      "description": "Since calcification releases CO\u2082, any changes to the rate of biotic calcification in response to shifts in pH and dissolved inorganic carbon (DIC) concentrations driven by the direct ocean removal process must be considered. Changes in biotic calcification rates could occur in both coastal and open ocean waters, and at the level of individual calcifiers or calcifier populations. In practice, quantifying the biotic calcification response to carbon-depleted water may pose significant spatial and temporal challenges.",
       "notes": ""
     },
     {
@@ -146,7 +146,7 @@
       "responsibility": "system",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "low",
-      "description": "The concept of ocean DIC lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000 and 100,000 years. Since capturing atmospheric CO\u2082 through direct ocean capture results in restoring seawater to its original state, this intervention is not expected to change the long-term patterns of abiotic precipitation and dissolution of carbonate minerals \u2014 a central control on DIC residence time \u2014 compared to the counterfactual.",
+      "description": "The concept of ocean DIC lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000 and 100,000 years. Since capturing atmospheric CO\u2082 through direct ocean removal results in restoring seawater to its original state, this intervention is not expected to change the long-term patterns of abiotic precipitation and dissolution of carbonate minerals \u2014 a central control on DIC residence time \u2014 compared to the counterfactual.",
       "notes": ""
     }
   ]
