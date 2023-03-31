@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Box, Flex, Divider } from 'theme-ui'
 import { Badge, Row, Column, Filter, Link } from '@carbonplan/components'
 import { useRouter } from 'next/router'
@@ -17,7 +17,7 @@ import Equation from './equation'
 import legend from '../data/legend.json'
 import Description from './description'
 
-const Main = ({ pathways, settings, setSettings }) => {
+const Main = ({ pathway, pathways, settings, setSettings }) => {
   const router = useRouter()
   const [filters, setFilters] = useState({
     drawdown: true,
@@ -27,10 +27,6 @@ const Main = ({ pathways, settings, setSettings }) => {
   const [sort, setSort] = useState('component')
   const [expanded, setExpanded] = useState(false)
 
-  const pathway = useMemo(
-    () => pathways.find((p) => p.pathway_id === router.query.id) ?? pathways[0],
-    [router.query.id]
-  )
   const {
     pathway_id,
     components,
