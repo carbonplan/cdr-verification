@@ -3,6 +3,44 @@ import { useState } from 'react'
 import AnimateHeight from 'react-animate-height'
 import { Info } from '@carbonplan/icons'
 
+export const TooltipButton = ({ mt, expanded, setExpanded, sx }) => {
+  return (
+    <IconButton
+      onClick={(e) => {
+        e.stopPropagation()
+        setExpanded(!expanded)
+      }}
+      role='checkbox'
+      aria-checked={expanded}
+      aria-label='Information'
+      sx={{
+        cursor: 'pointer',
+        height: '16px',
+        width: '16px',
+        '@media (hover: hover) and (pointer: fine)': {
+          '&:hover > #info': {
+            stroke: 'primary',
+          },
+        },
+        p: [0],
+        transform: 'translate(0px, -3.75px)',
+        mt,
+        flexShrink: 0,
+        ...sx,
+      }}
+    >
+      <Info
+        id='info'
+        height='16px'
+        width='16px'
+        sx={{
+          stroke: expanded ? 'primary' : 'secondary',
+          transition: '0.1s',
+        }}
+      />
+    </IconButton>
+  )
+}
 export const TooltipWrapper = ({
   align,
   mt,
@@ -14,39 +52,11 @@ export const TooltipWrapper = ({
   return (
     <Flex sx={{ gap: 2, alignItems: align, justifyContent: justify }}>
       {children}
-      <IconButton
-        onClick={(e) => {
-          e.stopPropagation()
-          setExpanded(!expanded)
-        }}
-        role='checkbox'
-        aria-checked={expanded}
-        aria-label='Information'
-        sx={{
-          cursor: 'pointer',
-          height: '16px',
-          width: '16px',
-          '@media (hover: hover) and (pointer: fine)': {
-            '&:hover > #info': {
-              stroke: 'primary',
-            },
-          },
-          p: [0],
-          transform: 'translate(0px, -3.75px)',
-          mt,
-          flexShrink: 0,
-        }}
-      >
-        <Info
-          id='info'
-          height='16px'
-          width='16px'
-          sx={{
-            stroke: expanded ? 'primary' : 'secondary',
-            transition: '0.1s',
-          }}
-        />
-      </IconButton>
+      <TooltipButton
+        sx={{ mt }}
+        expanded={expanded}
+        setExpanded={setExpanded}
+      />
     </Flex>
   )
 }

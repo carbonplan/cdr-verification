@@ -1,26 +1,26 @@
 const fs = require('fs')
 const glob = require('glob')
 
-const pathwayContent = glob
+const pathwayVersions = glob
   .sync('./data/**/+([0-9]).+([0-9]).json')
-  .reduce((pathwayVersions, pathwayPath) => {
+  .reduce((pathways, pathwayPath) => {
     const [pathway] = pathwayPath.match(/[^/]+(?=\/[^/]+\.json)/)
     const [version] = pathwayPath.match(/[^/]+(?=\.json)/)
 
     const source = fs.readFileSync(pathwayPath)
     const content = JSON.parse(source)
 
-    let versions = pathwayVersions.find((p) => p[0] === pathway)
+    let versions = pathways.find((p) => p[0] === pathway)
     if (versions) {
       versions[1].push({ version, content })
     } else {
-      pathwayVersions.push([pathway, [{ version, content }]])
+      pathways.push([pathway, [{ version, content }]])
     }
 
-    return pathwayVersions
+    return pathways
   }, [])
 
-const pathways = pathwayContent.reduce((accum, [pathway, versions]) => {
+const pathways = pathwayVersions.reduce((accum, [pathway, versions]) => {
   const latestVersion = versions.sort(
     (a, b) => Number(b.version) - Number(a.version)
   )[0].content
@@ -28,15 +28,35 @@ const pathways = pathwayContent.reduce((accum, [pathway, versions]) => {
   return accum
 }, [])
 
-const pathwayVersions = pathwayContent.reduce((accum, [pathway, versions]) => {
-  accum[pathway] = versions.reduce((accum, { version, content }) => {
-    accum[version] = content
-    return accum
+const ID_MAPPING = pathwayVersions.reduce((accum, [pathway, versions]) => {
+  const latestVersion = versions.sort(
+    (a, b) => Number(b.version) - Number(a.version)
+  )[0].content
+
+  accum[pathway] = latestVersion.pathway_id
+  return accum
+}, {})
+
+const pathwayContent = pathwayVersions.reduce((accum, [pathway, versions]) => {
+  const versionInfo = versions.reduce((v, { version, content }) => {
+    v[version] = content
+    return v
   }, {})
+
+  const metadataPath = `./data/${pathway}/metadata.json` // glob.sync(`./data/${pathway}/metadata.json`)
+  const source = fs.readFileSync(metadataPath)
+  const metadata = JSON.parse(source)
+
+  accum[ID_MAPPING[pathway]] = {
+    ...versionInfo,
+    metadata,
+  }
+
   return accum
 }, {})
 
 module.exports = {
-  pathwayVersions,
+  ID_MAPPING,
+  pathwayContent,
   pathways,
 }

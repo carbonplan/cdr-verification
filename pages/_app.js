@@ -4,9 +4,12 @@ import '@carbonplan/components/globals.css'
 import theme from '@carbonplan/theme'
 import { Layout } from '@carbonplan/components'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 const App = ({ Component, pageProps }) => {
   const [settings, setSettings] = useState(false)
+  const router = useRouter()
+  const isDocs = router.pathname.includes('/docs/')
 
   return (
     <ThemeProvider theme={theme}>
@@ -20,10 +23,14 @@ const App = ({ Component, pageProps }) => {
         footer={false}
         metadata={false}
         nav={'research'}
-        settings={{
-          value: settings,
-          onClick: () => setSettings((prev) => !prev),
-        }}
+        settings={
+          isDocs
+            ? null
+            : {
+                value: settings,
+                onClick: () => setSettings((prev) => !prev),
+              }
+        }
       >
         <Component
           {...pageProps}
