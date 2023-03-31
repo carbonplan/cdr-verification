@@ -5,9 +5,9 @@ import { CATEGORY_COLORS } from './constants'
 import { useComponent } from './context/component'
 import CIRCLE_ICONS from './circle-icons'
 
-const Circle = ({ id, sx, ...props }) => {
+const Circle = ({ component_id, sx, ...props }) => {
   const { theme } = useThemeUI()
-  const { status, data } = useComponent(id)
+  const { status, data } = useComponent(component_id)
 
   let mixer
   switch (status) {
@@ -23,10 +23,10 @@ const Circle = ({ id, sx, ...props }) => {
   }
 
   const color = CATEGORY_COLORS[data.category] ?? 'secondary'
-  const Icon = CIRCLE_ICONS[id]
+  const Icon = CIRCLE_ICONS[data.number]
 
   if (!Icon) {
-    console.warn(`No icon found for id: ${id}`)
+    console.warn(`No icon found for component_id: ${component_id}`)
     return null
   }
 
