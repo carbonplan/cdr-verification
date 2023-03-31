@@ -7,6 +7,7 @@ import { default as SeaweedSinkingHarvest } from './ocean-biomass-harvest'
 import { default as TBS } from './terrestrial-biomass-sinking'
 import { default as EnhancedWeathering } from './enhanced-weathering'
 import { default as AlkalineWasteMineralization } from './alkaline-waste-mineralization'
+import { default as Biochar } from './biochar'
 
 export default {
   'ocean-alkalinity-enhancement-electrochemical': <OAEEchem />,
@@ -18,4 +19,5 @@ export default {
   'biomass-carbon-removal-and-storage': <BiCRS />,
   'terrestrial-biomass-sinking': <TBS />,
   'alkaline-waste-mineralization': <AlkalineWasteMineralization />,
+  biochar: <Biochar />,
 }
