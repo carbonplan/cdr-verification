@@ -1,6 +1,6 @@
-import Rectangle from '../rectangle'
-import Grid from '../grid'
-import Arrow from '../arrow'
+import Rectangle from './rectangle'
+import Grid from './grid'
+import Arrow from './arrow'
 
 const Flow = () => {
   return (
@@ -37,17 +37,24 @@ const Flow = () => {
         secondary
       />
 
-      <Rectangle start={[8, 9]} label='Electrochemical separation' />
+      <Rectangle start={[8, 9]} id='co2_removed' />
 
       <Arrow start={[15, 11]} length={1} right />
       <Arrow start={[11, 14]} length={1} down />
 
-      <Rectangle id='alk_total_convert' start={[17, 9]} />
+      <Rectangle
+        start={[17, 9]}
+        label='Dispersal of carbon depleted seawater'
+      />
 
-      <Rectangle start={[8, 16]} height={3} label='Acid bi-product disposal' />
+      <Rectangle start={[1, 23]} id='store_maint' />
+      <Arrow start={[4, 17]} length={5} up hideArrow />
+      <Arrow start={[4, 17]} length={3} right />
+
+      <Rectangle start={[8, 16]} height={3} label='CO₂ storage' />
 
       <Arrow start={[11, 20]} length={2} down />
-      <Rectangle id='acid_return' start={[8, 23]} height={3} />
+      <Rectangle id='store_leak' start={[8, 23]} height={3} />
 
       <Arrow start={[20, 14]} length={8} down />
       <Rectangle id='poc' start={[16, 23]} width={8} height={3} />
@@ -58,17 +65,17 @@ const Flow = () => {
       <Arrow start={[26, 7]} length={2} right />
       <Arrow start={[26, 13]} length={2} right />
 
-      <Rectangle id='sec_precip' start={[29, 2]} width={8} height={3} />
-      <Rectangle id='calc' start={[29, 6]} width={8} height={3} />
-      <Rectangle id='asg' start={[29, 12]} width={8} height={3} />
+      <Rectangle id='sec_precip' start={[29, 2]} height={3} />
+      <Rectangle id='calc' start={[29, 6]} />
+      <Rectangle id='asg' start={[29, 12]} height={3} />
 
-      <Arrow start={[33, 16]} length={1} down />
+      <Arrow start={[32, 16]} length={1} down />
 
-      <Rectangle start={[29, 18]} width={8} height={3} label='Enhanced DIC' />
+      <Rectangle start={[29, 18]} height={3} label='Restored DIC' />
 
-      <Arrow start={[33, 22]} length={1} up />
+      <Arrow start={[32, 22]} length={1} up />
 
-      <Rectangle id='tau_alk' start={[29, 24]} width={8} height={3} />
+      <Rectangle id='tau_alk' start={[29, 24]} height={3} />
     </Grid>
   )
 }

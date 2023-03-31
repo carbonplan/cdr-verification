@@ -6,14 +6,14 @@ const Flow = () => {
   return (
     <Grid height={27}>
       <Rectangle
-        id='6'
+        id='mat_co2'
         width={4}
         start={[9, 2]}
         height={1}
         borderStyle='none'
       />
       <Rectangle
-        id='7'
+        id='energy_co2'
         width={4}
         start={[12, 2]}
         height={1}
@@ -29,20 +29,20 @@ const Flow = () => {
         label='Project activity'
         secondary
       />
-      <Rectangle id='1' start={[13, 7]} />
+      <Rectangle id='terr_added' start={[13, 7]} />
 
       <Arrow start={[20, 9]} length={6} right />
       <Rectangle start={[27, 7]} label='Deepwater storage' />
       <Arrow start={[30, 12]} length={2} up />
 
-      <Rectangle id='8' start={[27, 15]} />
+      <Rectangle id='t_recirculation' start={[27, 15]} />
 
-      <Rectangle id='2' start={[19, 2]} height={1} borderStyle='none' />
+      <Rectangle id='nsad' start={[19, 2]} height={1} borderStyle='none' />
       <Arrow start={[18, 2]} length={4} up hideArrow />
       <Arrow start={[18, 2]} length={2} right />
 
       <Rectangle
-        id='6'
+        id='mat_co2'
         start={[5, 9]}
         label='Biomass feedstock'
         height={2}
@@ -53,9 +53,9 @@ const Flow = () => {
 
       <Arrow start={[7, 11]} length={10} down hideArrow />
       <Arrow start={[7, 21]} length={3} right />
-      <Rectangle id='3' start={[11, 14]} />
-      <Rectangle id='4' start={[11, 19]} />
-      <Rectangle id='5' start={[11, 24]} />
+      <Rectangle id='feed_stor' start={[11, 14]} />
+      <Rectangle id='feed_current' start={[11, 19]} />
+      <Rectangle id='LUC_indirect' start={[11, 24]} />
     </Grid>
   )
 }

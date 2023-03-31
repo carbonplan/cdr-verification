@@ -50,13 +50,13 @@ const Equation = ({ equation, components }) => {
       accum.push(
         <Circle
           key={component.number}
-          id={component.number}
+          component_id={component.component_id}
           onClick={() =>
             setActive((prev) =>
-              prev === component.number ? null : component.number
+              prev === component.component_id ? null : component.component_id
             )
           }
-          onMouseEnter={() => setHovered(component.number)}
+          onMouseEnter={() => setHovered(component.component_id)}
           onMouseLeave={() => setHovered(null)}
           sx={{ cursor: 'pointer', mr: '1px' }}
         />

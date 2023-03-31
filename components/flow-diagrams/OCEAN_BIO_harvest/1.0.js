@@ -6,14 +6,14 @@ const Flow = () => {
   return (
     <Grid height={26}>
       <Rectangle
-        id='5'
+        id='mat_co2'
         start={[3, 2]}
         height={1}
         width={4}
         borderStyle='none'
       />
       <Rectangle
-        id='6'
+        id='energy_co2'
         start={[6, 2]}
         height={1}
         width={4}
@@ -34,7 +34,7 @@ const Flow = () => {
 
       <Arrow start={[10, 9]} length={1} right />
 
-      <Rectangle start={[12, 7]} id='1' width={6} />
+      <Rectangle start={[12, 7]} id='kelp_harvest' width={6} />
 
       <Arrow start={[19, 9]} length={1} right />
 
@@ -44,18 +44,18 @@ const Flow = () => {
 
       <Rectangle start={[29, 7]} label='Deepwater storage' />
       <Arrow start={[32, 12]} length={2} up />
-      <Rectangle id='7' start={[29, 15]} />
+      <Rectangle id='t_recirculation' start={[29, 15]} />
 
       <Arrow start={[7, 12]} length={2} down />
 
-      <Rectangle start={[4, 15]} id='3' />
+      <Rectangle start={[4, 15]} id='comp' />
 
       <Arrow start={[7, 20]} length={2} down />
 
-      <Rectangle id='4' start={[4, 23]} />
+      <Rectangle id='asg' start={[4, 23]} />
 
       <Rectangle
-        id='2'
+        id='nsad'
         start={[21, 2]}
         height={1}
         width={4}

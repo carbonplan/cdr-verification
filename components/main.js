@@ -193,7 +193,7 @@ const Main = ({ pathway, pathways, settings, setSettings }) => {
               </Column>
             </Row>
             {getComponents(components, filters, sort).map((d) => (
-              <Component key={d.number} openTray={openTray} {...d} />
+              <Component key={d.component_id} openTray={openTray} {...d} />
             ))}
           </>
         }

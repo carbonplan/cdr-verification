@@ -1,7 +1,7 @@
 {
   "pathway_id": "ocean-alkalinity-enhancement-mineral",
   "pathway_name": "Ocean Alkalinity Enhancement (Mineral)",
-  "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance its ability to uptake and store atmospheric CO\u2082. Here, we specifically consider OAE that is facilitated by adding rocks to the ocean which dissolve to enhance alkalinity. This pathway is VCL 2, meaning that current quantification capacity may be able establish net carbon removal occurred, but very significant uncertainties remain.",
+  "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance its ability to uptake and store atmospheric CO\u2082. Here, we specifically consider OAE that is facilitated by adding rocks to the ocean which dissolve to enhance alkalinity. This pathway is VCL 2, meaning that current quantification capacity may be able to establish net carbon removal occurred, but very significant uncertainties remain.",
   "VCL": ["1", "2"],
   "equation": "(1 - 2 - 3 - 4 - 5) - (7 + 8)",
   "version": "1.0",
@@ -37,12 +37,12 @@
       "category": "drawdown",
       "component_id": "sec_precip",
       "name": "Secondary precipitation",
-      "quantification_target": "secondary precipitation of CaCO3",
+      "quantification_target": "secondary precipitation of CaCO\u2083",
       "uncertainty_type": ["execution", "scientific"],
       "responsibility": "project",
       "uncertainty_impact_min": "high",
       "uncertainty_impact_max": "very high",
-      "description": "Adding alkalinity to seawater shifts the pH and carbonate ion concentration, and could cause abiotic precipitation of calcium carbonate (CaCO\u2083) or brucite (Mg(OH)2). This is important to characterize as this precipitation results in CO\u2082 outgassing. It remains to be determined what specific combination of suitable nucleation conditions and supersaturation of CaCO3 is needed to cause significant precipitation. Abiotic precipitation can be minimized by controlling the dilution and dispersal on alkalinity-enhanced water, which can be hard to control when adding alkalinity through mineral dissolution. There is [some](https://www.frontiersin.org/articles/10.3389/fclim.2022.831587/full) [evidence](https://bg.copernicus.org/preprints/bg-2022-126/) that that localized effects of mineral dissolution may trigger significant secondary precipitation. Sampling total alkalinity near the dispersal point may help quantitatively determine the extent to which alkalinity is lost due to precipitation.",
+      "description": "Adding alkalinity to seawater shifts the pH and carbonate ion concentration, and could cause abiotic precipitation of calcium carbonate (CaCO\u2083) or brucite (Mg(OH)\u2082). This is important to characterize as this precipitation results in CO\u2082 outgassing. It remains to be determined what specific combination of suitable nucleation conditions and supersaturation of CaCO\u2083 is needed to cause significant precipitation. Abiotic precipitation can be minimized by controlling the dilution and dispersal of alkalinity-enhanced water, which can be hard to control when adding alkalinity through mineral dissolution. There is [some](https://www.frontiersin.org/articles/10.3389/fclim.2022.831587/full) [evidence](https://bg.copernicus.org/preprints/bg-2022-126/) that that localized effects of mineral dissolution may trigger significant secondary precipitation. Sampling total alkalinity near the dispersal point may help quantitatively determine the extent to which alkalinity is lost due to precipitation.",
       "notes": ""
     },
     {
@@ -68,7 +68,7 @@
       "responsibility": "system",
       "uncertainty_impact_min": "high",
       "uncertainty_impact_max": "high",
-      "description": "Atmospheric uptake is reduced if alkalinity is transferred to the deep ocean before either increasing the uptake of atmospheric CO\u2082 or decreasing the outgassing of CO\u2082 to the atmosphere. The precise dispersal of DIC-depleted water, its residence time at the surface, and hence the associated completeness of air-sea gas equilibration is dependent on the location and timing of the dispersal of DIC-depleted water, and is hard to directly observe. In-situ measurements can potentially track post-deployment changes in pCO\u2082, pH, and DIC and deploy water mass tracers to help validate models of plume dispersal and atmospheric CO\u2082 drawdown, though the sensitivity and cost of sensors may be a challenge. Further, oceanographic models can be used to develop probabilistic estimates of equilibration efficiencies for particular injection sites, contingent on seasonal or interannual variations in forcing regimes. Typical gas exchange timescales of equilibration for the surface ocean and atmosphere are on the order of months to years.",
+      "description": "Atmospheric uptake is reduced if alkalinity is transferred to the deep ocean before either increasing the uptake of atmospheric CO\u2082 or decreasing the outgassing of CO\u2082 to the atmosphere. The precise dispersal of DIC-depleted water, its residence time at the surface, and hence the associated completeness of air-sea gas equilibration is dependent on the location and timing of the dispersal of alkalinity-enhanced water, and is hard to directly observe. In-situ measurements can potentially track post-deployment changes in pCO\u2082, pH, and DIC and deploy water mass tracers to help validate models of plume dispersal and atmospheric CO\u2082 drawdown, though the sensitivity and cost of sensors may be a challenge. Further, oceanographic models can be used to develop probabilistic estimates of equilibration efficiencies for particular injection sites, contingent on seasonal or interannual variations in forcing regimes. Typical gas exchange timescales of equilibration for the surface ocean and atmosphere are on the order of months to years.",
       "notes": ""
     },
     {
@@ -87,7 +87,7 @@
     {
       "number": "7",
       "category": "emissions",
-      "component_id": "mat_CO\u2082",
+      "component_id": "mat_co2",
       "name": "Materials",
       "quantification_target": "material embodied emissions",
       "uncertainty_type": ["execution"],
@@ -100,7 +100,7 @@
     {
       "number": "8",
       "category": "emissions",
-      "component_id": "energy_CO\u2082",
+      "component_id": "energy_co2",
       "name": "Energy",
       "quantification_target": "energy use emissions",
       "uncertainty_type": ["execution"],

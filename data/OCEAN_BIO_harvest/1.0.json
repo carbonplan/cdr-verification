@@ -61,7 +61,7 @@
     {
       "number": "5",
       "category": "emissions",
-      "component_id": "mat_CO\u2082",
+      "component_id": "mat_co2",
       "name": "Materials",
       "quantification_target": "material embodied emissions",
       "uncertainty_type": ["execution"],
@@ -74,7 +74,7 @@
     {
       "number": "6",
       "category": "emissions",
-      "component_id": "energy_CO\u2082",
+      "component_id": "energy_co2",
       "name": "Energy",
       "quantification_target": "energy use emissions",
       "uncertainty_type": ["execution"],
