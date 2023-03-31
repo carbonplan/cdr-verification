@@ -11,12 +11,12 @@
       "category": "drawdown",
       "component_id": "carb_min",
       "name": "Carbonates",
-      "quantification_target": "mass of captured CO2 stored in carbonates",
+      "quantification_target": "mass of captured CO\u2082 stored in carbonates",
       "uncertainty_type": ["excution"],
       "responsibility": "project",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "high",
-      "description": "It is possible to calculate potential atmospheric removal by assuming full weathering of the alkaline feedstock to provide an absolute maximum ceiling value for potential CDR, against which any estimates of realized CDR should be compared. The mass of CO2 captured through alkaline feedstock weathering and carbonate mineralization can be quantified by measuring CO2 loss from air (e.g. using eddy covariance flux towers or dynamic closed chambers), measurement of carbonate chemistry parameters (e.g. pH, TA, or DIC), or measuring changes in mineral content. If measuring changes in mineral content, it is critical to carefully characterize the starting carbonate content and variability of the feedstock. It is likely that a combination of quantification approaches will be needed to bound outcomes. Calibrated reactive transport models may also play a role in estimating long-term trends of CO2 uptake. Measurement and modeling approaches must take into account the potential for short-term cycles of absorption and outgassing.",
+      "description": "It is possible to calculate potential atmospheric removal by assuming full weathering of the alkaline feedstock to provide an absolute maximum ceiling value for potential CDR, against which any estimates of realized CDR should be compared. The mass of CO\u2082 captured through alkaline feedstock weathering and carbonate mineralization can be quantified by measuring CO\u2082 loss from air (e.g. using eddy covariance flux towers or dynamic closed chambers), measurement of carbonate chemistry parameters (e.g. pH, TA, or DIC), or measuring changes in mineral content. If measuring changes in mineral content, it is critical to carefully characterize the starting carbonate content and variability of the feedstock. It is likely that a combination of quantification approaches will be needed to bound outcomes. Calibrated reactive transport models may also play a role in estimating long-term trends of CO\u2082 uptake. Measurement and modeling approaches must take into account the potential for short-term cycles of absorption and outgassing.",
       "notes": ""
     },
     {
@@ -24,7 +24,7 @@
       "category": "drawdown",
       "component_id": "carb_baseline",
       "name": "Baseline weathering rate",
-      "quantification_target": "baseline mass of captured CO2 stored in carbonates",
+      "quantification_target": "baseline mass of captured CO\u2082 stored in carbonates",
       "uncertainty_type": ["counterfactual"],
       "responsibility": "project",
       "uncertainty_impact_min": "low",
@@ -37,12 +37,12 @@
       "category": "drawdown",
       "component_id": "carb_degrade",
       "name": "Leakage",
-      "quantification_target": "mass of CO2 released from carbonates",
+      "quantification_target": "mass of CO\u2082 released from carbonates",
       "uncertainty_type": ["execution"],
       "responsibility": "project",
       "uncertainty_impact_min": "negligible",
       "uncertainty_impact_max": "low",
-      "description": "Carbonates could release CO2 if exposed to heat or acid. The risk of leakage from produced carbonates is contingent on what type of carbonate is produced, the planned treatment of the carbonates, and their resulting exposure to environmental conditions that facilitate CO2 release (see Storage and Utilization).",
+      "description": "Carbonates could release CO\u2082 if exposed to heat or acid. The risk of leakage from produced carbonates is contingent on what type of carbonate is produced, the planned treatment of the carbonates, and their resulting exposure to environmental conditions that facilitate CO\u2082 release (see Storage and Utilization).",
       "notes": ""
     },
     {
@@ -68,7 +68,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "not characterized",
       "uncertainty_impact_max": "not characterized",
-      "description": "Carbonates may remain exposed to the atmosphere or be buried over time depending on the location and approach. A portion of exposed and buried carbonates may undergo weathering over time. If and when carbonates weather, there is an additional shift in CO2 fluxes as a result of introducing alkalinity to the system and storing additional CO2 as bicarbonate. This process approximately doubles the associated CO2 storage. Although most carbonates will ultimately weather, this process should only be credited when the impact on atmospheric CO2 actually occurs and must take into account the full suite of uncertainties related to quantifying weathering outcomes (see the Enhanced Weathering pathway). In the absence of clear measurement of carbonate weathering, we recommend alkaline waste mineralization approaches only consider and credit the mineral phase of CO2 storage.",
+      "description": "Carbonates may remain exposed to the atmosphere or be buried over time depending on the location and approach. A portion of exposed and buried carbonates may undergo weathering over time. If and when carbonates weather, there is an additional shift in CO\u2082 fluxes as a result of introducing alkalinity to the system and storing additional CO\u2082 as bicarbonate. This process approximately doubles the associated CO\u2082 storage. Although most carbonates will ultimately weather, this process should only be credited when the impact on atmospheric CO\u2082 actually occurs and must take into account the full suite of uncertainties related to quantifying weathering outcomes (see the Enhanced Weathering pathway). In the absence of clear measurement of carbonate weathering, we recommend alkaline waste mineralization approaches only consider and credit the mineral phase of CO\u2082 storage.",
       "notes": ""
     },
     {
@@ -115,7 +115,7 @@
       "category": "durability",
       "component_id": "carb_store",
       "name": "Storage",
-      "quantification_target": "years of expected CO2 storage",
+      "quantification_target": "years of expected CO\u2082 storage",
       "uncertainty_type": ["execution"],
       "responsibility": "project",
       "uncertainty_impact_min": "not characterized",
@@ -128,12 +128,12 @@
       "category": "durability",
       "component_id": "carb_utilize",
       "name": "Utilization",
-      "quantification_target": "years of expected CO2 storage via utilization",
+      "quantification_target": "years of expected CO\u2082 storage via utilization",
       "uncertainty_type": ["execution"],
       "responsibility": "project",
       "uncertainty_impact_min": "not characterized",
       "uncertainty_impact_max": "not characterized",
-      "description": "Produced carbonates may be used, for example in industrial processes, as building materials, or as soil amendments. The source of utilization may lead to stable storage (see Storage), carbonate degradation and release of CO2 (see Leakage) or carbonate weathering and further storage of CO2 (see Carbonate weathering).",
+      "description": "Produced carbonates may be used, for example in industrial processes, as building materials, or as soil amendments. The source of utilization may lead to stable storage (see Storage), carbonate degradation and release of CO\u2082 (see Leakage) or carbonate weathering and further storage of CO\u2082 (see Carbonate weathering).",
       "notes": ""
     }
   ]

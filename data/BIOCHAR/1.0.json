@@ -3,7 +3,7 @@
   "pathway_name": "Biochar",
   "pathway_description": "Biochar is a type of biomass carbon removal and storage (BiCRS) that uses photosynthesis to remove CO\u2082 from the atmosphere, and transforms the resulting biomass to achieve long-term storage of biomass carbon. Here, we specifically consider biochar that is applied to agricultural fields. This pathway is VCL 1-3, meaning that current quantification capacity may be able to establish permanent carbon removal, but that for certain approaches, significant uncertainties remain, primarily driven by the uncertainty around biochar durability.",
   "VCL": ["1", "3"],
-  "equation": "(1-2-3-4-5-10)-(11+12)",
+  "equation": "(1-2-3-4-5-6)-(11+12)",
   "version": "1.0",
   "components": [
     {
@@ -16,7 +16,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "low",
-      "description": "The mass of biomass feedstock can be directly measured and converted to CO2e using a default factor. The feedstock quantity will also determine the feedstock-related emissions per ton of biochar produced (see Feedstock storage counterfactual, Feedstock replacement emissions, and Indirect land use change).",
+      "description": "The mass of biomass feedstock can be directly measured and converted to CO\u2082e using a default factor. The feedstock quantity will also determine the feedstock-related emissions per ton of biochar produced (see Feedstock storage counterfactual, Feedstock replacement emissions, and Indirect land use change).",
       "notes": ""
     },
     {
@@ -29,7 +29,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "low",
-      "description": "Biochar carbon content can be sampled to estimate the total mass of carbon in produced biochar and converted to CO2e using a default factor. Mass of carbon in produced biochar can be compared to the mass of carbon in the biomass feedstock to estimate the CO2 emitted during the biomass transformation process. This quantity can also be checked for consistency against operational data and expected conversion efficiency of the pyrolyzer. In addition to characterizing carbon content, a sampling protocol for produced biochar should characterize the physical and chemical characteristics that inform the expected durability of biochar (e.g. elemental ratios, volatile and ash content, porosity; see Biochar degradation) and the impact of biochar application (e.g. water retention, surface area, surface charge, liming capacity, heavy metal content, or polyaromatic hydrocarbon and polychlorinated biphenyls; see Soil carbon impacts, Change in agricultural lime use, Change in fertilizer use, Change in agricultural yields). The conversion efficiency, structure, and chemistry of produced biochar are contingent on the specific feedstock and operating conditions of the pyrolyzer, and a sampling regime should be designed accordingly.",
+      "description": "Biochar carbon content can be sampled to estimate the total mass of carbon in produced biochar and converted to CO\u2082e using a default factor. Mass of carbon in produced biochar can be compared to the mass of carbon in the biomass feedstock to estimate the CO\u2082 emitted during the biomass transformation process. This quantity can also be checked for consistency against operational data and expected conversion efficiency of the pyrolyzer. In addition to characterizing carbon content, a sampling protocol for produced biochar should characterize the physical and chemical characteristics that inform the expected durability of biochar (e.g. elemental ratios, volatile and ash content, porosity; see Biochar degradation) and the impact of biochar application (e.g. water retention, surface area, surface charge, liming capacity, heavy metal content, or polyaromatic hydrocarbon and polychlorinated biphenyls; see Soil carbon impacts, Change in agricultural lime use, Change in fertilizer use, Change in agricultural yields). The conversion efficiency, structure, and chemistry of produced biochar are contingent on the specific feedstock and operating conditions of the pyrolyzer, and a sampling regime should be designed accordingly.",
       "notes": ""
     },
     {
@@ -42,7 +42,7 @@
       "responsibility": "system",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "low",
-      "description": "While nearly all biomass carbon eventually makes its way back to the atmosphere, the effective drawdown from making biochar occurs when the carbon content of the feedstock would otherwise have been released in the form of atmospheric CO2. If the counterfactual fate of the biomass feedstock would have resulted in little to no carbon storage \u2014 for example, burning or rapid decomposition \u2014 any durable storage achieved by biochar represents additional carbon removal. If, however, the counterfactual fate of the biomass feedstock would have resulted in medium-to-long term carbon storage \u2014 for example in soils or slow degrading environments \u2014 the mass of stored carbon in the counterfactual should not count as additional carbon removal until counterfactual emissions would have occurred.",
+      "description": "While nearly all biomass carbon eventually makes its way back to the atmosphere, the effective drawdown from making biochar occurs when the carbon content of the feedstock would otherwise have been released in the form of atmospheric CO\u2082. If the counterfactual fate of the biomass feedstock would have resulted in little to no carbon storage \u2014 for example, burning or rapid decomposition \u2014 any durable storage achieved by biochar represents additional carbon removal. If, however, the counterfactual fate of the biomass feedstock would have resulted in medium-to-long term carbon storage \u2014 for example in soils or slow degrading environments \u2014 the mass of stored carbon in the counterfactual should not count as additional carbon removal until counterfactual emissions would have occurred.",
       "notes": ""
     },
     {
@@ -74,6 +74,19 @@
     {
       "number": "6",
       "category": "drawdown",
+      "component_id": "bio_degrade",
+      "name": "Biochar degradation",
+      "quantification_target": "mass of carbon lost from biochar over storage time horizon",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "system",
+      "uncertainty_impact_min": "medium",
+      "uncertainty_impact_max": "very high",
+      "description": "Since biochar degrades over time, any claim about the volume of total carbon removal facilitated by biochar should be accompanied by a clear claim about the associated time horizon of storage. The degradation of biochar applied to soils is contingent on the physical and chemical characteristics of biochar (see Biomass transformation) and the environment in which it is applied. Simple models relating biochar elemental ratios or volatile matter content to its stability may provide some indication of expected longevity of carbon storage \u2014 and by extension, the mass of carbon remaining in biochar over a specified time horizon. However, these models do not extrapolate with confidence over long time horizons or capture variability critical environmental factors that drive degradation like climate, temperature, moisture, soil type and texture, and microbial and fungal communities. Estimates of carbon lost from biochar should also take into account the potential for biochar\u2019s environment to change through time, for example by eroding off of agricultural fields or migrating through the soil column. Better characterizing biochar degradation is an active area of research. Note that although this component specifically focuses on biochar applied to soils, biochar could be stored (e.g. buried at depth) or productized (e.g. embedded in concrete) in a way that constrains degradation uncertainty.",
+      "notes": ""
+    },
+    {
+      "number": "7*",
+      "category": "drawdown",
       "component_id": "soil_c",
       "name": "Soil carbon impacts",
       "quantification_target": "soil carbon stock change",
@@ -81,11 +94,11 @@
       "responsibility": "project",
       "uncertainty_impact_min": "not characterized",
       "uncertainty_impact_max": "not characterized",
-      "description": "Adding biochar to soils has the potential to induce changes to soil carbon (beyond the carbon embodied in the biochar), including by affecting pH or impacting plant or microbial activity. Theoretically, these impacts could increase or decrease soil organic carbon (SOC) storage (i.e. the priming effect), and are highly dependent on the physical and chemical properties of the applied biochar (see Biomass Transformation) and environment of application. If biochar application increases SOC storage beyond the carbon embodied in the biochar, we recommend that these changes not be used to counterbalance project-related fossil CO2 emissions nor counted as additional durable carbon removal due to the impermanence of soil carbon storage.",
+      "description": "Adding biochar to soils has the potential to induce changes to soil carbon (beyond the carbon embodied in the biochar), including by affecting pH or impacting plant or microbial activity. Theoretically, these impacts could increase or decrease soil organic carbon (SOC) storage (i.e. the priming effect), and are highly dependent on the physical and chemical properties of the applied biochar (see Biomass Transformation) and environment of application. If biochar application increases SOC storage beyond the carbon embodied in the biochar, we recommend that these changes not be used to counterbalance project-related fossil CO\u2082 emissions nor counted as additional durable carbon removal due to the impermanence of soil carbon storage.",
       "notes": ""
     },
     {
-      "number": "7",
+      "number": "8*",
       "category": "emissions",
       "component_id": "lime_reduce",
       "name": "Change in agricultural lime use",
@@ -98,7 +111,7 @@
       "notes": ""
     },
     {
-      "number": "8",
+      "number": "9*",
       "category": "emissions",
       "component_id": "fert_reduce",
       "name": "Change in fertilizer use",
@@ -111,7 +124,7 @@
       "notes": ""
     },
     {
-      "number": "9",
+      "number": "10*",
       "category": "emissions",
       "component_id": "yield_change",
       "name": "Change in agricultural yields",
@@ -121,19 +134,6 @@
       "uncertainty_impact_min": "not characterized",
       "uncertainty_impact_max": "not characterized",
       "description": "If applied to agricultural soils, biochar could impact agricultural yields, which is critical for understanding the broader impact of biochar use. While most literature suggests the potential for positive impacts on yields (dependent on biochar type and application strategy), there is some evidence documenting negative impacts on yields. Due to the potentially difficult nature of the counterfactual scenarios involved, we recommend this component not be included in the accounting of net carbon removal. If biochar application increases agricultural yields and by extension leads to avoided emissions, we conservatively recommend that these changes not be used to counterbalance project emissions nor counted as additional durable carbon removal.",
-      "notes": ""
-    },
-    {
-      "number": "10",
-      "category": "emissions",
-      "component_id": "bio_degrade",
-      "name": "Biochar degradation",
-      "quantification_target": "mass of carbon lost from biochar over storage time horizon",
-      "uncertainty_type": ["scientific"],
-      "responsibility": "system",
-      "uncertainty_impact_min": "medium",
-      "uncertainty_impact_max": "very high",
-      "description": "Since biochar degrades over time, any claim about the volume of total carbon removal facilitated by biochar should be accompanied by a clear claim about the associated time horizon of storage. The degradation of biochar applied to soils is contingent on the physical and chemical characteristics of biochar (see Biomass transformation) and the environment in which it is applied. Simple models relating biochar elemental ratios or volatile matter content to its stability may provide some indication of expected longevity of carbon storage \u2014 and by extension, the mass of carbon remaining in biochar over a specified time horizon. However, these models do not extrapolate with confidence over long time horizons or capture variability critical environmental factors that drive degradation like climate, temperature, moisture, soil type and texture, and microbial and fungal communities. Estimates of carbon lost from biochar should also take into account the potential for biochar\u2019s environment to change through time, for example by eroding off of agricultural fields or migrating through the soil column. Better characterizing biochar degradation is an active area of research. Note that although this component specifically focuses on biochar applied to soils, biochar could be stored (e.g. buried at depth) or productized (e.g. embedded in concrete) in a way that constrains degradation uncertainty.",
       "notes": ""
     },
     {

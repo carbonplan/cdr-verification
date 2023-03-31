@@ -21,6 +21,7 @@ gc = gspread.authorize(credentials)
 
 gsheet_doc_name = 'NEW_CDR MRV Pathway Uncertainties'
 avail_pathways = ['DAC', 'BiCRS','EW','TER_BIO','OCEAN_BIO_no_harvest','OCEAN_BIO_harvest','OAE_echem','OAE_mineral', 'DOR','BIOCHAR','ALK_WASTE_MIN']
+avail_pathways = ['DOR']
 
 
 
