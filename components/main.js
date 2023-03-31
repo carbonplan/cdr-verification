@@ -54,11 +54,7 @@ const Main = ({ pathway, pathways, settings, setSettings }) => {
   const DiagramComponent = FLOW_DIAGRAMS[pathway_id][version]
 
   return (
-    <ComponentProvider
-      pathways={pathways}
-      pathway={pathway_id}
-      onComponentChange={closeTray}
-    >
+    <ComponentProvider pathway={pathway} onComponentChange={closeTray}>
       <Page
         sidebar={
           <>

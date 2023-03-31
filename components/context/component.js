@@ -15,13 +15,10 @@ const ComponentContext = createContext({
 })
 
 export const useComponent = (component_id) => {
-  const { active, setActive, hovered, setHovered, pathway, pathways } =
+  const { active, setActive, hovered, setHovered, pathway } =
     useContext(ComponentContext)
   const data = useMemo(
-    () =>
-      pathways
-        .find((p) => p.pathway_id === pathway)
-        .components.find((d) => d.component_id === component_id),
+    () => pathway.components.find((d) => d.component_id === component_id),
     [component_id, pathway]
   )
 
@@ -49,12 +46,7 @@ export const useComponentContext = () => {
   return useContext(ComponentContext)
 }
 
-export const ComponentProvider = ({
-  pathways,
-  pathway,
-  onComponentChange,
-  children,
-}) => {
+export const ComponentProvider = ({ pathway, onComponentChange, children }) => {
   const [active, setActive] = useState(null)
   const [hovered, setHovered] = useState(null)
 
@@ -74,7 +66,6 @@ export const ComponentProvider = ({
   return (
     <ComponentContext.Provider
       value={{
-        pathways,
         pathway,
         active,
         setActive: handleActiveChange,
