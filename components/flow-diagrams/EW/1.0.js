@@ -1,6 +1,6 @@
-import Rectangle from './rectangle'
-import Grid from './grid'
-import Arrow from './arrow'
+import Rectangle from '../rectangle'
+import Grid from '../grid'
+import Arrow from '../arrow'
 
 const Flow = () => {
   return (
@@ -35,7 +35,7 @@ const Flow = () => {
 
       <Arrow start={[8, 9]} length={2} right />
 
-      <Rectangle width={4} id='wp' start={[11, 7]} />
+      <Rectangle width={4} id='nwp' start={[11, 7]} />
 
       <Arrow start={[16, 9]} length={1} right hideArrow />
       <Arrow start={[17, 6]} length={6} up hideArrow />
@@ -50,23 +50,19 @@ const Flow = () => {
 
       <Rectangle id='carb_surf_durability' start={[30, 5]} />
 
-      <Arrow start={[27, 12]} length={4} right />
+      <Arrow start={[23, 15]} length={2} down />
       <Rectangle
         id='evasion'
-        start={[31, 12]}
+        start={[21, 19]}
         width={4}
         height={1}
         borderStyle='none'
       />
 
-      <Arrow start={[23, 15]} length={2} down />
-      <Rectangle height={3} start={[20, 18]} label='Ocean storage' />
-      <Arrow start={[23, 22]} length={2} up />
-      <Rectangle id='tau_alk' height={3} start={[20, 25]} />
-      <Arrow start={[27, 19]} length={2} right />
-      <Rectangle id='carb_marine' height={3} start={[30, 18]} />
-      <Arrow start={[33, 22]} length={2} up />
-      <Rectangle id='tau_carb_marine' height={3} start={[30, 25]} />
+      <Arrow start={[27, 12]} length={2} right />
+      <Rectangle height={3} start={[30, 11]} label='Ocean storage' />
+      <Arrow start={[33, 15]} length={2} up />
+      <Rectangle id='tau_dic' height={3} start={[30, 18]} />
 
       <Arrow start={[5, 12]} length={2} down />
 

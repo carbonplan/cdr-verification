@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Box, Flex, Divider } from 'theme-ui'
 import { Badge, Row, Column, Filter, Link } from '@carbonplan/components'
 import { useRouter } from 'next/router'
@@ -17,7 +17,7 @@ import Equation from './equation'
 import legend from '../data/legend.json'
 import Description from './description'
 
-const Main = ({ pathways, settings, setSettings }) => {
+const Main = ({ archival, pathway, pathways, settings, setSettings }) => {
   const router = useRouter()
   const [filters, setFilters] = useState({
     drawdown: true,
@@ -27,10 +27,6 @@ const Main = ({ pathways, settings, setSettings }) => {
   const [sort, setSort] = useState('component')
   const [expanded, setExpanded] = useState(false)
 
-  const pathway = useMemo(
-    () => pathways.find((p) => p.pathway_id === router.query.id) ?? pathways[0],
-    [router.query.id]
-  )
   const {
     pathway_id,
     components,
@@ -55,13 +51,28 @@ const Main = ({ pathways, settings, setSettings }) => {
     router.replace(`/research/cdr-verification/${name}`)
   })
 
+  const DiagramComponent = FLOW_DIAGRAMS[pathway_id][version]
+
   return (
-    <ComponentProvider
-      pathways={pathways}
-      pathway={pathway_id}
-      onComponentChange={closeTray}
-    >
+    <ComponentProvider pathway={pathway} onComponentChange={closeTray}>
       <Page
+        notice={
+          archival ? (
+            <Box sx={{ fontSize: 2, color: 'secondary' }}>
+              This is an archival representation of{' '}
+              <Link
+                href={`/research/cdr-verification/docs/pathways/${pathway_id}`}
+              >
+                v{version}
+              </Link>{' '}
+              of this pathway. View the latest version{' '}
+              <Link href={`/research/cdr-verification/${pathway_id}`}>
+                here
+              </Link>
+              .
+            </Box>
+          ) : null
+        }
         sidebar={
           <>
             <Box
@@ -203,7 +214,7 @@ const Main = ({ pathways, settings, setSettings }) => {
         trayContent={
           settings && (
             <>
-              <Box sx={{ mb: 4 }}>{FLOW_DIAGRAMS[pathway_id]}</Box>
+              <Box sx={{ mb: 4 }}>{<DiagramComponent />}</Box>
               <Equation components={components} equation={equation} />
             </>
           )
@@ -220,7 +231,7 @@ const Main = ({ pathways, settings, setSettings }) => {
 
         <Row columns={[6, 6, 7, 7]}>
           <Column start={[1, 1, 1, 1]} width={[6, 6, 7, 5]}>
-            <Box sx={{ mb: 5 }}>{FLOW_DIAGRAMS[pathway_id]}</Box>
+            <Box sx={{ mb: 5 }}>{<DiagramComponent />}</Box>
           </Column>
         </Row>
       </Page>

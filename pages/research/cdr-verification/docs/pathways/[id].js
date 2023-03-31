@@ -29,7 +29,12 @@ const PathwayDocumentation = ({ options, pathway, metadata }) => {
     const sorted = revisions.sort(
       (a, b) => Number(b.version) - Number(a.version)
     )
-    return { [sorted[0].version]: `/research/cdr-verification/${pathway_id}` }
+    return revisions.reduce((accum, { version }) => {
+      accum[version] = `/research/cdr-verification/${pathway_id}/${
+        sorted[0].version === version ? '' : version
+      }`
+      return accum
+    }, {})
   }, [pathway_id, revisions])
 
   return (

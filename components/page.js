@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Box, Container } from 'theme-ui'
 import { Row, Column, Tray } from '@carbonplan/components'
 
-const Page = ({ children, trayExpanded, trayContent, sidebar }) => {
+const Page = ({ children, trayExpanded, trayContent, notice, sidebar }) => {
   useEffect(() => {
     const [body] = document.getElementsByTagName('body')
     if (trayExpanded) {
@@ -14,21 +14,42 @@ const Page = ({ children, trayExpanded, trayContent, sidebar }) => {
     }
   }, [trayExpanded])
 
+  const headerHeight = notice ? 56 + 42 : 56
+
   return (
     <Box>
       <Container>
         <Row>
+          {notice && (
+            <Column
+              start={1}
+              width={[6, 8, 12, 12]}
+              sx={{
+                position: 'sticky',
+                top: 56,
+                py: 2,
+                px: [4, 5, 5, 6],
+                mx: [-4, -5, -5, -6],
+                minHeight: '42px',
+                backgroundColor: 'background',
+                zIndex: 3,
+                borderBottom: ({ colors }) => `solid 1px ${colors.muted}`,
+              }}
+            >
+              {notice}
+            </Column>
+          )}
           <Column
             start={1}
             width={[6, 8, 4, 4]}
             sx={{
               position: ['relative', 'relative', 'sticky', 'sticky'],
-              top: [0, 0, 56, 56],
+              top: [0, 0, headerHeight, headerHeight],
               height: [
                 'auto',
                 'auto',
-                'calc(100vh - 56px)',
-                'calc(100vh - 56px)',
+                `calc(100vh - ${headerHeight}px)`,
+                `calc(100vh - ${headerHeight}px)`,
               ],
               overflowY: ['auto', 'auto', 'scroll', 'scroll'],
               pl: [4, 5, 5, 6],
