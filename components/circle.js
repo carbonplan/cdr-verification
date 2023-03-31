@@ -22,17 +22,24 @@ const Circle = ({ component_id, sx, ...props }) => {
       break
   }
 
+  const number = data.number.replace('*', '')
+  const dashed = data.number.includes('*')
   const color = CATEGORY_COLORS[data.category] ?? 'secondary'
-  const Icon = CIRCLE_ICONS[data.number]
+
+  const Icon = CIRCLE_ICONS[number]
 
   if (!Icon) {
-    console.warn(`No icon found for component_id: ${component_id}`)
+    console.warn(`No icon found for number: ${number}`)
     return null
   }
 
   return (
     <Box sx={sx} {...props}>
-      <Icon color={mixer(color)} background={theme.colors.background} />
+      <Icon
+        color={mixer(color)}
+        background={theme.colors.background}
+        dashed={dashed}
+      />
     </Box>
   )
 }
