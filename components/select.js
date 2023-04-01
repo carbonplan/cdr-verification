@@ -1,3 +1,5 @@
+import { Button } from '@carbonplan/components'
+import { RotatingArrow } from '@carbonplan/icons'
 import { useMemo, useRef } from 'react'
 import { Box, Flex } from 'theme-ui'
 
@@ -5,7 +7,7 @@ const Select = ({
   value,
   options,
   onChange,
-  version,
+  versionInfo,
   size: rawSize = 'lg',
   sx,
 }) => {
@@ -103,10 +105,17 @@ const Select = ({
       </Box>
       <Box sx={{ fontSize }}>
         {selectedLabel}
-        {version && (
-          <Box
-            as='span'
+        {versionInfo && (
+          <Button
+            href={versionInfo.href}
+            suffix={
+              <RotatingArrow
+                size='xs'
+                sx={{ mt: ['-2px', '-2px', '-2px', '-3px'] }}
+              />
+            }
             sx={{
+              display: 'inline-block',
               color: 'secondary',
               fontSize: 0,
               fontFamily: 'mono',
@@ -114,8 +123,8 @@ const Select = ({
               ml: 2,
             }}
           >
-            v{version}
-          </Box>
+            v{versionInfo.version}
+          </Button>
         )}
       </Box>
     </Flex>

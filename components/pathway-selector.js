@@ -19,7 +19,10 @@ const PathwaySelector = ({
       value={pathway}
       options={options}
       onChange={setPathway}
-      version={version}
+      versionInfo={{
+        version,
+        href: `/research/cdr-verification/docs/pathways/${pathway}`,
+      }}
       sx={sx}
       size={size}
     />
