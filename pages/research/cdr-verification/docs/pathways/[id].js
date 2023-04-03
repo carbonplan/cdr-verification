@@ -99,8 +99,13 @@ const PathwayDocumentation = ({ options, pathway, metadata }) => {
 
         {contributors.length > 0 && (
           <Column start={1} width={[6, 6, 6, 6]} sx={{ mt: 6 }}>
-            <Box sx={{ fontSize: 4 }}>Contributors</Box>
-
+            <Box sx={{ fontSize: 4 }}>Acknowledgments</Box>
+            <Box sx={{ fontSize: 1, mt: 2 }}>
+              This framework has been shaped by input and feedback from external
+              experts, including CDR companies, scientists, and other CDR
+              ecosystem actors. Any remaining mistakes or mischaracterizations
+              are the authors’ sole responsibility.
+            </Box>
             <Contributors contributors={contributors} sx={{ mt: 3 }} />
           </Column>
         )}
