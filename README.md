@@ -10,6 +10,7 @@
 [![GitHub][github-badge]][github]
 [![Build Status]][actions]
 ![MIT License][]
+[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.5819475-blue?style=flat-square)](https://doi.org/10.5281/zenodo.7796340)
 
 [github]: https://github.com/carbonplan/cdr-mrv
 [github-badge]: https://badgen.net/badge/-/github?icon=github&label
