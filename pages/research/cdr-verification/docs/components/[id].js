@@ -90,29 +90,40 @@ const ComponentDocumentation = ({ component, options, pathways }) => {
 
         <Column start={1} width={[6, 6, 4, 4]} sx={{ mt: 6 }}>
           <Box sx={{ fontSize: 4 }}>Applicable pathways</Box>
-          <Flex sx={{ mt: 3, flexDirection: 'column', gap: 4 }}>
-            {pathways.map(({ pathway_id, pathway_name, VCL }) => (
-              <Row key={pathway_id} columns={[6, 6, 4, 4]}>
-                <Column start={1} width={[5, 5, 3, 3]}>
-                  <Button
-                    href={`/research/cdr-verification/${pathway_id}`}
-                    inverted
-                    size='xs'
-                    suffix={<RotatingArrow />}
-                  >
-                    {pathway_name}
-                  </Button>
-                </Column>
+          <Row columns={[6, 6, 4, 4]} sx={{ fontFamily: 'heading', mt: 3 }}>
+            <Column start={1} width={[5, 5, 3, 3]}>
+              Pathway
+            </Column>
 
-                <Column
-                  start={[6, 6, 4, 4]}
-                  width={1}
-                  sx={{ textAlign: 'right' }}
-                >
-                  <Badge>{VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')}</Badge>
-                </Column>
-              </Row>
-            ))}
+            <Column start={[6, 6, 4, 4]} width={1} sx={{ textAlign: 'right' }}>
+              VCL
+            </Column>
+          </Row>
+          <Flex sx={{ mt: 3, flexDirection: 'column', gap: 4 }}>
+            {pathways
+              .sort((a, b) => a.pathway_name.localeCompare(b.pathway_name))
+              .map(({ pathway_id, pathway_name, VCL }) => (
+                <Row key={pathway_id} columns={[6, 6, 4, 4]}>
+                  <Column start={1} width={[5, 5, 3, 3]}>
+                    <Button
+                      href={`/research/cdr-verification/${pathway_id}`}
+                      inverted
+                      size='xs'
+                      suffix={<RotatingArrow />}
+                    >
+                      {pathway_name}
+                    </Button>
+                  </Column>
+
+                  <Column
+                    start={[6, 6, 4, 4]}
+                    width={1}
+                    sx={{ textAlign: 'right' }}
+                  >
+                    <Badge>{VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')}</Badge>
+                  </Column>
+                </Row>
+              ))}
           </Flex>
         </Column>
         <Column start={1} width={[6, 6, 4, 4]} sx={{ mt: 6 }}>
