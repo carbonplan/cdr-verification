@@ -1,11 +1,10 @@
 import { Figure, Table, TableCaption } from '@carbonplan/components'
-import { Supplement } from '@carbonplan/layouts'
-import { MDXProvider, useMDXComponents } from '@mdx-js/react'
-import UncertaintyDimensions from '../../components/methods/uncertainty-dimensions'
-import VCLTable from '../../components/methods/vcl-table'
+import UncertaintyDimensions from './uncertainty-dimensions'
+import VCLTable from './vcl-table'
+import Contributors from './contributors'
 
 export const frontMatter = {
-  date: '09-19-2022',
+  date: '04-05-2023',
   title: 'CDR Verification Framework — Methods',
   card: 'cdr-verification-explainer',
   quickLook: 'Methods for our CDR Verification Framework',
@@ -16,16 +15,19 @@ export const frontMatter = {
 
 A system for CDR MRV must produce robust, quantitative estimates of net carbon removal and storage durability for different CDR pathways. Since CDR pathways are diverse in their approach and maturity, the tools available to make those estimates vary greatly — as do their associated uncertainties.
 
-With the aim of contributing to a solid foundation for future conversations about CDR MRV, Frontier and CarbonPlan collaborated to develop an [interactive tool](https://carbonplan.org/research/cdr-verification) that allows users to explore the quantification capacity and key uncertainties we see in different CDR pathways today. The interactive tool currently includes our assessment of six CDR pathways:
+With the aim of contributing to a solid foundation for future conversations about CDR MRV, Frontier and CarbonPlan are collaborating to develop and maintain an [interactive tool](https://carbonplan.org/research/cdr-verification) that allows users to explore the quantification capacity and key uncertainties we see in different CDR pathways today. The interactive tool currently includes our assessment of nine CDR pathways:
 
-- Direct air capture (DAC)
+- Alkaline waste mineralization
 - Biomass carbon removal and storage (BiCRS)
-- Enhanced weathering
+- Biochar
+- Direct air capture (DAC)
+- Direct ocean removal (DOR)
+- Enhanced weathering (EW)
 - Ocean alkalinity enhancement (OAE)
-- Terrestrial biomass sinking
 - Ocean biomass sinking
+- Terrestrial biomass sinking
 
-We chose these pathways based on approaches that are currently a part of [Stripe’s permanent CDR portfolio](https://stripe.com/climate). This is not an exhaustive set of long-duration CDR approaches, and we hope to assess additional CDR pathways in the future.
+This is not an exhaustive set of long-duration CDR approaches, and we plan to assess additional CDR pathways in the future.
 
 For each CDR pathway, we identified components of the process that must be quantified via an MRV process to estimate the net carbon removal or storage durability achieved. For each component, we identified the current “best practice” approach to quantification, characterized the associated uncertainty, and reflected our perspective on who should be responsible for improving quantification methods and reducing uncertainty over time.
 
@@ -39,7 +41,7 @@ Robust quantification of carbon removal and storage durability is critical for u
 
 The goal of our uncertainty mapping is to systematically identify (1) what needs to be quantified to estimate net carbon removal and carbon storage durability, (2) what can be measured or modeled today to make those estimates, and (3) what uncertainties remain even when relying on the best available quantification approaches. Since CDR pathways are diverse in approach and maturity, the tools available to make key quantitative estimates vary greatly — as do their associated uncertainties.
 
-With input from more than 30 CDR companies, external scientific experts, and system actors, we identified a set of quantification components for each CDR pathway that govern estimates of net carbon removal and storage durability.
+With input from CDR companies, external scientific experts, and system actors (see Acknowledgements for a full list), we identified a set of quantification components for each CDR pathway that govern estimates of net carbon removal and storage durability.
 
 No quantification approach can perfectly estimate real-world outcomes because all measurements and models are subject to uncertainty. Some approaches to quantification are characterized by low uncertainty, and accordingly support a relatively high-confidence understanding of real-world outcomes. Other approaches are characterized by higher uncertainty, and do much less to constrain our understanding. As a result, a rigorous quantification approach should characterize uncertainty alongside estimates of key outcomes.
 
@@ -74,6 +76,24 @@ Finally, we labeled each component to indicate our perspective on who should be 
 In cases where uncertainty depends on a project’s operational choices or could be appropriately addressed through project-specific R&D efforts, we assigned project responsibility. In cases where reducing uncertainty requires broader scientific research or cross-project coordination that cannot (or should not) be carried out by a single project, we assigned system responsibility.
 
 With the system responsibility classification, our intent is not to imply that projects can ignore these uncertainties, but rather to emphasize that some differentiation exists between developing deployment capacity and working on the fundamental science. We believe fundamental science should be shared across the field rather than being the responsibility or intellectual property of a single project. Incentive systems, in turn, must be thoughtfully designed to encourage project contributions to reducing system uncertainties.
+
+## Verification Confidence Levels (VCLs)
+
+To summarize the uncertainty mapping, we developed the Verification Confidence Level (VCL) metric. The VCL range for each pathway assesses the extent to which net carbon removal and durability can be confidently quantified using the best approaches available today. We hope the field will work together to shift these VCL ranges to the right over time, and in the process, determine which CDR approaches should scale.
+
+Our analysis of a pathway’s component uncertainties directly determines its VCL range. Specifically, we determine a pathway’s VCL by counting the number of components with a medium, high, or very high uncertainty impact.
+
+<Figure>
+  <VCLTable />
+</Figure>
+
+Constructing the VCL based on the count of medium, high, or very high uncertainties does mean that pathways with more steps are more likely to receive a low VCL. If the component uncertainties are independent, we think this is an appropriate outcome. For example, the chain of uncertainties within the ocean biomass sinking pathway are unlikely to be correlated — the uncertainty around macroalgae cultivation is not correlated to the uncertainty around air-sea gas exchange. In contrast, this construction could be problematic if component uncertainties are correlated. For example, in BiCRS, the uncertainties associated with the counterfactual feedstock storage, counterfactual feedstock use, and indirect land use change are all a function of the choice of feedstock — and therefore the presence of multiple uncertainty components could bias VCL assignments to this pathway downward.
+
+In some cases, different components reflect the same underlying uncertainty. For example, long-term leakage of CO2 from a storage reservoir could be understood as a drawdown uncertainty or a durability uncertainty. In such cases, we may exclude a component from the VCL calculation to avoid double counting uncertainty across components. This is reflected explicitly in the component text.
+
+Most pathways are associated with a range of VCLs, rather than a single VCL, due to the diversity of approaches within a given pathway. To continue the example used above, an ocean alkalinity enhancement (OAE) project could introduce alkalinity directly (e.g., via aqueous NaOH) or in a mineral form that has to dissolve to release alkalinity (e.g., olivine). The dissolution and precipitation dynamics of the mineral approach lead to significant uncertainty about how much alkalinity is actually introduced to the surface ocean and therefore how much carbon removal occurs. As a result, we classify mineral-based OAE as VCL 1-2, direct alkalinity addition as VCL 3, and the OAE pathway as a whole as VCL 1-3. A pathway-level VCL does not guarantee that individual projects within that pathway are executing on best practice quantification approaches. For example, even though OAE is classified as VCL 2-3, an OAE project could fail to carefully characterize their alkalinity additions and functionally be at VCL 1.
+
+Like the uncertainty mapping, the pathway VCL ranges represent a current snapshot of the field that will change over time through research and innovation. Investing in low-VCL pathways to reduce uncertainties will help enable the development of novel CDR approaches with high potential. In short, we think a low VCL should be a barrier to scaling, but not a barrier to exploration.
 
 ## Uncertainty mapping — Methodological decisions
 
@@ -117,66 +137,34 @@ When considering project MRV, the issue of counterfactuals is both challenging a
 
 In general, we focus on counterfactuals about existing uses and their associated secondary effects rather than potential uses in the future. For example, we think agricultural feedstocks for biomass carbon removal and storage (BiCRS) should be evaluated based on their current utilization (e.g., for animal feed or soil nutrients) rather than potential future uses that are not normally practiced today (e.g., use in alternative bioenergy applications). We recognize that the counterfactual for existing utilization should also be flexible to be reevaluated in the future if prevailing practices change.
 
-## Verification Confidence Levels (VCLs)
-
-To summarize the uncertainty mapping, we developed the Verification Confidence Level (VCL) metric. The VCL range for each pathway assesses the extent to which net carbon removal and durability can be confidendently quantified using the best approaches available today. We hope the field will work together to shift these VCL ranges to the right over time, and in the process, determine which CDR approaches should scale.
-
-Our analysis of a pathway’s component uncertainties directly determines its VCL range. Specifically, we determine a pathway’s VCL by counting the number of components with a medium, high, or very high uncertainty impact.
-
-<Figure>
-  <VCLTable />
-</Figure>
-
-Constructing the VCL based on the count of medium, high, or very high uncertainties does mean that pathways with more steps are more likely to receive a low VCL. If the component uncertainties are independent, we think this is an appropriate outcome. For example, the chain of uncertainties within the ocean biomass sinking pathway are unlikely to be correlated — the uncertainty around macroalgae cultivation is not correlated to the uncertainty around air-sea gas exchange. In contrast, this construction could be problematic if component uncertainties are correlated. For example, in BiCRS, the uncertainties associated with the counterfactual feedstock storage, counterfactual feedstock use, and indirect land use change are all a function of the choice of feedstock — and therefore the presence of multiple uncertainty components could bias VCL assignments to this pathway downward.
-
-Most pathways are associated with a range of VCLs, rather than a single VCL, due to the diversity of approaches within a given pathway. To continue the example used above, an ocean alkalinity enhancement (OAE) project could introduce alkalinity directly (e.g., via aqueous NaOH) or in a mineral form that has to dissolve to release alkalinity (e.g., olivine). The dissolution and precipitation dynamics of the mineral approach lead to significant uncertainty about how much alkalinity is actually introduced to the surface ocean and therefore how much carbon removal occurs. As a result, we classify mineral-based OAE as VCL 1-2, direct alkalinity addition as VCL 3, and the OAE pathway as a whole as VCL 1-3. A pathway-level VCL does not guarantee that individual projects within that pathway are executing on best practice quantification approaches. For example, even though OAE is classified as VCL 2-3, an OAE project could fail to carefully characterize their alkalinity additions and functionally be at VCL 1.
-
-Like the uncertainty mapping, the pathway VCL ranges represent a current snapshot of the field that will change over time through research and innovation. Investing in low-VCL pathways to reduce uncertainties will help enable the development of novel CDR approaches with high potential. In short, we think a low VCL should be a barrier to scaling, but not a barrier to exploration.
-
 ## Feedback & updates
 
 All of the content associated with this tool is publicly available and hosted on GitHub, and we welcome feedback on all aspects of our work.
 
-CarbonPlan and Frontier plan to continue collaborating to update this tool on at least an annual basis moving forward. We will use these periodic updates to reflect changes within pathways that are already included in the tool as the field evolves. We also hope to add pathways to the tool, like the mineralization of mine tailings, biochar, direct ocean capture, and terrestrial biomass burial.
+CarbonPlan and Frontier plan to continue collaborating to update this tool on at least an annual basis moving forward. We will use these periodic updates to reflect changes within pathways that are already included in the tool as the field evolves. We also hope to add pathways to the tool.
 
 Of course, we are committed to fixing any mistakes! If you identify a specific issue with our uncertainty characterization or pathway diagrams, please send us an email at hello@carbonplan.org. The uncertainty mapping reflects our independent analysis of the current state of the field, but we always have more to learn. If we got something wrong when we last updated the tool, we will fix it as quickly as possible.
 
 If you identify a general issue with our methods or the tool, please send us an email at hello@carbonplan.org. We are committed to updating and improving this framework over time, and will gladly consider suggestions or engage with potential collaborators.
+
+## Versioning
+
+We expect this tool to change and improve over time, and track these changes at three levels.
+
+Each pathway has a version history accessible in the tool that is maintained using [semantic versioning](https://medium.com/the-non-traditional-developer/semantic-versioning-for-dummies-45c7fe04a1f8). A major version change (e.g., v1.0 to v2.0) signifies that a pathway has been updated in a way that affects the VCL rating. A minor version change is used to reflect conceptual changes to a pathway that do not affect the VCL (e.g., v1.0 to v2.0).
+
+Each component has a revision history accessible in the tool that captures the date and justification for any edits. Component revisions may be reflected in the pathway versioning if they reflect conceptual changes or modify a pathway’s VCL. Small component revisions like typo correction or syntax improvement may not be captured in a corresponding pathway version change.
+
+The tool as a whole has versioned DOIs maintained via Zenodo. A new tool DOI version for each concerted round of tool updates — for example, the first release in September 2022 or the first round of updates to the Enhanced Weathering pathway released in February 2023. This allows users to cite a specific version of the entire tool, or cite all versions of the tool with an overarching DOI.
+
+All changes to the tool can additionally be tracked directly on [GitHub](https://github.com/carbonplan/cdr-verification/tree/main/data).
 
 ## Acknowledgments
 
 At multiple points in the process, we have received important input and feedback from external experts, including CDR companies, scientists, and other CDR ecosystem actors. Any remaining mistakes or mischaracterizations are the authors’ sole responsibility.
 
 <Figure>
-  <Table
-    columns={[3, 3, 3, 3]}
-    start={[
-      [1, 1, 1, 1],
-      [1, 2, 2, 2],
-    ]}
-    width={[
-      [3, 1, 1, 1],
-      [3, 2, 2, 2],
-    ]}
-    data={[
-      [
-        'CDR Companies',
-        'Charm, Ebb, Eion, Future Forest, Heirloom, Running Tide',
-      ],
-      [
-        'Scientific Experts',
-        'Bill Collins (LBNL), David Ho (University of Hawaiʻi at Mānoa), Fabiano Ximenes (NSW Government), Jens Hartmann (Institut für Geologie), Kate Maher (Stanford), Matt Long (NCAR), Newsha Ajami (LBNL), Pura Bithakre (LBNL), Sarah Saltzer (Stanford), Sophie Gill (University of Oxford), Susana García López (Heriod-Watt University)',
-      ],
-      [
-        'Ecosystem Actors',
-        'Antonius Gagern (Additional Ventures), Benjamin Tincq (Marble), Clea Kloster (Lowercarbon Capital), Dai Ellis, David Keith (Harvard Kennedy School / Carbon Engineering), Jamie Collins (Environmental Defense Fund), John Sanchez (Lowercarbon Capital), Marcelo Lejeune (Marble), Max Tuttman (Ad Hoc Group), Peter Minor (Carbon 180), Ryan Orbuch (Lowercarbon Capital)',
-      ],
-      [
-        'MRV Companies',
-        'Elizabeth Troein (Exponential), Mowgli Holmes (Submarine)',
-      ],
-    ]}
-  />
+  <Contributors contributors={props.contributors} />
 </Figure>
 
 ## Terms
@@ -189,15 +177,4 @@ F Chay, J Klitzke, Z Hausfather, K Martin, J Freeman, D Cullenward (2022) “CDR
 
 Please cite this methods doc as:
 
-F Chay, J Klitzke, Z Hausfather, K Martin, J Freeman, D Cullenward (2022) “CDR Verification Framework — methods” CarbonPlan [carbonplan.org/research/cdr-verification-methods](carbonplan.org/research/cdr-verification-methods)
-
-export default ({ children }) => {
-  const componentsWithStyles = useMDXComponents()
-  return (
-    <MDXProvider components={componentsWithStyles}>
-      <Supplement meta={frontMatter} back={frontMatter.back}>
-        {children}
-      </Supplement>
-    </MDXProvider>
-  )
-}
+F Chay, J Klitzke, Z Hausfather, K Martin, J Freeman, D Cullenward (2023) “CDR Verification Framework — methods” CarbonPlan [carbonplan.org/research/cdr-verification-methods](carbonplan.org/research/cdr-verification-methods)
