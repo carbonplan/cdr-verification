@@ -110,10 +110,8 @@ const Main = ({ archival, pathway, pathways, settings, setSettings }) => {
                 Frontier post
               </Link>
               , or{' '}
-              <Link href='https://carbonplan.org/research/cdr-verification-methods'>
-                methods
-              </Link>{' '}
-              for more detail.
+              <Link href='/research/cdr-verification-methods'>methods</Link> for
+              more detail.
             </Box>
 
             <Divider sx={{ mt: 5, mb: 0, mr: [0, 0, '-32px', '-48px'] }} />
