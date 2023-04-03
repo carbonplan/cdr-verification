@@ -1,7 +1,7 @@
 {
   "pathway_id": "alkaline-waste-mineralization",
   "pathway_name": "Alkaline Waste Mineralization",
-  "pathway_description": "Alkaline waste mineralization enhances the weathering process of alkaline waste streams (e.g. mine tailings or slag) to enhance the uptake and storage of atmospheric CO\u2082. Here, we specifically consider methods that primarily store atmospheric CO2 in the form of solid carbonates. This pathway is VCL 3-5, meaning that current quantification capacity can establish permanent carbon removal, but that for certain approaches, significant uncertainties remain.",
+  "pathway_description": "Alkaline waste mineralization enhances the weathering process of alkaline waste streams (e.g. mine tailings or slag) to enhance the uptake and storage of atmospheric CO\u2082. Here, we specifically consider methods that primarily store atmospheric CO\u2082 in the form of solid carbonates. This pathway is VCL 3-5, meaning that current quantification capacity can establish permanent carbon removal, but that for certain approaches, significant uncertainties remain.",
   "VCL": ["3", "5"],
   "equation": "(1-2-3) + (6+7+8)",
   "version": "1.0",
@@ -16,7 +16,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "high",
-      "description": "It is possible to calculate potential atmospheric removal by assuming full weathering of the alkaline feedstock to provide an absolute maximum ceiling value for potential CDR, against which any estimates of realized CDR should be compared. The mass of CO\u2082 captured through alkaline feedstock weathering and carbonate mineralization can be quantified by measuring CO\u2082 loss from air (e.g. using eddy covariance flux towers or dynamic closed chambers), measurement of carbonate chemistry parameters (e.g. pH, TA, or DIC), or measuring changes in mineral content. If measuring changes in mineral content, it is critical to carefully characterize the starting carbonate content and variability of the feedstock. It is likely that a combination of quantification approaches will be needed to bound outcomes. Calibrated reactive transport models may also play a role in estimating long-term trends of CO\u2082 uptake. Measurement and modeling approaches must take into account the potential for short-term cycles of absorption and outgassing.",
+      "description": "The mass of CO\u2082 captured through alkaline feedstock weathering and carbonate mineralization can be quantified by measuring CO\u2082 loss from air (e.g. using eddy covariance flux towers or dynamic closed chambers), measurement of carbonate chemistry parameters (e.g. pH, TA, or DIC), or measuring changes in mineral content. If measuring changes in mineral content, it is critical to carefully characterize the starting carbonate content and variability of the feedstock. It is likely that a combination of quantification approaches will be needed to bound outcomes. Calibrated reactive transport models may also play a role in estimating long-term trends of CO\u2082 uptake. Measurement and modeling approaches must take into account the potential for short-term cycles of absorption and outgassing.",
       "notes": ""
     },
     {
@@ -63,12 +63,12 @@
       "category": "emissions",
       "component_id": "non-carb_products",
       "name": "Non-carbonate weathering products",
-      "quantification_target": "portion of feedstock alkalinity that does not facilitate carbon storage",
+      "quantification_target": "emissions impact of non-carbonate weathering products",
       "uncertainty_type": ["execution"],
       "responsibility": "project",
-      "uncertainty_impact_min": "low",
-      "uncertainty_impact_max": "medium",
-      "description": "An enhanced weathering intervention may produce byproducts that do not facilitate carbon storage, for example if weathering is facilitated by non-carbonic acid. Valuable byproducts like hydrogen, metal extraction, or pollutant reduction may also be produced. We recommend that any avoided emissions associated with these valuable byproducts be excluded from the calculation of net carbon removal.",
+      "uncertainty_impact_min": "not characterized",
+      "uncertainty_impact_max": "not characterized",
+      "description": "An enhanced weathering intervention may produce byproducts that do not facilitate carbon storage, for example if weathering is facilitated by non-carbonic acid. Valuable byproducts (e.g. hydrogen or sulphuric acid) or services (e.g. metal extraction or pollutant reduction) may also be produced. Any avoided emissions associated with these valuable byproducts should not be counted as additional carbon removal, but could potentially be counted against project lifecycle emissions.",
       "notes": ""
     },
     {
@@ -118,9 +118,9 @@
       "quantification_target": "years of expected CO\u2082 storage",
       "uncertainty_type": ["execution"],
       "responsibility": "project",
-      "uncertainty_impact_min": "not characterized",
-      "uncertainty_impact_max": "not characterized",
-      "description": "Although carbonates may have complex dynamics of dissolution and reprecipitation, there is a high likelihood of at least tens to hundreds of thousands of years of durability. The estimated durability of carbonates is also contingent on the determination of what carbonate is produced, the planned treatment of the carbonates, and their exposure to environmental conditions that facilitate weathering (see Carbonate Weathering).",
+      "uncertainty_impact_min": "negligible",
+      "uncertainty_impact_max": "low",
+      "description": "Although carbonates may have complex dynamics of dissolution and reprecipitation, there is a high likelihood of at least tens to hundreds of thousands of years of durability in the absence of exposure to heat or acid. The estimated durability of carbonates is also contingent on the determination of what carbonate is produced, the planned treatment of the carbonates, and their exposure to environmental conditions that facilitate weathering (see Carbonate Weathering).",
       "notes": ""
     },
     {
@@ -131,8 +131,8 @@
       "quantification_target": "years of expected CO\u2082 storage via utilization",
       "uncertainty_type": ["execution"],
       "responsibility": "project",
-      "uncertainty_impact_min": "not characterized",
-      "uncertainty_impact_max": "not characterized",
+      "uncertainty_impact_min": "negligible",
+      "uncertainty_impact_max": "low",
       "description": "Produced carbonates may be used, for example in industrial processes, as building materials, or as soil amendments. The source of utilization may lead to stable storage (see Storage), carbonate degradation and release of CO\u2082 (see Leakage) or carbonate weathering and further storage of CO\u2082 (see Carbonate weathering).",
       "notes": ""
     }

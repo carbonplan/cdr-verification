@@ -1,39 +1,52 @@
 {
-  "pathway_id": "ocean-alkalinity-enhancement-electrochemical",
-  "pathway_name": "Ocean Alkalinity Enhancement (Electrochemical)",
-  "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance the uptake and storage of atmospheric CO\u2082. Here, we specifically consider OAE that is facilitated by electrochemical separation, which removes acidity from seawater and returns a more basic solution to enhance ocean alkalinity. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain.",
-  "VCL": ["3", "3"],
-  "equation": "(1 - 2 - 3 - 4 - 6) - (7 + 8 + 9)",
-  "version": "1.0",
+  "pathway_id": "ocean-alkalinity-enhancement-mineral",
+  "pathway_name": "Ocean Alkalinity Enhancement (Mineral)",
+  "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance its ability to uptake and store atmospheric CO\u2082. Here, we specifically consider OAE that is facilitated by adding rocks to the ocean which dissolve to enhance alkalinity. This pathway is VCL 2, meaning that current quantification capacity may be able to establish net carbon removal occurred, but very significant uncertainties remain.",
+  "VCL": ["1", "3"],
+  "equation": "(1 - 2 - 3 - 4 - 5) - (7 + 8)",
+  "version": "2.0",
   "components": [
     {
       "number": "1",
       "category": "drawdown",
-      "component_id": "alk_total_convert",
-      "name": "Base dispersal into ocean",
-      "quantification_target": "theoretical atmospheric removal",
-      "uncertainty_type": ["execution"],
+      "component_id": "alk_total",
+      "name": "Mineral dispersal into ocean",
+      "quantification_target": "total alkalinity released",
+      "uncertainty_type": ["execution", "scientific"],
       "responsibility": "project",
       "uncertainty_impact_min": "low",
-      "uncertainty_impact_max": "low",
-      "description": "If alkalinity is added the ocean directly (e.g. via aqueous NaOH), the total alkalinity released it can be directly measured. Environmental conditions and alkalinity addition dynamics (e.g. rate of point source additions) result in different fractions of carbonate (CO\u2083\u207b\u00b2) versus bicarbonate (HCO\u2083\u207b). This is important to characterize as the uptake of atmospheric CO\u2082 is reduced with the presence of more carbonate in the water. Overall CO\u2082 uptake efficiency can be estimated using seawater chemistry modeling software and the equation presented in [Renforth & Henderson (2017)](https://doi.org/10.1002/2016RG000533). These estimates could also be validated by measurements of bicarbonate concentrations or total alkalinity in the water column. The conversion of alkalinity to CO\u2082 removal is estimated to be 70-95% on a mol to mol basis.",
+      "uncertainty_impact_max": "medium",
+      "description": "If alkalinity is added to the ocean directly in the form of mineral or a semi-solid form (e.g. Mg(OH)\u2082 or olivine), the total useful alkalinity released in the surface ocean is a function of particle size, dissolution rates, and sinking rates. Larger particle sizes may reduce dissolution rates or result in material sinking to depth or buried in sediment, complicating the assessment of alkalinity released.",
       "notes": ""
     },
     {
       "number": "2",
       "category": "drawdown",
-      "component_id": "sec_precip",
-      "name": "Secondary precipitation",
-      "quantification_target": "secondary precipitation of CaCO\u2083",
+      "component_id": "alk_convert",
+      "name": "Mineral dissolution",
+      "quantification_target": "theoretical atmospheric removal",
       "uncertainty_type": ["execution"],
-      "responsibility": "project",
+      "responsibility": "system",
       "uncertainty_impact_min": "low",
-      "uncertainty_impact_max": "medium",
-      "description": "Adding alkalinity to seawater shifts the pH and carbonate ion concentration, and could cause abiotic precipitation of calcium carbonate (CaCO\u2083) or brucite (Mg(OH)\u2082). This is important to characterize as this precipitation results in CO\u2082 outgassing. It remains to be determined what specific combination of suitable nucleation conditions and supersaturation of CaCO\u2083 is needed to cause significant precipitation. Abiotic precipitation can be minimized by controlling the dilution and dispersal of alkalinity-enhanced water. Sampling total alkalinity near the dispersal point may help quantitatively determine the extent to which alkalinity is lost due to precipitation.",
+      "uncertainty_impact_max": "low",
+      "description": "Environmental conditions and alkalinity addition dynamics may result in different fractions of carbonate (CO\u2083\u207b\u00b2) versus bicarbonate (HCO\u2083\u207b). This fractionation impacts  the total uptake of atmospheric CO\u2082. Overall CO\u2082 uptake efficiency can be estimated using seawater chemistry modeling software and the equation presented in [Renforth & Henderson (2017)](https://doi.org/10.1002/2016RG000533). These estimates could also be validated by measurements of bicarbonate concentrations or total alkalinity in the water column. The conversion of alkalinity to CO\u2082 removal is estimated to be 70-95% on a mol to mol basis.",
       "notes": ""
     },
     {
       "number": "3",
+      "category": "drawdown",
+      "component_id": "sec_precip",
+      "name": "Secondary precipitation",
+      "quantification_target": "secondary precipitation of CaCO\u2083",
+      "uncertainty_type": ["execution", "scientific"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "low",
+      "uncertainty_impact_max": "very high",
+      "description": "Adding alkalinity to seawater shifts the pH and carbonate ion concentration, and could cause abiotic precipitation of calcium carbonate (CaCO\u2083) or brucite (Mg(OH)\u2082). This is important to characterize as this precipitation results in CO\u2082 outgassing. It remains to be determined what specific combination of suitable nucleation conditions and supersaturation of CaCO\u2083 is needed to cause significant precipitation. Abiotic precipitation can be minimized by controlling the particle dissolution rate as well as the dilution and dispersal of alkalinity-enhanced water. For some forms of mineral addition (e.g. addition fine Mg(OH)\u2082 particles), the addition, dilution and dispersal of alkalinity is easier to control than for others (e.g. dissolution of larger olivine particles), and there is [some](https://www.frontiersin.org/articles/10.3389/fclim.2022.831587/full) [evidence](https://bg.copernicus.org/preprints/bg-2022-126/) that that localized effects of mineral dissolution may trigger significant secondary precipitation. Sampling total alkalinity near the dispersal point may help quantitatively determine the extent to which alkalinity is lost due to precipitation.",
+      "notes": ""
+    },
+    {
+      "number": "4",
       "category": "drawdown",
       "component_id": "calc",
       "name": "Biotic calcification response",
@@ -46,7 +59,7 @@
       "notes": ""
     },
     {
-      "number": "4",
+      "number": "5",
       "category": "drawdown",
       "component_id": "asg",
       "name": "Air-sea gas exchange",
@@ -59,7 +72,7 @@
       "notes": ""
     },
     {
-      "number": "5*",
+      "number": "6*",
       "category": "drawdown",
       "component_id": "poc",
       "name": "Particulate organic carbon response",
@@ -72,19 +85,6 @@
       "notes": ""
     },
     {
-      "number": "6",
-      "category": "drawdown",
-      "component_id": "acid_return",
-      "name": "Long-term fate of acid",
-      "quantification_target": "long-term fate of acid",
-      "uncertainty_type": ["execution"],
-      "responsibility": "project",
-      "uncertainty_impact_min": "low",
-      "uncertainty_impact_max": "low",
-      "description": "Any source of acid from the process that ultimately reaches the ocean or interacts with terrestrial carbonates prior to being neutralized will counteract claimed alkalinity enhancement. At the project level, it is possible to ascertain the likely end fate of produced acid using operational records. As this solution scales, acid disposal may become more of a challenge.",
-      "notes": ""
-    },
-    {
       "number": "7",
       "category": "emissions",
       "component_id": "mat_co2",
@@ -94,7 +94,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "low",
-      "description": "The embodied emissions of any materials consumed during operation can be estimated based on a cradle-to-grave lifecycle assessment (LCA) of the material input. The embodied emissions of non-consumed project equipment and infrastructure must also be considered, amortized over the expected lifetime of operation. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
+      "description": "The embodied emissions of any materials consumed during operation, like mineral feedstocks, can be estimated based on a cradle-to-grave lifecycle assessment (LCA) of the material input. The embodied emissions of non-consumed project equipment and infrastructure must also be considered, amortized over the expected lifetime of operation. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
       "notes": ""
     },
     {
@@ -112,19 +112,6 @@
     },
     {
       "number": "9",
-      "category": "emissions",
-      "component_id": "energy_current",
-      "name": "Secondary impacts of energy demand",
-      "quantification_target": "energy replacement emissions",
-      "uncertainty_type": ["counterfactual"],
-      "responsibility": "system",
-      "uncertainty_impact_min": "negligible",
-      "uncertainty_impact_max": "medium",
-      "description": "The emissions associated with the system response to CDR energy demand must be considered for energy-intensive approaches. This component is less of a concern if a CDR project builds its own renewables, or if project energy demand is dispatchable in a way that supports grid deployment of renewables. If a CDR project introduces a new base load or is otherwise connected to the grid in a manner that could displace demand for renewables, any emissions associated with the energy system response must be considered. There is not yet a clear best practice for how to account for this system interaction.",
-      "notes": ""
-    },
-    {
-      "number": "10",
       "category": "durability",
       "component_id": "tau_alk",
       "name": "Alkalinity residence time",

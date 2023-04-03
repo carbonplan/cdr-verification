@@ -107,7 +107,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "not characterized",
       "uncertainty_impact_max": "not characterized",
-      "description": "Adding minerals to soils has the potential to induce changes to soil carbon, including by affecting plant or microbial activity. Theoretically, these impacts could increase or decrease soil organic carbon (SOC) storage. If rock weathering interactions increase SOC, we recommend that these changes not be used to counterbalance project emissions nor counted as additional durable carbon removal due to the impermanence of soil carbon storage. Conversely, if rock weathering were to decrease SOC relative to the counterfactual, this would be important to factor into our understanding of the effiency of rock weathering and should be included in the calculation of total carbon removal.  There is relatively little research on these potential interactions to date, and they merit further exploration.",
+      "description": "Adding minerals to soils has the potential to induce changes to soil carbon, including by affecting pH or impacting plant or microbial activity. Theoretically, these impacts could increase or decrease soil organic carbon (SOC) storage (i.e. the priming effect). There is relatively little research on these potential interactions to date, and they merit further exploration. Due to the high uncertainty of these potential effects, we recommend this component not be included in the accounting of net carbon removal. If mineral application does increase SOC storage, we recommend that these changes not be used to counterbalance project-related fossil CO\u2082 emissions nor counted as additional durable carbon removal due to the impermanence of soil carbon storage.",
       "notes": ""
     },
     {
@@ -185,7 +185,7 @@
       "responsibility": "system",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "low",
-      "description": "The formation of terrestrial carbonates depends on the type of primary mineral dissolving, carbonate saturation state, and other local environmental conditions. Although surficial carbonates can have complex dynamics of dissolution and reprecipitation, there is a high likelihood of long-term durability.",
+      "description": "The formation of terrestrial carbonates depends on the type of primary mineral dissolving, carbonate saturation state, and other local environmental conditions. Although surficial carbonates can have complex dynamics of dissolution and reprecipitation, there is a high likelihood of long-term durability. This uncertainty is not included in the calculation this pathway's Verification Confidence Level (VCL), because it is also capture by the Terrestrial carbonate precipitation component.",
       "notes": ""
     },
     {
@@ -198,7 +198,7 @@
       "responsibility": "system",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "low",
-      "description": "The concept of ocean DIC lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000 and 100,000 years.",
+      "description": "The concept of ocean DIC lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000 and 100,000 years. This uncertainty is not included in the calculation this pathway's Verification Confidence Level (VCL), because it is also capture by the Marine carbonate precipitation component.",
       "notes": ""
     },
     {
@@ -211,7 +211,7 @@
       "responsibility": "system",
       "uncertainty_impact_min": "negligible",
       "uncertainty_impact_max": "negligible",
-      "description": "The precipitation and dissolution of carbonate minerals modifies ocean alkalinity (see Alkalinity residence time). Carbonates preserved on the seafloor are likely to store carbon on geologic timescales.",
+      "description": "The precipitation and dissolution of carbonate minerals modifies ocean alkalinity (see Alkalinity residence time). Carbonates preserved on the seafloor are likely to store carbon on geologic timescales. This uncertainty is not included in the calculation this pathway's Verification Confidence Level (VCL), because it is also capture by the Marine carbonate precipitation component.",
       "notes": ""
     }
   ]

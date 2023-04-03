@@ -1,8 +1,8 @@
 {
   "pathway_id": "direct-ocean-removal",
   "pathway_name": "Direct Ocean Removal",
-  "pathway_description": "Direct ocean removal (DOR) removes CO2 from the surface ocean for storage, and returns seawater depleted in dissolved inorganic carbon (DIC) to the ocean. The DIC-depleted water reequilibrates with the atmosphere to draw down CO2. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain.",
-  "VCL": ["3", "3"],
+  "pathway_description": "Direct ocean removal (DOR) removes CO\u2082 from the surface ocean for storage, and returns seawater depleted in dissolved inorganic carbon (DIC) to the ocean. The DIC-depleted water reequilibrates with the atmosphere to draw down CO\u2082. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain.",
+  "VCL": ["2", "3"],
   "equation": "(1-2-3-4-5) - (7+8+9)",
   "version": "1.0",
   "components": [
@@ -16,7 +16,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "negligible",
       "uncertainty_impact_max": "negligible",
-      "description": "The mass of CO\u2082 removed from seawater through electrochemical separation \u2014 or other approaches \u2014 can be measured directly as a metered output from the direct ocean removal (DOC) system. It can also be checked for consistency against operational data from the DOC system and characterization of the seawater effluent that is depleted of dissolved inorganic carbon (DIC). The quantity of CO\u2082 directly removed from seawater may not be equal to the quantity of CO\u2082 stored (see Leakage) or the quantity of CO\u2082 indirectly removed by atmospheric drawdown (see Air sea gas exchange). Direct removal of CO\u2082 from seawater produces DIC-depleted seawater and results in subsequent atmospheric carbon removal by inducing air-sea gas exchange. Thus, the quantity of CO\u2082 removed directly from seawater must be clearly quantified and validated as a separate measurement from CO\u2082 storage or atmospheric CO\u2082 drawdown.",
+      "description": "The mass of CO\u2082 removed from seawater through electrochemical separation \u2014 or other approaches \u2014 can be measured directly as a metered output from the direct ocean removal (DOR) system. It can also be checked for consistency against operational data from the DOR system and characterization of the seawater effluent that is depleted of dissolved inorganic carbon (DIC). The quantity of CO\u2082 directly removed from seawater may not be equal to the quantity of CO\u2082 stored (see Leakage) or the quantity of CO\u2082 indirectly removed by atmospheric drawdown (see Air sea gas exchange). Direct removal of CO\u2082 from seawater produces DIC-depleted seawater and results in subsequent atmospheric carbon removal by inducing air-sea gas exchange. Thus, the quantity of CO\u2082 removed directly from seawater must be clearly quantified and validated as a separate measurement from CO\u2082 storage or atmospheric CO\u2082 drawdown.",
       "notes": ""
     },
     {
@@ -28,8 +28,8 @@
       "uncertainty_type": ["execution"],
       "responsibility": "project",
       "uncertainty_impact_min": "low",
-      "uncertainty_impact_max": "low",
-      "description": "Any difference between the CO\u2082 removed from seawater and the CO\u2082 that is measured as a metered input to the storage system must be accounted for as leakage. For terrestrial geologic storage, post-storage leakage can be directly monitored during and after the injection period, though this is more challenging for subseafloor reservoirs. If geological storage results in a functionally stable form on a short timescale \u2014 for example, via subsurface mineralization \u2014 fugitive emissions associated with the full lifetime of storage may be estimated based on direct observations of the storage reservoir. If instead the integrity of geological storage requires ongoing monitoring and maintenance \u2014 for example with the injection of supercritical CO\u2082 \u2014 the potential for future fugitive emissions must be modeled. In the latter framework, we consider the potential for future leakage as a durability uncertainty rather than a leakage uncertainty (see Storage monitoring and maintenance). For alternative storage systems, like mineralization in concrete, it is possible to directly measure the conversion of input CO\u2082 into a functionally stable form and therefore the total leakage from the storage system.",
+      "uncertainty_impact_max": "medium",
+      "description": "Any difference between the CO\u2082 removed from seawater and the CO\u2082 that is measured as a metered input to the storage system must be accounted for as leakage. For terrestrial geologic storage, post-storage leakage can be directly monitored during and after the injection period, though this is more challenging for subseafloor reservoirs. If geological storage results in a functionally stable form on a short timescale \u2014 for example, via subsurface mineralization \u2014 fugitive emissions associated with the full lifetime of storage may be estimated based on direct observations of the storage reservoir. If instead the integrity of geological storage requires ongoing monitoring and maintenance \u2014 for example with the injection of supercritical CO\u2082 \u2014 the potential for future fugitive emissions must be modeled. For alternative storage systems, like mineralization in concrete, it is possible to directly measure the conversion of input CO\u2082 into a functionally stable form and therefore the total leakage from the storage system.",
       "notes": ""
     },
     {
@@ -53,9 +53,9 @@
       "quantification_target": "biotic calcification response",
       "uncertainty_type": ["scientific"],
       "responsibility": "system",
-      "uncertainty_impact_min": "medium",
+      "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "medium",
-      "description": "Since calcification releases CO\u2082, any changes to the rate of biotic calcification in response to shifts in pH and dissolved inorganic carbon (DIC) concentrations driven by the direct ocean removal process must be considered. Changes in biotic calcification rates could occur in both coastal and open ocean waters, and at the level of individual calcifiers or calcifier populations. In practice, quantifying the biotic calcification response to carbon-depleted water may pose significant spatial and temporal challenges.",
+      "description": "Since calcification releases CO\u2082, any changes to the rate of biotic calcification in response to shifts in pH and dissolved inorganic carbon (DIC) concentrations driven by the direct ocean removal process must be considered. Changes in biotic calcification rates could occur in both coastal and open ocean waters, and at the level of individual calcifiers or calcifier populations. In practice, quantifying the biotic calcification response to carbon-depleted water may pose significant spatial, temporal, and signal-to-noise challenges.",
       "notes": ""
     },
     {
@@ -68,7 +68,7 @@
       "responsibility": "system",
       "uncertainty_impact_min": "high",
       "uncertainty_impact_max": "high",
-      "description": "Atmospheric uptake is reduced if dissolved inorganic carbon (DIC) depleted water is transferred from the surface ocean before either increasing the uptake of atmospheric CO\u2082 or decreasing the outgassing of CO\u2082 to the atmosphere. The precise dispersal of DIC-depleted water, its residence time at the surface, and hence the associated completeness of air-sea gas equilibration is dependent on the location and timing of the dispersal of DIC-depleted water, and is hard to directly observe. In-situ measurements can potentially track post-deployment changes in pCO\u2082, pH, and DIC and deploy water mass tracers to help validate models of plume dispersal and atmospheric CO\u2082 drawdown, though the sensitivity and cost of sensors may be a challenge. Further, oceanographic models can be used to develop probabilistic estimates of equilibration efficiencies for particular injection sites, contingent on seasonal or interannual variations in forcing regimes. Typical gas exchange timescales of equilibration for the surface ocean and atmosphere are on the order of months to years.",
+      "description": "Atmospheric uptake is reduced if dissolved inorganic carbon (DIC) depleted water is transferred from the surface ocean before either increasing the uptake of atmospheric CO\u2082 or decreasing the outgassing of CO\u2082 to the atmosphere. The precise dispersal of DIC-depleted water, its residence time at the surface, and hence the associated completeness of air-sea gas equilibration is dependent on the location and timing of the dispersal of DIC-depleted water, and is hard to directly observe. In-situ measurements can potentially track post-deployment changes in pCO\u2082, pH, and DIC and deploy water mass tracers to help validate models of plume dispersal and atmospheric CO\u2082 drawdown, though the sensitivity and cost of sensors may be a challenge. Further, oceanographic models can be used to develop probabilistic estimates of equilibration efficiencies for particular locations, contingent on seasonal or interannual variations in forcing regimes. Typical gas exchange timescales of equilibration for the surface ocean and atmosphere are on the order of months to years.",
       "notes": ""
     },
     {
