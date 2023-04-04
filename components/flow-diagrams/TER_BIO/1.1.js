@@ -33,9 +33,11 @@ const Flow = () => {
 
       <Arrow start={[20, 9]} length={6} right />
       <Rectangle start={[27, 7]} label='Deepwater storage' />
-      <Arrow start={[30, 12]} length={2} up />
+      <Arrow start={[30, 12]} length={2} down />
 
       <Rectangle id='t-recirculation' start={[27, 15]} />
+      <Arrow start={[30, 20]} length={2} down />
+      <Rectangle id='deepwater-outgass' start={[27, 23]} />
 
       <Rectangle id='nsad' start={[19, 2]} height={1} borderStyle='none' />
       <Arrow start={[18, 2]} length={4} up hideArrow />

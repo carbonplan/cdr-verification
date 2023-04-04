@@ -6,7 +6,7 @@ const Flow = () => {
   return (
     <Grid height={29}>
       <Rectangle
-        id='mat_co2'
+        id='mat-co2'
         start={[1, 2]}
         height={1}
         width={4}
@@ -14,7 +14,7 @@ const Flow = () => {
       />
 
       <Rectangle
-        id='energy_co2'
+        id='energy-co2'
         start={[4, 2]}
         height={1}
         width={4}
@@ -31,24 +31,24 @@ const Flow = () => {
         secondary
       />
 
-      <Rectangle start={[3, 7]} id='rock_pot' width={4} />
+      <Rectangle start={[3, 7]} id='min-pot' width={4} />
 
       <Arrow start={[8, 9]} length={2} right />
 
-      <Rectangle width={4} id='wp' start={[11, 7]} />
+      <Rectangle width={4} id='alk-release' start={[11, 7]} />
 
       <Arrow start={[16, 9]} length={1} right hideArrow />
       <Arrow start={[17, 6]} length={6} up hideArrow />
       <Arrow start={[17, 6]} length={2} right />
       <Arrow start={[17, 12]} length={2} right />
 
-      <Rectangle id='carb_surf' start={[20, 5]} />
+      <Rectangle id='carb-terr' start={[20, 5]} />
 
       <Rectangle label='Alkalinity run-off' start={[20, 11]} height={3} />
 
       <Arrow start={[27, 6]} length={2} left />
 
-      <Rectangle id='carb_surf_durability' start={[30, 5]} />
+      <Rectangle id='carb-terr-durability' start={[30, 5]} />
 
       <Arrow start={[27, 12]} length={4} right />
       <Rectangle
@@ -62,26 +62,26 @@ const Flow = () => {
       <Arrow start={[23, 15]} length={2} down />
       <Rectangle height={3} start={[20, 18]} label='Ocean storage' />
       <Arrow start={[23, 22]} length={2} up />
-      <Rectangle id='tau_alk' height={3} start={[20, 25]} />
+      <Rectangle id='tau-alk' height={3} start={[20, 25]} />
       <Arrow start={[27, 19]} length={2} right />
-      <Rectangle id='carb_marine' height={3} start={[30, 18]} />
+      <Rectangle id='carb-marine' height={3} start={[30, 18]} />
       <Arrow start={[33, 22]} length={2} up />
-      <Rectangle id='tau_carb_marine' height={3} start={[30, 25]} />
+      <Rectangle id='tau-carb-marine' height={3} start={[30, 25]} />
 
       <Arrow start={[5, 12]} length={2} down />
 
-      <Rectangle start={[2, 15]} width={6} height={3} id='soil_c' />
+      <Rectangle start={[2, 15]} width={6} height={3} id='soil-c' />
 
-      <Rectangle start={[2, 19]} width={6} height={3} id='lime_reduce' />
+      <Rectangle start={[2, 19]} width={6} height={3} id='lime-reduce' />
 
-      <Rectangle start={[2, 23]} width={6} height={3} id='fert_reduce' />
+      <Rectangle start={[2, 23]} width={6} height={3} id='fert-reduce' />
 
-      <Rectangle start={[2, 27]} width={6} height={3} id='n2o_reduce' />
+      <Rectangle start={[2, 27]} width={6} height={3} id='n2o-reduce' />
 
       <Arrow start={[13, 12]} length={2} down />
 
-      <Rectangle id='alk_loss' height={3} start={[10, 15]} />
-      <Rectangle id='min_sec' height={3} start={[10, 19]} />
+      <Rectangle id='alk-loss' height={3} start={[10, 15]} />
+      <Rectangle id='min-sec' height={3} start={[10, 19]} />
     </Grid>
   )
 }

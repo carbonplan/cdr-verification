@@ -3,8 +3,8 @@
   "pathway_name": "Ocean Biomass Sinking (No Harvest)",
   "pathway_description": "Ocean Biomass Sinking uses macroalgae to remove CO\u2082 from surface ocean, which in turn enhances the ability of the surface ocean to drawdown atmospheric CO\u2082. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that do not harvest the biomass before sinking it. This pathway is VCL 1-2, meaning that current quantification capacity may be able to establish net carbon removal occurred, but that very significant uncertainties remain.",
   "VCL": ["1", "2"],
-  "equation": "(1 - 2 - 3 - 4) - (5 + 6)",
-  "version": "1.0",
+  "equation": "(1 - 2 - 3 - 4 - 5) - (6 + 7)",
+  "version": "1.1",
   "components": [
     {
       "number": "1",
@@ -35,7 +35,7 @@
     {
       "number": "3",
       "category": "drawdown",
-      "component_id": "comp",
+      "component_id": "surf_comp",
       "name": "Surface competition effects",
       "quantification_target": "impact on ecosystem-level carbon removal",
       "uncertainty_type": ["scientific"],
@@ -60,6 +60,19 @@
     },
     {
       "number": "5",
+      "category": "drawdown",
+      "component_id": "deepwater-outgass",
+      "name": "Outgassing",
+      "quantification_target": "mass of outgassed CO\u2082",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "system",
+      "uncertainty_impact_min": "medium",
+      "uncertainty_impact_max": "medium",
+      "description": "It is conservative to assume that all sunk biomass is remineralized and that ocean circulation and currents will eventually return the CO\u2082 back to the surface ocean, where it will be brought into equilibrium with the atmosphere. The estimated timescale of this ventilation is dependent on the location of sinking and depth achieved, which must be characterized at the project level but can be informed by models. Given these dynamics, any claim about the volume of total carbon removal facilitated by deepwater carbon storage should be accompanied by a clear claim about the associated time horizon of storage. Our uncertainty evaluation reflects the uncertainties associated with estimating carbon stored in the deep ocean for 1000+ years. Those interested storage on longer timescales may find it appropriate to adjust these uncertainties.",
+      "notes": ""
+    },
+    {
+      "number": "6",
       "category": "emissions",
       "component_id": "mat-co2",
       "name": "Materials",
@@ -72,7 +85,7 @@
       "notes": ""
     },
     {
-      "number": "6",
+      "number": "7",
       "category": "emissions",
       "component_id": "energy-co2",
       "name": "Energy",
@@ -85,7 +98,7 @@
       "notes": ""
     },
     {
-      "number": "7",
+      "number": "8",
       "category": "durability",
       "component_id": "t-recirculation",
       "name": "Deepwater recirculation",
@@ -94,7 +107,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "medium",
       "uncertainty_impact_max": "medium",
-      "description": "From a carbon management perspective, it is conservative to assume that all sunk biomass is remineralized, and that ocean circulation and currents will eventually return the CO\u2082 back to the surface ocean, where it will be brought into equilibrium with the atmosphere. The estimated timescale of this ventilation depends on the location of sinking and depth achieved, which must be characterized at the project level but can be informed by models.",
+      "description": "From a carbon management perspective, it is conservative to assume that all sunk biomass is remineralized, and that ocean circulation and currents will eventually return the CO\u2082 back to the surface ocean, where it will be brought into equilibrium with the atmosphere. The estimated timescale of this ventilation depends on the location of sinking and depth achieved, which must be characterized at the project level but can be informed by models. This uncertainty is not included in the calculation this pathway's Verification Confidence Level (VCL), because it is also captured by the Outgassing component.",
       "notes": ""
     }
   ]

@@ -9,7 +9,7 @@
     {
       "number": "1*",
       "category": "drawdown",
-      "component_id": "rock_pot",
+      "component_id": "min-pot",
       "name": "Mineral application",
       "quantification_target": "mass of potential atmospheric removal",
       "uncertainty_type": ["execution"],
@@ -22,7 +22,7 @@
     {
       "number": "2",
       "category": "drawdown",
-      "component_id": "wp",
+      "component_id": "alk-release",
       "name": "Mineral weathering",
       "quantification_target": "quantity of released alkalinity",
       "uncertainty_type": ["scientific"],
@@ -35,7 +35,7 @@
     {
       "number": "3",
       "category": "drawdown",
-      "component_id": "alk_loss",
+      "component_id": "alk-loss",
       "name": "Non-carbonic acid neutralization",
       "quantification_target": "portion of released alkalinity that does not facilitate carbon storage",
       "uncertainty_type": ["scientific"],
@@ -48,7 +48,7 @@
     {
       "number": "4",
       "category": "drawdown",
-      "component_id": "min_sec",
+      "component_id": "min-sec",
       "name": "Secondary mineral formation",
       "quantification_target": "portion of alkalinity bound through secondary mineral formation",
       "uncertainty_type": ["scientific"],
@@ -61,7 +61,7 @@
     {
       "number": "5",
       "category": "drawdown",
-      "component_id": "carb_surf",
+      "component_id": "carb-terr",
       "name": "Terrestrial carbonate precipitation",
       "quantification_target": "reduction in carbon storage as a result of terrestrial carbonate precipitation",
       "uncertainty_type": ["scientific"],
@@ -87,7 +87,7 @@
     {
       "number": "7",
       "category": "drawdown",
-      "component_id": "carb_marine",
+      "component_id": "carb-marine",
       "name": "Marine carbonate precipitation",
       "quantification_target": "reduction in carbon storage as a result of marine carbonate precipitation",
       "uncertainty_type": ["scientific"],
@@ -100,7 +100,7 @@
     {
       "number": "8*",
       "category": "drawdown",
-      "component_id": "soil_c",
+      "component_id": "soil-c",
       "name": "Soil carbon impacts",
       "quantification_target": "soil carbon stock change",
       "uncertainty_type": ["scientific"],
@@ -113,7 +113,7 @@
     {
       "number": "9",
       "category": "emissions",
-      "component_id": "mat_co2",
+      "component_id": "mat-co2",
       "name": "Materials",
       "quantification_target": "material embodied emissions",
       "uncertainty_type": ["execution"],
@@ -126,7 +126,7 @@
     {
       "number": "10",
       "category": "emissions",
-      "component_id": "energy_co2",
+      "component_id": "energy-co2",
       "name": "Energy",
       "quantification_target": "energy use emissions",
       "uncertainty_type": ["execution"],
@@ -139,7 +139,7 @@
     {
       "number": "11*",
       "category": "emissions",
-      "component_id": "lime_reduce",
+      "component_id": "lime-reduce",
       "name": "Change in agricultural lime use",
       "quantification_target": "emissions impact of reducing agricultural lime use",
       "uncertainty_type": ["counterfactual"],
@@ -152,7 +152,7 @@
     {
       "number": "12*",
       "category": "emissions",
-      "component_id": "fert_reduce",
+      "component_id": "fert-reduce",
       "name": "Change in fertilizer use",
       "quantification_target": "emissions impact of reducing fertilizer use",
       "uncertainty_type": ["execution"],
@@ -165,7 +165,7 @@
     {
       "number": "13*",
       "category": "emissions",
-      "component_id": "n2o_reduce",
+      "component_id": "n2o-reduce",
       "name": "Reduction in N\u2082O emissions",
       "quantification_target": "emissions impact of reducing N\u2082O emissions",
       "uncertainty_type": ["scientific"],
@@ -178,40 +178,40 @@
     {
       "number": "14",
       "category": "durability",
-      "component_id": "carb_surf_durability",
+      "component_id": "carb-terr-durability",
       "name": "Terrestrial carbonate durability",
       "quantification_target": "years of expected CO\u2082 storage",
       "uncertainty_type": ["scientific"],
       "responsibility": "system",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "low",
-      "description": "The formation of terrestrial carbonates depends on the type of primary mineral dissolving, carbonate saturation state, and other local environmental conditions. Although surficial carbonates can have complex dynamics of dissolution and reprecipitation, there is a high likelihood of long-term durability. This uncertainty is not included in the calculation this pathway's Verification Confidence Level (VCL), because it is also capture by the Terrestrial carbonate precipitation component.",
+      "description": "The formation of terrestrial carbonates depends on the type of primary mineral dissolving, carbonate saturation state, and other local environmental conditions. Although surficial carbonates can have complex dynamics of dissolution and reprecipitation, there is a high likelihood of long-term durability. This uncertainty is not included in the calculation this pathway's Verification Confidence Level (VCL), because it is also captured by the Terrestrial carbonate precipitation component.",
       "notes": ""
     },
     {
       "number": "15",
       "category": "durability",
-      "component_id": "tau_alk",
+      "component_id": "tau-alk",
       "name": "Alkalinity residence time",
       "quantification_target": "years of expected CO\u2082 storage",
       "uncertainty_type": ["scientific"],
       "responsibility": "system",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "low",
-      "description": "The concept of ocean DIC lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000 and 100,000 years. This uncertainty is not included in the calculation this pathway's Verification Confidence Level (VCL), because it is also capture by the Marine carbonate precipitation component.",
+      "description": "The concept of ocean DIC lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000 and 100,000 years. This uncertainty is not included in the calculation this pathway's Verification Confidence Level (VCL), because it is also captured by the Marine carbonate precipitation component.",
       "notes": ""
     },
     {
       "number": "16",
       "category": "durability",
-      "component_id": "tau_carb_marine",
+      "component_id": "tau-carb-marine",
       "name": "Marine carbonate durability",
       "quantification_target": "years of expected CO\u2082 storage",
       "uncertainty_type": ["scientific"],
       "responsibility": "system",
       "uncertainty_impact_min": "negligible",
       "uncertainty_impact_max": "negligible",
-      "description": "The precipitation and dissolution of carbonate minerals modifies ocean alkalinity (see Alkalinity residence time). Carbonates preserved on the seafloor are likely to store carbon on geologic timescales. This uncertainty is not included in the calculation this pathway's Verification Confidence Level (VCL), because it is also capture by the Marine carbonate precipitation component.",
+      "description": "The precipitation and dissolution of carbonate minerals modifies ocean alkalinity (see Alkalinity residence time). Carbonates preserved on the seafloor are likely to store carbon on geologic timescales. This uncertainty is not included in the calculation this pathway's Verification Confidence Level (VCL), because it is also captured by the Marine carbonate precipitation component.",
       "notes": ""
     }
   ]
