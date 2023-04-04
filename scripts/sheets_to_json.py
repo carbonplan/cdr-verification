@@ -137,9 +137,8 @@ def contributors_to_json(df: pd.DataFrame):
         sinfo['pathways'] = pathway_list
         contributor_list.append(sinfo.to_dict())
 
-    contributor_combined_dict = {"contributors": contributor_list}
     with open(f'data/contributors.json', 'w') as fp:
-        json.dump(contributor_combined_dict, fp, indent=4)
+        json.dump(contributor_list, fp, indent=4)
 
 
 
