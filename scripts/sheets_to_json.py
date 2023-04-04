@@ -48,7 +48,7 @@ def get_component_sheet(gsheet_doc_name: str) -> pd.DataFrame:
     sheet = sh.worksheet('Components')
     data_list = sheet.get_all_values()
     pathway_col_list = ['direct-air-capture','biomass-carbon-removal-and-storage','enhanced-weathering','terrestrial-biomass-sinking','ocean-alkalinity-enhancement-electrochemical','ocean-alkalinity-enhancement-mineral','ocean-biomass-sinking-harvest','ocean-biomass-sinking-no-harvest','direct-ocean-removal','biochar','alkaline-waste-mineralization']
-    cdf = pd.DataFrame(data_list[2::],columns=data_list[0])[['component_id','component_name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','category', 'description','revisions','notes']+ pathway_col_list]
+    cdf = pd.DataFrame(data_list[2::],columns=data_list[0])[['component_id','component_name','secondary_name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','category', 'description','revisions','notes']+ pathway_col_list]
     cdf['component_id'] = cdf['component_id'].str.replace('\u2082','2')
     cdf['uncertainty_type'] = cdf.uncertainty_type.str.replace(" ","").apply(lambda x: x.split(','))    
 
