@@ -54,7 +54,11 @@ const Main = ({ archival, pathway, pathways, settings, setSettings }) => {
   const DiagramComponent = FLOW_DIAGRAMS[pathway_id][version]
 
   return (
-    <ComponentProvider pathway={pathway} onComponentChange={closeTray}>
+    <ComponentProvider
+      archival={archival}
+      pathway={pathway}
+      onComponentChange={closeTray}
+    >
       <Page
         notice={
           archival ? (

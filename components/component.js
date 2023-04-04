@@ -55,16 +55,7 @@ const Component = ({
   openTray,
   showDocs,
 }) => {
-  const { active, hovered, setActive, setHovered } = useComponent(component_id)
-
-  const handleActivate = useCallback(
-    (e) => {
-      e.stopPropagation()
-
-      setActive()
-    },
-    [active]
-  )
+  const { active, hovered, onClick, setHovered } = useComponent(component_id)
 
   const sx = {
     heading: {
@@ -88,7 +79,7 @@ const Component = ({
     <Box sx={{ my: [4, 3, '22px', 4] }}>
       <Row
         columns={[6, 8, 4, 4]}
-        onClick={handleActivate}
+        onClick={onClick}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         sx={{ cursor: 'pointer' }}
@@ -121,7 +112,7 @@ const Component = ({
             />
             <Expander
               value={active}
-              onClick={handleActivate}
+              onClick={onClick}
               sx={{
                 display: ['initial', 'none'],
                 verticalAlign: 'middle',
@@ -145,7 +136,7 @@ const Component = ({
           />
           <Expander
             value={active}
-            onClick={handleActivate}
+            onClick={onClick}
             sx={{
               display: ['none', 'initial'],
               verticalAlign: 'middle',
