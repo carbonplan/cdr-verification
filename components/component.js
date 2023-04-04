@@ -263,28 +263,24 @@ const Component = ({
                 </Badge>
               </Column>
 
+              {showDocs && (
+                <Column start={1} width={[6, 6, 4, 4]} sx={sx.column}>
+                  <Button
+                    sx={sx.heading}
+                    href={`/research/cdr-verification/docs/components/${component_id}`}
+                    suffix={<RotatingArrow sx={{ mt: -1 }} />}
+                  >
+                    View component documentation
+                  </Button>
+                </Column>
+              )}
+
               <Column sx={sx.column} start={1} width={[6, 6, 4, 4]}>
                 <Box sx={sx.heading}>Notes</Box>
                 <Box sx={{ fontFamily: 'faux' }}>
                   {processor.processSync(description).result}
                 </Box>
               </Column>
-
-              {showDocs && (
-                <Column start={1} width={[6, 6, 4, 4]} sx={sx.column}>
-                  <Button
-                    sx={{
-                      color: CATEGORY_COLORS[category],
-                      fontSize: '16px',
-                      pb: 1,
-                    }}
-                    href={`/research/cdr-verification/docs/components/${component_id}`}
-                    suffix={<RotatingArrow />}
-                  >
-                    View component info
-                  </Button>
-                </Column>
-              )}
 
               <Column
                 start={1}
