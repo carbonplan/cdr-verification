@@ -59,13 +59,8 @@ const Main = ({ archival, pathway, pathways, settings, setSettings }) => {
         notice={
           archival ? (
             <Box sx={{ fontSize: 2, color: 'secondary' }}>
-              This is an archival representation of{' '}
-              <Link
-                href={`/research/cdr-verification/docs/pathways/${pathway_id}`}
-              >
-                v{version}
-              </Link>{' '}
-              of this pathway. View the latest version{' '}
+              This is an archival representation of v{version} of this pathway.
+              View the latest version{' '}
               <Link href={`/research/cdr-verification/${pathway_id}`}>
                 here
               </Link>
@@ -158,7 +153,7 @@ const Main = ({ archival, pathway, pathways, settings, setSettings }) => {
                     <TooltipContent expanded={expanded} sx={{ mt: 1 }}>
                       <Flex sx={{ flexDirection: 'column', gap: 2 }}>
                         <Description
-                          value={pathway_description}
+                          value={`${pathway_description} [View pathway documentation](${`/research/cdr-verification/docs/pathways/${pathway_id}`}).`}
                           sx={{
                             '& a': { color: 'secondary' },
                             '& a:hover': { color: 'primary' },

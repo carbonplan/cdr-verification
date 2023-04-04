@@ -62,7 +62,7 @@ const PathwayInfo = ({ pathways, pathway, setPathway }) => {
       </Column>
       <Column start={1} width={[6, 6, 6, 5]}>
         <Description
-          value={pathway_description}
+          value={`${pathway_description} [View pathway documentation](${`/research/cdr-verification/docs/pathways/${pathway_id}`}).`}
           sx={{ my: [3, 3, 3, 4], fontSize: [1] }}
         />
       </Column>
