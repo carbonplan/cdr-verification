@@ -1,7 +1,7 @@
 [
   {
     "type": "CDR Company",
-    "name": "direct-ocean-capture",
+    "name": "Adam Wolf",
     "affiliation": "Eion",
     "initial": "1",
     "notes": "",
@@ -20,7 +20,7 @@
     "notes": "",
     "pathways": [
       {
-        "id": "direct-ocean-capture",
+        "id": "direct-ocean-removal",
         "version": ["1.0"]
       }
     ]
@@ -100,7 +100,7 @@
     "notes": "",
     "pathways": [
       {
-        "id": "direct-ocean-capture",
+        "id": "direct-ocean-removal",
         "version": ["1.0"]
       }
     ]
@@ -391,7 +391,7 @@
         "version": ["1.0"]
       },
       {
-        "id": "direct-ocean-capture",
+        "id": "direct-ocean-removal",
         "version": ["1.0"]
       }
     ]
@@ -457,7 +457,7 @@
     "notes": "",
     "pathways": [
       {
-        "id": "direct-ocean-capture",
+        "id": "direct-ocean-removal",
         "version": ["1.0"]
       }
     ]
@@ -546,7 +546,7 @@
     "notes": "",
     "pathways": [
       {
-        "id": "direct-ocean-capture",
+        "id": "direct-ocean-removal",
         "version": ["1.0"]
       }
     ]
@@ -611,7 +611,7 @@
     "notes": "",
     "pathways": [
       {
-        "id": "direct-ocean-capture",
+        "id": "direct-ocean-removal",
         "version": ["1.0"]
       }
     ]
