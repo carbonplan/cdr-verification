@@ -87,7 +87,7 @@ const PathwayDocumentation = ({ options, pathway, metadata }) => {
           <Description value={pathway_description} />
         </Column>
 
-        <Column start={1} width={[6, 6, 4, 4]} sx={{ mt: 6 }}>
+        <Column start={1} width={[6, 6, 4, 4]} sx={{ mt: [5, 5, 6, 6] }}>
           <Box sx={{ fontSize: 4 }}>Version history</Box>
 
           <History
@@ -98,7 +98,7 @@ const PathwayDocumentation = ({ options, pathway, metadata }) => {
         </Column>
 
         {contributors.length > 0 && (
-          <Column start={1} width={[6, 6, 6, 6]} sx={{ mt: 6 }}>
+          <Column start={1} width={[6, 6, 6, 6]} sx={{ my: [4, 4, 6, 6] }}>
             <Box sx={{ fontSize: 4 }}>Acknowledgments</Box>
             <Box sx={{ fontSize: 1, mt: 2 }}>
               This framework has been shaped by input and feedback from external

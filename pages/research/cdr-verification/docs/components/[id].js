@@ -126,7 +126,7 @@ const ComponentDocumentation = ({ component, options, pathways }) => {
               ))}
           </Flex>
         </Column>
-        <Column start={1} width={[6, 6, 4, 4]} sx={{ mt: 6 }}>
+        <Column start={1} width={[6, 6, 4, 4]} sx={{ my: [4, 4, 6, 6] }}>
           <Box sx={{ fontSize: 4 }}>Revision history</Box>
 
           <History history={component.revisions} sx={{ mt: 3 }} />
