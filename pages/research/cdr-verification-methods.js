@@ -1,14 +1,14 @@
 import { Supplement } from '@carbonplan/layouts'
 import { MDXProvider, useMDXComponents } from '@mdx-js/react'
 import Methods, { frontMatter } from '../../components/methods'
-import { pathwayContent } from '../../utils/data'
+import contributors from '../../data/contributors.json'
 
-export default ({ contributors }) => {
+export default (props) => {
   const componentsWithStyles = useMDXComponents()
   return (
     <MDXProvider components={componentsWithStyles}>
       <Supplement meta={frontMatter} back={frontMatter.back}>
-        <Methods contributors={contributors} />
+        <Methods contributors={props.contributors} />
       </Supplement>
     </MDXProvider>
   )
@@ -21,12 +21,9 @@ export function getStaticProps() {
     'Ecosystem Actor': 'Ecosystem Actors',
     'MRV Company': 'MRV Companies',
   }
-  const combinedContributors = Object.keys(pathwayContent).reduce(
-    (accum, pathwayId) => {
-      const { metadata } = pathwayContent[pathwayId]
-      metadata.contributors.forEach(({ type, ...rest }) => {
-        accum[categories[type]].push(rest)
-      })
+  const combinedContributors = contributors.reduce(
+    (accum, { type, ...rest }) => {
+      accum[categories[type]].push(rest)
       return accum
     },
     {
