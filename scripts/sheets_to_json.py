@@ -239,8 +239,6 @@ def write_metadata_to_json(*, pathway: str, metadata_dict: dict, contributor_df:
     with sample_file.open("w", encoding="utf-8") as fp:
         json.dump(combined_dict, fp, indent=4)
     
-    with contributor_file.open("w+") as fp:
-        json.dump(contributor_dict, fp, indent=4)
 
 
 def write_to_json(template_dict: list, pathway: str, pathway_version: str):
