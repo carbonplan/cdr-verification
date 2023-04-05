@@ -2,16 +2,16 @@
   "contributors": [
     {
       "type": "CDR Company",
-      "name": "Greg Dipple",
-      "affiliation": "University of British Columia / Arca",
-      "notes": "",
+      "name": "Arca",
+      "affiliation": "",
+      "notes": "Comments came specifically from Greg Dipple. ",
       "version": ["1.0"]
     },
     {
       "type": "CDR Company",
-      "name": "Laura Lammers",
-      "affiliation": "Travertine",
-      "notes": "",
+      "name": "Travertine",
+      "affiliation": "",
+      "notes": "Comments came specifically from Laura Lammers. ",
       "version": ["1.0"]
     },
     {

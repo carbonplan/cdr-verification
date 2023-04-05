@@ -1,30 +1,16 @@
 {
   "contributors": [
     {
-      "type": "Scientific Expert",
-      "name": "Alex Gagnon",
-      "affiliation": "University of Washington / Banyu Carbon",
-      "notes": "",
+      "type": "CDR Company",
+      "name": "Captura",
+      "affiliation": "",
+      "notes": "Comments came specifically from Sophie Chu. ",
       "version": ["1.0"]
     },
     {
       "type": "CDR Company",
-      "name": "Chengxiang Xiang",
-      "affiliation": "Caltech / Captura",
-      "notes": "",
-      "version": ["1.0"]
-    },
-    {
-      "type": "Scientific Expert",
-      "name": "Matt Long",
-      "affiliation": "NCAR",
-      "notes": "",
-      "version": ["1.0"]
-    },
-    {
-      "type": "CDR Company",
-      "name": "Rezvan Sharifian",
-      "affiliation": "SeaO2",
+      "name": "SeaO2",
+      "affiliation": "",
       "notes": "",
       "version": ["1.0"]
     },
@@ -32,14 +18,21 @@
       "type": "MRV Company",
       "name": "Sophie Gill ",
       "affiliation": "Exponential ",
+      "notes": "(New affiliation)",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Alex Gagnon",
+      "affiliation": "University of Washington / Banyu Carbon",
       "notes": "",
       "version": ["1.0"]
     },
     {
-      "type": "CDR Company",
-      "name": "Sophie Chu",
-      "affiliation": "Captura",
-      "notes": "",
+      "type": "Scientific Expert",
+      "name": "Matt Long",
+      "affiliation": "NCAR / [C]Worthy",
+      "notes": "(New affiliation)",
       "version": ["1.0"]
     }
   ],

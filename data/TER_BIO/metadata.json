@@ -1,6 +1,13 @@
 {
   "contributors": [
     {
+      "type": "CDR Company",
+      "name": "Running Tide",
+      "affiliation": "",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
       "type": "Scientific Expert",
       "name": "Fabiano Ximenes",
       "affiliation": "NSW Government",

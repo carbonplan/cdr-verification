@@ -237,7 +237,6 @@
     "component_id": "bio-sink",
     "component_name": "Biomass sinking",
     "secondary_name": "",
-
     "quantification_target": "mass of biomass carbon",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
