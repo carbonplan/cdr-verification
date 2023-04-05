@@ -1,5 +1,5 @@
 import { Box, Flex } from 'theme-ui'
-import React, { useCallback } from 'react'
+import React from 'react'
 import {
   Badge,
   Button,
