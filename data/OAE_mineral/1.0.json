@@ -9,7 +9,7 @@
     {
       "number": "1",
       "category": "drawdown",
-      "component_id": "alk_total",
+      "component_id": "alk-total",
       "name": "Mineral dispersal into ocean",
       "quantification_target": "total alkalinity released",
       "uncertainty_type": ["execution", "scientific"],
@@ -22,7 +22,7 @@
     {
       "number": "2",
       "category": "drawdown",
-      "component_id": "alk_convert",
+      "component_id": "alk-convert",
       "name": "Mineral dissolution",
       "quantification_target": "theoretical atmospheric removal",
       "uncertainty_type": ["execution"],
@@ -35,7 +35,7 @@
     {
       "number": "3",
       "category": "drawdown",
-      "component_id": "sec_precip",
+      "component_id": "sec-precip",
       "name": "Secondary precipitation",
       "quantification_target": "secondary precipitation of CaCO\u2083",
       "uncertainty_type": ["execution", "scientific"],
@@ -87,7 +87,7 @@
     {
       "number": "7",
       "category": "emissions",
-      "component_id": "mat_co2",
+      "component_id": "mat-co2",
       "name": "Materials",
       "quantification_target": "material embodied emissions",
       "uncertainty_type": ["execution"],
@@ -100,7 +100,7 @@
     {
       "number": "8",
       "category": "emissions",
-      "component_id": "energy_co2",
+      "component_id": "energy-co2",
       "name": "Energy",
       "quantification_target": "energy use emissions",
       "uncertainty_type": ["execution"],
@@ -113,7 +113,7 @@
     {
       "number": "9",
       "category": "durability",
-      "component_id": "tau_alk",
+      "component_id": "tau-alk",
       "name": "Alkalinity residence time",
       "quantification_target": "years of expected CO\u2082 storage",
       "uncertainty_type": ["scientific"],
