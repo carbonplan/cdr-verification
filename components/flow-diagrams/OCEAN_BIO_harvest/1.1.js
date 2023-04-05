@@ -50,7 +50,7 @@ const Flow = () => {
 
       <Arrow start={[7, 12]} length={2} down />
 
-      <Rectangle start={[4, 15]} id='surf_comp' />
+      <Rectangle start={[4, 15]} id='surf-comp' />
 
       <Arrow start={[7, 20]} length={2} down />
 

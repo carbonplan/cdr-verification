@@ -1,7 +1,7 @@
 {
   "pathway_id": "ocean-alkalinity-enhancement-mineral",
   "pathway_name": "Ocean Alkalinity Enhancement (Mineral)",
-  "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance its ability to uptake and store atmospheric CO\u2082. Here, we specifically consider OAE that is facilitated by adding rocks to the ocean which dissolve to enhance alkalinity. This pathway is VCL 2, meaning that current quantification capacity may be able to establish net carbon removal occurred, but very significant uncertainties remain.",
+  "pathway_description": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance its ability to uptake and store atmospheric CO\u2082. Here, we specifically consider OAE that is facilitated by adding solid or semi-solid minerals to the ocean which dissolve to enhance alkalinity. This pathway is VCL 1-3, meaning that current quantification capacity may be able to establish net carbon removal occurred, but for some approaches, very significant uncertainties remain.",
   "VCL": ["1", "3"],
   "equation": "(1 - 2 - 3 - 4 - 5 - 7) - (8 + 9)",
   "version": "2.0",

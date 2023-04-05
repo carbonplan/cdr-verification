@@ -35,7 +35,7 @@
     {
       "number": "3",
       "category": "drawdown",
-      "component_id": "surf_comp",
+      "component_id": "surf-comp",
       "name": "Surface competition effects",
       "quantification_target": "impact on ecosystem-level carbon removal",
       "uncertainty_type": ["scientific"],

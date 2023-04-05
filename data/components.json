@@ -791,7 +791,7 @@
     ]
   },
   {
-    "component_id": "surf_comp",
+    "component_id": "surf-comp",
     "component_name": "Surface competition effects",
     "secondary_name": "",
     "quantification_target": "impact on ecosystem-level carbon removal",
