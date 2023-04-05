@@ -145,7 +145,9 @@ export function getStaticProps({ params: { id } }) {
       options: components
         .map((c) => ({
           value: c.component_id,
-          label: c.component_name,
+          label: c.secondary_name
+            ? `${c.component_name} (${c.secondary_name})`
+            : c.component_name,
         }))
         .sort((a, b) => a.label.localeCompare(b.label)),
       pathways: component.pathways.map((id) => {
