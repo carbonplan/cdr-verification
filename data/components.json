@@ -2,6 +2,7 @@
   {
     "component_id": "acid-return",
     "component_name": "Long-term fate of acid",
+    "secondary_name": "",
     "quantification_target": "long-term fate of acid",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
@@ -21,6 +22,7 @@
   {
     "component_id": "alk-convert",
     "component_name": "Mineral dissolution",
+    "secondary_name": "alkalinity release",
     "quantification_target": "theoretical atmospheric removal",
     "uncertainty_type": ["execution"],
     "responsibility": "system",
@@ -44,6 +46,7 @@
   {
     "component_id": "alk-loss",
     "component_name": "Non-carbonic acid neutralization",
+    "secondary_name": "",
     "quantification_target": "portion of released alkalinity that does not facilitate carbon storage",
     "uncertainty_type": ["scientific"],
     "responsibility": "system",
@@ -67,6 +70,7 @@
   {
     "component_id": "alk-release",
     "component_name": "Mineral weathering",
+    "secondary_name": "alkalinity release",
     "quantification_target": "quantity of released alkalinity",
     "uncertainty_type": ["scientific"],
     "responsibility": "project",
@@ -94,6 +98,7 @@
   {
     "component_id": "alk-total",
     "component_name": "Mineral dispersal into ocean",
+    "secondary_name": "",
     "quantification_target": "total alkalinity released",
     "uncertainty_type": ["execution", "scientific"],
     "responsibility": "project",
@@ -117,6 +122,7 @@
   {
     "component_id": "asg",
     "component_name": "Air-sea gas exchange",
+    "secondary_name": "",
     "quantification_target": "air-sea gas exchange efficiency",
     "uncertainty_type": ["scientific"],
     "responsibility": "system",
@@ -146,6 +152,7 @@
   {
     "component_id": "base-total-convert",
     "component_name": "Base dispersal into ocean",
+    "secondary_name": "",
     "quantification_target": "theoretical atmospheric removal",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
@@ -169,6 +176,7 @@
   {
     "component_id": "bio-added",
     "component_name": "Storage",
+    "secondary_name": "biomass carbon",
     "quantification_target": "mass of captured and stored biomass carbon",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
@@ -188,6 +196,7 @@
   {
     "component_id": "bio-degrade",
     "component_name": "Biochar degradation",
+    "secondary_name": "",
     "quantification_target": "mass of carbon lost from biochar over storage time horizon",
     "uncertainty_type": ["scientific"],
     "responsibility": "system",
@@ -207,6 +216,7 @@
   {
     "component_id": "bio-feedstock",
     "component_name": "Biomass feedstock",
+    "secondary_name": "",
     "quantification_target": "mass of carbon in feedstock",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
@@ -226,6 +236,8 @@
   {
     "component_id": "bio-sink",
     "component_name": "Biomass sinking",
+    "secondary_name": "",
+
     "quantification_target": "mass of biomass carbon",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
@@ -245,6 +257,7 @@
   {
     "component_id": "bio-transformed",
     "component_name": "Biomass transformation",
+    "secondary_name": "",
     "quantification_target": "mass of carbon lost in biomass transformation",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
@@ -264,6 +277,7 @@
   {
     "component_id": "calc",
     "component_name": "Biotic calcification response",
+    "secondary_name": "",
     "quantification_target": "biotic calcification response",
     "uncertainty_type": ["scientific"],
     "responsibility": "system",
@@ -291,6 +305,7 @@
   {
     "component_id": "carb-baseline-weather",
     "component_name": "Baseline weathering rate",
+    "secondary_name": "",
     "quantification_target": "baseline mass of captured CO\u2082 stored in carbonates",
     "uncertainty_type": ["counterfactual"],
     "responsibility": "project",
@@ -310,6 +325,7 @@
   {
     "component_id": "carb-degrade",
     "component_name": "Leakage",
+    "secondary_name": "carbonate degradation",
     "quantification_target": "mass of CO\u2082 released from carbonates",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
@@ -329,6 +345,7 @@
   {
     "component_id": "carb-marine",
     "component_name": "Marine carbonate precipitation",
+    "secondary_name": "",
     "quantification_target": "reduction in carbon storage as a result of marine carbonate precipitation",
     "uncertainty_type": ["scientific"],
     "responsibility": "system",
@@ -353,6 +370,7 @@
   {
     "component_id": "carb-mineral",
     "component_name": "Carbonates",
+    "secondary_name": "",
     "quantification_target": "mass of captured CO\u2082 stored in carbonates",
     "uncertainty_type": ["excution"],
     "responsibility": "project",
@@ -372,6 +390,7 @@
   {
     "component_id": "carb-terr",
     "component_name": "Terrestrial carbonate precipitation",
+    "secondary_name": "",
     "quantification_target": "reduction in carbon storage as a result of terrestrial carbonate precipitation",
     "uncertainty_type": ["scientific"],
     "responsibility": "project",
@@ -395,6 +414,7 @@
   {
     "component_id": "carb-weather",
     "component_name": "Carbonate weathering",
+    "secondary_name": "",
     "quantification_target": "quantity of released alkalinity",
     "uncertainty_type": ["execution", "scientific"],
     "responsibility": "project",
@@ -414,6 +434,7 @@
   {
     "component_id": "co2-removed",
     "component_name": "CO\u2082 capture",
+    "secondary_name": "",
     "quantification_target": "mass of CO\u2082 removed from seawater",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
@@ -433,6 +454,7 @@
   {
     "component_id": "evasion",
     "component_name": "Leakage",
+    "secondary_name": "evasion",
     "quantification_target": "leakage from evasion",
     "uncertainty_type": ["scientific"],
     "responsibility": "system",
@@ -456,6 +478,7 @@
   {
     "component_id": "feed-current",
     "component_name": "Feedstock use counterfactual",
+    "secondary_name": "",
     "quantification_target": "feedstock replacement emissions",
     "uncertainty_type": ["counterfactual"],
     "responsibility": "system",
@@ -479,6 +502,7 @@
   {
     "component_id": "feed-stor",
     "component_name": "Feedstock storage counterfactual",
+    "secondary_name": "",
     "quantification_target": "mass of counterfactual stored biomass carbon",
     "uncertainty_type": ["counterfactual"],
     "responsibility": "system",
@@ -502,6 +526,7 @@
   {
     "component_id": "inj-carbon",
     "component_name": "Storage",
+    "secondary_name": "CO\u2082",
     "quantification_target": "mass of captured and stored CO\u2082",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
@@ -521,6 +546,7 @@
   {
     "component_id": "kelp-grown",
     "component_name": "Macroalgae cultivation on drifting buoy",
+    "secondary_name": "",
     "quantification_target": "mass of biomass carbon sunk",
     "uncertainty_type": ["scientific"],
     "responsibility": "project",
@@ -540,6 +566,7 @@
   {
     "component_id": "kelp-harvest",
     "component_name": "Macroalgae harvest",
+    "secondary_name": "",
     "quantification_target": "mass of biomass carbon",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
@@ -563,6 +590,7 @@
   {
     "component_id": "LUC-indirect",
     "component_name": "Indirect land use change",
+    "secondary_name": "",
     "quantification_target": "indirect land use change emissions",
     "uncertainty_type": ["scientific"],
     "responsibility": "scientific",
@@ -586,6 +614,7 @@
   {
     "component_id": "min-pot",
     "component_name": "Mineral application",
+    "secondary_name": "potential atmospheric removal",
     "quantification_target": "mass of potential atmospheric removal ",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
@@ -609,6 +638,7 @@
   {
     "component_id": "min-sec",
     "component_name": "Secondary mineral formation",
+    "secondary_name": "",
     "quantification_target": "portion of alkalinity bound through secondary mineral formation",
     "uncertainty_type": ["scientific"],
     "responsibility": "project",
@@ -632,6 +662,7 @@
   {
     "component_id": "nsad",
     "component_name": "Leakage",
+    "secondary_name": "non-sunk fraction",
     "quantification_target": "fraction of biomass carbon not sunk to depth",
     "uncertainty_type": ["scientific"],
     "responsibility": "project",
@@ -655,6 +686,7 @@
   {
     "component_id": "poc",
     "component_name": "Particulate organic carbon response",
+    "secondary_name": "",
     "quantification_target": "particulate organic carbon response",
     "uncertainty_type": ["scientific"],
     "responsibility": "system",
@@ -682,6 +714,7 @@
   {
     "component_id": "sec-precip",
     "component_name": "Secondary precipitation",
+    "secondary_name": "",
     "quantification_target": "secondary precipitation of CaCO\u2083",
     "uncertainty_type": ["execution", "scientific"],
     "responsibility": "project",
@@ -709,6 +742,7 @@
   {
     "component_id": "soil-c",
     "component_name": "Soil carbon impacts",
+    "secondary_name": "",
     "quantification_target": "soil carbon stock change",
     "uncertainty_type": ["scientific"],
     "responsibility": "project",
@@ -736,6 +770,7 @@
   {
     "component_id": "store-leak",
     "component_name": "Leakage",
+    "secondary_name": "",
     "quantification_target": "mass of storage system leakage",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
@@ -759,6 +794,7 @@
   {
     "component_id": "surf_comp",
     "component_name": "Surface competition effects",
+    "secondary_name": "",
     "quantification_target": "impact on ecosystem-level carbon removal",
     "uncertainty_type": ["scientific"],
     "responsibility": "project",
@@ -781,6 +817,7 @@
   {
     "component_id": "deepwater-outgass",
     "component_name": "Outgassing",
+    "secondary_name": "",
     "quantification_target": "mass of outgassed CO\u2082",
     "uncertainty_type": ["scientific"],
     "responsibility": "system",
@@ -804,6 +841,7 @@
   {
     "component_id": "bio-storage",
     "component_name": "Biochar storage",
+    "secondary_name": "",
     "quantification_target": "years of carbon storage",
     "uncertainty_type": ["scientific"],
     "responsibility": "system",
@@ -823,6 +861,7 @@
   {
     "component_id": "carb-store",
     "component_name": "Storage",
+    "secondary_name": "carbonates",
     "quantification_target": "years of expected CO\u2082 storage",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
@@ -842,6 +881,7 @@
   {
     "component_id": "carb-terr-durability",
     "component_name": "Terrestrial carbonate durability",
+    "secondary_name": "",
     "quantification_target": "years of expected CO\u2082 storage",
     "uncertainty_type": ["scientific"],
     "responsibility": "system",
@@ -865,6 +905,7 @@
   {
     "component_id": "carb-utilize",
     "component_name": "Utilization",
+    "secondary_name": "",
     "quantification_target": "years of expected CO\u2082 storage via utilization",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
@@ -884,6 +925,7 @@
   {
     "component_id": "store-maint",
     "component_name": "Storage monitoring and maintenance",
+    "secondary_name": "",
     "quantification_target": "storage system monitoring and maintenance plan; years of expected CO\u2082 storage ",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
@@ -907,6 +949,7 @@
   {
     "component_id": "t-recirculation",
     "component_name": "Deepwater recirculation",
+    "secondary_name": "",
     "quantification_target": "years of expected CO\u2082 storage",
     "uncertainty_type": ["scientific"],
     "responsibility": "project",
@@ -930,6 +973,7 @@
   {
     "component_id": "tau-alk",
     "component_name": "Alkalinity residence time",
+    "secondary_name": "",
     "quantification_target": "years of expected CO\u2082 storage",
     "uncertainty_type": ["scientific"],
     "responsibility": "system",
@@ -954,6 +998,7 @@
   {
     "component_id": "tau-carb-marine",
     "component_name": "Marine carbonate durability",
+    "secondary_name": "",
     "quantification_target": "years of expected CO\u2082 storage",
     "uncertainty_type": ["scientific"],
     "responsibility": "system",
@@ -978,6 +1023,7 @@
   {
     "component_id": "energy-co2",
     "component_name": "Energy",
+    "secondary_name": "",
     "quantification_target": "energy use emissions",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
@@ -1009,6 +1055,7 @@
   {
     "component_id": "energy-current",
     "component_name": "Secondary impacts of energy demand",
+    "secondary_name": "",
     "quantification_target": "energy replacement emissions",
     "uncertainty_type": ["counterfactual"],
     "responsibility": "system",
@@ -1034,6 +1081,7 @@
   {
     "component_id": "fert-reduce",
     "component_name": "Change in fertilizer use",
+    "secondary_name": "",
     "quantification_target": "emissions impact of reducing fertilizer use",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
@@ -1057,6 +1105,7 @@
   {
     "component_id": "lime-reduce",
     "component_name": "Change in agricultural lime use ",
+    "secondary_name": "",
     "quantification_target": "emissions impact of reducing agricultural lime use",
     "uncertainty_type": ["counterfactual"],
     "responsibility": "project",
@@ -1080,6 +1129,7 @@
   {
     "component_id": "mat-co2",
     "component_name": "Materials",
+    "secondary_name": "",
     "quantification_target": "material embodied emissions",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
@@ -1115,6 +1165,7 @@
   {
     "component_id": "n2o-reduce",
     "component_name": "Reduction in N\u2082O emissions",
+    "secondary_name": "",
     "quantification_target": "emissions impact of reducing N\u2082O emissions",
     "uncertainty_type": ["scientific"],
     "responsibility": "system",
@@ -1134,6 +1185,7 @@
   {
     "component_id": "non-carb-products",
     "component_name": "Non-carbonate weathering products",
+    "secondary_name": "",
     "quantification_target": "emissions impact of non-carbonate weathering products",
     "uncertainty_type": ["execution"],
     "responsibility": "project",
@@ -1153,6 +1205,7 @@
   {
     "component_id": "yield-change",
     "component_name": "Change in agricultural yields",
+    "secondary_name": "",
     "quantification_target": "emissions impact of changing agricultural yield",
     "uncertainty_type": ["scientific"],
     "responsibility": "system",
