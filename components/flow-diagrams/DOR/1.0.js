@@ -78,7 +78,7 @@ const Flow = () => {
       <Arrow start={[26, 19]} length={9} up hideArrow />
       <Arrow start={[26, 19]} length={2} right />
 
-      <Rectangle id='tau-alk' start={[20, 30]} height={3} />
+      <Rectangle id='tau-dic' start={[20, 30]} height={3} />
 
       <Arrow start={[32, 22]} length={1} up />
       <Rectangle id='carb-marine' start={[29, 24]} height={3} />

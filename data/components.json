@@ -970,8 +970,8 @@
     ]
   },
   {
-    "component_id": "tau-alk",
-    "component_name": "Alkalinity residence time",
+    "component_id": "tau-dic",
+    "component_name": "DIC residence time",
     "secondary_name": "",
     "quantification_target": "years of expected CO\u2082 storage",
     "uncertainty_type": ["scientific"],
@@ -979,7 +979,7 @@
     "uncertainty_impact_min": "low",
     "uncertainty_impact_max": "low",
     "category": "durability",
-    "description": "The concept of ocean DIC lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000 and 100,000 years.",
+    "description": "The concept of ocean dissolved inorganic carbon (DIC) lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000 and 100,000 years.",
     "revisions": [
       {
         "date": "09-19-2022",
