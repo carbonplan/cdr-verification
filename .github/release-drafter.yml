@@ -20,6 +20,7 @@ version-resolver:
   default: patch
 exclude-labels:
   - 'skip-changelog'
+  - 'dependencies'
 template: |
   ## Release v$RESOLVED_VERSION (v20YY.MM.V)
   $CHANGES
