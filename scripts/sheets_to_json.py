@@ -122,6 +122,26 @@ def write_legend_to_json(df: pd.DataFrame):
     with open(f'data/legend.json', 'w') as fp:
         json.dump(ldict, fp, indent=4)
 
+def contributors_to_json(df: pd.DataFrame):
+    """Processes and writes contributors to combined json"""
+    contributor_list = []
+    for _, subset in df.iterrows():
+        dropped =  subset.dropna()
+        sinfo = subset.loc[['type','name','affiliation','initial','notes']].dropna()
+        spathway = dropped.drop(['type','name','affiliation','initial','notes'],errors='ignore')
+        spathway.replace("",np.nan,inplace=True)
+        spathway.dropna(inplace=True)
+        pathway_list = []
+        for i, v in spathway.items():
+            pathway_list.append({'id': i, 'version': v.split(',')})
+        sinfo['pathways'] = pathway_list
+        contributor_list.append(sinfo.to_dict())
+
+    with open(f'data/contributors.json', 'w') as fp:
+        json.dump(contributor_list, fp, indent=4)
+
+
+
 def write_components_to_json(df: pd.DataFrame):
     """writes components df to .json"""
     
@@ -181,13 +201,15 @@ def write_metadata_to_json(*, pathway: str, metadata_dict: dict, contributor_df:
     # If empty, create array
     # Combine with revisons dict and write to json
 
-
+    # Create filepath for each pathway metadata file
     sample_file = pathlib.Path("data") / f"{pathway}/metadata.json"
     sample_file.parent.mkdir(exist_ok=True)
+
 
     pathway_id = metadata_dict['pathway_id']
     # switch empty strs to nans for sel 
     contributor_df.replace("",np.nan,inplace=True)
+
     # grab contibutors matching pathway
     contributor_df_subset = contributor_df[~contributor_df[pathway_id].isnull()][['type', 'name', 'affiliation', 'notes', pathway_id]]
     
@@ -215,6 +237,7 @@ def write_metadata_to_json(*, pathway: str, metadata_dict: dict, contributor_df:
 
     with sample_file.open("w", encoding="utf-8") as fp:
         json.dump(combined_dict, fp, indent=4)
+    
 
 
 def write_to_json(template_dict: list, pathway: str, pathway_version: str):
@@ -250,6 +273,10 @@ def process_components_sheet(gsheet_doc_name):
     cdf = get_component_sheet(gsheet_doc_name)
     write_components_to_json(cdf)
 
+def process_contributors_sheet(gsheet_doc_name):
+    contributor_df = contributors_df()
+    contributors_to_json(contributor_df)
+
 def write_pathways_to_json(avail_pathways: list):
     contributor_df = contributors_df()
     for pathway in avail_pathways:
@@ -259,8 +286,6 @@ def write_pathways_to_json(avail_pathways: list):
         template_dict = df_to_dict(process_sheet_dict['cdf'],  **process_sheet_dict['metadata_dict'])
         write_to_json(template_dict, pathway, process_sheet_dict['metadata_dict']['version'])
         write_metadata_to_json(pathway = pathway, metadata_dict = process_sheet_dict['metadata_dict'], contributor_df=contributor_df)
-
-
 
 
 def validate_components():
@@ -273,5 +298,4 @@ validate_components()
 write_pathways_to_json(avail_pathways)
 process_legend(gsheet_doc_name)
 process_components_sheet(gsheet_doc_name)
-
-
+process_contributors_sheet(gsheet_doc_name)

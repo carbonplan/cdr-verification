@@ -44,10 +44,10 @@ const Documentation = ({ back, label, children }) => {
                     letterSpacing: 'mono',
                     color: 'secondary',
                     textTransform: 'uppercase',
-                    fontSize: [2, 2, 3, 3],
+                    fontSize: 2,
                   }}
                 >
-                  {label}
+                  Docs: {label}
                 </Box>
               </Flex>
             </Column>

@@ -13,6 +13,11 @@
       "version": "1.0",
       "date": "09-19-2022",
       "note": "First release."
+    },
+    {
+      "version": "1.1",
+      "date": "04-05-2023",
+      "note": "Updated pathway to include an additional drawdown component ('Outgassing'). Updated the VCL to exclude the durability component ('Deepwater recirculation') as the uncertainty is covered by the 'Outgassing' component. This did not change the overall VCL. Further details on this update are available in this [blog post](TK: BLOG)"
     }
   ]
 }

@@ -6,6 +6,11 @@ const Index = (props) => {
 }
 
 export function getStaticProps() {
-  return { props: { pathway: pathways[0], pathways } }
+  return {
+    props: {
+      pathway: pathways.find((p) => p.pathway_id === 'direct-air-capture'),
+      pathways,
+    },
+  }
 }
 export default Index

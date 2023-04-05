@@ -7,7 +7,7 @@ const Select = ({
   value,
   options,
   onChange,
-  versionInfo,
+  version,
   size: rawSize = 'lg',
   sx,
 }) => {
@@ -105,15 +105,8 @@ const Select = ({
       </Box>
       <Box sx={{ fontSize }}>
         {selectedLabel}
-        {versionInfo && (
-          <Button
-            href={versionInfo.href}
-            suffix={
-              <RotatingArrow
-                size='xs'
-                sx={{ mt: ['-2px', '-2px', '-2px', '-3px'] }}
-              />
-            }
+        {version && (
+          <Box
             sx={{
               display: 'inline-block',
               color: 'secondary',
@@ -123,8 +116,8 @@ const Select = ({
               ml: 2,
             }}
           >
-            v{versionInfo.version}
-          </Button>
+            v{version}
+          </Box>
         )}
       </Box>
     </Flex>

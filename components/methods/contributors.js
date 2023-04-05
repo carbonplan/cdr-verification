@@ -1,13 +1,15 @@
 import { Table } from '@carbonplan/components'
 
-const normalize = (list) => {
+const normalize = (list, affiliationOnly) => {
   return [
     ...new Set(
       list
         .sort((a, b) => a.name.localeCompare(b.name))
         .map(
           ({ name, affiliation }) =>
-            `${name.trim()}${affiliation ? ` (${affiliation.trim()})` : ''}`
+            `${affiliationOnly ? (affiliation || name).trim() : name.trim()}${
+              affiliation && !affiliationOnly ? ` (${affiliation.trim()})` : ''
+            }`
         )
     ),
   ].join(', ')
@@ -26,7 +28,7 @@ const Contributors = ({ contributors }) => {
         [3, 2, 2, 2],
       ]}
       data={[
-        ['CDR Companies', normalize(contributors['CDR Companies'])],
+        ['CDR Companies', normalize(contributors['CDR Companies'], true)],
         ['Scientific Experts', normalize(contributors['Scientific Experts'])],
         ['Ecosystem Actors', normalize(contributors['Ecosystem Actors'])],
         ['MRV Companies', normalize(contributors['MRV Companies'])],

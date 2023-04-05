@@ -3,8 +3,8 @@
   "pathway_name": "Terrestrial Biomass Sinking",
   "pathway_description": "Terrestrial Biomass Sinking uses plants or algae to remove CO\u2082 from the atmosphere via photosynthesis, and sinks that biomass into the deep ocean to achieve long-term carbon storage. In addition to the carbon removal and durability uncertainties mapped below, there are important uncertainties about the ecosystem impacts of this approach. This pathway is VCL 2-4, meaning that current quantification capacity can establish permanent carbon removal, but for certain approaches, very significant uncertainties remain.",
   "VCL": ["2", "4"],
-  "equation": "(1 - 2 - 3 - 4 - 5) - (6 + 7)",
-  "version": "1.0",
+  "equation": "(1 - 2 - 3 - 4 - 5 - 6) - (7 + 8)",
+  "version": "1.1",
   "components": [
     {
       "number": "1",
@@ -73,6 +73,19 @@
     },
     {
       "number": "6",
+      "category": "drawdown",
+      "component_id": "deepwater-outgass",
+      "name": "Outgassing",
+      "quantification_target": "mass of outgassed CO\u2082",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "system",
+      "uncertainty_impact_min": "medium",
+      "uncertainty_impact_max": "medium",
+      "description": "It is conservative to assume that all sunk biomass is remineralized and that ocean circulation and currents will eventually return the CO\u2082 back to the surface ocean, where it will be brought into equilibrium with the atmosphere. The estimated timescale of this ventilation is dependent on the location of sinking and depth achieved, which must be characterized at the project level but can be informed by models. Given these dynamics, any claim about the volume of total carbon removal facilitated by deepwater carbon storage should be accompanied by a clear claim about the associated time horizon of storage. Our uncertainty evaluation reflects the uncertainties associated with estimating carbon stored in the deep ocean for 1000+ years. Those interested storage on longer timescales may find it appropriate to adjust these uncertainties.",
+      "notes": ""
+    },
+    {
+      "number": "7",
       "category": "emissions",
       "component_id": "mat-co2",
       "name": "Materials",
@@ -85,7 +98,7 @@
       "notes": ""
     },
     {
-      "number": "7",
+      "number": "8",
       "category": "emissions",
       "component_id": "energy-co2",
       "name": "Energy",
@@ -98,7 +111,7 @@
       "notes": ""
     },
     {
-      "number": "8",
+      "number": "9",
       "category": "durability",
       "component_id": "t-recirculation",
       "name": "Deepwater recirculation",
@@ -107,7 +120,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "medium",
       "uncertainty_impact_max": "medium",
-      "description": "From a carbon management perspective, it is conservative to assume that all sunk biomass is remineralized and that ocean circulation and currents will eventually return the CO\u2082 back to the surface ocean, where it will be brought into equilibrium with the atmosphere. The estimated timescale of this ventilation is dependent on the location of sinking and depth achieved, which must be characterized at the project level but can be informed by models.",
+      "description": "From a carbon management perspective, it is conservative to assume that all sunk biomass is remineralized and that ocean circulation and currents will eventually return the CO\u2082 back to the surface ocean, where it will be brought into equilibrium with the atmosphere. The estimated timescale of this ventilation is dependent on the location of sinking and depth achieved, which must be characterized at the project level but can be informed by models. This uncertainty is not included in the calculation this pathway's Verification Confidence Level (VCL), because it is also captured by the Outgassing component.",
       "notes": ""
     }
   ]

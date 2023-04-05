@@ -14,7 +14,7 @@ const Rectangle = ({
   width = 6,
   height = 4,
 }) => {
-  const { status, data, setActive, setHovered } = useComponent(component_id)
+  const { status, data, onClick, setHovered } = useComponent(component_id)
   const deemphasized = data?.number?.includes('*')
   const borderColor = secondary || deemphasized ? 'secondary' : 'primary'
   const borderStyle = borderStyleProp ?? (deemphasized ? 'dashed' : 'solid')
@@ -35,8 +35,7 @@ const Rectangle = ({
   const handleClick = useCallback(
     (e) => {
       if (component_id) {
-        e.stopPropagation()
-        setActive()
+        onClick(e)
       }
     },
     [component_id]

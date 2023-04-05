@@ -90,7 +90,7 @@ const ComponentDocumentation = ({ component, options, pathways }) => {
 
         <Column start={1} width={[6, 6, 4, 4]} sx={{ mt: 6 }}>
           <Box sx={{ fontSize: 4 }}>Applicable pathways</Box>
-          <Row columns={[6, 6, 4, 4]} sx={{ fontFamily: 'heading', mt: 3 }}>
+          <Row columns={[6, 6, 4, 4]} sx={{ fontFamily: 'heading', my: 4 }}>
             <Column start={1} width={[5, 5, 3, 3]}>
               Pathway
             </Column>
@@ -118,7 +118,7 @@ const ComponentDocumentation = ({ component, options, pathways }) => {
                   <Column
                     start={[6, 6, 4, 4]}
                     width={1}
-                    sx={{ textAlign: 'right' }}
+                    sx={{ textAlign: 'right', whiteSpace: 'nowrap' }}
                   >
                     <Badge>{VCL[0] === VCL[1] ? VCL[0] : VCL.join('-')}</Badge>
                   </Column>
@@ -126,7 +126,7 @@ const ComponentDocumentation = ({ component, options, pathways }) => {
               ))}
           </Flex>
         </Column>
-        <Column start={1} width={[6, 6, 4, 4]} sx={{ mt: 6 }}>
+        <Column start={1} width={[6, 6, 4, 4]} sx={{ my: [4, 4, 6, 6] }}>
           <Box sx={{ fontSize: 4 }}>Revision history</Box>
 
           <History history={component.revisions} sx={{ mt: 3 }} />

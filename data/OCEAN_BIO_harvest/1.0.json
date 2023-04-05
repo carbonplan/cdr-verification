@@ -9,7 +9,7 @@
     {
       "number": "1",
       "category": "drawdown",
-      "component_id": "kelp_harvest",
+      "component_id": "kelp-harvest",
       "name": "Macroalgae harvest",
       "quantification_target": "mass of biomass carbon",
       "uncertainty_type": ["execution"],
@@ -35,7 +35,7 @@
     {
       "number": "3",
       "category": "drawdown",
-      "component_id": "comp",
+      "component_id": "surf-comp",
       "name": "Surface competition effects",
       "quantification_target": "impact on ecosystem-level carbon removal",
       "uncertainty_type": ["scientific"],
@@ -61,7 +61,7 @@
     {
       "number": "5",
       "category": "emissions",
-      "component_id": "mat_co2",
+      "component_id": "mat-co2",
       "name": "Materials",
       "quantification_target": "material embodied emissions",
       "uncertainty_type": ["execution"],
@@ -74,7 +74,7 @@
     {
       "number": "6",
       "category": "emissions",
-      "component_id": "energy_co2",
+      "component_id": "energy-co2",
       "name": "Energy",
       "quantification_target": "energy use emissions",
       "uncertainty_type": ["execution"],
@@ -87,7 +87,7 @@
     {
       "number": "7",
       "category": "durability",
-      "component_id": "t_recirculation",
+      "component_id": "t-recirculation",
       "name": "Deepwater recirculation",
       "quantification_target": "years of expected CO\u2082 storage",
       "uncertainty_type": ["scientific"],

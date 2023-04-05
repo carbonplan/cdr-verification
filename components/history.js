@@ -47,34 +47,8 @@ const History = ({ history, versionRoutes, sx }) => {
                 key={date}
                 start={1}
                 width={[4, 4, 3, 3]}
-                sx={{ position: 'relative', mt: 3, mb: 2 }}
+                sx={{ mt: 3, mb: 2 }}
               >
-                <Box
-                  as='svg'
-                  width='12'
-                  height='12'
-                  viewBox='0 0 13 13'
-                  fill='none'
-                  sx={{
-                    position: 'absolute',
-                    mt: '-6px',
-                    ml: [
-                      `calc(-7.25px - (24px + (100vw - 7 * 24px) / 6 / 2))`,
-                      `calc(-7px - (32px + (100vw - 9 * 32px) / 8 / 2))`,
-                      `calc(-6.25px - (32px + (100vw - 13 * 32px) / 12 / 2))`,
-                      `calc(-6.25px - (48px + (100vw - 13 * 48px) / 12 / 2))`,
-                    ],
-                  }}
-                >
-                  <circle
-                    cx='6.5'
-                    cy='6.5'
-                    r='6'
-                    fill={theme.colors.background}
-                    stroke={theme.colors.secondary}
-                  />
-                </Box>
-
                 <Divider sx={{ my: 0 }} />
                 <Row
                   columns={[4, 4, 3, 3]}
@@ -86,11 +60,37 @@ const History = ({ history, versionRoutes, sx }) => {
                     userSelect: 'none',
                     textTransform: 'uppercase',
                     flexShrink: 0,
-                    mt: 2,
+                    mt: 3,
                     mb: 3,
                   }}
                 >
-                  <Column start={1} width={2}>
+                  <Column start={1} width={2} sx={{ position: 'relative' }}>
+                    <Box
+                      as='svg'
+                      width='12'
+                      height='12'
+                      viewBox='0 0 13 13'
+                      fill='none'
+                      sx={{
+                        position: 'absolute',
+                        mt: '3px',
+                        ml: [
+                          `calc(-7.25px - (24px + (100vw - 7 * 24px) / 6 / 2))`,
+                          `calc(-7px - (32px + (100vw - 9 * 32px) / 8 / 2))`,
+                          `calc(-6.25px - (32px + (100vw - 13 * 32px) / 12 / 2))`,
+                          `calc(-6.25px - (48px + (100vw - 13 * 48px) / 12 / 2))`,
+                        ],
+                      }}
+                    >
+                      <circle
+                        cx='6.5'
+                        cy='6.5'
+                        r='6'
+                        fill={theme.colors.background}
+                        stroke={theme.colors.secondary}
+                      />
+                    </Box>
+
                     {formatDate(date)}
                   </Column>
                   {version && (

@@ -9,14 +9,14 @@ const Flow = () => {
       <Arrow start={[5, 11]} length={2} right />
 
       <Rectangle
-        id='mat_co2'
+        id='mat-co2'
         width={4}
         start={[6, 3]}
         height={1}
         borderStyle='none'
       />
       <Rectangle
-        id='energy_co2'
+        id='energy-co2'
         width={4}
         start={[9, 3]}
         height={1}
@@ -27,7 +27,7 @@ const Flow = () => {
 
       <Arrow start={[13, 3]} length={1} right />
 
-      <Rectangle id='energy_current' start={[15, 2]} />
+      <Rectangle id='energy-current' start={[15, 2]} />
 
       <Rectangle
         start={[6, 7]}
@@ -42,12 +42,12 @@ const Flow = () => {
       <Arrow start={[15, 11]} length={1} right />
       <Arrow start={[11, 14]} length={1} down />
 
-      <Rectangle id='alk_total_convert' start={[17, 9]} />
+      <Rectangle id='base-total-convert' start={[17, 9]} />
 
       <Rectangle start={[8, 16]} height={3} label='Acid bi-product disposal' />
 
       <Arrow start={[11, 20]} length={2} down />
-      <Rectangle id='acid_return' start={[8, 23]} height={3} />
+      <Rectangle id='acid-return' start={[8, 23]} height={3} />
 
       <Arrow start={[20, 14]} length={8} down />
       <Rectangle id='poc' start={[16, 23]} width={8} height={3} />
@@ -58,7 +58,7 @@ const Flow = () => {
       <Arrow start={[26, 7]} length={2} right />
       <Arrow start={[26, 13]} length={2} right />
 
-      <Rectangle id='sec_precip' start={[29, 2]} width={8} height={3} />
+      <Rectangle id='sec-precip' start={[29, 2]} width={8} height={3} />
       <Rectangle id='calc' start={[29, 6]} width={8} height={3} />
       <Rectangle id='asg' start={[29, 12]} width={8} height={3} />
 
@@ -68,7 +68,7 @@ const Flow = () => {
 
       <Arrow start={[33, 22]} length={1} up />
 
-      <Rectangle id='tau_alk' start={[29, 24]} width={8} height={3} />
+      <Rectangle id='tau-alk' start={[29, 24]} width={8} height={3} />
     </Grid>
   )
 }

@@ -1,6 +1,13 @@
 {
   "contributors": [
     {
+      "type": "CDR Company",
+      "name": "Adam Wolf",
+      "affiliation": "Eion",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
       "type": "Scientific Expert",
       "name": "Becca Neumann",
       "affiliation": "University of Washington",

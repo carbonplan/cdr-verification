@@ -9,7 +9,7 @@
     {
       "number": "1",
       "category": "drawdown",
-      "component_id": "bio_feedstock",
+      "component_id": "bio-feedstock",
       "name": "Biomass feedstock",
       "quantification_target": "mass of carbon in feedstock",
       "uncertainty_type": ["execution"],
@@ -22,7 +22,7 @@
     {
       "number": "2",
       "category": "drawdown",
-      "component_id": "bio_transformed",
+      "component_id": "bio-transformed",
       "name": "Biomass transformation",
       "quantification_target": "mass of carbon lost in biomass transformation",
       "uncertainty_type": ["execution"],
@@ -35,7 +35,7 @@
     {
       "number": "3",
       "category": "drawdown",
-      "component_id": "feed_stor",
+      "component_id": "feed-stor",
       "name": "Feedstock storage counterfactual",
       "quantification_target": "mass of counterfactual stored biomass carbon",
       "uncertainty_type": ["counterfactual"],
@@ -48,7 +48,7 @@
     {
       "number": "4",
       "category": "drawdown",
-      "component_id": "feed_current",
+      "component_id": "feed-current",
       "name": "Feedstock use counterfactual",
       "quantification_target": "feedstock replacement emissions",
       "uncertainty_type": ["counterfactual"],
@@ -61,7 +61,7 @@
     {
       "number": "5",
       "category": "drawdown",
-      "component_id": "LUC_indirect",
+      "component_id": "LUC-indirect",
       "name": "Indirect land use change",
       "quantification_target": "indirect land use change emissions",
       "uncertainty_type": ["scientific"],
@@ -74,7 +74,7 @@
     {
       "number": "6",
       "category": "drawdown",
-      "component_id": "bio_degrade",
+      "component_id": "bio-degrade",
       "name": "Biochar degradation",
       "quantification_target": "mass of carbon lost from biochar over storage time horizon",
       "uncertainty_type": ["scientific"],
@@ -87,7 +87,7 @@
     {
       "number": "7*",
       "category": "drawdown",
-      "component_id": "soil_c",
+      "component_id": "soil-c",
       "name": "Soil carbon impacts",
       "quantification_target": "soil carbon stock change",
       "uncertainty_type": ["scientific"],
@@ -100,7 +100,7 @@
     {
       "number": "8*",
       "category": "emissions",
-      "component_id": "lime_reduce",
+      "component_id": "lime-reduce",
       "name": "Change in agricultural lime use",
       "quantification_target": "emissions impact of reducing agricultural lime use",
       "uncertainty_type": ["counterfactual"],
@@ -113,7 +113,7 @@
     {
       "number": "9*",
       "category": "emissions",
-      "component_id": "fert_reduce",
+      "component_id": "fert-reduce",
       "name": "Change in fertilizer use",
       "quantification_target": "emissions impact of reducing fertilizer use",
       "uncertainty_type": ["execution"],
@@ -126,7 +126,7 @@
     {
       "number": "10*",
       "category": "emissions",
-      "component_id": "yield_change",
+      "component_id": "yield-change",
       "name": "Change in agricultural yields",
       "quantification_target": "emissions impact of changing agricultural yield",
       "uncertainty_type": ["scientific"],
@@ -139,7 +139,7 @@
     {
       "number": "11",
       "category": "emissions",
-      "component_id": "mat_co2",
+      "component_id": "mat-co2",
       "name": "Materials",
       "quantification_target": "material embodied emissions",
       "uncertainty_type": ["execution"],
@@ -152,7 +152,7 @@
     {
       "number": "12",
       "category": "emissions",
-      "component_id": "energy_co2",
+      "component_id": "energy-co2",
       "name": "Energy",
       "quantification_target": "energy use emissions",
       "uncertainty_type": ["execution"],
@@ -165,14 +165,14 @@
     {
       "number": "13",
       "category": "durability",
-      "component_id": "bio_storage",
+      "component_id": "bio-storage",
       "name": "Biochar storage",
       "quantification_target": "years of carbon storage",
       "uncertainty_type": ["scientific"],
       "responsibility": "system",
       "uncertainty_impact_min": "high",
       "uncertainty_impact_max": "very high",
-      "description": "The durability of carbon storage in biochar applied to soils is contingent on the physical and chemical characteristics of biochar (see Biomass transformation and Biochar degradation) and the environment in which it is applied, and will change over time as a function of Biochar degradation. Better characterizing biochar storage and degradation is an active area of research. The uncertainty associated with biochar storage is accounted for in the Biochar degradation component.",
+      "description": "The durability of carbon storage in biochar applied to soils is contingent on the physical and chemical characteristics of biochar (see Biomass transformation and Biochar degradation) and the environment in which it is applied, and will change over time as a function of Biochar degradation. Better characterizing biochar storage and degradation is an active area of research. This uncertainty is not included in the calculation this pathway's Verification Confidence Level (VCL), because it is also captured by the Biochar degradation component.",
       "notes": ""
     }
   ]

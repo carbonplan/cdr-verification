@@ -34,6 +34,13 @@
       "affiliation": "Exponential ",
       "notes": "",
       "version": ["1.0"]
+    },
+    {
+      "type": "CDR Company",
+      "name": "Sophie Chu",
+      "affiliation": "Captura",
+      "notes": "",
+      "version": ["1.0"]
     }
   ],
   "revisions": [
