@@ -44,8 +44,8 @@
     },
     {
       "version": "1.1",
-      "date": "04-05-2023",
-      "note": "Updated pathway to include a more explicit representation of marine carbonate precipitation, in alignment with the Enhanced weathering and Direct ocean removal pathways. Updated the VCL to exclude the durability components ('Alkalinity residence time' and 'Marine carbonate durability') as the corresponding uncertainties are covered in the 'Marine carbonate precipitation' component. These changes did not change the overall VCL. Further details on this update are available in this [blog post](TK: BLOG)."
+      "date": "04-10-2023",
+      "note": "Updated pathway to include a more explicit representation of marine carbonate precipitation, in alignment with the Enhanced weathering and Direct ocean removal pathways. Updated the VCL to exclude the durability components ('DIC residence time' and 'Marine carbonate durability') as the corresponding uncertainties are covered in the 'Marine carbonate precipitation' component. These changes did not change the overall VCL. Further details on this update are available in this [blog post](TK: BLOG)."
     }
   ]
 }

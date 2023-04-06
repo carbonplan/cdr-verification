@@ -107,7 +107,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "medium",
       "uncertainty_impact_max": "medium",
-      "description": "From a carbon management perspective, it is conservative to assume that all sunk biomass is remineralized, and that ocean circulation and currents will eventually return the CO\u2082 back to the surface ocean, where it will be brought into equilibrium with the atmosphere. The estimated timescale of this ventilation depends on the location of sinking and depth achieved, which must be characterized at the project level but can be informed by models. This uncertainty is not included in the calculation this pathway's Verification Confidence Level (VCL), because it is also captured by the Outgassing component.",
+      "description": "From a carbon management perspective, it is conservative to assume that all sunk biomass is remineralized, and that ocean circulation and currents will eventually return the CO\u2082 back to the surface ocean, where it will be brought into equilibrium with the atmosphere. The estimated timescale of this ventilation depends on the location of sinking and depth achieved, which must be characterized at the project level but can be informed by models. This uncertainty is not included in the calculation of this pathway's Verification Confidence Level (VCL), because it is also captured by the Outgassing component.",
       "notes": ""
     }
   ]

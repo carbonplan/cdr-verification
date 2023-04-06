@@ -36,7 +36,7 @@
         "note": "First release."
       },
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "Edited component text for clarity. Edited uncertainty range from Low-Medium to Low-Low to reflect more realistic uncertainties for model parameterization, and temperature and salinity variability. This edit was made as part of a broader update to the OAE-mineral pathway, described [here](TK:BLOG)."
       }
     ],
@@ -112,7 +112,7 @@
         "note": "First release."
       },
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "Edited component to reflect the differentiation between different types of mineral additions. This edit was made as part of a broader update to the OAE-mineral pathway, described [here](TK:BLOG)."
       }
     ],
@@ -136,7 +136,7 @@
         "note": "First release."
       },
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "Updated component to reflect the role of probablistic models for quantifying air sea gas exchange. Edited for cross-pathway consistency in response to the [addition](TK:BLOG) of the Direct Ocean Removal pathway."
       }
     ],
@@ -166,7 +166,7 @@
         "note": "First release."
       },
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "Edited component text for clarity. Edited uncertainty range from Low-Medium to Low-Low to reflect more realistic uncertainties for model parameterization, and temperature and salinity variability."
       }
     ],
@@ -206,7 +206,7 @@
     "description": "Since biochar degrades over time, any claim about the volume of total carbon removal facilitated by biochar should be accompanied by a clear claim about the associated time horizon of storage. The degradation of biochar applied to soils is contingent on the physical and chemical characteristics of biochar (see Biomass transformation) and the environment in which it is applied. Simple models relating biochar elemental ratios or volatile matter content to its stability may provide some indication of expected longevity of carbon storage, and by extension, the mass of carbon remaining in biochar over a specified time horizon. However, these models do not extrapolate with confidence over long time horizons or capture variability critical environmental factors that drive degradation like climate, temperature, moisture, soil type and texture, and microbial and fungal communities. Estimates of carbon lost from biochar should also take into account the potential for biochar\u2019s environment to change through time, for example by eroding off of agricultural fields or migrating through the soil column. Better characterizing biochar degradation is an active area of research. Note that although this component specifically focuses on biochar applied to soils, biochar could be stored (e.g. buried at depth) or productized (e.g. embedded in concrete) in a way that constrains degradation uncertainty. ",
     "revisions": [
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "First release."
       }
     ],
@@ -226,7 +226,7 @@
     "description": "The mass of biomass feedstock can be directly measured and converted to CO\u2082e using a default factor. The feedstock quantity will also determine the feedstock-related emissions per ton of biochar produced (see Feedstock storage counterfactual, Feedstock replacement emissions, and Indirect land use change).",
     "revisions": [
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "First release."
       }
     ],
@@ -266,7 +266,7 @@
     "description": "Biochar carbon content can be sampled to estimate the total mass of carbon in produced biochar and converted to CO\u2082e using a default factor. Mass of carbon in produced biochar can be compared to the mass of carbon in the biomass feedstock to estimate the CO\u2082 emitted during the biomass transformation process. This quantity can also be checked for consistency against operational data and expected conversion efficiency of the pyrolyzer. In addition to characterizing carbon content, a sampling protocol for produced biochar should characterize the physical and chemical characteristics that inform the expected durability of biochar (e.g. elemental ratios, volatile and ash content, porosity; see Biochar degradation) and the impact of biochar application (e.g. water retention, surface area, surface charge, liming capacity, heavy metal content, or polyaromatic hydrocarbon and polychlorinated biphenyls; see Soil carbon impacts, Change in agricultural lime use, Change in fertilizer use, Change in agricultural yields). The conversion efficiency, structure, and chemistry of produced biochar are contingent on the specific feedstock and operating conditions of the pyrolyzer, and a sampling regime should be designed accordingly.",
     "revisions": [
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "First release."
       }
     ],
@@ -290,7 +290,7 @@
         "note": "First release."
       },
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "Edited for cross-pathway consistency in response to the [addition](TK:BLOG) of the Direct Ocean Removal pathway."
       }
     ],
@@ -314,7 +314,7 @@
     "description": "The effects of an enhanced weathering intervention should be understood as the difference between the observed carbonate formation and the carbonate formation that would have occurred absent the intervention. The baseline rate of carbonate formation may be strongly dependent on the physical characteristics of the feedstock (e.g. surface area and grain size distribution), environment (e.g. mine design, climate, weather) and treatment of the alkaline waste material, in the present and future. In some systems, the baseline may be best characterized by ongoing measurements of an untreated control.",
     "revisions": [
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "First release."
       }
     ],
@@ -334,7 +334,7 @@
     "description": "Carbonates could release CO\u2082 if exposed to heat or acid. The risk of leakage from produced carbonates is contingent on what type of carbonate is produced, the planned treatment of the carbonates, and their resulting exposure to environmental conditions that facilitate CO\u2082 release. ",
     "revisions": [
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "First release."
       }
     ],
@@ -371,7 +371,7 @@
     "component_name": "Carbonates",
     "secondary_name": "",
     "quantification_target": "mass of captured CO\u2082 stored in carbonates",
-    "uncertainty_type": ["excution"],
+    "uncertainty_type": ["execution"],
     "responsibility": "project",
     "uncertainty_impact_min": "low",
     "uncertainty_impact_max": "high",
@@ -379,7 +379,7 @@
     "description": "The mass of CO\u2082 captured through alkaline feedstock weathering and carbonate mineralization can be quantified by measuring CO\u2082 loss from air (e.g. using eddy covariance flux towers or dynamic closed chambers), measurement of carbonate chemistry parameters (e.g. pH, TA, or DIC), or measuring changes in mineral content. If measuring changes in mineral content, it is critical to carefully characterize the starting carbonate content and variability of the feedstock. It is likely that a combination of quantification approaches will be needed to bound outcomes. Calibrated reactive transport models may also play a role in estimating long-term trends of CO\u2082 uptake. Measurement and modeling approaches must take into account the potential for short-term cycles of absorption and outgassing.",
     "revisions": [
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "First release."
       }
     ],
@@ -423,7 +423,7 @@
     "description": "Carbonates may remain exposed to the atmosphere or be buried over time depending on the location and approach. A portion of exposed and buried carbonates may undergo weathering over time. If and when carbonates weather, there is an additional shift in CO\u2082 fluxes as a result of introducing alkalinity to the system and storing additional CO\u2082 as bicarbonate. This process approximately doubles the associated CO\u2082 storage. Although most carbonates will ultimately weather, this process should only be credited when the impact on atmospheric CO\u2082 actually occurs and must take into account the full suite of uncertainties related to quantifying weathering outcomes (see the Enhanced Weathering pathway). In the absence of clear measurement of carbonate weathering, we recommend alkaline waste mineralization approaches only consider and credit the mineral phase of CO\u2082 storage.",
     "revisions": [
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "First release."
       }
     ],
@@ -443,7 +443,7 @@
     "description": "The mass of CO\u2082 removed from seawater through electrochemical separation \u2014 or other approaches \u2014 can be measured directly as a metered output from the direct ocean removal (DOR) system. It can also be checked for consistency against operational data from the DOR system and characterization of the seawater effluent that is depleted of dissolved inorganic carbon (DIC). The quantity of CO\u2082 directly removed from seawater may not be equal to the quantity of CO\u2082 stored (see Leakage) or the quantity of CO\u2082 indirectly removed by atmospheric drawdown (see Air sea gas exchange). Direct removal of CO\u2082 from seawater produces DIC-depleted seawater and results in subsequent atmospheric carbon removal by inducing air-sea gas exchange. Thus, the quantity of CO\u2082 removed directly from seawater must be clearly quantified and validated as a separate measurement from CO\u2082 storage or atmospheric CO\u2082 drawdown. ",
     "revisions": [
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "First release."
       }
     ],
@@ -699,7 +699,7 @@
         "note": "First release."
       },
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "Added text to reflect that the response of calcifying communities could also impact POC export, and edited for cross-pathway consistency in response to the [addition](TK:BLOG) the Direct Ocean Removal Pathway."
       }
     ],
@@ -727,7 +727,7 @@
         "note": "First release."
       },
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "Updated component to reflect that abiotic precipitation of brucite (in addition to calcite) impacts CO\u2082 outgassing, and edited for cross-pathway consistency. For the Mineral OAE version of this component, updated to reflect the differentiation between different types of mineral additions. These edits are described further [here](TK:BLOG)."
       }
     ],
@@ -759,7 +759,7 @@
         "note": "Second release. Edited component to reflect the possibility mineral weathering may also drive outgassing from soils. These edits occured as part of a broader [update of the Enhanced Weathering pathway](https://carbonplan.org/blog/enhanced-weathering-update)."
       },
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "Edited for cross-pathway consistency in response to the [addition](TK:BLOG) of the Biochar pathway."
       }
     ],
@@ -781,6 +781,10 @@
       {
         "date": "09-19-2022",
         "note": "First release."
+      },
+      {
+        "date": "04-10-2023",
+        "note": "Modifying component to include both leakage from the injection process, and potential future leakage. Updating upper uncertainty bound from low to medium to reflect this change."
       }
     ],
     "notes": "",
@@ -826,7 +830,7 @@
     "description": "It is conservative to assume that all sunk biomass is remineralized and that ocean circulation and currents will eventually return the CO\u2082 back to the surface ocean, where it will be brought into equilibrium with the atmosphere. The estimated timescale of this ventilation is dependent on the location of sinking and depth achieved, which must be characterized at the project level but can be informed by models. Given these dynamics, any claim about the volume of total carbon removal facilitated by deepwater carbon storage should be accompanied by a clear claim about the associated time horizon of storage. Our uncertainty evaluation reflects the uncertainties associated with estimating carbon stored in the deep ocean for 1000+ years. Those interested storage on longer timescales may find it appropriate to adjust these uncertainties. ",
     "revisions": [
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "First release."
       }
     ],
@@ -850,7 +854,7 @@
     "description": "The durability of carbon storage in biochar applied to soils is contingent on the physical and chemical characteristics of biochar (see Biomass transformation and Biochar degradation) and the environment in which it is applied, and will change over time as a function of Biochar degradation. Better characterizing biochar storage and degradation is an active area of research. The uncertainty associated with biochar storage is accounted for in the Biochar degradation component.",
     "revisions": [
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "First release."
       }
     ],
@@ -870,7 +874,7 @@
     "description": "Although carbonates may have complex dynamics of dissolution and reprecipitation, there is a high likelihood of at least tens to hundreds of thousands of years of durability in the absence of exposure to heat or acid. The estimated durability of carbonates is also contingent on the determination of what carbonate is produced, the planned treatment of the carbonates, and their exposure to environmental conditions that facilitate weathering (see Carbonate Weathering).",
     "revisions": [
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "First release."
       }
     ],
@@ -914,7 +918,7 @@
     "description": "Produced carbonates may be used, for example in industrial processes, as building materials, or as soil amendments. The source of utilization may lead to stable storage (see Storage), carbonate degradation and release of CO\u2082 (see Leakage) or carbonate weathering and further storage of CO\u2082 (see Carbonate weathering).",
     "revisions": [
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "First release."
       }
     ],
@@ -1094,7 +1098,7 @@
         "note": "First release."
       },
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "Edited for cross-pathway consistency in response to the [addition](TK:BLOG) of the Biochar pathway."
       }
     ],
@@ -1118,7 +1122,7 @@
         "note": "First release."
       },
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "Edited for cross-pathway consistency in response to the [addition](TK:BLOG) of the Biochar pathway."
       }
     ],
@@ -1142,7 +1146,7 @@
         "note": "First release."
       },
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "Edited for cross-pathway consistency in response to [new pathway additions](TK:BLOG)."
       }
     ],
@@ -1194,7 +1198,7 @@
     "description": "An enhanced weathering intervention may produce byproducts that do not facilitate carbon storage, for example if weathering is facilitated by non-carbonic acid. Valuable byproducts (e.g. hydrogen or sulphuric acid) or services (e.g. metal extraction or pollutant reduction) may also be produced. Any avoided emissions associated with these valuable byproducts should not be counted as additional carbon removal, but could potentially be counted against project lifecycle emissions.",
     "revisions": [
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "First release."
       }
     ],
@@ -1214,7 +1218,7 @@
     "description": "If applied to agricultural soils, biochar could impact agricultural yields, which is critical for understanding the broader impact of biochar use. While most literature suggests the potential for positive impacts on yields (dependent on biochar type and application strategy), there is some evidence documenting negative impacts on yields. Due to the potentially difficult nature of the counterfactual scenarios involved, we recommend this component not be included in the accounting of net carbon removal. If biochar application increases agricultural yields and by extension leads to avoided emissions, we conservatively recommend that these changes not be used to counterbalance project emissions nor counted as additional durable carbon removal. ",
     "revisions": [
       {
-        "date": "04-05-2023",
+        "date": "04-10-2023",
         "note": "First release."
       }
     ],

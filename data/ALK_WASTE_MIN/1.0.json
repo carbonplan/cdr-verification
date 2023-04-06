@@ -3,7 +3,7 @@
   "pathway_name": "Alkaline Waste Mineralization",
   "pathway_description": "Alkaline waste mineralization enhances the weathering process of alkaline waste streams (e.g. mine tailings or slag) to enhance the uptake and storage of atmospheric CO\u2082. Here, we specifically consider methods that primarily store atmospheric CO\u2082 in the form of solid carbonates. This pathway is VCL 3-5, meaning that current quantification capacity can establish permanent carbon removal, but that for certain approaches, significant uncertainties remain.",
   "VCL": ["3", "5"],
-  "equation": "(1-2-3) + (6+7+8)",
+  "equation": "(1-2-3) - (6+7+8)",
   "version": "1.0",
   "components": [
     {
@@ -12,7 +12,7 @@
       "component_id": "carb-mineral",
       "name": "Carbonates",
       "quantification_target": "mass of captured CO\u2082 stored in carbonates",
-      "uncertainty_type": ["excution"],
+      "uncertainty_type": ["execution"],
       "responsibility": "project",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "high",
@@ -120,7 +120,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "negligible",
       "uncertainty_impact_max": "low",
-      "description": "Although carbonates may have complex dynamics of dissolution and reprecipitation, there is a high likelihood of at least tens to hundreds of thousands of years of durability in the absence of exposure to heat or acid. The estimated durability of carbonates is also contingent on the determination of what carbonate is produced, the planned treatment of the carbonates, and their exposure to environmental conditions that facilitate weathering (see Carbonate Weathering). This uncertainty is not included in the calculation this pathway's Verification Confidence Level (VCL), because it is also captured by the Leakage component.",
+      "description": "Although carbonates may have complex dynamics of dissolution and reprecipitation, there is a high likelihood of at least tens to hundreds of thousands of years of durability in the absence of exposure to heat or acid. The estimated durability of carbonates is also contingent on the determination of what carbonate is produced, the planned treatment of the carbonates, and their exposure to environmental conditions that facilitate weathering (see Carbonate Weathering). This uncertainty is not included in the calculation of this pathway's Verification Confidence Level (VCL), because it is also captured by the Leakage component.",
       "notes": ""
     },
     {
@@ -133,7 +133,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "negligible",
       "uncertainty_impact_max": "low",
-      "description": "Produced carbonates may be used, for example in industrial processes, as building materials, or as soil amendments. The source of utilization may lead to stable storage (see Storage), carbonate degradation and release of CO\u2082 (see Leakage) or carbonate weathering and further storage of CO\u2082 (see Carbonate weathering). This uncertainty is not included in the calculation this pathway's Verification Confidence Level (VCL), because it is also captured by the Leakage component.",
+      "description": "Produced carbonates may be used, for example in industrial processes, as building materials, or as soil amendments. The source of utilization may lead to stable storage (see Storage), carbonate degradation and release of CO\u2082 (see Leakage) or carbonate weathering and further storage of CO\u2082 (see Carbonate Weathering). This uncertainty is not included in the calculation of this pathway's Verification Confidence Level (VCL), because it is also captured by the Leakage component.",
       "notes": ""
     }
   ]

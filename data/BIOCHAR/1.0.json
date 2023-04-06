@@ -172,7 +172,7 @@
       "responsibility": "system",
       "uncertainty_impact_min": "high",
       "uncertainty_impact_max": "very high",
-      "description": "The durability of carbon storage in biochar applied to soils is contingent on the physical and chemical characteristics of biochar (see Biomass transformation and Biochar degradation) and the environment in which it is applied, and will change over time as a function of Biochar degradation. Better characterizing biochar storage and degradation is an active area of research. This uncertainty is not included in the calculation this pathway's Verification Confidence Level (VCL), because it is also captured by the Biochar degradation component.",
+      "description": "The durability of carbon storage in biochar applied to soils is contingent on the physical and chemical characteristics of biochar (see Biomass transformation and Biochar degradation) and the environment in which it is applied, and will change over time as a function of Biochar degradation. Better characterizing biochar storage and degradation is an active area of research. This uncertainty is not included in the calculation of this pathway's Verification Confidence Level (VCL), because it is also captured by the Biochar degradation component.",
       "notes": ""
     }
   ]

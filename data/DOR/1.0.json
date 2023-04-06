@@ -146,7 +146,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "medium",
-      "description": "If storage results in a functionally stable form of CO\u2082 on a short timescale \u2014 for example, via subsurface mineralization or mineralization in concrete \u2014 demonstration that the stable form has been achieved is enough to establish durability. However, if the integrity of storage requires ongoing monitoring and maintenance \u2014 for example, with the injection of supercritical CO\u2082 \u2014 an evaluation of durability claims must consider the monitoring and maintenance plan, as well as any applicable regulatory structure that assigns ongoing liability for storage integrity. One important consideration is whether or not there is a track record of sufficient administrative capacity to guarantee execution of monitoring, maintenance, and liability arrangements. This uncertainty is not included in the calculation this pathway's Verification Confidence Level (VCL), because it is also captured by the Leakage component.",
+      "description": "If storage results in a functionally stable form of CO\u2082 on a short timescale \u2014 for example, via subsurface mineralization or mineralization in concrete \u2014 demonstration that the stable form has been achieved is enough to establish durability. However, if the integrity of storage requires ongoing monitoring and maintenance \u2014 for example, with the injection of supercritical CO\u2082 \u2014 an evaluation of durability claims must consider the monitoring and maintenance plan, as well as any applicable regulatory structure that assigns ongoing liability for storage integrity. One important consideration is whether or not there is a track record of sufficient administrative capacity to guarantee execution of monitoring, maintenance, and liability arrangements. This uncertainty is not included in the calculation of this pathway's Verification Confidence Level (VCL), because it is also captured by the Leakage component.",
       "notes": ""
     },
     {
@@ -159,7 +159,7 @@
       "responsibility": "system",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "low",
-      "description": "The concept of ocean dissolved inorganic carbon (DIC) lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000 and 100,000 years. Since capturing atmospheric CO\u2082 through direct ocean removal results in restoring seawater to its original state, this intervention is not expected to change the long-term patterns of abiotic precipitation and dissolution of carbonate minerals \u2014 a central control on DIC residence time \u2014 compared to the counterfactual.  This uncertainty is not included in the calculation this pathway's Verification Confidence Level (VCL), because it is also captured by the Marine carbonate precipitation component.",
+      "description": "The concept of ocean dissolved inorganic carbon (DIC) lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000 and 100,000 years. Since capturing atmospheric CO\u2082 through direct ocean removal results in restoring seawater to its original state, this intervention is not expected to change the long-term patterns of abiotic precipitation and dissolution of carbonate minerals \u2014 a central control on DIC residence time \u2014 compared to the counterfactual.  This uncertainty is not included in the calculation of this pathway's Verification Confidence Level (VCL), because it is also captured by the Marine carbonate precipitation component.",
       "notes": ""
     },
     {
@@ -172,7 +172,7 @@
       "responsibility": "system",
       "uncertainty_impact_min": "negligible",
       "uncertainty_impact_max": "negligible",
-      "description": "The precipitation and dissolution of carbonate minerals modifies ocean DIC (see DIC residence time). Carbonates preserved on the seafloor are likely to store carbon on geologic timescales. This uncertainty is not included in the calculation this pathway's Verification Confidence Level (VCL), because it is also captured by the Marine carbonate precipitation component.",
+      "description": "The precipitation and dissolution of carbonate minerals modifies ocean DIC (see DIC residence time). Carbonates preserved on the seafloor are likely to store carbon on geologic timescales. This uncertainty is not included in the calculation of this pathway's Verification Confidence Level (VCL), because it is also captured by the Marine carbonate precipitation component.",
       "notes": ""
     }
   ]
