@@ -34,27 +34,30 @@ const Flow = () => {
       />
       <Rectangle label='Enhanced weathering intervention' start={[10, 9]} />
 
-      <Arrow start={[17, 11]} length={2} right hideArrow />
-      <Arrow start={[19, 9]} length={2} right />
-      <Arrow start={[19, 14]} length={2} right />
-      <Arrow start={[19, 9]} length={5} up hideArrow />
+      <Arrow start={[17, 11]} length={4} right />
+      <Rectangle start={[22, 9]} id='non-carb-products' />
 
-      <Rectangle start={[22, 7]} id='non-carb-products' />
-      <Rectangle start={[22, 12]} id='carb-mineral' />
+      <Arrow start={[13, 14]} length={4} down />
+      <Rectangle start={[10, 19]} id='carb-mineral' />
 
-      <Arrow start={[29, 14]} length={4} right hideArrow />
-      <Arrow start={[33, 14]} length={1} down />
-      <Rectangle id='carb-store' start={[30, 17]} />
-      <Rectangle id='carb-utilize' start={[30, 23]} />
-      <Arrow start={[27, 19]} length={2} left hideArrow />
-      <Arrow start={[27, 25]} length={2} left hideArrow />
-      <Arrow start={[27, 19]} length={6} up hideArrow />
-      <Arrow start={[23, 22]} length={4} left hideArrow />
-      <Arrow start={[23, 19]} length={5} up hideArrow />
-      <Arrow start={[21, 19]} length={2} left />
-      <Arrow start={[21, 24]} length={2} left />
-      <Rectangle id='carb-degrade' start={[14, 17]} />
-      <Rectangle id='carb-weather' start={[14, 22]} />
+      <Arrow start={[17, 21]} length={1} right hideArrow />
+      <Arrow start={[18, 19]} length={6} up hideArrow />
+      <Arrow start={[18, 19]} length={2} right />
+      <Arrow start={[18, 25]} length={2} right />
+
+      <Rectangle id='carb-store' width={5} start={[21, 17]} />
+      <Rectangle id='carb-utilize' width={5} start={[21, 23]} />
+
+      <Arrow start={[27, 19]} length={1} right hideArrow />
+      <Arrow start={[27, 25]} length={1} right hideArrow />
+      <Arrow start={[28, 19]} length={6} up hideArrow />
+      <Arrow start={[28, 22]} length={2} right hideArrow />
+      <Arrow start={[30, 19]} length={6} up hideArrow />
+      <Arrow start={[30, 19]} length={1} right />
+      <Arrow start={[30, 25]} length={1} right />
+
+      <Rectangle id='carb-degrade' width={5} start={[32, 17]} />
+      <Rectangle id='carb-weather' width={5} start={[32, 23]} />
 
       <Rectangle
         id='mat-co2'
