@@ -1,19 +1,25 @@
-import { default as OAEEchem } from './ocean-alkalinity-enhancement-echem'
-import { default as OAEMineral } from './ocean-alkalinity-enhancement-mineral'
-import { default as DAC } from './direct-air-capture'
-import { default as BiCRS } from './biomass-carbon-removal-storage'
-import { default as SeaweedSinking } from './ocean-biomass-no-harvest'
-import { default as SeaweedSinkingHarvest } from './ocean-biomass-harvest'
-import { default as TBS } from './terrestrial-biomass-sinking'
-import { default as EnhancedWeathering } from './enhanced-weathering'
+import { default as ALK_WASTE_MIN } from './ALK_WASTE_MIN'
+import { default as BiCRS } from './BiCRS'
+import { default as BIOCHAR } from './BIOCHAR'
+import { default as DAC } from './DAC'
+import { default as DOR } from './DOR'
+import { default as EW } from './EW'
+import { default as OAE_echem } from './OAE_echem'
+import { default as OAE_mineral } from './OAE_mineral'
+import { default as OCEAN_BIO_no_harvest } from './OCEAN_BIO_no_harvest'
+import { default as OCEAN_BIO_harvest } from './OCEAN_BIO_harvest'
+import { default as TER_BIO } from './TER_BIO'
 
 export default {
-  'ocean-alkalinity-enhancement-electrochemical': <OAEEchem />,
-  'ocean-alkalinity-enhancement-mineral': <OAEMineral />,
-  'ocean-biomass-sinking-no-harvest': <SeaweedSinking />,
-  'ocean-biomass-sinking-harvest': <SeaweedSinkingHarvest />,
-  'enhanced-weathering': <EnhancedWeathering />,
-  'direct-air-capture': <DAC />,
-  'biomass-carbon-removal-and-storage': <BiCRS />,
-  'terrestrial-biomass-sinking': <TBS />,
+  'alkaline-waste-mineralization': ALK_WASTE_MIN,
+  'biomass-carbon-removal-and-storage': BiCRS,
+  biochar: BIOCHAR,
+  'direct-air-capture': DAC,
+  'direct-ocean-removal': DOR,
+  'enhanced-weathering': EW,
+  'ocean-alkalinity-enhancement-electrochemical': OAE_echem,
+  'ocean-alkalinity-enhancement-mineral': OAE_mineral,
+  'ocean-biomass-sinking-no-harvest': OCEAN_BIO_no_harvest,
+  'ocean-biomass-sinking-harvest': OCEAN_BIO_harvest,
+  'terrestrial-biomass-sinking': TER_BIO,
 }

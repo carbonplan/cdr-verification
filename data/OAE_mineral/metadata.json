@@ -1,6 +1,13 @@
 {
   "contributors": [
     {
+      "type": "CDR Company",
+      "name": "Planetary",
+      "affiliation": "",
+      "notes": "Comments came specifically from Steve Rackley. ",
+      "version": ["2.0"]
+    },
+    {
       "type": "Ecosystem Actor",
       "name": "Jamie Collins",
       "affiliation": "Environmental Defense Fund",
@@ -18,14 +25,14 @@
       "type": "Scientific Expert",
       "name": "Matt Long",
       "affiliation": "NCAR",
-      "notes": "",
+      "notes": "(Old affilitation)",
       "version": ["1.0"]
     },
     {
       "type": "Scientific Expert",
       "name": "Sophie Gill",
       "affiliation": "University of Oxford",
-      "notes": "",
+      "notes": "(Old affiliation) ",
       "version": ["1.0"]
     }
   ],
@@ -34,6 +41,11 @@
       "version": "1.0",
       "date": "09-19-2022",
       "note": "First release."
+    },
+    {
+      "version": "2.0",
+      "date": "04-10-2023",
+      "note": "Updated pathway to better reflect differentiation between different types of mineral additions. This changes our upper-bound evaluation of this Mineral OAE from VCL 2 to VCL 3. Updated pathway to include a more explicit representation of marine carbonate precipitation, in alignment with the Enhanced weathering and Direct ocean removal pathways. Updated the VCL to exclude the durability components ('DIC residence time' and 'Marine carbonate durability') as the corresponding uncertainties are covered in the 'Marine carbonate precipitation' component. These changes did not affect the overall VCL. Further details on these updates are available in this [blog post](https://carbonplan.org/blog/vcl-update-v2023.04.0)."
     }
   ]
 }

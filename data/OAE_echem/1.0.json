@@ -9,27 +9,27 @@
     {
       "number": "1",
       "category": "drawdown",
-      "component_id": "alk_total_convert",
+      "component_id": "base-total-convert",
       "name": "Base dispersal into ocean",
       "quantification_target": "theoretical atmospheric removal",
       "uncertainty_type": ["execution"],
       "responsibility": "project",
       "uncertainty_impact_min": "low",
-      "uncertainty_impact_max": "medium",
+      "uncertainty_impact_max": "low",
       "description": "If alkalinity is added the ocean directly (e.g. via aqueous NaOH), the total alkalinity released it can be directly measured. Environmental conditions and alkalinity addition dynamics (e.g. rate of point source additions) result in different fractions of carbonate (CO\u2083\u207b\u00b2) versus bicarbonate (HCO\u2083\u207b). This is important to characterize as the uptake of atmospheric CO\u2082 is reduced with the presence of more carbonate in the water. Overall CO\u2082 uptake efficiency can be estimated using seawater chemistry modeling software and the equation presented in [Renforth & Henderson (2017)](https://doi.org/10.1002/2016RG000533). These estimates could also be validated by measurements of bicarbonate concentrations or total alkalinity in the water column. The conversion of alkalinity to CO\u2082 removal is estimated to be 70-95% on a mol to mol basis.",
       "notes": ""
     },
     {
       "number": "2",
       "category": "drawdown",
-      "component_id": "sec_precip",
+      "component_id": "sec-precip",
       "name": "Secondary precipitation",
-      "quantification_target": "secondary precipitation of CaCO3",
+      "quantification_target": "secondary precipitation of CaCO\u2083",
       "uncertainty_type": ["execution"],
       "responsibility": "project",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "medium",
-      "description": "Adding alkalinity to seawater shifts the pH and carbonate ion concentration, and could cause abiotic precipitation of calcium carbonate (CaCO\u2083) or brucite (Mg(OH)2). This is important to characterize as this precipitation results in CO\u2082 outgassing. It remains to be determined what specific combination of suitable nucleation conditions and supersaturation of CaCO3 is needed to cause significant precipitation. Abiotic precipitation can be minimized by controlling the dilution and dispersal on alkalinity-enhanced water. Sampling total alkalinity near the dispersal point may help quantitatively determine the extent to which alkalinity is lost due to precipitation.",
+      "description": "Adding alkalinity to seawater shifts the pH and carbonate ion concentration, and could cause abiotic precipitation of calcium carbonate (CaCO\u2083) or brucite (Mg(OH)\u2082). This is important to characterize as this precipitation results in CO\u2082 outgassing. It remains to be determined what specific combination of suitable nucleation conditions and supersaturation of CaCO\u2083 is needed to cause significant precipitation. Abiotic precipitation can be minimized by controlling the dilution and dispersal of alkalinity-enhanced water. Sampling total alkalinity near the dispersal point may help quantitatively determine the extent to which alkalinity is lost due to precipitation.",
       "notes": ""
     },
     {
@@ -55,7 +55,7 @@
       "responsibility": "system",
       "uncertainty_impact_min": "high",
       "uncertainty_impact_max": "high",
-      "description": "Atmospheric uptake is reduced if alkalinity is transferred to the deep ocean before either increasing the uptake of atmospheric CO\u2082 or decreasing the outgassing of CO\u2082 to the atmosphere. The precise dispersal of DIC-depleted water, its residence time at the surface, and hence the associated completeness of air-sea gas equilibration is dependent on the location and timing of the dispersal of DIC-depleted water, and is hard to directly observe. In-situ measurements can potentially track post-deployment changes in pCO\u2082, pH, and DIC and deploy water mass tracers to help validate models of plume dispersal and atmospheric CO\u2082 drawdown, though the sensitivity and cost of sensors may be a challenge. Further, oceanographic models can be used to develop probabilistic estimates of equilibration efficiencies for particular injection sites, contingent on seasonal or interannual variations in forcing regimes. Typical gas exchange timescales of equilibration for the surface ocean and atmosphere are on the order of months to years.",
+      "description": "Atmospheric uptake is reduced if alkalinity is transferred to the deep ocean before either increasing the uptake of atmospheric CO\u2082 or decreasing the outgassing of CO\u2082 to the atmosphere. The precise dispersal of alkalinity-enhanced water, its residence time at the surface, and hence the associated completeness of air-sea gas equilibration is dependent on the location and timing of the alkalinity additions, and is hard to directly observe. In-situ measurements can potentially track post-deployment changes in pCO\u2082, pH, and DIC and deploy water mass tracers to help validate models of plume dispersal and atmospheric CO\u2082 drawdown, though the sensitivity and cost of sensors may be a challenge. Further, oceanographic models can be used to develop probabilistic estimates of equilibration efficiencies for particular injection sites, contingent on seasonal or interannual variations in forcing regimes. Typical gas exchange timescales of equilibration for the surface ocean and atmosphere are on the order of months to years.",
       "notes": ""
     },
     {
@@ -68,13 +68,13 @@
       "responsibility": "system",
       "uncertainty_impact_min": "not characterized",
       "uncertainty_impact_max": "not characterized",
-      "description": "Additional formation of dissolved inorganic carbon (DIC) as a result of alkalinity addition could lead to more particulate organic carbon (POC) formation in the surface ocean. This effect could be quite small if plankton communities are primarily limited by nutrient availability, rather than DIC availability. However, it is possible for organisms to change their carbon-to-nutrient consumption ratios in response to changing environments, which could result in a shift toward increased carbon drawdown in the surface ocean. Because only a small fraction of this increased drawdown would result in permanent carbon storage in the deep ocean, we conservatively recommend this not be counted as additional sequestration or used to counterbalance project lifecycle emissions. POC export mediated by calcifying communities could also change in response to changes in biogenic calcification (see Biotic calcification response).",
+      "description": "Additional formation of dissolved inorganic carbon (DIC) as a result of alkalinity addition could lead to more particulate organic carbon (POC) formation in the surface ocean. This effect could be quite small if plankton communities are primarily limited by nutrient availability, rather than DIC availability. However, it is possible for organisms to change their carbon-to-nutrient consumption ratios in response to changing environments, which could result in a shift toward increased carbon drawdown in the surface ocean. Because only a small fraction of this increased drawdown would result in permanent carbon storage in the deep ocean, we conservatively recommend this not be counted as additional sequestration or used to counterbalance project lifecycle emissions. POC export mediated by calcifying communities could also change in response to changes in biogenic calcification (see Biotic calcification response). Data on potential biological responses to removing CO\u2082 from the surface waters is still lacking.",
       "notes": ""
     },
     {
       "number": "6",
       "category": "drawdown",
-      "component_id": "acid_return",
+      "component_id": "acid-return",
       "name": "Long-term fate of acid",
       "quantification_target": "long-term fate of acid",
       "uncertainty_type": ["execution"],
@@ -87,7 +87,7 @@
     {
       "number": "7",
       "category": "emissions",
-      "component_id": "mat_CO\u2082",
+      "component_id": "mat-co2",
       "name": "Materials",
       "quantification_target": "material embodied emissions",
       "uncertainty_type": ["execution"],
@@ -100,7 +100,7 @@
     {
       "number": "8",
       "category": "emissions",
-      "component_id": "energy_CO\u2082",
+      "component_id": "energy-co2",
       "name": "Energy",
       "quantification_target": "energy use emissions",
       "uncertainty_type": ["execution"],
@@ -113,7 +113,7 @@
     {
       "number": "9",
       "category": "emissions",
-      "component_id": "energy_current",
+      "component_id": "energy-current",
       "name": "Secondary impacts of energy demand",
       "quantification_target": "energy replacement emissions",
       "uncertainty_type": ["counterfactual"],
@@ -126,7 +126,7 @@
     {
       "number": "10",
       "category": "durability",
-      "component_id": "tau_alk",
+      "component_id": "tau-alk",
       "name": "Alkalinity residence time",
       "quantification_target": "years of expected CO\u2082 storage",
       "uncertainty_type": ["scientific"],

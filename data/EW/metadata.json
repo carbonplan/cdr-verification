@@ -9,17 +9,17 @@
     },
     {
       "type": "CDR Company",
+      "name": "Travertine",
+      "affiliation": "",
+      "notes": "Comments came specifically from Laura Lammers. ",
+      "version": ["1.1"]
+    },
+    {
+      "type": "CDR Company",
       "name": "UNDO (prev. Future Forest)",
       "affiliation": "",
       "notes": "",
       "version": ["1.0"]
-    },
-    {
-      "type": "CDR Company",
-      "name": "Laura Lammers",
-      "affiliation": "Travertine",
-      "notes": "",
-      "version": ["1.1"]
     },
     {
       "type": "Scientific Expert",
@@ -37,13 +37,6 @@
     },
     {
       "type": "Scientific Expert",
-      "name": "Noah Planavsky",
-      "affiliation": "Yale / Lithos",
-      "notes": "",
-      "version": ["1.1"]
-    },
-    {
-      "type": "Scientific Expert",
       "name": "Jens Hartmann",
       "affiliation": "Institut f\u00fcr Geologie",
       "notes": "",
@@ -55,6 +48,13 @@
       "affiliation": "Stanford",
       "notes": "",
       "version": ["1.0", "1.1"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Noah Planavsky",
+      "affiliation": "Yale / Lithos",
+      "notes": "",
+      "version": ["1.1"]
     }
   ],
   "revisions": [

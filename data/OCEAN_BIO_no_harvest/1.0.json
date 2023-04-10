@@ -9,7 +9,7 @@
     {
       "number": "1",
       "category": "drawdown",
-      "component_id": "kelp_grown",
+      "component_id": "kelp-grown",
       "name": "Macroalgae cultivation on drifting buoy",
       "quantification_target": "mass of biomass carbon sunk",
       "uncertainty_type": ["scientific"],
@@ -55,13 +55,13 @@
       "responsibility": "system",
       "uncertainty_impact_min": "high",
       "uncertainty_impact_max": "high",
-      "description": "Atmospheric uptake is reduced if dissolved inorganic carbon (DIC) depleted water is transferred from the surface ocean before either increasing the uptake of atmospheric CO\u2082 or decreasing the outgassing of CO\u2082 to the atmosphere. The precise dispersal of DIC-depleted water, its residence time at the surface, and hence the associated completeness of air-sea gas equilibration is dependent on the location and timing of the dispersal of DIC-depleted water, and is hard to directly observe. In-situ measurements can potentially track post-deployment changes in pCO\u2082, pH, and DIC and deploy water mass tracers to help validate models of plume dispersal and atmospheric CO\u2082 drawdown, though the sensitivity and cost of sensors may be a challenge. Further, oceanographic models can be used to develop probabilistic estimates of equilibration efficiencies for particular injection sites, contingent on seasonal or interannual variations in forcing regimes. Typical gas exchange timescales of equilibration for the surface ocean and atmosphere are on the order of months to years.",
+      "description": "Atmospheric uptake is reduced if dissolved inorganic carbon (DIC) depleted water is transferred from the surface ocean before either increasing the uptake of atmospheric CO\u2082 or decreasing the outgassing of CO\u2082 to the atmosphere. The precise dispersal of DIC-depleted water, its residence time at the surface, and hence the associated completeness of air-sea gas equilibration is dependent on the location and timing of the kelp growth, and is hard to directly observe. In-situ measurements can potentially track post-growth changes in pCO\u2082, pH, and DIC and deploy water mass tracers to help validate models of atmospheric CO\u2082 drawdown, though the sensitivity and cost of sensors may be a challenge. Further, oceanographic models can be used to develop probabilistic estimates of equilibration efficiencies for specific locations, contingent on seasonal or interannual variations in forcing regimes. Typical gas exchange timescales of equilibration for the surface ocean and atmosphere are on the order of months to years.",
       "notes": ""
     },
     {
       "number": "5",
       "category": "emissions",
-      "component_id": "mat_CO\u2082",
+      "component_id": "mat-co2",
       "name": "Materials",
       "quantification_target": "material embodied emissions",
       "uncertainty_type": ["execution"],
@@ -74,7 +74,7 @@
     {
       "number": "6",
       "category": "emissions",
-      "component_id": "energy_CO\u2082",
+      "component_id": "energy-co2",
       "name": "Energy",
       "quantification_target": "energy use emissions",
       "uncertainty_type": ["execution"],
@@ -87,7 +87,7 @@
     {
       "number": "7",
       "category": "durability",
-      "component_id": "t_recirculation",
+      "component_id": "t-recirculation",
       "name": "Deepwater recirculation",
       "quantification_target": "years of expected CO\u2082 storage",
       "uncertainty_type": ["scientific"],

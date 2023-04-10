@@ -6,7 +6,7 @@ import Circle from '../circle'
 import { useComponent } from '../context/component'
 
 const Rectangle = ({
-  id,
+  id: component_id,
   label,
   secondary,
   start: [gridColumnStart, gridRowStart],
@@ -14,8 +14,8 @@ const Rectangle = ({
   width = 6,
   height = 4,
 }) => {
-  const { status, data, setActive, setHovered } = useComponent(id)
-  const deemphasized = id?.includes('*')
+  const { status, data, onClick, setHovered } = useComponent(component_id)
+  const deemphasized = data?.number?.includes('*')
   const borderColor = secondary || deemphasized ? 'secondary' : 'primary'
   const borderStyle = borderStyleProp ?? (deemphasized ? 'dashed' : 'solid')
 
@@ -34,23 +34,22 @@ const Rectangle = ({
 
   const handleClick = useCallback(
     (e) => {
-      if (id) {
-        e.stopPropagation()
-        setActive()
+      if (component_id) {
+        onClick(e)
       }
     },
-    [id]
+    [component_id]
   )
 
   return (
     <Box
-      id={id}
-      tabIndex={id ? 0 : null}
+      id={component_id}
+      tabIndex={component_id ? 0 : null}
       onClick={handleClick}
-      onMouseEnter={id ? () => setHovered(true) : null}
-      onMouseLeave={id ? () => setHovered(false) : null}
+      onMouseEnter={component_id ? () => setHovered(true) : null}
+      onMouseLeave={component_id ? () => setHovered(false) : null}
       sx={{
-        cursor: id ? 'pointer' : 'default',
+        cursor: component_id ? 'pointer' : 'default',
         position: 'relative',
         gridColumnStart,
         gridColumnEnd: gridColumnStart + width,
@@ -64,7 +63,7 @@ const Rectangle = ({
         transition: 'background-color, color, border-color 0.15s',
       }}
     >
-      {id ? (
+      {component_id ? (
         <Flex
           sx={{
             position: 'absolute',
@@ -73,7 +72,7 @@ const Rectangle = ({
           }}
         >
           <Circle
-            id={id}
+            component_id={component_id}
             sx={{
               mt: borderStyle === 'none' ? '-24px' : '-14px',
             }}

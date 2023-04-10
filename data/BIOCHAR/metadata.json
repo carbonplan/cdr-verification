@@ -1,0 +1,46 @@
+{
+  "contributors": [
+    {
+      "type": "CDR Company",
+      "name": "Carba",
+      "affiliation": "",
+      "notes": "Comments came specifically from Andrew Jones. ",
+      "version": ["1.0"]
+    },
+    {
+      "type": "CDR Company",
+      "name": "Climate Robotics",
+      "affiliation": "",
+      "notes": "Comments came specifically from Jason Aramburu. ",
+      "version": ["1.0"]
+    },
+    {
+      "type": "CDR Company",
+      "name": "Takachar",
+      "affiliation": "",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Becca Neumann",
+      "affiliation": "University of Washington",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Santanu Bakshi",
+      "affiliation": "Iowa State University",
+      "notes": "",
+      "version": ["1.0"]
+    }
+  ],
+  "revisions": [
+    {
+      "version": "1.0",
+      "date": "04-10-2023",
+      "note": "First release."
+    }
+  ]
+}

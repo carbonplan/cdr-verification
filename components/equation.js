@@ -1,6 +1,6 @@
 import { Box, Flex } from 'theme-ui'
 
-import { useComponentContext } from './context/component'
+import { useComponent } from './context/component'
 import Circle from './circle'
 import { CATEGORY_COLORS } from './constants'
 
@@ -21,10 +21,22 @@ const sx = {
   },
 }
 
+const ComponentCircle = ({ component_id }) => {
+  const { onClick, setHovered } = useComponent(component_id)
+  return (
+    <Circle
+      component_id={component_id}
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      sx={{ cursor: 'pointer', mr: '1px' }}
+    />
+  )
+}
+
 const Equation = ({ equation, components }) => {
   const extras = equation.split(/[\d|\*]+/).map((s) => s.trim())
   const equationComponents = equation.match(/[\d|\*]+/g)
-  const { setActive, setHovered } = useComponentContext()
 
   if (!equationComponents) {
     return (
@@ -48,17 +60,9 @@ const Equation = ({ equation, components }) => {
     )
     if (component) {
       accum.push(
-        <Circle
-          key={component.number}
-          id={component.number}
-          onClick={() =>
-            setActive((prev) =>
-              prev === component.number ? null : component.number
-            )
-          }
-          onMouseEnter={() => setHovered(component.number)}
-          onMouseLeave={() => setHovered(null)}
-          sx={{ cursor: 'pointer', mr: '1px' }}
+        <ComponentCircle
+          key={component.component_id}
+          component_id={component.component_id}
         />
       )
     }

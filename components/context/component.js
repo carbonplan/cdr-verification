@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import {
   createContext,
   useCallback,
@@ -14,21 +15,19 @@ const ComponentContext = createContext({
   setHovered: () => {},
 })
 
-export const useComponent = (id) => {
-  const { active, setActive, hovered, setHovered, pathway, pathways } =
+export const useComponent = (component_id) => {
+  const { archival, active, setActive, hovered, setHovered, pathway } =
     useContext(ComponentContext)
   const data = useMemo(
-    () =>
-      pathways
-        .find((p) => p.pathway_id === pathway)
-        .components.find((d) => d.number === id),
-    [id, pathway]
+    () => pathway.components.find((d) => d.component_id === component_id),
+    [component_id, pathway]
   )
+  const router = useRouter()
 
   let status = 'default'
-  if (id && hovered === id) {
+  if (component_id && hovered === component_id) {
     status = 'hovered'
-  } else if (id && active === id) {
+  } else if (component_id && active === component_id) {
     status = 'active'
   } else if (active) {
     status = 'inactive'
@@ -37,10 +36,21 @@ export const useComponent = (id) => {
   return {
     status,
     data,
-    active: active === id,
-    hovered: hovered === id,
-    setActive: () => setActive((prev) => (prev === id ? null : id)),
-    setHovered: (val) => setHovered(val ? id : null),
+    active: active === component_id,
+    hovered: hovered === component_id,
+    onClick: (e) => {
+      e.stopPropagation()
+
+      if ((e.metaKey || e.ctrlKey) && !archival) {
+        router.push(
+          `/research/cdr-verification/docs/components/${component_id}`
+        )
+        return
+      }
+
+      setActive((prev) => (prev === component_id ? null : component_id))
+    },
+    setHovered: (val) => setHovered(val ? component_id : null),
   }
 }
 
@@ -49,7 +59,7 @@ export const useComponentContext = () => {
 }
 
 export const ComponentProvider = ({
-  pathways,
+  archival,
   pathway,
   onComponentChange,
   children,
@@ -73,7 +83,7 @@ export const ComponentProvider = ({
   return (
     <ComponentContext.Provider
       value={{
-        pathways,
+        archival,
         pathway,
         active,
         setActive: handleActiveChange,

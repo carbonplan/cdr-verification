@@ -1,19 +1,19 @@
-import Rectangle from './rectangle'
-import Grid from './grid'
-import Arrow from './arrow'
+import Rectangle from '../rectangle'
+import Grid from '../grid'
+import Arrow from '../arrow'
 
 const Flow = () => {
   return (
     <Grid height={27}>
       <Rectangle
-        id='6'
+        id='mat-co2'
         width={4}
         start={[9, 2]}
         height={1}
         borderStyle='none'
       />
       <Rectangle
-        id='7'
+        id='energy-co2'
         width={4}
         start={[12, 2]}
         height={1}
@@ -29,20 +29,22 @@ const Flow = () => {
         label='Project activity'
         secondary
       />
-      <Rectangle id='1' start={[13, 7]} />
+      <Rectangle id='bio-sink' start={[13, 7]} />
 
       <Arrow start={[20, 9]} length={6} right />
       <Rectangle start={[27, 7]} label='Deepwater storage' />
-      <Arrow start={[30, 12]} length={2} up />
+      <Arrow start={[30, 12]} length={2} down />
 
-      <Rectangle id='8' start={[27, 15]} />
+      <Rectangle id='t-recirculation' start={[27, 15]} />
+      <Arrow start={[30, 20]} length={2} down />
+      <Rectangle id='deepwater-outgass' start={[27, 23]} />
 
-      <Rectangle id='2' start={[19, 2]} height={1} borderStyle='none' />
+      <Rectangle id='nsad' start={[19, 2]} height={1} borderStyle='none' />
       <Arrow start={[18, 2]} length={4} up hideArrow />
       <Arrow start={[18, 2]} length={2} right />
 
       <Rectangle
-        id='6'
+        id='mat-co2'
         start={[5, 9]}
         label='Biomass feedstock'
         height={2}
@@ -53,9 +55,9 @@ const Flow = () => {
 
       <Arrow start={[7, 11]} length={10} down hideArrow />
       <Arrow start={[7, 21]} length={3} right />
-      <Rectangle id='3' start={[11, 14]} />
-      <Rectangle id='4' start={[11, 19]} />
-      <Rectangle id='5' start={[11, 24]} />
+      <Rectangle id='feed-stor' start={[11, 14]} />
+      <Rectangle id='feed-current' start={[11, 19]} />
+      <Rectangle id='LUC-indirect' start={[11, 24]} />
     </Grid>
   )
 }
