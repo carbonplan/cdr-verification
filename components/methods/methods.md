@@ -4,7 +4,7 @@ import VCLTable from './vcl-table'
 import Contributors from './contributors'
 
 export const frontMatter = {
-  date: '04-05-2023',
+  date: '04-10-2023',
   title: 'CDR Verification Framework — Methods',
   card: 'cdr-verification-explainer',
   quickLook: 'Methods for our CDR Verification Framework',
@@ -89,7 +89,7 @@ Our analysis of a pathway’s component uncertainties directly determines its VC
 
 Constructing the VCL based on the count of medium, high, or very high uncertainties does mean that pathways with more steps are more likely to receive a low VCL. If the component uncertainties are independent, we think this is an appropriate outcome. For example, the chain of uncertainties within the ocean biomass sinking pathway are unlikely to be correlated — the uncertainty around macroalgae cultivation is not correlated to the uncertainty around air-sea gas exchange. In contrast, this construction could be problematic if component uncertainties are correlated. For example, in BiCRS, the uncertainties associated with the counterfactual feedstock storage, counterfactual feedstock use, and indirect land use change are all a function of the choice of feedstock — and therefore the presence of multiple uncertainty components could bias VCL assignments to this pathway downward.
 
-In some cases, different components reflect the same underlying uncertainty. For example, long-term leakage of CO2 from a storage reservoir could be understood as a drawdown uncertainty or a durability uncertainty. In such cases, we may exclude a component from the VCL calculation to avoid double counting uncertainty across components. This is reflected explicitly in the component text.
+In some cases, multiple components reflect the same underlying uncertainty. For example, long-term leakage of CO₂ from a storage reservoir could be understood as a drawdown uncertainty or a durability uncertainty. In such cases, we may exclude a component from the VCL calculation to avoid double counting uncertainty across components. This exclusion is reflected explicitly in the component text.
 
 Most pathways are associated with a range of VCLs, rather than a single VCL, due to the diversity of approaches within a given pathway. To continue the example used above, an ocean alkalinity enhancement (OAE) project could introduce alkalinity directly (e.g., via aqueous NaOH) or in a mineral form that has to dissolve to release alkalinity (e.g., olivine). The dissolution and precipitation dynamics of the mineral approach lead to significant uncertainty about how much alkalinity is actually introduced to the surface ocean and therefore how much carbon removal occurs. As a result, we classify mineral-based OAE as VCL 1-2, direct alkalinity addition as VCL 3, and the OAE pathway as a whole as VCL 1-3. A pathway-level VCL does not guarantee that individual projects within that pathway are executing on best practice quantification approaches. For example, even though OAE is classified as VCL 2-3, an OAE project could fail to carefully characterize their alkalinity additions and functionally be at VCL 1.
 
@@ -141,7 +141,7 @@ In general, we focus on counterfactuals about existing uses and their associated
 
 All of the content associated with this tool is publicly available and hosted on GitHub, and we welcome feedback on all aspects of our work.
 
-CarbonPlan and Frontier plan to continue collaborating to update this tool on at least an annual basis moving forward. We will use these periodic updates to reflect changes within pathways that are already included in the tool as the field evolves. We also hope to add pathways to the tool.
+CarbonPlan and Frontier plan to continue collaborating to update this tool on at least an annual basis moving forward. We will use these periodic updates to reflect changes within pathways that are already included in the tool as the field evolves. We also hope to add pathways to the tool as new approaches emerge.
 
 Of course, we are committed to fixing any mistakes! If you identify a specific issue with our uncertainty characterization or pathway diagrams, please send us an email at hello@carbonplan.org. The uncertainty mapping reflects our independent analysis of the current state of the field, but we always have more to learn. If we got something wrong when we last updated the tool, we will fix it as quickly as possible.
 
@@ -149,15 +149,15 @@ If you identify a general issue with our methods or the tool, please send us an 
 
 ## Versioning
 
-We expect this tool to change and improve over time, and track these changes at three levels.
+We expect this tool to change and improve over time, and we track these changes at three levels.
 
-Each pathway has a version history accessible in the tool that is maintained using [semantic versioning](https://medium.com/the-non-traditional-developer/semantic-versioning-for-dummies-45c7fe04a1f8). A major version change (e.g., v1.0 to v2.0) signifies that a pathway has been updated in a way that affects the VCL rating. A minor version change is used to reflect conceptual changes to a pathway that do not affect the VCL (e.g., v1.0 to v2.0).
+Each pathway has a version history accessible in the tool that is maintained using [semantic versioning](https://semver.org/). A major version change (e.g., v1.0 to v2.0) signifies that a pathway has been updated in a way that affects the VCL rating. A minor version change is used to reflect conceptual changes to a pathway that do not affect the VCL (e.g., v1.0 to v2.0). We do not use patch version changes.
 
-Each component has a revision history accessible in the tool that captures the date and justification for any edits. Component revisions may be reflected in the pathway versioning if they reflect conceptual changes or modify a pathway’s VCL. Small component revisions like typo correction or syntax improvement may not be captured in a corresponding pathway version change.
+Each component has a revision history accessible in the tool that captures the date and justification for any edits. Component revisions may be reflected in the pathway versioning if they represent conceptual changes or impact a pathway’s VCL. Smaller component revisions, like typo correction or syntax improvement, may not be captured in a corresponding pathway version change.
 
-The tool as a whole has versioned DOIs maintained via Zenodo. A new tool DOI version for each concerted round of tool updates — for example, the first release in September 2022 or the first round of updates to the Enhanced Weathering pathway released in February 2023. This allows users to cite a specific version of the entire tool, or cite all versions of the tool with an overarching DOI.
+The tool as a whole has versioned DOIs maintained via Zenodo. A new tool DOI version is created for each concerted round of tool updates — for example, the first release in September 2022 or the first round of updates to the Enhanced Weathering pathway released in February 2023. This allows users to cite a specific version of the entire tool, or cite all versions of the tool with an overarching DOI.
 
-All changes to the tool can additionally be tracked directly on [GitHub](https://github.com/carbonplan/cdr-verification/tree/main/data).
+All changes to the tool and content can also be tracked directly on [GitHub](https://github.com/carbonplan/cdr-verification/tree/main/data).
 
 ## Acknowledgments
 
@@ -165,6 +165,7 @@ At multiple points in the process, we have received important input and feedback
 
 <Figure>
   <Contributors contributors={props.contributors} />
+
 </Figure>
 
 ## Terms
@@ -173,7 +174,7 @@ The contents of this tool are made available under a [CC-BY 4.0 International li
 
 Please cite this tool as:
 
-F Chay, J Klitzke, Z Hausfather, K Martin, J Freeman, D Cullenward (2022) “CDR Verification Framework” CarbonPlan [carbonplan.org/research/cdr-verification](carbonplan.org/research/cdr-verification)
+F Chay, J Klitzke, Z Hausfather, K Martin, J Freeman, D Cullenward (2023) “CDR Verification Framework” CarbonPlan [10.5281/zenodo.7803151](https://doi.org/10.5281/zenodo.7803151)
 
 Please cite this methods doc as:
 
