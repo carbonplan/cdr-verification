@@ -29,7 +29,7 @@
       "responsibility": "system",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "low",
-      "description": "Environmental conditions and alkalinity addition dynamics may result in different fractions of carbonate (CO\u2083\u207b\u00b2) versus bicarbonate (HCO\u2083\u207b). This fractionation impacts  the total uptake of atmospheric CO\u2082. Overall CO\u2082 uptake efficiency can be estimated using seawater chemistry modeling software and the equation presented in [Renforth & Henderson (2017)](https://doi.org/10.1002/2016RG000533). These estimates could also be validated by measurements of bicarbonate concentrations or total alkalinity in the water column. The conversion of alkalinity to CO\u2082 removal is estimated to be 70-95% on a mol to mol basis.",
+      "description": "Environmental conditions may result in different fractions of carbonate (CO\u2083\u207b\u00b2) versus bicarbonate (HCO\u2083\u207b). This fractionation impacts  the total uptake of atmospheric CO\u2082. Overall CO\u2082 uptake efficiency can be estimated using seawater chemistry modeling software and the equation presented in [Renforth & Henderson (2017)](https://doi.org/10.1002/2016RG000533). These estimates could also be validated by measurements of bicarbonate concentrations or total alkalinity in the water column. The conversion of alkalinity to CO\u2082 removal is estimated to be 70-95% on a mol to mol basis.",
       "notes": ""
     },
     {

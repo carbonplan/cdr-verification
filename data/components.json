@@ -29,7 +29,7 @@
     "uncertainty_impact_min": "low",
     "uncertainty_impact_max": "low",
     "category": "drawdown",
-    "description": "Environmental conditions and alkalinity addition dynamics may result in different fractions of carbonate (CO\u2083\u207b\u00b2) versus bicarbonate (HCO\u2083\u207b). This fractionation impacts  the total uptake of atmospheric CO\u2082. Overall CO\u2082 uptake efficiency can be estimated using seawater chemistry modeling software and the equation presented in [Renforth & Henderson (2017)](https://doi.org/10.1002/2016RG000533). These estimates could also be validated by measurements of bicarbonate concentrations or total alkalinity in the water column. The conversion of alkalinity to CO\u2082 removal is estimated to be 70-95% on a mol to mol basis.",
+    "description": "Environmental conditions may result in different fractions of carbonate (CO\u2083\u207b\u00b2) versus bicarbonate (HCO\u2083\u207b). This fractionation impacts the total uptake of atmospheric CO\u2082. Overall CO\u2082 uptake efficiency can be estimated using seawater chemistry modeling software and the equation presented in [Renforth & Henderson (2017)](https://doi.org/10.1002/2016RG000533). These estimates could also be validated by measurements of bicarbonate concentrations or total alkalinity in the water column. The conversion of alkalinity to CO\u2082 removal is estimated to be 70-95% on a mol to mol basis.",
     "revisions": [
       {
         "date": "09-19-2022",
@@ -37,7 +37,7 @@
       },
       {
         "date": "04-10-2023",
-        "note": "Edited component text for clarity. Edited uncertainty range from Low-Medium to Low-Low to reflect more realistic uncertainties for model parameterization, and temperature and salinity variability. This edit was made as part of a broader update to the OAE-mineral pathway, described [here](TK:BLOG)."
+        "note": "Edited component text for clarity. Edited uncertainty range from Low-Medium to Low-Low to reflect more realistic uncertainties for model parameterization, and temperature and salinity variability. This edit was made as part of a broader update to the OAE-mineral pathway, described [here](https://carbonplan.org/blog/vcl-update-v2023.04.0)."
       }
     ],
     "notes": "",
@@ -113,7 +113,7 @@
       },
       {
         "date": "04-10-2023",
-        "note": "Edited component to reflect the differentiation between different types of mineral additions. This edit was made as part of a broader update to the OAE-mineral pathway, described [here](TK:BLOG)."
+        "note": "Edited component to reflect the differentiation between different types of mineral additions. This edit was made as part of a broader update to the OAE-mineral pathway, described [here](https://carbonplan.org/blog/vcl-update-v2023.04.0)."
       }
     ],
     "notes": "",
@@ -137,7 +137,7 @@
       },
       {
         "date": "04-10-2023",
-        "note": "Updated component to reflect the role of probablistic models for quantifying air sea gas exchange. Edited for cross-pathway consistency in response to the [addition](TK:BLOG) of the Direct Ocean Removal pathway."
+        "note": "Updated component to reflect the role of probablistic models for quantifying air sea gas exchange. Edited for cross-pathway consistency in response to the [addition](https://carbonplan.org/blog/vcl-update-v2023.04.0) of the Direct Ocean Removal pathway."
       }
     ],
     "notes": "",
@@ -291,7 +291,7 @@
       },
       {
         "date": "04-10-2023",
-        "note": "Edited for cross-pathway consistency in response to the [addition](TK:BLOG) of the Direct Ocean Removal pathway."
+        "note": "Edited for cross-pathway consistency in response to the [addition](https://carbonplan.org/blog/vcl-update-v2023.04.0) of the Direct Ocean Removal pathway."
       }
     ],
     "notes": "",
@@ -700,7 +700,7 @@
       },
       {
         "date": "04-10-2023",
-        "note": "Added text to reflect that the response of calcifying communities could also impact POC export, and edited for cross-pathway consistency in response to the [addition](TK:BLOG) the Direct Ocean Removal Pathway."
+        "note": "Added text to reflect that the response of calcifying communities could also impact POC export, and edited for cross-pathway consistency in response to the [addition](https://carbonplan.org/blog/vcl-update-v2023.04.0) the Direct Ocean Removal Pathway."
       }
     ],
     "notes": "",
@@ -728,7 +728,7 @@
       },
       {
         "date": "04-10-2023",
-        "note": "Updated component to reflect that abiotic precipitation of brucite (in addition to calcite) impacts CO\u2082 outgassing, and edited for cross-pathway consistency. For the Mineral OAE version of this component, updated to reflect the differentiation between different types of mineral additions. These edits are described further [here](TK:BLOG)."
+        "note": "Updated component to reflect that abiotic precipitation of brucite (in addition to calcite) impacts CO\u2082 outgassing, and edited for cross-pathway consistency. For the Mineral OAE version of this component, updated to reflect the differentiation between different types of mineral additions. These edits are described further [here](https://carbonplan.org/blog/vcl-update-v2023.04.0)."
       }
     ],
     "notes": "",
@@ -760,7 +760,7 @@
       },
       {
         "date": "04-10-2023",
-        "note": "Edited for cross-pathway consistency in response to the [addition](TK:BLOG) of the Biochar pathway."
+        "note": "Edited for cross-pathway consistency in response to the [addition](https://carbonplan.org/blog/vcl-update-v2023.04.0) of the Biochar pathway."
       }
     ],
     "notes": "",
@@ -1099,7 +1099,7 @@
       },
       {
         "date": "04-10-2023",
-        "note": "Edited for cross-pathway consistency in response to the [addition](TK:BLOG) of the Biochar pathway."
+        "note": "Edited for cross-pathway consistency in response to the [addition](https://carbonplan.org/blog/vcl-update-v2023.04.0) of the Biochar pathway."
       }
     ],
     "notes": "",
@@ -1123,7 +1123,7 @@
       },
       {
         "date": "04-10-2023",
-        "note": "Edited for cross-pathway consistency in response to the [addition](TK:BLOG) of the Biochar pathway."
+        "note": "Edited for cross-pathway consistency in response to the [addition](https://carbonplan.org/blog/vcl-update-v2023.04.0) of the Biochar pathway."
       }
     ],
     "notes": "",
@@ -1147,7 +1147,7 @@
       },
       {
         "date": "04-10-2023",
-        "note": "Edited for cross-pathway consistency in response to [new pathway additions](TK:BLOG)."
+        "note": "Edited for cross-pathway consistency in response to [new pathway additions](https://carbonplan.org/blog/vcl-update-v2023.04.0)."
       }
     ],
     "notes": "",
