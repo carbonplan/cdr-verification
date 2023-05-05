@@ -9,6 +9,7 @@ export const frontMatter = {
   card: 'cdr-verification-explainer',
   quickLook: 'Methods for our CDR Verification Framework',
   back: '/research/cdr-verification-explainer',
+  path: '/research/cdr-verification-methods',
 }
 
 # CDR Verification Framework — Methods

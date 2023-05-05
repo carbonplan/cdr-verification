@@ -1,10 +1,12 @@
 import { Supplement } from '@carbonplan/layouts'
 import { MDXProvider, useMDXComponents } from '@mdx-js/react'
+import { useThemedStylesWithMdx } from '@theme-ui/mdx'
 import Methods, { frontMatter } from '../../components/methods'
 import contributors from '../../data/contributors.json'
 
 export default (props) => {
-  const componentsWithStyles = useMDXComponents()
+  const componentsWithStyles = useThemedStylesWithMdx(useMDXComponents())
+
   return (
     <MDXProvider components={componentsWithStyles}>
       <Supplement meta={frontMatter} back={frontMatter.back}>
