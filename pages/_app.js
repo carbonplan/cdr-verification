@@ -27,6 +27,7 @@ const App = ({ Component, pageProps }) => {
           footer={false}
           metadata={false}
           nav={'research'}
+          url={'https://carbonplan.org/research/cdr-verification'}
           settings={
             isDocs
               ? null
