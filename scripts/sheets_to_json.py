@@ -9,6 +9,8 @@ import gspread # type: ignore
 import pandas as pd # type: ignore
 from oauth2client.service_account import ServiceAccountCredentials # type: ignore
 from ast import literal_eval
+import validation 
+
 
 # ------------------ Auth -----------------------
 
@@ -22,20 +24,6 @@ gc = gspread.authorize(credentials)
 gsheet_doc_name = 'NEW_CDR MRV Pathway Uncertainties'
 avail_pathways = ['DAC', 'BiCRS','EW','TER_BIO','OCEAN_BIO_no_harvest','OCEAN_BIO_harvest','OAE_echem','OAE_mineral', 'DOR','BIOCHAR','ALK_WASTE_MIN']
 
-
-
-# ----------------- Pandera Checks --------------------
-
-def _validate_component_id(df):
-    schema = pa.DataFrameSchema(
-        columns={
-            "component_id":  pa.Column(str),
-        },
-        checks=pa.Check(lambda df: ~df[["component_id"]].duplicated()),
-    )
-    return schema.validate(df)
-
-# ----------------- End Pandera Checks --------------------
 
 def get_legend_sheet(gsheet_doc_name: str) -> pd.DataFrame:
     sh = gc.open(gsheet_doc_name)
@@ -69,7 +57,6 @@ def gsheet_to_data_list(gsheet_doc_name: str, worksheet_name: str) -> list:
     sheet = sh.worksheet(worksheet_name)
     return sheet.get_all_values()
 
-
 def sheet_data_to_dataframe(data_list: list) -> pd.DataFrame:
     """To match gsheets CDR-MRV schema, first four rows are dataset metadata"""
     return pd.DataFrame(data_list[10::],columns=data_list[9])
@@ -77,7 +64,6 @@ def sheet_data_to_dataframe(data_list: list) -> pd.DataFrame:
 def contributors_df():
     data_list = gsheet_to_data_list(gsheet_doc_name, 'Contributors')
     return pd.DataFrame(data_list[1::],columns=data_list[0])
-
 
 def sheet_data_to_metadata(sheet_data: list) -> dict:
     """Assigns sheet metadata"""
@@ -291,11 +277,11 @@ def write_pathways_to_json(avail_pathways: list):
 def validate_components():
     cdf = get_component_sheet(gsheet_doc_name)
 
-    _validate_component_id(cdf)
+    validation._validate_component_id(cdf)
 
 
-validate_components()
-write_pathways_to_json(avail_pathways)
-process_legend(gsheet_doc_name)
-process_components_sheet(gsheet_doc_name)
-process_contributors_sheet(gsheet_doc_name)
+# validate_components()
+# write_pathways_to_json(avail_pathways)
+# process_legend(gsheet_doc_name)
+# process_components_sheet(gsheet_doc_name)
+# process_contributors_sheet(gsheet_doc_name)
