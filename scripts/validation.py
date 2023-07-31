@@ -23,7 +23,7 @@ print(cred_dict)
 
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 # credentials = ServiceAccountCredentials.from_json_keyfile_name(SECRET_FILE, scope)
-credentials = ServiceAccountCredentials.from_json(cred_dict, scope)
+credentials = ServiceAccountCredentials.from_json(cred_dict)
 
 client = gspread.authorize(credentials)
 
