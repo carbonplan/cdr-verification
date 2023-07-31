@@ -1,12 +1,14 @@
 name: validation
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
+on: [push, pull_request]
 
 jobs:
+  name: validation
+  runs-on: ubuntu-latest
+  defaults:
+    run:
+      shell: bash -l {0}
+
   steps:
     - uses: actions/checkout@v3
 
