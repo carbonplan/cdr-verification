@@ -1,13 +1,21 @@
 name: validation
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
-  name: validation
-  runs-on: ubuntu-latest
-  defaults:
-    run:
-      shell: bash -l {0}
+  test:
+    name: ${{ matrix.python-version }}-build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+    strategy:
+      matrix:
+        python-version: ['3.10']
 
   steps:
     - uses: actions/checkout@v3
