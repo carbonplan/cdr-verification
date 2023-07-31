@@ -23,7 +23,7 @@ gc = gspread.authorize(credentials)
 
 gsheet_doc_name = 'NEW_CDR MRV Pathway Uncertainties'
 avail_pathways = ['DAC', 'BiCRS','EW','TER_BIO','OCEAN_BIO_no_harvest','OCEAN_BIO_harvest','OAE_echem','OAE_mineral', 'DOR','BIOCHAR','ALK_WASTE_MIN']
-
+pathways_data_columns = ['number','category','component_id','name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','description','notes']
 
 def get_legend_sheet(gsheet_doc_name: str) -> pd.DataFrame:
     sh = gc.open(gsheet_doc_name)
@@ -59,7 +59,7 @@ def gsheet_to_data_list(gsheet_doc_name: str, worksheet_name: str) -> list:
 
 def sheet_data_to_dataframe(data_list: list) -> pd.DataFrame:
     """To match gsheets CDR-MRV schema, first four rows are dataset metadata"""
-    return pd.DataFrame(data_list[10::],columns=data_list[9])
+    return pd.DataFrame(data_list[10::],columns=data_list[9])[pathways_data_columns].replace('',np.nan).dropna(how='all')
 
 def contributors_df():
     data_list = gsheet_to_data_list(gsheet_doc_name, 'Contributors')

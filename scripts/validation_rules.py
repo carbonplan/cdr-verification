@@ -310,7 +310,7 @@ def _validate_pathways_non_empty_pathway_id_name_description_VCL_equation_versio
                 'rule':{
                 'ranges': {
                         'sheetId': sheetID,
-                        'startRowIndex': 1,
+                        'startRowIndex': 0,
                         'endRowIndex': 7,
                         'startColumnIndex': 1,
                         'endColumnIndex': 2
@@ -396,3 +396,51 @@ def _validate_contributor_name(sheetID, strict=True):
         "format": gray_background_color
         }}}}
         ]}
+
+
+
+# All contributors are associated with at least one pathway version 
+
+
+def _validate_contributors_associated_pathways(sheetID: str, sheet_name: str, spreadsheet_ID: str, service):
+
+    # grab values from sheet
+    range_name = f'{sheet_name}!C:P' # e <sheet_name>!<starting_column_letter>:<ending_column_letter>
+
+    result = service.spreadsheets().values().get(
+        spreadsheetId=spreadsheet_ID,
+        range=range_name
+    ).execute()
+
+    values = result.get('values', [])
+
+    # iterate through each row to check, create valiation request body per row and append
+    requests = []
+
+    for i, row in enumerate(values):
+        if len(row) < 2: # This is two because a known column is covered so that values are not excluded 
+            # Add data validation warning to missing_pathway column
+            requests.append({
+                'repeatCell': {
+                    'range': {
+                        'sheetId': sheetID,
+                        'startRowIndex': i,
+                        'endRowIndex': i+1,
+                        'startColumnIndex': 3,
+                        'endColumnIndex': 4
+                    },
+                "cell": {
+                    "userEnteredFormat": {
+                    'backgroundColor':{
+              'red': 153/255,
+              'green': 153/255,
+              'blue': 153/255}
+              
+                                    }
+                },
+                "fields": "userEnteredFormat.backgroundColor"
+            }
+                }
+            )
+
+    return {'requests': requests}
