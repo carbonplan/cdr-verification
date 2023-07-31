@@ -31,9 +31,9 @@ jobs:
       - name: Conda info
         run: conda info
 
-      - name: install
-        run: |
-          python -m pip install --no-deps .
+      # - name: install
+      #   run: |
+      #     python -m pip install --no-deps .
 
       - name: run-script
         run: |
