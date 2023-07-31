@@ -31,6 +31,10 @@ jobs:
       - name: Conda info
         run: conda info
 
-      - name: run validation
+      - name: install
         run: |
-          python -m scripts/validation.py
+          python -m pip install --no-deps .
+
+      - name: run-script
+        run: |
+          python src/validation.py
