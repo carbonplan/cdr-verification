@@ -4,6 +4,7 @@
 import numpy as np
 import pandera as pa
 import json
+import os
 import pathlib
 import gspread # type: ignore
 import pandas as pd # type: ignore
@@ -15,15 +16,18 @@ import validation
 # ------------------ Auth -----------------------
 
 
-SECRET_FILE = str(pathlib.Path.home()) + '/keybase/google-sheets-key.json'
-scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-credentials = ServiceAccountCredentials.from_json_keyfile_name(SECRET_FILE, scope)
-gc = gspread.authorize(credentials)
+# SECRET_FILE = str(pathlib.Path.home()) + '/keybase/google-sheets-key.json'
+# scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+# credentials = ServiceAccountCredentials.from_json_keyfile_name(SECRET_FILE, scope)
+credentials = os.environ.get("GOOGLE_CREDENTIALS")
+gc = gspread.service_account_from_dict(credentials)
+# gc = gspread.authorize(credentials)
 
 
 gsheet_doc_name = 'NEW_CDR MRV Pathway Uncertainties'
 avail_pathways = ['DAC', 'BiCRS','EW','TER_BIO','OCEAN_BIO_no_harvest','OCEAN_BIO_harvest','OAE_echem','OAE_mineral', 'DOR','BIOCHAR','ALK_WASTE_MIN']
 pathways_data_columns = ['number','category','component_id','name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','description','notes']
+components_non_pathway_cols = ['revisions','notes','category','component_id','component_name','secondary_name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','description']
 
 def get_legend_sheet(gsheet_doc_name: str) -> pd.DataFrame:
     sh = gc.open(gsheet_doc_name)
@@ -35,17 +39,23 @@ def get_component_sheet(gsheet_doc_name: str) -> pd.DataFrame:
     sh = gc.open(gsheet_doc_name)
     sheet = sh.worksheet('Components')
     data_list = sheet.get_all_values()
-    pathway_col_list = ['direct-air-capture','biomass-carbon-removal-and-storage','enhanced-weathering','terrestrial-biomass-sinking','ocean-alkalinity-enhancement-electrochemical','ocean-alkalinity-enhancement-mineral','ocean-biomass-sinking-harvest','ocean-biomass-sinking-no-harvest','direct-ocean-removal','biochar','alkaline-waste-mineralization']
-    cdf = pd.DataFrame(data_list[2::],columns=data_list[0])[['component_id','component_name','secondary_name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','category', 'description','revisions','notes']+ pathway_col_list]
+
+    cdf = pd.DataFrame(data_list[2::],columns=data_list[0])
+
     cdf['component_id'] = cdf['component_id'].str.replace('\u2082','2')
     cdf['uncertainty_type'] = cdf.uncertainty_type.str.replace(" ","").apply(lambda x: x.split(','))    
-
-    cdf['pathways'] = cdf[pathway_col_list].apply(lambda x: ','.join(x[x!=""].index),axis=1).str.split(',')
-    cdf.drop(pathway_col_list,axis=1,inplace=True)
-
     cdf['revisions'] = cdf['revisions'].apply(eval)
+
     return cdf
 
+def get_pathway_col_list(df: pd.DataFrame) -> list:
+    return set(list(df)) - set(components_non_pathway_cols)
+
+def component_pathway_flatten(df: pd.DataFrame, pathway_col_list: list) -> pd.DataFrame:
+    df['pathways'] = df[pathway_col_list].apply(lambda x: ','.join(x[x!=""].index),axis=1).str.split(',')
+    df.drop(pathway_col_list,axis=1,inplace=True)
+
+    return df 
 
 def get_all_sheets_in_doc(gsheet_doc_name: str) -> list:
     """returns list of all worksheets including ID and name"""
@@ -257,6 +267,8 @@ def process_legend(gsheet_doc_name: str):
 def process_components_sheet(gsheet_doc_name):
     print('Processing Components sheet..')
     cdf = get_component_sheet(gsheet_doc_name)
+    pathway_col_list = get_pathway_col_list(cdf)
+    cdf = component_pathway_flatten(cdf, pathway_col_list)
     write_components_to_json(cdf)
 
 def process_contributors_sheet(gsheet_doc_name):
@@ -274,14 +286,10 @@ def write_pathways_to_json(avail_pathways: list):
         write_metadata_to_json(pathway = pathway, metadata_dict = process_sheet_dict['metadata_dict'], contributor_df=contributor_df)
 
 
-def validate_components():
-    cdf = get_component_sheet(gsheet_doc_name)
 
-    validation._validate_component_id(cdf)
-
-
-# validate_components()
 # write_pathways_to_json(avail_pathways)
 # process_legend(gsheet_doc_name)
+
+
 # process_components_sheet(gsheet_doc_name)
 # process_contributors_sheet(gsheet_doc_name)
