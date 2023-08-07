@@ -3,6 +3,7 @@
 # ------------------ Imports -----------------------
 import numpy as np
 import pathlib 
+import os
 import gspread # type: ignore
 from oauth2client.service_account import ServiceAccountCredentials # type: ignore
 from googleapiclient.discovery import build
@@ -15,11 +16,8 @@ import validation_rules as vr
 # ------------------ Auth -----------------------
 
 
-SECRET_FILE = str(pathlib.Path.home()) + '/keybase/google-sheets-key.json'
-
-scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-credentials = ServiceAccountCredentials.from_json_keyfile_name(SECRET_FILE, scope)
-client = gspread.authorize(credentials)
+credentials = os.environ.get("GOOGLE_CREDENTIALS")
+gc = gspread.service_account_from_dict(credentials)
 
 
 
