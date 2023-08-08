@@ -6,7 +6,7 @@ import numpy as np
 from googleapiclient.discovery import build
 
 import validation_rules as vr 
-from auth import gc
+from auth import gc, cred_dict, service
 
 
 # ------------------ Auth -----------------------
@@ -39,7 +39,6 @@ gsheet_doc_name = 'NEW_CDR MRV Pathway Uncertainties'
 # ------------------ Validation ----------------------
 
 
-service = build('sheets', 'v4', credentials=gc)
 
 
 def remove_existing_conditional_formatting_all_sheets():
@@ -64,99 +63,99 @@ def remove_existing_conditional_formatting_all_sheets():
 
 
 
-remove_existing_conditional_formatting_all_sheets()
+# remove_existing_conditional_formatting_all_sheets()
 
-# -------------------------------------------------------------------
-# ------------------ Components Sheet Validation --------------------
-# -------------------------------------------------------------------
+# # -------------------------------------------------------------------
+# # ------------------ Components Sheet Validation --------------------
+# # -------------------------------------------------------------------
 
-# clear_existing_data_validation_rules
-clear_existing = vr._clear_existing_data_validation_rules(sheetID=component_sheet_name)
-service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=clear_existing).execute()
+# # clear_existing_data_validation_rules
+# clear_existing = vr._clear_existing_data_validation_rules(sheetID=component_sheet_name)
+# service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=clear_existing).execute()
 
-# Check component id is unique 
-unique_component_id = vr._validate_components_unique_component_id(sheetID=component_sheet_name)
-service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=unique_component_id).execute()
-
-
-# A non-empty component name 
-non_empty_component_name = vr._validate_components_non_empty_component_name(sheetID=component_sheet_name)
-service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=non_empty_component_name).execute()
-
-# A non-empty quantification target 
-non_empty_quantification_target = vr._validate_components_non_empty_quantification_target(sheetID=component_sheet_name)
-service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=non_empty_quantification_target).execute()
-
-#A non-empty description 
-non_empty_description = vr._validate_components_non_empty_description(sheetID=component_sheet_name)
-service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=non_empty_description).execute()
-
-# An uncertainty type
-uncertainty_type = vr._validate_components_uncertainty_type(sheetID=component_sheet_name)
-service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=uncertainty_type).execute()
-
-# A responsibility (project, system) 
-responsibility = vr._validate_components_responsibility(sheetID=component_sheet_name)
-service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=responsibility).execute()
-
-# An uncertainty min  (negligible, low, medium, high)
-uncertainty_min = vr._validate_components_uncertainty_min(sheetID=component_sheet_name)
-service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=uncertainty_min).execute()
+# # Check component id is unique 
+# unique_component_id = vr._validate_components_unique_component_id(sheetID=component_sheet_name)
+# service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=unique_component_id).execute()
 
 
-# An uncertainty max (negligible, low, medium, high)
-uncertainty_max = vr._validate_components_uncertainty_max(sheetID=component_sheet_name)
-service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=uncertainty_max).execute()
+# # A non-empty component name 
+# non_empty_component_name = vr._validate_components_non_empty_component_name(sheetID=component_sheet_name)
+# service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=non_empty_component_name).execute()
 
-# # At least one pathway column filled in - BROKEN
-# missing_pathway = vr._validate_components_missing_pathway(sheetID=component_sheet_name)
-# service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=missing_pathway).execute()
+# # A non-empty quantification target 
+# non_empty_quantification_target = vr._validate_components_non_empty_quantification_target(sheetID=component_sheet_name)
+# service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=non_empty_quantification_target).execute()
+
+# #A non-empty description 
+# non_empty_description = vr._validate_components_non_empty_description(sheetID=component_sheet_name)
+# service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=non_empty_description).execute()
+
+# # An uncertainty type
+# uncertainty_type = vr._validate_components_uncertainty_type(sheetID=component_sheet_name)
+# service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=uncertainty_type).execute()
+
+# # A responsibility (project, system) 
+# responsibility = vr._validate_components_responsibility(sheetID=component_sheet_name)
+# service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=responsibility).execute()
+
+# # An uncertainty min  (negligible, low, medium, high)
+# uncertainty_min = vr._validate_components_uncertainty_min(sheetID=component_sheet_name)
+# service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=uncertainty_min).execute()
 
 
+# # An uncertainty max (negligible, low, medium, high)
+# uncertainty_max = vr._validate_components_uncertainty_max(sheetID=component_sheet_name)
+# service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=uncertainty_max).execute()
+
+# # # At least one pathway column filled in - BROKEN
+# # missing_pathway = vr._validate_components_missing_pathway(sheetID=component_sheet_name)
+# # service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=missing_pathway).execute()
 
 
 
-# --------------------------------------------------------------------
-# ------------------ Pathways Sheets Validation ----------------------
-# --------------------------------------------------------------------
 
 
-# Iterate through each pathways sheet:
-# Test single sheet for now: pathways_test
+# # --------------------------------------------------------------------
+# # ------------------ Pathways Sheets Validation ----------------------
+# # --------------------------------------------------------------------
 
 
-# #clear_existing_data_validation_rules
-clear_existing = vr._clear_existing_data_validation_rules(sheetID='1764033321')
-service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=clear_existing).execute()
+# # Iterate through each pathways sheet:
+# # Test single sheet for now: pathways_test
 
 
-## Validate pathways for non empty: pathway_id, name, description, VCL, equation, version and revision
-pathways_combined_non_empty = vr._validate_pathways_non_empty_pathway_id_name_description_VCL_equation_version_revision(sheetID='1764033321')
-service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=pathways_combined_non_empty).execute()
+# # #clear_existing_data_validation_rules
+# clear_existing = vr._clear_existing_data_validation_rules(sheetID='1764033321')
+# service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=clear_existing).execute()
 
 
-### Regex issue - empty equation 
-# pathways_eq = vr._validate_pathways_check_equation(sheetID='1764033321')
-# service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=pathways_eq).execute()
-
-## version number (X.X)
-pathways_version = vr._validate_pathways_version_number_format(sheetID='1764033321')
-service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=pathways_version).execute()
+# ## Validate pathways for non empty: pathway_id, name, description, VCL, equation, version and revision
+# pathways_combined_non_empty = vr._validate_pathways_non_empty_pathway_id_name_description_VCL_equation_version_revision(sheetID='1764033321')
+# service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=pathways_combined_non_empty).execute()
 
 
+# ### Regex issue - empty equation 
+# # pathways_eq = vr._validate_pathways_check_equation(sheetID='1764033321')
+# # service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=pathways_eq).execute()
 
-# -----------------------------------------------------------------
-# ------------------ Contributors Validation ----------------------
-# -----------------------------------------------------------------
-
-# (Static) All contributors have a name ( google-sheets-api)
-
-contributor_name = vr._validate_contributor_name(sheetID=sheet_id_dict['contributor_test'])
-service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=contributor_name).execute()
+# ## version number (X.X)
+# pathways_version = vr._validate_pathways_version_number_format(sheetID='1764033321')
+# service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=pathways_version).execute()
 
 
-contributor_associated_pathway = vr._validate_contributors_associated_pathways(sheetID=sheet_id_dict['contributor_test'], sheet_name='contributor_test', spreadsheet_ID =spreadsheet_id, service=service)                                                               
-service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=contributor_associated_pathway).execute()
+
+# # -----------------------------------------------------------------
+# # ------------------ Contributors Validation ----------------------
+# # -----------------------------------------------------------------
+
+# # (Static) All contributors have a name ( google-sheets-api)
+
+# contributor_name = vr._validate_contributor_name(sheetID=sheet_id_dict['contributor_test'])
+# service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=contributor_name).execute()
 
 
-service.close()
+# contributor_associated_pathway = vr._validate_contributors_associated_pathways(sheetID=sheet_id_dict['contributor_test'], sheet_name='contributor_test', spreadsheet_ID =spreadsheet_id, service=service)                                                               
+# service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=contributor_associated_pathway).execute()
+
+
+# service.close()

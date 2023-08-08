@@ -35,13 +35,12 @@ from ast import literal_eval
 
 from auth import gc
 
-from sheets_to_json import get_component_sheet, gsheet_doc_name, avail_pathways, credentials, gsheet_to_data_list, sheet_data_to_dataframe, sheet_data_to_metadata, contributors_df, get_pathway_col_list
-
+from sheets_to_json import get_component_sheet, gsheet_doc_name, avail_pathways, gsheet_to_data_list, sheet_data_to_dataframe, sheet_data_to_metadata, contributors_df, get_pathway_col_list
+from auth import credentials, gc
 
 
 # ------------------ Auth -----------------------
 
-gc = gspread.service_account_from_dict(credentials)
 
 
 
@@ -273,11 +272,11 @@ def pathway_uncertainty_range():
 # All dataframes are converted to .md and sent via requests to slack webhook
 
 equation_number_component_number()
-pathways_version_note_bool()
-pathway_componets_sheets_subset()
-pathway_id_sheets_subset()
-contributor_pathway_subset_bool()
-latest_pathway_version_match()
-pathway_uncertainty_range()
+# pathways_version_note_bool()
+# pathway_componets_sheets_subset()
+# pathway_id_sheets_subset()
+# contributor_pathway_subset_bool()
+# latest_pathway_version_match()
+# pathway_uncertainty_range()
 
 

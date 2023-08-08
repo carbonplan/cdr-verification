@@ -10,6 +10,11 @@ from google.oauth2 import service_account
 private_key_id = os.environ.get('GOOGLE_PRIVATE_KEY_ID')
 private_key = os.environ.get('GOOGLE_PRIVATE_KEY')
 client_id = os.environ.get('GOOGLE_CLIENT_ID')
+
+scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+
+
+
 cred_dict = {
   "type": "service_account",
   "project_id": "carbonplan",
@@ -24,4 +29,9 @@ cred_dict = {
   "universe_domain": "googleapis.com"
 }
 
+
 gc = gspread.service_account_from_dict(cred_dict)
+
+credentials = service_account.Credentials.from_service_account_info(cred_dict, scopes=scope)
+
+service = build('sheets', 'v4', credentials=credentials)
