@@ -11,6 +11,9 @@ private_key_id = os.environ.get('GOOGLE_PRIVATE_KEY_ID')
 private_key = os.environ.get('GOOGLE_PRIVATE_KEY')
 client_id = os.environ.get('GOOGLE_CLIENT_ID')
 
+print(private_key_id)
+print(private_key)
+print(client_id)
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
 
@@ -29,13 +32,9 @@ cred_dict = {
   "universe_domain": "googleapis.com"
 }
 
-credentials = service_account.Credentials.from_service_account_file(
-    os.environ.get("GOOGLE_CREDENTIALS"),
-    scopes=scope
-)
 
 gc = gspread.service_account_from_dict(cred_dict)
 
-# credentials = service_account.Credentials.from_service_account_info(cred_dict, scopes=scope)
+credentials = service_account.Credentials.from_service_account_info(cred_dict, scopes=scope)
 
 service = build('sheets', 'v4', credentials=credentials)

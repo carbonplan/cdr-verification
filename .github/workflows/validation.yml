@@ -44,4 +44,4 @@ jobs:
 
       - name: run-script
         run: |
-          python scripts/postprocess.py
+          echo python scripts/auth.py
