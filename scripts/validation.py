@@ -2,23 +2,14 @@
 
 # ------------------ Imports -----------------------
 import numpy as np
-import pathlib 
-import os
-import gspread # type: ignore
-from oauth2client.service_account import ServiceAccountCredentials # type: ignore
+
 from googleapiclient.discovery import build
-from google.oauth2 import service_account
 
 import validation_rules as vr 
-
+from auth import gc
 
 
 # ------------------ Auth -----------------------
-
-
-credentials = os.environ.get("GOOGLE_CREDENTIALS")
-gc = gspread.service_account_from_dict(credentials)
-
 
 
 sheet_id_dict = {'components': '552961890',
@@ -48,7 +39,7 @@ gsheet_doc_name = 'NEW_CDR MRV Pathway Uncertainties'
 # ------------------ Validation ----------------------
 
 
-service = build('sheets', 'v4', credentials=credentials)
+service = build('sheets', 'v4', credentials=gc)
 
 
 def remove_existing_conditional_formatting_all_sheets():

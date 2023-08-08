@@ -11,17 +11,10 @@ import pandas as pd # type: ignore
 from oauth2client.service_account import ServiceAccountCredentials # type: ignore
 from ast import literal_eval
 import validation 
+from auth import gc
 
 
 # ------------------ Auth -----------------------
-
-
-# SECRET_FILE = str(pathlib.Path.home()) + '/keybase/google-sheets-key.json'
-# scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-# credentials = ServiceAccountCredentials.from_json_keyfile_name(SECRET_FILE, scope)
-credentials = os.environ.get("GOOGLE_CREDENTIALS")
-gc = gspread.service_account_from_dict(credentials)
-# gc = gspread.authorize(credentials)
 
 
 gsheet_doc_name = 'NEW_CDR MRV Pathway Uncertainties'

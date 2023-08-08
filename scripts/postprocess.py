@@ -33,13 +33,14 @@ import pandas as pd # type: ignore
 from oauth2client.service_account import ServiceAccountCredentials # type: ignore
 from ast import literal_eval
 
+from auth import gc
+
 from sheets_to_json import get_component_sheet, gsheet_doc_name, avail_pathways, credentials, gsheet_to_data_list, sheet_data_to_dataframe, sheet_data_to_metadata, contributors_df, get_pathway_col_list
 
 
 
 # ------------------ Auth -----------------------
 
-# gc = gspread.authorize(credentials)
 gc = gspread.service_account_from_dict(credentials)
 
 
