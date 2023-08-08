@@ -31,9 +31,8 @@ cred_dict = {
 }
 
 
-print(cred_dict)
-# gc = gspread.service_account_from_dict(cred_dict)
+gc = gspread.service_account_from_dict(cred_dict)
 
-# credentials = service_account.Credentials.from_service_account_info(cred_dict, scopes=scope)
+credentials = service_account.Credentials.from_service_account_info(cred_dict, scopes=scope)
 
-# service = build('sheets', 'v4', credentials=credentials)
+service = build('sheets', 'v4', credentials=credentials)
