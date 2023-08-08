@@ -44,4 +44,4 @@ jobs:
 
       - name: run-script
         run: |
-          python scripts/auth.py
+          python -u scripts/auth.py
