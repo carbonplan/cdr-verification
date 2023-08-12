@@ -5,9 +5,8 @@
 # ---------------------------------------------------------
 
 
-
 ## Pathways Sheets
-# - [ ? ]  (Static - Postprocess) VCL range matches component uncertainty count
+# - [ ? ]  (Static - Postprocess) VCL range matches component uncertainty count 
 # - [ x ]  (Static - Postprocess) There is a version note corresponding with the current version number
 # - [ x ]  (Static - Postprocess) All equation numbers correspond with numbered components (ie all numbers in equation are a subset of the numbers found in the number column)
 
@@ -42,12 +41,14 @@ from auth import credentials, gc
 # ------------------ Auth -----------------------
 
 
-
-
+# Load component sheet
 cdf = get_component_sheet(gsheet_doc_name)
-pathway_col_list = get_pathway_col_list(cdf)
+# Load contributors sheet
 cont_df = contributors_df()
+# Retrieve list of pathway columns
+pathway_col_list = get_pathway_col_list(cdf)
 
+# A dict to map uncertainty values to numeric 
 def uncertainty_map():
     return {'negligible': 0,
                'low':1,
@@ -58,11 +59,16 @@ def uncertainty_map():
 
 um = uncertainty_map()
 
-## ----------------- Pathways Sheets ----------------
-
 
 
 def send_slack_notification(df: pd.DataFrame, validation_name: str):
+    """Send slack notifications to the cdr-verification-updates slack channel
+
+    :param df: Input DataFrame of reported inconsistencies 
+    :type df: pd.DataFrame
+    :param validation_name: A description of the validation check
+    :type validation_name: str
+    """
     dataframe_markdown = df.to_markdown()
     slack_webhook_url = os.environ.get("SLACK_WEBHOOK_URL")
     validation_description = pd.DataFrame({'Validation': [validation_name]}).to_markdown(index=False)
@@ -71,7 +77,21 @@ def send_slack_notification(df: pd.DataFrame, validation_name: str):
     r.raise_for_status()
 
 
-def generate_combined_pathway_data_dict(gsheet_doc_name, avail_pathways):
+# --------------------------------------------------
+# ----------------- Pathways Sheets ----------------
+# --------------------------------------------------
+
+
+def generate_combined_pathway_data_dict(gsheet_doc_name: str, avail_pathways: list)-> dict:
+    """Function to create a object containing pairs of pathway sheet metadata and data
+
+    :param gsheet_doc_name: name of the google doc
+    :type gsheet_doc_name: str
+    :param avail_pathways: list of available pathways
+    :type avail_pathways: list
+    :return: dict containing pathway metadata and data
+    :rtype: dict
+    """
     metadata_df_dict = {}
     metadata_dict_combined = {}
     for pathway in avail_pathways:
@@ -87,13 +107,11 @@ def generate_combined_pathway_data_dict(gsheet_doc_name, avail_pathways):
 
 metadata_combined = generate_combined_pathway_data_dict(gsheet_doc_name, avail_pathways)
 
-
-
-# -------------------------------------------------------------------------
-# - [ x ]  (Static - Postprocess) All equation numbers correspond with numbered components 
-# (ie all numbers in equation are a subset of the numbers found in the number column - for each pathway
-# -------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------
+# [ x ]  (Static - Postprocess) All equation numbers correspond with numbered components 
+# --------------------------------------------------------------------------------------
 def equation_number_component_number():
+    """All equation numbers correspond with numbered components """
     pathway_name_list = []
     equation_number_bool_list = []
     pathway_diff_nums_list = []
@@ -119,6 +137,9 @@ def equation_number_component_number():
 # Takes the latest revision, checks if 'note' is empty. If empty, version_note_bool == False
 
 def pathways_version_note_bool():
+    """There is a version note corresponding with the current version number
+      - Takes the latest revision, checks if 'note' is empty. If empty, version_note_bool == False"""
+    
     pathway_name_list = []
     version_bool_list = []
     
@@ -139,7 +160,7 @@ def pathways_version_note_bool():
 # - [ x ]  (Static - Postprocess) All components appearing in pathway sheets appear in the component sheet.
 # --------------------------------------------------------------------------------------------------------------------------
 def pathway_componets_sheets_subset() -> bool:
-    # convert this to a pathway level report with sys diff of missing values
+    """All components appearing in pathway sheets appear in the component sheet."""
     unique_component_ids = set(cdf['component_id'])
 
     pathway_name_list = []
@@ -164,8 +185,8 @@ def pathway_componets_sheets_subset() -> bool:
 # --------------------------------------------------------------------------------------------------------------------------
 # - [ x ]  (Static - Postprocess) All pathway ids in pathway sheets are reflected as a column in the component sheet 
 # --------------------------------------------------------------------------------------------------------------------------
-def pathway_id_sheets_subset() -> bool:
-
+def pathway_id_sheets_subset():
+    """All pathway ids in pathway sheets are reflected as a column in the component sheet """
     pathway_name_list = []
     pathway_id_bool_list = []
 
@@ -186,6 +207,7 @@ def pathway_id_sheets_subset() -> bool:
 # - [ x ]  (Static - Postprocess) All pathway ids in contributor sheet are reflected in the component sheet 
 # --------------------------------------------------------------------------------------------------------------------------
 def contributor_pathway_subset_bool() -> bool:
+    """All pathway ids in contributor sheet are reflected in the component sheet """
 
     # Removes 'type', 'name', 'affiliation', 'initial', 'notes' from column names
     cont_df_pathway_ids = set(list(cont_df)) - set(['type', 'name', 'affiliation', 'initial', 'notes'])
@@ -199,11 +221,13 @@ def contributor_pathway_subset_bool() -> bool:
 
     
 
-# --------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------
 # - [ x ]  (Static - Postprocess) All pathway versions in contributor sheets correspond with pathway versions in pathway sheets 
-# --------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------
 
 def latest_pathway_version_match():
+    """All pathway versions in contributor sheets correspond with pathway versions in pathway sheets """
+
     pathway_name_list = []
     pathway_version_match_bool_list = []
     latest_pathway_version_contributor_df_list = []
@@ -228,12 +252,15 @@ def latest_pathway_version_match():
         send_slack_notification(df, 'All pathway versions in contributor sheets correspond with pathway versions in pathway sheets')
 
 
-# --------------------------------------------------------------------------------------------------------------------------
-# - [ x ]  (Static - Postprocess) Any component uncertainty range in pathway sheet is a subset of range in component sheet (see e.g. `nsad` and terrestrial versus ocean biomass sinking) - ( python on version release)
-# Each component in components sheet has a range defined by two columns ([uncertainty_impact_min, uncertainty_impact_max]).
-# These can be either: low medium high negligible very high. So we need to map these two ints, then for each pathway, for each component id, we need to map to ints, then map to the SOT (component sheet)
+# ------------------------------------------------------------------------------------------------------------------------
+# - [ x ]  (Static - Postprocess) Any component uncertainty range in pathway sheet is a subset of range in component sheet
+# ------------------------------------------------------------------------------------------------------------------------
 
 def pathway_uncertainty_range():
+    """Any component uncertainty range in pathway sheet is a subset of range in component sheet (see e.g. `nsad` and terrestrial versus ocean biomass sinking) - ( python on version release)
+    - Each component in components sheet has a range defined by two columns ([uncertainty_impact_min, uncertainty_impact_max]).
+    - These can be either: low medium high negligible very high. So we need to map these two ints, then for each pathway, for each component id, we need to map to ints, then map to the SOT (component sheet)
+    """
     df_append = []
 
     for pathway in metadata_combined['metadata_df_dict']:
@@ -267,16 +294,12 @@ def pathway_uncertainty_range():
 
 
 
-
-# When run, goes through and produces all dataframes
-# All dataframes are converted to .md and sent via requests to slack webhook
-
 equation_number_component_number()
-# pathways_version_note_bool()
-# pathway_componets_sheets_subset()
-# pathway_id_sheets_subset()
-# contributor_pathway_subset_bool()
-# latest_pathway_version_match()
-# pathway_uncertainty_range()
+pathways_version_note_bool()
+pathway_componets_sheets_subset()
+pathway_id_sheets_subset()
+contributor_pathway_subset_bool()
+latest_pathway_version_match()
+pathway_uncertainty_range()
 
 

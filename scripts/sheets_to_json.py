@@ -14,7 +14,6 @@ import validation
 from auth import gc
 
 
-# ------------------ Auth -----------------------
 
 
 gsheet_doc_name = 'NEW_CDR MRV Pathway Uncertainties'
@@ -22,13 +21,28 @@ avail_pathways = ['DAC', 'BiCRS','EW','TER_BIO','OCEAN_BIO_no_harvest','OCEAN_BI
 pathways_data_columns = ['number','category','component_id','name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','description','notes']
 components_non_pathway_cols = ['revisions','notes','category','component_id','component_name','secondary_name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','description']
 
+
 def get_legend_sheet(gsheet_doc_name: str) -> pd.DataFrame:
+    """Retrieves Legend sheet
+
+    :param gsheet_doc_name: name of google doc
+    :type gsheet_doc_name: str
+    :return: DataFrame of Legend sheet
+    :rtype: pd.DataFrame
+    """
     sh = gc.open(gsheet_doc_name)
     sheet = sh.worksheet('Legend')
     data_list = sheet.get_all_values()
     return pd.DataFrame(data_list[1::],columns=data_list[0])
 
 def get_component_sheet(gsheet_doc_name: str) -> pd.DataFrame:
+    """Retrieves Components sheet
+
+    :param gsheet_doc_name: name of google doc
+    :type gsheet_doc_name: str
+    :return: DataFrame of Components sheet
+    :rtype: pd.DataFrame
+    """  
     sh = gc.open(gsheet_doc_name)
     sheet = sh.worksheet('Components')
     data_list = sheet.get_all_values()
@@ -41,21 +55,45 @@ def get_component_sheet(gsheet_doc_name: str) -> pd.DataFrame:
 
     return cdf
 
+
 def get_pathway_col_list(df: pd.DataFrame) -> list:
-    return set(list(df)) - set(components_non_pathway_cols)
+    """Returns a set of pathway column names
+
+    :param df: Pathway specific DataFrame
+    :type df: pd.DataFrame
+    :return: list of pathway col names 
+    :rtype: list
+    """
+    return list(set(list(df)) - set(components_non_pathway_cols))
 
 def component_pathway_flatten(df: pd.DataFrame, pathway_col_list: list) -> pd.DataFrame:
+    """Flattens pathway components
+
+    :param df: Component DataFrame
+    :type df: pd.DataFrame
+    :param pathway_col_list: list of pathway columns 
+    :type pathway_col_list: list
+    :return: Flattened pathway DataFrame
+    :rtype: pd.DataFrame
+    """
     df['pathways'] = df[pathway_col_list].apply(lambda x: ','.join(x[x!=""].index),axis=1).str.split(',')
     df.drop(pathway_col_list,axis=1,inplace=True)
 
     return df 
 
 def get_all_sheets_in_doc(gsheet_doc_name: str) -> list:
-    """returns list of all worksheets including ID and name"""
+    """Returns list of all worksheets including ID and name
+
+    :param gsheet_doc_name: name of google doc
+    :type gsheet_doc_name: str
+    :return: list of all worksheets 
+    :rtype: list
+    """
     sh = gc.open(gsheet_doc_name)
     return sh.worksheets()
 
 def gsheet_to_data_list(gsheet_doc_name: str, worksheet_name: str) -> list:
+    """Converts google sheet values to list"""
     sh = gc.open(gsheet_doc_name)
     sheet = sh.worksheet(worksheet_name)
     return sheet.get_all_values()
@@ -65,6 +103,7 @@ def sheet_data_to_dataframe(data_list: list) -> pd.DataFrame:
     return pd.DataFrame(data_list[10::],columns=data_list[9])[pathways_data_columns].replace('',np.nan).dropna(how='all')
 
 def contributors_df():
+    """Returns contributors dataframe"""
     data_list = gsheet_to_data_list(gsheet_doc_name, 'Contributors')
     return pd.DataFrame(data_list[1::],columns=data_list[0])
 
@@ -279,10 +318,7 @@ def write_pathways_to_json(avail_pathways: list):
         write_metadata_to_json(pathway = pathway, metadata_dict = process_sheet_dict['metadata_dict'], contributor_df=contributor_df)
 
 
-
-# write_pathways_to_json(avail_pathways)
-# process_legend(gsheet_doc_name)
-
-
-# process_components_sheet(gsheet_doc_name)
-# process_contributors_sheet(gsheet_doc_name)
+write_pathways_to_json(avail_pathways)
+process_legend(gsheet_doc_name)
+process_components_sheet(gsheet_doc_name)
+process_contributors_sheet(gsheet_doc_name)

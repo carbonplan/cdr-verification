@@ -1,18 +1,20 @@
 
-
-
-# -------------------- Reusable Components ------------------------
-
+#A set of templating dicts that store request bodies for google-sheets validation rules.
 
 
 # -------------------- Drop Down Options --------------------------
 uncertainty_type_options = ['execution', 'scientific', 'execution, scientific', 'execution', 'counterfactual']
 responsibility_type_options = ['project', 'system'] 
 uncertainty_impact_options = ['not characterized','negligible', 'low', 'medium', 'high', 'very high']
+
 # ---------------------- Row Numbers ------------------------------
 # Components Sheet
 components_start_row_index = 2
 components_end_row_index = 54
+
+# -------------------------------------------------------------------
+# -------------------- Reusable Components ------------------------
+# -------------------------------------------------------------------
 
 ## -------------------- Colors ------------------------------------
 gray_background_color = {"backgroundColor": {
@@ -24,6 +26,7 @@ gray_background_color = {"backgroundColor": {
 
 # -------------------------------------------------------------------
 # -------------------- Validation Rules -----------------------------
+# -------------------------------------------------------------------
 
 empty_cell_validation = {"type": "TEXT_NOT_CONTAINS",
                         "values": [
@@ -77,7 +80,6 @@ def _validate_components_unique_component_id(sheetID, strict=True):
 # ----------------------------------------------------------
 # ---------------------- BLANK_CELL ------------------------
 # ----------------------------------------------------------
-
 
 
 # A non-empty component name 
@@ -246,34 +248,34 @@ def _validate_components_uncertainty_max(sheetID, strict=True):
 
 
 # - BROKEN At least one pathway column filled in - BROKEN
-# def _validate_components_missing_pathway(sheetID, strict=True):
-#    return {
-#      "requests": [
-#        {
-#          "setDataValidation": {
-#            "range": {
-#              "sheetId": sheetID,
-#              "startRowIndex": components_start_row_index,
-#              "endRowIndex": components_end_row_index,
-#              "startColumnIndex": 12,
-#              "endColumnIndex": 24
-#            },
-#            "rule": {
-#              "condition": {
-#                "type": "CUSTOM_FORMULA",
-#                "values": [
-#                  {
-#                    "userEnteredValue": "=COUNTA(M1:W1)>0"
-#                  }
-#                ]
-#              },
-#              "inputMessage": "Please enter at least one value in each row",
-#              "strict": True
-#            }
-#          }
-#        }
-#      ]
-#    }
+def _validate_components_missing_pathway(sheetID, strict=True):
+   return {
+     "requests": [
+       {
+         "setDataValidation": {
+           "range": {
+             "sheetId": sheetID,
+             "startRowIndex": components_start_row_index,
+             "endRowIndex": components_end_row_index,
+             "startColumnIndex": 12,
+             "endColumnIndex": 24
+           },
+           "rule": {
+             "condition": {
+               "type": "CUSTOM_FORMULA",
+               "values": [
+                 {
+                   "userEnteredValue": "=COUNTA(M1:W1)>0"
+                 }
+               ]
+             },
+             "inputMessage": "Please enter at least one value in each row",
+             "strict": True
+           }
+         }
+       }
+     ]
+   }
 
 def _clear_existing_data_validation_rules(sheetID, strict=True):
 
@@ -322,8 +324,8 @@ def _validate_pathways_non_empty_pathway_id_name_description_VCL_equation_versio
             ]
         }
 
-#   VCL (range, 1-5) -
-# NEEDED
+#   VCL (range, 1-5) - # NEEDED
+
 
 #   equation (numbers, parentheses, and +- symbols only) 
 def _validate_pathways_check_equation(sheetID, strict=True):
@@ -348,7 +350,7 @@ def _validate_pathways_check_equation(sheetID, strict=True):
         }
     }]}
 
-# A version number (X.X) - (google-sheets-api)
+# A version number (X.X) 
 def _validate_pathways_version_number_format(sheetID, strict=True):
 
     return {'requests': [
@@ -400,8 +402,6 @@ def _validate_contributor_name(sheetID, strict=True):
 
 
 # All contributors are associated with at least one pathway version 
-
-
 def _validate_contributors_associated_pathways(sheetID: str, sheet_name: str, spreadsheet_ID: str, service):
 
     # grab values from sheet
