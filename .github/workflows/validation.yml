@@ -49,7 +49,6 @@ jobs:
             pandas
             pip
             pre-commit
-            tabulate 
             s3fs
             ujson
             xarray
