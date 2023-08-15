@@ -7,7 +7,7 @@
 import numpy as np
 
 import validation_rules as vr 
-from auth import service, gsheet_doc_name, google_doc_id
+from auth import service, google_doc_id
 
 
 # ------------------ Auth -----------------------
@@ -146,9 +146,9 @@ service.spreadsheets().batchUpdate(spreadsheetId=google_doc_id, body=pathways_ve
 contributor_name = vr._validate_contributor_name(sheetID=sheet_id_dict['contributor_test'])
 service.spreadsheets().batchUpdate(spreadsheetId=google_doc_id, body=contributor_name).execute()
 
-# All contributors are associated with at least one pathway version.
-contributor_associated_pathway = vr._validate_contributors_associated_pathways(sheetID=sheet_id_dict['contributor_test'], sheet_name='contributor_test', google_doc_id =google_doc_id, service=service)                                                               
-service.spreadsheets().batchUpdate(spreadsheetId=google_doc_id, body=contributor_associated_pathway).execute()
+# # All contributors are associated with at least one pathway version.
+# contributor_associated_pathway = vr._validate_contributors_associated_pathways(sheetID=sheet_id_dict['contributor_test'], sheet_name='contributor_test', google_doc_id =google_doc_id, service=service)                                                               
+# service.spreadsheets().batchUpdate(spreadsheetId=google_doc_id, body=contributor_associated_pathway).execute()
 
 # Closes google service
 service.close()

@@ -22,19 +22,12 @@
 
 # ------------------ Imports -----------------------
 import numpy as np
-import json
 import re 
 import os 
 import requests
-import pathlib
 import pandas as pd # type: ignore
-from oauth2client.service_account import ServiceAccountCredentials # type: ignore
-from ast import literal_eval
 
-from auth import gc
-
-from sheets_to_json import get_component_sheet, gsheet_doc_name, avail_pathways, gsheet_to_data_list, sheet_data_to_dataframe, sheet_data_to_metadata, contributors_df, get_pathway_col_list
-from auth import credentials, gc
+from sheets_to_json import get_component_sheet, gsheet_doc_name, avail_pathways, get_data_values_by_sheet_name, sheet_data_to_dataframe, sheet_data_to_metadata, contributors_df, get_pathway_col_list
 
 
 # ------------------ Auth -----------------------
@@ -94,7 +87,7 @@ def generate_combined_pathway_data_dict(gsheet_doc_name: str, avail_pathways: li
     metadata_df_dict = {}
     metadata_dict_combined = {}
     for pathway in avail_pathways:
-        data_list = gsheet_to_data_list(gsheet_doc_name, pathway)
+        data_list = get_data_values_by_sheet_name(sheet_name=pathway)
 
         df = sheet_data_to_dataframe(data_list)
         metadata_dict = sheet_data_to_metadata(data_list)

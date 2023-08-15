@@ -2,14 +2,9 @@
 
 # ------------------ Imports -----------------------
 import numpy as np
-import pandera as pa
 import json
-import os
 import pathlib
 import pandas as pd # type: ignore
-from oauth2client.service_account import ServiceAccountCredentials # type: ignore
-from ast import literal_eval
-import validation 
 from auth import service, google_doc_id
 
 
@@ -305,7 +300,7 @@ def write_pathways_to_json(avail_pathways: list):
         write_metadata_to_json(pathway = pathway, metadata_dict = process_sheet_dict['metadata_dict'], contributor_df=contributor_df)
 
 
-write_pathways_to_json(avail_pathways)
-process_legend(gsheet_doc_name)
-process_components_sheet(gsheet_doc_name)
-process_contributors_sheet(gsheet_doc_name)
+# write_pathways_to_json(avail_pathways)
+# process_legend(gsheet_doc_name)
+# process_components_sheet(gsheet_doc_name)
+# process_contributors_sheet(gsheet_doc_name)
