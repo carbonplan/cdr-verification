@@ -27,7 +27,6 @@ import re
 import os 
 import requests
 import pathlib
-import gspread # type: ignore
 import pandas as pd # type: ignore
 from oauth2client.service_account import ServiceAccountCredentials # type: ignore
 from ast import literal_eval

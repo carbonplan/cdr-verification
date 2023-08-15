@@ -4,45 +4,57 @@ on: [push, pull_request]
 
 jobs:
   test:
-    name: ${{ matrix.python-version }}-build
     runs-on: ubuntu-latest
     env:
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-      GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+    SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+    permissions:
+      contents: 'read'
+      id-token: 'write'
 
     concurrency:
       group: ${{ github.ref }}
       cancel-in-progress: true
 
-    defaults:
-      run:
-        shell: bash -l {0}
-    strategy:
-      matrix:
-        python-version: ['3.10']
     steps:
-      - uses: actions/checkout@v3
+      - uses: 'actions/checkout@v3'
 
       - id: 'auth'
+        name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v1'
         with:
-          credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
+          workload_identity_provider: 'projects/836213457414/locations/global/workloadIdentityPools/github-actions-google-sheets/providers/github'
+          service_account: 'google-sheets@carbonplan.iam.gserviceaccount.com'
 
-      - name: 'Set up Cloud SDK'
-        uses: 'google-github-actions/setup-gcloud@v1'
-
-      - name: Create conda environment
-        uses: mamba-org/provision-with-micromamba@main
+      # Install Micromamba with conda-forge dependencies
+      - name: Setup Micromamba
+        uses: mamba-org/setup-micromamba@v1.4.3
         with:
+          environment-name: cdr
+          init-shell: >-
+            bash
+          condarc: |
+            channels:
+              - conda-forge
+              - nodefaults
           cache-downloads: true
-          micromamba-version: 'latest'
-          environment-file: ci/environment.yml
-          extra-specs: |
-            python=${{ matrix.python-version }}
+          cache-environment: true
+          create-args: >-
+            python=3.10
+            fsspec
+            jupyter
+            numpy
+            oauth2client
+            google-api-python-client
+            pandas
+            pandera
+            pip
+            pre-commit
+            s3fs
+            ujson
+            xarray
 
-      - name: Conda info
-        run: conda info
-
-      - name: run-script
+      - name: Run test
         run: |
           python -u scripts/auth.py
+        shell: bash -el {0}

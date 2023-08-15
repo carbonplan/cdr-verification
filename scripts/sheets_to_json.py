@@ -6,14 +6,11 @@ import pandera as pa
 import json
 import os
 import pathlib
-import gspread # type: ignore
 import pandas as pd # type: ignore
 from oauth2client.service_account import ServiceAccountCredentials # type: ignore
 from ast import literal_eval
 import validation 
-from auth import gc
-
-
+from auth import service, google_doc_id
 
 
 gsheet_doc_name = 'NEW_CDR MRV Pathway Uncertainties'
@@ -21,6 +18,8 @@ avail_pathways = ['DAC', 'BiCRS','EW','TER_BIO','OCEAN_BIO_no_harvest','OCEAN_BI
 pathways_data_columns = ['number','category','component_id','name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','description','notes']
 components_non_pathway_cols = ['revisions','notes','category','component_id','component_name','secondary_name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','description']
 
+def get_data_values_by_sheet_name(*, sheet_name: str)-> list:
+    return service.spreadsheets().values().get(spreadsheetId=google_doc_id, range=sheet_name).execute().get('values')
 
 def get_legend_sheet(gsheet_doc_name: str) -> pd.DataFrame:
     """Retrieves Legend sheet
@@ -30,9 +29,7 @@ def get_legend_sheet(gsheet_doc_name: str) -> pd.DataFrame:
     :return: DataFrame of Legend sheet
     :rtype: pd.DataFrame
     """
-    sh = gc.open(gsheet_doc_name)
-    sheet = sh.worksheet('Legend')
-    data_list = sheet.get_all_values()
+    data_list = get_data_values_by_sheet_name(sheet_name = "Legend")
     return pd.DataFrame(data_list[1::],columns=data_list[0])
 
 def get_component_sheet(gsheet_doc_name: str) -> pd.DataFrame:
@@ -43,10 +40,7 @@ def get_component_sheet(gsheet_doc_name: str) -> pd.DataFrame:
     :return: DataFrame of Components sheet
     :rtype: pd.DataFrame
     """  
-    sh = gc.open(gsheet_doc_name)
-    sheet = sh.worksheet('Components')
-    data_list = sheet.get_all_values()
-
+    data_list = get_data_values_by_sheet_name(sheet_name = "Components")
     cdf = pd.DataFrame(data_list[2::],columns=data_list[0])
 
     cdf['component_id'] = cdf['component_id'].str.replace('\u2082','2')
@@ -81,22 +75,17 @@ def component_pathway_flatten(df: pd.DataFrame, pathway_col_list: list) -> pd.Da
 
     return df 
 
-def get_all_sheets_in_doc(gsheet_doc_name: str) -> list:
-    """Returns list of all worksheets including ID and name
+def get_all_sheets_in_doc(gsheet_doc_name: str) -> dict:
+    """Returns dict of all worksheets including ID and name
 
     :param gsheet_doc_name: name of google doc
     :type gsheet_doc_name: str
-    :return: list of all worksheets 
-    :rtype: list
+    :return: dict of all worksheets 
+    :rtype: dict
     """
-    sh = gc.open(gsheet_doc_name)
-    return sh.worksheets()
-
-def gsheet_to_data_list(gsheet_doc_name: str, worksheet_name: str) -> list:
-    """Converts google sheet values to list"""
-    sh = gc.open(gsheet_doc_name)
-    sheet = sh.worksheet(worksheet_name)
-    return sheet.get_all_values()
+    sheets = service.spreadsheets().get(spreadsheetId=gsheet_doc_name).execute().get('sheets', '')
+    sheet_id_name_dict = {i.get("properties", {}).get("title", 0) : i.get("properties", {}).get("sheetId", 0) for i in sheets}
+    return sheet_id_name_dict
 
 def sheet_data_to_dataframe(data_list: list) -> pd.DataFrame:
     """To match gsheets CDR-MRV schema, first four rows are dataset metadata"""
@@ -104,7 +93,7 @@ def sheet_data_to_dataframe(data_list: list) -> pd.DataFrame:
 
 def contributors_df():
     """Returns contributors dataframe"""
-    data_list = gsheet_to_data_list(gsheet_doc_name, 'Contributors')
+    data_list = get_data_values_by_sheet_name(sheet_name='Contributors')
     return pd.DataFrame(data_list[1::],columns=data_list[0])
 
 def sheet_data_to_metadata(sheet_data: list) -> dict:
@@ -281,10 +270,8 @@ def write_to_json(template_dict: list, pathway: str, pathway_version: str):
     with sample_file.open("w", encoding="utf-8") as f:
         json.dump(template_dict, f, indent=4)
 
-
-
 def process_sheet(gsheet_doc_name: str, worksheet_name: str):
-    data_list = gsheet_to_data_list(gsheet_doc_name, worksheet_name)
+    data_list = get_data_values_by_sheet_name(sheet_name = worksheet_name)
     df = sheet_data_to_dataframe(data_list)
     metadata_dict = sheet_data_to_metadata(data_list)
     cdf = clean_dataframe(df)
