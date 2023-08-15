@@ -19,7 +19,9 @@ gsheet_doc_name = 'NEW_CDR MRV Pathway Uncertainties'
 
 
 service = build('sheets', 'v4')
-
+import os 
+slack_webhook_url = os.environ.get("SLACK_WEBHOOK_URL")
+print(slack_webhook_url)
 # If local:
 # creds = Credentials.from_service_account_file(
 #     '/Users/nrhagen/keybase/google-sheets-key.json',    scopes=scope

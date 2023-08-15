@@ -56,5 +56,5 @@ jobs:
 
       - name: Run test
         run: |
-          python -u scripts/postprocess.py
+          python -u scripts/auth.py
         shell: bash -el {0}
