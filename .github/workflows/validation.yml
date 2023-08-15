@@ -47,9 +47,9 @@ jobs:
             oauth2client
             google-api-python-client
             pandas
-            pandera
             pip
             pre-commit
+            tabulate 
             s3fs
             ujson
             xarray
