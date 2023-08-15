@@ -43,6 +43,7 @@ jobs:
             python=3.10
             fsspec
             jupyter
+            tabulate
             numpy
             oauth2client
             google-api-python-client
