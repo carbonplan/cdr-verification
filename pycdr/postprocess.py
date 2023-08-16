@@ -28,7 +28,7 @@ import requests
 import pandas as pd # type: ignore
 
 from sheets_to_json import get_component_sheet, gsheet_doc_name, avail_pathways, get_data_values_by_sheet_name, sheet_data_to_dataframe, sheet_data_to_metadata, contributors_df, get_pathway_col_list
-from common import send_slack_notification
+from common import send_slack_notification, google_doc_id
 
 # ------------------ Auth -----------------------
 
@@ -61,11 +61,12 @@ um = uncertainty_map()
 # --------------------------------------------------
 
 
-def generate_combined_pathway_data_dict(gsheet_doc_name: str, avail_pathways: list)-> dict:
+def generate_combined_pathway_data_dict(google_doc_id: str, avail_pathways: list)-> dict:
     """Function to create a object containing pairs of pathway sheet metadata and data
 
-    :param gsheet_doc_name: name of the google doc
-    :type gsheet_doc_name: str
+    :param google_doc_id: id
+      of the google doc
+    :type google_doc_id: str
     :param avail_pathways: list of available pathways
     :type avail_pathways: list
     :return: dict containing pathway metadata and data
@@ -74,7 +75,7 @@ def generate_combined_pathway_data_dict(gsheet_doc_name: str, avail_pathways: li
     metadata_df_dict = {}
     metadata_dict_combined = {}
     for pathway in avail_pathways:
-        data_list = get_data_values_by_sheet_name(sheet_name=pathway)
+        data_list = get_data_values_by_sheet_name(google_doc_id = google_doc_id,sheet_name=pathway)
 
         df = sheet_data_to_dataframe(data_list)
         metadata_dict = sheet_data_to_metadata(data_list)
@@ -84,7 +85,6 @@ def generate_combined_pathway_data_dict(gsheet_doc_name: str, avail_pathways: li
 
     return {'metadata_dict_combined':metadata_dict_combined,'metadata_df_dict': metadata_df_dict}
 
-metadata_combined = generate_combined_pathway_data_dict(gsheet_doc_name, avail_pathways)
 
 # --------------------------------------------------------------------------------------
 # [ x ]  (Static - Postprocess) All equation numbers correspond with numbered components 
@@ -160,7 +160,8 @@ def pathway_componets_sheets_subset() -> bool:
     if not df.empty:
         send_slack_notification(df, 'All components appearing in pathway sheets appear in the component sheet')
 
-        
+metadata_combined = generate_combined_pathway_data_dict(google_doc_id, avail_pathways)
+
 # --------------------------------------------------------------------------------------------------------------------------
 # - [ x ]  (Static - Postprocess) All pathway ids in pathway sheets are reflected as a column in the component sheet 
 # --------------------------------------------------------------------------------------------------------------------------
