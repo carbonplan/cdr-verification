@@ -11,10 +11,18 @@ import pandas as pd
 #                                 IDs and Names
 # ---------------------------------------------------------------------------------------------
 
+
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
+# Production Ids/Names
 google_doc_id = '1wYGtKe6ex27wei-eo6oh7hgLHrMXn9wmpqGS_l05lCw'
 gsheet_doc_name = 'NEW_CDR MRV Pathway Uncertainties'
+
+avail_pathways = ['DAC', 'BiCRS','EW','TER_BIO','OCEAN_BIO_no_harvest','OCEAN_BIO_harvest','OAE_echem','OAE_mineral', 'DOR','BIOCHAR','ALK_WASTE_MIN']
+pathways_data_columns = ['number','category','component_id','name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','description','notes']
+components_non_pathway_cols = ['revisions','notes','category','component_id','component_name','secondary_name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','description']
+
+
 sheet_id_dict = {'components': '552961890',
 'DAC': '1836739710', 
 'BiCRS': '315597137', 
@@ -32,6 +40,10 @@ sheet_id_dict = {'components': '552961890',
 'pathways_test':'1764033321',
 'components_test': '1032325311'}
 
+# Test Ids and Names
+
+test_google_doc_id = '1MFM3hs1lB50YkgbPJYBMcvYMRJ6v8VhOOKCUDwsfjiw'
+test_gsheet_doc_name = 'PYTEST_NEW_CDR_MRV'
 
 # ---------------------------------------------------------------------------------------------
 #                                 Common Functions
