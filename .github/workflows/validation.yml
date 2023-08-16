@@ -25,8 +25,8 @@ jobs:
         name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v1'
         with:
-          workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
-          service_account: ${{ secrets.SERVICE_ACCOUNT }}
+          workload_identity_provider: 'projects/836213457414/locations/global/workloadIdentityPools/github-actions-google-sheets/providers/github'
+          service_account: 'google-sheets@carbonplan.iam.gserviceaccount.com'
 
       # Install Micromamba with conda-forge dependencies
       - name: Setup Micromamba
