@@ -88,7 +88,7 @@ def generate_combined_pathway_data_dict(google_doc_id: str, avail_pathways: list
 # --------------------------------------------------------------------------------------
 # [ x ]  (Static - Postprocess) All equation numbers correspond with numbered components 
 # --------------------------------------------------------------------------------------
-def equation_number_component_number(*,metadata_combined: dict) -> pd.DataFrame:
+def equation_number_component_number(*,metadata_combined: dict, notification: bool = True) -> pd.DataFrame:
     """All equation numbers correspond with numbered components """
     pathway_name_list = []
     equation_number_bool_list = []
@@ -107,14 +107,14 @@ def equation_number_component_number(*,metadata_combined: dict) -> pd.DataFrame:
             pathway_diff_nums_list.append(diff_nums_equation_num_col)
 
     df = pd.DataFrame({'pathway_name':pathway_name_list, 'equation_number_bool': equation_number_bool_list, 'invalid_numbers_in_equation': pathway_diff_nums_list})
-    if not df.empty:
+    if not df.empty and notification:
         send_slack_notification(df, 'All equation numbers correspond with numbered components')
     return df 
 
 # - [ x ]  (Static - Postprocess) There is a version note corresponding with the current version number
 # Takes the latest revision, checks if 'note' is empty. If empty, version_note_bool == False
 
-def pathways_version_note_bool(*,metadata_combined: dict) -> pd.DataFrame:
+def pathways_version_note_bool(*,metadata_combined: dict, notification: bool = True) -> pd.DataFrame:
     """There is a version note corresponding with the current version number
       - Takes the latest revision, checks if 'note' is empty. If empty, version_note_bool == False"""
     
@@ -129,7 +129,7 @@ def pathways_version_note_bool(*,metadata_combined: dict) -> pd.DataFrame:
             version_bool_list.append(version_note_bool)
 
     df = pd.DataFrame({'pathway_name':pathway_name_list, 'latest_version_note_exists': version_bool_list})
-    if not df.empty:
+    if not df.empty and notification:
         send_slack_notification(df, 'There is a version note corresponding with the current version number')
     return df 
 
@@ -138,7 +138,7 @@ def pathways_version_note_bool(*,metadata_combined: dict) -> pd.DataFrame:
 # --------------------------------------------------------------------------------------------------------------------------
 # - [ x ]  (Static - Postprocess) All components appearing in pathway sheets appear in the component sheet.
 # --------------------------------------------------------------------------------------------------------------------------
-def pathway_componets_sheets_subset(*, metadata_combined: dict) -> pd.DataFrame:
+def pathway_componets_sheets_subset(*, metadata_combined: dict, notification: bool = True) -> pd.DataFrame:
     """All components appearing in pathway sheets appear in the component sheet."""
     unique_component_ids = set(cdf['component_id'])
 
@@ -157,7 +157,7 @@ def pathway_componets_sheets_subset(*, metadata_combined: dict) -> pd.DataFrame:
 
     df = pd.DataFrame({'pathway':pathway_name_list, 'component_id_bool':pathway_component_id_bool_list, 'invalid_component_ids': pathway_invalid_componet_id_list})
     
-    if not df.empty:
+    if not df.empty and notification:
         send_slack_notification(df, 'All components appearing in pathway sheets appear in the component sheet')
     return df 
 
@@ -165,7 +165,7 @@ def pathway_componets_sheets_subset(*, metadata_combined: dict) -> pd.DataFrame:
 # --------------------------------------------------------------------------------------------------------------------------
 # - [ x ]  (Static - Postprocess) All pathway ids in pathway sheets are reflected as a column in the component sheet 
 # --------------------------------------------------------------------------------------------------------------------------
-def pathway_id_sheets_subset(*, metadata_combined: dict) -> pd.DataFrame:
+def pathway_id_sheets_subset(*, metadata_combined: dict, notification: bool = True) -> pd.DataFrame:
     """All pathway ids in pathway sheets are reflected as a column in the component sheet """
     pathway_name_list = []
     pathway_id_bool_list = []
@@ -179,7 +179,7 @@ def pathway_id_sheets_subset(*, metadata_combined: dict) -> pd.DataFrame:
 
     df = pd.DataFrame({'pathway':pathway_name_list, 'pathway_id_is_subset_component_id':pathway_id_bool_list})
 
-    if not df.empty:
+    if not df.empty :
         send_slack_notification(df, 'All pathway ids in pathway sheets are reflected as a column in the component sheet')
     return df 
 
@@ -187,7 +187,7 @@ def pathway_id_sheets_subset(*, metadata_combined: dict) -> pd.DataFrame:
 # --------------------------------------------------------------------------------------------------------------------------
 # - [ x ]  (Static - Postprocess) All pathway ids in contributor sheet are reflected in the component sheet 
 # --------------------------------------------------------------------------------------------------------------------------
-def contributor_pathway_subset_bool(*, metadata_combined: dict) -> pd.DataFrame:
+def contributor_pathway_subset_bool(*, metadata_combined: dict, notification: bool = True) -> pd.DataFrame:
     """All pathway ids in contributor sheet are reflected in the component sheet """
 
     # Removes 'type', 'name', 'affiliation', 'initial', 'notes' from column names
@@ -207,7 +207,7 @@ def contributor_pathway_subset_bool(*, metadata_combined: dict) -> pd.DataFrame:
 # - [ x ]  (Static - Postprocess) All pathway versions in contributor sheets correspond with pathway versions in pathway sheets 
 # -----------------------------------------------------------------------------------------------------------------------------
 
-def latest_pathway_version_match(*, metadata_combined: dict) -> pd.DataFrame:
+def latest_pathway_version_match(*, metadata_combined: dict, notification: bool = True) -> pd.DataFrame:
     """All pathway versions in contributor sheets correspond with pathway versions in pathway sheets """
 
     pathway_name_list = []
@@ -230,7 +230,7 @@ def latest_pathway_version_match(*, metadata_combined: dict) -> pd.DataFrame:
 
     df = pd.DataFrame({'pathway':pathway_name_list, 'pathway_version_match_bool':pathway_version_match_bool_list, 'latest_pathway_version_contributor': latest_pathway_version_contributor_df_list, 'pathway_sheet_version':pathway_sheet_version_list})
 
-    if not df.empty:
+    if not df.empty and notification:
         send_slack_notification(df, 'All pathway versions in contributor sheets correspond with pathway versions in pathway sheets')
     return df 
 
@@ -239,7 +239,7 @@ def latest_pathway_version_match(*, metadata_combined: dict) -> pd.DataFrame:
 # - [ x ]  (Static - Postprocess) Any component uncertainty range in pathway sheet is a subset of range in component sheet
 # ------------------------------------------------------------------------------------------------------------------------
 
-def pathway_uncertainty_range(*, metadata_combined: dict) -> pd.DataFrame:
+def pathway_uncertainty_range(*, metadata_combined: dict, notification: bool = True) -> pd.DataFrame:
     """Any component uncertainty range in pathway sheet is a subset of range in component sheet (see e.g. `nsad` and terrestrial versus ocean biomass sinking) - ( python on version release)
     - Each component in components sheet has a range defined by two columns ([uncertainty_impact_min, uncertainty_impact_max]).
     - These can be either: low medium high negligible very high. So we need to map these two ints, then for each pathway, for each component id, we need to map to ints, then map to the SOT (component sheet)
@@ -272,7 +272,7 @@ def pathway_uncertainty_range(*, metadata_combined: dict) -> pd.DataFrame:
 
     df = pd.concat(df_append) 
 
-    if not df.empty:
+    if not df.empty and notification:
         send_slack_notification(df, 'Any component uncertainty range in pathway sheet is a subset of range in component sheet')
     return df 
 
