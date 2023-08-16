@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
+      SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
 
     permissions:
       contents: 'read'
@@ -23,36 +25,14 @@ jobs:
         name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v1'
         with:
-          workload_identity_provider: 'projects/836213457414/locations/global/workloadIdentityPools/github-actions-google-sheets/providers/github'
-          service_account: 'google-sheets@carbonplan.iam.gserviceaccount.com'
+          workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.SERVICE_ACCOUNT }}
 
       # Install Micromamba with conda-forge dependencies
       - name: Setup Micromamba
         uses: mamba-org/setup-micromamba@v1.4.3
         with:
-          environment-name: cdr
-          init-shell: >-
-            bash
-          condarc: |
-            channels:
-              - conda-forge
-              - nodefaults
-          cache-downloads: true
-          cache-environment: true
-          create-args: >-
-            python=3.10
-            fsspec
-            jupyter
-            tabulate
-            numpy
-            oauth2client
-            google-api-python-client
-            pandas
-            pip
-            pre-commit
-            s3fs
-            ujson
-            xarray
+          environment-file: ci/environment.yml
 
       - name: Run test
         run: |

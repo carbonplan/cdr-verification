@@ -286,12 +286,14 @@ def pathway_uncertainty_range():
 
 
 
-equation_number_component_number()
-pathways_version_note_bool()
-pathway_componets_sheets_subset()
-pathway_id_sheets_subset()
-contributor_pathway_subset_bool()
-latest_pathway_version_match()
-pathway_uncertainty_range()
+
+if __name__ == '__main__':
+    equation_number_component_number()
+    pathways_version_note_bool()
+    pathway_componets_sheets_subset()
+    pathway_id_sheets_subset()
+    contributor_pathway_subset_bool()
+    latest_pathway_version_match()
+    pathway_uncertainty_range()
 
 

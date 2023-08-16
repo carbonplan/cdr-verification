@@ -6,6 +6,7 @@ import json
 import pathlib
 import pandas as pd # type: ignore
 from auth import service, google_doc_id
+from s3fs import S3FileSystem
 
 
 gsheet_doc_name = 'NEW_CDR MRV Pathway Uncertainties'
@@ -252,7 +253,7 @@ def write_metadata_to_json(*, pathway: str, metadata_dict: dict, contributor_df:
     
 
 
-def write_to_json(template_dict: list, pathway: str, pathway_version: str):
+def write_to_json(template_dict: dict, pathway: str, pathway_version: str):
     """Writes cleaned list of pathway dictionaries and metadata to .json.
 
     Parameters
@@ -260,10 +261,16 @@ def write_to_json(template_dict: list, pathway: str, pathway_version: str):
     template_dict : dict
     pathway : pathway name
     """
-    sample_file = pathlib.Path("data") / f"{pathway}/{pathway_version}.json"
-    sample_file.parent.mkdir(exist_ok=True)
-    with sample_file.open("w", encoding="utf-8") as f:
-        json.dump(template_dict, f, indent=4)
+    # sample_file = pathlib.Path("data") / f"{pathway}/{pathway_version}.json"
+    s3_path = 's3://carbonplan-scratch/cdr-test.json'
+
+    s3 = S3FileSystem()
+    with s3.open(s3_path, 'w') as file:
+        json.dump(template_dict, file)
+
+    # # sample_file.parent.mkdir(exist_ok=True)
+    # with sample_file.open("w", encoding="utf-8") as f:
+    #     json.dump(template_dict, f, indent=4)
 
 def process_sheet(gsheet_doc_name: str, worksheet_name: str):
     data_list = get_data_values_by_sheet_name(sheet_name = worksheet_name)
@@ -300,7 +307,8 @@ def write_pathways_to_json(avail_pathways: list):
         write_metadata_to_json(pathway = pathway, metadata_dict = process_sheet_dict['metadata_dict'], contributor_df=contributor_df)
 
 
-# write_pathways_to_json(avail_pathways)
-# process_legend(gsheet_doc_name)
-# process_components_sheet(gsheet_doc_name)
-# process_contributors_sheet(gsheet_doc_name)
+if __name__ == '__main__':
+    write_pathways_to_json(avail_pathways)
+    process_legend(gsheet_doc_name)
+    process_components_sheet(gsheet_doc_name)
+    process_contributors_sheet(gsheet_doc_name)
