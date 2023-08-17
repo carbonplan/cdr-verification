@@ -4,7 +4,7 @@ requires = ["setuptools>=64", "setuptools-scm[toml]>=6.2", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "cdr_verification"
+name = "cdr-verification"
 description = "Utility scripts for checking CDR-Verification validity"
 readme = "README.md"
 license = { text = "MIT" }
@@ -27,7 +27,7 @@ dynamic = ["version"]
 repository = "https://github.com/carbonplan/cdr-verification"
 
 [tool.setuptools.packages.find]
-include = ["cdr-verification*"]
+include = ["cdr_verification*"]
 
 [tool.black]
 line-length = 100
