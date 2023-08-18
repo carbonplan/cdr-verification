@@ -5,7 +5,7 @@ import numpy as np
 import json
 import pathlib
 import pandas as pd # type: ignore
-from .common import auth_service, google_doc_id, gsheet_doc_name, avail_pathways, pathways_data_columns, components_non_pathway_cols
+from common import auth_service, google_doc_id, gsheet_doc_name, avail_pathways, pathways_data_columns, components_non_pathway_cols
 from s3fs import S3FileSystem
 
 
