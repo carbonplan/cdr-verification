@@ -1,6 +1,6 @@
 import pytest
 from cdr_verification.common import send_slack_notification, test_google_doc_id, test_gsheet_doc_name, avail_pathways
-from cdr_verification.postprocess import (generate_combined_pathway_data_dict, equation_number_component_number, pathways_version_note_bool, pathway_componets_sheets_subset, pathway_id_sheets_subset, contributor_pathway_subset_bool)
+from cdr_verification.postprocess import (generate_combined_pathway_data_dict, equation_number_component_number, pathways_version_note_bool, pathway_componets_sheets_subset, pathway_id_sheets_subset, contributor_pathway_subset_bool,latest_pathway_version_match, pathway_uncertainty_range)
 from cdr_verification.sheets_to_json import get_component_sheet, get_pathway_col_list, contributors_df
 # The goal of these tests are to pull data from the test workbook
 # Which has examples of each error and test each postprocess step
@@ -63,6 +63,13 @@ def test_contributor_pathway_subset_bool(cdf,cont_df,pathway_col_list):
     df = contributor_pathway_subset_bool(cdf=cdf, cont_df=cont_df, pathway_col_list = pathway_col_list)
     assert df.empty == False
 
-# latest_pathway_version_match(metadata_dict=metadata_combined)
-# pathway_uncertainty_range(metadata_dict=metadata_combined)
+def test_latest_pathway_version_match(pathway_dict, cont_df):
+    df = latest_pathway_version_match(metadata_combined=pathway_dict, cont_df=cont_df)
+    assert df.empty == False
+
+
+def test_pathway_uncertainty_range(pathway_dict,cdf):
+    df = pathway_uncertainty_range(metadata_combined=pathway_dict, cdf=cdf)
+    assert df.empty == False
+    
 

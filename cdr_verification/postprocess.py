@@ -210,19 +210,22 @@ def latest_pathway_version_match(*, metadata_combined: dict, cont_df: pd.DataFra
     pathway_version_match_bool_list = []
     latest_pathway_version_contributor_df_list = []
     pathway_sheet_version_list = []
+    
+    cont_df_pathway_ids = set(list(cont_df)) - set(['type', 'name', 'affiliation', 'initial', 'notes'])
 
     for pathway_key in metadata_combined['metadata_dict_combined']:
-        
+            
         pathway = metadata_combined['metadata_dict_combined'][pathway_key]['pathway_id']
+        if pathway in cont_df_pathway_ids:
 
-        contrib_df_pathway_latest_version = max(cont_df[pathway][~cont_df[pathway].replace('',np.nan).isnull()].str.split(',').explode().astype(float).to_list())
-        pathway_version = float(metadata_combined['metadata_dict_combined'][pathway_key]['version'])
-        pathway_version_match_bool = pathway_version == contrib_df_pathway_latest_version
-        if not pathway_version_match_bool:
-            pathway_name_list.append(pathway)
-            pathway_version_match_bool_list.append(pathway_version_match_bool)
-            latest_pathway_version_contributor_df_list.append(contrib_df_pathway_latest_version)
-            pathway_sheet_version_list.append(pathway_version)
+            contrib_df_pathway_latest_version = max(cont_df[pathway][~cont_df[pathway].replace('',np.nan).isnull()].str.split(',').explode().astype(float).to_list())
+            pathway_version = float(metadata_combined['metadata_dict_combined'][pathway_key]['version'])
+            pathway_version_match_bool = pathway_version == contrib_df_pathway_latest_version
+            if not pathway_version_match_bool:
+                pathway_name_list.append(pathway)
+                pathway_version_match_bool_list.append(pathway_version_match_bool)
+                latest_pathway_version_contributor_df_list.append(contrib_df_pathway_latest_version)
+                pathway_sheet_version_list.append(pathway_version)
 
     df = pd.DataFrame({'pathway':pathway_name_list, 'pathway_version_match_bool':pathway_version_match_bool_list, 'latest_pathway_version_contributor': latest_pathway_version_contributor_df_list, 'pathway_sheet_version':pathway_sheet_version_list})
 
