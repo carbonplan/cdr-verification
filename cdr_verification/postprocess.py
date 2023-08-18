@@ -27,8 +27,8 @@ import os
 import requests
 import pandas as pd # type: ignore
 
-from sheets_to_json import get_component_sheet, gsheet_doc_name, get_data_values_by_sheet_name, sheet_data_to_dataframe, sheet_data_to_metadata, contributors_df, get_pathway_col_list
-from common import send_slack_notification, google_doc_id, avail_pathways
+from .sheets_to_json import get_component_sheet, gsheet_doc_name, get_data_values_by_sheet_name, sheet_data_to_dataframe, sheet_data_to_metadata, contributors_df, get_pathway_col_list
+from .common import send_slack_notification, google_doc_id, avail_pathways
 
 # ------------------ Auth -----------------------
 

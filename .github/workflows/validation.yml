@@ -36,6 +36,6 @@ jobs:
 
       - name: Run test
         run: |
-          python -m pip install -e .
-          python -u cdr_verification/postprocess.py
+          python -m pip install --no-deps .
+          python cdr_verification/postprocess.py
         shell: bash -el {0}
