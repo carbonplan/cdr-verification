@@ -36,5 +36,5 @@ jobs:
 
       - name: Run test
         run: |
-          python -u pycdr/postprocess.py
+          python -u cdr_verification/postprocess.py
         shell: bash -el {0}
