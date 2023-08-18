@@ -5,7 +5,7 @@ import numpy as np
 import json
 import pathlib
 import pandas as pd # type: ignore
-from common import auth_service, google_doc_id, gsheet_doc_name, avail_pathways, pathways_data_columns, components_non_pathway_cols
+from .common import auth_service, google_doc_id, gsheet_doc_name, avail_pathways, pathways_data_columns, components_non_pathway_cols
 from s3fs import S3FileSystem
 
 
@@ -14,22 +14,22 @@ service = auth_service()
 def get_data_values_by_sheet_name(*, google_doc_id: str, sheet_name: str)-> list:
     return service.spreadsheets().values().get(spreadsheetId=google_doc_id, range=sheet_name).execute().get('values')
 
-def get_legend_sheet(gsheet_doc_name: str) -> pd.DataFrame:
+def get_legend_sheet(*, google_doc_id: str) -> pd.DataFrame:
     """Retrieves Legend sheet
 
-    :param gsheet_doc_name: name of google doc
-    :type gsheet_doc_name: str
+    :param google_doc_id: id of google doc
+    :type google_doc_id: str
     :return: DataFrame of Legend sheet
     :rtype: pd.DataFrame
     """
     data_list = get_data_values_by_sheet_name(google_doc_id = google_doc_id, sheet_name = "Legend")
     return pd.DataFrame(data_list[1::],columns=data_list[0])
 
-def get_component_sheet(gsheet_doc_name: str) -> pd.DataFrame:
+def get_component_sheet(*, google_doc_id: str) -> pd.DataFrame:
     """Retrieves Components sheet
 
-    :param gsheet_doc_name: name of google doc
-    :type gsheet_doc_name: str
+    :param google_doc_id: id of google doc
+    :type google_doc_id: str
     :return: DataFrame of Components sheet
     :rtype: pd.DataFrame
     """  
@@ -84,7 +84,7 @@ def sheet_data_to_dataframe(data_list: list) -> pd.DataFrame:
     """To match gsheets CDR-MRV schema, first four rows are dataset metadata"""
     return pd.DataFrame(data_list[10::],columns=data_list[9])[pathways_data_columns].replace('',np.nan).dropna(how='all')
 
-def contributors_df():
+def contributors_df(*, google_doc_id: str)-> pd.DataFrame:
     """Returns contributors dataframe"""
     data_list = get_data_values_by_sheet_name(google_doc_id = google_doc_id, sheet_name='Contributors')
     return pd.DataFrame(data_list[1::],columns=data_list[0])

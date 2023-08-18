@@ -27,18 +27,13 @@ import os
 import requests
 import pandas as pd # type: ignore
 
-from sheets_to_json import get_component_sheet, gsheet_doc_name, get_data_values_by_sheet_name, sheet_data_to_dataframe, sheet_data_to_metadata, contributors_df, get_pathway_col_list
-from common import send_slack_notification, google_doc_id, avail_pathways
+from .sheets_to_json import get_component_sheet, gsheet_doc_name, get_data_values_by_sheet_name, sheet_data_to_dataframe, sheet_data_to_metadata, contributors_df, get_pathway_col_list
+from .common import send_slack_notification, google_doc_id, avail_pathways
 
 # ------------------ Auth -----------------------
 
 
-# Load component sheet
-cdf = get_component_sheet(gsheet_doc_name)
-# Load contributors sheet
-cont_df = contributors_df()
-# Retrieve list of pathway columns
-pathway_col_list = get_pathway_col_list(cdf)
+
 
 # A dict to map uncertainty values to numeric 
 def uncertainty_map():
@@ -60,7 +55,7 @@ um = uncertainty_map()
 # ----------------- Pathways Sheets ----------------
 # --------------------------------------------------
 
-def generate_combined_pathway_data_dict(google_doc_id: str, avail_pathways: list)-> dict:
+def generate_combined_pathway_data_dict(*, google_doc_id: str, avail_pathways: list)-> dict:
     """Function to create a object containing pairs of pathway sheet metadata and data
 
     :param google_doc_id: id
@@ -138,7 +133,7 @@ def pathways_version_note_bool(*,metadata_combined: dict, notification: bool = T
 # --------------------------------------------------------------------------------------------------------------------------
 # - [ x ]  (Static - Postprocess) All components appearing in pathway sheets appear in the component sheet.
 # --------------------------------------------------------------------------------------------------------------------------
-def pathway_componets_sheets_subset(*, metadata_combined: dict, notification: bool = True) -> pd.DataFrame:
+def pathway_componets_sheets_subset(*, metadata_combined: dict, cdf: pd.DataFrame, notification: bool = True) -> pd.DataFrame:
     """All components appearing in pathway sheets appear in the component sheet."""
     unique_component_ids = set(cdf['component_id'])
 
@@ -154,7 +149,7 @@ def pathway_componets_sheets_subset(*, metadata_combined: dict, notification: bo
             pathway_name_list.append(pathway)
             pathway_component_id_bool_list.append(pathway_component_bool)
             pathway_invalid_componet_id_list.append(component_ids_in_pathway_not_in_component_sheet)
-
+        break
     df = pd.DataFrame({'pathway':pathway_name_list, 'component_id_bool':pathway_component_id_bool_list, 'invalid_component_ids': pathway_invalid_componet_id_list})
     
     if not df.empty and notification:
@@ -165,19 +160,21 @@ def pathway_componets_sheets_subset(*, metadata_combined: dict, notification: bo
 # --------------------------------------------------------------------------------------------------------------------------
 # - [ x ]  (Static - Postprocess) All pathway ids in pathway sheets are reflected as a column in the component sheet 
 # --------------------------------------------------------------------------------------------------------------------------
-def pathway_id_sheets_subset(*, metadata_combined: dict, notification: bool = True) -> pd.DataFrame:
+def pathway_id_sheets_subset(*, metadata_combined: dict, cdf: pd.DataFrame, pathway_col_list: list, notification: bool = True) -> pd.DataFrame:
     """All pathway ids in pathway sheets are reflected as a column in the component sheet """
     pathway_name_list = []
     pathway_id_bool_list = []
-
+    invalid_pathway_id_list = []
     for pathway in metadata_combined['metadata_dict_combined']:
+
         pathway_id = metadata_combined['metadata_dict_combined'][pathway]['pathway_id']
         pathway_id_subset_bool = set([pathway_id]).issubset(set(pathway_col_list))
         if not pathway_id_subset_bool:
             pathway_name_list.append(pathway)
             pathway_id_bool_list.append(pathway_id_subset_bool)  
+            invalid_pathway_id_list.append(pathway_id)
 
-    df = pd.DataFrame({'pathway':pathway_name_list, 'pathway_id_is_subset_component_id':pathway_id_bool_list})
+    df = pd.DataFrame({'pathway':pathway_name_list, 'pathway_id_is_subset_component_id':pathway_id_bool_list, 'invalid_pathway_id': invalid_pathway_id_list})
 
     if not df.empty :
         send_slack_notification(df, 'All pathway ids in pathway sheets are reflected as a column in the component sheet')
@@ -187,17 +184,16 @@ def pathway_id_sheets_subset(*, metadata_combined: dict, notification: bool = Tr
 # --------------------------------------------------------------------------------------------------------------------------
 # - [ x ]  (Static - Postprocess) All pathway ids in contributor sheet are reflected in the component sheet 
 # --------------------------------------------------------------------------------------------------------------------------
-def contributor_pathway_subset_bool(*, metadata_combined: dict, notification: bool = True) -> pd.DataFrame:
+def contributor_pathway_subset_bool(*, cdf: pd.DataFrame, cont_df: pd.DataFrame, pathway_col_list: list, notification: bool = True) -> pd.DataFrame:
     """All pathway ids in contributor sheet are reflected in the component sheet """
-
+    
     # Removes 'type', 'name', 'affiliation', 'initial', 'notes' from column names
     cont_df_pathway_ids = set(list(cont_df)) - set(['type', 'name', 'affiliation', 'initial', 'notes'])
-    contrib_df_missing_pathways  = list(set(pathway_col_list) - cont_df_pathway_ids)
-    contributor_non_missing_pathway_bool = cont_df_pathway_ids.issubset(set(pathway_col_list))
+    cdf_pathways_not_in_cont_df  = list(set(pathway_col_list) - cont_df_pathway_ids)
+    cont_df_pathways_not_in_cdf  = list(cont_df_pathway_ids - set(pathway_col_list))
 
-
-    df = pd.DataFrame({'contributor_pathways_not_missing':[contributor_non_missing_pathway_bool], 'contrib_df_missing_pathways':[contrib_df_missing_pathways]})
-    if not df['contributor_pathways_not_missing'].any(): # ie if any bools are False
+    df = pd.DataFrame({'pathway_ids_only_in_components_sheet':[cdf_pathways_not_in_cont_df], 'pathway_ids_only_in_contributors_sheet':[cont_df_pathways_not_in_cdf]})
+    if not df.empty: # ie if df is not empty
         send_slack_notification(df, 'All pathway ids in contributor sheet are reflected in the component sheet')
     return df 
 
@@ -207,7 +203,7 @@ def contributor_pathway_subset_bool(*, metadata_combined: dict, notification: bo
 # - [ x ]  (Static - Postprocess) All pathway versions in contributor sheets correspond with pathway versions in pathway sheets 
 # -----------------------------------------------------------------------------------------------------------------------------
 
-def latest_pathway_version_match(*, metadata_combined: dict, notification: bool = True) -> pd.DataFrame:
+def latest_pathway_version_match(*, metadata_combined: dict, cont_df: pd.DataFrame, notification: bool = True) -> pd.DataFrame:
     """All pathway versions in contributor sheets correspond with pathway versions in pathway sheets """
 
     pathway_name_list = []
@@ -239,7 +235,7 @@ def latest_pathway_version_match(*, metadata_combined: dict, notification: bool 
 # - [ x ]  (Static - Postprocess) Any component uncertainty range in pathway sheet is a subset of range in component sheet
 # ------------------------------------------------------------------------------------------------------------------------
 
-def pathway_uncertainty_range(*, metadata_combined: dict, notification: bool = True) -> pd.DataFrame:
+def pathway_uncertainty_range(*, metadata_combined: dict, cdf: pd.DataFrame, notification: bool = True) -> pd.DataFrame:
     """Any component uncertainty range in pathway sheet is a subset of range in component sheet (see e.g. `nsad` and terrestrial versus ocean biomass sinking) - ( python on version release)
     - Each component in components sheet has a range defined by two columns ([uncertainty_impact_min, uncertainty_impact_max]).
     - These can be either: low medium high negligible very high. So we need to map these two ints, then for each pathway, for each component id, we need to map to ints, then map to the SOT (component sheet)
@@ -280,13 +276,19 @@ def pathway_uncertainty_range(*, metadata_combined: dict, notification: bool = T
 
 
 if __name__ == '__main__':
-    metadata_combined = generate_combined_pathway_data_dict(google_doc_id, avail_pathways)
-    equation_number_component_number(metadata_dict=metadata_combined)
-    pathways_version_note_bool(metadata_dict=metadata_combined)
-    pathway_componets_sheets_subset(metadata_dict=metadata_combined)
-    pathway_id_sheets_subset(metadata_dict=metadata_combined)
-    contributor_pathway_subset_bool(metadata_dict=metadata_combined)
-    latest_pathway_version_match(metadata_dict=metadata_combined)
-    pathway_uncertainty_range(metadata_dict=metadata_combined)
+    # google_doc_id = '1MFM3hs1lB50YkgbPJYBMcvYMRJ6v8VhOOKCUDwsfjiw'
+    metadata_combined = generate_combined_pathway_data_dict(google_doc_id=google_doc_id, avail_pathways=avail_pathways)
+    # Load component,contributors and pathway columns
+    cdf = get_component_sheet(google_doc_id=google_doc_id)
+    cont_df = contributors_df(google_doc_id=google_doc_id)
+    pathway_col_list = get_pathway_col_list(cdf)
+
+    equation_number_component_number(metadata_combined=metadata_combined)
+    pathways_version_note_bool(metadata_combined=metadata_combined)
+    pathway_componets_sheets_subset(metadata_combined=metadata_combined, cdf=cdf)
+    pathway_id_sheets_subset(metadata_combined=metadata_combined)
+    contributor_pathway_subset_bool(cdf=cdf, cont_df=cont_df, pathway_col_list = pathway_col_list)
+    latest_pathway_version_match(metadata_combined=metadata_combined)
+    pathway_uncertainty_range(metadata_combined=metadata_combined)
 
 
