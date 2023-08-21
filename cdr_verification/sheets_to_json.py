@@ -5,7 +5,7 @@ import numpy as np
 import json
 import pathlib
 import pandas as pd # type: ignore
-from .common import auth_service, google_doc_id, gsheet_doc_name, avail_pathways, pathways_data_columns, components_non_pathway_cols
+from .common import auth_service, google_doc_id, gsheet_doc_name, avail_pathways, pathways_data_columns, components_non_pathway_cols, get_pathway_col_list
 from s3fs import S3FileSystem
 
 
@@ -43,15 +43,9 @@ def get_component_sheet(*, google_doc_id: str) -> pd.DataFrame:
     return cdf
 
 
-def get_pathway_col_list(df: pd.DataFrame) -> list:
-    """Returns a set of pathway column names
 
-    :param df: Pathway specific DataFrame
-    :type df: pd.DataFrame
-    :return: list of pathway col names 
-    :rtype: list
-    """
-    return list(set(list(df)) - set(components_non_pathway_cols))
+
+
 
 def component_pathway_flatten(df: pd.DataFrame, pathway_col_list: list) -> pd.DataFrame:
     """Flattens pathway components
@@ -91,13 +85,14 @@ def contributors_df(*, google_doc_id: str)-> pd.DataFrame:
 
 def sheet_data_to_metadata(sheet_data: list) -> dict:
     """Assigns sheet metadata"""
-    pathway_id = sheet_data[0][1].strip()
-    pathway_name = sheet_data[1][1].strip()
-    pathway_description = sheet_data[2][1].strip()
-    VCL = list(tuple(sheet_data[3][1].replace(" ", "").split(',')))
-    equation = sheet_data[4][1].strip()
-    version = sheet_data[5][1].strip()
-    revisions = eval(sheet_data[6][1])
+
+    pathway_id = sheet_data[0][1].strip() if len(sheet_data[0])>1 else ''
+    pathway_name = sheet_data[1][1].strip() if len(sheet_data[1])>1 else ''
+    pathway_description = sheet_data[2][1].strip() if len(sheet_data[2])>1 else ''
+    VCL = list(tuple(sheet_data[3][1].replace(" ", "").split(','))) if len(sheet_data[3])>1 else ''
+    equation = sheet_data[4][1].strip() if len(sheet_data[4])>1 else ''
+    version = sheet_data[5][1].strip() if len(sheet_data[5])>1 else ''
+    revisions = eval(sheet_data[6][1]) if len(sheet_data[6])>1 else ''
 
 
     return {'pathway_id':pathway_id,'pathway_name':pathway_name,'pathway_description':pathway_description, 'VCL':VCL, 'equation':equation, 'version':version, 'revisions': revisions}

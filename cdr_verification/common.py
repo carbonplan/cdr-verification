@@ -22,6 +22,8 @@ avail_pathways = ['DAC', 'BiCRS','EW','TER_BIO','OCEAN_BIO_no_harvest','OCEAN_BI
 pathways_data_columns = ['number','category','component_id','name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','description','notes']
 components_non_pathway_cols = ['revisions','notes','category','component_id','component_name','secondary_name','quantification_target','uncertainty_type','responsibility','uncertainty_impact_min','uncertainty_impact_max','description']
 
+uncertainty_values = ['not characterized','negligible', 'low', 'medium', 'high', 'very high']
+responsibility_values = ['system','project']
 
 sheet_id_dict = {'components': '552961890',
 'DAC': '1836739710', 
@@ -79,5 +81,12 @@ def send_slack_notification(df: pd.DataFrame, validation_name: str):
 
 
 
+def get_pathway_col_list(cdf: pd.DataFrame) -> list:
+    """Returns a set of pathway column names for the components sheets
 
-
+    :param df: Pathway specific DataFrame
+    :type df: pd.DataFrame
+    :return: list of pathway col names 
+    :rtype: list
+    """
+    return list(set(list(cdf)) - set(components_non_pathway_cols))

@@ -4,6 +4,18 @@
 #      that are not covered by google-sheets validation   #
 # ---------------------------------------------------------
 
+## Components Sheet
+
+# - [ ]  (Static) Check component id is unique
+# - [ ]  (Static) Each component has:
+#     - [ ]  A non-empty component name
+#     - [ ]  A non-empty quantification target
+#     - [ ]  A non-empty description
+#     - [ ]  An uncertainty type (execution, scientific, counterfactual)
+#     - [ ]  A responsibility (project, system)
+#     - [ ]  An uncertainty min  ('not characterized','negligible', 'low', 'medium', 'high', 'very high’) - (google-sheets-api)
+#     - [ ]  An uncertainty  max ('not characterized','negligible', 'low', 'medium', 'high', 'very high’)
+#     - [ ]  At least one pathway column filled in
 
 ## Pathways Sheets
 # - [ ? ]  (Static - Postprocess) VCL range matches component uncertainty count 
@@ -27,8 +39,8 @@ import os
 import requests
 import pandas as pd # type: ignore
 
-from .sheets_to_json import get_component_sheet, gsheet_doc_name, get_data_values_by_sheet_name, sheet_data_to_dataframe, sheet_data_to_metadata, contributors_df, get_pathway_col_list
-from .common import send_slack_notification, google_doc_id, avail_pathways
+from .sheets_to_json import get_component_sheet, gsheet_doc_name, get_data_values_by_sheet_name, sheet_data_to_dataframe, sheet_data_to_metadata, contributors_df
+from .common import send_slack_notification, google_doc_id, avail_pathways, responsibility_values, uncertainty_values, get_pathway_col_list
 
 # ------------------ Auth -----------------------
 
@@ -48,8 +60,115 @@ um = uncertainty_map()
 
 
 
+# --------------------------------------------------
+# ---------------- Components Sheets ---------------
+# --------------------------------------------------
 
+# --------------------------------------------------------------------------------------
+# [ x ]  (Static - Components) Check component id is unique
+# --------------------------------------------------------------------------------------
+def unique_component_id(*, cdf: pd.DataFrame, notification: bool = True) -> pd.DataFrame:
+    duplicated_ids = list(set(cdf['component_id'][cdf['component_id'].duplicated()]))
+    df = pd.DataFrame({'duplicated_component_ids': duplicated_ids})
+    if not df.empty and notification:
+        send_slack_notification(df, 'Check component id is unique')
+    return df 
 
+# --------------------------------------------------------------------------------------
+# [ x ]  (Static - Components) Each component has a non-empty component name
+# --------------------------------------------------------------------------------------
+def non_empty_component_name(*, cdf: pd.DataFrame, notification: bool = True) -> pd.DataFrame:
+    empty_component_name = cdf['component_id'][cdf['component_name'].replace('',np.nan).isnull()]
+    df = pd.DataFrame({'component_ids_with_missing_component_names':empty_component_name})
+    if not df.empty and notification:
+        send_slack_notification(df, 'Each component has a non-empty component name')
+    return df 
+
+# --------------------------------------------------------------------------------------
+# [ x ]  (Static - Components) Each component has a non-empty quantification target
+# --------------------------------------------------------------------------------------
+def non_empty_quantification_target(*, cdf: pd.DataFrame, notification: bool = True) -> pd.DataFrame:
+    empty_quantification_target = cdf['component_id'][cdf['quantification_target'].replace('',np.nan).isnull()]
+    df = pd.DataFrame({'component_ids_with_missing_quantification_target':empty_quantification_target})
+    if not df.empty and notification:
+        send_slack_notification(df, 'Each component has a non-empty quantification target')
+    return df 
+
+# --------------------------------------------------------------------------------------
+# [ x ]  (Static - Components) Each component has a non-empty description
+# --------------------------------------------------------------------------------------
+def non_empty_description(*, cdf: pd.DataFrame, notification: bool = True) -> pd.DataFrame:
+    empty_description = cdf['component_id'][cdf['description'].replace('',np.nan).isnull()]
+    df = pd.DataFrame({'component_ids_missing_description':empty_description})
+    if not df.empty and notification:
+        send_slack_notification(df, 'Each component has a non-empty description')
+    return df 
+
+# -----------------------------------------------------------------------------------------------------------
+# [ x ]  (Static - Components) Each component has an uncertainty type (execution, scientific, counterfactual)
+# -----------------------------------------------------------------------------------------------------------
+def valid_uncertainty_type(*, cdf: pd.DataFrame, notification: bool = True) -> pd.DataFrame:
+    
+    valid_uncertainties = ['execution', 'scientific', 'counterfactual']
+    row_component_id = []
+    row_invalid_uncertainty_list = [] 
+    for index, row in cdf[['component_id','uncertainty_type']].iterrows():
+        for unc_type in row['uncertainty_type']:
+            invalid_uncertainty_list = []
+            if unc_type not in valid_uncertainties:
+                invalid_uncertainty_list.append(unc_type)
+        if len(invalid_uncertainty_list) != 0:
+            row_component_id.append(row['component_id'])
+            row_invalid_uncertainty_list.append(invalid_uncertainty_list)
+
+    df = pd.DataFrame({'component_ids_with_invalid_uncertainty_type': row_component_id, 'invalid_uncertainty_type': row_invalid_uncertainty_list})
+    if not df.empty and notification:
+        send_slack_notification(df, 'Each component has an uncertainty type (execution, scientific, counterfactual)')
+                
+    return df 
+
+# ------------------------------------------------------------------------------------------------------
+# [ x ]  (Static - Components) Each component has an uncertainty type A responsibility (project, system)
+# -------------------------------------------------------------------------------------------------------
+def valid_responsibility(*, cdf: pd.DataFrame, notification: bool = True) -> pd.DataFrame:
+    
+    df = cdf[['component_id', 'responsibility']][~cdf['responsibility'].isin(responsibility_values)]
+    df = df.rename(columns={'component_id': 'component_ids_with_invalid_responsibility', 'responsibility': 'invalid_responsibility'})
+    if not df.empty and notification:
+        send_slack_notification(df, 'Each component has an uncertainty type (execution, scientific, counterfactual)')
+    return df 
+
+# ------------------------------------------------------------------------------------------------------
+# [ x ]  (Static - Components) Each component has an uncertainty type an uncertainty min 
+# -------------------------------------------------------------------------------------------------------
+def valid_uncertainty_min(*, cdf: pd.DataFrame, notification: bool = True) -> pd.DataFrame:
+    df = cdf[['component_id', 'uncertainty_impact_min']][~cdf['uncertainty_impact_min'].isin(uncertainty_values)] 
+    df = df.rename(columns={'component_id': 'component_ids_with_invalid_uncertainty_min', 'uncertainty_impact_min': 'invalid_uncertainty_min'})
+    if not df.empty and notification:
+        send_slack_notification(df, "An uncertainty min  ('not characterized','negligible', 'low', 'medium', 'high', 'very high'")
+    return df 
+
+# ------------------------------------------------------------------------------------------------------
+# [ x ]  (Static - Components) Each component has an uncertainty type an uncertainty max 
+# -------------------------------------------------------------------------------------------------------
+def valid_uncertainty_max(*, cdf: pd.DataFrame, notification: bool = True) -> pd.DataFrame:
+    df = cdf[['component_id', 'uncertainty_impact_max']][~cdf['uncertainty_impact_max'].isin(uncertainty_values)] 
+    df = df.rename(columns={'component_id': 'component_ids_with_invalid_uncertainty_max', 'uncertainty_impact_max': 'invalid_uncertainty_max'})
+    if not df.empty and notification:
+        send_slack_notification(df, "An uncertainty max  ('not characterized','negligible', 'low', 'medium', 'high', 'very high'")
+    return df 
+# ------------------------------------------------------------------------------------------------------
+# [ x ]  (Static - Components) Each component has at least one pathway column filled in
+# -------------------------------------------------------------------------------------------------------
+
+def non_missing_pathways(*, cdf: pd.DataFrame, notification: bool = True) -> pd.DataFrame:
+    comp_col_list = get_pathway_col_list(cdf)
+    df = cdf[['component_id']][~cdf.index.isin(cdf.dropna(subset=comp_col_list, how='all').index)]
+    df = df.rename(columns={'component_id': 'component_id_has_no_pathways'})
+
+    if not df.empty and notification:
+        send_slack_notification(df, "At least one pathway column filled in")
+    return df 
 
 # --------------------------------------------------
 # ----------------- Pathways Sheets ----------------
@@ -78,6 +197,48 @@ def generate_combined_pathway_data_dict(*, google_doc_id: str, avail_pathways: l
         metadata_dict_combined[pathway] = metadata_dict
 
     return {'metadata_dict_combined':metadata_dict_combined,'metadata_df_dict': metadata_df_dict}
+
+
+
+# --------------------------------------------------
+# ------ Cross-check (Pathway / Component) ---------
+# --------------------------------------------------
+
+
+# --------------------------------------------------------------------------------------
+# [ x ] (Static) Each pathway sheet has:  A non-empty pathway-id
+# --------------------------------------------------------------------------------------
+
+def non_empty_pathway_id(*, metadata_combined: dict, notification=True):
+    pathways_sheet_name_mising_pathway_ids = []
+    for pathway_sheet in metadata_combined['metadata_dict_combined'].keys():
+        pathway_id = metadata_combined['metadata_dict_combined'][pathway_sheet]['pathway_id']
+        if len(pathway_id) <1:
+            pathways_sheet_name_mising_pathway_ids.append(pathway_sheet)
+        
+    df = pd.DataFrame({'pathway_sheet_name_missing_pathway_id':pathways_sheet_name_mising_pathway_ids})
+    import pdb;pdb.set_trace()
+    if not df.empty and notification:
+        send_slack_notification(df, 'Each pathway sheet has a non-empty pathway-id')
+    return df 
+# --------------------------------------------------------------------------------------
+# [ x ] (Static) Each pathway sheet has: A non-empty pathway name  
+# --------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------
+# [ x ] (Static) Each pathway sheet has:  A non-empty pathway description
+# --------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------
+# [ x ] (Static) Each pathway sheet has:  A non-empty VCL (range, 1-5)
+# --------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------
+# [ x ] (Static) Each pathway sheet has:   A non-empty equation (numbers, parentheses, and +- symbols only)
+# --------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------
+# [ x ] (Static) Each pathway sheet has:  A non-empty version number (X.X)
+# --------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------
+# [ x ] (Static) Each pathway sheet has:  A non-empty revisions note 
+# --------------------------------------------------------------------------------------
 
 
 # --------------------------------------------------------------------------------------
@@ -129,6 +290,9 @@ def pathways_version_note_bool(*,metadata_combined: dict, notification: bool = T
     return df 
 
 
+# --------------------------------------------------
+# ------ Cross-check (Pathway / Component) ---------
+# --------------------------------------------------
 
 # --------------------------------------------------------------------------------------------------------------------------
 # - [ x ]  (Static - Postprocess) All components appearing in pathway sheets appear in the component sheet.
@@ -278,20 +442,24 @@ def pathway_uncertainty_range(*, metadata_combined: dict, cdf: pd.DataFrame, not
 
 
 
+
 if __name__ == '__main__':
     # google_doc_id = '1MFM3hs1lB50YkgbPJYBMcvYMRJ6v8VhOOKCUDwsfjiw'
     metadata_combined = generate_combined_pathway_data_dict(google_doc_id=google_doc_id, avail_pathways=avail_pathways)
     # Load component,contributors and pathway columns
     cdf = get_component_sheet(google_doc_id=google_doc_id)
-    cont_df = contributors_df(google_doc_id=google_doc_id)
-    pathway_col_list = get_pathway_col_list(cdf)
+    # cont_df = contributors_df(google_doc_id=google_doc_id)
+    # pathway_col_list = get_pathway_col_list(cdf)
 
-    equation_number_component_number(metadata_combined=metadata_combined)
-    pathways_version_note_bool(metadata_combined=metadata_combined)
-    pathway_componets_sheets_subset(metadata_combined=metadata_combined, cdf=cdf)
-    pathway_id_sheets_subset(metadata_combined=metadata_combined)
-    contributor_pathway_subset_bool(cdf=cdf, cont_df=cont_df, pathway_col_list = pathway_col_list)
-    latest_pathway_version_match(metadata_combined=metadata_combined)
-    pathway_uncertainty_range(metadata_combined=metadata_combined)
+    # equation_number_component_number(metadata_combined=metadata_combined)
+    # pathways_version_note_bool(metadata_combined=metadata_combined)
+    # pathway_componets_sheets_subset(metadata_combined=metadata_combined, cdf=cdf)
+    # pathway_id_sheets_subset(metadata_combined=metadata_combined)
+    # contributor_pathway_subset_bool(cdf=cdf, cont_df=cont_df, pathway_col_list = pathway_col_list)
+    # latest_pathway_version_match(metadata_combined=metadata_combined)
+    # pathway_uncertainty_range(metadata_combined=metadata_combined)
 
 
+
+    # former google-sheets-api tests
+    
