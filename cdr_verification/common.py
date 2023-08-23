@@ -90,12 +90,11 @@ test_gsheet_doc_name = 'PYTEST_NEW_CDR_MRV'
 
 
 def auth_service():
-    try:
+    if os.path.exists('~/keybase/google-sheets-key.json'):
         cred_path = os.path.expanduser('~/keybase/google-sheets-key.json')
-
         creds = Credentials.from_service_account_file(cred_path, scopes=scope)
         service = build('sheets', 'v4', credentials=creds)
-    except Exception('FileNotFoundError'):
+    else:
         service = build('sheets', 'v4')
     return service
 

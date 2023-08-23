@@ -42,7 +42,7 @@ from cdr_verification.sheets_to_json import (
 # ------------- Test Pathways Sheets ---------------
 # --------------------------------------------------
 
-notification_flag = True
+notification_flag = False
 
 
 # --------------------------------------------------
