@@ -374,8 +374,12 @@ def write_pathways_to_json(avail_pathways: list):
         )
 
 
-if __name__ == '__main__':
+def run():
     write_pathways_to_json(avail_pathways)
     process_legend(gsheet_doc_name)
     process_components_sheet(gsheet_doc_name)
     process_contributors_sheet(gsheet_doc_name)
+
+
+if __name__ == '__main__':
+    run()
