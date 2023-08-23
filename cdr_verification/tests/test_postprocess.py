@@ -83,29 +83,30 @@ def pathway_col_list():
 
 
 def test_equation_number_component_number(pathway_dict):
+    # import pdb; pdb.set_trace()
     df = equation_number_component_number(
         metadata_combined=pathway_dict, notification=notification_flag
     )
-    assert df['equation_number_bool'].all() is False
+    assert df['equation_number_bool'].all() == False
 
 
 def test_pathways_version_note_bool(pathway_dict):
     df = pathways_version_note_bool(metadata_combined=pathway_dict, notification=notification_flag)
-    assert df['latest_version_note_exists'].all() is False
+    assert df['latest_version_note_exists'].all() == False
 
 
 def test_pathway_componets_sheets_subset(pathway_dict, cdf):
     df = pathway_componets_sheets_subset(
         metadata_combined=pathway_dict, cdf=cdf, notification=notification_flag
     )
-    assert df['component_id_bool'].any() is False
+    assert df['component_id_bool'].any() == False
 
 
 def test_pathway_id_sheets_subset(pathway_dict, cdf, pathway_col_list):
     df = pathway_id_sheets_subset(
         metadata_combined=pathway_dict, cdf=cdf, pathway_col_list=pathway_col_list
     )
-    assert df['pathway_id_is_subset_component_id'].all() is False
+    assert df['pathway_id_is_subset_component_id'].all() == False
 
 
 def test_contributor_pathway_subset_bool(cdf, cont_df, pathway_col_list):
