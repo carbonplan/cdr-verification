@@ -740,7 +740,7 @@ def pathway_uncertainty_range(
     return df
 
 
-if __name__ == '__main__':
+def run():
     metadata_combined = generate_combined_pathway_data_dict(
         google_doc_id=google_doc_id, avail_pathways=avail_pathways
     )
@@ -764,3 +764,7 @@ if __name__ == '__main__':
     non_empty_equation(metadata_combined=metadata_combined)
     non_empty_version_number(metadata_combined=metadata_combined)
     non_empty_revision_note(metadata_combined=metadata_combined)
+
+
+if __name__ == '__main__':
+    run()
