@@ -744,7 +744,6 @@ def run():
     metadata_combined = generate_combined_pathway_data_dict(
         google_doc_id=google_doc_id, avail_pathways=avail_pathways
     )
-    # Load component,contributors and pathway columns
     cdf = get_component_sheet(google_doc_id=google_doc_id)
     cont_df = contributors_df(google_doc_id=google_doc_id)
     pathway_col_list = get_pathway_col_list(cdf)
@@ -752,10 +751,13 @@ def run():
     equation_number_component_number(metadata_combined=metadata_combined)
     pathways_version_note_bool(metadata_combined=metadata_combined)
     pathway_componets_sheets_subset(metadata_combined=metadata_combined, cdf=cdf)
-    pathway_id_sheets_subset(metadata_combined=metadata_combined)
+    pathway_id_sheets_subset(
+        metadata_combined=metadata_combined, cdf=cdf, pathway_col_list=pathway_col_list
+    )
+
     contributor_pathway_subset_bool(cdf=cdf, cont_df=cont_df, pathway_col_list=pathway_col_list)
-    latest_pathway_version_match(metadata_combined=metadata_combined)
-    pathway_uncertainty_range(metadata_combined=metadata_combined)
+    latest_pathway_version_match(metadata_combined=metadata_combined, cont_df=cont_df)
+    pathway_uncertainty_range(metadata_combined=metadata_combined, cdf=cdf)
 
     non_empty_pathway_id(metadata_combined=metadata_combined)
     non_empty_pathway_name(metadata_combined=metadata_combined)
