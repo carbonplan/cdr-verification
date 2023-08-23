@@ -651,7 +651,7 @@ def latest_pathway_version_match(
             pv = metadata_combined['metadata_dict_combined'][pathway_key]['version']
             try:  # attempt to coerce string to float
                 pathway_version = float(pv)
-            except:
+            except Exception(ValueError):
                 pathway_version = pv
             pathway_version_match_bool = pathway_version == contrib_df_pathway_latest_version
             if not pathway_version_match_bool:

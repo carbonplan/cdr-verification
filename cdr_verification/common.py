@@ -95,7 +95,7 @@ def auth_service():
 
         creds = Credentials.from_service_account_file(cred_path, scopes=scope)
         service = build('sheets', 'v4', credentials=creds)
-    except:
+    except Exception('FileNotFoundError'):
         service = build('sheets', 'v4')
     return service
 
