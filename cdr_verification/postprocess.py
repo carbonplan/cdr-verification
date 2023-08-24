@@ -55,10 +55,21 @@ from .sheets_to_json import (
 )
 
 
-
 # --------------------------------------------------
 # ---------------- Components Sheets ---------------
 # --------------------------------------------------
+def uncertainty_map():
+    return {
+        'negligible': 0,
+        'low': 1,
+        'medium': 2,
+        'high': 3,
+        'very high': 4,
+        'not characterized': 5,
+    }
+
+
+um = uncertainty_map()
 
 
 # --------------------------------------------------------------------------------------
@@ -589,14 +600,14 @@ def contributor_pathway_subset_bool(
     )
     cdf_pathways_not_in_cont_df = list(set(pathway_col_list) - cont_df_pathway_ids)
     cont_df_pathways_not_in_cdf = list(cont_df_pathway_ids - set(pathway_col_list))
-
+    empty_list_bool = len(cdf_pathways_not_in_cont_df) > 0 & len(cont_df_pathways_not_in_cdf) > 0
     df = pd.DataFrame(
         {
             'pathway_ids_only_in_components_sheet': [cdf_pathways_not_in_cont_df],
             'pathway_ids_only_in_contributors_sheet': [cont_df_pathways_not_in_cdf],
         }
     )
-    if not df.empty and notification:
+    if empty_list_bool and notification:
         send_slack_notification(
             df, 'All pathway ids in contributor sheet are reflected in the component sheet'
         )
