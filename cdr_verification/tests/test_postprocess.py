@@ -83,7 +83,6 @@ def pathway_col_list():
 
 
 def test_equation_number_component_number(pathway_dict):
-    # import pdb; pdb.set_trace()
     df = equation_number_component_number(
         metadata_combined=pathway_dict, notification=notification_flag
     )
@@ -104,25 +103,32 @@ def test_pathway_componets_sheets_subset(pathway_dict, cdf):
 
 def test_pathway_id_sheets_subset(pathway_dict, cdf, pathway_col_list):
     df = pathway_id_sheets_subset(
-        metadata_combined=pathway_dict, cdf=cdf, pathway_col_list=pathway_col_list
+        metadata_combined=pathway_dict,
+        cdf=cdf,
+        pathway_col_list=pathway_col_list,
+        notification=notification_flag,
     )
     assert df['pathway_id_is_subset_component_id'].all() == False
 
 
 def test_contributor_pathway_subset_bool(cdf, cont_df, pathway_col_list):
     df = contributor_pathway_subset_bool(
-        cdf=cdf, cont_df=cont_df, pathway_col_list=pathway_col_list
+        cdf=cdf, cont_df=cont_df, pathway_col_list=pathway_col_list, notification=notification_flag
     )
     assert df.empty is False
 
 
 def test_latest_pathway_version_match(pathway_dict, cont_df):
-    df = latest_pathway_version_match(metadata_combined=pathway_dict, cont_df=cont_df)
+    df = latest_pathway_version_match(
+        metadata_combined=pathway_dict, cont_df=cont_df, notification=notification_flag
+    )
     assert df.empty is False
 
 
 def test_pathway_uncertainty_range(pathway_dict, cdf):
-    df = pathway_uncertainty_range(metadata_combined=pathway_dict, cdf=cdf)
+    df = pathway_uncertainty_range(
+        metadata_combined=pathway_dict, cdf=cdf, notification=notification_flag
+    )
     assert df.empty is False
 
 
@@ -132,47 +138,47 @@ def test_pathway_uncertainty_range(pathway_dict, cdf):
 
 
 def test_unique_component_id(cdf):
-    df = unique_component_id(cdf=cdf)
+    df = unique_component_id(cdf=cdf, notification=notification_flag)
     assert df.empty is False
 
 
 def test_non_empty_component_name(cdf):
-    df = non_empty_component_name(cdf=cdf)
+    df = non_empty_component_name(cdf=cdf, notification=notification_flag)
     assert df.empty is False
 
 
 def test_non_empty_quantification_target(cdf):
-    df = non_empty_quantification_target(cdf=cdf)
+    df = non_empty_quantification_target(cdf=cdf, notification=notification_flag)
     assert df.empty is False
 
 
 def test_non_empty_description(cdf):
-    df = non_empty_description(cdf=cdf)
+    df = non_empty_description(cdf=cdf, notification=notification_flag)
     assert df.empty is False
 
 
 def test_valid_uncertainty_type(cdf):
-    df = valid_uncertainty_type(cdf=cdf)
+    df = valid_uncertainty_type(cdf=cdf, notification=notification_flag)
     assert df.empty is False
 
 
 def test_valid_responsibility(cdf):
-    df = valid_responsibility(cdf=cdf)
+    df = valid_responsibility(cdf=cdf, notification=notification_flag)
     assert df.empty is False
 
 
 def test_valid_uncertainty_min(cdf):
-    df = valid_uncertainty_min(cdf=cdf)
+    df = valid_uncertainty_min(cdf=cdf, notification=notification_flag)
     assert df.empty is False
 
 
 def test_valid_uncertainty_max(cdf):
-    df = valid_uncertainty_max(cdf=cdf)
+    df = valid_uncertainty_max(cdf=cdf, notification=notification_flag)
     assert df.empty is False
 
 
 def test_non_missing_pathways(cdf):
-    df = non_missing_pathways(cdf=cdf)
+    df = non_missing_pathways(cdf=cdf, notification=notification_flag)
     assert df.empty is False
 
 
@@ -182,35 +188,37 @@ def test_non_missing_pathways(cdf):
 
 
 def test_non_empty_pathway_id(pathway_dict):
-    df = non_empty_pathway_id(metadata_combined=pathway_dict)
+    df = non_empty_pathway_id(metadata_combined=pathway_dict, notification=notification_flag)
     assert df.empty is False
 
 
 def test_non_empty_pathway_name(pathway_dict):
-    df = non_empty_pathway_name(metadata_combined=pathway_dict)
+    df = non_empty_pathway_name(metadata_combined=pathway_dict, notification=notification_flag)
     assert df.empty is False
 
 
 def test_non_empty_pathway_description(pathway_dict):
-    df = non_empty_pathway_description(metadata_combined=pathway_dict)
+    df = non_empty_pathway_description(
+        metadata_combined=pathway_dict, notification=notification_flag
+    )
     assert df.empty is False
 
 
 def test_non_empty_VCL(pathway_dict):
-    df = non_empty_VCL(metadata_combined=pathway_dict)
+    df = non_empty_VCL(metadata_combined=pathway_dict, notification=notification_flag)
     assert df.empty is False
 
 
 def test_non_empty_equation(pathway_dict):
-    df = non_empty_equation(metadata_combined=pathway_dict)
+    df = non_empty_equation(metadata_combined=pathway_dict, notification=notification_flag)
     assert df.empty is False
 
 
 def test_non_empty_version_number(pathway_dict):
-    df = non_empty_version_number(metadata_combined=pathway_dict)
+    df = non_empty_version_number(metadata_combined=pathway_dict, notification=notification_flag)
     assert df.empty is False
 
 
 def test_non_empty_revision_note(pathway_dict):
-    df = non_empty_revision_note(metadata_combined=pathway_dict)
+    df = non_empty_revision_note(metadata_combined=pathway_dict, notification=notification_flag)
     assert df.empty is False
