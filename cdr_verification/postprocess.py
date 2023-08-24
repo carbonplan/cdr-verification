@@ -54,22 +54,6 @@ from .sheets_to_json import (
     sheet_data_to_metadata,
 )
 
-# ------------------ Auth -----------------------
-
-
-# A dict to map uncertainty values to numeric
-def uncertainty_map():
-    return {
-        'negligible': 0,
-        'low': 1,
-        'medium': 2,
-        'high': 3,
-        'very high': 4,
-        'not characterized': 5,
-    }
-
-
-um = uncertainty_map()
 
 
 # --------------------------------------------------
@@ -584,7 +568,7 @@ def pathway_id_sheets_subset(
         }
     )
 
-    if not df.empty:
+    if not df.empty and notification:
         send_slack_notification(
             df, 'All pathway ids in pathway sheets are reflected as a column in the component sheet'
         )
@@ -612,7 +596,7 @@ def contributor_pathway_subset_bool(
             'pathway_ids_only_in_contributors_sheet': [cont_df_pathways_not_in_cdf],
         }
     )
-    if not df.empty:  # ie if df is not empty
+    if not df.empty and notification:
         send_slack_notification(
             df, 'All pathway ids in contributor sheet are reflected in the component sheet'
         )
