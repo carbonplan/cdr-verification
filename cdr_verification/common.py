@@ -112,9 +112,12 @@ def send_slack_notification(df: pd.DataFrame, validation_name: str):
     validation_description = pd.DataFrame({'Validation': [validation_name]}).to_markdown(
         index=False
     )
+    newline = '-' * 150
     r = requests.post(
         slack_webhook_url,
-        json={'text': f'```{validation_description}``` ```{dataframe_markdown}```'},
+        json={
+            'text': f'```{newline}``` ```{validation_description}``` ```{dataframe_markdown}``` ```{newline}``` '
+        },
     )
 
     r.raise_for_status()

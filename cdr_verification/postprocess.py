@@ -726,7 +726,14 @@ def pathway_uncertainty_range(
         df_append.append(uncertainty_mismatch_df)
 
     df = pd.concat(df_append)
-
+    df = df.rename(
+        columns={
+            'uncertainty_impact_min_pathway_sheet': 'UI_min_pathway',
+            'uncertainty_impact_max_pathway_sheet': 'UI_max_pathway',
+            'uncertainty_impact_min_component_sheet': 'UI_min_comp',
+            'uncertainty_impact_max_component_sheet': 'UI_max_comp',
+        }
+    )
     if not df.empty and notification:
         send_slack_notification(
             df,
