@@ -623,7 +623,6 @@ def latest_pathway_version_match(
     *, metadata_combined: dict, cont_df: pd.DataFrame, notification: bool = True
 ) -> pd.DataFrame:
     """All pathway versions in contributor sheets correspond with pathway versions in pathway sheets"""
-
     pathway_name_list = []
     pathway_version_match_bool_list = []
     latest_pathway_version_contributor_df_list = []
@@ -636,23 +635,23 @@ def latest_pathway_version_match(
     for pathway_key in metadata_combined['metadata_dict_combined']:
         pathway = metadata_combined['metadata_dict_combined'][pathway_key]['pathway_id']
         if pathway in cont_df_pathway_ids:
-            contrib_df_pathway_latest_version = max(
+            contrib_df_pathway_versions = max(set(
                 cont_df[pathway][~cont_df[pathway].replace('', np.nan).isnull()]
                 .str.split(',')
                 .explode()
                 .astype(float)
                 .to_list()
-            )
+            ))
             pv = metadata_combined['metadata_dict_combined'][pathway_key]['version']
             try:  # attempt to coerce string to float
                 pathway_version = float(pv)
             except ValueError:
                 pathway_version = pv
-            pathway_version_match_bool = pathway_version == contrib_df_pathway_latest_version
+            pathway_version_match_bool =  pathway_version >= contrib_df_pathway_versions
             if not pathway_version_match_bool:
                 pathway_name_list.append(pathway)
                 pathway_version_match_bool_list.append(pathway_version_match_bool)
-                latest_pathway_version_contributor_df_list.append(contrib_df_pathway_latest_version)
+                latest_pathway_version_contributor_df_list.append(contrib_df_pathway_versions)
                 pathway_sheet_version_list.append(pathway_version)
 
     df = pd.DataFrame(
