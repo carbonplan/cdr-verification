@@ -53,7 +53,7 @@
     "uncertainty_impact_min": "low",
     "uncertainty_impact_max": "medium",
     "category": "drawdown",
-    "description": "If drawdown is being estimated on the basis of direct observation of mineral weathering rather than via estimation of alkalinity run-off, it is important to characterize what fraction of the rock was weathered by non-carbonic acids. Non-carbonic sources of acidity in the soil may include protons associated with mineral and organic surfaces and other sources of acidity from organic acids, nitrogen transformations, or sulfide mineral oxidation. If applied rock is weathered by non-carbonic acid that would have otherwise caused outgassing downstream, it may be appropriate to count this avoided outgassing toward the net carbon drawdown of the Enhanced Weathering intervention depending on how confidently the counterfactual can be characterized and how quickly the outgassing would have otherwise occurred.",
+    "description": "If drawdown is being estimated on the basis of direct observation of mineral weathering rather than via estimation of alkalinity run-off, it is important to characterize what fraction of the rock was weathered by non-carbonic acids. Non-carbonic sources of acidity in the soil may include protons associated with mineral and organic surfaces and other sources of acidity from organic acids, nitrogen transformations, or sulfide mineral oxidation. If applied rock is weathered by non-carbonic acid that would have otherwise caused outgassing downstream, it may be appropriate to count this avoided outgassing toward the net carbon drawdown of the enhanced weathering intervention depending on how confidently the counterfactual can be characterized and how quickly the outgassing would have otherwise occurred.",
     "revisions": [
       {
         "date": "09-19-2022",
@@ -62,6 +62,10 @@
       {
         "date": "12-19-2022",
         "note": "Second release. Changed name, description, and comment to reflect the possibility that some non-carbonic acid reactions may result in avoided outgassing downstream. These edits occured as part of a broader [update of the Enhanced Weathering pathway](https://carbonplan.org/blog/enhanced-weathering-update)."
+      },
+      {
+        "date": "08-09-2023",
+        "note": "Changing capitalization of references to 'enhanced weathering' for consistency."
       }
     ],
     "notes": "",
@@ -508,11 +512,15 @@
     "uncertainty_impact_min": "low",
     "uncertainty_impact_max": "low",
     "category": "drawdown",
-    "description": "While nearly all biomass carbon eventually makes its way back to the atmosphere, the effective drawdown from more durably biomass occurs when the carbon content of the biomass feedstock would otherwise have been released in the form of atmospheric CO\u2082. If the counterfactual fate of the biomass feedstock would have resulted in little to no carbon storage \u2014 for example, burning or rapid decomposition \u2014 any durable storage achieved by biochar represents additional carbon removal. If, however, the counterfactual fate of the biomass feedstock would have resulted in medium-to-long term carbon storage \u2014 for example in soils or slow degrading environments \u2014 the mass of stored carbon in the counterfactual should not count as additional carbon removal until counterfactual emissions would have occurred.",
+    "description": "While nearly all biomass carbon eventually makes its way back to the atmosphere, the effective drawdown from more durably biomass occurs when the carbon content of the biomass feedstock would otherwise have been released in the form of atmospheric CO\u2082. If the counterfactual fate of the biomass feedstock would have resulted in little to no carbon storage \u2014 for example, burning or rapid decomposition \u2014 any durable storage achieved by BiCRS represents additional carbon removal. If, however, the counterfactual fate of the biomass feedstock would have resulted in medium-to-long term carbon storage \u2014 for example in soils or slow degrading environments \u2014 the mass of stored carbon in the counterfactual should not count as additional carbon removal until counterfactual emissions would have occurred.",
     "revisions": [
       {
         "date": "09-19-2022",
         "note": "First release."
+      },
+      {
+        "date": "10-02-2023",
+        "note": "Fixed inconsistency in referring to 'BiCRS' versus specific pathways."
       }
     ],
     "notes": "",
@@ -592,7 +600,7 @@
     "secondary_name": "",
     "quantification_target": "indirect land use change emissions",
     "uncertainty_type": ["scientific"],
-    "responsibility": "scientific",
+    "responsibility": "system",
     "uncertainty_impact_min": "low",
     "uncertainty_impact_max": "high",
     "category": "drawdown",
@@ -748,7 +756,7 @@
     "uncertainty_impact_min": "not characterized",
     "uncertainty_impact_max": "not characterized",
     "category": "drawdown",
-    "description": "Adding ammendments like minerals or biochar to soils has the potential to induce changes to soil carbon, including by affecting pH or impacting plant or microbial activity. Theoretically, these impacts could increase or decrease soil organic carbon (SOC) storage. Theoretically, these impacts could increase or decrease soil organic carbon (SOC) storage (i.e. the priming effect). There is relatively little research on these potential interactions to date, and they merit further exploration. Due to the high uncertainty of these potential effects, we recommend this component not be included in the accounting of net carbon removal. If biochar application does increase SOC storage beyond the carbon embodied in the biochar, we recommend that these changes not be used to counterbalance project-related fossil CO\u2082 emissions nor counted as additional durable carbon removal due to the impermanence of soil carbon storage.",
+    "description": "Adding ammendments like minerals or biochar to soils has the potential to induce changes to soil carbon, including by affecting pH or impacting plant or microbial activity. Theoretically, these impacts could increase or decrease soil organic carbon (SOC) storage (i.e. the priming effect). There is relatively little research on these potential interactions to date, and they merit further exploration. Due to the high uncertainty of these potential effects, we recommend this component not be included in the accounting of net carbon removal. If biochar application does increase SOC storage beyond the carbon embodied in the biochar, we recommend that these changes not be used to counterbalance project-related fossil CO\u2082 emissions nor counted as additional durable carbon removal due to the impermanence of soil carbon storage.",
     "revisions": [
       {
         "date": "09-19-2022",
@@ -761,6 +769,10 @@
       {
         "date": "04-10-2023",
         "note": "Edited for cross-pathway consistency in response to the [addition](https://carbonplan.org/blog/vcl-update-v2023.04.0) of the Biochar pathway."
+      },
+      {
+        "date": "06-29-2023",
+        "note": "Fixed typo."
       }
     ],
     "notes": "",

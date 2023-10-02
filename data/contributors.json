@@ -1,19 +1,6 @@
 [
   {
     "type": "CDR Company",
-    "name": "Arca",
-    "affiliation": "",
-    "initial": "",
-    "notes": "Comments came specifically from Greg Dipple. ",
-    "pathways": [
-      {
-        "id": "alkaline-waste-mineralization",
-        "version": ["1.0"]
-      }
-    ]
-  },
-  {
-    "type": "CDR Company",
     "name": "Captura",
     "affiliation": "",
     "initial": "",
@@ -21,6 +8,71 @@
     "pathways": [
       {
         "id": "direct-ocean-removal",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "CDR Company",
+    "name": "SeaO2",
+    "affiliation": "",
+    "initial": "",
+    "notes": "",
+    "pathways": [
+      {
+        "id": "direct-ocean-removal",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "MRV Company",
+    "name": "Sophie Gill ",
+    "affiliation": "Isometric",
+    "initial": "",
+    "notes": "(New affiliation)",
+    "pathways": [
+      {
+        "id": "direct-ocean-removal",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Alex Gagnon",
+    "affiliation": "University of Washington / Banyu Carbon",
+    "initial": "",
+    "notes": "",
+    "pathways": [
+      {
+        "id": "direct-ocean-removal",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Matt Long",
+    "affiliation": "NCAR / [C]worthy",
+    "initial": "",
+    "notes": "(New affiliation)",
+    "pathways": [
+      {
+        "id": "direct-ocean-removal",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "CDR Company",
+    "name": "Arca",
+    "affiliation": "",
+    "initial": "",
+    "notes": "Comments came specifically from Greg Dipple. ",
+    "pathways": [
+      {
+        "id": "alkaline-waste-mineralization",
         "version": ["1.0"]
       }
     ]
@@ -137,19 +189,6 @@
       },
       {
         "id": "ocean-biomass-sinking-no-harvest",
-        "version": ["1.0"]
-      }
-    ]
-  },
-  {
-    "type": "CDR Company",
-    "name": "SeaO2",
-    "affiliation": "",
-    "initial": "",
-    "notes": "",
-    "pathways": [
-      {
-        "id": "direct-ocean-removal",
         "version": ["1.0"]
       }
     ]
@@ -319,32 +358,6 @@
     "pathways": []
   },
   {
-    "type": "MRV Company",
-    "name": "Sophie Gill ",
-    "affiliation": "Isometric",
-    "initial": "",
-    "notes": "(New affiliation)",
-    "pathways": [
-      {
-        "id": "direct-ocean-removal",
-        "version": ["1.0"]
-      }
-    ]
-  },
-  {
-    "type": "Scientific Expert",
-    "name": "Alex Gagnon",
-    "affiliation": "University of Washington / Banyu Carbon",
-    "initial": "",
-    "notes": "",
-    "pathways": [
-      {
-        "id": "direct-ocean-removal",
-        "version": ["1.0"]
-      }
-    ]
-  },
-  {
     "type": "Scientific Expert",
     "name": "Becca Neumann",
     "affiliation": "University of Washington",
@@ -484,19 +497,6 @@
       },
       {
         "id": "ocean-biomass-sinking-no-harvest",
-        "version": ["1.0"]
-      }
-    ]
-  },
-  {
-    "type": "Scientific Expert",
-    "name": "Matt Long",
-    "affiliation": "NCAR / [C]worthy",
-    "initial": "",
-    "notes": "(New affiliation)",
-    "pathways": [
-      {
-        "id": "direct-ocean-removal",
         "version": ["1.0"]
       }
     ]

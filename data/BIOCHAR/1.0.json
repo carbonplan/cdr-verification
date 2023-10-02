@@ -65,7 +65,7 @@
       "name": "Indirect land use change",
       "quantification_target": "indirect land use change emissions",
       "uncertainty_type": ["scientific"],
-      "responsibility": "scientific",
+      "responsibility": "system",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "high",
       "description": "Any emissions associated with indirect land use change as a result of feedstock demand must be considered. For example, paying farmers for agricultural waste will likely increase the profitability of their operations, and could result in an increase in acres planted. Creating plantations could displace food production onto other lands or contribute to additional deforestation. Conversely, the creation of markets for forestry residues could help reduce the rate of conversion of forest systems to agricultural use. To be conservative, however, we recommend that this potential positive impact be excluded from the quantified carbon removal outcome. Estimating indirect land use change resulting from feedstock demand will likely be difficult in practice and require careful economic modeling.",
