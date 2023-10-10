@@ -746,9 +746,6 @@ def pathway_uncertainty_range(
 
 
 def run():
-    slack_webhook_url = os.environ.get('SLACK_WEBHOOK_URL')
-    r = requests.post(slack_webhook_url, json={'text': 'postprocess validation started'})
-    r.raise_for_status()
     metadata_combined = generate_combined_pathway_data_dict(
         google_doc_id=google_doc_id, avail_pathways=avail_pathways
     )
@@ -774,6 +771,9 @@ def run():
     non_empty_equation(metadata_combined=metadata_combined)
     non_empty_version_number(metadata_combined=metadata_combined)
     non_empty_revision_note(metadata_combined=metadata_combined)
+    slack_webhook_url = os.environ.get('SLACK_WEBHOOK_URL')
+    r = requests.post(slack_webhook_url, json={'text': 'postprocess validation has finished'})
+    r.raise_for_status()
 
 
 if __name__ == '__main__':
