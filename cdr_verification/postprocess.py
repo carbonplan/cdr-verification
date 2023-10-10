@@ -35,9 +35,8 @@
 # ------------------ Imports -----------------------
 import re
 
-import pandas as pd  # type: ignore
 import numpy as np
-
+import pandas as pd  # type: ignore
 
 from .common import (
     avail_pathways,
