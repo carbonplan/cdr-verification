@@ -34,7 +34,8 @@
 
 # ------------------ Imports -----------------------
 import re
-
+import os 
+import requests
 import numpy as np
 import pandas as pd  # type: ignore
 
@@ -744,6 +745,10 @@ def pathway_uncertainty_range(
 
 
 def run():
+
+    slack_webhook_url = os.environ.get('SLACK_WEBHOOK_URL')
+    r = requests.post(slack_webhook_url, json={'text': "postprocess validation started"})
+    r.raise_for_status()
     metadata_combined = generate_combined_pathway_data_dict(
         google_doc_id=google_doc_id, avail_pathways=avail_pathways
     )
