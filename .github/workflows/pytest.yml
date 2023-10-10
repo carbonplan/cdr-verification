@@ -1,6 +1,6 @@
 name: pytest
 
-on: [pull]
+on: [pull_request]
 
 jobs:
   test:
