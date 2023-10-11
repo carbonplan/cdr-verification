@@ -391,7 +391,7 @@
     "pathways": [
       {
         "id": "enhanced-weathering",
-        "version": ["1.1"]
+        "version": ["1.1", " 1.2"]
       }
     ]
   },
@@ -518,7 +518,7 @@
     "pathways": [
       {
         "id": "enhanced-weathering",
-        "version": ["1.1"]
+        "version": ["1.1", " 1.2"]
       }
     ]
   },
@@ -588,7 +588,7 @@
   {
     "type": "Scientific Expert",
     "name": "Susana Garc\u00eda L\u00f3pez",
-    "affiliation": "Heriod-Watt University",
+    "affiliation": "Heriot-Watt University",
     "initial": "1.0",
     "notes": "",
     "pathways": [
@@ -608,6 +608,19 @@
       {
         "id": "alkaline-waste-mineralization",
         "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Eric Slessarev",
+    "affiliation": "Yale",
+    "initial": "",
+    "notes": "",
+    "pathways": [
+      {
+        "id": "enhanced-weathering",
+        "version": ["1.2"]
       }
     ]
   }
