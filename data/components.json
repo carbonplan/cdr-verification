@@ -1124,10 +1124,10 @@
     "quantification_target": "emissions impact of reducing agricultural lime use",
     "uncertainty_type": ["counterfactual"],
     "responsibility": "project",
-    "uncertainty_impact_min": "not characterized",
-    "uncertainty_impact_max": "not characterized",
+    "uncertainty_impact_min": "negligible",
+    "uncertainty_impact_max": "medium",
     "category": "emissions",
-    "description": "In agricultural contexts, a CDR intervention \u2014 like the application of a weathering mineral or biochar \u2014 might reduce the application of lime, thereby displacing associated lifecycle emissions. Any emissions impact associated with the displaced agricultural lime use could thus potentially counterbalance life cycle emissions of applying the weathering mineral. Lime emissions could be estimated based on data about prior usage on the parcel of land in question, or through general best practices for the region and crop type. Due to the potentially difficult nature of the counterfactual here, we recommend this factor not be included in the accounting of net carbon removal.",
+    "description": "In agricultural contexts, fine grained carbonate limestone (agricultural lime) is commonly applied to raise the pH of acidic soils. As the lime weathers, it may serve as a sink or source of carbon dioxide depending on the time frame considered, the extent of strong acid weathering, and the degree of secondary carbonate precipitation, among other factors. Weathering of a mole of carbonate can remove one mole of carbon dioxide. Any change in lime use because of a CDR deployment requires accounting for the corresponding change in both life cycle emissions and carbon removal. We consider the uncertainty due to changing lime use to be medium (5-20%) because lime weathering efficiency may be reasonably well-known at sites that have applied lime for years, but tracking the fate of lime-derived carbon remains a challenge. If no liming occurs prior to a deployment, the uncertainty of the liming counterfactual is not applicable.",
     "revisions": [
       {
         "date": "09-19-2022",
@@ -1136,6 +1136,10 @@
       {
         "date": "04-10-2023",
         "note": "Edited for cross-pathway consistency in response to the [addition](https://carbonplan.org/blog/vcl-update-v2023.04.0) of the Biochar pathway."
+      },
+      {
+        "date": "10-11-2023",
+        "note": "Edited enhanced to reflect that [lime weathering](https://carbonplan.org/blog/vcl-update-v2023.10.0) can be a carbon source or sink."
       }
     ],
     "notes": "",

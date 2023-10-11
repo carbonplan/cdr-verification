@@ -41,6 +41,11 @@
       "version": "1.0",
       "date": "04-10-2023",
       "note": "First release."
+    },
+    {
+      "version": "1.1",
+      "date": "10-11-2023",
+      "note": "Second release. Edited agricultural lime use component as detailed in this [blog post](https://carbonplan.org/blog/vcl-aglime-update). Included component in equation for net carbon removal and re-numbered components accordingly."
     }
   ]
 }
