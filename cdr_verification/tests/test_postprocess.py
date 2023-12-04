@@ -44,7 +44,6 @@ from cdr_verification.sheets_to_json import (
 
 notification_flag = False
 
-
 # --------------------------------------------------
 #               Fixtures
 # --------------------------------------------------
