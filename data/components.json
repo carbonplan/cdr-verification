@@ -903,7 +903,7 @@
     "uncertainty_impact_min": "low",
     "uncertainty_impact_max": "low",
     "category": "durability",
-    "description": "The formation of terrestrial carbonates depends on the type of primary mineral dissolving, carbonate saturation state, and other local environmental conditions. Although surficial carbonates can have complex dynamics of dissolution and reprecipitation, there is a high likelihood of long-term durability.",
+    "description": "The formation of terrestrial carbonates depends on the type of primary mineral dissolving, carbonate saturation state, pH, and other local environmental conditions. In natural systems, terrestrial carbonates can be quite durable, persisting for many thousands of years as conditions permit. In enhanced weathering deployments, these minerals could be much less durable. If a deployment creates the conditions that allow terrestrial carbonates to form and persist, for example by raising the soil pH, then these minerals are likely to dissolve after the deployment activity stops. The uncertainty around terrestrial carbonate durability is not included in the calculation of this pathway's Verification Confidence Level (VCL) because it is also captured by the Terrestrial carbonate precipitation component.",
     "revisions": [
       {
         "date": "09-19-2022",
@@ -912,6 +912,10 @@
       {
         "date": "12-19-2022",
         "note": "Second release. Changed name from 'Surficial carbonate durability' to 'Terrestrial carbonate durability' for clarity. These edits occured as part of a broader [update of the Enhanced Weathering pathway](https://carbonplan.org/blog/enhanced-weathering-update)."
+      },
+      {
+        "date": "12-05-2023",
+        "note": "Updated note to reflect conditions where terrestrial carbonate durability may be low."
       }
     ],
     "notes": "",
