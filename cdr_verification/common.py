@@ -17,7 +17,7 @@ google_doc_id = '1wYGtKe6ex27wei-eo6oh7hgLHrMXn9wmpqGS_l05lCw'
 gsheet_doc_name = 'NEW_CDR_MRV_Pathway_Uncertainties'
 
 avail_pathways = [
-    'BiCRS',
+    # 'BiCRS',
     'BIO_INJECTION',
     'BECCS',
     'BIO_STORAGE',
@@ -66,7 +66,7 @@ uncertainty_values = ['not characterized', 'negligible', 'low', 'medium', 'high'
 responsibility_values = ['system', 'project']
 
 sheet_id_dict = {
-    'BiCRS': '315597137',
+    # 'BiCRS': '315597137',
     'BIO_INJECTION': '1276756766',
     'BECCS': '828830330',
     'BIO_STORAGE': '1310723420',
