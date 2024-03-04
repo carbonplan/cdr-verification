@@ -2,22 +2,15 @@
   "contributors": [
     {
       "type": "CDR Company",
-      "name": "Heirloom ",
+      "name": "Kodama",
       "affiliation": "",
-      "notes": "",
+      "notes": "Comments came specifically from Jimmy Voorhis.",
       "version": ["1.0"]
     },
     {
       "type": "Scientific Expert",
-      "name": "Sarah Saltzer",
-      "affiliation": "Stanford",
-      "notes": "",
-      "version": ["1.0"]
-    },
-    {
-      "type": "Scientific Expert",
-      "name": "Susana Garc\u00eda L\u00f3pez",
-      "affiliation": "Heriot-Watt University",
+      "name": "Corrine Scown",
+      "affiliation": "LBNL",
       "notes": "",
       "version": ["1.0"]
     }

@@ -6,9 +6,7 @@ import pathlib
 
 import numpy as np
 import pandas as pd  # type: ignore
-from s3fs import S3FileSystem
-
-from .common import (
+from common import (
     auth_service,
     avail_pathways,
     get_pathway_col_list,
@@ -21,13 +19,16 @@ service = auth_service()
 
 
 def get_data_values_by_sheet_name(*, google_doc_id: str, sheet_name: str) -> list:
-    return (
+    service = auth_service()
+
+    sheet_vals = (
         service.spreadsheets()
         .values()
         .get(spreadsheetId=google_doc_id, range=sheet_name)
         .execute()
         .get('values')
     )
+    return sheet_vals
 
 
 def get_legend_sheet(*, google_doc_id: str) -> pd.DataFrame:
@@ -318,16 +319,16 @@ def write_to_json(template_dict: dict, pathway: str, pathway_version: str):
     template_dict : dict
     pathway : pathway name
     """
-    # sample_file = pathlib.Path("data") / f"{pathway}/{pathway_version}.json"
-    s3_path = 's3://carbonplan-scratch/cdr-test.json'
+    sample_file = pathlib.Path('data') / f'{pathway}/{pathway_version}.json'
+    # s3_path = 's3://carbonplan-scratch/cdr-test.json'
 
-    s3 = S3FileSystem()
-    with s3.open(s3_path, 'w') as file:
-        json.dump(template_dict, file)
+    # s3 = S3FileSystem()
+    # with s3.open(s3_path, 'w') as file:
+    #     json.dump(template_dict, file)
 
-    # # sample_file.parent.mkdir(exist_ok=True)
-    # with sample_file.open("w", encoding="utf-8") as f:
-    #     json.dump(template_dict, f, indent=4)
+    # sample_file.parent.mkdir(exist_ok=True)
+    with sample_file.open('w', encoding='utf-8') as f:
+        json.dump(template_dict, f, indent=4)
 
 
 def process_sheet(gsheet_doc_name: str, worksheet_name: str):
@@ -343,25 +344,25 @@ def process_sheet(gsheet_doc_name: str, worksheet_name: str):
 def process_legend(gsheet_doc_name: str):
     print('Processing Legend sheet..')
 
-    ldf = get_legend_sheet(gsheet_doc_name)
+    ldf = get_legend_sheet(google_doc_id=google_doc_id)
     write_legend_to_json(ldf)
 
 
 def process_components_sheet(gsheet_doc_name):
     print('Processing Components sheet..')
-    cdf = get_component_sheet(gsheet_doc_name)
+    cdf = get_component_sheet(google_doc_id=google_doc_id)
     pathway_col_list = get_pathway_col_list(cdf)
     cdf = component_pathway_flatten(cdf, pathway_col_list)
     write_components_to_json(cdf)
 
 
 def process_contributors_sheet(gsheet_doc_name):
-    contributor_df = contributors_df()
+    contributor_df = contributors_df(google_doc_id=google_doc_id)
     contributors_to_json(contributor_df)
 
 
-def write_pathways_to_json(avail_pathways: list):
-    contributor_df = contributors_df()
+def write_pathways_to_json(avail_pathways: list, google_doc_id: str):
+    contributor_df = contributors_df(google_doc_id=google_doc_id)
     for pathway in avail_pathways:
         print(f'Processing pathway: {pathway}')
         process_sheet_dict = process_sheet(gsheet_doc_name, pathway)
@@ -375,7 +376,7 @@ def write_pathways_to_json(avail_pathways: list):
 
 
 def run():
-    write_pathways_to_json(avail_pathways)
+    write_pathways_to_json(avail_pathways, google_doc_id=google_doc_id)
     process_legend(gsheet_doc_name)
     process_components_sheet(gsheet_doc_name)
     process_contributors_sheet(gsheet_doc_name)

@@ -10,7 +10,7 @@
       "number": "1",
       "category": "drawdown",
       "component_id": "inj-carbon",
-      "name": "Storage",
+      "name": "CO\u2082 Storage",
       "quantification_target": "mass of captured and stored CO\u2082",
       "uncertainty_type": ["execution"],
       "responsibility": "project",
@@ -55,7 +55,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "low",
-      "description": "The emissions associated with energy use for the process. This component should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project.",
+      "description": "The emissions associated with energy use for the process should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project.",
       "notes": ""
     },
     {

@@ -36,13 +36,13 @@
       "number": "3",
       "category": "drawdown",
       "component_id": "feed-stor",
-      "name": "Feedstock storage counterfactual",
-      "quantification_target": "mass of counterfactual stored biomass carbon",
+      "name": "Carbon storage counterfactual",
+      "quantification_target": "mass of biomass carbon stored in the counterfactual",
       "uncertainty_type": ["counterfactual"],
       "responsibility": "system",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "low",
-      "description": "While nearly all biomass carbon eventually makes its way back to the atmosphere, the effective drawdown from BiCRS occurs when the carbon content of the feedstock would otherwise have been released in the form of atmospheric CO\u2082. If the counterfactual fate of the biomass feedstock would have resulted in little to no carbon storage \u2014 for example, burning or rapid decomposition \u2014 any durable storage achieved by biochar represents additional carbon removal. If, however, the counterfactual fate of the biomass feedstock would have resulted in medium-to-long term carbon storage \u2014 for example in soils or slow degrading environments \u2014 the mass of stored carbon in the counterfactual should not count as additional carbon removal until counterfactual emissions would have occurred.",
+      "description": "While nearly all biomass carbon eventually makes its way back to the atmosphere, the effective drawdown from BiCRS occurs when the carbon content of the feedstock would otherwise have been released in the form of atmospheric CO\u2082. If the counterfactual fate of the biomass feedstock would have resulted in little to no carbon storage \u2014 for example, burning or rapid decomposition \u2014 any durable storage achieved by BiCRS represents additional carbon removal. If, however, the counterfactual fate of the biomass feedstock would have resulted in medium-to-long term carbon storage \u2014 for example in soils or slow degrading environments \u2014 the mass of stored carbon in the counterfactual should not count as additional carbon removal until counterfactual emissions would have occurred.",
       "notes": ""
     },
     {
@@ -61,14 +61,14 @@
     {
       "number": "5",
       "category": "drawdown",
-      "component_id": "LUC-indirect",
-      "name": "Indirect land use change",
-      "quantification_target": "indirect land use change emissions",
+      "component_id": "market-effects",
+      "name": "Market effects",
+      "quantification_target": "emissions from market effects",
       "uncertainty_type": ["scientific"],
-      "responsibility": "scientific",
+      "responsibility": "system",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "high",
-      "description": "Any emissions associated with indirect land use change as a result of feedstock demand must be considered. For example, paying farmers for agricultural waste will likely increase the profitability of their operations, and could result in an increase in acres planted. Directly growing energy crops or creating plantations could displace food production onto other lands and contribute to deforestation. Conversely, the creation of markets for forestry residues could help reduce the rate of conversion of forest systems to agricultural use. To be conservative, however, we recommend that this potential positive impact be excluded from the quantified carbon removal outcome. Estimating indirect land use change resulting from feedstock demand will likely be difficult in practice and require careful economic modeling.",
+      "description": "Any emissions associated with market effects as a result of feedstock demand must be considered. For example, paying farmers for agricultural waste will likely increase the profitability of their operations and could result in an increase in acres planted. Directly growing energy crops or creating plantations could displace food production onto other lands and contribute to deforestation. Estimating the system emissions resulting from new feedstock demand will likely be difficult in practice and require careful economic modeling that reflects the overall scale of new biomass demand.",
       "notes": ""
     },
     {
@@ -94,7 +94,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "low",
-      "description": "The emissions associated with energy use for the process. This component should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project.",
+      "description": "The emissions associated with energy use for the process should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project.",
       "notes": ""
     },
     {

@@ -1,0 +1,58 @@
+{
+  "contributors": [
+    {
+      "type": "CDR Company",
+      "name": "Charm",
+      "affiliation": "",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "CDR Company",
+      "name": "Running Tide",
+      "affiliation": "",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Fabiano Ximenes",
+      "affiliation": "NSW Government",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Sarah Saltzer",
+      "affiliation": "Stanford",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "CDR Company",
+      "name": "Vaulted",
+      "affiliation": "",
+      "notes": "TK",
+      "version": ["2.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Corrine Scown",
+      "affiliation": "LBNL",
+      "notes": "",
+      "version": ["2.0"]
+    }
+  ],
+  "revisions": [
+    {
+      "version": "1.0",
+      "date": "09-19-2022",
+      "note": "First release."
+    },
+    {
+      "version": "2.0",
+      "date": "03-TK-2024",
+      "note": "Changed name of pathway from Biomass carbon removal and storage (BiCRS) to Biomaterial injection. Although the first version of the pathway had a general name, it was designed around bio-oil injection. The pathway is now more explicitly named and has been edited to include other types of biomaterial injection into geologic storage, for example the injection of biomass slurries. Read more about this update [here](TK)."
+    }
+  ]
+}
