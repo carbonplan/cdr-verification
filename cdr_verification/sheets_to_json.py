@@ -6,7 +6,8 @@ import pathlib
 
 import numpy as np
 import pandas as pd  # type: ignore
-from common import (
+
+from .common import (
     auth_service,
     avail_pathways,
     get_pathway_col_list,
