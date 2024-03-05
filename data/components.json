@@ -22,18 +22,18 @@
     "uncertainty_impact_max": "high",
     "description": "Atmospheric uptake is reduced if modified seawater (e.g. seawater with enhanced alkalinity or depleted dissolved organic carbon) is transferred to the deep ocean before either increasing the uptake of atmospheric CO\u2082 or decreasing the outgassing of CO\u2082 to the atmosphere. The precise dispersal of modified seawater, its residence time at the surface, and hence the associated completeness of air-sea gas equilibration is dependent on the location and timing of the modification, and is hard to directly observe. In-situ measurements can potentially track post-deployment changes in pCO\u2082, pH, and DIC and deploy water mass tracers to help validate models of plume dispersal and atmospheric CO\u2082 drawdown, though the sensitivity and cost of sensors may be a challenge. Further, oceanographic models can be used to develop probabilistic estimates of equilibration efficiencies for particular injection sites, contingent on seasonal or interannual variations in forcing regimes. Typical gas exchange timescales of equilibration for the surface ocean and atmosphere are on the order of months to years.",
     "pathways": [
-      "ocean-alkalinity-enhancement-electrochemical",
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
-      "ocean-biomass-sinking-no-harvest",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
       "ocean-biomass-sinking-harvest",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "ocean-biomass-sinking-no-harvest",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage",
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -59,18 +59,18 @@
     "uncertainty_impact_max": "low",
     "description": "If alkalinity is added the ocean directly (e.g. via aqueous NaOH), the total alkalinity released it can be directly measured. Environmental conditions and alkalinity addition dynamics may result in different fractions of carbonate (CO\u2083\u207b\u00b2) versus bicarbonate (HCO\u2083\u207b). This fractionation impacts the total uptake of atmospheric CO\u2082. Overall CO\u2082 uptake efficiency can be estimated using seawater chemistry modeling software and the equation presented in [Renforth & Henderson (2017)](https://doi.org/10.1002/2016RG000533). These estimates could also be validated by measurements of bicarbonate concentrations or total alkalinity in the water column. The conversion of alkalinity to CO\u2082 removal is estimated to be 70-95% on a mol to mol basis.",
     "pathways": [
-      "ocean-alkalinity-enhancement-electrochemical",
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
-      "ocean-biomass-sinking-no-harvest",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
       "ocean-biomass-sinking-harvest",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "ocean-biomass-sinking-no-harvest",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage",
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -92,13 +92,13 @@
     "uncertainty_impact_max": "medium",
     "description": "The effects of an enhanced weathering intervention should be understood as the difference between the observed carbonate formation and the carbonate formation that would have occurred absent the intervention. The baseline rate of carbonate formation may be strongly dependent on the physical characteristics of the feedstock (e.g. surface area and grain size distribution), environment (e.g. mine design, climate, weather) and treatment of the alkaline waste material, in the present and future. In some systems, the baseline may be best characterized by ongoing measurements of an untreated control.",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "beccs",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage"
     ]
   },
   {
@@ -180,11 +180,11 @@
     "uncertainty_impact_max": "not characterized",
     "description": "The mass of a biomass feedstock can be directly measured and converted to CO\u2082e using a default factor or direct measurements of biomass carbon and moisture content. In addition to characterizing carbon content, a feedstock sampling protocol should characterize embodied nutrients such as nitrogen, phosphorus, and potassium. The feedstock quantity can be checked for consistency against operational records, and will also form the basis for estimating feedstock-related upstream emissions (see Feedstock carbon storage counterfactual, Feedstock replacement emissions, and Market effects).",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
+      "terrestrial-biomass-sinking",
+      "biomass-storage",
       "biochar",
-      "biomass-storage"
+      "beccs"
     ]
   },
   {
@@ -225,7 +225,7 @@
     "uncertainty_impact_min": "negligible",
     "uncertainty_impact_max": "negligible",
     "description": "Biomass storage aims to prevent or slow the decay of biomass by putting it in dry, cold, or anoxic conditions. The mass of stored biomass carbon can be measured directly and converted to CO2e using a default factor or direct measurements. This quantity can be checked for consistency against operational records around biomass sourcing and transportation (see Biomass feedstock).",
-    "pathways": ["terrestrial-biomass-sinking", "biochar", "biomass-storage"]
+    "pathways": ["terrestrial-biomass-sinking", "biomass-storage", "biochar"]
   },
   {
     "revisions": [
@@ -245,7 +245,7 @@
     "uncertainty_impact_min": "not characterized",
     "uncertainty_impact_max": "not characterized",
     "description": "Most biomass transformation processes \u2014 e.g. combustion, pyrolysis, or gasification \u2014 result in the direct emission of some portion of the carbon originally contained in the biomass feedstock. Quantifying emissions from biomass transformation supports the assessment of how efficiently a process converts biomass into long-term carbon storage or useful co-products. Biomass transformation emissions can be estimated by comparing the mass of CO2 that is captured for durable storage to the mass of carbon contained in the biomass feedstock (See Biomass feedstock). If the transformation process produces other carbon-containing products, such as syngas, tar, or char, we recommend the embodied carbon be conservatively classified as \u201cemitted\u201d unless the product has a clearly defined path to durable storage.",
-    "pathways": ["beccs", "biomaterial-injection", "biochar", "biomass-storage"]
+    "pathways": ["biomaterial-injection", "biomass-storage", "biochar", "beccs"]
   },
   {
     "revisions": [
@@ -266,10 +266,10 @@
     "uncertainty_impact_max": "negligible",
     "description": "The mass of carbon-containing biomaterial injected for geologic storage can be measured directly as a metered input to the storage system. This quantity can also be checked for consistency against the measured mass of biomass feedstock input to the system and operational data.",
     "pathways": [
-      "terrestrial-biomass-sinking",
       "biomaterial-injection",
-      "biochar",
-      "biomass-storage"
+      "terrestrial-biomass-sinking",
+      "biomass-storage",
+      "biochar"
     ]
   },
   {
@@ -295,16 +295,16 @@
     "uncertainty_impact_max": "medium",
     "description": "Since calcification releases CO\u2082 as a by-product, any changes to the rate of biotic calcification in response to interventions to the surface ocean \u2014 like adding alkalinity or removing CO\u2082 \u2014 must be considered. Changes in biotic calcification rates could occur in both coastal and open ocean waters, and at the level of individual calcifiers or calcifier populations. In practice, quantifying the biotic calcification response to alkalinity addition may pose significant spatial, temporal, and signal-to-noise challenges.",
     "pathways": [
-      "ocean-alkalinity-enhancement-electrochemical",
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
       "biomass-storage",
+      "biochar",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "alkaline-waste-mineralization",
       "biomass-carbon-removal-and-storage",
-      "alkaline-waste-mineralization"
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -334,11 +334,11 @@
     "uncertainty_impact_max": "low",
     "description": "While nearly all biomass carbon eventually makes its way back to the atmosphere, the effective drawdown from more durably biomass occurs when the carbon content of the biomass feedstock would otherwise have been released in the form of atmospheric CO\u2082. If the counterfactual fate of the biomass feedstock would have resulted in little to no carbon storage \u2014 for example, burning or rapid decomposition \u2014 any durable storage achieved by BiCRS represents additional carbon removal. If, however, the counterfactual fate of the biomass feedstock would have resulted in medium-to-long term carbon storage \u2014 for example in soils or slow degrading environments \u2014 the mass of stored carbon in the counterfactual should not count as additional carbon removal until counterfactual emissions would have occurred.",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "biomass-storage",
+      "biochar",
+      "beccs",
       "biomass-carbon-removal-and-storage"
     ]
   },
@@ -361,13 +361,13 @@
     "uncertainty_impact_max": "not characterized",
     "description": "Carbonates may remain exposed to the atmosphere or be buried over time depending on the location and approach. A portion of exposed and buried carbonates may undergo weathering over time. If and when carbonates weather, there is an additional shift in CO\u2082 fluxes as a result of introducing alkalinity to the system and storing additional CO\u2082 as bicarbonate. This process approximately doubles the associated CO\u2082 storage. Although most carbonates will ultimately weather, this process should only be credited when the impact on atmospheric CO\u2082 actually occurs and must take into account the full suite of uncertainties related to quantifying weathering outcomes (see the Enhanced Weathering pathway). In the absence of clear measurement of carbonate weathering, we recommend alkaline waste mineralization approaches only consider and credit the mineral phase of CO\u2082 storage.",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "beccs",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage"
     ]
   },
   {
@@ -389,13 +389,13 @@
     "uncertainty_impact_max": "high",
     "description": "The mass of CO\u2082 captured through alkaline feedstock weathering and carbonate mineralization can be quantified by measuring CO\u2082 loss from air (e.g. using eddy covariance flux towers or dynamic closed chambers), measurement of carbonate chemistry parameters (e.g. pH, TA, or DIC), or measuring changes in mineral content. If measuring changes in mineral content, it is critical to carefully characterize the starting carbonate content and variability of the feedstock. It is likely that a combination of quantification approaches will be needed to bound outcomes. Calibrated reactive transport models may also play a role in estimating long-term trends of CO\u2082 uptake. Measurement and modeling approaches must take into account the potential for short-term cycles of absorption and outgassing.",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "beccs",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage"
     ]
   },
   {
@@ -424,7 +424,7 @@
     "uncertainty_impact_min": "negligible",
     "uncertainty_impact_max": "medium",
     "description": "In agricultural contexts, fine grained carbonate limestone (agricultural lime) is commonly applied to raise the pH of acidic soils. As the lime weathers, it may serve as a sink or source of carbon dioxide depending on the time frame considered, the extent of strong acid weathering, and the degree of secondary carbonate precipitation, among other factors. Weathering of a mole of carbonate can remove one mole of carbon dioxide. Any change in lime use because of a CDR deployment requires accounting for the corresponding change in both life cycle emissions and carbon removal. We consider the uncertainty due to changing lime use to be medium (5-20%) because lime weathering efficiency may be reasonably well-known at sites that have applied lime for years, but tracking the fate of lime-derived carbon remains a challenge. If no liming occurs prior to a deployment, the uncertainty of the liming counterfactual is not applicable.",
-    "pathways": ["enhanced-weathering", "biochar"]
+    "pathways": ["biochar", "enhanced-weathering"]
   },
   {
     "revisions": [
@@ -468,7 +468,7 @@
     "uncertainty_impact_min": "not characterized",
     "uncertainty_impact_max": "not characterized",
     "description": "In agricultural contexts, a CDR intervention \u2014 like the application of a weathering mineral or biochar \u2014 could potentially change fertilizer use. Applied minerals may contain trace amounts of phosphorus and potassium, which could potentially reduce fertilizer requirements, and alkaline silicates could potentially improve plant nitrogen uptake. Applied biochar could shift nutrient retention or availability, dependent on its chemical and pyhsical properties. Due to the potentially difficult nature of the counterfactual scenarios involved, we recommend this component not be included in the accounting of net carbon removal. ",
-    "pathways": ["enhanced-weathering", "biochar"]
+    "pathways": ["biochar", "enhanced-weathering"]
   },
   {
     "revisions": [
@@ -489,14 +489,14 @@
     "uncertainty_impact_max": "negligible",
     "description": "The mass of CO\u2082 removed from seawater through electrochemical separation \u2014 or other approaches \u2014 can be measured directly as a metered output from the direct ocean removal (DOR) system. It can also be checked for consistency against operational data from the DOR system and characterization of the seawater effluent that is depleted of dissolved inorganic carbon (DIC). The quantity of CO\u2082 directly removed from seawater may not be equal to the quantity of CO\u2082 stored (see Leakage) or the quantity of CO\u2082 indirectly removed by atmospheric drawdown (see Air sea gas exchange). Direct removal of CO\u2082 from seawater produces DIC-depleted seawater and results in subsequent atmospheric carbon removal by inducing air-sea gas exchange. Thus, the quantity of CO\u2082 removed directly from seawater must be clearly quantified and validated as a separate measurement from CO\u2082 storage or atmospheric CO\u2082 drawdown. ",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "beccs",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage"
     ]
   },
   {
@@ -518,11 +518,11 @@
     "uncertainty_impact_max": "negligible",
     "description": "The mass of CO\u2082 or biomass material injected for geologic storage, or used as an input for another storage process (e.g. mineralization in concrete), can be measured directly as a metered output from the CDR system and a metered input to the storage system. It can also be checked for consistency against operational data from the CO\u2082 capture or biomass transformation system. ",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "direct-air-capture",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "biomass-storage",
+      "biochar",
+      "beccs",
       "biomass-carbon-removal-and-storage"
     ]
   },
@@ -546,9 +546,9 @@
     "description": "From a carbon management perspective, it is conservative to assume that all sunk biomass is remineralized and that ocean circulation and currents will eventually return the CO\u2082 back to the surface ocean, where it will be brought into equilibrium with the atmosphere. The estimated timescale of this ventilation is dependent on the location of sinking and depth achieved, which must be characterized at the project level but can be informed by models.",
     "pathways": [
       "terrestrial-biomass-sinking",
+      "ocean-biomass-sinking-harvest",
       "biochar",
-      "ocean-biomass-sinking-no-harvest",
-      "ocean-biomass-sinking-harvest"
+      "ocean-biomass-sinking-no-harvest"
     ]
   },
   {
@@ -570,17 +570,17 @@
     "uncertainty_impact_max": "low",
     "description": "The concept of ocean dissolved inorganic carbon (DIC) lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000 and 100,000 years.",
     "pathways": [
-      "ocean-alkalinity-enhancement-electrochemical",
-      "enhanced-weathering",
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
       "biomass-storage",
+      "biochar",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "enhanced-weathering",
+      "alkaline-waste-mineralization",
       "biomass-carbon-removal-and-storage",
-      "alkaline-waste-mineralization"
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -626,20 +626,20 @@
     "uncertainty_impact_max": "low",
     "description": "The emissions associated with energy use for the process should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project.",
     "pathways": [
-      "ocean-alkalinity-enhancement-electrochemical",
-      "enhanced-weathering",
-      "terrestrial-biomass-sinking",
-      "beccs",
-      "biomaterial-injection",
       "direct-air-capture",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "biomaterial-injection",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
-      "ocean-biomass-sinking-no-harvest",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
       "ocean-biomass-sinking-harvest",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "ocean-biomass-sinking-no-harvest",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "enhanced-weathering",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage",
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -662,9 +662,9 @@
     "description": "A central goal of any BECCS process is to produce energy (e.g. hydrogen, electricity, or heat) that ideally could be used to displace fossil fuel emissions. Although the emissions impact of these energy products is a crucial co-benefit to evaluate alongside the carbon removal achieved, we recommend this component not be included in the accounting of net carbon removal.",
     "pathways": [
       "terrestrial-biomass-sinking",
-      "beccs",
+      "biomass-storage",
       "biochar",
-      "biomass-storage"
+      "beccs"
     ]
   },
   {
@@ -686,11 +686,11 @@
     "uncertainty_impact_max": "medium",
     "description": "If a biomass feedstock currently serves a function that will need to be replaced if the feedstock is used for CDR, any emissions associated with the replacement must be considered.  For example, if agricultural waste is currently used as animal feed or left on the fields to contribute to nitrogen, phosphorus, and potassium in soils, using that agricultural waste for CDR could result in new demand for feed or fertilizer, respectively. Current feedstock uses can be evaluated on a project-by-project basis, and the carbon impact of replacements can be estimated via lifecycle assessments. We recommend accounting for feedstock replacement emissions that involve existing feedstock uses rather than potential future uses. For example, agricultural feedstocks used for CDR should be evaluated based on their current uses (e.g. for animal feed or soil nutrients) rather than potential future uses that are not practiced today (e.g. potential use for bioenergy). The counterfactual for existing utilization should be flexible, and re-evaluated in the future if prevailing practices change.",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "biomass-storage",
+      "biochar",
+      "beccs",
       "biomass-carbon-removal-and-storage"
     ]
   },
@@ -717,13 +717,13 @@
     "uncertainty_impact_max": "medium",
     "description": "For terrestrial geologic storage, leakage can be directly monitored during and after the injection period, though this is more challenging for subseafloor reservoirs. If geologic storage results in a functionally stable form on a short timescale \u2014 for example, via subsurface mineralization \u2014 fugitive emissions associated with the full lifetime of storage may be estimated based on direct observations of the storage reservoir. If instead the integrity of geologic storage requires ongoing monitoring and maintenance \u2014 for example with the injection of supercritical CO\u2082 \u2014 the potential for future fugitive emissions or unexpected migration of the carbon containing material (e.g. bio-oil or biomass slurry) must be modeled. For alternative storage systems, like mineralization in concrete, it is possible to directly measure the conversion of input CO\u2082 into a functionally stable form and therefore the total leakage from the storage system.",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
-      "biomaterial-injection",
       "direct-air-capture",
-      "biochar",
+      "biomaterial-injection",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
       "biomass-storage",
+      "biochar",
+      "beccs",
       "biomass-carbon-removal-and-storage"
     ]
   },
@@ -747,9 +747,9 @@
     "description": "Some fraction of the deployed biomass may not successfully sink to the ocean floor or might not sink at suitable depth for long-term storage. This could be a result of biomass being shed during the sinking process, which could be modeled as a function of biomass type and sinking configuration based on field observations. For biomass that sinks after some period of floating in the open ocean (e.g. biomass-based buoys), the possibility that biomass may end up being beached or sinking in areas that do not result in permanent storage (e.g. shallow waters or areas of upwelling) must also be considered. Existing surface ocean transport models could be validated based on GPS-based observational data.",
     "pathways": [
       "terrestrial-biomass-sinking",
+      "ocean-biomass-sinking-harvest",
       "biochar",
-      "ocean-biomass-sinking-no-harvest",
-      "ocean-biomass-sinking-harvest"
+      "ocean-biomass-sinking-no-harvest"
     ]
   },
   {
@@ -771,13 +771,13 @@
     "uncertainty_impact_max": "low",
     "description": "Carbonates could release CO\u2082 if exposed to heat or acid. The risk of leakage from produced carbonates is contingent on what type of carbonate is produced, the planned treatment of the carbonates, and their resulting exposure to environmental conditions that facilitate CO\u2082 release. ",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "beccs",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage"
     ]
   },
   {
@@ -803,19 +803,19 @@
     "uncertainty_impact_max": "medium",
     "description": "Groundwater can spend days to centuries in the ground before being discharged to streams. Once in surface waters, outgassing (evasion) might occur as groundwater equilibrates with the atmosphere or experiences pH shifts. Outgassing may also occur as surface waters interact with the surface ocean. Ultimately, the effects of enhanced weathering should be understood as an overall shift in CO\u2082 fluxes from the system as a result of the alkalinity introduced by rock weathering. Any changes in outgassing in the project scenario as compared to the counterfactual should be accounted for. The long timescale and large spatial scale of this process makes it difficult to study directly, but regional models could inform baseline- and project-scenario evasion estimates.",
     "pathways": [
-      "ocean-alkalinity-enhancement-electrochemical",
-      "enhanced-weathering",
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
-      "ocean-biomass-sinking-no-harvest",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
       "ocean-biomass-sinking-harvest",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "ocean-biomass-sinking-no-harvest",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "enhanced-weathering",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage",
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -837,18 +837,18 @@
     "uncertainty_impact_max": "low",
     "description": "Any source of acid from the process that ultimately reaches the ocean or interacts with terrestrial carbonates prior to being neutralized will counteract claimed alkalinity enhancement. At the project level, it is possible to ascertain the likely end fate of produced acid using operational records. As this solution scales, acid disposal may become more of a challenge.",
     "pathways": [
-      "ocean-alkalinity-enhancement-electrochemical",
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
-      "ocean-biomass-sinking-no-harvest",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
       "ocean-biomass-sinking-harvest",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "ocean-biomass-sinking-no-harvest",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage",
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -870,15 +870,15 @@
     "uncertainty_impact_max": "high",
     "description": "For systems that harvest kelp before sinking, the mass of kelp grown may be directly measured. For systems that do not harvest kelp before sinking, kelp growth may be estimated with yield models that estimate biomass carbon as a function of species and strain, macro- and micronutrient availability, episodic mortality events like disease & storms, and other environmental factors that affect kelp growth. These models must be calibrated based on observational data, which could be derived from direct sampling and weighing, or from indirect measures from conjoined observational buoys (e.g. with instruments pointed at growing kelp). The mass of kelp grown can be converted to carbon using a default carbon content factor.",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
-      "ocean-biomass-sinking-no-harvest",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "ocean-biomass-sinking-no-harvest",
+      "beccs",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage"
     ]
   },
   {
@@ -904,16 +904,16 @@
     "uncertainty_impact_max": "negligible",
     "description": "The mass of harvested kelp can be measured directly before sinking, and converted to carbon using a default carbon content factor.",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
-      "ocean-biomass-sinking-no-harvest",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
       "ocean-biomass-sinking-harvest",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "ocean-biomass-sinking-no-harvest",
+      "beccs",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage"
     ]
   },
   {
@@ -935,17 +935,17 @@
     "uncertainty_impact_max": "negligible",
     "description": "The precipitation and dissolution of carbonate minerals modifies ocean alkalinity. Carbonates preserved on the seafloor are likely to store carbon on geologic timescales.",
     "pathways": [
-      "ocean-alkalinity-enhancement-electrochemical",
-      "enhanced-weathering",
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
       "biomass-storage",
+      "biochar",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "enhanced-weathering",
+      "alkaline-waste-mineralization",
       "biomass-carbon-removal-and-storage",
-      "alkaline-waste-mineralization"
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -967,17 +967,17 @@
     "uncertainty_impact_max": "low",
     "description": "Eventually, the formation and burial of carbonate minerals will release CO\u2082 stored by mineral weathering. This process counteracts most or all of the carbon storage associated with weathering carbonate rock, and around half of the storage associated with silicate rock weathering. The carbonate precipitation process occurs slowly and is unlikely to have a significant impact on estimates of carbon storage on decadal to millennial timescales. However on geologic timescales, it is an important process to characterize.",
     "pathways": [
-      "ocean-alkalinity-enhancement-electrochemical",
-      "enhanced-weathering",
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
       "biomass-storage",
+      "biochar",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "enhanced-weathering",
+      "alkaline-waste-mineralization",
       "biomass-carbon-removal-and-storage",
-      "alkaline-waste-mineralization"
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -1003,11 +1003,11 @@
     "uncertainty_impact_max": "high",
     "description": "Any emissions associated with market effects as a result of feedstock demand must be considered. For example, paying farmers for agricultural waste will likely increase the profitability of their operations and could result in an increase in acres planted. Directly growing energy crops or creating plantations could displace food production onto other lands and contribute to deforestation. Estimating the system emissions resulting from new feedstock demand will likely be difficult in practice and require careful economic modeling that reflects the overall scale of new biomass demand.",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "biomass-storage",
+      "biochar",
+      "beccs",
       "biomass-carbon-removal-and-storage"
     ]
   },
@@ -1034,20 +1034,20 @@
     "uncertainty_impact_max": "low",
     "description": "The embodied emissions of any materials consumed during operation (e.g., mineral, chemical, or biomass feedstocks) can be estimated based on a cradle-to-grave lifecycle assessment (LCA) of the material input. The embodied emissions of non-consumed project equipment and infrastructure must also be considered, amortized over the expected lifetime of operation. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
     "pathways": [
-      "ocean-alkalinity-enhancement-electrochemical",
-      "enhanced-weathering",
-      "terrestrial-biomass-sinking",
-      "beccs",
-      "biomaterial-injection",
       "direct-air-capture",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "biomaterial-injection",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
-      "ocean-biomass-sinking-no-harvest",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
       "ocean-biomass-sinking-harvest",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "ocean-biomass-sinking-no-harvest",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "enhanced-weathering",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage",
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -1073,19 +1073,19 @@
     "uncertainty_impact_max": "not characterized",
     "description": "It is possible to calculate potential atmospheric removal by assuming full dissolution of the applied rocks. Realizable drawdown potential depends on mineral composition, particle size, kinetics, and applied volumes. It is also possible to directly analyze rock composition, which is critical not only for carbon accounting but also for tracking other ecosystem and agricultural impacts. Applied volume can be confirmed via an audit of operational records. ",
     "pathways": [
-      "ocean-alkalinity-enhancement-electrochemical",
-      "enhanced-weathering",
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
-      "ocean-biomass-sinking-no-harvest",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
       "ocean-biomass-sinking-harvest",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "ocean-biomass-sinking-no-harvest",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "enhanced-weathering",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage",
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -1111,17 +1111,17 @@
     "uncertainty_impact_max": "medium",
     "description": "If alkalinity is added to the ocean directly in the form of mineral or a semi-solid form (e.g. Mg(OH)\u2082 or olivine), the total useful alkalinity released in the surface ocean is a function of particle size, dissolution rates, and sinking rates. Larger particle sizes may reduce dissolution rates or result in material sinking to depth or buried in sediment, complicating the assessment of alkalinity released.",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
-      "ocean-biomass-sinking-no-harvest",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
       "ocean-biomass-sinking-harvest",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "ocean-biomass-sinking-no-harvest",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage"
     ]
   },
   {
@@ -1147,17 +1147,17 @@
     "uncertainty_impact_max": "low",
     "description": "Environmental conditions may result in different fractions of carbonate (CO\u2083\u207b\u00b2) versus bicarbonate (HCO\u2083\u207b). This fractionation impacts the total uptake of atmospheric CO\u2082. Overall CO\u2082 uptake efficiency can be estimated using seawater chemistry modeling software and the equation presented in [Renforth & Henderson (2017)](https://doi.org/10.1002/2016RG000533). These estimates could also be validated by measurements of bicarbonate concentrations or total alkalinity in the water column. The conversion of alkalinity to CO\u2082 removal is estimated to be 70-95% on a mol to mol basis.",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
-      "ocean-biomass-sinking-no-harvest",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
       "ocean-biomass-sinking-harvest",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "ocean-biomass-sinking-no-harvest",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage"
     ]
   },
   {
@@ -1187,19 +1187,19 @@
     "uncertainty_impact_max": "high",
     "description": "The effects of enhanced weathering should be understood as an overall shift in CO\u2082 fluxes as a result of introducing alkalinity to the system through rock weathering. While most applied minerals will ultimately weather, enhanced weathering approaches should only be credited when the impact on atmospheric CO\u2082 actually occurs. The rate of rock weathering, and therefore alkalinity introduction, depends on many factors including rock type, particle size, soil type, ambient temperature, precipitation, and irrigation. At a given point in time, it may be possible to measure how much rock has weathered via elemental analysis or by tracking changes in the concentration of tracer elements that originate in the applied rocks and persist in the soil after rock weathering. Rock weathering may be facilitated by different sources of acid (carbonic or non-carbonic) and result in different weathering products, which can each have unique impacts on system CO\u2082 fluxes. If rock is weathered by carbonic acid, a potential product is dissolved inorganic carbon (DIC). To inform a lower bound on rock weathering and characterize how much additional DIC is leaving the site because of the weathering, effluent from the weathering site can be continuously monitored to detect changes in the carbonic acid system. These changes can be constrained by monitoring any two components of the carbonic acid system: pH, total alkalinity (TA), partial pressure of CO\u2082 (pCO\u2082), or dissolved inorganic carbon (DIC). Both approaches \u2014 monitoring of the rock in the weathering site and monitoring the effluent leaving the weathering site \u2014 are areas of active innovation.",
     "pathways": [
-      "ocean-alkalinity-enhancement-electrochemical",
-      "enhanced-weathering",
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
-      "ocean-biomass-sinking-no-harvest",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
       "ocean-biomass-sinking-harvest",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "ocean-biomass-sinking-no-harvest",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "enhanced-weathering",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage",
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -1221,13 +1221,13 @@
     "uncertainty_impact_max": "not characterized",
     "description": "An enhanced weathering intervention may produce byproducts that do not facilitate carbon storage, for example if weathering is facilitated by non-carbonic acid. Valuable byproducts (e.g. hydrogen or sulphuric acid) or services (e.g. metal extraction or pollutant reduction) may also be produced. Any avoided emissions associated with these valuable byproducts should not be counted as additional carbon removal, but could potentially be counted against project lifecycle emissions.",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "beccs",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage"
     ]
   },
   {
@@ -1257,19 +1257,19 @@
     "uncertainty_impact_max": "medium",
     "description": "If drawdown is being estimated on the basis of direct observation of mineral weathering rather than via estimation of alkalinity run-off, it is important to characterize what fraction of the rock was weathered by non-carbonic acids. Non-carbonic sources of acidity in the soil may include protons associated with mineral and organic surfaces and other sources of acidity from organic acids, nitrogen transformations, or sulfide mineral oxidation. If applied rock is weathered by non-carbonic acid that would have otherwise caused outgassing downstream, it may be appropriate to count this avoided outgassing toward the net carbon drawdown of the enhanced weathering intervention depending on how confidently the counterfactual can be characterized and how quickly the outgassing would have otherwise occurred.",
     "pathways": [
-      "ocean-alkalinity-enhancement-electrochemical",
-      "enhanced-weathering",
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
-      "ocean-biomass-sinking-no-harvest",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
       "ocean-biomass-sinking-harvest",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "ocean-biomass-sinking-no-harvest",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "enhanced-weathering",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage",
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -1291,11 +1291,11 @@
     "uncertainty_impact_max": "medium",
     "description": "If a biomass-based CDR project results in non-CO2 emissions that would not have been produced via the counterfactual management of the biomass feedstock, these emissions must be accounted for. Processes that could produce non-CO2 emissions such as methane or nitrous oxide could include anaerobic decomposition or microbial activity, for example during feedstock storage and transport or waste product disposal. Venting, leakage, or incomplete flaring of methane during the biomass transformation process must also be considered. GWP assumptions used to incorporate these emissions into the calculation of net carbon removal should be transparently disclosed.",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
+      "terrestrial-biomass-sinking",
+      "biomass-storage",
       "biochar",
-      "biomass-storage"
+      "beccs"
     ]
   },
   {
@@ -1317,11 +1317,11 @@
     "uncertainty_impact_max": "not characterized",
     "description": "Using a biomass feedstock for CDR could potentially avoid non-CO2 emissions such as methane or nitrous oxide that would have otherwise occurred in the counterfactual, for example during biomass decay. We recommend that these avoided emissions not be included in the accounting of net carbon removal except to characterize the extent to which the managing feedstocks for BECCS increases non-CO2 emissions (see Non-CO2 emissions).",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
+      "terrestrial-biomass-sinking",
+      "biomass-storage",
       "biochar",
-      "biomass-storage"
+      "beccs"
     ]
   },
   {
@@ -1344,9 +1344,9 @@
     "description": "It is conservative to assume that all sunk biomass is remineralized and that ocean circulation and currents will eventually return the CO\u2082 back to the surface ocean, where it will be brought into equilibrium with the atmosphere. The estimated timescale of this ventilation is dependent on the location of sinking and depth achieved, which must be characterized at the project level but can be informed by models. Given these dynamics, any claim about the volume of total carbon removal facilitated by deepwater carbon storage should be accompanied by a clear claim about the associated time horizon of storage. Our uncertainty evaluation reflects the uncertainties associated with estimating carbon stored in the deep ocean for 1000+ years. Those interested storage on longer timescales may find it appropriate to adjust these uncertainties. ",
     "pathways": [
       "terrestrial-biomass-sinking",
+      "ocean-biomass-sinking-harvest",
       "biochar",
-      "ocean-biomass-sinking-no-harvest",
-      "ocean-biomass-sinking-harvest"
+      "ocean-biomass-sinking-no-harvest"
     ]
   },
   {
@@ -1372,16 +1372,16 @@
     "uncertainty_impact_max": "not characterized",
     "description": "Interventions in the surface ocean \u2014 like alkalinity enhancement or CO\u2082 removal \u2014 could affect the formation and export of particulate organic carbon (POC). This effect could be quite small if plankton communities are primarily limited by nutrient availability, rather than DIC availability.  POC export mediated by calcifying communities could also change in response to changes in biogenic calcification. Data on potential biological responses to removing CO\u2082 from the surface waters is still lacking.",
     "pathways": [
-      "ocean-alkalinity-enhancement-electrochemical",
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
       "biomass-storage",
+      "biochar",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "alkaline-waste-mineralization",
       "biomass-carbon-removal-and-storage",
-      "alkaline-waste-mineralization"
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -1403,19 +1403,19 @@
     "uncertainty_impact_max": "not characterized",
     "description": "There is some evidence that the effect of rock weathering on the pH and phosphorus levels of cultivated soils could reduce N\u2082O emissions. This is an area of active research, and we recommend this component not be included in the accounting of net carbon removal. If these emissions were to be included, we recommend that they be applied only to counteract project emissions with a transparent disclosure of GWP assumptions, but in no case that they be included in a way that increases the estimate of additional carbon removal.",
     "pathways": [
-      "ocean-alkalinity-enhancement-electrochemical",
-      "enhanced-weathering",
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
-      "ocean-biomass-sinking-no-harvest",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
       "ocean-biomass-sinking-harvest",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "ocean-biomass-sinking-no-harvest",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "enhanced-weathering",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage",
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -1437,16 +1437,16 @@
     "uncertainty_impact_max": "medium",
     "description": "The emissions associated with the system response to CDR energy demand must be considered for energy-intensive approaches. This component is less of a concern if a CDR project builds its own renewables, or if project energy demand is dispatchable in a way that supports grid deployment of renewables. If a CDR project introduces a new base load or is otherwise connected to the grid in a manner that could displace demand for renewables, any emissions associated with the energy system response must be considered. There is not yet a clear best practice for how to account for this system interaction.",
     "pathways": [
-      "ocean-alkalinity-enhancement-electrochemical",
-      "terrestrial-biomass-sinking",
-      "beccs",
-      "biomaterial-injection",
       "direct-air-capture",
-      "biochar",
+      "biomaterial-injection",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
       "biomass-storage",
+      "biochar",
+      "beccs",
+      "alkaline-waste-mineralization",
       "biomass-carbon-removal-and-storage",
-      "alkaline-waste-mineralization"
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -1472,19 +1472,19 @@
     "uncertainty_impact_max": "medium",
     "description": "Secondary mineral formation \u2014 such as the formation of clays \u2014 can counteract the alkalinity addition associated with rock weathering. It therefore must be considered if drawdown is being estimated on the basis of direct observation of mineral weathering rather than via estimation of alkalinity run-off. Secondary mineral formation depends on many factors, including on the type of primary mineral dissolving as well as the local climate and biota present. It can be characterized via soil mineralogy techniques like x-ray diffraction.",
     "pathways": [
-      "ocean-alkalinity-enhancement-electrochemical",
-      "enhanced-weathering",
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
-      "ocean-biomass-sinking-no-harvest",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
       "ocean-biomass-sinking-harvest",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "ocean-biomass-sinking-no-harvest",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "enhanced-weathering",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage",
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -1510,16 +1510,16 @@
     "uncertainty_impact_max": "very high",
     "description": "Interventions like adding alkalinity or removing CO\u2082 shift the pH and carbonate ion concentration of seawater, and could cause abiotic precipitation of calcium carbonate (CaCO\u2083) or brucite (Mg(OH)\u2082). This is important to characterize as this precipitation results in CO\u2082 outgassing. It remains to be determined what specific combination of suitable nucleation conditions and supersaturation of CaCO\u2083 is needed to cause significant precipitation. Abiotic precipitation can be minimized by controlling the dilution and dispersal on alkalinity-enhanced or DIC-depleted water.",
     "pathways": [
-      "ocean-alkalinity-enhancement-electrochemical",
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
       "biomass-storage",
+      "biochar",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "alkaline-waste-mineralization",
       "biomass-carbon-removal-and-storage",
-      "alkaline-waste-mineralization"
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -1552,7 +1552,7 @@
     "uncertainty_impact_min": "not characterized",
     "uncertainty_impact_max": "not characterized",
     "description": "Adding ammendments like minerals or biochar to soils has the potential to induce changes to soil carbon, including by affecting pH or impacting plant or microbial activity. Theoretically, these impacts could increase or decrease soil organic carbon (SOC) storage (i.e. the priming effect). There is relatively little research on these potential interactions to date, and they merit further exploration. Due to the high uncertainty of these potential effects, we recommend this component not be included in the accounting of net carbon removal. If biochar application does increase SOC storage beyond the carbon embodied in the biochar, we recommend that these changes not be used to counterbalance project-related fossil CO\u2082 emissions nor counted as additional durable carbon removal due to the impermanence of soil carbon storage.",
-    "pathways": ["enhanced-weathering", "biochar", "biomass-storage"]
+    "pathways": ["biomass-storage", "biochar", "enhanced-weathering"]
   },
   {
     "revisions": [
@@ -1593,11 +1593,11 @@
     "uncertainty_impact_max": "negligible",
     "description": "The mass of biomass material injected for geologic storage \u2014 or used as an input for another storage process \u2014 can be measured directly as a metered output from the biomass transformation system (e.g. a pyrolyzer) and as a metered input to the storage system. This quantity can also be checked for consistency against the measured mass of biomass feedstock and operational data from the biomass transformation system. The carbon content of the biomass material can be directly measured and converted to CO\u2082e using a default factor. ",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "biomass-storage",
+      "biochar",
+      "beccs",
       "biomass-carbon-removal-and-storage"
     ]
   },
@@ -1620,13 +1620,13 @@
     "uncertainty_impact_max": "low",
     "description": "Although carbonates may have complex dynamics of dissolution and reprecipitation, there is a high likelihood of at least tens to hundreds of thousands of years of durability in the absence of exposure to heat or acid. The estimated durability of carbonates is also contingent on the determination of what carbonate is produced, the planned treatment of the carbonates, and their exposure to environmental conditions that facilitate weathering (see Carbonate Weathering).",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "beccs",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage"
     ]
   },
   {
@@ -1648,13 +1648,13 @@
     "uncertainty_impact_max": "medium",
     "description": "If storage results in a functionally stable form of CO\u2082 on a short timescale \u2014 for example, via subsurface mineralization or mineralization in concrete \u2014 demonstration that the stable form has been achieved is enough to establish durability. However, if the integrity of storage requires ongoing monitoring and maintenance \u2014 for example, with the injection of supercritical CO\u2082 \u2014 an evaluation of durability claims must consider the monitoring and maintenance plan, as well as any applicable regulatory structure that assigns ongoing liability for storage integrity. One important consideration is whether or not there is a track record of sufficient administrative capacity to guarantee execution of monitoring, maintenance, and liability arrangements.",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
-      "biomaterial-injection",
       "direct-air-capture",
-      "biochar",
+      "biomaterial-injection",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
       "biomass-storage",
+      "biochar",
+      "beccs",
       "biomass-carbon-removal-and-storage"
     ]
   },
@@ -1677,16 +1677,16 @@
     "uncertainty_impact_max": "high",
     "description": "Kelp growth could have secondary effects on phytoplankton carbon uptake, including via nutrient depletion or canopy shading. This is an important factor to consider both in relation to broader ecosystem impacts and for quantifying carbon management outcomes. While only a fraction of the carbon removed by biological activity in the surface ocean will result in permanent carbon storage, we recommend a conservative stance of counting any decrease in surface ocean productivity against estimates of carbon removal achieved.",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
-      "ocean-biomass-sinking-no-harvest",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
       "ocean-biomass-sinking-harvest",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "ocean-biomass-sinking-no-harvest",
+      "beccs",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage"
     ]
   },
   {
@@ -1716,19 +1716,19 @@
     "uncertainty_impact_max": "low",
     "description": "The formation of terrestrial carbonates depends on the type of primary mineral dissolving, carbonate saturation state, pH, and other local environmental conditions. In natural systems, terrestrial carbonates can be quite durable, persisting for many thousands of years as conditions permit. In enhanced weathering deployments, these minerals could be much less durable. If a deployment creates the conditions that allow terrestrial carbonates to form and persist, for example by raising the soil pH, then these minerals are likely to dissolve after the deployment activity stops. The uncertainty around terrestrial carbonate durability is not included in the calculation of this pathway's Verification Confidence Level (VCL) because it is also captured by the Terrestrial carbonate precipitation component.",
     "pathways": [
-      "ocean-alkalinity-enhancement-electrochemical",
-      "enhanced-weathering",
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
-      "ocean-biomass-sinking-no-harvest",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
       "ocean-biomass-sinking-harvest",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "ocean-biomass-sinking-no-harvest",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "enhanced-weathering",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage",
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -1754,19 +1754,19 @@
     "uncertainty_impact_max": "low",
     "description": "The formation of solid carbonates decreases CO\u2082 drawdown relative to the aqueous reactions that result in alkalinity run-off. It therefore must be considered if drawdown is being estimated on the basis of direct observation of mineral weathering rather than via estimation of alkalinity run-off. Terrestrial carbonate precipitation depends on the type of primary mineral dissolving, carbonate saturation state, and other local environmental conditions.",
     "pathways": [
-      "ocean-alkalinity-enhancement-electrochemical",
-      "enhanced-weathering",
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "ocean-alkalinity-enhancement-mineral",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "direct-ocean-removal",
-      "ocean-biomass-sinking-no-harvest",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
       "ocean-biomass-sinking-harvest",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "ocean-biomass-sinking-no-harvest",
+      "ocean-alkalinity-enhancement-mineral",
+      "beccs",
+      "enhanced-weathering",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage",
+      "ocean-alkalinity-enhancement-electrochemical"
     ]
   },
   {
@@ -1788,13 +1788,13 @@
     "uncertainty_impact_max": "low",
     "description": "Produced carbonates may be used, for example in industrial processes, as building materials, or as soil amendments. The source of utilization may lead to stable storage (see Storage), carbonate degradation and release of CO\u2082 (see Leakage) or carbonate weathering and further storage of CO\u2082 (see Carbonate weathering).",
     "pathways": [
-      "terrestrial-biomass-sinking",
-      "beccs",
       "biomaterial-injection",
-      "biochar",
+      "terrestrial-biomass-sinking",
       "biomass-storage",
-      "biomass-carbon-removal-and-storage",
-      "alkaline-waste-mineralization"
+      "biochar",
+      "beccs",
+      "alkaline-waste-mineralization",
+      "biomass-carbon-removal-and-storage"
     ]
   }
 ]
