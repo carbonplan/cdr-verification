@@ -1,0 +1,48 @@
+{
+  "title": "CDR Verification Framework",
+  "description": "Interactive tool for mapping key uncertainties in different CDR pathways",
+  "creators": [
+    {
+      "name": "Freya Chay",
+      "affiliation": "CarbonPlan",
+      "orcid": "0000-0002-5397-017X"
+    },
+    {
+      "name": "Zeke Hausfather",
+      "affiliation": "Stripe Climate",
+      "orcid": "0000-0002-2926-0581"
+    },
+    {
+      "name": "Kata Martin",
+      "affiliation": "CarbonPlan",
+      "orcid": "0000-0002-4759-0875"
+    },
+    {
+      "name": "Joanna Klitzke",
+      "affiliation": "Stripe Climate",
+      "orcid": ""
+    },
+    {
+      "name": "Raphael Hagen",
+      "affiliation": "CarbonPlan",
+      "orcid": "0000-0003-1994-1153"
+    },
+    {
+      "name": "Jeremy Freeman",
+      "affiliation": "CarbonPlan",
+      "orcid": "0000-0001-7077-7972"
+    },
+    {
+      "name": "Danny Cullenward",
+      "affiliation": "CarbonPlan",
+      "orcid": "0000-0002-6803-9572"
+    }
+  ],
+  "upload_type": "software",
+  "keywords": [
+    "CDR",
+    "MRV",
+    "Carbon Dioxide Removal",
+    "Measurement, reporting and verification"
+  ]
+}

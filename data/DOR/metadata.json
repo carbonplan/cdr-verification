@@ -1,0 +1,56 @@
+{
+    "contributors": [
+        {
+            "type": "CDR Company",
+            "name": "Captura",
+            "affiliation": "",
+            "notes": "Comments came specifically from Sophie Chu. ",
+            "version": [
+                "1.0"
+            ]
+        },
+        {
+            "type": "CDR Company",
+            "name": "SeaO2",
+            "affiliation": "",
+            "notes": "",
+            "version": [
+                "1.0"
+            ]
+        },
+        {
+            "type": "MRV Company",
+            "name": "Sophie Gill ",
+            "affiliation": "Isometric",
+            "notes": "(New affiliation)",
+            "version": [
+                "1.0"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Alex Gagnon",
+            "affiliation": "University of Washington / Banyu Carbon",
+            "notes": "",
+            "version": [
+                "1.0"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Matt Long",
+            "affiliation": "NCAR / [C]worthy",
+            "notes": "(New affiliation)",
+            "version": [
+                "1.0"
+            ]
+        }
+    ],
+    "revisions": [
+        {
+            "version": "1.0",
+            "date": "04-10-2023",
+            "note": "First release."
+        }
+    ]
+}

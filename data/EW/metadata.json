@@ -1,0 +1,111 @@
+{
+    "contributors": [
+        {
+            "type": "CDR Company",
+            "name": "Eion",
+            "affiliation": "",
+            "notes": "",
+            "version": [
+                "1.0",
+                "1.1"
+            ]
+        },
+        {
+            "type": "CDR Company",
+            "name": "Travertine",
+            "affiliation": "",
+            "notes": "Comments came specifically from Laura Lammers. ",
+            "version": [
+                "1.1"
+            ]
+        },
+        {
+            "type": "CDR Company",
+            "name": "UNDO (prev. Future Forest)",
+            "affiliation": "",
+            "notes": "",
+            "version": [
+                "1.0"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Becca Neumann",
+            "affiliation": "University of Washington",
+            "notes": "",
+            "version": [
+                "1.1"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Chris Reinhard",
+            "affiliation": "Georgia Tech / Lithos",
+            "notes": "",
+            "version": [
+                "1.1",
+                "1.2"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Jens Hartmann",
+            "affiliation": "Institut f\u00fcr Geologie",
+            "notes": "",
+            "version": [
+                "1.0"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Kate Maher",
+            "affiliation": "Stanford",
+            "notes": "",
+            "version": [
+                "1.0",
+                "1.1"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Noah Planavsky",
+            "affiliation": "Yale / Lithos",
+            "notes": "",
+            "version": [
+                "1.1",
+                "1.2"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Eric Slessarev",
+            "affiliation": "Yale",
+            "notes": "",
+            "version": [
+                "1.2"
+            ]
+        }
+    ],
+    "revisions": [
+        {
+            "version": "1.0",
+            "date": "09-19-2022",
+            "note": "First release."
+        },
+        {
+            "version": "1.1",
+            "date": "12-19-2022",
+            "note": "Second release. Incorporated feedback as detailed in this [blog post](https://carbonplan.org/blog/enhanced-weathering-update)."
+        },
+        {
+            "version": "1.2",
+            "date": "10-11-2023",
+            "note": "Third release. Edited agricultural lime use component as detailed in this [blog post](https://carbonplan.org/blog/vcl-update-v2023.10.0). Included component in equation for net carbon removal and re-numbered components accordingly."
+        },
+        {
+            "version": "1.3",
+            "date": "12-05-2023",
+            "note": "Third release. Made a minor update to the terrestrial carbonate durability component to clarify carbonate durability dynamics."
+        }
+    ]
+}
