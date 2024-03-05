@@ -1,29 +1,25 @@
 {
-    "contributors": [
-        {
-            "type": "CDR Company",
-            "name": "Kodama",
-            "affiliation": "",
-            "notes": "Comments came specifically from Jimmy Voorhis.",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Corrine Scown",
-            "affiliation": "LBNL",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        }
-    ],
-    "revisions": [
-        {
-            "version": "1.0",
-            "date": "09-19-2022",
-            "note": "First release."
-        }
-    ]
+  "contributors": [
+    {
+      "type": "CDR Company",
+      "name": "Kodama",
+      "affiliation": "",
+      "notes": "Comments came specifically from Jimmy Voorhis.",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Corrine Scown",
+      "affiliation": "LBNL",
+      "notes": "",
+      "version": ["1.0"]
+    }
+  ],
+  "revisions": [
+    {
+      "version": "1.0",
+      "date": "09-19-2022",
+      "note": "First release."
+    }
+  ]
 }

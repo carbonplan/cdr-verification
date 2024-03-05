@@ -1,84 +1,70 @@
 {
-    "contributors": [
-        {
-            "type": "CDR Company",
-            "name": "Carba",
-            "affiliation": "",
-            "notes": "Comments came specifically from Andrew Jones. ",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "CDR Company",
-            "name": "Climate Robotics",
-            "affiliation": "",
-            "notes": "Comments came specifically from Jason Aramburu. ",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "CDR Company",
-            "name": "Takachar",
-            "affiliation": "",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Becca Neumann",
-            "affiliation": "University of Washington",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Santanu Bakshi",
-            "affiliation": "Iowa State University",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Ecosystem Actor",
-            "name": "Erica Bellmont",
-            "affiliation": "Carbon Direct",
-            "notes": "",
-            "version": [
-                "1.2"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Corrine Scown",
-            "affiliation": "LBNL",
-            "notes": "",
-            "version": [
-                "1.2"
-            ]
-        }
-    ],
-    "revisions": [
-        {
-            "version": "1.0",
-            "date": "04-10-2023",
-            "note": "First release."
-        },
-        {
-            "version": "1.1",
-            "date": "10-11-2023",
-            "note": "Second release. Edited agricultural lime use component as detailed in this [blog post](https://carbonplan.org/blog/vcl-aglime-update). Included component in equation for net carbon removal and re-numbered components accordingly."
-        },
-        {
-            "version": "1.2",
-            "date": "03-TK-2024",
-            "note": "Third release. Edited the upstream components for consistency with other biomass-based CDR pathways. Read more about this update [here](TK)."
-        }
-    ]
+  "contributors": [
+    {
+      "type": "CDR Company",
+      "name": "Carba",
+      "affiliation": "",
+      "notes": "Comments came specifically from Andrew Jones. ",
+      "version": ["1.0"]
+    },
+    {
+      "type": "CDR Company",
+      "name": "Climate Robotics",
+      "affiliation": "",
+      "notes": "Comments came specifically from Jason Aramburu. ",
+      "version": ["1.0"]
+    },
+    {
+      "type": "CDR Company",
+      "name": "Takachar",
+      "affiliation": "",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Becca Neumann",
+      "affiliation": "University of Washington",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Santanu Bakshi",
+      "affiliation": "Iowa State University",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Ecosystem Actor",
+      "name": "Erica Bellmont",
+      "affiliation": "Carbon Direct",
+      "notes": "",
+      "version": ["1.2"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Corrine Scown",
+      "affiliation": "LBNL",
+      "notes": "",
+      "version": ["1.2"]
+    }
+  ],
+  "revisions": [
+    {
+      "version": "1.0",
+      "date": "04-10-2023",
+      "note": "First release."
+    },
+    {
+      "version": "1.1",
+      "date": "10-11-2023",
+      "note": "Second release. Edited agricultural lime use component as detailed in this [blog post](https://carbonplan.org/blog/vcl-aglime-update). Included component in equation for net carbon removal and re-numbered components accordingly."
+    },
+    {
+      "version": "1.2",
+      "date": "03-TK-2024",
+      "note": "Third release. Edited the upstream components for consistency with other biomass-based CDR pathways. Read more about this update [here](TK)."
+    }
+  ]
 }

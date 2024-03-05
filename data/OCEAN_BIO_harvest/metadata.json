@@ -1,61 +1,51 @@
 {
-    "contributors": [
-        {
-            "type": "CDR Company",
-            "name": "Running Tide",
-            "affiliation": "",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Ecosystem Actor",
-            "name": "Jamie Collins",
-            "affiliation": "Environmental Defense Fund",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "David Ho",
-            "affiliation": "University of Hawai\u02bbi at M\u0101noa",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Matt Long",
-            "affiliation": "NCAR",
-            "notes": "(Old affilitation)",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Sophie Gill",
-            "affiliation": "University of Oxford",
-            "notes": "(Old affiliation) ",
-            "version": [
-                "1.0"
-            ]
-        }
-    ],
-    "revisions": [
-        {
-            "version": "1.0",
-            "date": "09-19-2022",
-            "note": "First release."
-        },
-        {
-            "version": "1.1",
-            "date": "04-10-2023",
-            "note": "Updated pathway to include an additional drawdown component ('Outgassing'). Updated the VCL to exclude the durability component ('Deepwater recirculation') as the uncertainty is covered by the 'Outgassing' component. This did not change the overall VCL. Further details on this update are available in this [blog post](https://carbonplan.org/blog/vcl-update-v2023.04.0)"
-        }
-    ]
+  "contributors": [
+    {
+      "type": "CDR Company",
+      "name": "Running Tide",
+      "affiliation": "",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Ecosystem Actor",
+      "name": "Jamie Collins",
+      "affiliation": "Environmental Defense Fund",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "David Ho",
+      "affiliation": "University of Hawai\u02bbi at M\u0101noa",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Matt Long",
+      "affiliation": "NCAR",
+      "notes": "(Old affilitation)",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Sophie Gill",
+      "affiliation": "University of Oxford",
+      "notes": "(Old affiliation) ",
+      "version": ["1.0"]
+    }
+  ],
+  "revisions": [
+    {
+      "version": "1.0",
+      "date": "09-19-2022",
+      "note": "First release."
+    },
+    {
+      "version": "1.1",
+      "date": "04-10-2023",
+      "note": "Updated pathway to include an additional drawdown component ('Outgassing'). Updated the VCL to exclude the durability component ('Deepwater recirculation') as the uncertainty is covered by the 'Outgassing' component. This did not change the overall VCL. Further details on this update are available in this [blog post](https://carbonplan.org/blog/vcl-update-v2023.04.0)"
+    }
+  ]
 }
