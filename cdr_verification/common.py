@@ -89,9 +89,12 @@ sheet_id_dict = {
 
 # Test Ids and Names
 
-test_google_doc_id = '1MFM3hs1lB50YkgbPJYBMcvYMRJ6v8VhOOKCUDwsfjiw'
-test_gsheet_doc_name = 'PYTEST_NEW_CDR_MRV'
+# test_google_doc_id = '1MFM3hs1lB50YkgbPJYBMcvYMRJ6v8VhOOKCUDwsfjiw'
+# test_gsheet_doc_name = 'PYTEST_NEW_CDR_MRV'
 
+
+test_google_doc_id = '1k8O6TbT0D_MyYnXhaKqRNDv7QNL5ojLvIaGFHCgROzY'
+test_gsheet_doc_name = 'pytest_NEW_CDR_MRV_Pathway_Uncertainties'
 # ---------------------------------------------------------------------------------------------
 #                                 Common Functions
 # ---------------------------------------------------------------------------------------------
