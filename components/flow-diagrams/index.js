@@ -1,5 +1,6 @@
 import { default as ALK_WASTE_MIN } from './ALK_WASTE_MIN'
 import { default as BiCRS } from './BiCRS'
+import { default as BIO_INJECTION } from './BIO_INJECTION'
 import { default as BIOCHAR } from './BIOCHAR'
 import { default as DAC } from './DAC'
 import { default as DOR } from './DOR'
@@ -14,6 +15,7 @@ export default {
   'alkaline-waste-mineralization': ALK_WASTE_MIN,
   'biomass-carbon-removal-and-storage': BiCRS,
   biochar: BIOCHAR,
+  'biomaterial-injection': BIO_INJECTION,
   'direct-air-capture': DAC,
   'direct-ocean-removal': DOR,
   'enhanced-weathering': EW,
