@@ -2,8 +2,26 @@
     "contributors": [
         {
             "type": "Ecosystem Actor",
-            "name": "Erica Bellmont",
+            "name": "Erica Belmont",
             "affiliation": "Carbon Direct",
+            "notes": "",
+            "version": [
+                "1.0"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Anne Ware",
+            "affiliation": "LBNL",
+            "notes": "",
+            "version": [
+                "1.0"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Yimin Zhang",
+            "affiliation": "LBNL",
             "notes": "",
             "version": [
                 "1.0"
@@ -13,6 +31,24 @@
             "type": "Scientific Expert",
             "name": "Corrine Scown",
             "affiliation": "LBNL",
+            "notes": "",
+            "version": [
+                "1.0"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Sarah Nordahl",
+            "affiliation": "LBNL",
+            "notes": "",
+            "version": [
+                "1.0"
+            ]
+        },
+        {
+            "type": "Ecosystem Actor",
+            "name": "Matt Gammans",
+            "affiliation": "Isometric",
             "notes": "",
             "version": [
                 "1.0"

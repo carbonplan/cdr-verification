@@ -47,8 +47,17 @@
         },
         {
             "type": "Ecosystem Actor",
-            "name": "Erica Bellmont",
+            "name": "Erica Belmont",
             "affiliation": "Carbon Direct",
+            "notes": "",
+            "version": [
+                "1.2"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Anne Ware",
+            "affiliation": "LBNL",
             "notes": "",
             "version": [
                 "1.2"
@@ -58,6 +67,24 @@
             "type": "Scientific Expert",
             "name": "Corrine Scown",
             "affiliation": "LBNL",
+            "notes": "",
+            "version": [
+                "1.2"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Sarah Nordahl",
+            "affiliation": "LBNL",
+            "notes": "",
+            "version": [
+                "1.2"
+            ]
+        },
+        {
+            "type": "Ecosystem Actor",
+            "name": "Matt Gammans",
+            "affiliation": "Isometric",
             "notes": "",
             "version": [
                 "1.2"
@@ -78,7 +105,7 @@
         {
             "version": "1.2",
             "date": "03-TK-2024",
-            "note": "Third release. Edited the upstream components for consistency with other biomass-based CDR pathways. Read more about this update [here](TK)."
+            "note": "Third release. Edited consistency with other biomass-based CDR pathways. This included adding components focused on non-CO2 biomass emissions and the production of energy co-products. These changes did not affect the VCL classification. For more details, read this [blog post](TK) describing the scope of the updates."
         }
     ]
 }

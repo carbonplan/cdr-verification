@@ -1,10 +1,19 @@
 {
     "contributors": [
         {
-            "type": "CDR Company",
-            "name": "Kodama",
-            "affiliation": "",
-            "notes": "Comments came specifically from Jimmy Voorhis.",
+            "type": "Scientific Expert",
+            "name": "Anne Ware",
+            "affiliation": "LBNL",
+            "notes": "",
+            "version": [
+                "1.0"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Yimin Zhang",
+            "affiliation": "LBNL",
+            "notes": "",
             "version": [
                 "1.0"
             ]
@@ -14,6 +23,51 @@
             "name": "Corrine Scown",
             "affiliation": "LBNL",
             "notes": "",
+            "version": [
+                "1.0"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Sarah Nordahl",
+            "affiliation": "LBNL",
+            "notes": "",
+            "version": [
+                "1.0"
+            ]
+        },
+        {
+            "type": "Ecosystem Actor",
+            "name": "Matt Gammans",
+            "affiliation": "Isometric",
+            "notes": "",
+            "version": [
+                "1.0"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Sin\u00e9ad Crotty",
+            "affiliation": "Carbon Containment Lab",
+            "notes": "",
+            "version": [
+                "1.0"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Florentino de la Cruz",
+            "affiliation": "University of North Florida",
+            "notes": "",
+            "version": [
+                "1.0"
+            ]
+        },
+        {
+            "type": "CDR Company",
+            "name": "Kodama",
+            "affiliation": "",
+            "notes": "Comments came specifically from Jimmy Voorhis.",
             "version": [
                 "1.0"
             ]

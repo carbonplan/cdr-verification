@@ -31,7 +31,7 @@
             "type": "Scientific Expert",
             "name": "Matt Long",
             "affiliation": "NCAR",
-            "notes": "(Old affilitation)",
+            "notes": "(Old affiliation)",
             "version": [
                 "1.0"
             ]
@@ -56,6 +56,11 @@
             "version": "1.1",
             "date": "04-10-2023",
             "note": "Updated pathway to include an additional drawdown component ('Outgassing'). Updated the VCL to exclude the durability component ('Deepwater recirculation') as the uncertainty is covered by the 'Outgassing' component. This did not change the overall VCL. Further details on this update are available in this [blog post](https://carbonplan.org/blog/vcl-update-v2023.04.0)"
+        },
+        {
+            "version": "1.2",
+            "date": "03-TK-2024",
+            "note": "Updated pathway to differentiate between dissolved-phase and solid-phase storage of biomass carbon in the deep ocean. This did not change the overall VCL."
         }
     ]
 }

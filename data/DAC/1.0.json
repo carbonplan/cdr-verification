@@ -12,22 +12,22 @@
         {
             "number": "1",
             "category": "drawdown",
-            "component_id": "inj-carbon",
+            "component_id": "co2-stored",
             "name": "CO\u2082 Storage",
-            "quantification_target": "mass of captured and stored CO\u2082",
+            "quantification_target": "mass of stored CO\u2082",
             "uncertainty_type": [
                 "execution"
             ],
             "responsibility": "project",
             "uncertainty_impact_min": "negligible",
             "uncertainty_impact_max": "negligible",
-            "description": "The mass of CO\u2082 injected for geologic storage, or used as an input for another storage process (e.g. mineralization in concrete), can be measured directly as a metered output from the DAC system and a metered input to the storage system. It can also be checked for consistency against operational data from the CO\u2082 capture system. We assume here that injected CO\u2082 is not used for enhanced oil recovery (EOR). In the case of EOR, any GHG emissions associated with enhanced oil recovery and fuel use would have to be accounted for, as well as additionality questions about the appropriate baseline against which to credit the project.",
+            "description": "The mass of CO\u2082 injected for geologic storage, or used as an input for another storage process (e.g. mineralization in concrete), can be measured directly as a metered output from the DAC system and a metered input to the storage system. It can also be checked for consistency against operational data from the CO\u2082 capture system. Any emissions associated with transporting and injecting CO2 must be included in the project\u2019s lifecycle assessment (see Materials and Energy). We assume here that injected CO\u2082 is not used for enhanced oil recovery (EOR). In the case of EOR, any GHG emissions associated with enhanced oil recovery and fuel use would have to be accounted for, as well as additionality questions about the appropriate baseline against which to credit the project.",
             "notes": ""
         },
         {
             "number": "2",
             "category": "drawdown",
-            "component_id": "store-leak",
+            "component_id": "store-leak-co2",
             "name": "Leakage",
             "quantification_target": "mass of storage system leakage",
             "uncertainty_type": [
@@ -51,7 +51,7 @@
             "responsibility": "project",
             "uncertainty_impact_min": "low",
             "uncertainty_impact_max": "low",
-            "description": "The embodied emissions of any materials consumed during operation, like mineral feedstocks or chemical solvents, can be estimated based on a cradle-to-grave lifecycle assessment (LCA) of the material input. The embodied emissions of non-consumed project equipment and infrastructure must also be considered, amortized over the expected lifetime of operation. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
+            "description": "The embodied emissions of any materials consumed during operation, like mineral feedstocks or chemical solvents, can be estimated based on a cradle-to-grave lifecycle assessment (LCA) of the material input. Emissions associated with any built infrastructure, including monitoring and maintenance equipment, should include both construction emissions and material embodied emissions. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
             "notes": ""
         },
         {
@@ -66,7 +66,7 @@
             "responsibility": "project",
             "uncertainty_impact_min": "low",
             "uncertainty_impact_max": "low",
-            "description": "The emissions associated with energy use for the process should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project.",
+            "description": "The emissions associated with energy use for the process should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project. This should include the energy use associated with transporting and storing CO2, as well as energy use associated with monitoring and maintenance activities.",
             "notes": ""
         },
         {

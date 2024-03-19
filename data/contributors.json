@@ -109,12 +109,6 @@
         "initial": "1.0",
         "pathways": [
             {
-                "id": "biomass-carbon-removal-and-storage",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
                 "id": "biomaterial-injection",
                 "version": [
                     "1.0"
@@ -201,12 +195,6 @@
         "affiliation": "",
         "initial": "1.0",
         "pathways": [
-            {
-                "id": "biomass-carbon-removal-and-storage",
-                "version": [
-                    "1.0"
-                ]
-            },
             {
                 "id": "biomaterial-injection",
                 "version": [
@@ -479,12 +467,6 @@
         "initial": "1.0",
         "pathways": [
             {
-                "id": "biomass-carbon-removal-and-storage",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
                 "id": "biomaterial-injection",
                 "version": [
                     "1.0"
@@ -546,7 +528,7 @@
         "name": "Matt Long",
         "affiliation": "NCAR",
         "initial": "1.0",
-        "notes": "(Old affilitation)",
+        "notes": "(Old affiliation)",
         "pathways": [
             {
                 "id": "ocean-alkalinity-enhancement-electrochemical",
@@ -625,12 +607,6 @@
         "pathways": [
             {
                 "id": "direct-air-capture",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "biomass-carbon-removal-and-storage",
                 "version": [
                     "1.0"
                 ]
@@ -719,52 +695,8 @@
         ]
     },
     {
-        "type": "CDR Company",
-        "name": "Vaulted",
-        "affiliation": "",
-        "initial": "",
-        "notes": "TK",
-        "pathways": [
-            {
-                "id": "biomaterial-injection",
-                "version": [
-                    "2.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "CDR Company",
-        "name": "Kodama",
-        "affiliation": "",
-        "initial": "",
-        "notes": "Comments came specifically from Jimmy Voorhis.",
-        "pathways": [
-            {
-                "id": "biomass-storage",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "CDR Company",
-        "name": "Rewind",
-        "affiliation": "",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "terrestrial-biomass-sinking",
-                "version": [
-                    "1.2"
-                ]
-            }
-        ]
-    },
-    {
         "type": "Ecosystem Actor",
-        "name": "Erica Bellmont",
+        "name": "Erica Belmont",
         "affiliation": "Carbon Direct",
         "initial": "",
         "pathways": [
@@ -772,6 +704,70 @@
                 "id": "biochar",
                 "version": [
                     "1.2"
+                ]
+            },
+            {
+                "id": "beccs",
+                "version": [
+                    "1.0"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "Scientific Expert",
+        "name": "Anne Ware",
+        "affiliation": "LBNL",
+        "initial": "",
+        "pathways": [
+            {
+                "id": "biomaterial-injection",
+                "version": [
+                    "2.0"
+                ]
+            },
+            {
+                "id": "terrestrial-biomass-sinking",
+                "version": [
+                    "1.2"
+                ]
+            },
+            {
+                "id": "biochar",
+                "version": [
+                    "1.2"
+                ]
+            },
+            {
+                "id": "biomass-storage",
+                "version": [
+                    "1.0"
+                ]
+            },
+            {
+                "id": "beccs",
+                "version": [
+                    "1.0"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "Scientific Expert",
+        "name": "Yimin Zhang",
+        "affiliation": "LBNL",
+        "initial": "",
+        "pathways": [
+            {
+                "id": "biomaterial-injection",
+                "version": [
+                    "2.0"
+                ]
+            },
+            {
+                "id": "biomass-storage",
+                "version": [
+                    "1.0"
                 ]
             },
             {
@@ -816,6 +812,168 @@
                 "id": "beccs",
                 "version": [
                     "1.0"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "Scientific Expert",
+        "name": "Sarah Nordahl",
+        "affiliation": "LBNL",
+        "initial": "",
+        "pathways": [
+            {
+                "id": "biomaterial-injection",
+                "version": [
+                    "2.0"
+                ]
+            },
+            {
+                "id": "terrestrial-biomass-sinking",
+                "version": [
+                    "1.2"
+                ]
+            },
+            {
+                "id": "biochar",
+                "version": [
+                    "1.2"
+                ]
+            },
+            {
+                "id": "biomass-storage",
+                "version": [
+                    "1.0"
+                ]
+            },
+            {
+                "id": "beccs",
+                "version": [
+                    "1.0"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "Ecosystem Actor",
+        "name": "Matt Gammans",
+        "affiliation": "Isometric",
+        "initial": "",
+        "pathways": [
+            {
+                "id": "biomaterial-injection",
+                "version": [
+                    "2.0"
+                ]
+            },
+            {
+                "id": "terrestrial-biomass-sinking",
+                "version": [
+                    "1.2"
+                ]
+            },
+            {
+                "id": "biochar",
+                "version": [
+                    "1.2"
+                ]
+            },
+            {
+                "id": "biomass-storage",
+                "version": [
+                    "1.0"
+                ]
+            },
+            {
+                "id": "beccs",
+                "version": [
+                    "1.0"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "Scientific Expert",
+        "name": "Sin\u00e9ad Crotty",
+        "affiliation": "Carbon Containment Lab",
+        "initial": "",
+        "pathways": [
+            {
+                "id": "biomass-storage",
+                "version": [
+                    "1.0"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "Scientific Expert",
+        "name": "Florentino de la Cruz",
+        "affiliation": "University of North Florida",
+        "initial": "",
+        "pathways": [
+            {
+                "id": "biomass-storage",
+                "version": [
+                    "1.0"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "Scientific Expert",
+        "name": "Morgan Raven",
+        "affiliation": "UC Santa Barbara",
+        "initial": "",
+        "pathways": [
+            {
+                "id": "terrestrial-biomass-sinking",
+                "version": [
+                    "1.2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "CDR Company",
+        "name": "Vaulted",
+        "affiliation": "",
+        "initial": "",
+        "notes": "Comments came specifically from Bryan Epps. ",
+        "pathways": [
+            {
+                "id": "biomaterial-injection",
+                "version": [
+                    "2.0"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "CDR Company",
+        "name": "Kodama",
+        "affiliation": "",
+        "initial": "",
+        "notes": "Comments came specifically from Jimmy Voorhis.",
+        "pathways": [
+            {
+                "id": "biomass-storage",
+                "version": [
+                    "1.0"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "CDR Company",
+        "name": "Rewind",
+        "affiliation": "",
+        "initial": "",
+        "pathways": [
+            {
+                "id": "terrestrial-biomass-sinking",
+                "version": [
+                    "1.2"
                 ]
             }
         ]
