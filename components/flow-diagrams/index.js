@@ -1,4 +1,5 @@
 import { default as ALK_WASTE_MIN } from './ALK_WASTE_MIN'
+import { default as BECCS } from './BECCS'
 import { default as BiCRS } from './BiCRS'
 import { default as BIO_INJECTION } from './BIO_INJECTION'
 import { default as BIOCHAR } from './BIOCHAR'
@@ -13,6 +14,7 @@ import { default as TER_BIO } from './TER_BIO'
 
 export default {
   'alkaline-waste-mineralization': ALK_WASTE_MIN,
+  beccs: BECCS,
   'biomass-carbon-removal-and-storage': BiCRS,
   biochar: BIOCHAR,
   'biomaterial-injection': BIO_INJECTION,
