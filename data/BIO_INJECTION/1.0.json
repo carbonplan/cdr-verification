@@ -1,5 +1,5 @@
 {
-  "pathway_id": "biomass-carbon-removal-and-storage",
+  "pathway_id": "biomaterial-injection",
   "pathway_name": "Biomass Carbon Removal and Storage",
   "pathway_description": "Biomass with carbon removal and storage (BiCRS) uses photosynthesis to remove CO\u2082 from the atmosphere, and transforms the resulting biomass (e.g. via pyrolysis) and its environment (e.g. via geologic injection) to achieve long-term storage. This pathway is VCL 3-5, meaning that current quantification capacity can establish permanent carbon removal, but that for certain approaches, significant uncertainties remain.",
   "VCL": ["3", "5"],
