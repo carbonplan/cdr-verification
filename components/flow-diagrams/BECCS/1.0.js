@@ -8,60 +8,60 @@ const Flow = () => {
       <Rectangle
         id='mat-co2'
         width={4}
-        start={[6, 2]}
+        start={[3, 2]}
         height={1}
         borderStyle='none'
       />
       <Rectangle
         id='energy-co2'
         width={4}
-        start={[9, 2]}
+        start={[6, 2]}
         height={1}
         borderStyle='none'
       />
       <Rectangle
         id='non-co2-emissions'
         width={6}
-        start={[13, 2]}
+        start={[10, 2]}
         height={2}
         borderStyle='none'
       />
 
+      <Arrow start={[5, 3]} length={2} down />
       <Arrow start={[8, 3]} length={2} down />
-      <Arrow start={[11, 3]} length={2} down />
-      <Arrow start={[16, 4]} length={1} up />
+      <Arrow start={[13, 4]} length={1} up />
       <Rectangle
-        start={[6, 6]}
+        start={[3, 6]}
         width={30}
         height={8}
         label='Project activity'
         secondary
       />
-      <Rectangle start={[8, 8]} id='bio-feedstock' />
-      <Arrow start={[15, 10]} length={2} right />
-      <Rectangle start={[18, 8]} id='bio-transformed' />
-      <Arrow start={[25, 10]} length={2} right />
-      <Rectangle id='co2-stored' start={[28, 8]} />
+      <Rectangle start={[5, 8]} id='bio-feedstock' />
+      <Arrow start={[12, 10]} length={2} right />
+      <Rectangle start={[15, 8]} id='bio-transformed' />
+      <Arrow start={[22, 10]} length={2} right />
+      <Rectangle id='co2-stored' start={[25, 8]} />
 
-      <Arrow start={[11, 13]} length={2} down />
-      <Rectangle id='baseline-carbon-stored' start={[8, 16]} />
-      <Rectangle id='feedstock-use-counterfactual' start={[8, 21]} />
-      <Rectangle id='market-effects' start={[8, 26]} />
-      <Rectangle id='avoided-non-co2-emissions' start={[8, 31]} />
+      <Arrow start={[8, 13]} length={2} down />
+      <Rectangle id='baseline-carbon-stored' start={[5, 16]} />
+      <Rectangle id='feedstock-use-counterfactual' start={[5, 21]} />
+      <Rectangle id='market-effects' start={[5, 26]} />
+      <Rectangle id='avoided-non-co2-emissions' start={[5, 31]} />
 
-      <Arrow start={[21, 13]} length={2} down />
-      <Rectangle id='energy-co-products' start={[18, 16]} />
+      <Arrow start={[18, 13]} length={2} down />
+      <Rectangle id='energy-co-products' start={[15, 16]} />
 
-      <Arrow start={[31, 13]} length={2} up />
-      <Rectangle id='store-maint' start={[28, 16]} />
+      <Arrow start={[28, 13]} length={2} up />
+      <Rectangle id='store-maint' start={[25, 16]} />
 
       <Rectangle
         id='store-leak-co2'
-        start={[28, 3]}
+        start={[25, 3]}
         height={1}
         borderStyle='none'
       />
-      <Arrow start={[31, 5]} length={2} up />
+      <Arrow start={[28, 5]} length={2} up />
     </Grid>
   )
 }
