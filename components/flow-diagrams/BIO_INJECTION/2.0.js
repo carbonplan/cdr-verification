@@ -19,38 +19,47 @@ const Flow = () => {
         height={1}
         borderStyle='none'
       />
-
-      <Arrow start={[5, 3]} length={1} down />
-      <Arrow start={[8, 3]} length={1} down />
       <Rectangle
-        start={[3, 5]}
+        id='non-co2-emissions'
+        width={6}
+        start={[10, 2]}
+        height={2}
+        borderStyle='none'
+      />
+
+      <Arrow start={[5, 3]} length={2} down />
+      <Arrow start={[8, 3]} length={2} down />
+      <Arrow start={[13, 4]} length={1} up />
+
+      <Rectangle
+        start={[3, 6]}
         width={30}
         height={8}
         label='Project activity'
         secondary
       />
-      <Rectangle start={[5, 7]} id='bio-feedstock' />
-      <Arrow start={[12, 9]} length={2} right />
-      <Rectangle start={[15, 7]} id='bio-transformed' />
-      <Arrow start={[22, 9]} length={2} right />
-      <Rectangle id='bio-injection' start={[25, 7]} />
+      <Rectangle start={[5, 8]} id='bio-feedstock' />
+      <Arrow start={[12, 10]} length={2} right />
+      <Rectangle start={[15, 8]} id='bio-transformed' />
+      <Arrow start={[22, 10]} length={2} right />
+      <Rectangle id='bio-injection' start={[25, 8]} />
 
-      <Arrow start={[8, 12]} length={2} down />
-      <Rectangle id='baseline-carbon-stored' start={[5, 15]} />
-      <Rectangle id='feedstock-use-counterfactual' start={[5, 20]} />
-      <Rectangle id='market-effects' start={[5, 25]} />
-      <Rectangle id='avoided-non-co2-emissions' start={[5, 30]} />
+      <Arrow start={[8, 13]} length={2} down />
+      <Rectangle id='baseline-carbon-stored' start={[5, 16]} />
+      <Rectangle id='feedstock-use-counterfactual' start={[5, 21]} />
+      <Rectangle id='market-effects' start={[5, 26]} />
+      <Rectangle id='avoided-non-co2-emissions' start={[5, 31]} />
 
-      <Arrow start={[28, 12]} length={2} up />
-      <Rectangle id='store-maint' start={[25, 15]} />
+      <Arrow start={[28, 13]} length={2} up />
+      <Rectangle id='store-maint' start={[25, 16]} />
 
       <Rectangle
         id='store-leak-bioinject'
-        start={[25, 2]}
+        start={[25, 3]}
         height={1}
         borderStyle='none'
       />
-      <Arrow start={[28, 4]} length={2} up />
+      <Arrow start={[28, 5]} length={2} up />
     </Grid>
   )
 }
