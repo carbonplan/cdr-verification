@@ -36,7 +36,7 @@
       "version": ["1.0"]
     },
     {
-      "type": "Ecosystem Actor",
+      "type": "MRV Company",
       "name": "Matt Gammans",
       "affiliation": "Isometric",
       "notes": "",
@@ -47,7 +47,7 @@
     {
       "version": "1.0",
       "date": "09-19-2022",
-      "note": "First release."
+      "note": "First release as part of a [round of updates](TK) to biomass-based pathways."
     }
   ]
 }

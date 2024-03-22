@@ -146,7 +146,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "low",
-      "description": "The emissions associated with energy use for the process should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project. This should include the energy use associated with transporting and spreading mineral , as well as energy use associated with monitoring activities.",
+      "description": "The emissions associated with energy use for the process should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project. This should include the energy use associated with transporting and spreading mineral, combustion emissions associated with fuel use during the project, and energy use associated with monitoring activities.",
       "notes": ""
     },
     {
@@ -159,7 +159,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "not characterized",
       "uncertainty_impact_max": "not characterized",
-      "description": "Applied minerals may contain trace amounts of phosphorus and potassium, which could potentially reduce fertilizer requirements compared to conventional liming approaches. Application of alkaline silicates could also improve plant nitrogen uptake. Due to the potentially difficult nature of the counterfactual scenarios involved, we recommend this component not be included in the accounting of net carbon removal.",
+      "description": "Applied minerals may contain trace amounts of phosphorus and potassium, which could potentially reduce fertilizer requirements compared to conventional liming approaches. Application of alkaline silicates could also improve plant nitrogen uptake. Due to the potentially difficult nature of the counterfactual scenarios involved, quantifying these impacts may be challenging. If they are quantified, we recommend any associated avoided emissions be understood as a co-benefit and excluded from the calculation of net carbon removal.",
       "notes": ""
     },
     {
@@ -172,7 +172,7 @@
       "responsibility": "system",
       "uncertainty_impact_min": "not characterized",
       "uncertainty_impact_max": "not characterized",
-      "description": "There is some evidence that the effect of rock weathering on the pH and phosphorus levels of cultivated soils could reduce N\u2082O emissions. This is an area of active research, and we recommend this component not be included in the accounting of net carbon removal. If these emissions were to be included, we recommend that they be applied only to counteract project emissions with a transparent disclosure of GWP assumptions, but in no case that they be included in a way that increases the estimate of additional carbon removal.",
+      "description": "There is some evidence that the effect of rock weathering on the pH and phosphorus levels of cultivated soils could reduce N\u2082O emissions, but this is an area of active research. We recommend this component be understood as a potential co-benefit rather, but excluded from the accounting of net carbon removal.",
       "notes": ""
     },
     {

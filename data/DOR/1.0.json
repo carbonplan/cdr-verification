@@ -120,7 +120,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "low",
-      "description": "The emissions associated with energy use for project activities should be estimated using an assessment of lifecycle emissions for the specific electricity or other energy sources required by the project. This should include the energy use associated with transporting biomass feedstock and captured CO2, as well as energy use associated with monitoring and maintenance.",
+      "description": "The emissions associated with energy use for project activities should be estimated using an assessment of lifecycle emissions for the specific electricity or other energy sources required by the project. This should include the energy use associated with monitoring activities.",
       "notes": ""
     },
     {
