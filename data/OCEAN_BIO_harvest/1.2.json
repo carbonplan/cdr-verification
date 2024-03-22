@@ -1,149 +1,127 @@
 {
-    "pathway_id": "ocean-biomass-sinking-harvest",
-    "pathway_name": "Ocean Biomass Sinking (Harvest)",
-    "pathway_description": "Ocean Biomass Sinking uses macroalgae to remove CO\u2082 from surface ocean, indirectly resulting in the removal of CO\u2082 from the atmosphere. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that involve harvesting the biomass before sinking it. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain.",
-    "VCL": [
-        "3",
-        "3"
-    ],
-    "equation": "(1 - 2 - 3 - 4 - 5) - (6 + 7)",
-    "version": "1.2",
-    "components": [
-        {
-            "number": "1",
-            "category": "drawdown",
-            "component_id": "kelp-harvest",
-            "name": "Macroalgae harvest",
-            "quantification_target": "mass of biomass carbon",
-            "uncertainty_type": [
-                "execution"
-            ],
-            "responsibility": "project",
-            "uncertainty_impact_min": "negligible",
-            "uncertainty_impact_max": "negligible",
-            "description": "The mass of harvested kelp grown can be measured directly before sinking, and converted to carbon using a default carbon content factor.",
-            "notes": ""
-        },
-        {
-            "number": "2",
-            "category": "drawdown",
-            "component_id": "nsad",
-            "name": "Leakage",
-            "quantification_target": "mass of biomass carbon not sunk to depth",
-            "uncertainty_type": [
-                "execution",
-                "scientific"
-            ],
-            "responsibility": "project",
-            "uncertainty_impact_min": "negligible",
-            "uncertainty_impact_max": "low",
-            "description": "Some fraction of the deployed biomass may not successfully sink to a depth for long-term storage. This could be a result of biomass being shed or consumed during the sinking process, which is a function of biomass type, sinking configuration, and sinking velocity. Physical biomass loss during sinking should therefore be quantified for the specific biomass type and sinking configuration utilized based on field observations.",
-            "notes": ""
-        },
-        {
-            "number": "3",
-            "category": "drawdown",
-            "component_id": "surf-comp",
-            "name": "Surface competition effects",
-            "quantification_target": "impact on ecosystem-level carbon removal",
-            "uncertainty_type": [
-                "scientific"
-            ],
-            "responsibility": "project",
-            "uncertainty_impact_min": "low",
-            "uncertainty_impact_max": "medium",
-            "description": "Kelp growth could have secondary effects on phytoplankton carbon uptake, including via nutrient depletion or canopy shading. This is an important factor to consider both in relation to broader ecosystem impacts and for quantifying carbon management outcomes. While only a fraction of the carbon removed by biological activity in the surface ocean will result in permanent carbon storage, we recommend a conservative stance of counting any decrease in surface ocean productivity against estimates of carbon removal achieved.",
-            "notes": ""
-        },
-        {
-            "number": "4",
-            "category": "drawdown",
-            "component_id": "asg",
-            "name": "Air-sea gas exchange",
-            "quantification_target": "air-sea gas exchange efficiency",
-            "uncertainty_type": [
-                "scientific"
-            ],
-            "responsibility": "system",
-            "uncertainty_impact_min": "high",
-            "uncertainty_impact_max": "high",
-            "description": "Atmospheric uptake is reduced if dissolved inorganic carbon (DIC) depleted water is transferred from the surface ocean before either increasing the uptake of atmospheric CO\u2082 or decreasing the outgassing of CO\u2082 to the atmosphere. The precise dispersal of DIC-depleted water, its residence time at the surface, and hence the associated completeness of air-sea gas equilibration is dependent on the location and timing of the kelp growth, and is hard to directly observe. In-situ measurements can potentially track post-growth changes in pCO\u2082, pH, and DIC and deploy water mass tracers to help validate models of atmospheric CO\u2082 drawdown, though the sensitivity and cost of sensors may be a challenge. Further, oceanographic models can be used to develop probabilistic estimates of equilibration efficiencies for specific locations, contingent on seasonal or interannual variations in forcing regimes. Typical gas exchange timescales of equilibration for the surface ocean and atmosphere are on the order of months to years.",
-            "notes": ""
-        },
-        {
-            "number": "5",
-            "category": "drawdown",
-            "component_id": "deepwater-outgass",
-            "name": "Outgassing",
-            "quantification_target": "mass of outgassed CO\u2082",
-            "uncertainty_type": [
-                "scientific"
-            ],
-            "responsibility": "system",
-            "uncertainty_impact_min": "medium",
-            "uncertainty_impact_max": "medium",
-            "description": "Sunk biomass will likely decompose, and the resulting dissolved products will mix in the water reservoir. When the mixing dynamics of the reservoir bring decomposition products back to the surface, they will equilibrate with the atmosphere, which could result in the outgassing of CO\u2082 or other greenhouse gases. The estimated timescale of this outgassing is dependent on the location of sinking, the storage depth achieved, and local stratification and circulation dynamics. Any claim about the volume of total carbon removal from biomass sinking should therefore be accompanied by a clear claim about the portion of biomass that is assumed to remain in solid-phase storage and a clear disclosure of the time horizon over which outgassing dynamics are considered. In the absence of clear evidence that the sunk biomass resists decomposition, it is conservative to assume that all sunk biomass is remineralized at the bottom of the reservoir in which it is sunk. The outgassing of such non-CO\u2082 gasses such as methane, nitrous oxide, and sulfide should be quantified, and any GWP assumptions used to incorporate non-CO\u2082 outgassing into the calculation of net carbon removal should be transparently disclosed. Our evaluation reflects the uncertainties associated with estimating carbon stored for 1000+ years, and those interested in longer storage timescales may find it appropriate to adjust these uncertainties.",
-            "notes": ""
-        },
-        {
-            "number": "6",
-            "category": "emissions",
-            "component_id": "mat-co2",
-            "name": "Materials",
-            "quantification_target": "material embodied emissions",
-            "uncertainty_type": [
-                "execution"
-            ],
-            "responsibility": "project",
-            "uncertainty_impact_min": "low",
-            "uncertainty_impact_max": "low",
-            "description": "The embodied emissions of any materials consumed during operation can be estimated based on a cradle-to-grave lifecycle assessment (LCA) of the material input. Emissions associated with any built infrastructure, including monitoring and maintenance equipment, should include both construction emissions and material embodied emissions. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
-            "notes": ""
-        },
-        {
-            "number": "7",
-            "category": "emissions",
-            "component_id": "energy-co2",
-            "name": "Energy",
-            "quantification_target": "energy use emissions",
-            "uncertainty_type": [
-                "execution"
-            ],
-            "responsibility": "project",
-            "uncertainty_impact_min": "low",
-            "uncertainty_impact_max": "low",
-            "description": "The emissions associated with energy use for project activities should be estimated using an assessment of lifecycle emissions for the specific electricity or other energy sources required by the project. This should include the energy use associated with monitoring activities.",
-            "notes": ""
-        },
-        {
-            "number": "8",
-            "category": "durability",
-            "component_id": "deepwater-storage-solid",
-            "name": "Solid phase deepwater storage",
-            "quantification_target": "years of expected CO\u2082 storage",
-            "uncertainty_type": [
-                "scientific"
-            ],
-            "responsibility": "project",
-            "uncertainty_impact_min": "not characterized",
-            "uncertainty_impact_max": "not characterized",
-            "description": "The extent to which sunk biomass remains stored in solid form and is incorporated into sediments is a function of biomass type, sinking configuration, and the environmental conditions of the sinking location. Characterizing these dynamics is an area of active research. In the absence of clear evidence of solid phase storage, it is conservative to assume that all sunk biomass is remineralized (see Dissolved phase deepwater storage) and that water circulation will eventually return the CO\u2082 back to the surface, where it will be brought into equilibrium with the atmosphere (see Outgassing). This uncertainty is not included in the calculation of this pathway's Verification Confidence Level (VCL), because it is also captured by the Outgassing component.",
-            "notes": ""
-        },
-        {
-            "number": "9",
-            "category": "durability",
-            "component_id": "deepwater-storage-dissolved",
-            "name": "Dissolved phase deepwater storage",
-            "quantification_target": "years of expected CO\u2082 storage",
-            "uncertainty_type": [
-                "scientific"
-            ],
-            "responsibility": "system",
-            "uncertainty_impact_min": "not characterized",
-            "uncertainty_impact_max": "not characterized",
-            "description": "From a carbon management perspective, it is conservative to assume that a significant portion of the sunk biomass is remineralized and that water circulation and diffusion will distribute the dissolved carbon in the water reservoir. Depending on the circulation dynamics of the reservoir, some dissolved carbon may persist in stagnant deep water or stratified circulation. Any dissolved carbon that reaches the surface water will be brought into equilibrium with the atmosphere. The estimated timescale of this ventilation is dependent on the specific sinking location, which must be characterized at the project level but can be informed by models of the specific storage reservoir. The potential climate sensitivity of circulation dynamics is reservoir-specific and an outstanding area of uncertainty. This component is not included in the calculation of this pathway's Verification Confidence Level (VCL), because it is also captured by the Outgassing component.",
-            "notes": ""
-        }
-    ]
+  "pathway_id": "ocean-biomass-sinking-harvest",
+  "pathway_name": "Ocean Biomass Sinking (Harvest)",
+  "pathway_description": "Ocean Biomass Sinking uses macroalgae to remove CO\u2082 from surface ocean, indirectly resulting in the removal of CO\u2082 from the atmosphere. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that involve harvesting the biomass before sinking it. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain.",
+  "VCL": ["3", "3"],
+  "equation": "(1 - 2 - 3 - 4 - 5) - (6 + 7)",
+  "version": "1.2",
+  "components": [
+    {
+      "number": "1",
+      "category": "drawdown",
+      "component_id": "kelp-harvest",
+      "name": "Macroalgae harvest",
+      "quantification_target": "mass of biomass carbon",
+      "uncertainty_type": ["execution"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "negligible",
+      "uncertainty_impact_max": "negligible",
+      "description": "The mass of harvested kelp grown can be measured directly before sinking, and converted to carbon using a default carbon content factor.",
+      "notes": ""
+    },
+    {
+      "number": "2",
+      "category": "drawdown",
+      "component_id": "nsad",
+      "name": "Leakage",
+      "quantification_target": "mass of biomass carbon not sunk to depth",
+      "uncertainty_type": ["execution", "scientific"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "negligible",
+      "uncertainty_impact_max": "low",
+      "description": "Some fraction of the deployed biomass may not successfully sink to a depth for long-term storage. This could be a result of biomass being shed or consumed during the sinking process, which is a function of biomass type, sinking configuration, and sinking velocity. Physical biomass loss during sinking should therefore be quantified for the specific biomass type and sinking configuration utilized based on field observations.",
+      "notes": ""
+    },
+    {
+      "number": "3",
+      "category": "drawdown",
+      "component_id": "surf-comp",
+      "name": "Surface competition effects",
+      "quantification_target": "impact on ecosystem-level carbon removal",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "low",
+      "uncertainty_impact_max": "medium",
+      "description": "Kelp growth could have secondary effects on phytoplankton carbon uptake, including via nutrient depletion or canopy shading. This is an important factor to consider both in relation to broader ecosystem impacts and for quantifying carbon management outcomes. While only a fraction of the carbon removed by biological activity in the surface ocean will result in permanent carbon storage, we recommend a conservative stance of counting any decrease in surface ocean productivity against estimates of carbon removal achieved.",
+      "notes": ""
+    },
+    {
+      "number": "4",
+      "category": "drawdown",
+      "component_id": "asg",
+      "name": "Air-sea gas exchange",
+      "quantification_target": "air-sea gas exchange efficiency",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "system",
+      "uncertainty_impact_min": "high",
+      "uncertainty_impact_max": "high",
+      "description": "Atmospheric uptake is reduced if dissolved inorganic carbon (DIC) depleted water is transferred from the surface ocean before either increasing the uptake of atmospheric CO\u2082 or decreasing the outgassing of CO\u2082 to the atmosphere. The precise dispersal of DIC-depleted water, its residence time at the surface, and hence the associated completeness of air-sea gas equilibration is dependent on the location and timing of the kelp growth, and is hard to directly observe. In-situ measurements can potentially track post-growth changes in pCO\u2082, pH, and DIC and deploy water mass tracers to help validate models of atmospheric CO\u2082 drawdown, though the sensitivity and cost of sensors may be a challenge. Further, oceanographic models can be used to develop probabilistic estimates of equilibration efficiencies for specific locations, contingent on seasonal or interannual variations in forcing regimes. Typical gas exchange timescales of equilibration for the surface ocean and atmosphere are on the order of months to years.",
+      "notes": ""
+    },
+    {
+      "number": "5",
+      "category": "drawdown",
+      "component_id": "deepwater-outgass",
+      "name": "Outgassing",
+      "quantification_target": "mass of outgassed CO\u2082",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "system",
+      "uncertainty_impact_min": "medium",
+      "uncertainty_impact_max": "medium",
+      "description": "Sunk biomass will likely decompose, and the resulting dissolved products will mix in the water reservoir. When the mixing dynamics of the reservoir bring decomposition products back to the surface, they will equilibrate with the atmosphere, which could result in the outgassing of CO\u2082 or other greenhouse gases. The estimated timescale of this outgassing is dependent on the location of sinking, the storage depth achieved, and local stratification and circulation dynamics. Any claim about the volume of total carbon removal from biomass sinking should therefore be accompanied by a clear claim about the portion of biomass that is assumed to remain in solid-phase storage and a clear disclosure of the time horizon over which outgassing dynamics are considered. In the absence of clear evidence that the sunk biomass resists decomposition, it is conservative to assume that all sunk biomass is remineralized at the bottom of the reservoir in which it is sunk. The outgassing of such non-CO\u2082 gasses such as methane, nitrous oxide, and sulfide should be quantified, and any GWP assumptions used to incorporate non-CO\u2082 outgassing into the calculation of net carbon removal should be transparently disclosed. Our evaluation reflects the uncertainties associated with estimating carbon stored for 1000+ years, and those interested in longer storage timescales may find it appropriate to adjust these uncertainties.",
+      "notes": ""
+    },
+    {
+      "number": "6",
+      "category": "emissions",
+      "component_id": "mat-co2",
+      "name": "Materials",
+      "quantification_target": "material embodied emissions",
+      "uncertainty_type": ["execution"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "low",
+      "uncertainty_impact_max": "low",
+      "description": "The embodied emissions of any materials consumed during operation can be estimated based on a cradle-to-grave lifecycle assessment (LCA) of the material input. Emissions associated with any built infrastructure, including monitoring and maintenance equipment, should include both construction emissions and material embodied emissions. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
+      "notes": ""
+    },
+    {
+      "number": "7",
+      "category": "emissions",
+      "component_id": "energy-co2",
+      "name": "Energy",
+      "quantification_target": "energy use emissions",
+      "uncertainty_type": ["execution"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "low",
+      "uncertainty_impact_max": "low",
+      "description": "The emissions associated with energy use for project activities should be estimated using an assessment of lifecycle emissions for the specific electricity or other energy sources required by the project. This should include the energy use associated with monitoring activities.",
+      "notes": ""
+    },
+    {
+      "number": "8",
+      "category": "durability",
+      "component_id": "deepwater-storage-solid",
+      "name": "Solid phase deepwater storage",
+      "quantification_target": "years of expected CO\u2082 storage",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "not characterized",
+      "uncertainty_impact_max": "not characterized",
+      "description": "The extent to which sunk biomass remains stored in solid form and is incorporated into sediments is a function of biomass type, sinking configuration, and the environmental conditions of the sinking location. Characterizing these dynamics is an area of active research. In the absence of clear evidence of solid phase storage, it is conservative to assume that all sunk biomass is remineralized (see Dissolved phase deepwater storage) and that water circulation will eventually return the CO\u2082 back to the surface, where it will be brought into equilibrium with the atmosphere (see Outgassing). This uncertainty is not included in the calculation of this pathway's Verification Confidence Level (VCL), because it is also captured by the Outgassing component.",
+      "notes": ""
+    },
+    {
+      "number": "9",
+      "category": "durability",
+      "component_id": "deepwater-storage-dissolved",
+      "name": "Dissolved phase deepwater storage",
+      "quantification_target": "years of expected CO\u2082 storage",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "system",
+      "uncertainty_impact_min": "not characterized",
+      "uncertainty_impact_max": "not characterized",
+      "description": "From a carbon management perspective, it is conservative to assume that a significant portion of the sunk biomass is remineralized and that water circulation and diffusion will distribute the dissolved carbon in the water reservoir. Depending on the circulation dynamics of the reservoir, some dissolved carbon may persist in stagnant deep water or stratified circulation. Any dissolved carbon that reaches the surface water will be brought into equilibrium with the atmosphere. The estimated timescale of this ventilation is dependent on the specific sinking location, which must be characterized at the project level but can be informed by models of the specific storage reservoir. The potential climate sensitivity of circulation dynamics is reservoir-specific and an outstanding area of uncertainty. This component is not included in the calculation of this pathway's Verification Confidence Level (VCL), because it is also captured by the Outgassing component.",
+      "notes": ""
+    }
+  ]
 }

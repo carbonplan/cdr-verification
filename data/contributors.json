@@ -1,981 +1,811 @@
 [
-    {
-        "type": "CDR Company",
-        "name": "Captura",
-        "affiliation": "",
-        "initial": "",
-        "notes": "Comments came specifically from Sophie Chu. ",
-        "pathways": [
-            {
-                "id": "direct-ocean-removal",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "CDR Company",
-        "name": "SeaO2",
-        "affiliation": "",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "direct-ocean-removal",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "MRV Company",
-        "name": "Sophie Gill ",
-        "affiliation": "Isometric",
-        "initial": "",
-        "notes": "(New affiliation)",
-        "pathways": [
-            {
-                "id": "direct-ocean-removal",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Alex Gagnon",
-        "affiliation": "University of Washington / Banyu Carbon",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "direct-ocean-removal",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Matt Long",
-        "affiliation": "NCAR / [C]worthy",
-        "initial": "",
-        "notes": "(New affiliation)",
-        "pathways": [
-            {
-                "id": "direct-ocean-removal",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "CDR Company",
-        "name": "Arca",
-        "affiliation": "",
-        "initial": "",
-        "notes": "Comments came specifically from Greg Dipple. ",
-        "pathways": [
-            {
-                "id": "alkaline-waste-mineralization",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "CDR Company",
-        "name": "Carba",
-        "affiliation": "",
-        "initial": "",
-        "notes": "Comments came specifically from Andrew Jones. ",
-        "pathways": [
-            {
-                "id": "biochar",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "CDR Company",
-        "name": "Charm",
-        "affiliation": "",
-        "initial": "1.0",
-        "pathways": [
-            {
-                "id": "biomaterial-injection",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "CDR Company",
-        "name": "Climate Robotics",
-        "affiliation": "",
-        "initial": "",
-        "notes": "Comments came specifically from Jason Aramburu. ",
-        "pathways": [
-            {
-                "id": "biochar",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "CDR Company",
-        "name": "Ebb",
-        "affiliation": "",
-        "initial": "1.0",
-        "pathways": [
-            {
-                "id": "ocean-alkalinity-enhancement-electrochemical",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "CDR Company",
-        "name": "Eion",
-        "affiliation": "",
-        "initial": "1.0",
-        "pathways": [
-            {
-                "id": "enhanced-weathering",
-                "version": [
-                    "1.0",
-                    " 1.1"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "CDR Company",
-        "name": "Heirloom ",
-        "affiliation": "",
-        "initial": "1.0",
-        "pathways": [
-            {
-                "id": "direct-air-capture",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "CDR Company",
-        "name": "Planetary",
-        "affiliation": "",
-        "initial": "",
-        "notes": "Comments came specifically from Steve Rackley. ",
-        "pathways": [
-            {
-                "id": "ocean-alkalinity-enhancement-mineral",
-                "version": [
-                    "2.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "CDR Company",
-        "name": "Running Tide",
-        "affiliation": "",
-        "initial": "1.0",
-        "pathways": [
-            {
-                "id": "biomaterial-injection",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "terrestrial-biomass-sinking",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "ocean-biomass-sinking-harvest",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "ocean-biomass-sinking-no-harvest",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "CDR Company",
-        "name": "Takachar",
-        "affiliation": "",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "biochar",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "CDR Company",
-        "name": "Travertine",
-        "affiliation": "",
-        "initial": "",
-        "notes": "Comments came specifically from Laura Lammers. ",
-        "pathways": [
-            {
-                "id": "enhanced-weathering",
-                "version": [
-                    "1.1"
-                ]
-            },
-            {
-                "id": "alkaline-waste-mineralization",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "CDR Company",
-        "name": "UNDO (prev. Future Forest)",
-        "affiliation": "",
-        "initial": "1.0",
-        "pathways": [
-            {
-                "id": "enhanced-weathering",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Ecosystem Actor",
-        "name": "Antonius Gagern",
-        "affiliation": "Additional Ventures",
-        "initial": "1.0",
-        "pathways": []
-    },
-    {
-        "type": "Ecosystem Actor",
-        "name": "Benjamin Tincq",
-        "affiliation": "Marble",
-        "initial": "1.0",
-        "pathways": []
-    },
-    {
-        "type": "Ecosystem Actor",
-        "name": "Clea Kloster",
-        "affiliation": "Lowercarbon Capital",
-        "initial": "1.0",
-        "pathways": []
-    },
-    {
-        "type": "Ecosystem Actor",
-        "name": "Dai Ellis",
-        "affiliation": "",
-        "initial": "1.0",
-        "pathways": []
-    },
-    {
-        "type": "Ecosystem Actor",
-        "name": "David Keith",
-        "affiliation": "Harvard Kennedy School / Carbon Engineering",
-        "initial": "1.0",
-        "pathways": []
-    },
-    {
-        "type": "Ecosystem Actor",
-        "name": "Jamie Collins",
-        "affiliation": "Environmental Defense Fund",
-        "initial": "1.0",
-        "pathways": [
-            {
-                "id": "ocean-alkalinity-enhancement-electrochemical",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "ocean-alkalinity-enhancement-mineral",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "ocean-biomass-sinking-harvest",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "ocean-biomass-sinking-no-harvest",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Ecosystem Actor",
-        "name": "John Sanchez",
-        "affiliation": "Lowercarbon Capital",
-        "initial": "1.0",
-        "pathways": []
-    },
-    {
-        "type": "Ecosystem Actor",
-        "name": "Marcelo Lejeune",
-        "affiliation": "Marble",
-        "initial": "1.0",
-        "pathways": []
-    },
-    {
-        "type": "Ecosystem Actor",
-        "name": "Max Tuttman",
-        "affiliation": "Ad Hoc Group",
-        "initial": "1.0",
-        "pathways": []
-    },
-    {
-        "type": "Ecosystem Actor",
-        "name": "Peter Minor",
-        "affiliation": "Carbon180",
-        "initial": "1.0",
-        "pathways": []
-    },
-    {
-        "type": "Ecosystem Actor",
-        "name": "Ryan Orbuch",
-        "affiliation": "Lowercarbon Capital",
-        "initial": "1.0",
-        "pathways": []
-    },
-    {
-        "type": "MRV Company",
-        "name": "Elizabeth Troein",
-        "affiliation": "Exponential ",
-        "initial": "1.0",
-        "pathways": []
-    },
-    {
-        "type": "MRV Company",
-        "name": "Mowgli Holmes",
-        "affiliation": "Submarine",
-        "initial": "1.0",
-        "pathways": []
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Becca Neumann",
-        "affiliation": "University of Washington",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "enhanced-weathering",
-                "version": [
-                    "1.1"
-                ]
-            },
-            {
-                "id": "biochar",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Bill Collins",
-        "affiliation": "LBNL",
-        "initial": "1.0",
-        "pathways": []
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Chris Reinhard",
-        "affiliation": "Georgia Tech / Lithos",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "enhanced-weathering",
-                "version": [
-                    "1.1",
-                    " 1.2"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "David Ho",
-        "affiliation": "University of Hawai\u02bbi at M\u0101noa",
-        "initial": "1.0",
-        "pathways": [
-            {
-                "id": "ocean-alkalinity-enhancement-electrochemical",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "ocean-alkalinity-enhancement-mineral",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "ocean-biomass-sinking-harvest",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "ocean-biomass-sinking-no-harvest",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Fabiano Ximenes",
-        "affiliation": "NSW Government",
-        "initial": "1.0",
-        "pathways": [
-            {
-                "id": "biomaterial-injection",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "terrestrial-biomass-sinking",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Jens Hartmann",
-        "affiliation": "Institut f\u00fcr Geologie",
-        "initial": "1.0",
-        "pathways": [
-            {
-                "id": "enhanced-weathering",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Kate Maher",
-        "affiliation": "Stanford",
-        "initial": "1.0",
-        "pathways": [
-            {
-                "id": "enhanced-weathering",
-                "version": [
-                    "1.0",
-                    " 1.1"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Liam Bullock",
-        "affiliation": "Geosciences Barcelona",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "alkaline-waste-mineralization",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Matt Long",
-        "affiliation": "NCAR",
-        "initial": "1.0",
-        "notes": "(Old affiliation)",
-        "pathways": [
-            {
-                "id": "ocean-alkalinity-enhancement-electrochemical",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "ocean-alkalinity-enhancement-mineral",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "ocean-biomass-sinking-harvest",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "ocean-biomass-sinking-no-harvest",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Newsha Ajami",
-        "affiliation": "LBNL",
-        "initial": "1.0",
-        "pathways": []
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Noah Planavsky",
-        "affiliation": "Yale / Lithos",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "enhanced-weathering",
-                "version": [
-                    "1.1",
-                    " 1.2"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Pura Bitharkre",
-        "affiliation": "LBNL",
-        "initial": "1.0",
-        "pathways": []
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Santanu Bakshi",
-        "affiliation": "Iowa State University",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "biochar",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Sarah Saltzer",
-        "affiliation": "Stanford",
-        "initial": "1.0",
-        "pathways": [
-            {
-                "id": "direct-air-capture",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "biomaterial-injection",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Sophie Gill",
-        "affiliation": "University of Oxford",
-        "initial": "1.0",
-        "notes": "(Old affiliation) ",
-        "pathways": [
-            {
-                "id": "ocean-alkalinity-enhancement-electrochemical",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "ocean-alkalinity-enhancement-mineral",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "ocean-biomass-sinking-harvest",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "ocean-biomass-sinking-no-harvest",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Susana Garc\u00eda L\u00f3pez",
-        "affiliation": "Heriot-Watt University",
-        "initial": "1.0",
-        "pathways": [
-            {
-                "id": "direct-air-capture",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Vikram Rao",
-        "affiliation": "Research Triangle Energy Consortium",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "alkaline-waste-mineralization",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Eric Slessarev",
-        "affiliation": "Yale",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "enhanced-weathering",
-                "version": [
-                    "1.2"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Ecosystem Actor",
-        "name": "Erica Belmont",
-        "affiliation": "Carbon Direct",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "biochar",
-                "version": [
-                    "1.2"
-                ]
-            },
-            {
-                "id": "beccs",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Anne Ware",
-        "affiliation": "LBNL",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "biomaterial-injection",
-                "version": [
-                    "2.0"
-                ]
-            },
-            {
-                "id": "terrestrial-biomass-sinking",
-                "version": [
-                    "1.2"
-                ]
-            },
-            {
-                "id": "biochar",
-                "version": [
-                    "1.2"
-                ]
-            },
-            {
-                "id": "biomass-storage",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "beccs",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Yimin Zhang",
-        "affiliation": "LBNL",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "biomaterial-injection",
-                "version": [
-                    "2.0"
-                ]
-            },
-            {
-                "id": "biomass-storage",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "beccs",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Corrine Scown",
-        "affiliation": "LBNL",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "biomaterial-injection",
-                "version": [
-                    "2.0"
-                ]
-            },
-            {
-                "id": "terrestrial-biomass-sinking",
-                "version": [
-                    "1.2"
-                ]
-            },
-            {
-                "id": "biochar",
-                "version": [
-                    "1.2"
-                ]
-            },
-            {
-                "id": "biomass-storage",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "beccs",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Sarah Nordahl",
-        "affiliation": "LBNL",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "biomaterial-injection",
-                "version": [
-                    "2.0"
-                ]
-            },
-            {
-                "id": "terrestrial-biomass-sinking",
-                "version": [
-                    "1.2"
-                ]
-            },
-            {
-                "id": "biochar",
-                "version": [
-                    "1.2"
-                ]
-            },
-            {
-                "id": "biomass-storage",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "beccs",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "MRV Company",
-        "name": "Matt Gammans",
-        "affiliation": "Isometric",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "biomaterial-injection",
-                "version": [
-                    "2.0"
-                ]
-            },
-            {
-                "id": "terrestrial-biomass-sinking",
-                "version": [
-                    "1.2"
-                ]
-            },
-            {
-                "id": "biochar",
-                "version": [
-                    "1.2"
-                ]
-            },
-            {
-                "id": "biomass-storage",
-                "version": [
-                    "1.0"
-                ]
-            },
-            {
-                "id": "beccs",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Sin\u00e9ad Crotty",
-        "affiliation": "Carbon Containment Lab",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "biomass-storage",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Florentino de la Cruz",
-        "affiliation": "University of North Florida",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "biomass-storage",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "Scientific Expert",
-        "name": "Morgan Raven",
-        "affiliation": "UC Santa Barbara",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "terrestrial-biomass-sinking",
-                "version": [
-                    "1.2"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "CDR Company",
-        "name": "Vaulted",
-        "affiliation": "",
-        "initial": "",
-        "notes": "Comments came specifically from Bryan Epps. ",
-        "pathways": [
-            {
-                "id": "biomaterial-injection",
-                "version": [
-                    "2.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "CDR Company",
-        "name": "Kodama",
-        "affiliation": "",
-        "initial": "",
-        "notes": "Comments came specifically from Jimmy Voorhis.",
-        "pathways": [
-            {
-                "id": "biomass-storage",
-                "version": [
-                    "1.0"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "CDR Company",
-        "name": "Rewind",
-        "affiliation": "",
-        "initial": "",
-        "pathways": [
-            {
-                "id": "terrestrial-biomass-sinking",
-                "version": [
-                    "1.2"
-                ]
-            }
-        ]
-    }
+  {
+    "type": "CDR Company",
+    "name": "Captura",
+    "affiliation": "",
+    "initial": "",
+    "notes": "Comments came specifically from Sophie Chu. ",
+    "pathways": [
+      {
+        "id": "direct-ocean-removal",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "CDR Company",
+    "name": "SeaO2",
+    "affiliation": "",
+    "initial": "",
+    "pathways": [
+      {
+        "id": "direct-ocean-removal",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "MRV Company",
+    "name": "Sophie Gill ",
+    "affiliation": "Isometric",
+    "initial": "",
+    "notes": "(New affiliation)",
+    "pathways": [
+      {
+        "id": "direct-ocean-removal",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Alex Gagnon",
+    "affiliation": "University of Washington / Banyu Carbon",
+    "initial": "",
+    "pathways": [
+      {
+        "id": "direct-ocean-removal",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Matt Long",
+    "affiliation": "NCAR / [C]worthy",
+    "initial": "",
+    "notes": "(New affiliation)",
+    "pathways": [
+      {
+        "id": "direct-ocean-removal",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "CDR Company",
+    "name": "Arca",
+    "affiliation": "",
+    "initial": "",
+    "notes": "Comments came specifically from Greg Dipple. ",
+    "pathways": [
+      {
+        "id": "alkaline-waste-mineralization",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "CDR Company",
+    "name": "Carba",
+    "affiliation": "",
+    "initial": "",
+    "notes": "Comments came specifically from Andrew Jones. ",
+    "pathways": [
+      {
+        "id": "biochar",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "CDR Company",
+    "name": "Charm",
+    "affiliation": "",
+    "initial": "1.0",
+    "pathways": [
+      {
+        "id": "biomaterial-injection",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "CDR Company",
+    "name": "Climate Robotics",
+    "affiliation": "",
+    "initial": "",
+    "notes": "Comments came specifically from Jason Aramburu. ",
+    "pathways": [
+      {
+        "id": "biochar",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "CDR Company",
+    "name": "Ebb",
+    "affiliation": "",
+    "initial": "1.0",
+    "pathways": [
+      {
+        "id": "ocean-alkalinity-enhancement-electrochemical",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "CDR Company",
+    "name": "Eion",
+    "affiliation": "",
+    "initial": "1.0",
+    "pathways": [
+      {
+        "id": "enhanced-weathering",
+        "version": ["1.0", " 1.1"]
+      }
+    ]
+  },
+  {
+    "type": "CDR Company",
+    "name": "Heirloom ",
+    "affiliation": "",
+    "initial": "1.0",
+    "pathways": [
+      {
+        "id": "direct-air-capture",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "CDR Company",
+    "name": "Planetary",
+    "affiliation": "",
+    "initial": "",
+    "notes": "Comments came specifically from Steve Rackley. ",
+    "pathways": [
+      {
+        "id": "ocean-alkalinity-enhancement-mineral",
+        "version": ["2.0"]
+      }
+    ]
+  },
+  {
+    "type": "CDR Company",
+    "name": "Running Tide",
+    "affiliation": "",
+    "initial": "1.0",
+    "pathways": [
+      {
+        "id": "biomaterial-injection",
+        "version": ["1.0"]
+      },
+      {
+        "id": "terrestrial-biomass-sinking",
+        "version": ["1.0"]
+      },
+      {
+        "id": "ocean-biomass-sinking-harvest",
+        "version": ["1.0"]
+      },
+      {
+        "id": "ocean-biomass-sinking-no-harvest",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "CDR Company",
+    "name": "Takachar",
+    "affiliation": "",
+    "initial": "",
+    "pathways": [
+      {
+        "id": "biochar",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "CDR Company",
+    "name": "Travertine",
+    "affiliation": "",
+    "initial": "",
+    "notes": "Comments came specifically from Laura Lammers. ",
+    "pathways": [
+      {
+        "id": "enhanced-weathering",
+        "version": ["1.1"]
+      },
+      {
+        "id": "alkaline-waste-mineralization",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "CDR Company",
+    "name": "UNDO (prev. Future Forest)",
+    "affiliation": "",
+    "initial": "1.0",
+    "pathways": [
+      {
+        "id": "enhanced-weathering",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Ecosystem Actor",
+    "name": "Antonius Gagern",
+    "affiliation": "Additional Ventures",
+    "initial": "1.0",
+    "pathways": []
+  },
+  {
+    "type": "Ecosystem Actor",
+    "name": "Benjamin Tincq",
+    "affiliation": "Marble",
+    "initial": "1.0",
+    "pathways": []
+  },
+  {
+    "type": "Ecosystem Actor",
+    "name": "Clea Kloster",
+    "affiliation": "Lowercarbon Capital",
+    "initial": "1.0",
+    "pathways": []
+  },
+  {
+    "type": "Ecosystem Actor",
+    "name": "Dai Ellis",
+    "affiliation": "",
+    "initial": "1.0",
+    "pathways": []
+  },
+  {
+    "type": "Ecosystem Actor",
+    "name": "David Keith",
+    "affiliation": "Harvard Kennedy School / Carbon Engineering",
+    "initial": "1.0",
+    "pathways": []
+  },
+  {
+    "type": "Ecosystem Actor",
+    "name": "Jamie Collins",
+    "affiliation": "Environmental Defense Fund",
+    "initial": "1.0",
+    "pathways": [
+      {
+        "id": "ocean-alkalinity-enhancement-electrochemical",
+        "version": ["1.0"]
+      },
+      {
+        "id": "ocean-alkalinity-enhancement-mineral",
+        "version": ["1.0"]
+      },
+      {
+        "id": "ocean-biomass-sinking-harvest",
+        "version": ["1.0"]
+      },
+      {
+        "id": "ocean-biomass-sinking-no-harvest",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Ecosystem Actor",
+    "name": "John Sanchez",
+    "affiliation": "Lowercarbon Capital",
+    "initial": "1.0",
+    "pathways": []
+  },
+  {
+    "type": "Ecosystem Actor",
+    "name": "Marcelo Lejeune",
+    "affiliation": "Marble",
+    "initial": "1.0",
+    "pathways": []
+  },
+  {
+    "type": "Ecosystem Actor",
+    "name": "Max Tuttman",
+    "affiliation": "Ad Hoc Group",
+    "initial": "1.0",
+    "pathways": []
+  },
+  {
+    "type": "Ecosystem Actor",
+    "name": "Peter Minor",
+    "affiliation": "Carbon180",
+    "initial": "1.0",
+    "pathways": []
+  },
+  {
+    "type": "Ecosystem Actor",
+    "name": "Ryan Orbuch",
+    "affiliation": "Lowercarbon Capital",
+    "initial": "1.0",
+    "pathways": []
+  },
+  {
+    "type": "MRV Company",
+    "name": "Elizabeth Troein",
+    "affiliation": "Exponential ",
+    "initial": "1.0",
+    "pathways": []
+  },
+  {
+    "type": "MRV Company",
+    "name": "Mowgli Holmes",
+    "affiliation": "Submarine",
+    "initial": "1.0",
+    "pathways": []
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Becca Neumann",
+    "affiliation": "University of Washington",
+    "initial": "",
+    "pathways": [
+      {
+        "id": "enhanced-weathering",
+        "version": ["1.1"]
+      },
+      {
+        "id": "biochar",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Bill Collins",
+    "affiliation": "LBNL",
+    "initial": "1.0",
+    "pathways": []
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Chris Reinhard",
+    "affiliation": "Georgia Tech / Lithos",
+    "initial": "",
+    "pathways": [
+      {
+        "id": "enhanced-weathering",
+        "version": ["1.1", " 1.2"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "David Ho",
+    "affiliation": "University of Hawai\u02bbi at M\u0101noa",
+    "initial": "1.0",
+    "pathways": [
+      {
+        "id": "ocean-alkalinity-enhancement-electrochemical",
+        "version": ["1.0"]
+      },
+      {
+        "id": "ocean-alkalinity-enhancement-mineral",
+        "version": ["1.0"]
+      },
+      {
+        "id": "ocean-biomass-sinking-harvest",
+        "version": ["1.0"]
+      },
+      {
+        "id": "ocean-biomass-sinking-no-harvest",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Fabiano Ximenes",
+    "affiliation": "NSW Government",
+    "initial": "1.0",
+    "pathways": [
+      {
+        "id": "biomaterial-injection",
+        "version": ["1.0"]
+      },
+      {
+        "id": "terrestrial-biomass-sinking",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Jens Hartmann",
+    "affiliation": "Institut f\u00fcr Geologie",
+    "initial": "1.0",
+    "pathways": [
+      {
+        "id": "enhanced-weathering",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Kate Maher",
+    "affiliation": "Stanford",
+    "initial": "1.0",
+    "pathways": [
+      {
+        "id": "enhanced-weathering",
+        "version": ["1.0", " 1.1"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Liam Bullock",
+    "affiliation": "Geosciences Barcelona",
+    "initial": "",
+    "pathways": [
+      {
+        "id": "alkaline-waste-mineralization",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Matt Long",
+    "affiliation": "NCAR",
+    "initial": "1.0",
+    "notes": "(Old affiliation)",
+    "pathways": [
+      {
+        "id": "ocean-alkalinity-enhancement-electrochemical",
+        "version": ["1.0"]
+      },
+      {
+        "id": "ocean-alkalinity-enhancement-mineral",
+        "version": ["1.0"]
+      },
+      {
+        "id": "ocean-biomass-sinking-harvest",
+        "version": ["1.0"]
+      },
+      {
+        "id": "ocean-biomass-sinking-no-harvest",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Newsha Ajami",
+    "affiliation": "LBNL",
+    "initial": "1.0",
+    "pathways": []
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Noah Planavsky",
+    "affiliation": "Yale / Lithos",
+    "initial": "",
+    "pathways": [
+      {
+        "id": "enhanced-weathering",
+        "version": ["1.1", " 1.2"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Pura Bitharkre",
+    "affiliation": "LBNL",
+    "initial": "1.0",
+    "pathways": []
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Santanu Bakshi",
+    "affiliation": "Iowa State University",
+    "initial": "",
+    "pathways": [
+      {
+        "id": "biochar",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Sarah Saltzer",
+    "affiliation": "Stanford",
+    "initial": "1.0",
+    "pathways": [
+      {
+        "id": "direct-air-capture",
+        "version": ["1.0"]
+      },
+      {
+        "id": "biomaterial-injection",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Sophie Gill",
+    "affiliation": "University of Oxford",
+    "initial": "1.0",
+    "notes": "(Old affiliation) ",
+    "pathways": [
+      {
+        "id": "ocean-alkalinity-enhancement-electrochemical",
+        "version": ["1.0"]
+      },
+      {
+        "id": "ocean-alkalinity-enhancement-mineral",
+        "version": ["1.0"]
+      },
+      {
+        "id": "ocean-biomass-sinking-harvest",
+        "version": ["1.0"]
+      },
+      {
+        "id": "ocean-biomass-sinking-no-harvest",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Susana Garc\u00eda L\u00f3pez",
+    "affiliation": "Heriot-Watt University",
+    "initial": "1.0",
+    "pathways": [
+      {
+        "id": "direct-air-capture",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Vikram Rao",
+    "affiliation": "Research Triangle Energy Consortium",
+    "initial": "",
+    "pathways": [
+      {
+        "id": "alkaline-waste-mineralization",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Eric Slessarev",
+    "affiliation": "Yale",
+    "initial": "",
+    "pathways": [
+      {
+        "id": "enhanced-weathering",
+        "version": ["1.2"]
+      }
+    ]
+  },
+  {
+    "type": "Ecosystem Actor",
+    "name": "Erica Belmont",
+    "affiliation": "Carbon Direct",
+    "initial": "",
+    "pathways": [
+      {
+        "id": "biochar",
+        "version": ["1.2"]
+      },
+      {
+        "id": "beccs",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Anne Ware",
+    "affiliation": "LBNL",
+    "initial": "",
+    "pathways": [
+      {
+        "id": "biomaterial-injection",
+        "version": ["2.0"]
+      },
+      {
+        "id": "terrestrial-biomass-sinking",
+        "version": ["1.2"]
+      },
+      {
+        "id": "biochar",
+        "version": ["1.2"]
+      },
+      {
+        "id": "biomass-storage",
+        "version": ["1.0"]
+      },
+      {
+        "id": "beccs",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Yimin Zhang",
+    "affiliation": "LBNL",
+    "initial": "",
+    "pathways": [
+      {
+        "id": "biomaterial-injection",
+        "version": ["2.0"]
+      },
+      {
+        "id": "biomass-storage",
+        "version": ["1.0"]
+      },
+      {
+        "id": "beccs",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Corrine Scown",
+    "affiliation": "LBNL",
+    "initial": "",
+    "pathways": [
+      {
+        "id": "biomaterial-injection",
+        "version": ["2.0"]
+      },
+      {
+        "id": "terrestrial-biomass-sinking",
+        "version": ["1.2"]
+      },
+      {
+        "id": "biochar",
+        "version": ["1.2"]
+      },
+      {
+        "id": "biomass-storage",
+        "version": ["1.0"]
+      },
+      {
+        "id": "beccs",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Sarah Nordahl",
+    "affiliation": "LBNL",
+    "initial": "",
+    "pathways": [
+      {
+        "id": "biomaterial-injection",
+        "version": ["2.0"]
+      },
+      {
+        "id": "terrestrial-biomass-sinking",
+        "version": ["1.2"]
+      },
+      {
+        "id": "biochar",
+        "version": ["1.2"]
+      },
+      {
+        "id": "biomass-storage",
+        "version": ["1.0"]
+      },
+      {
+        "id": "beccs",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "MRV Company",
+    "name": "Matt Gammans",
+    "affiliation": "Isometric",
+    "initial": "",
+    "pathways": [
+      {
+        "id": "biomaterial-injection",
+        "version": ["2.0"]
+      },
+      {
+        "id": "terrestrial-biomass-sinking",
+        "version": ["1.2"]
+      },
+      {
+        "id": "biochar",
+        "version": ["1.2"]
+      },
+      {
+        "id": "biomass-storage",
+        "version": ["1.0"]
+      },
+      {
+        "id": "beccs",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Sin\u00e9ad Crotty",
+    "affiliation": "Carbon Containment Lab",
+    "initial": "",
+    "pathways": [
+      {
+        "id": "biomass-storage",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Florentino de la Cruz",
+    "affiliation": "University of North Florida",
+    "initial": "",
+    "pathways": [
+      {
+        "id": "biomass-storage",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "Scientific Expert",
+    "name": "Morgan Raven",
+    "affiliation": "UC Santa Barbara",
+    "initial": "",
+    "pathways": [
+      {
+        "id": "terrestrial-biomass-sinking",
+        "version": ["1.2"]
+      }
+    ]
+  },
+  {
+    "type": "CDR Company",
+    "name": "Vaulted",
+    "affiliation": "",
+    "initial": "",
+    "notes": "Comments came specifically from Bryan Epps. ",
+    "pathways": [
+      {
+        "id": "biomaterial-injection",
+        "version": ["2.0"]
+      }
+    ]
+  },
+  {
+    "type": "CDR Company",
+    "name": "Kodama",
+    "affiliation": "",
+    "initial": "",
+    "notes": "Comments came specifically from Jimmy Voorhis.",
+    "pathways": [
+      {
+        "id": "biomass-storage",
+        "version": ["1.0"]
+      }
+    ]
+  },
+  {
+    "type": "CDR Company",
+    "name": "Rewind",
+    "affiliation": "",
+    "initial": "",
+    "pathways": [
+      {
+        "id": "terrestrial-biomass-sinking",
+        "version": ["1.2"]
+      }
+    ]
+  }
 ]

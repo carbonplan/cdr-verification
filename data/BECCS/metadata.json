@@ -1,65 +1,53 @@
 {
-    "contributors": [
-        {
-            "type": "Ecosystem Actor",
-            "name": "Erica Belmont",
-            "affiliation": "Carbon Direct",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Anne Ware",
-            "affiliation": "LBNL",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Yimin Zhang",
-            "affiliation": "LBNL",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Corrine Scown",
-            "affiliation": "LBNL",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Sarah Nordahl",
-            "affiliation": "LBNL",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "MRV Company",
-            "name": "Matt Gammans",
-            "affiliation": "Isometric",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        }
-    ],
-    "revisions": [
-        {
-            "version": "1.0",
-            "date": "09-19-2022",
-            "note": "First release as part of a [round of updates](TK) to biomass-based pathways."
-        }
-    ]
+  "contributors": [
+    {
+      "type": "Ecosystem Actor",
+      "name": "Erica Belmont",
+      "affiliation": "Carbon Direct",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Anne Ware",
+      "affiliation": "LBNL",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Yimin Zhang",
+      "affiliation": "LBNL",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Corrine Scown",
+      "affiliation": "LBNL",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Sarah Nordahl",
+      "affiliation": "LBNL",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "MRV Company",
+      "name": "Matt Gammans",
+      "affiliation": "Isometric",
+      "notes": "",
+      "version": ["1.0"]
+    }
+  ],
+  "revisions": [
+    {
+      "version": "1.0",
+      "date": "09-19-2022",
+      "note": "First release as part of a [round of updates](TK) to biomass-based pathways."
+    }
+  ]
 }

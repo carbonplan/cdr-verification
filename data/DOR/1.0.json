@@ -1,208 +1,179 @@
 {
-    "pathway_id": "direct-ocean-removal",
-    "pathway_name": "Direct Ocean Removal",
-    "pathway_description": "Direct ocean removal (DOR) removes CO\u2082 from the surface ocean for storage, and returns seawater depleted in dissolved inorganic carbon (DIC) to the ocean. The DIC-depleted water reequilibrates with the atmosphere to draw down CO\u2082. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain.",
-    "VCL": [
-        "2",
-        "3"
-    ],
-    "equation": "(1-2-3-4-5 - 7) - (8+9+10)",
-    "version": "1.0",
-    "components": [
-        {
-            "number": "1",
-            "category": "drawdown",
-            "component_id": "co2-removed",
-            "name": "CO\u2082 capture",
-            "quantification_target": "mass of CO\u2082 removed from seawater",
-            "uncertainty_type": [
-                "execution"
-            ],
-            "responsibility": "project",
-            "uncertainty_impact_min": "negligible",
-            "uncertainty_impact_max": "negligible",
-            "description": "The mass of CO\u2082 removed from seawater through electrochemical separation \u2014 or other approaches \u2014 can be measured directly as a metered output from the direct ocean removal (DOR) system. It can also be checked for consistency against operational data from the DOR system and characterization of the seawater effluent that is depleted of dissolved inorganic carbon (DIC). The quantity of CO\u2082 directly removed from seawater may not be equal to the quantity of CO\u2082 stored (see Leakage) or the quantity of CO\u2082 indirectly removed by atmospheric drawdown (see Air sea gas exchange). Direct removal of CO\u2082 from seawater produces DIC-depleted seawater and results in subsequent atmospheric carbon removal by inducing air-sea gas exchange. Thus, the quantity of CO\u2082 removed directly from seawater must be clearly quantified and validated as a separate measurement from CO\u2082 storage or atmospheric CO\u2082 drawdown.",
-            "notes": ""
-        },
-        {
-            "number": "2",
-            "category": "drawdown",
-            "component_id": "store-leak-co2",
-            "name": "Leakage",
-            "quantification_target": "mass of storage system leakage",
-            "uncertainty_type": [
-                "execution"
-            ],
-            "responsibility": "project",
-            "uncertainty_impact_min": "low",
-            "uncertainty_impact_max": "medium",
-            "description": "Any difference between the CO\u2082 removed from seawater and the CO\u2082 that is measured as a metered input to the storage system must be accounted for as leakage. For terrestrial geologic storage, post-storage leakage can be directly monitored during and after the injection period, though this is more challenging for subseafloor reservoirs. If geological storage results in a functionally stable form on a short timescale \u2014 for example, via subsurface mineralization \u2014 fugitive emissions associated with the full lifetime of storage may be estimated based on direct observations of the storage reservoir. If instead the integrity of geological storage requires ongoing monitoring and maintenance \u2014 for example with the injection of supercritical CO\u2082 \u2014 the potential for future fugitive emissions must be modeled. For alternative storage systems, like mineralization in concrete, it is possible to directly measure the conversion of input CO\u2082 into a functionally stable form and therefore the total leakage from the storage system.",
-            "notes": ""
-        },
-        {
-            "number": "3",
-            "category": "drawdown",
-            "component_id": "sec-precip",
-            "name": "Secondary precipitation",
-            "quantification_target": "secondary precipitation of CaCO\u2083",
-            "uncertainty_type": [
-                "execution"
-            ],
-            "responsibility": "project",
-            "uncertainty_impact_min": "low",
-            "uncertainty_impact_max": "medium",
-            "description": "Removing CO\u2082 from seawater shifts the pH and carbonate ion concentration, and could cause abiotic precipitation of calcium carbonate (CaCO\u2083) or brucite (Mg(OH)\u2082). This is important to characterize as this precipitation results in CO\u2082 outgassing. It remains to be determined what specific combination of suitable nucleation conditions and supersaturation of CaCO\u2083 is needed to cause significant precipitation. Abiotic precipitation can be minimized by controlling the dilution and dispersal of DIC-depleted water and ensuring pH shifts stay below precipitation thresholds.",
-            "notes": ""
-        },
-        {
-            "number": "4",
-            "category": "drawdown",
-            "component_id": "calc",
-            "name": "Biotic calcification response",
-            "quantification_target": "biotic calcification response",
-            "uncertainty_type": [
-                "scientific"
-            ],
-            "responsibility": "system",
-            "uncertainty_impact_min": "low",
-            "uncertainty_impact_max": "medium",
-            "description": "Since calcification releases CO\u2082, any changes to the rate of biotic calcification in response to shifts in pH and dissolved inorganic carbon (DIC) concentrations driven by the direct ocean removal process must be considered. Changes in biotic calcification rates could occur in both coastal and open ocean waters, and at the level of individual calcifiers or calcifier populations. In practice, quantifying the biotic calcification response to carbon-depleted water may pose significant spatial, temporal, and signal-to-noise challenges.",
-            "notes": ""
-        },
-        {
-            "number": "5",
-            "category": "drawdown",
-            "component_id": "asg",
-            "name": "Air-sea gas exchange",
-            "quantification_target": "air-sea gas exchange efficiency",
-            "uncertainty_type": [
-                "scientific"
-            ],
-            "responsibility": "system",
-            "uncertainty_impact_min": "high",
-            "uncertainty_impact_max": "high",
-            "description": "Atmospheric uptake is reduced if dissolved inorganic carbon (DIC) depleted water is transferred from the surface ocean before either increasing the uptake of atmospheric CO\u2082 or decreasing the outgassing of CO\u2082 to the atmosphere. The precise dispersal of DIC-depleted water, its residence time at the surface, and hence the associated completeness of air-sea gas equilibration is dependent on the location and timing of the dispersal of DIC-depleted water, and is hard to directly observe. In-situ measurements can potentially track post-deployment changes in pCO\u2082, pH, and DIC and deploy water mass tracers to help validate models of plume dispersal and atmospheric CO\u2082 drawdown, though the sensitivity and cost of sensors may be a challenge. Further, oceanographic models can be used to develop probabilistic estimates of equilibration efficiencies for particular locations, contingent on seasonal or interannual variations in forcing regimes. Typical gas exchange timescales of equilibration for the surface ocean and atmosphere are on the order of months to years.",
-            "notes": ""
-        },
-        {
-            "number": "6*",
-            "category": "drawdown",
-            "component_id": "poc",
-            "name": "Particulate organic carbon response",
-            "quantification_target": "particulate organic carbon response",
-            "uncertainty_type": [
-                "scientific"
-            ],
-            "responsibility": "system",
-            "uncertainty_impact_min": "not characterized",
-            "uncertainty_impact_max": "not characterized",
-            "description": "Depletion of dissolved inorganic carbon (DIC) could lead to less particulate organic carbon (POC) formation in the surface ocean. This effect could be small if plankton communities are primarily limited by nutrient availability, rather than DIC availability. POC export mediated by calcifying communities could also change in response to changes in biogenic calcification (see Biotic calcification response). Data on potential biological responses to removing CO\u2082 from the surface waters is still lacking.",
-            "notes": ""
-        },
-        {
-            "number": "7",
-            "category": "drawdown",
-            "component_id": "carb-marine",
-            "name": "Marine carbonate precipitation",
-            "quantification_target": "reduction in carbon storage as a result of marine carbonate precipitation",
-            "uncertainty_type": [
-                "scientific"
-            ],
-            "responsibility": "system",
-            "uncertainty_impact_min": "low",
-            "uncertainty_impact_max": "low",
-            "description": "Eventually, the formation and burial of carbonate minerals will release CO\u2082 stored. The carbonate precipitation process occurs slowly and is unlikely to have a significant impact on estimates of carbon storage on decadal to millennial timescales. However on geologic timescales, it is an important process to characterize.",
-            "notes": ""
-        },
-        {
-            "number": "8",
-            "category": "emissions",
-            "component_id": "mat-co2",
-            "name": "Materials",
-            "quantification_target": "material embodied emissions",
-            "uncertainty_type": [
-                "execution"
-            ],
-            "responsibility": "project",
-            "uncertainty_impact_min": "low",
-            "uncertainty_impact_max": "low",
-            "description": "The embodied emissions of any materials consumed during operation can be estimated based on a cradle-to-grave lifecycle assessment (LCA) of the material input. Emissions associated with any built infrastructure, including monitoring and maintenance equipment, should include both construction emissions and material embodied emissions. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
-            "notes": ""
-        },
-        {
-            "number": "9",
-            "category": "emissions",
-            "component_id": "energy-co2",
-            "name": "Energy",
-            "quantification_target": "energy use emissions",
-            "uncertainty_type": [
-                "execution"
-            ],
-            "responsibility": "project",
-            "uncertainty_impact_min": "low",
-            "uncertainty_impact_max": "low",
-            "description": "The emissions associated with energy use for project activities should be estimated using an assessment of lifecycle emissions for the specific electricity or other energy sources required by the project. This should include the energy use associated with monitoring activities.",
-            "notes": ""
-        },
-        {
-            "number": "10",
-            "category": "emissions",
-            "component_id": "energy-current",
-            "name": "Secondary impacts of energy demand",
-            "quantification_target": "energy replacement emissions",
-            "uncertainty_type": [
-                "counterfactual"
-            ],
-            "responsibility": "system",
-            "uncertainty_impact_min": "negligible",
-            "uncertainty_impact_max": "medium",
-            "description": "The emissions associated with the system response to CDR energy demand must be considered for energy-intensive approaches. This component is less of a concern if a CDR project builds its own renewables, or if project energy demand is dispatchable in a way that supports grid deployment of renewables. If a CDR project introduces a new base load or is otherwise connected to the grid in a manner that could displace demand for renewables, any emissions associated with the energy system response must be considered. There is not yet a clear best practice for how to account for this system interaction.",
-            "notes": ""
-        },
-        {
-            "number": "11",
-            "category": "durability",
-            "component_id": "store-maint",
-            "name": "Storage monitoring and maintenance",
-            "quantification_target": "storage system monitoring and maintenance plan; years of expected CO\u2082 storage",
-            "uncertainty_type": [
-                "execution"
-            ],
-            "responsibility": "project",
-            "uncertainty_impact_min": "low",
-            "uncertainty_impact_max": "medium",
-            "description": "If storage results in a functionally stable form of CO\u2082 on a short timescale \u2014 for example, via subsurface mineralization or mineralization in concrete \u2014 demonstration that the stable form has been achieved is enough to establish durability. However, if the integrity of storage requires ongoing monitoring and maintenance \u2014 for example, with the injection of supercritical CO\u2082 \u2014 an evaluation of durability claims must consider the monitoring and maintenance plan, as well as any applicable regulatory structure that assigns ongoing liability for storage integrity. One important consideration is whether or not there is a track record of sufficient administrative capacity to guarantee execution of monitoring, maintenance, and liability arrangements. This uncertainty is not included in the calculation of this pathway's Verification Confidence Level (VCL), because it is also captured by the Leakage component.",
-            "notes": ""
-        },
-        {
-            "number": "12",
-            "category": "durability",
-            "component_id": "tau-dic",
-            "name": "DIC residence time",
-            "quantification_target": "years of expected CO\u2082 storage",
-            "uncertainty_type": [
-                "scientific"
-            ],
-            "responsibility": "system",
-            "uncertainty_impact_min": "low",
-            "uncertainty_impact_max": "low",
-            "description": "The concept of ocean dissolved inorganic carbon (DIC) lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000 and 100,000 years. Since capturing atmospheric CO\u2082 through direct ocean removal results in restoring seawater to its original state, this intervention is not expected to change the long-term patterns of abiotic precipitation and dissolution of carbonate minerals \u2014 a central control on DIC residence time \u2014 compared to the counterfactual.  This uncertainty is not included in the calculation of this pathway's Verification Confidence Level (VCL), because it is also captured by the Marine carbonate precipitation component.",
-            "notes": ""
-        },
-        {
-            "number": "13",
-            "category": "durability",
-            "component_id": "tau-carb-marine",
-            "name": "Marine carbonate durability",
-            "quantification_target": "years of expected CO\u2082 storage",
-            "uncertainty_type": [
-                "scientific"
-            ],
-            "responsibility": "system",
-            "uncertainty_impact_min": "negligible",
-            "uncertainty_impact_max": "negligible",
-            "description": "The precipitation and dissolution of carbonate minerals modifies ocean DIC (see DIC residence time). Carbonates preserved on the seafloor are likely to store carbon on geologic timescales. This uncertainty is not included in the calculation of this pathway's Verification Confidence Level (VCL), because it is also captured by the Marine carbonate precipitation component.",
-            "notes": ""
-        }
-    ]
+  "pathway_id": "direct-ocean-removal",
+  "pathway_name": "Direct Ocean Removal",
+  "pathway_description": "Direct ocean removal (DOR) removes CO\u2082 from the surface ocean for storage, and returns seawater depleted in dissolved inorganic carbon (DIC) to the ocean. The DIC-depleted water reequilibrates with the atmosphere to draw down CO\u2082. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain.",
+  "VCL": ["2", "3"],
+  "equation": "(1-2-3-4-5 - 7) - (8+9+10)",
+  "version": "1.0",
+  "components": [
+    {
+      "number": "1",
+      "category": "drawdown",
+      "component_id": "co2-removed",
+      "name": "CO\u2082 capture",
+      "quantification_target": "mass of CO\u2082 removed from seawater",
+      "uncertainty_type": ["execution"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "negligible",
+      "uncertainty_impact_max": "negligible",
+      "description": "The mass of CO\u2082 removed from seawater through electrochemical separation \u2014 or other approaches \u2014 can be measured directly as a metered output from the direct ocean removal (DOR) system. It can also be checked for consistency against operational data from the DOR system and characterization of the seawater effluent that is depleted of dissolved inorganic carbon (DIC). The quantity of CO\u2082 directly removed from seawater may not be equal to the quantity of CO\u2082 stored (see Leakage) or the quantity of CO\u2082 indirectly removed by atmospheric drawdown (see Air sea gas exchange). Direct removal of CO\u2082 from seawater produces DIC-depleted seawater and results in subsequent atmospheric carbon removal by inducing air-sea gas exchange. Thus, the quantity of CO\u2082 removed directly from seawater must be clearly quantified and validated as a separate measurement from CO\u2082 storage or atmospheric CO\u2082 drawdown.",
+      "notes": ""
+    },
+    {
+      "number": "2",
+      "category": "drawdown",
+      "component_id": "store-leak-co2",
+      "name": "Leakage",
+      "quantification_target": "mass of storage system leakage",
+      "uncertainty_type": ["execution"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "low",
+      "uncertainty_impact_max": "medium",
+      "description": "Any difference between the CO\u2082 removed from seawater and the CO\u2082 that is measured as a metered input to the storage system must be accounted for as leakage. For terrestrial geologic storage, post-storage leakage can be directly monitored during and after the injection period, though this is more challenging for subseafloor reservoirs. If geological storage results in a functionally stable form on a short timescale \u2014 for example, via subsurface mineralization \u2014 fugitive emissions associated with the full lifetime of storage may be estimated based on direct observations of the storage reservoir. If instead the integrity of geological storage requires ongoing monitoring and maintenance \u2014 for example with the injection of supercritical CO\u2082 \u2014 the potential for future fugitive emissions must be modeled. For alternative storage systems, like mineralization in concrete, it is possible to directly measure the conversion of input CO\u2082 into a functionally stable form and therefore the total leakage from the storage system.",
+      "notes": ""
+    },
+    {
+      "number": "3",
+      "category": "drawdown",
+      "component_id": "sec-precip",
+      "name": "Secondary precipitation",
+      "quantification_target": "secondary precipitation of CaCO\u2083",
+      "uncertainty_type": ["execution"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "low",
+      "uncertainty_impact_max": "medium",
+      "description": "Removing CO\u2082 from seawater shifts the pH and carbonate ion concentration, and could cause abiotic precipitation of calcium carbonate (CaCO\u2083) or brucite (Mg(OH)\u2082). This is important to characterize as this precipitation results in CO\u2082 outgassing. It remains to be determined what specific combination of suitable nucleation conditions and supersaturation of CaCO\u2083 is needed to cause significant precipitation. Abiotic precipitation can be minimized by controlling the dilution and dispersal of DIC-depleted water and ensuring pH shifts stay below precipitation thresholds.",
+      "notes": ""
+    },
+    {
+      "number": "4",
+      "category": "drawdown",
+      "component_id": "calc",
+      "name": "Biotic calcification response",
+      "quantification_target": "biotic calcification response",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "system",
+      "uncertainty_impact_min": "low",
+      "uncertainty_impact_max": "medium",
+      "description": "Since calcification releases CO\u2082, any changes to the rate of biotic calcification in response to shifts in pH and dissolved inorganic carbon (DIC) concentrations driven by the direct ocean removal process must be considered. Changes in biotic calcification rates could occur in both coastal and open ocean waters, and at the level of individual calcifiers or calcifier populations. In practice, quantifying the biotic calcification response to carbon-depleted water may pose significant spatial, temporal, and signal-to-noise challenges.",
+      "notes": ""
+    },
+    {
+      "number": "5",
+      "category": "drawdown",
+      "component_id": "asg",
+      "name": "Air-sea gas exchange",
+      "quantification_target": "air-sea gas exchange efficiency",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "system",
+      "uncertainty_impact_min": "high",
+      "uncertainty_impact_max": "high",
+      "description": "Atmospheric uptake is reduced if dissolved inorganic carbon (DIC) depleted water is transferred from the surface ocean before either increasing the uptake of atmospheric CO\u2082 or decreasing the outgassing of CO\u2082 to the atmosphere. The precise dispersal of DIC-depleted water, its residence time at the surface, and hence the associated completeness of air-sea gas equilibration is dependent on the location and timing of the dispersal of DIC-depleted water, and is hard to directly observe. In-situ measurements can potentially track post-deployment changes in pCO\u2082, pH, and DIC and deploy water mass tracers to help validate models of plume dispersal and atmospheric CO\u2082 drawdown, though the sensitivity and cost of sensors may be a challenge. Further, oceanographic models can be used to develop probabilistic estimates of equilibration efficiencies for particular locations, contingent on seasonal or interannual variations in forcing regimes. Typical gas exchange timescales of equilibration for the surface ocean and atmosphere are on the order of months to years.",
+      "notes": ""
+    },
+    {
+      "number": "6*",
+      "category": "drawdown",
+      "component_id": "poc",
+      "name": "Particulate organic carbon response",
+      "quantification_target": "particulate organic carbon response",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "system",
+      "uncertainty_impact_min": "not characterized",
+      "uncertainty_impact_max": "not characterized",
+      "description": "Depletion of dissolved inorganic carbon (DIC) could lead to less particulate organic carbon (POC) formation in the surface ocean. This effect could be small if plankton communities are primarily limited by nutrient availability, rather than DIC availability. POC export mediated by calcifying communities could also change in response to changes in biogenic calcification (see Biotic calcification response). Data on potential biological responses to removing CO\u2082 from the surface waters is still lacking.",
+      "notes": ""
+    },
+    {
+      "number": "7",
+      "category": "drawdown",
+      "component_id": "carb-marine",
+      "name": "Marine carbonate precipitation",
+      "quantification_target": "reduction in carbon storage as a result of marine carbonate precipitation",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "system",
+      "uncertainty_impact_min": "low",
+      "uncertainty_impact_max": "low",
+      "description": "Eventually, the formation and burial of carbonate minerals will release CO\u2082 stored. The carbonate precipitation process occurs slowly and is unlikely to have a significant impact on estimates of carbon storage on decadal to millennial timescales. However on geologic timescales, it is an important process to characterize.",
+      "notes": ""
+    },
+    {
+      "number": "8",
+      "category": "emissions",
+      "component_id": "mat-co2",
+      "name": "Materials",
+      "quantification_target": "material embodied emissions",
+      "uncertainty_type": ["execution"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "low",
+      "uncertainty_impact_max": "low",
+      "description": "The embodied emissions of any materials consumed during operation can be estimated based on a cradle-to-grave lifecycle assessment (LCA) of the material input. Emissions associated with any built infrastructure, including monitoring and maintenance equipment, should include both construction emissions and material embodied emissions. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
+      "notes": ""
+    },
+    {
+      "number": "9",
+      "category": "emissions",
+      "component_id": "energy-co2",
+      "name": "Energy",
+      "quantification_target": "energy use emissions",
+      "uncertainty_type": ["execution"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "low",
+      "uncertainty_impact_max": "low",
+      "description": "The emissions associated with energy use for project activities should be estimated using an assessment of lifecycle emissions for the specific electricity or other energy sources required by the project. This should include the energy use associated with monitoring activities.",
+      "notes": ""
+    },
+    {
+      "number": "10",
+      "category": "emissions",
+      "component_id": "energy-current",
+      "name": "Secondary impacts of energy demand",
+      "quantification_target": "energy replacement emissions",
+      "uncertainty_type": ["counterfactual"],
+      "responsibility": "system",
+      "uncertainty_impact_min": "negligible",
+      "uncertainty_impact_max": "medium",
+      "description": "The emissions associated with the system response to CDR energy demand must be considered for energy-intensive approaches. This component is less of a concern if a CDR project builds its own renewables, or if project energy demand is dispatchable in a way that supports grid deployment of renewables. If a CDR project introduces a new base load or is otherwise connected to the grid in a manner that could displace demand for renewables, any emissions associated with the energy system response must be considered. There is not yet a clear best practice for how to account for this system interaction.",
+      "notes": ""
+    },
+    {
+      "number": "11",
+      "category": "durability",
+      "component_id": "store-maint",
+      "name": "Storage monitoring and maintenance",
+      "quantification_target": "storage system monitoring and maintenance plan; years of expected CO\u2082 storage",
+      "uncertainty_type": ["execution"],
+      "responsibility": "project",
+      "uncertainty_impact_min": "low",
+      "uncertainty_impact_max": "medium",
+      "description": "If storage results in a functionally stable form of CO\u2082 on a short timescale \u2014 for example, via subsurface mineralization or mineralization in concrete \u2014 demonstration that the stable form has been achieved is enough to establish durability. However, if the integrity of storage requires ongoing monitoring and maintenance \u2014 for example, with the injection of supercritical CO\u2082 \u2014 an evaluation of durability claims must consider the monitoring and maintenance plan, as well as any applicable regulatory structure that assigns ongoing liability for storage integrity. One important consideration is whether or not there is a track record of sufficient administrative capacity to guarantee execution of monitoring, maintenance, and liability arrangements. This uncertainty is not included in the calculation of this pathway's Verification Confidence Level (VCL), because it is also captured by the Leakage component.",
+      "notes": ""
+    },
+    {
+      "number": "12",
+      "category": "durability",
+      "component_id": "tau-dic",
+      "name": "DIC residence time",
+      "quantification_target": "years of expected CO\u2082 storage",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "system",
+      "uncertainty_impact_min": "low",
+      "uncertainty_impact_max": "low",
+      "description": "The concept of ocean dissolved inorganic carbon (DIC) lifetime is a well-established theory and is accepted within the community to lie somewhere between 10,000 and 100,000 years. Since capturing atmospheric CO\u2082 through direct ocean removal results in restoring seawater to its original state, this intervention is not expected to change the long-term patterns of abiotic precipitation and dissolution of carbonate minerals \u2014 a central control on DIC residence time \u2014 compared to the counterfactual.  This uncertainty is not included in the calculation of this pathway's Verification Confidence Level (VCL), because it is also captured by the Marine carbonate precipitation component.",
+      "notes": ""
+    },
+    {
+      "number": "13",
+      "category": "durability",
+      "component_id": "tau-carb-marine",
+      "name": "Marine carbonate durability",
+      "quantification_target": "years of expected CO\u2082 storage",
+      "uncertainty_type": ["scientific"],
+      "responsibility": "system",
+      "uncertainty_impact_min": "negligible",
+      "uncertainty_impact_max": "negligible",
+      "description": "The precipitation and dissolution of carbonate minerals modifies ocean DIC (see DIC residence time). Carbonates preserved on the seafloor are likely to store carbon on geologic timescales. This uncertainty is not included in the calculation of this pathway's Verification Confidence Level (VCL), because it is also captured by the Marine carbonate precipitation component.",
+      "notes": ""
+    }
+  ]
 }
