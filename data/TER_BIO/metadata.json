@@ -1,77 +1,93 @@
 {
-  "contributors": [
-    {
-      "type": "CDR Company",
-      "name": "Running Tide",
-      "affiliation": "",
-      "notes": "",
-      "version": ["1.0"]
-    },
-    {
-      "type": "Scientific Expert",
-      "name": "Fabiano Ximenes",
-      "affiliation": "NSW Government",
-      "notes": "",
-      "version": ["1.0"]
-    },
-    {
-      "type": "Scientific Expert",
-      "name": "Anne Ware",
-      "affiliation": "LBNL",
-      "notes": "",
-      "version": ["1.2"]
-    },
-    {
-      "type": "Scientific Expert",
-      "name": "Corrine Scown",
-      "affiliation": "LBNL",
-      "notes": "",
-      "version": ["1.2"]
-    },
-    {
-      "type": "Scientific Expert",
-      "name": "Sarah Nordahl",
-      "affiliation": "LBNL",
-      "notes": "",
-      "version": ["1.2"]
-    },
-    {
-      "type": "Ecosystem Actor",
-      "name": "Matt Gammans",
-      "affiliation": "Isometric",
-      "notes": "",
-      "version": ["1.2"]
-    },
-    {
-      "type": "Scientific Expert",
-      "name": "Morgan Raven",
-      "affiliation": "UC Santa Barbara",
-      "notes": "",
-      "version": ["1.2"]
-    },
-    {
-      "type": "CDR Company",
-      "name": "Rewind",
-      "affiliation": "",
-      "notes": "",
-      "version": ["1.2"]
-    }
-  ],
-  "revisions": [
-    {
-      "version": "1.0",
-      "date": "09-19-2022",
-      "note": "First release."
-    },
-    {
-      "version": "1.1",
-      "date": "04-10-2023",
-      "note": "Updated pathway to include an additional drawdown component ('Outgassing'). Updated the VCL to exclude the durability component ('Deepwater recirculation') as the uncertainty is covered by the 'Outgassing' component. This did not change the overall VCL. Further details on this update are available in this [blog post](https://carbonplan.org/blog/vcl-update-v2023.04.0)"
-    },
-    {
-      "version": "1.2",
-      "date": "03-TK-2024",
-      "note": "Edited the upstream components for consistency with other biomass-based CDR pathways. Separated out solid phase and dissolved phase deepwater storage. Read more about this update [here](TK). Changes did not change the overall VCL."
-    }
-  ]
+    "contributors": [
+        {
+            "type": "CDR Company",
+            "name": "Running Tide",
+            "affiliation": "",
+            "notes": "",
+            "version": [
+                "1.0"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Fabiano Ximenes",
+            "affiliation": "NSW Government",
+            "notes": "",
+            "version": [
+                "1.0"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Anne Ware",
+            "affiliation": "LBNL",
+            "notes": "",
+            "version": [
+                "1.2"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Corrine Scown",
+            "affiliation": "LBNL",
+            "notes": "",
+            "version": [
+                "1.2"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Sarah Nordahl",
+            "affiliation": "LBNL",
+            "notes": "",
+            "version": [
+                "1.2"
+            ]
+        },
+        {
+            "type": "MRV Company",
+            "name": "Matt Gammans",
+            "affiliation": "Isometric",
+            "notes": "",
+            "version": [
+                "1.2"
+            ]
+        },
+        {
+            "type": "Scientific Expert",
+            "name": "Morgan Raven",
+            "affiliation": "UC Santa Barbara",
+            "notes": "",
+            "version": [
+                "1.2"
+            ]
+        },
+        {
+            "type": "CDR Company",
+            "name": "Rewind",
+            "affiliation": "",
+            "notes": "",
+            "version": [
+                "1.2"
+            ]
+        }
+    ],
+    "revisions": [
+        {
+            "version": "1.0",
+            "date": "09-19-2022",
+            "note": "First release."
+        },
+        {
+            "version": "1.1",
+            "date": "04-10-2023",
+            "note": "Updated pathway to include an additional drawdown component ('Outgassing'). Updated the VCL to exclude the durability component ('Deepwater recirculation') as the uncertainty is covered by the 'Outgassing' component. This did not change the overall VCL. Further details on this update are available in this [blog post](https://carbonplan.org/blog/vcl-update-v2023.04.0)"
+        },
+        {
+            "version": "1.2",
+            "date": "03-TK-2024",
+            "note": "Edited the upstream components for consistency with other biomass-based CDR pathways. Separated out solid phase and dissolved phase deepwater storage. Read more about this update [here](TK). Changes did not change the overall VCL."
+        }
+    ]
 }
