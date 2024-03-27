@@ -6,8 +6,7 @@ import pathlib
 
 import numpy as np
 import pandas as pd  # type: ignore
-
-from .common import (
+from common import (
     auth_service,
     avail_pathways,
     get_pathway_col_list,
@@ -74,9 +73,12 @@ def component_pathway_flatten(df: pd.DataFrame, pathway_col_list: list) -> pd.Da
     :return: Flattened pathway DataFrame
     :rtype: pd.DataFrame
     """
-    df['pathways'] = (
-        df[pathway_col_list].apply(lambda x: ','.join(x[x != ''].index), axis=1).str.split(',')
-    )
+
+    pw_df = df[pathway_col_list]
+    pw_df.replace(r'^\s*$', np.nan, regex=True, inplace=True)
+    pw_df.fillna(value=np.nan, inplace=True)
+    df['pathways'] = pw_df.apply(lambda x: ','.join(x[~x.isna()].index), axis=1).str.split(',')
+
     df.drop(pathway_col_list, axis=1, inplace=True)
 
     return df

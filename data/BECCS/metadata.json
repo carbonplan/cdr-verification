@@ -10,14 +10,14 @@
     {
       "type": "Scientific Expert",
       "name": "Anne Ware",
-      "affiliation": "LBNL",
+      "affiliation": "NREL",
       "notes": "",
       "version": ["1.0"]
     },
     {
       "type": "Scientific Expert",
       "name": "Yimin Zhang",
-      "affiliation": "LBNL",
+      "affiliation": "NREL",
       "notes": "",
       "version": ["1.0"]
     },
@@ -47,7 +47,7 @@
     {
       "version": "1.0",
       "date": "09-19-2022",
-      "note": "First release as part of a [round of updates](TK) to biomass-based pathways."
+      "note": "First release as part of a [round of updates](https://carbonplan.org/blog/vcl-update-v2024.03.0) to biomass-based pathways."
     }
   ]
 }
