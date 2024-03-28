@@ -74,14 +74,13 @@ def component_pathway_flatten(df: pd.DataFrame, pathway_col_list: list) -> pd.Da
     :return: Flattened pathway DataFrame
     :rtype: pd.DataFrame
     """
-
     pw_df = df[pathway_col_list]
-    pw_df.replace(r'^\s*$', np.nan, regex=True, inplace=True)
-    pw_df.fillna(value=np.nan, inplace=True)
+    pw_df = pw_df.replace(r'^\s*$', np.nan, regex=True)
+    pw_df = pw_df.fillna(value=np.nan)
     df['pathways'] = pw_df.apply(lambda x: ','.join(x[~x.isna()].index), axis=1).str.split(',')
-
     df.drop(pathway_col_list, axis=1, inplace=True)
-
+    # fix that transforms "empty" pathways entries that contain a single empty string into an empty list ex. [''] -> []
+    df['pathways'] = df['pathways'].apply(lambda y: [] if y == [''] else y)
     return df
 
 
