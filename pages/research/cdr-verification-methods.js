@@ -3,6 +3,7 @@ import { MDXProvider, useMDXComponents } from '@mdx-js/react'
 import { useThemedStylesWithMdx } from '@theme-ui/mdx'
 import Methods, { frontMatter } from '../../components/methods'
 import contributors from '../../data/contributors.json'
+import { pathways } from '../../utils/data'
 
 export default (props) => {
   const componentsWithStyles = useThemedStylesWithMdx(useMDXComponents())
@@ -10,7 +11,7 @@ export default (props) => {
   return (
     <MDXProvider components={componentsWithStyles}>
       <Supplement meta={frontMatter} back={frontMatter.back}>
-        <Methods contributors={props.contributors} />
+        <Methods contributors={props.contributors} pathways={props.pathways} />
       </Supplement>
     </MDXProvider>
   )
@@ -36,6 +37,6 @@ export function getStaticProps() {
     }
   )
   return {
-    props: { contributors: combinedContributors },
+    props: { contributors: combinedContributors, pathways },
   }
 }

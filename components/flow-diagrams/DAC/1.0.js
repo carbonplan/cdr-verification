@@ -37,13 +37,13 @@ const Flow = () => {
       <Arrow start={[13, 11]} length={2} right />
       <Rectangle label='CO₂ transportation' start={[16, 9]} />
       <Arrow start={[23, 11]} length={2} right />
-      <Rectangle id='inj-carbon' start={[26, 9]} />
+      <Rectangle id='co2-stored' start={[26, 9]} />
       <Arrow start={[29, 14]} length={2} up />
 
       <Rectangle id='store-maint' start={[26, 17]} />
 
       <Rectangle
-        id='store-leak'
+        id='store-leak-co2'
         start={[26, 4]}
         height={1}
         borderStyle='none'
