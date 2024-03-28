@@ -491,7 +491,6 @@ def pathways_version_note_bool(
 ) -> pd.DataFrame:
     """There is a version note corresponding with the current version number
     - Takes the latest revision, checks if 'note' is empty. If empty, version_note_bool == False"""
-
     pathway_name_list = []
     version_bool_list = []
 
@@ -633,7 +632,6 @@ def latest_pathway_version_match(
     cont_df_pathway_ids = set(list(cont_df)) - set(
         ['type', 'name', 'affiliation', 'initial', 'notes']
     )
-
     for pathway_key in metadata_combined['metadata_dict_combined']:
         pathway = metadata_combined['metadata_dict_combined'][pathway_key]['pathway_id']
         if pathway in cont_df_pathway_ids:
@@ -646,6 +644,7 @@ def latest_pathway_version_match(
                     .to_list()
                 )
             )
+
             pv = metadata_combined['metadata_dict_combined'][pathway_key]['version']
             try:  # attempt to coerce string to float
                 pathway_version = float(pv)

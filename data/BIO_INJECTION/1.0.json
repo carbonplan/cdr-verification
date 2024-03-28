@@ -1,5 +1,5 @@
 {
-  "pathway_id": "biomass-carbon-removal-and-storage",
+  "pathway_id": "biomaterial-injection",
   "pathway_name": "Biomass Carbon Removal and Storage",
   "pathway_description": "Biomass with carbon removal and storage (BiCRS) uses photosynthesis to remove CO\u2082 from the atmosphere, and transforms the resulting biomass (e.g. via pyrolysis) and its environment (e.g. via geologic injection) to achieve long-term storage. This pathway is VCL 3-5, meaning that current quantification capacity can establish permanent carbon removal, but that for certain approaches, significant uncertainties remain.",
   "VCL": ["3", "5"],
@@ -36,8 +36,8 @@
       "number": "3",
       "category": "drawdown",
       "component_id": "feed-stor",
-      "name": "Feedstock storage counterfactual",
-      "quantification_target": "mass of counterfactual stored biomass carbon",
+      "name": "Carbon storage counterfactual",
+      "quantification_target": "mass of biomass carbon stored in the counterfactual",
       "uncertainty_type": ["counterfactual"],
       "responsibility": "system",
       "uncertainty_impact_min": "low",
@@ -61,14 +61,14 @@
     {
       "number": "5",
       "category": "drawdown",
-      "component_id": "LUC-indirect",
-      "name": "Indirect land use change",
-      "quantification_target": "indirect land use change emissions",
+      "component_id": "market-effects",
+      "name": "Market effects",
+      "quantification_target": "emissions from market effects",
       "uncertainty_type": ["scientific"],
       "responsibility": "system",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "high",
-      "description": "Any emissions associated with indirect land use change as a result of feedstock demand must be considered. For example, paying farmers for agricultural waste will likely increase the profitability of their operations, and could result in an increase in acres planted. Directly growing energy crops or creating plantations could displace food production onto other lands and contribute to deforestation. Conversely, the creation of markets for forestry residues could help reduce the rate of conversion of forest systems to agricultural use. To be conservative, however, we recommend that this potential positive impact be excluded from the quantified carbon removal outcome. Estimating indirect land use change resulting from feedstock demand will likely be difficult in practice and require careful economic modeling.",
+      "description": "Any emissions associated with market effects as a result of feedstock demand must be considered. For example, paying farmers for agricultural waste will likely increase the profitability of their operations and could result in an increase in acres planted. Directly growing energy crops or creating plantations could displace food production onto other lands and contribute to deforestation. Estimating the system emissions resulting from new feedstock demand will likely be difficult in practice and require careful economic modeling that reflects the overall scale of new biomass demand.",
       "notes": ""
     },
     {
@@ -94,7 +94,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "low",
-      "description": "The emissions associated with energy use for the process. This component should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project.",
+      "description": "The emissions associated with energy use for the process should be estimated based on an assessment of lifecycle emissions for the specific electricity or energy sources consumed by the project.",
       "notes": ""
     },
     {
