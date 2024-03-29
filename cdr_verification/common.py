@@ -20,7 +20,7 @@ avail_pathways = [
     # 'BiCRS',
     'BIO_INJECTION',
     'BECCS',
-    'BIO_STORAGE',
+    'BIO_BURIAL',
     'TER_BIO',
     'BIOCHAR',
     'DAC',

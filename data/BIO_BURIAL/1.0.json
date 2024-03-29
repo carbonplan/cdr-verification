@@ -1,7 +1,7 @@
 {
-  "pathway_id": "biomass-storage",
-  "pathway_name": "Biomass storage",
-  "pathway_description": "Biomass storage is a type of biomass carbon removal and storage (BiCRS) that uses photosynthesis to remove CO\u2082 from the atmosphere, and stores it (e.g. via burial) to prevent or slow decomposition. This pathway is VCL 1-4, meaning that current quantification capacity can establish permanent carbon removal for some approaches, but that for others, very significant uncertainties remain.",
+  "pathway_id": "biomass-burial",
+  "pathway_name": "Biomass burial",
+  "pathway_description": "Biomass burial is a type of biomass carbon removal and storage (BiCRS) that uses photosynthesis to remove CO\u2082 from the atmosphere, and stores it to prevent or slow decomposition. This pathway is VCL 1-4, meaning that current quantification capacity can establish permanent carbon removal for some approaches, but that for others, very significant uncertainties remain.",
   "VCL": ["1", "4"],
   "equation": "(2-3-4-5) - (6+7+9+10+11)",
   "version": "1.0",
@@ -22,14 +22,14 @@
     {
       "number": "2",
       "category": "drawdown",
-      "component_id": "biomass-storage",
-      "name": "Biomass storage",
+      "component_id": "biomass-burial",
+      "name": "Biomass burial",
       "quantification_target": "mass of stored biomass carbon",
       "uncertainty_type": ["execution"],
       "responsibility": "project",
       "uncertainty_impact_min": "negligible",
       "uncertainty_impact_max": "negligible",
-      "description": "Biomass storage prevents or slows the decay of biomass by putting it in dry, cold, or anoxic conditions. The mass of stored biomass carbon can be measured directly and converted to CO\u2082e using a default factor or direct measurements. This quantity can be checked for consistency against operational records around biomass sourcing and transportation (see Biomass procurement).",
+      "description": "Biomass storage prevents or slows the decay of biomass by putting it in dry, cold, or anoxic conditions. Here, we specifically consider storage via biomass burial. The mass of stored biomass carbon can be measured directly and converted to CO\u2082e using a default factor or direct measurements. This quantity can be checked for consistency against operational records around biomass sourcing and transportation.",
       "notes": ""
     },
     {

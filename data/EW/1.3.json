@@ -1,7 +1,7 @@
 {
   "pathway_id": "enhanced-weathering",
   "pathway_name": "Enhanced Weathering",
-  "pathway_description": "Enhanced weathering (EW) is a process that speeds up the chemical reactions between rocks, water, and air to remove CO\u2082 from the atmosphere. Here, we specifically consider EW performed by spreading finely ground rock on agricultural soils. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain. You can learn about how this pathway has been updated since initial publication [here](https://carbonplan.org/blog/enhanced-weathering-update).",
+  "pathway_description": "Enhanced weathering (EW) is a process that speeds up the chemical reactions between rocks, water, and air to remove CO\u2082 from the atmosphere. Here, we specifically consider EW performed by spreading finely ground rock on agricultural soils. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain.",
   "VCL": ["3", "3"],
   "equation": "(2 - 3 - 4 - 5 - 6 - 7 - 8) - (10 + 11)",
   "version": "1.3",

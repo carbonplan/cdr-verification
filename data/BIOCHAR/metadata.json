@@ -85,7 +85,7 @@
     {
       "version": "1.2",
       "date": "04-01-2024",
-      "note": "Third release. Edited consistency with other biomass-based CDR pathways. This included adding components focused on non-CO2 biomass emissions and the production of energy co-products. These changes did not affect the VCL classification. For more details, read this [blog post](https://carbonplan.org/blog/vcl-update-v2024.03.0) describing the scope of the updates."
+      "note": "Third release. Edited consistency with other biomass-based CDR pathways. This included adding components focused on non-CO2 biomass emissions and the production of energy co-products. These changes did not affect the VCL classification. For more details, read this [blog post](https://carbonplan.org/blog/vcl-update-v2024.04.0) describing the scope of the updates."
     }
   ]
 }

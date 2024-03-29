@@ -621,7 +621,7 @@
         "version": ["1.2"]
       },
       {
-        "id": "biomass-storage",
+        "id": "biomass-burial",
         "version": ["1.0"]
       },
       {
@@ -641,7 +641,7 @@
         "version": ["2.0"]
       },
       {
-        "id": "biomass-storage",
+        "id": "biomass-burial",
         "version": ["1.0"]
       },
       {
@@ -669,7 +669,7 @@
         "version": ["1.2"]
       },
       {
-        "id": "biomass-storage",
+        "id": "biomass-burial",
         "version": ["1.0"]
       },
       {
@@ -697,7 +697,7 @@
         "version": ["1.2"]
       },
       {
-        "id": "biomass-storage",
+        "id": "biomass-burial",
         "version": ["1.0"]
       },
       {
@@ -725,7 +725,7 @@
         "version": ["1.2"]
       },
       {
-        "id": "biomass-storage",
+        "id": "biomass-burial",
         "version": ["1.0"]
       },
       {
@@ -741,7 +741,7 @@
     "initial": "",
     "pathways": [
       {
-        "id": "biomass-storage",
+        "id": "biomass-burial",
         "version": ["1.0"]
       }
     ]
@@ -753,7 +753,7 @@
     "initial": "",
     "pathways": [
       {
-        "id": "biomass-storage",
+        "id": "biomass-burial",
         "version": ["1.0"]
       }
     ]
@@ -791,7 +791,7 @@
     "notes": "Comments came specifically from Jimmy Voorhis.",
     "pathways": [
       {
-        "id": "biomass-storage",
+        "id": "biomass-burial",
         "version": ["1.0"]
       }
     ]

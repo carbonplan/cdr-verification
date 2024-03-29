@@ -1,8 +1,8 @@
 {
   "pathway_id": "biomaterial-injection",
   "pathway_name": "Biomaterial injection",
-  "pathway_description": "Biomaterial injection is a type of biomass carbon removal and storage (BiCRS) that uses photosynthesis to remove CO\u2082 from the atmosphere, transforms the resulting biomass (e.g. via pyrolysis or creation of a slurry), and injects it into a geologic reservoir to achieve long-term storage. This pathway is VCL 3-4, meaning that current quantification capacity can establish permanent carbon removal, but that for certain approaches, very significant uncertainties remain.",
-  "VCL": ["3", "4"],
+  "pathway_description": "Biomaterial injection is a type of biomass carbon removal and storage (BiCRS) that uses photosynthesis to remove CO\u2082 from the atmosphere, transforms the resulting biomass (e.g. via pyrolysis or creation of a slurry), and injects it into a geologic reservoir to achieve long-term storage. This pathway is VCL 3-5, meaning that current quantification capacity can establish permanent carbon removal, but that for certain approaches, very significant uncertainties remain.",
+  "VCL": ["3", "5"],
   "equation": "(3-4-5)-(6+7+9+10+11)",
   "version": "2.0",
   "components": [
@@ -53,7 +53,7 @@
       "quantification_target": "mass of storage system leakage",
       "uncertainty_type": ["execution"],
       "responsibility": "project",
-      "uncertainty_impact_min": "medium",
+      "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "medium",
       "description": "Injected biomaterial could leak from the storage reservoir if the reservoir loses integrity and the biomaterial migrates, or if the biomaterial degrades and releases greenhouse gasses that escape the reservoir via the well head or surroundings. These risks are contingent upon the characteristics of the injected biomaterial (e.g. pH), the operation and maintenance of the well (e.g. pressure, temperature, and ultimate well capping), and the depth and geology of the storage reservoir. Monitoring for leakage will likely require a combination of direct measurements and modeling. This approach may be partially dictated by the relevant permitting authority (e.g. EPA UIC), but characterizing leakage risks is still an area of active research. Any GWP assumptions used to incorporate the leakage of non-CO\u2082 gasses into the calculation of net carbon removal should be transparently disclosed.",
       "notes": ""
@@ -120,7 +120,7 @@
       "responsibility": "project",
       "uncertainty_impact_min": "low",
       "uncertainty_impact_max": "low",
-      "description": "The embodied emissions of all non-consumable and consumable materials that enable biomaterial injection \u2014 including materials, chemicals, and biomass feedstocks \u2014 should be estimated using a cradle-to-grave lifecycle assessment (LCA). If biomass is purpose-grown, emissions from biomass cultivation and direct land use change must be taken into account. Emissions associated with any built infrastructure, including monitoring and maintenance equipment, should include both construction emissions and material embodied emissions. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
+      "description": "The embodied emissions of all non-consumable and consumable materials that enable biomaterial injection \u2014 including materials, chemicals, and biomass feedstocks \u2014 should be estimated using a cradle-to-grave lifecycle assessment (LCA). If biomass is purpose-grown, emissions from biomass cultivation and direct land use change must be taken into account. Emissions associated with any built infrastructure, including monitoring and maintenance equipment, should include both construction emissions and material embodied emissions. There are not yet consistent best practices around whether or how to account for the embodied emissions of equipment or infrastructure of existing industrial projects that is used but not owned by the project. Transparency around boundary assumptions, data sources, and uncertainties is critical for LCA consistency and comparability.",
       "notes": ""
     },
     {
