@@ -17,7 +17,7 @@
     {
       "type": "Scientific Expert",
       "name": "Anne Ware",
-      "affiliation": "LBNL",
+      "affiliation": "NREL",
       "notes": "",
       "version": ["1.2"]
     },
@@ -70,8 +70,8 @@
     },
     {
       "version": "1.2",
-      "date": "03-TK-2024",
-      "note": "Edited the upstream components for consistency with other biomass-based CDR pathways. Separated out solid phase and dissolved phase deepwater storage. Read more about this update [here](TK). Changes did not change the overall VCL."
+      "date": "04-01-2024",
+      "note": "Edited the upstream components for consistency with other biomass-based CDR pathways. Separated out solid phase and dissolved phase deepwater storage. Read more about this update [here](https://carbonplan.org/blog/vcl-update-v2024.03.0). Changes did not change the overall VCL."
     }
   ]
 }

@@ -10,7 +10,7 @@
       "number": "1",
       "category": "drawdown",
       "component_id": "co2-stored",
-      "name": "CO\u2082 Storage",
+      "name": "CO\u2082 storage",
       "quantification_target": "mass of stored CO\u2082",
       "uncertainty_type": ["execution"],
       "responsibility": "project",

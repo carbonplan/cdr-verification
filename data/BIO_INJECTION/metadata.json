@@ -31,14 +31,14 @@
     {
       "type": "Scientific Expert",
       "name": "Anne Ware",
-      "affiliation": "LBNL",
+      "affiliation": "NREL",
       "notes": "",
       "version": ["2.0"]
     },
     {
       "type": "Scientific Expert",
       "name": "Yimin Zhang",
-      "affiliation": "LBNL",
+      "affiliation": "NREL",
       "notes": "",
       "version": ["2.0"]
     },
@@ -79,8 +79,8 @@
     },
     {
       "version": "2.0",
-      "date": "03-TK-2024",
-      "note": "Although the first version of the pathway was named Biomass carbon removal and storage (BiCRS), it was designed primarily with bio-oil injection in mind. The pathway is now more explicitly named Biomaterial injection, and has been edited to include the injection of other types of biomaterial like biomass slurries. These edits changed VCL classification of this pathway from 2-5 to 2-4. Read more about this update [here](TK)."
+      "date": "04-01-2024",
+      "note": "Although the first version of the pathway was named Biomass carbon removal and storage (BiCRS), it was designed primarily with bio-oil injection in mind. The pathway is now more explicitly named Biomaterial injection, and has been edited to include the injection of other types of biomaterial like biomass slurries. These edits changed VCL classification of this pathway from 2-5 to 3-4. Read more about this update [here](https://carbonplan.org/blog/vcl-update-v2024.03.0)."
     }
   ]
 }
