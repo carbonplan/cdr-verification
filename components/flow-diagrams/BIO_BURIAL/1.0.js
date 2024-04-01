@@ -41,7 +41,7 @@ const Flow = () => {
       <Arrow start={[10, 10]} length={1} right />
       <Rectangle start={[12, 8]} label='Biomass processing' />
       <Arrow start={[19, 10]} length={1} right />
-      <Rectangle id='biomass-storage' start={[21, 8]} />
+      <Rectangle id='biomass-burial' start={[21, 8]} />
 
       <Arrow start={[6, 13]} length={2} down />
       <Rectangle id='baseline-carbon-stored' start={[3, 16]} />

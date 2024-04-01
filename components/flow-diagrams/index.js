@@ -1,7 +1,7 @@
 import { default as ALK_WASTE_MIN } from './ALK_WASTE_MIN'
 import { default as BECCS } from './BECCS'
 import { default as BIO_INJECTION } from './BIO_INJECTION'
-import { default as BIO_STORAGE } from './BIO_STORAGE'
+import { default as BIO_BURIAL } from './BIO_BURIAL'
 import { default as BIOCHAR } from './BIOCHAR'
 import { default as DAC } from './DAC'
 import { default as DOR } from './DOR'
@@ -17,7 +17,7 @@ export default {
   beccs: BECCS,
   biochar: BIOCHAR,
   'biomaterial-injection': BIO_INJECTION,
-  'biomass-storage': BIO_STORAGE,
+  'biomass-burial': BIO_BURIAL,
   'direct-air-capture': DAC,
   'direct-ocean-removal': DOR,
   'enhanced-weathering': EW,
