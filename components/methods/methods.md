@@ -173,7 +173,7 @@ The contents of this tool are made available under a [CC-BY 4.0 International li
 
 Please cite this tool as:
 
-CarbonPlan and Frontier (2023) “CDR Verification Framework” CarbonPlan [10.5281/zenodo.7803151](https://doi.org/10.5281/zenodo.7803151)
+CarbonPlan and Frontier (2023) “CDR Verification Framework” CarbonPlan [10.5281/zenodo.10895244](https://zenodo.org/doi/10.5281/zenodo.10895244)
 
 Please cite this methods doc as:
 
