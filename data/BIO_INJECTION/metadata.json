@@ -1,106 +1,86 @@
 {
-    "contributors": [
-        {
-            "type": "CDR Company",
-            "name": "Charm",
-            "affiliation": "",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "CDR Company",
-            "name": "Running Tide",
-            "affiliation": "",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Fabiano Ximenes",
-            "affiliation": "NSW Government",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Sarah Saltzer",
-            "affiliation": "Stanford",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Anne Ware",
-            "affiliation": "NREL",
-            "notes": "",
-            "version": [
-                "2.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Yimin Zhang",
-            "affiliation": "NREL",
-            "notes": "",
-            "version": [
-                "2.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Corinne Scown",
-            "affiliation": "LBNL",
-            "notes": "",
-            "version": [
-                "2.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Sarah Nordahl",
-            "affiliation": "LBNL",
-            "notes": "",
-            "version": [
-                "2.0"
-            ]
-        },
-        {
-            "type": "MRV Company",
-            "name": "Matt Gammans",
-            "affiliation": "Isometric",
-            "notes": "",
-            "version": [
-                "2.0"
-            ]
-        },
-        {
-            "type": "CDR Company",
-            "name": "Vaulted",
-            "affiliation": "",
-            "notes": "Comments came specifically from Bryan Epps. ",
-            "version": [
-                "2.0"
-            ]
-        }
-    ],
-    "revisions": [
-        {
-            "version": "1.0",
-            "date": "09-19-2022",
-            "note": "First release."
-        },
-        {
-            "version": "2.0",
-            "date": "04-01-2024",
-            "note": "Although the first version of the pathway was named Biomass carbon removal and storage (BiCRS), it was designed primarily with bio-oil injection in mind. The pathway is now more explicitly named Biomaterial injection, and has been edited to include the injection of other types of biomaterial like biomass slurries. These edits changed VCL classification of this pathway from 2-5 to 3-5. Read more about this update [here](https://carbonplan.org/blog/vcl-update-v2024.04.0)."
-        }
-    ]
+  "contributors": [
+    {
+      "type": "CDR Company",
+      "name": "Charm",
+      "affiliation": "",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "CDR Company",
+      "name": "Running Tide",
+      "affiliation": "",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Fabiano Ximenes",
+      "affiliation": "NSW Government",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Sarah Saltzer",
+      "affiliation": "Stanford",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Anne Ware",
+      "affiliation": "NREL",
+      "notes": "",
+      "version": ["2.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Yimin Zhang",
+      "affiliation": "NREL",
+      "notes": "",
+      "version": ["2.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Corinne Scown",
+      "affiliation": "LBNL",
+      "notes": "",
+      "version": ["2.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Sarah Nordahl",
+      "affiliation": "LBNL",
+      "notes": "",
+      "version": ["2.0"]
+    },
+    {
+      "type": "MRV Company",
+      "name": "Matt Gammans",
+      "affiliation": "Isometric",
+      "notes": "",
+      "version": ["2.0"]
+    },
+    {
+      "type": "CDR Company",
+      "name": "Vaulted",
+      "affiliation": "",
+      "notes": "Comments came specifically from Bryan Epps. ",
+      "version": ["2.0"]
+    }
+  ],
+  "revisions": [
+    {
+      "version": "1.0",
+      "date": "09-19-2022",
+      "note": "First release."
+    },
+    {
+      "version": "2.0",
+      "date": "04-01-2024",
+      "note": "Although the first version of the pathway was named Biomass carbon removal and storage (BiCRS), it was designed primarily with bio-oil injection in mind. The pathway is now more explicitly named Biomaterial injection, and has been edited to include the injection of other types of biomaterial like biomass slurries. These edits changed VCL classification of this pathway from 2-5 to 3-5. Read more about this update [here](https://carbonplan.org/blog/vcl-update-v2024.04.0)."
+    }
+  ]
 }

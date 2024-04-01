@@ -1,65 +1,53 @@
 {
-    "contributors": [
-        {
-            "type": "Ecosystem Actor",
-            "name": "Erica Belmont",
-            "affiliation": "Carbon Direct",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Anne Ware",
-            "affiliation": "NREL",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Yimin Zhang",
-            "affiliation": "NREL",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Corinne Scown",
-            "affiliation": "LBNL",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "Scientific Expert",
-            "name": "Sarah Nordahl",
-            "affiliation": "LBNL",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        },
-        {
-            "type": "MRV Company",
-            "name": "Matt Gammans",
-            "affiliation": "Isometric",
-            "notes": "",
-            "version": [
-                "1.0"
-            ]
-        }
-    ],
-    "revisions": [
-        {
-            "version": "1.0",
-            "date": "09-19-2022",
-            "note": "First release as part of a [round of updates](https://carbonplan.org/blog/vcl-update-v2024.04.0) to biomass-based pathways."
-        }
-    ]
+  "contributors": [
+    {
+      "type": "Ecosystem Actor",
+      "name": "Erica Belmont",
+      "affiliation": "Carbon Direct",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Anne Ware",
+      "affiliation": "NREL",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Yimin Zhang",
+      "affiliation": "NREL",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Corinne Scown",
+      "affiliation": "LBNL",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Sarah Nordahl",
+      "affiliation": "LBNL",
+      "notes": "",
+      "version": ["1.0"]
+    },
+    {
+      "type": "MRV Company",
+      "name": "Matt Gammans",
+      "affiliation": "Isometric",
+      "notes": "",
+      "version": ["1.0"]
+    }
+  ],
+  "revisions": [
+    {
+      "version": "1.0",
+      "date": "09-19-2022",
+      "note": "First release as part of a [round of updates](https://carbonplan.org/blog/vcl-update-v2024.04.0) to biomass-based pathways."
+    }
+  ]
 }
