@@ -124,6 +124,9 @@ const ComponentDocumentation = ({ component, options, pathways }) => {
                   </Column>
                 </Row>
               ))}
+            {pathways.length === 0 && (
+              <Box sx={{ color: 'secondary' }}>No current pathways</Box>
+            )}
           </Flex>
         </Column>
         <Column start={1} width={[6, 6, 4, 4]} sx={{ my: [4, 4, 6, 6] }}>
@@ -143,6 +146,7 @@ export function getStaticProps({ params: { id } }) {
     props: {
       component,
       options: components
+        .filter((c) => c.component_id === id || c.pathways.length > 0)
         .map((c) => ({
           value: c.component_id,
           label: c.secondary_name

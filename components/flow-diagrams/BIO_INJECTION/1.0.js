@@ -49,7 +49,7 @@ const Flow = () => {
       <Arrow start={[4, 21]} length={3} right />
       <Rectangle id='feed-stor' start={[8, 14]} />
       <Rectangle id='feed-current' start={[8, 19]} />
-      <Rectangle id='LUC-indirect' start={[8, 24]} />
+      <Rectangle id='market-effects' start={[8, 24]} />
 
       <Arrow start={[31, 12]} length={2} up />
       <Rectangle id='store-maint' start={[28, 15]} />

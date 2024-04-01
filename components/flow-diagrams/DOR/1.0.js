@@ -54,7 +54,7 @@ const Flow = () => {
       <Rectangle start={[8, 16]} height={3} label='CO₂ storage' />
 
       <Arrow start={[11, 20]} length={2} down />
-      <Rectangle id='store-leak' start={[8, 23]} />
+      <Rectangle id='store-leak-co2' start={[8, 23]} />
 
       <Arrow start={[20, 14]} length={8} down />
       <Rectangle id='poc' start={[16, 23]} width={8} />
