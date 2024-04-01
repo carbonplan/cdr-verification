@@ -1,7 +1,7 @@
 {
   "pathway_id": "terrestrial-biomass-sinking",
   "pathway_name": "Terrestrial Biomass Sinking",
-  "pathway_description": "Terrestrial Biomass Sinking uses plants or algae to remove CO\u2082 from the atmosphere via photosynthesis, and sinks that biomass into the deep ocean to achieve long-term carbon storage. In addition to the carbon removal and durability uncertainties mapped below, there are important uncertainties about the ecosystem impacts of this approach. This pathway is VCL 2-4, meaning that current quantification capacity can establish permanent carbon removal, but for certain approaches, very significant uncertainties remain.",
+  "pathway_description": "Terrestrial biomass sinking is a type of biomass carbon removal and storage (BiCRS) that uses photosynthesis to remove CO\u2082 from the atmosphere, and sinks that biomass to achieve long-term carbon storage. In addition to the carbon removal and durability uncertainties mapped below, there are important uncertainties about the ecosystem impacts of this approach. This pathway is VCL 2-4, meaning that current quantification capacity can establish permanent carbon removal, but for certain approaches, very significant uncertainties remain.",
   "VCL": ["2", "4"],
   "equation": "(2 - 3 - 4 - 5) - (6+7+9 + 10 +11)",
   "version": "1.2",
