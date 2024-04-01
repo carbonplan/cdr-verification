@@ -1,7 +1,7 @@
 {
   "pathway_id": "ocean-biomass-sinking-harvest",
   "pathway_name": "Ocean Biomass Sinking (Harvest)",
-  "pathway_description": "Ocean Biomass Sinking uses macroalgae to remove CO\u2082 from surface ocean, indirectly resulting in the removal of CO\u2082 from the atmosphere. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that involve harvesting the biomass before sinking it. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain.",
+  "pathway_description": "Ocean biomass sinking uses macroalgae to remove CO\u2082 from surface ocean, indirectly resulting in the removal of CO\u2082 from the atmosphere. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that involve harvesting the biomass before sinking it. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain.",
   "VCL": ["3", "3"],
   "equation": "(1 - 2 - 3 - 4 - 5) - (6 + 7)",
   "version": "1.2",

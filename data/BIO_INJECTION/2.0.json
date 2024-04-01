@@ -1,6 +1,6 @@
 {
   "pathway_id": "biomaterial-injection",
-  "pathway_name": "Biomaterial injection",
+  "pathway_name": "Biomaterial Injection",
   "pathway_description": "Biomaterial injection is a type of biomass carbon removal and storage (BiCRS) that uses photosynthesis to remove CO\u2082 from the atmosphere, transforms the resulting biomass (e.g. via pyrolysis or creation of a slurry), and injects it into a geologic reservoir to achieve long-term storage. This pathway is VCL 3-5, meaning that current quantification capacity can establish permanent carbon removal, but that for certain approaches, very significant uncertainties remain.",
   "VCL": ["3", "5"],
   "equation": "(3-4-5)-(6+7+9+10+11)",
