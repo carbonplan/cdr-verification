@@ -14,21 +14,26 @@ scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/au
 
 # Production Ids/Names
 google_doc_id = '1wYGtKe6ex27wei-eo6oh7hgLHrMXn9wmpqGS_l05lCw'
-gsheet_doc_name = 'NEW_CDR MRV Pathway Uncertainties'
+gsheet_doc_name = 'NEW_CDR_MRV_Pathway_Uncertainties'
 
 avail_pathways = [
-    'DAC',
-    'BiCRS',
-    'EW',
+    # 'BiCRS',
+    'BIO_INJECTION',
+    'BECCS',
+    'BIO_BURIAL',
     'TER_BIO',
-    'OCEAN_BIO_no_harvest',
-    'OCEAN_BIO_harvest',
+    'BIOCHAR',
+    'DAC',
+    'EW',
     'OAE_echem',
     'OAE_mineral',
+    'OCEAN_BIO_no_harvest',
+    'OCEAN_BIO_harvest',
     'DOR',
-    'BIOCHAR',
     'ALK_WASTE_MIN',
 ]
+
+
 pathways_data_columns = [
     'number',
     'category',
@@ -61,18 +66,21 @@ uncertainty_values = ['not characterized', 'negligible', 'low', 'medium', 'high'
 responsibility_values = ['system', 'project']
 
 sheet_id_dict = {
-    'components': '552961890',
-    'DAC': '1836739710',
-    'BiCRS': '315597137',
-    'EW': '83914401',
+    # 'BiCRS': '315597137',
+    'BIO_INJECTION': '1276756766',
+    'BECCS': '828830330',
+    'BIO_STORAGE': '1310723420',
     'TER_BIO': '1216202441',
-    'OCEAN_BIO_no_harvest': '141361092',
-    'OCEAN_BIO_harvest': '634124525',
+    'BIOCHAR': '1891518923',
+    'DAC': '1836739710',
+    'EW': '83914401',
     'OAE_echem': '960206408',
     'OAE_mineral': '670121219',
+    'OCEAN_BIO_no_harvest': '141361092',
+    'OCEAN_BIO_harvest': '634124525',
     'DOR': '2050001783',
-    'BIOCHAR': '1891518923',
     'ALK_WASTE_MIN': '2039248866',
+    'components': '552961890',
     'CONTRIBUTORS': '959291730',
     'contributor_test': '1652596480',
     'pathways_test': '1764033321',
@@ -81,17 +89,20 @@ sheet_id_dict = {
 
 # Test Ids and Names
 
-test_google_doc_id = '1MFM3hs1lB50YkgbPJYBMcvYMRJ6v8VhOOKCUDwsfjiw'
-test_gsheet_doc_name = 'PYTEST_NEW_CDR_MRV'
+# test_google_doc_id = '1MFM3hs1lB50YkgbPJYBMcvYMRJ6v8VhOOKCUDwsfjiw'
+# test_gsheet_doc_name = 'PYTEST_NEW_CDR_MRV'
 
+
+test_google_doc_id = '1k8O6TbT0D_MyYnXhaKqRNDv7QNL5ojLvIaGFHCgROzY'
+test_gsheet_doc_name = 'pytest_NEW_CDR_MRV_Pathway_Uncertainties'
 # ---------------------------------------------------------------------------------------------
 #                                 Common Functions
 # ---------------------------------------------------------------------------------------------
 
 
 def auth_service():
-    if os.path.exists(os.path.expanduser('~/keybase/google-sheets-key.json')):
-        cred_path = os.path.expanduser('~/keybase/google-sheets-key.json')
+    if os.path.exists(os.path.expanduser('~/keybase/cdr-validation-auth.json')):
+        cred_path = os.path.expanduser('~/keybase/cdr-validation-auth.json')
         creds = Credentials.from_service_account_file(cred_path, scopes=scope)
         service = build('sheets', 'v4', credentials=creds)
     else:

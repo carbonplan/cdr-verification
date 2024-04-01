@@ -52,6 +52,9 @@ const Main = ({ archival, pathway, pathways, settings, setSettings }) => {
   })
 
   const DiagramComponent = FLOW_DIAGRAMS[pathway_id][version]
+  if (!DiagramComponent) {
+    throw new Error(`No diagram found for ${pathway_id} v${version}`)
+  }
 
   return (
     <ComponentProvider

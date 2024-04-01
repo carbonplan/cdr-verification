@@ -1,3 +1,4 @@
+import { Box } from 'theme-ui'
 import { Figure, Table, TableCaption } from '@carbonplan/components'
 import UncertaintyDimensions from './uncertainty-dimensions'
 import VCLTable from './vcl-table'
@@ -9,24 +10,21 @@ export const frontMatter = {
   card: 'cdr-verification-explainer',
   quickLook: 'Methods for our CDR Verification Framework',
   back: '/research/cdr-verification-explainer',
-  path: '/research/cdr-verification-methods',
 }
 
 # CDR Verification Framework — Methods
 
 A system for CDR MRV must produce robust, quantitative estimates of net carbon removal and storage durability for different CDR pathways. Since CDR pathways are diverse in their approach and maturity, the tools available to make those estimates vary greatly — as do their associated uncertainties.
 
-With the aim of contributing to a solid foundation for future conversations about CDR MRV, Frontier and CarbonPlan are collaborating to develop and maintain an [interactive tool](https://carbonplan.org/research/cdr-verification) that allows users to explore the quantification capacity and key uncertainties we see in different CDR pathways today. The interactive tool currently includes our assessment of nine CDR pathways:
+With the aim of contributing to a solid foundation for future conversations about CDR MRV, Frontier and CarbonPlan are collaborating to develop and maintain an [interactive tool](https://carbonplan.org/research/cdr-verification) that allows users to explore the quantification capacity and key uncertainties we see in different CDR pathways today. The interactive tool currently includes our assessment of the following CDR pathways:
 
-- Alkaline waste mineralization
-- Biomass carbon removal and storage (BiCRS)
-- Biochar
-- Direct air capture (DAC)
-- Direct ocean removal (DOR)
-- Enhanced weathering (EW)
-- Ocean alkalinity enhancement (OAE)
-- Ocean biomass sinking
-- Terrestrial biomass sinking
+<Box as='ul' variant='styles.ul'>
+  {props.pathways.map((p) => (
+    <Box as='li' key={p.pathway_id}>
+      {p.pathway_name}
+    </Box>
+  ))}
+</Box>
 
 This is not an exhaustive set of long-duration CDR approaches, and we plan to assess additional CDR pathways in the future.
 
@@ -92,7 +90,7 @@ Constructing the VCL based on the count of medium, high, or very high uncertaint
 
 In some cases, multiple components reflect the same underlying uncertainty. For example, long-term leakage of CO₂ from a storage reservoir could be understood as a drawdown uncertainty or a durability uncertainty. In such cases, we may exclude a component from the VCL calculation to avoid double counting uncertainty across components. This exclusion is reflected explicitly in the component text.
 
-Most pathways are associated with a range of VCLs, rather than a single VCL, due to the diversity of approaches within a given pathway. To continue the example used above, an ocean alkalinity enhancement (OAE) project could introduce alkalinity directly (e.g., via aqueous NaOH) or in a mineral form that has to dissolve to release alkalinity (e.g., olivine). The dissolution and precipitation dynamics of the mineral approach lead to significant uncertainty about how much alkalinity is actually introduced to the surface ocean and therefore how much carbon removal occurs. As a result, we classify mineral-based OAE as VCL 1-2, direct alkalinity addition as VCL 3, and the OAE pathway as a whole as VCL 1-3. A pathway-level VCL does not guarantee that individual projects within that pathway are executing on best practice quantification approaches. For example, even though OAE is classified as VCL 2-3, an OAE project could fail to carefully characterize their alkalinity additions and functionally be at VCL 1.
+Most pathways are associated with a range of VCLs, rather than a single VCL, due to the diversity of approaches within a given pathway. To continue the example used above, an ocean alkalinity enhancement (OAE) project could introduce alkalinity directly (e.g., via aqueous NaOH) or in a mineral form that has to dissolve to release alkalinity (e.g., olivine). The dissolution and precipitation dynamics of the mineral approach lead to significant uncertainty about how much alkalinity is actually introduced to the surface ocean and therefore how much carbon removal occurs. As a result, we classify mineral-based OAE as VCL 1-3, direct alkalinity addition as VCL 3, and the OAE pathway as a whole as VCL 1-3. A pathway-level VCL does not guarantee that individual projects within that pathway are executing on best practice quantification approaches. For example, even though OAE is classified as VCL 2-3, an OAE project could fail to carefully characterize their alkalinity additions and functionally be at VCL 1.
 
 Like the uncertainty mapping, the pathway VCL ranges represent a current snapshot of the field that will change over time through research and innovation. Investing in low-VCL pathways to reduce uncertainties will help enable the development of novel CDR approaches with high potential. In short, we think a low VCL should be a barrier to scaling, but not a barrier to exploration.
 
@@ -116,21 +114,19 @@ The fast-to-slow framing also simplifies the quantification of net carbon remova
 
 Despite the attractive qualities of the fast-to-slow framing, we think it’s important to normalize the quantification of net carbon removal to atmospheric outcomes for all CDR pathways. In the fast carbon cycle, carbon is partitioned between reservoirs like the atmosphere, the surface ocean, and terrestrial vegetation — all of which exchange carbon flows through a variety of mechanisms. If one perturbs any of these reservoirs, it takes time for the other reservoirs to equilibrate. Since the primary function of CDR in the foreseeable future is compensating for ongoing, hard-to-abate emissions in a net-zero framework, we think it is most appropriate to normalize claimed outcomes to the atmosphere. In other words, we think CDR “compensation” claims are only appropriate if one emits a ton of CO₂ into the atmosphere and takes a ton back out of the atmosphere and stores it for a reasonably comparable duration.
 
-In addition to affecting ocean biomass sinking, this framing also has implications for approaches where an upfront action results in removals over time — like enhanced weathering — and for biomass carbon removal and storage (BiCRS) approaches that rely on biomass feedstocks. In the case of enhanced weathering, normalizing to atmospheric outcomes means that credited removals should accumulate over time based on the weathering curve of applied minerals. For BiCRS, credited removals should reflect the counterfactual decay time of biomass feedstock.
+In addition to affecting ocean biomass sinking, this framing also has implications for approaches where an upfront action results in removals over time — like enhanced weathering — and for biomass carbon removal and storage (BiCRS) approaches that rely on biomass feedstocks that they did not grow. In the case of enhanced weathering, normalizing to atmospheric outcomes means that credited removals should accumulate over time based on the weathering curve of applied minerals. For BiCRS, credited removals should reflect the counterfactual decay time of biomass feedstock.
 
 We recognize that understanding the role of carbon removal in the context of temperature management or cleaning up historic emissions requires a consideration of the partitioning dynamics between fast-cycle reservoirs. It also requires consideration of potential trade-offs between taking carbon out of the atmosphere versus other parts of the fast carbon cycle, which may, for example, represent trade-offs between temperature and ocean acidification benefits. For the time being, however, we encourage others to similarly quantify net carbon removal with respect to atmospheric outcomes for all CDR pathways to enable comparability and interpretability of claimed outcomes in the context of net-zero frameworks.
 
 ### Considering avoided emissions and temporary carbon removal benefits
 
-Some CDR pathways might provide climate co-benefits that are not permanent carbon removal. For example, the application of basalt for enhanced weathering on agricultural fields could reduce the use of agricultural lime or fertilizer, thereby avoiding the associated emissions, and could also reduce N₂O emissions from applied fertilizer. Alternatively, the basalt application could impact soil carbon outcomes via changes to plant or microbial productivity. In our uncertainty mapping, we identify and characterize potential sources of avoided emissions or fast-cycle carbon removal associated with a CDR pathway.
+Some CDR pathways might provide climate co-benefits that are not permanent carbon removal. For example, a primary goal of bioenergy with carbon capture and storage (BECCS) is producing an energy product like electricity or heat, which ideally would displace the use of fossil fuels. As another example, the application of basalt for enhanced weathering on agricultural fields could potentially reduce N₂O emissions from applied fertilizer.
 
-It is clear to us that avoided emissions or temporary removals that are co-benefits of long-duration CDR activities should not be counted as supplemental permanent carbon removals. In the case of avoided emissions, we considered: (1) allowing avoided emissions to be weighed against a portion of a project’s life cycle emissions (e.g., allowing reductions in lime application to cancel out some of the emissions from grinding and spreading basalt), or (2) excluding avoided emissions co-benefits from the calculation of net carbon removal altogether.
-
-It is not clear to us which option is preferable in cases where the avoided emissions are clearly quantifiable. In this mapping, we err on the side of excluding them from the accounting to be conservative. In cases where the avoided emissions are uncertain, we think they should be excluded from the calculation for conservativeness. Similarly, we advise that temporary carbon removals — such as enhanced soil carbon storage — be excluded from the calculation of permanent net carbon removals, though we have no objection to their separate monetization.
+In our uncertainty mapping, we identify and characterize potential sources of avoided emissions or fast-cycle carbon removal associated with a CDR pathway. We recommend that both temporary removals and avoided emissions be understood as a co-benefit of CDR and excluded from the calculation of net carbon removal. These benefits should be quantified and separately valued, but including them in the calculation of net carbon removal would undermine the goal of understanding how much permanent carbon removal these approaches could deliver in a net zero world.
 
 ### Consistency around secondary impacts
 
-A failure to consider larger system impacts has the potential to skew the perceived benefits of CDR pathways. We hope to avoid this by promoting an expansive view that includes both direct and indirect effects of each CDR pathway. For example, we think the potential for indirect land use change must be considered for any approach that relies on a biomass feedstock. Similarly, we think the secondary energy system impacts of new energy demand must be considered for energy intensive approaches like DAC or electrochemical OAE.
+A failure to consider larger system impacts has the potential to skew the perceived benefits of CDR pathways. We hope to avoid this by promoting an expansive view that includes both direct and indirect effects of each CDR pathway. For example, we think the potential for market effects like indirect land use change must be considered for any approach that relies on a biomass feedstock. Similarly, we think the secondary energy system impacts of new energy demand must be considered for energy intensive approaches like DAC or electrochemical OAE.
 
 ### Navigating counterfactuals
 
@@ -152,7 +148,7 @@ If you identify a general issue with our methods or the tool, please send us an 
 
 We expect this tool to change and improve over time, and we track these changes at three levels.
 
-Each pathway has a version history accessible in the tool that is maintained using [semantic versioning](https://semver.org/). A major version change (e.g., v1.0 to v2.0) signifies that a pathway has been updated in a way that affects the VCL rating. A minor version change is used to reflect conceptual changes to a pathway that do not affect the VCL (e.g., v1.0 to v2.0). We do not use patch version changes.
+Each pathway has a version history accessible in the tool that is maintained using [semantic versioning](https://semver.org/). A major version change (e.g., v1.0 to v2.0) signifies that a pathway has been updated in a way that affects the VCL rating or meaningfully changed the scope of CDR approaches considered within a pathway. A minor version change is used to reflect conceptual changes to a pathway that do not affect the VCL (e.g., v1.0 to v1.10). We do not use patch version changes.
 
 Each component has a revision history accessible in the tool that captures the date and justification for any edits. Component revisions may be reflected in the pathway versioning if they represent conceptual changes or impact a pathway’s VCL. Smaller component revisions, like typo correction or syntax improvement, may not be captured in a corresponding pathway version change.
 
@@ -161,6 +157,8 @@ The tool as a whole has versioned DOIs maintained via Zenodo. A new tool DOI ver
 All changes to the tool and content can also be tracked directly on [GitHub](https://github.com/carbonplan/cdr-verification/tree/main/data).
 
 ## Acknowledgments
+
+This tool has been developed and updated since its release by a collaborative group including Freya Chay, Kata Martin, Danny Cullenward, Raphael Hagen, and Jeremy Freeman (CarbonPlan) and Joanna Klitzke, Zeke Hausfather, Hannah Bebbington, Frauke Kracke, Judy Savitskaya, and Scott Litzelman (Frontier).
 
 At multiple points in the process, we have received important input and feedback from external experts, including CDR companies, scientists, and other CDR ecosystem actors. Any remaining mistakes or mischaracterizations are the authors’ sole responsibility.
 
@@ -175,8 +173,8 @@ The contents of this tool are made available under a [CC-BY 4.0 International li
 
 Please cite this tool as:
 
-F Chay, J Klitzke, Z Hausfather, K Martin, J Freeman, D Cullenward (2023) “CDR Verification Framework” CarbonPlan [10.5281/zenodo.7803151](https://doi.org/10.5281/zenodo.7803151)
+CarbonPlan and Frontier (2023) “CDR Verification Framework” CarbonPlan [10.5281/zenodo.7803151](https://doi.org/10.5281/zenodo.7803151)
 
 Please cite this methods doc as:
 
-F Chay, J Klitzke, Z Hausfather, K Martin, J Freeman, D Cullenward (2023) “CDR Verification Framework — methods” CarbonPlan [carbonplan.org/research/cdr-verification-methods](carbonplan.org/research/cdr-verification-methods)
+CarbonPlan and Frontier (2023) “CDR Verification Framework — methods” CarbonPlan [carbonplan.org/research/cdr-verification-methods](carbonplan.org/research/cdr-verification-methods)

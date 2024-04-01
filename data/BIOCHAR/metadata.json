@@ -34,6 +34,41 @@
       "affiliation": "Iowa State University",
       "notes": "",
       "version": ["1.0"]
+    },
+    {
+      "type": "Ecosystem Actor",
+      "name": "Erica Belmont",
+      "affiliation": "Carbon Direct",
+      "notes": "",
+      "version": ["1.2"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Anne Ware",
+      "affiliation": "NREL",
+      "notes": "",
+      "version": ["1.2"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Corinne Scown",
+      "affiliation": "LBNL",
+      "notes": "",
+      "version": ["1.2"]
+    },
+    {
+      "type": "Scientific Expert",
+      "name": "Sarah Nordahl",
+      "affiliation": "LBNL",
+      "notes": "",
+      "version": ["1.2"]
+    },
+    {
+      "type": "MRV Company",
+      "name": "Matt Gammans",
+      "affiliation": "Isometric",
+      "notes": "",
+      "version": ["1.2"]
     }
   ],
   "revisions": [
@@ -46,6 +81,11 @@
       "version": "1.1",
       "date": "10-11-2023",
       "note": "Second release. Edited agricultural lime use component as detailed in this [blog post](https://carbonplan.org/blog/vcl-aglime-update). Included component in equation for net carbon removal and re-numbered components accordingly."
+    },
+    {
+      "version": "1.2",
+      "date": "04-01-2024",
+      "note": "Third release. Edited for consistency with other biomass-based CDR pathways. This included adding components focused on non-CO\u2082 biomass emissions and the production of energy co-products. These changes did not affect the VCL classification. For more details, read this [blog post](https://carbonplan.org/blog/vcl-update-v2024.04.0) describing the scope of the updates."
     }
   ]
 }

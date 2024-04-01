@@ -9,6 +9,10 @@ const Circle = ({ component_id, sx, ...props }) => {
   const { theme } = useThemeUI()
   const { status, data } = useComponent(component_id)
 
+  if (!data) {
+    throw new Error(`No data found for ${component_id}`)
+  }
+
   let mixer
   switch (status) {
     case 'hovered':
