@@ -120,9 +120,9 @@ We recognize that understanding the role of carbon removal in the context of tem
 
 ### Considering avoided emissions and temporary carbon removal benefits
 
-Some CDR pathways might provide climate co-benefits that are not permanent carbon removal. For example, a primary goal of bioenergy with carbon capture and storage (BECCS) is producing an energy product like electricity or heat, which ideally would displace the use of fossil fuels. As another example, the application of basalt for enhanced weathering on agricultural fields could potentially reduce N₂O emissions from applied fertilizer or impact soil carbon outcomes via changes to plant or microbial productivity.
+Some CDR pathways might provide climate co-benefits that are not permanent carbon removal. For example, a primary goal of bioenergy with carbon capture and storage (BECCS) is producing an energy product like electricity or heat, which ideally would displace the use of fossil fuels. As another example, the application of basalt for enhanced weathering on agricultural fields could potentially reduce N₂O emissions from applied fertilizer.
 
-In our uncertainty mapping, we identify and characterize potential sources of avoided emissions or fast-cycle carbon removal associated with a CDR pathway. We recommend that both temporary removals and avoided emissions be understood as a co-benefit of CDR and excluded from the calculation of net carbon removal. This benefits should be understood and separately valued, but including them in the calculation of net carbon removal would undermine the goal of understanding how much permanent carbon removal these approaches could deliver in a net zero world.
+In our uncertainty mapping, we identify and characterize potential sources of avoided emissions or fast-cycle carbon removal associated with a CDR pathway. We recommend that both temporary removals and avoided emissions be understood as a co-benefit of CDR and excluded from the calculation of net carbon removal. These benefits should be quantified and separately valued, but including them in the calculation of net carbon removal would undermine the goal of understanding how much permanent carbon removal these approaches could deliver in a net zero world.
 
 ### Consistency around secondary impacts
 
@@ -148,7 +148,7 @@ If you identify a general issue with our methods or the tool, please send us an 
 
 We expect this tool to change and improve over time, and we track these changes at three levels.
 
-Each pathway has a version history accessible in the tool that is maintained using [semantic versioning](https://semver.org/). A major version change (e.g., v1.0 to v2.0) signifies that a pathway has been updated in a way that affects the VCL rating or meaningfully changed the scope of CDR approaches considered. A minor version change is used to reflect conceptual changes to a pathway that do not affect the VCL (e.g., v1.0 to v1.10). We do not use patch version changes.
+Each pathway has a version history accessible in the tool that is maintained using [semantic versioning](https://semver.org/). A major version change (e.g., v1.0 to v2.0) signifies that a pathway has been updated in a way that affects the VCL rating or meaningfully changed the scope of CDR approaches considered within a pathway. A minor version change is used to reflect conceptual changes to a pathway that do not affect the VCL (e.g., v1.0 to v1.10). We do not use patch version changes.
 
 Each component has a revision history accessible in the tool that captures the date and justification for any edits. Component revisions may be reflected in the pathway versioning if they represent conceptual changes or impact a pathway’s VCL. Smaller component revisions, like typo correction or syntax improvement, may not be captured in a corresponding pathway version change.
 
@@ -157,6 +157,8 @@ The tool as a whole has versioned DOIs maintained via Zenodo. A new tool DOI ver
 All changes to the tool and content can also be tracked directly on [GitHub](https://github.com/carbonplan/cdr-verification/tree/main/data).
 
 ## Acknowledgments
+
+This tool has been developed and updated since its release by a collaborative group including Freya Chay, Kata Martin, Danny Cullenward, Raphael Hagen, and Jeremy Freeman (CarbonPlan) and Joanna Klitzke, Zeke Hausfather, Hannah Bebbington, Frauke Kracke, Judy Savitskaya, and Scott Litzelman (Frontier).
 
 At multiple points in the process, we have received important input and feedback from external experts, including CDR companies, scientists, and other CDR ecosystem actors. Any remaining mistakes or mischaracterizations are the authors’ sole responsibility.
 
@@ -171,8 +173,8 @@ The contents of this tool are made available under a [CC-BY 4.0 International li
 
 Please cite this tool as:
 
-F Chay, J Klitzke, Z Hausfather, K Martin, J Freeman, D Cullenward (2023) “CDR Verification Framework” CarbonPlan [10.5281/zenodo.7803151](https://doi.org/10.5281/zenodo.7803151)
+CarbonPlan and Frontier (2023) “CDR Verification Framework” CarbonPlan [10.5281/zenodo.7803151](https://doi.org/10.5281/zenodo.7803151)
 
 Please cite this methods doc as:
 
-F Chay, J Klitzke, Z Hausfather, K Martin, J Freeman, D Cullenward (2023) “CDR Verification Framework — methods” CarbonPlan [carbonplan.org/research/cdr-verification-methods](carbonplan.org/research/cdr-verification-methods)
+CarbonPlan and Frontier (2023) “CDR Verification Framework — methods” CarbonPlan [carbonplan.org/research/cdr-verification-methods](carbonplan.org/research/cdr-verification-methods)
