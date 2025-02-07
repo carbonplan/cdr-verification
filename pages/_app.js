@@ -21,7 +21,7 @@ const App = ({ Component, pageProps }) => {
           strategy='lazyOnload'
           data-domain='carbonplan.org'
           data-api='https://carbonplan.org/proxy/api/event'
-          src='https://carbonplan.org/js/script.outbound-links.js'
+          src='https://carbonplan.org/js/script.file-downloads.outbound-links.js'
         />
       )}
       {isMethods ? (
