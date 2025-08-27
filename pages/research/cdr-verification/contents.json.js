@@ -1,4 +1,4 @@
-import { pathways } from '../../../utils/data'
+import { pathways, pathwayContent } from '../../../utils/data'
 
 function Contents() {
   // getServerSideProps will do the heavy lifting
@@ -10,6 +10,9 @@ export function getServerSideProps({ res }) {
   const contents = pathways.map(
     ({ pathway_id, pathway_name, pathway_description }) => ({
       page: `research/cdr-verification/${pathway_id}`,
+      date: pathwayContent[pathway_id].metadata.revisions.sort(
+        (a, b) => Number(b.version) - Number(a.version)
+      )[0].date,
       metadata: {
         type: 'tool',
         title: pathway_name,
