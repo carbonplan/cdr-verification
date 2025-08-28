@@ -21,7 +21,7 @@ export function getServerSideProps({ res }) {
     })
   )
 
-  res.write(JSON.stringify(contents))
+  res.write(JSON.stringify({ testing: 'true', num_pathways: pathways.length }))
   res.end()
 
   return {
