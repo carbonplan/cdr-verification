@@ -1,4 +1,4 @@
-import { pathways, pathwayContent } from '../../../utils/data'
+import { ID_MAPPING, pathwayContent, pathways } from '../../../utils/data'
 
 function Contents() {
   // getServerSideProps will do the heavy lifting
@@ -21,7 +21,7 @@ export function getServerSideProps({ res }) {
     })
   )
 
-  res.write(JSON.stringify({ testing: 'true', num_pathways: pathways.length }))
+  res.write(JSON.stringify({ ID_MAPPING, pathwayContent, pathways }))
   res.end()
 
   return {
