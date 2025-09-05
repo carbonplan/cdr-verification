@@ -3,7 +3,7 @@ const glob = require('glob')
 const path = require('path')
 
 const pathwayVersions = glob
-  .sync(path.join(process.cwd(), '/data/**/+([0-9]).+([0-9]).json'))
+  .sync(path.join(process.cwd(), 'data/**/+([0-9]).+([0-9]).json'))
   .reduce((pathways, pathwayPath) => {
     const [pathway] = pathwayPath.match(/[^/]+(?=\/[^/]+\.json)/)
     const [version] = pathwayPath.match(/[^/]+(?=\.json)/)
