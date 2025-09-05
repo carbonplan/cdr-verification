@@ -2,26 +2,24 @@ const fs = require('fs')
 const glob = require('glob')
 const path = require('path')
 
-const versionPaths = glob.sync(
-  path.join(process.cwd(), 'data/**/+([0-9]).+([0-9]).json')
-)
+const pathwayVersions = glob
+  .sync(path.join(process.cwd(), 'data/**/+([0-9]).+([0-9]).json'))
+  .reduce((pathways, pathwayPath) => {
+    const [pathway] = pathwayPath.match(/[^/]+(?=\/[^/]+\.json)/)
+    const [version] = pathwayPath.match(/[^/]+(?=\.json)/)
 
-const pathwayVersions = versionPaths.reduce((pathways, pathwayPath) => {
-  const [pathway] = pathwayPath.match(/[^/]+(?=\/[^/]+\.json)/)
-  const [version] = pathwayPath.match(/[^/]+(?=\.json)/)
+    const source = fs.readFileSync(pathwayPath)
+    const content = JSON.parse(source)
 
-  const source = fs.readFileSync(pathwayPath)
-  const content = JSON.parse(source)
+    let versions = pathways.find((p) => p[0] === pathway)
+    if (versions) {
+      versions[1].push({ version, content })
+    } else {
+      pathways.push([pathway, [{ version, content }]])
+    }
 
-  let versions = pathways.find((p) => p[0] === pathway)
-  if (versions) {
-    versions[1].push({ version, content })
-  } else {
-    pathways.push([pathway, [{ version, content }]])
-  }
-
-  return pathways
-}, [])
+    return pathways
+  }, [])
 
 const pathways = pathwayVersions.reduce((accum, [pathway, versions]) => {
   const latestVersion = versions.sort(
@@ -62,5 +60,4 @@ module.exports = {
   ID_MAPPING,
   pathwayContent,
   pathways,
-  versionPaths,
 }
