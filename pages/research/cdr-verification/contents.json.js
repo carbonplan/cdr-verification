@@ -1,4 +1,4 @@
-import { pathways, pathwayContent } from '../../../utils/data'
+import { pathways, pathwayContent, versionPaths } from '../../../utils/data'
 
 function Contents() {
   // getServerSideProps will do the heavy lifting
@@ -21,7 +21,7 @@ export function getServerSideProps({ res }) {
     })
   )
 
-  res.write(JSON.stringify(contents))
+  res.write(JSON.stringify({ contents, versionPaths }))
   res.end()
 
   return {
