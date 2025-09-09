@@ -4,9 +4,10 @@
   "description": "tool to visualize CDR MRV pathways",
   "main": "index.js",
   "scripts": {
-    "dev": "next -p 5002",
-    "build": "next build",
-    "start": "next start"
+    "dev": "npm run generate-contents && next -p 5002",
+    "build": "npm run generate-contents && next build",
+    "start": "npm run generate-contents && next start",
+    "generate-contents": "node utils/generate-contents.js && prettier --write public/research/cdr-verification/contents.json"
   },
   "repository": {
     "type": "git",
