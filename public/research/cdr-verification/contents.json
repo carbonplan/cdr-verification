@@ -1,0 +1,119 @@
+[
+  {
+    "page": "research/cdr-verification/alkaline-waste-mineralization",
+    "date": "2023-04-10",
+    "metadata": {
+      "type": "tool",
+      "title": "Alkaline Waste Mineralization",
+      "summary": "Alkaline waste mineralization enhances the weathering process of alkaline waste streams (e.g. mine tailings or slag) to enhance the uptake and storage of atmospheric CO₂. Here, we specifically consider methods that primarily store atmospheric CO₂ in the form of solid carbonates. This pathway is VCL 3-5, meaning that current quantification capacity can establish permanent carbon removal, but that for certain approaches, significant uncertainties remain."
+    }
+  },
+  {
+    "page": "research/cdr-verification/beccs",
+    "date": "2022-09-19",
+    "metadata": {
+      "type": "tool",
+      "title": "Bioenergy with Carbon Capture and Storage",
+      "summary": "Bioenergy with carbon capture and storage (BECCS) is a type of biomass carbon removal and storage that uses photosynthesis to remove CO₂ from the atmosphere, transforms the resulting biomass to produce an energy co-product (e.g. electricity or hydrogen), and captures the emitted CO₂ for long-term storage. This pathway is VCL 3-5, meaning that current quantification capacity can establish permanent carbon removal, but that for certain approaches, significant uncertainties remain."
+    }
+  },
+  {
+    "page": "research/cdr-verification/biomass-burial",
+    "date": "2022-09-19",
+    "metadata": {
+      "type": "tool",
+      "title": "Biomass Burial",
+      "summary": "Biomass burial is a type of biomass carbon removal and storage (BiCRS) that uses photosynthesis to remove CO₂ from the atmosphere, and stores the resulting biomass to prevent or slow decomposition. This pathway is VCL 1-4, meaning that current quantification capacity can establish permanent carbon removal for some approaches, but that for others, very significant uncertainties remain."
+    }
+  },
+  {
+    "page": "research/cdr-verification/biomaterial-injection",
+    "date": "2024-04-01",
+    "metadata": {
+      "type": "tool",
+      "title": "Biomaterial Injection",
+      "summary": "Biomaterial injection is a type of biomass carbon removal and storage (BiCRS) that uses photosynthesis to remove CO₂ from the atmosphere, transforms the resulting biomass (e.g. via pyrolysis or creation of a slurry), and injects it into a geologic reservoir to achieve long-term storage. This pathway is VCL 3-5, meaning that current quantification capacity can establish permanent carbon removal, but that for certain approaches, very significant uncertainties remain."
+    }
+  },
+  {
+    "page": "research/cdr-verification/biochar",
+    "date": "2024-04-01",
+    "metadata": {
+      "type": "tool",
+      "title": "Biochar",
+      "summary": "Biochar is a type of biomass carbon removal and storage (BiCRS) that uses photosynthesis to remove CO₂ from the atmosphere, and transforms biomass into char to achieve longer-term storage of biomass carbon. Here, we specifically consider biochar that is applied to agricultural fields. This pathway is VCL 1-3, meaning that current quantification capacity may be able to establish permanent carbon removal, but that for certain approaches, significant uncertainties remain."
+    }
+  },
+  {
+    "page": "research/cdr-verification/direct-air-capture",
+    "date": "2022-09-19",
+    "metadata": {
+      "type": "tool",
+      "title": "Direct Air Capture",
+      "summary": "Direct air capture (DAC) uses chemicals to capture CO₂ from ambient air and generate a concentrated stream of CO₂ for storage. We assume that captured CO₂ is not used for enhanced oil recovery. This pathway is VCL 4-5, meaning that current quantification capacity can establish permanent carbon removal with relative confidence."
+    }
+  },
+  {
+    "page": "research/cdr-verification/direct-ocean-removal",
+    "date": "2023-04-10",
+    "metadata": {
+      "type": "tool",
+      "title": "Direct Ocean Removal",
+      "summary": "Direct ocean removal (DOR) removes CO₂ from the surface ocean for storage, and returns seawater depleted in dissolved inorganic carbon (DIC) to the ocean. The DIC-depleted water reequilibrates with the atmosphere to draw down CO₂. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain."
+    }
+  },
+  {
+    "page": "research/cdr-verification/enhanced-weathering",
+    "date": "2023-12-05",
+    "metadata": {
+      "type": "tool",
+      "title": "Enhanced Weathering",
+      "summary": "Enhanced weathering (EW) is a process that speeds up the chemical reactions between rocks, water, and air to remove CO₂ from the atmosphere. Here, we specifically consider EW performed by spreading finely ground rock on agricultural soils. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain."
+    }
+  },
+  {
+    "page": "research/cdr-verification/ocean-alkalinity-enhancement-electrochemical",
+    "date": "2023-04-10",
+    "metadata": {
+      "type": "tool",
+      "title": "Ocean Alkalinity Enhancement (Electrochemical)",
+      "summary": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance the uptake and storage of atmospheric CO₂. Here, we specifically consider OAE that is facilitated by electrochemical separation, which removes acidity from seawater and returns a more basic solution to enhance ocean alkalinity. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain."
+    }
+  },
+  {
+    "page": "research/cdr-verification/ocean-alkalinity-enhancement-mineral",
+    "date": "2023-04-10",
+    "metadata": {
+      "type": "tool",
+      "title": "Ocean Alkalinity Enhancement (Mineral)",
+      "summary": "Ocean alkalinity enhancement (OAE) adds alkalinity into the surface ocean to enhance its ability to uptake and store atmospheric CO₂. Here, we specifically consider OAE that is facilitated by adding solid or semi-solid minerals to the ocean which dissolve to enhance alkalinity. This pathway is VCL 1-3, meaning that current quantification capacity may be able to establish net carbon removal occurred, but for some approaches, very significant uncertainties remain."
+    }
+  },
+  {
+    "page": "research/cdr-verification/ocean-biomass-sinking-harvest",
+    "date": "2024-04-01",
+    "metadata": {
+      "type": "tool",
+      "title": "Ocean Biomass Sinking (Harvest)",
+      "summary": "Ocean biomass sinking uses macroalgae to remove CO₂ from surface ocean, indirectly resulting in the removal of CO₂ from the atmosphere. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that involve harvesting the biomass before sinking it. This pathway is VCL 3, meaning that current quantification capacity can establish net carbon removal occurred, but significant uncertainties remain."
+    }
+  },
+  {
+    "page": "research/cdr-verification/ocean-biomass-sinking-no-harvest",
+    "date": "2024-04-01",
+    "metadata": {
+      "type": "tool",
+      "title": "Ocean Biomass Sinking (No Harvest)",
+      "summary": "Ocean biomass sinking uses macroalgae to remove CO₂ from surface ocean, which in turn enhances the ability of the surface ocean to drawdown atmospheric CO₂. The biomass is sunk into the deep ocean to achieve long-term carbon storage. Here, we specifically consider approaches that do not harvest the biomass before sinking it. This pathway is VCL 1-2, meaning that current quantification capacity may be able to establish net carbon removal occurred, but that very significant uncertainties remain."
+    }
+  },
+  {
+    "page": "research/cdr-verification/terrestrial-biomass-sinking",
+    "date": "2024-04-01",
+    "metadata": {
+      "type": "tool",
+      "title": "Terrestrial Biomass Sinking",
+      "summary": "Terrestrial biomass sinking is a type of biomass carbon removal and storage (BiCRS) that uses photosynthesis to remove CO₂ from the atmosphere, and sinks that biomass to achieve long-term carbon storage. In addition to the carbon removal and durability uncertainties mapped below, there are important uncertainties about the ecosystem impacts of this approach. This pathway is VCL 2-4, meaning that current quantification capacity can establish permanent carbon removal, but for certain approaches, very significant uncertainties remain."
+    }
+  }
+]

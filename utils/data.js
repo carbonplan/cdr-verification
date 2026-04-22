@@ -1,8 +1,9 @@
 const fs = require('fs')
 const glob = require('glob')
+const path = require('path')
 
 const pathwayVersions = glob
-  .sync('./data/**/+([0-9]).+([0-9]).json')
+  .sync(path.join(process.cwd(), 'data/**/+([0-9]).+([0-9]).json'))
   .reduce((pathways, pathwayPath) => {
     const [pathway] = pathwayPath.match(/[^/]+(?=\/[^/]+\.json)/)
     const [version] = pathwayPath.match(/[^/]+(?=\.json)/)
@@ -43,7 +44,7 @@ const pathwayContent = pathwayVersions.reduce((accum, [pathway, versions]) => {
     return v
   }, {})
 
-  const metadataPath = `./data/${pathway}/metadata.json` // glob.sync(`./data/${pathway}/metadata.json`)
+  const metadataPath = path.join(process.cwd(), `data/${pathway}/metadata.json`)
   const source = fs.readFileSync(metadataPath)
   const metadata = JSON.parse(source)
 
