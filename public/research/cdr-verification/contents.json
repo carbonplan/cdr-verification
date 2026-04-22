@@ -1,7 +1,7 @@
 [
   {
     "page": "research/cdr-verification/alkaline-waste-mineralization",
-    "date": "04-10-2023",
+    "date": "2023-04-10",
     "metadata": {
       "type": "tool",
       "title": "Alkaline Waste Mineralization",
@@ -10,7 +10,7 @@
   },
   {
     "page": "research/cdr-verification/beccs",
-    "date": "09-19-2022",
+    "date": "2022-09-19",
     "metadata": {
       "type": "tool",
       "title": "Bioenergy with Carbon Capture and Storage",
@@ -19,7 +19,7 @@
   },
   {
     "page": "research/cdr-verification/biomass-burial",
-    "date": "09-19-2022",
+    "date": "2022-09-19",
     "metadata": {
       "type": "tool",
       "title": "Biomass Burial",
@@ -28,7 +28,7 @@
   },
   {
     "page": "research/cdr-verification/biomaterial-injection",
-    "date": "04-01-2024",
+    "date": "2024-04-01",
     "metadata": {
       "type": "tool",
       "title": "Biomaterial Injection",
@@ -37,7 +37,7 @@
   },
   {
     "page": "research/cdr-verification/biochar",
-    "date": "04-01-2024",
+    "date": "2024-04-01",
     "metadata": {
       "type": "tool",
       "title": "Biochar",
@@ -46,7 +46,7 @@
   },
   {
     "page": "research/cdr-verification/direct-air-capture",
-    "date": "09-19-2022",
+    "date": "2022-09-19",
     "metadata": {
       "type": "tool",
       "title": "Direct Air Capture",
@@ -55,7 +55,7 @@
   },
   {
     "page": "research/cdr-verification/direct-ocean-removal",
-    "date": "04-10-2023",
+    "date": "2023-04-10",
     "metadata": {
       "type": "tool",
       "title": "Direct Ocean Removal",
@@ -64,7 +64,7 @@
   },
   {
     "page": "research/cdr-verification/enhanced-weathering",
-    "date": "12-05-2023",
+    "date": "2023-12-05",
     "metadata": {
       "type": "tool",
       "title": "Enhanced Weathering",
@@ -73,7 +73,7 @@
   },
   {
     "page": "research/cdr-verification/ocean-alkalinity-enhancement-electrochemical",
-    "date": "04-10-2023",
+    "date": "2023-04-10",
     "metadata": {
       "type": "tool",
       "title": "Ocean Alkalinity Enhancement (Electrochemical)",
@@ -82,7 +82,7 @@
   },
   {
     "page": "research/cdr-verification/ocean-alkalinity-enhancement-mineral",
-    "date": "04-10-2023",
+    "date": "2023-04-10",
     "metadata": {
       "type": "tool",
       "title": "Ocean Alkalinity Enhancement (Mineral)",
@@ -91,7 +91,7 @@
   },
   {
     "page": "research/cdr-verification/ocean-biomass-sinking-harvest",
-    "date": "04-01-2024",
+    "date": "2024-04-01",
     "metadata": {
       "type": "tool",
       "title": "Ocean Biomass Sinking (Harvest)",
@@ -100,7 +100,7 @@
   },
   {
     "page": "research/cdr-verification/ocean-biomass-sinking-no-harvest",
-    "date": "04-01-2024",
+    "date": "2024-04-01",
     "metadata": {
       "type": "tool",
       "title": "Ocean Biomass Sinking (No Harvest)",
@@ -109,7 +109,7 @@
   },
   {
     "page": "research/cdr-verification/terrestrial-biomass-sinking",
-    "date": "04-01-2024",
+    "date": "2024-04-01",
     "metadata": {
       "type": "tool",
       "title": "Terrestrial Biomass Sinking",
